@@ -5,6 +5,7 @@ check:
 	python3 publishing/scripts/check_ch04_figure_semantics.py
 	python3 publishing/scripts/check_ch05_acceptance.py
 	python3 publishing/scripts/check_ch06_acceptance.py
+	python3 publishing/scripts/check_ch07_acceptance.py
 	python3 publishing/scripts/check_single_volume.py
 figures:
 	python3 publishing/scripts/figures.py

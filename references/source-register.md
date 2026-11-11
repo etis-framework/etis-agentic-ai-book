@@ -112,3 +112,11 @@ Check future Ch12/13/19/29/31 references for controlled reuse. Exact page-level 
 | `gray_reuter_1992`, `kleppmann_2017` | §6.5: distributed payment outcomes | Generic transaction semantics; provider contract not assumed |
 
 **Citation QA:** No new source identities were required. The chapter deliberately does not assert specific provider guarantees, calibrated confidence thresholds, or normative legal rules. Verify exact textbook pages and licensed standards before publication certification.
+
+
+## Chapter 7 — requirements and traceability (Part I closure)
+
+- ISO/IEC/IEEE 29148:2018 is cited as requirements-engineering context; the ETIS requirement IDs and tables are original examples, not claims of ISO-mandated templates. Existing bibliography key `iso_29148_2018` is reused.
+- NIST AI RMF 1.0 (2023) and the Generative AI Profile (2024) are referenced for risk measurement and governance framing; no universal release acceptance thresholds are attributed to NIST.
+- Gray and Reuter (1992) and Kleppmann (2017) ground distributed transactions and unknown external effect claims. Provider-specific idempotency guarantees remain explicitly illustrative.
+- Original ETIS artifacts: AUTH-01, PAY-03, DATA-01, EV-02, POL-02, OPS-01, EVAL-01, CHG-01; Figures 7.1–7.2; exercise prompts and proposed gate outcomes. Publication citation-level precision remains a later gate.

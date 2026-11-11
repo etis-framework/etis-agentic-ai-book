@@ -168,13 +168,13 @@ At the same time, do not force every ambiguous business problem into determinist
 
 ## 2.16 Return to the $500 refund: a layered design emerges
 
+![Figure 2.4 — The inherited enterprise controls surround bounded reasoning.](assets/shared-figures/rendered/F02-04.png){#fig:f02-04 width=5.75in}
+
 We can now assemble the refund system without invoking a new architectural mythology. An authenticated application admits the customer request and establishes tenant and principal. A durable workflow owns the case and schedules tasks. A bounded reasoning component interprets the complaint and proposes a remedy using provenance-bearing context. A trusted execution component checks policy, approval, payment state, and operation identity. An adapter issues a constrained request to the payment provider. A durable ledger records what the system knows, including uncertainty. Governance and operations monitor the decisions, costs, failures, and evidence.
 
 Each layer has recognizable ancestors: IAM, workflow engines, expert systems, planners, database transactions, integration adapters, and operational assurance. Modern AI changes how some proposals are generated and how flexibly tasks can be interpreted. It does not eliminate the need for any of the other layers.
 
 Figure 2.4 summarizes logical responsibilities rather than a required deployment topology. Trusted execution owns durable intent and operation-state transitions directly; the provider adapter communicates with the payment system and returns observations for trusted execution to reconcile. Its arrows show principal control and information paths; they do not enumerate every read, approval, or audit event. This layered design bridges the historical discussion to the enterprise reference architecture introduced later in the book. We will introduce reference identifiers for logical responsibilities and interface contracts only after readers have encountered the problems those constructs solve. The identifiers will serve architectural traceability, not replace explanation. Governance, security, operational accountability, and quality-attribute tradeoffs apply across these responsibilities rather than forming a late-stage checklist.
-
-![Figure 2.4 — The inherited enterprise controls surround bounded reasoning.](assets/shared-figures/rendered/F02-04.png){#fig:f02-04 width=5.75in}
 
 ## Worked failure trace: the acknowledgment that never arrived
 

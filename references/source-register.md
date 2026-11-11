@@ -66,3 +66,30 @@ Use readable author–year references in explanatory prose, e.g., **Gray and Reu
 | 2 | §2.14 | NIST AI 100-1; ISO/IEC 42001 | Risk management and management-system context | Licensed normative text not reviewed |
 
 **Additional source candidates for later verification, not yet cited as facts:** NIST SP 800-53 Rev. 5 (least privilege, audit); NIST SP 800-218 SSDF (secure development); NIST AI 100-4 (if relevant to evaluation); RFC 9110 (HTTP idempotent method semantics, not provider business idempotency); OWASP Agentic AI guidance (pin version); vendor provider idempotency documentation (only for the selected implementation). This is a prioritized research queue, not a claim of verification.
+
+
+## Chapter 4 — agent mechanisms and boundaries (November 2026)
+
+No new bibliographic identities were required: each source cited in Chapter 4 already appears in the consolidated back-of-book bibliography. Chapter 4 reuses the existing author–year style and does not claim a source establishes ETIS-specific policy boundaries.
+
+| Stable key | Claim and citation locus | Evidence status / limit |
+|---|---|---|
+| `russell_norvig_2020` | §4.1 operational agent definition; §4.5 non-LLM agents | Foundational secondary reference; exact edition/page audit remains a publication task |
+| `yao_2023` | §§4.2, 4.5 interleaved reasoning/action research | Research mechanism only; no system-level security or correctness guarantees inferred |
+| `schick_2023` | §4.2 learned tool-use research | Research mechanism only; no delegated authority guarantee inferred |
+| `kleppmann_2017` | §4.6 incomplete distributed observations | Foundational distributed-systems context; payment-provider behavior remains hypothetical |
+| `nist_ai_rmf_2023` | §4.8 risk-management context | NIST AI RMF 1.0, not a certification of this chapter's architecture |
+
+**Publication gate:** Verify precise page/section for textbook claims and stable research URLs during final citation certification. This chapter introduces no unsupported quantitative industry benchmarks.
+
+## Chapter 4 — November 2026 independent source recheck
+
+| Key | Chapter 4 claim | Limit |
+|---|---|---|
+| `anthropic_agents_2024` | §§4.1, 4.2, 4.5: difference between predefined workflows and dynamically agent-selected steps | Vendor engineering guidance, not proof of safety |
+| `openai_agents_2026` | §§4.1, 4.5: contemporary LLM-agent construction and tool control terminology | Vendor guide; verify pinned PDF edition before publication |
+| `tau_bench_2024` | §4.8: final database state and repeated-run metric in agent evaluation | Benchmark result, not guarantee of production reliability |
+| `owasp_agentic_2026` | §4.8: agent-specific threat categories | 2026 edition published 2025-12-09; threat taxonomy not compliance certificate |
+| `mcp_2026` | §4.6: protocol capability versus business authority | July 2026 release summary; transport security ≠ refund entitlement |
+
+Check future Ch12/13/19/29/31 references for controlled reuse. Exact page-level source certification remains a publication gate.

@@ -14,6 +14,8 @@ for p in sorted(src.glob('*.dot')):
  for ext,flags in [('svg',['-Tsvg']),('png',['-Tpng','-Gdpi=180'])]:
   subprocess.run(['dot',*flags,str(p),'-o',str(dst/(p.stem+'.'+ext))],check=True)
 for p in sorted(src.glob('*.svg')):
+ if p.name.startswith('F04-') and not cairosvg:
+  sys.exit('Chapter 4 SVG master requires cairosvg for a fresh PNG render; never reuse an old PNG')
  shutil.copy2(p,dst/p.name)
  if cairosvg:
   cairosvg.svg2png(url=str(p),write_to=str(dst/(p.stem+'.png')),output_width=1800)

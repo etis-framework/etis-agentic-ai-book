@@ -1,0 +1,3 @@
+// Logical editable DOT reference. Precise print master: F04-01.svg
+// publishing/scripts/figures.py correctly prefers SVG master when present.
+digraph F0401 { graph [label="Agent / trusted system boundary",rankdir=LR]; node[shape=box,style="rounded,filled",fontname="Arial",fontsize=23]; objective[label="Scoped objective and limits",fillcolor="#dcecf3"]; select[label="Select next step",fillcolor="#dcecf3"]; state[label="Working state and observations",fillcolor="#eef4f6"]; control[label="Trusted controller: validate scope, budget, tool",fillcolor="#fff0ce"]; tool[label="Permitted read tool and sourced result",fillcolor="#dcecf3"]; objective->select;select->control;control->tool;tool->state;state->select; }

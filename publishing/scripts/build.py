@@ -45,6 +45,18 @@ def main():
      run.font.name='Consolas'
      run.font.size=Pt(8.5)
      run.font.color.rgb=RGBColor(32,60,77)
+  # Keep the compact Chapter 5 economics comparison together in print.
+  # A partially printed cost table would make the comparison hard to audit.
+  from docx.oxml import OxmlElement
+  from docx.oxml.ns import qn
+  for table in doc.tables:
+   if not table.rows or 'Annual measure' not in table.rows[0].cells[0].text:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i < len(table.rows)-1:
+     for cell in row.cells:
+      for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
   doc.save(dest)
  print(dest)
 if __name__=='__main__':main()

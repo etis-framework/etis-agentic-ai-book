@@ -39,3 +39,6 @@ This is the curated starting bibliography for the completed foundational chapter
 - Parasuraman, Raja, Thomas B. Sheridan, and Christopher D. Wickens. “A Model for Types and Levels of Human Interaction with Automation.” *IEEE Transactions on Systems, Man, and Cybernetics — Part A* 30, no. 3 (2000): 286–297. https://doi.org/10.1109/3468.844354
 - Parasuraman, Raja. “Designing Automation for Human Use: Empirical Studies and Quantitative Models.” *Ergonomics* 43, no. 7 (2000): 931–951. https://doi.org/10.1080/001401300409125
 - ISO/IEC/IEEE. *ISO/IEC/IEEE 29148:2018: Systems and Software Engineering — Life Cycle Processes — Requirements Engineering*. 2nd ed. 2018. https://www.iso.org/standard/72089.html (Normative text requires licensed review.)
+
+- FinOps Foundation. *FinOps Framework 2025*. https://www.finops.org/framework/ (accessed November 2026).
+- FinOps Foundation. *Unit Economics*, FinOps Framework capability guidance. https://www.finops.org/framework/capabilities/unit-economics/ (accessed November 2026).

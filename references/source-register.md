@@ -100,3 +100,15 @@ Check future Ch12/13/19/29/31 references for controlled reuse. Exact page-level 
 - FinOps Foundation Framework 2025 and Unit Economics capability: connect technology expense and fully loaded cost to business unit outcomes; used in §§5.3–5.4 and 5.8.
 - Bass, Clements and Kazman (2021): architecture tradeoff discipline; Kleppmann (2017), Gray and Reuter (1992): distributed execution and transactional risks.
 - Scenario assumptions in §5.5, economic equation, figures F05-01/F05-02, and acceptance criteria are original ETIS examples; not externally validated performance or vendor costs.
+
+## Chapter 6 — uncertainty, authority, and enterprise trust (2026-11-11)
+
+| Source key | Claim location | Evidence limit |
+|---|---|---|
+| `nist_ai_rmf_2023` | §§6.4, 6.7: governance, measure, oversight | Voluntary framework, not an approval of ETIS controls |
+| `nist_genai_profile_2024` | §6.2: integrity, over-reliance | Relevant risks; four uncertainty categories are original ETIS |
+| `owasp_agentic_2026` | §6.3: goal hijack, tool misuse, identity abuse | 2026 edition released 2025-12-09; not a compliance certificate |
+| `parasuraman_sheridan_wickens_2000`, `parasuraman_2000` | §6.6: human oversight design | Human factors research, not prescriptive case approval software |
+| `gray_reuter_1992`, `kleppmann_2017` | §6.5: distributed payment outcomes | Generic transaction semantics; provider contract not assumed |
+
+**Citation QA:** No new source identities were required. The chapter deliberately does not assert specific provider guarantees, calibrated confidence thresholds, or normative legal rules. Verify exact textbook pages and licensed standards before publication certification.

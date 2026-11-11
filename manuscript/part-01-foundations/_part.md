@@ -20,14 +20,14 @@ Part I provides the conceptual foundation for answering them. It distinguishes t
 | Chapter | Question to answer | Engineering result |
 |---|---|---|
 | **1. Why Enterprise Agentic AI Needs Engineering** | What is the enterprise system responsible for beyond producing a plausible answer? | A first-cut delegation boundary and assurance questions |
-| **2. Historical Foundations** | Which proven mechanisms should be inherited rather than reinvented? | A mapping from old disciplines to modern agent controls |
-| **3. Goals, Decisions, and Delegated Work** | What is a business goal, and who can authorize a consequential step? | A goal-to-action and decision-rights map |
+| **2. A History of Automation, AI, and Enterprise Systems** | Which proven mechanisms should be inherited rather than reinvented? | A mapping from old disciplines to modern agent controls |
+| **3. Enterprise Processes, Goals, and Bounded Autonomy** | What is a business goal, and who can authorize a consequential step? | A goal-to-action and decision-rights map |
 | **4. What an Agent Is—and Is Not** | When is behavior agentic, and when is it ordinary automation? | A defensible system classification |
-| **5. Value, Economics, and Lifecycle Cost** | Where does adaptability create enough value to justify complexity? | A benefit-and-total-cost comparison |
+| **5. Business Cases, Value, and Lifecycle Economics** | Where does adaptability create enough value to justify complexity? | A benefit-and-total-cost comparison |
 | **6. Uncertainty, Authority, and Enterprise Trust** | How do uncertainty and permission affect a design? | Explicit authority and uncertainty controls |
-| **7. Requirements and Engineering Commitments** | What must be specified before architecture and implementation? | Measurable requirements and evidence obligations |
+| **7. Engineering Principles and Requirements** | What must be specified before architecture and implementation? | Measurable requirements and evidence obligations |
 
-Chapters 3–7 are planned components of this progression, not yet completed chapters. The chapter descriptions are the intended learning contract; they are not claims that their substantive material is already written.
+Chapters 1–4 contain substantive draft material; Chapters 5–7 remain planned. The learning path states each chapter's editorial responsibility, not a claim that later draft chapters have already passed publication review.
 
 ## One case, progressively richer decisions
 

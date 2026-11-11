@@ -19,12 +19,19 @@ This is the curated starting bibliography for the completed foundational chapter
 - Schick, Timo, et al. “Toolformer: Language Models Can Teach Themselves to Use Tools.” *Advances in Neural Information Processing Systems* (2023). https://arxiv.org/abs/2302.04761
 - Yao, Shunyu, et al. “ReAct: Synergizing Reasoning and Acting in Language Models.” *International Conference on Learning Representations* (2023). https://arxiv.org/abs/2210.03629
 
+- Anthropic Engineering. “Building Effective Agents.” December 19, 2024. https://www.anthropic.com/research/building-effective-agents (Vendor engineering guidance.)
+- OpenAI. *A Practical Guide to Building Agents*. January 15, 2026. https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf (Vendor engineering guide.)
+- Yao, Shunyu, Noah Shinn, Pedram Razavi, and Karthik Narasimhan. “τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains.” arXiv:2406.12045, 2024. https://arxiv.org/abs/2406.12045
+
 ## Governance and assurance
 
 - International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 42001:2023 — Information Technology — Artificial Intelligence — Management System*. 2023.
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1, 2023. https://doi.org/10.6028/NIST.AI.100-1
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1, 2024. https://doi.org/10.6028/NIST.AI.600-1
 - OWASP Foundation. *OWASP GenAI Security Project*. Living resource; version must be pinned before final publication. https://genai.owasp.org/
+
+- OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. December 9, 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+- Model Context Protocol. “The 2026-07-28 Specification.” July 28, 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28/
 
 ## Business processes, requirements, and human–automation interaction
 

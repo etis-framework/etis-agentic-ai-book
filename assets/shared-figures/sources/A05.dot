@@ -1,0 +1,22 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Admission" [label="C01 Admitted workflow"];
+"Owner" [label="Workflow owner + lease / epoch"];
+"Planner" [label="Deterministic state machine"];
+"Registry" [label="Approved agent definitions"];
+"Dispatch" [label="Bounded task dispatch"];
+"Workers" [label="E3 Agent instances"];
+"Store" [label="E7 Checkpoint + task journal"];
+"Recovery" [label="Reaper / recovery coordinator"];
+"Admission" -> "Owner" [label=""];
+"Owner" -> "Planner" [label=""];
+"Registry" -> "Dispatch" [label="approved version"];
+"Planner" -> "Dispatch" [label="C02"];
+"Dispatch" -> "Workers" [label="task + scope"];
+"Owner" -> "Store" [label="fenced state"];
+"Planner" -> "Store" [label="durable transition"];
+"Recovery" -> "Store" [label="inspect"];
+"Recovery" -> "Owner" [label="claim new epoch"];
+}

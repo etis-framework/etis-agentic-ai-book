@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e9f5ec", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Task" [label="Admitted bounded task"];
+"Reason" [label="E3 Reason + propose read"];
+"Scope" [label="E4 Scope + provenance"];
+"Read" [label="E6 Read-only tool"];
+"Observe" [label="E3 Observe / evaluate"];
+"Answer" [label="Typed advisory output"];
+"Task" -> "Reason" [label=""];
+"Reason" -> "Scope" [label="C03"];
+"Scope" -> "Read" [label="authorized read"];
+"Read" -> "Observe" [label="tool result"];
+"Observe" -> "Reason" [label="bounded iteration"];
+"Observe" -> "Answer" [label="stop condition"];
+}

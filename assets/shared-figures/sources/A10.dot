@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"ZoneA" [label="Zone A coordinator + workers"];
+"ZoneB" [label="Zone B standby / failover"];
+"State" [label="Durable E7 store + epochs"];
+"Outbox" [label="Operation outbox / journal"];
+"Reconcile" [label="Independent reconciler"];
+"Provider" [label="E8 Provider truth"];
+"Alert" [label="E9 SLO / incident control"];
+"ZoneA" -> "State" [label="fenced"];
+"ZoneB" -> "State" [label="fenced takeover"];
+"State" -> "Outbox" [label="pending intents"];
+"Outbox" -> "Reconcile" [label="unknown effects"];
+"Reconcile" -> "Provider" [label="status query"];
+"Reconcile" -> "State" [label="verified outcome"];
+"State" -> "Alert" [label="stuck operations"];
+}

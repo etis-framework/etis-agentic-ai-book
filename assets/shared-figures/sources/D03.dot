@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#fff2df", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Choice" [label="Coordination requirement"];
+"Det" [label="Deterministic orchestrator"];
+"Supervisor" [label="Reasoning supervisor + workers"];
+"Peer" [label="Peer / event choreography"];
+"Authority" [label="E5 Trusted effect boundary"];
+"State" [label="E7 Durable workflow state"];
+"Choice" -> "Det" [label="default consequential"];
+"Choice" -> "Supervisor" [label="dynamic decomposition"];
+"Choice" -> "Peer" [label="low coupling only"];
+"Det" -> "State" [label="single logical owner"];
+"Supervisor" -> "State" [label="persist delegation"];
+"Peer" -> "State" [label="explicit ownership"];
+"Det" -> "Authority" [label=""];
+"Supervisor" -> "Authority" [label=""];
+"Peer" -> "Authority" [label=""];
+}

@@ -1,0 +1,6 @@
+V12 correction QA
+Reference: Figure 2.3 (900 x 700 SVG; 1800 x 1400 PNG).
+Changes: F02-04 and F03-01 through F03-04 redesigned; Chapter 3 YAML long inline lists converted to indented multiline lists for readable code wrapping.
+Checks: make check PASS; make book-docx PASS; built figure reference check PASS.
+Visual: all six figures compared in contact sheet; Chapter 3 font/space improvements visible, but final Word print-page review is NOT certified.
+Remaining: Word page-level verification at actual 7x10 trim and effective printed font-size measurement; do not call this final QA PASS.

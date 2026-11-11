@@ -1,0 +1,25 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"E1" [label="E1 Engagement + admission"];
+"E2" [label="E2 Coordination + control"];
+"E3" [label="E3 Agent reasoning"];
+"E4" [label="E4 Context + knowledge"];
+"E5" [label="E5 Trusted execution"];
+"E6" [label="E6 Enterprise integration"];
+"E7" [label="E7 Durable operational state"];
+"E8" [label="E8 Business systems of record"];
+"E9" [label="E9 Governance + assurance"];
+"E1" -> "E2" [label="C01"];
+"E2" -> "E3" [label="C02"];
+"E3" -> "E4" [label="C03"];
+"E3" -> "E5" [label="C04 proposal"];
+"E5" -> "E6" [label="C07 constrained"];
+"E6" -> "E8" [label="C07 provider"];
+"E5" -> "E7" [label="C06 intent"];
+"E2" -> "E7" [label="workflow state"];
+"E7" -> "E8" [label="C08 reconcile"];
+"E9" -> "E5" [label="C05 policy"];
+"E3" -> "E9" [label="C09 evidence"];
+}

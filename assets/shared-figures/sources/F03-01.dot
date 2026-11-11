@@ -1,0 +1,11 @@
+digraph G {
+graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,outputorder=edgesfirst,rankdir=TB]; node [shape=box,style="rounded,filled",color="#9eb7c0",fillcolor="#eef4f6",fontcolor="#203c4d",fontname="Arial",fontsize=23,penwidth=1.5,margin="0.22,0.16"]; edge [color="#54748a",penwidth=1.8,arrowsize=0.8];
+
+ outcome [label="BUSINESS OUTCOME\nResolve the customer complaint",fillcolor="#dcecf3"];
+ process [label="ACCOUNTABLE PROCESS\nOwn case, rules and escalation"];
+ task [label="DELEGATED TASK\nGather evidence and propose remedy",fillcolor="#e8f1e6"];
+ decision [label="TRUSTED DECISION\nValidate authority and approve action",fillcolor="#fff0ce",penwidth=2.2];
+ effect [label="VERIFIED EFFECT\nConfirm outcome or reconcile unknown",fillcolor="#e8f1e6"];
+ outcome->process->task->decision->effect;
+
+}

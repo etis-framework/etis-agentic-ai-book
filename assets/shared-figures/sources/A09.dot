@@ -1,0 +1,21 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Clients" [label="User / app channels"];
+"Ingress" [label="Cloud or on-prem ingress E1"];
+"Control" [label="Durable control E2/E7"];
+"Agents" [label="Elastic agents E3/E4"];
+"Gate" [label="Isolated trusted execution E5"];
+"Adapters" [label="Integration boundary E6"];
+"Systems" [label="On-prem / SaaS / providers E8"];
+"Ops" [label="Cross-region governance E9"];
+"Clients" -> "Ingress" [label=""];
+"Ingress" -> "Control" [label=""];
+"Control" -> "Agents" [label="bounded work"];
+"Agents" -> "Gate" [label="proposals"];
+"Gate" -> "Adapters" [label="authorized"];
+"Adapters" -> "Systems" [label="private / external"];
+"Control" -> "Ops" [label="telemetry"];
+"Gate" -> "Ops" [label="audit"];
+}

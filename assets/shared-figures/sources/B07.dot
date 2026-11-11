@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e9f5ec", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Specify" [label="Define behavior + invariants"];
+"Evaluate" [label="Functional / adversarial evaluation"];
+"Approve" [label="Risk and owner approval"];
+"Canary" [label="Canary / progressive release"];
+"Observe" [label="Observe effects + drift"];
+"Contain" [label="Quarantine / rollback software"];
+"Learn" [label="Postincident governed change"];
+"Specify" -> "Evaluate" [label=""];
+"Evaluate" -> "Approve" [label="pass"];
+"Approve" -> "Canary" [label=""];
+"Canary" -> "Observe" [label=""];
+"Observe" -> "Contain" [label="breach"];
+"Contain" -> "Learn" [label=""];
+"Learn" -> "Specify" [label="new version"];
+}

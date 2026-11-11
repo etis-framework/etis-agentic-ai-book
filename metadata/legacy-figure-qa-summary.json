@@ -1,0 +1,134 @@
+[
+  {
+    "id": "A01",
+    "min_svg_font_px": 14.0,
+    "text_elements": 26,
+    "typography": "PASS"
+  },
+  {
+    "id": "A02",
+    "min_svg_font_px": 14.0,
+    "text_elements": 27,
+    "typography": "PASS"
+  },
+  {
+    "id": "A03",
+    "min_svg_font_px": 14.0,
+    "text_elements": 40,
+    "typography": "PASS"
+  },
+  {
+    "id": "A04",
+    "min_svg_font_px": 14.0,
+    "text_elements": 27,
+    "typography": "PASS"
+  },
+  {
+    "id": "A05",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "A06",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "A07",
+    "min_svg_font_px": 14.0,
+    "text_elements": 31,
+    "typography": "PASS"
+  },
+  {
+    "id": "A08",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "A09",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "A10",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "A11",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "B01",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "B02",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "B03",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "B04",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "B05",
+    "min_svg_font_px": 14.0,
+    "text_elements": 24,
+    "typography": "PASS"
+  },
+  {
+    "id": "B06",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "B07",
+    "min_svg_font_px": 14.0,
+    "text_elements": 19,
+    "typography": "PASS"
+  },
+  {
+    "id": "D01",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "D02",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "D03",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  },
+  {
+    "id": "D04",
+    "min_svg_font_px": 14.0,
+    "text_elements": 29,
+    "typography": "PASS"
+  }
+]

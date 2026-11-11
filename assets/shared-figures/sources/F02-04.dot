@@ -1,0 +1,14 @@
+digraph G {
+graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,outputorder=edgesfirst,rankdir=TB]; node [shape=box,style="rounded,filled",color="#9eb7c0",fillcolor="#eef4f6",fontcolor="#203c4d",fontname="Arial",fontsize=23,penwidth=1.5,margin="0.22,0.16"]; edge [color="#54748a",penwidth=1.8,arrowsize=0.8];
+
+ workflow [label="DURABLE CASE OWNER\nTracks request, status and escalation",fillcolor="#dcecf3"];
+ reasoning [label="BOUNDED AI\nInvestigates and proposes; cannot pay",fillcolor="#e8f1e6"];
+ control [label="TRUSTED EXECUTION\nChecks authority and persists operation ID",fillcolor="#fff0ce",penwidth=2.2];
+ adapter [label="PAYMENT ADAPTER\nDispatches request; queries provider"];
+ provider [label="SYSTEM OF RECORD\nConfirms actual payment outcome",fillcolor="#e8f1e6"];
+ unknown [label="UNKNOWN OUTCOME\nReconcile before retry or closure",fillcolor="#f8e8e5"];
+ workflow->reasoning->control->adapter->provider;
+ adapter->unknown [style=dashed];
+ {rank=same;provider;unknown;} provider->unknown [style=invis];
+
+}

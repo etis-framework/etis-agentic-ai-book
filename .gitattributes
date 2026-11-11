@@ -1,0 +1,17 @@
+# Consistent cross-platform text handling
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.svg text eol=lf
+*.sh text eol=lf
+
+# Binary artwork and office documents
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.docx binary
+*.zip binary
+*.gz binary

@@ -1,0 +1,21 @@
+# Generated manuscripts and publication output: never commit dist contents
+/dist/
+
+# macOS metadata and archive resource forks
+.DS_Store
+._*
+.AppleDouble/
+
+# Python build/cache files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Temporary build and editor files
+*.aux
+*.log
+*.tmp
+*.swp
+*~

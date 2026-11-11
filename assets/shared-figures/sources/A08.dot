@@ -1,0 +1,21 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Gate" [label="E5 Authorized effect"];
+"Adapter" [label="E6 Protocol adapter"];
+"Gateway" [label="E6 API / tool gateway"];
+"Idem" [label="Provider idempotency contract"];
+"Query" [label="Status / reconciliation query"];
+"Payment" [label="E8 Payment / refund provider"];
+"Customer" [label="E8 Customer / account records"];
+"Evidence" [label="E9 Integration telemetry"];
+"Gate" -> "Adapter" [label="C07"];
+"Adapter" -> "Gateway" [label=""];
+"Gateway" -> "Idem" [label="stable key"];
+"Idem" -> "Payment" [label="effect"];
+"Gateway" -> "Query" [label="status"];
+"Query" -> "Payment" [label="authoritative result"];
+"Gateway" -> "Customer" [label="read"];
+"Gateway" -> "Evidence" [label="trace"];
+}

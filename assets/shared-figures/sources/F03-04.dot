@@ -1,0 +1,16 @@
+digraph G {
+graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,outputorder=edgesfirst,rankdir=TB]; node [shape=box,style="rounded,filled",color="#9eb7c0",fillcolor="#eef4f6",fontcolor="#203c4d",fontname="Arial",fontsize=23,penwidth=1.5,margin="0.22,0.16"]; edge [color="#54748a",penwidth=1.8,arrowsize=0.8];
+
+ node [shape=plain,margin=0];
+ options [label=<<TABLE BORDER="1" COLOR="#9eb7c0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="13">
+ <TR><TD COLSPAN="2" BGCOLOR="#dcecf3"><B>Choose an approach to the refund case</B></TD></TR>
+ <TR><TD ALIGN="LEFT"><B>Deterministic</B></TD><TD ALIGN="LEFT">Rules select remedy</TD></TR>
+ <TR><TD ALIGN="LEFT"><B>Advisory AI</B></TD><TD ALIGN="LEFT">AI proposes; person decides</TD></TR>
+ <TR><TD ALIGN="LEFT"><B>Bounded agent</B></TD><TD ALIGN="LEFT">AI investigates; policy decides</TD></TR>
+ </TABLE>>];
+ node [shape=box,style="rounded,filled",margin="0.22,0.16"];
+ gate [label="SAME TRUSTED EXECUTION CONTROLS\nIndependent authority · durable operation ID\nReconcile uncertain provider outcomes",fillcolor="#fff0ce",penwidth=2.2];
+ verified [label="VERIFIED PAYMENT OUTCOME",fillcolor="#e8f1e6"];
+ options->gate->verified;
+
+}

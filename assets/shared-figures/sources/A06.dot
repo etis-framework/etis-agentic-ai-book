@@ -1,0 +1,20 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Query" [label="C03 Scoped context request"];
+"Guard" [label="Identity + classification filters"];
+"Retrieve" [label="Retriever + provenance"];
+"Knowledge" [label="Versioned enterprise knowledge"];
+"Memory" [label="Working / episodic memory"];
+"Response" [label="Cited context + freshness"];
+"Workflow" [label="E7 Workflow and ledger state"];
+"Truth" [label="E8 Business system of record"];
+"Query" -> "Guard" [label=""];
+"Guard" -> "Retrieve" [label="authorized"];
+"Knowledge" -> "Retrieve" [label="source"];
+"Memory" -> "Retrieve" [label="bounded"];
+"Retrieve" -> "Response" [label=""];
+"Workflow" -> "Response" [label="state reference only"];
+"Truth" -> "Response" [label="authoritative query"];
+}

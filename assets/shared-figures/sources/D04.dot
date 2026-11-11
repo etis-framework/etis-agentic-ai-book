@@ -1,0 +1,16 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#fff2df", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Baseline" [label="Deterministic baseline"];
+"Single" [label="Bounded single agent"];
+"Multi" [label="Coordinated multiagent"];
+"Metric" [label="Cost per acceptably completed workflow"];
+"Loss" [label="Expected error + recovery loss"];
+"Choice" [label="Choose minimum sufficient complexity"];
+"Baseline" -> "Metric" [label="measure"];
+"Single" -> "Metric" [label="measure"];
+"Multi" -> "Metric" [label="measure"];
+"Loss" -> "Metric" [label="include"];
+"Metric" -> "Choice" [label="compare"];
+}

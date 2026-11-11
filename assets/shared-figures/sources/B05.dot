@@ -1,0 +1,18 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e9f5ec", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Persist" [label="Persist operation K"];
+"Send" [label="Send K to provider"];
+"Commit" [label="Provider commits refund"];
+"Lost" [label="ACK lost + coordinator crash"];
+"Recover" [label="New owner sees UNKNOWN"];
+"Query" [label="Query provider by K"];
+"Finalize" [label="Record confirmed; do not resend"];
+"Persist" -> "Send" [label=""];
+"Send" -> "Commit" [label=""];
+"Commit" -> "Lost" [label=""];
+"Lost" -> "Recover" [label=""];
+"Recover" -> "Query" [label=""];
+"Query" -> "Finalize" [label="confirmed"];
+}

@@ -1,0 +1,21 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Owners" [label="Business / technical owners"];
+"Policy" [label="Policy lifecycle + exceptions"];
+"Eval" [label="Model/agent/tool evaluations"];
+"Release" [label="Versioned release + canary"];
+"Monitor" [label="SLOs / drift / security"];
+"Incident" [label="Incident + containment"];
+"Evidence" [label="Audit / decision evidence"];
+"Cost" [label="Cost and risk accounting"];
+"Owners" -> "Policy" [label="accountability"];
+"Policy" -> "Eval" [label="criteria"];
+"Eval" -> "Release" [label="gated"];
+"Release" -> "Monitor" [label="telemetry"];
+"Monitor" -> "Incident" [label="threshold"];
+"Incident" -> "Evidence" [label="record"];
+"Monitor" -> "Cost" [label="outcomes"];
+"Release" -> "Evidence" [label="versions"];
+}

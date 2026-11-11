@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e9f5ec", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Old" [label="Coordinator A epoch 41"];
+"Crash" [label="Lease expires / partition"];
+"New" [label="Coordinator B epoch 42"];
+"State" [label="E7 Reject stale epoch writes"];
+"Effect" [label="E5 Reject stale dispatch authority"];
+"Continue" [label="B resumes from checkpoint"];
+"Old" -> "Crash" [label=""];
+"Crash" -> "New" [label="claim"];
+"Old" -> "State" [label="stale write denied"];
+"Old" -> "Effect" [label="stale command denied"];
+"New" -> "State" [label="epoch 42"];
+"New" -> "Continue" [label="resume"];
+}

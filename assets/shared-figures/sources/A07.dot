@@ -1,0 +1,24 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Proposal" [label="C04 Typed action proposal"];
+"Identity" [label="Delegated identity validation"];
+"Policy" [label="C05 Policy + risk decision"];
+"Approval" [label="Human approval verifier"];
+"Precond" [label="Business precondition check"];
+"Ledger" [label="C06 E7 Durable intent / unique key"];
+"Dispatch" [label="C07 Constrained effect dispatch"];
+"Outcome" [label="Confirmed / denied / UNKNOWN"];
+"Evidence" [label="E9 Decision + effect evidence"];
+"Proposal" -> "Identity" [label=""];
+"Identity" -> "Policy" [label=""];
+"Policy" -> "Approval" [label="if required"];
+"Approval" -> "Precond" [label="authorized"];
+"Policy" -> "Precond" [label="no approval needed"];
+"Precond" -> "Ledger" [label="commit intent first"];
+"Ledger" -> "Dispatch" [label="stable operation ID"];
+"Dispatch" -> "Outcome" [label="provider result"];
+"Outcome" -> "Evidence" [label=""];
+"Policy" -> "Evidence" [label="decision"];
+}

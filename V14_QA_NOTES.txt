@@ -1,0 +1,1 @@
+V14: corrected arrow routing. Intermediate orthogonal segments are plain lines; arrowheads occur only at terminal destinations. Figure 3.3 uses a common decision bus with three terminal arrows. Figure 3.4 uses a single merged bus with one arrow into trusted boundary. Checked rendered figure previews and make check/book-docx. Apply on top of V13.

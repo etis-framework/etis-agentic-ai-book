@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#fff2df", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Bounded" [label="Profile A: bounded advisory"];
+"Controlled" [label="Profile B: scoped enterprise context"];
+"Trusted" [label="Profile C: trusted effects + ledger"];
+"Durable" [label="Profile D: durable coordination"];
+"Distributed" [label="Profile E: distributed recovery"];
+"Bounded" -> "Controlled" [label="identity + provenance"];
+"Controlled" -> "Trusted" [label="policy + approval"];
+"Trusted" -> "Durable" [label="checkpoints + epochs"];
+"Durable" -> "Distributed" [label="failover + reconciliation"];
+}

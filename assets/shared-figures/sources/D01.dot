@@ -1,0 +1,17 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#fff2df", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Goal" [label="Business requirement"];
+"Stable" [label="Stable rules and inputs"];
+"Det" [label="Deterministic workflow"];
+"Variable" [label="Unstructured / ambiguous work"];
+"Agent" [label="Bounded reasoning agent"];
+"Gate" [label="Evidence + authorization gate"];
+"Goal" -> "Stable" [label="if predictable"];
+"Stable" -> "Det" [label="prefer"];
+"Goal" -> "Variable" [label="if uncertain"];
+"Variable" -> "Agent" [label="evaluate"];
+"Agent" -> "Gate" [label="before effects"];
+"Det" -> "Gate" [label="when consequential"];
+}

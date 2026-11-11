@@ -1,0 +1,21 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Caller" [label="B1 Caller / tenant identity"];
+"Admission" [label="E1 AuthN + workflow scope"];
+"Work" [label="B2 Bounded task identity"];
+"Reason" [label="E3 Untrusted proposals"];
+"Gate" [label="B3 E5 Independent enforcement"];
+"Adapter" [label="B4 E6 Provider credentials"];
+"Truth" [label="B5 E8 Business truth"];
+"Audit" [label="E9 Immutable / governed evidence"];
+"Caller" -> "Admission" [label="authenticated"];
+"Admission" -> "Work" [label="delegated scope"];
+"Work" -> "Reason" [label="bounded"];
+"Reason" -> "Gate" [label="proposal ≠ authority"];
+"Gate" -> "Adapter" [label="authorized command"];
+"Adapter" -> "Truth" [label="effect / query"];
+"Gate" -> "Audit" [label="decision evidence"];
+"Adapter" -> "Audit" [label="effect evidence"];
+}

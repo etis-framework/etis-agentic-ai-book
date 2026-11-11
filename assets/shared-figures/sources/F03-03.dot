@@ -1,0 +1,14 @@
+digraph G {
+graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,outputorder=edgesfirst,rankdir=TB]; node [shape=box,style="rounded,filled",color="#9eb7c0",fillcolor="#eef4f6",fontcolor="#203c4d",fontname="Arial",fontsize=23,penwidth=1.5,margin="0.22,0.16"]; edge [color="#54748a",penwidth=1.8,arrowsize=0.8];
+
+ envelope [label="DELEGATION ENVELOPE\nIdentity · purpose · scope · expiry",fillcolor="#dcecf3"];
+ investigate [label="BOUNDED INVESTIGATION\nRetrieve permitted evidence; propose"];
+ gate [label="INDEPENDENT AUTHORIZATION\nCheck policy, approval and operation ID",fillcolor="#fff0ce",penwidth=2.2];
+ allowed [label="AUTHORIZED\nPersist intent; execute; reconcile",fillcolor="#e8f1e6"];
+ blocked [label="DENIED OR UNCERTAIN\nHold; escalate; preserve evidence",fillcolor="#f8e8e5"];
+ envelope->investigate->gate;
+ gate->allowed [label="PERMIT",fontsize=23,fontname="Arial"];
+ gate->blocked [label="HOLD",fontsize=23,fontname="Arial"];
+ {rank=same;allowed;blocked;}
+
+}

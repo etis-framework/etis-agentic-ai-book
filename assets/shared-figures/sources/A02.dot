@@ -1,0 +1,19 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.18", nodesep="0.34", ranksep="0.62", splines=polyline, fontname="DejaVu Sans", outputorder=edgesfirst];
+node [shape=box, style="rounded,filled", color="#64748b", penwidth=1.25, fontname="DejaVu Sans", fontsize=15, margin="0.22,0.17", fillcolor="#e7f0fb", fontcolor="#172b45"];
+edge [color="#64748b", arrowsize=0.7, penwidth=1.15, fontname="DejaVu Sans", fontsize=10, fontcolor="#334155"];
+"Input" [label="Task + bounded context"];
+"Perceive" [label="Perception / normalization"];
+"Reason" [label="Reason / plan / evaluate"];
+"Proposal" [label="Typed proposal + evidence"];
+"Model" [label="Model / rules / algorithms"];
+"Memory" [label="Scoped working memory"];
+"Tools" [label="Read-only tool results"];
+"Input" -> "Perceive" [label=""];
+"Perceive" -> "Reason" [label=""];
+"Model" -> "Reason" [label="bounded inference"];
+"Memory" -> "Reason" [label="context"];
+"Tools" -> "Perceive" [label="observations"];
+"Reason" -> "Proposal" [label=""];
+"Proposal" -> "Perceive" [label="feedback (bounded)"];
+}

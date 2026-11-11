@@ -1,0 +1,13 @@
+digraph G {
+graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,outputorder=edgesfirst,rankdir=TB]; node [shape=box,style="rounded,filled",color="#9eb7c0",fillcolor="#eef4f6",fontcolor="#203c4d",fontname="Arial",fontsize=23,penwidth=1.5,margin="0.22,0.16"]; edge [color="#54748a",penwidth=1.8,arrowsize=0.8];
+
+ node [shape=plain,margin=0];
+ allocation [label=<<TABLE BORDER="1" COLOR="#9eb7c0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="14">
+ <TR><TD BGCOLOR="#dcecf3"><B>Process responsibility</B></TD><TD BGCOLOR="#dcecf3"><B>Possible allocation</B></TD></TR>
+ <TR><TD ALIGN="LEFT">Acquire information</TD><TD ALIGN="LEFT">Automated retrieval</TD></TR>
+ <TR><TD ALIGN="LEFT">Analyze evidence</TD><TD ALIGN="LEFT">Model-assisted summary</TD></TR>
+ <TR><TD ALIGN="LEFT">Select remedy</TD><TD ALIGN="LEFT">Human or approved rules</TD></TR>
+ <TR><TD ALIGN="LEFT">Implement action</TD><TD ALIGN="LEFT">Trusted execution service</TD></TR>
+ </TABLE>>];
+
+}

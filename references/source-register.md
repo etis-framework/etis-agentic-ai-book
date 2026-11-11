@@ -93,3 +93,10 @@ No new bibliographic identities were required: each source cited in Chapter 4 al
 | `mcp_2026` | §4.6: protocol capability versus business authority | July 2026 release summary; transport security ≠ refund entitlement |
 
 Check future Ch12/13/19/29/31 references for controlled reuse. Exact page-level source certification remains a publication gate.
+
+## Chapter 5 — business value and lifecycle economics
+
+- NIST AI RMF 1.0 (2023), MAP 3: benchmarked benefits, costs, operating scope and oversight; used in §§5.1 and 5.7, not as a claim of measured results.
+- FinOps Foundation Framework 2025 and Unit Economics capability: connect technology expense and fully loaded cost to business unit outcomes; used in §§5.3–5.4 and 5.8.
+- Bass, Clements and Kazman (2021): architecture tradeoff discipline; Kleppmann (2017), Gray and Reuter (1992): distributed execution and transactional risks.
+- Scenario assumptions in §5.5, economic equation, figures F05-01/F05-02, and acceptance criteria are original ETIS examples; not externally validated performance or vendor costs.

@@ -27,7 +27,7 @@ Part I provides the conceptual foundation for answering them. It distinguishes t
 | **6. Uncertainty, Authority, and Enterprise Trust** | How do uncertainty and permission affect a design? | Explicit authority and uncertainty controls |
 | **7. Engineering Principles and Requirements** | What must be specified before architecture and implementation? | Measurable requirements and evidence obligations |
 
-Chapters 1–4 contain substantive draft material; Chapters 5–7 remain planned. The learning path states each chapter's editorial responsibility, not a claim that later draft chapters have already passed publication review.
+Chapters 1–5 contain substantive draft material; Chapters 6–7 remain planned. The learning path states each chapter's editorial responsibility, not a claim that later draft chapters have already passed publication review.
 
 ## One case, progressively richer decisions
 

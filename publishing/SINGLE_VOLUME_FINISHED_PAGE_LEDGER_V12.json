@@ -1,0 +1,81 @@
+{
+  "version": "V12",
+  "format": "single bound 7x10 inch",
+  "target_finished_pages": 550,
+  "chapter_total_pages": 485,
+  "front_back_reserve_pages": 65,
+  "supporting_pages": {
+    "preliminaries": 12,
+    "part_introductions": 17,
+    "appendices": 6,
+    "glossary": 5,
+    "bibliography": 10,
+    "index": 13,
+    "author_publication": 2
+  },
+  "chapter_pages": {
+    "1": 15,
+    "2": 18,
+    "3": 15,
+    "4": 12,
+    "5": 11,
+    "6": 12,
+    "7": 12,
+    "8": 12,
+    "9": 13,
+    "10": 14,
+    "11": 14,
+    "12": 14,
+    "13": 15,
+    "14": 14,
+    "15": 14,
+    "16": 13,
+    "17": 12,
+    "18": 12,
+    "19": 13,
+    "20": 13,
+    "21": 12,
+    "22": 14,
+    "23": 14,
+    "24": 14,
+    "25": 15,
+    "26": 14,
+    "27": 14,
+    "28": 17,
+    "29": 15,
+    "30": 16,
+    "31": 15,
+    "32": 13,
+    "33": 13,
+    "34": 12,
+    "35": 10,
+    "36": 9
+  },
+  "part_pages": {
+    "I": 95,
+    "II": 123,
+    "III": 62,
+    "IV": 85,
+    "V": 63,
+    "VI": 38,
+    "VII": 19
+  },
+  "policy": {
+    "preferred_max": 575,
+    "planning_limit": 600,
+    "absolute_max": 700,
+    "underruns_are_contingency": true,
+    "overrun_requires_compensating_allocation": true,
+    "review_gates_after_chapters": [
+      16,
+      27,
+      31
+    ]
+  },
+  "notes": [
+    "Finished-page allocations are planning ceilings, not minimum word or page targets. Under target is better.",
+    "Measured actual chapter pagination must come from an integrated 7x10 rendered manuscript and should include all chapter figures, tables, exercises and layout whitespace.",
+    "Supporting pages include seven part introductions; do not count them twice.",
+    "Never describe word counts or placeholder-filled DOCX page counts as measured completed chapter pagination."
+  ]
+}

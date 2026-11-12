@@ -30,7 +30,7 @@ Figure 8.1 is a logical responsibility view. It does not give the AI payment cre
 
 ![Figure 8.1 — Alternative investigation designs produce non-authoritative evidence or proposals; independently controlled authorization and durable intent precede any external financial effect.](assets/shared-figures/rendered/F08-01.png){#fig:f08-01 width=5.75in}
 
-The diagram's separation is not cosmetic. A normal read-only case tool should not offer a hidden write parameter; a model-selected tool name must not map to a privileged payment endpoint; and a workflow approval must not substitute for revalidation at effect time. A deployment that places E3 and E5 in the same process still needs credential isolation, separate code-level entry points, and independently tested authorization.
+The diagram's separation is not cosmetic. A read-only case tool must not hide a write parameter, and a model-selected name must not map to a privileged payment endpoint. **The agent cannot hold the provider payment key or reach an unguarded payment door**; even a valid service credential must not become refund authority. A workflow approval does not replace effect-time authorization. Deployments sharing a process still need credential isolation, protected entry points, and tested bypass denials. Chapter 13 makes those controls concrete.
 
 
 The architecture distinguishes **observing** a case, **proposing** a decision, **authorizing** an effect, **recording** intent, and **observing** the effect's outcome. Those are different kinds of state. A model's explanation cannot convert one into another. The architecture must also keep the external provider's report separate from the enterprise's own authoritative case and operation records.

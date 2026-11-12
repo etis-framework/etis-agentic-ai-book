@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="4.363in" viewBox="0 0 1140 865">
+<rect width="1140" height="865" fill="white"/>
+<text x="570" y="43" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="bold" fill="#17314B">ONE REFERENCE ARCHITECTURE, DEPLOYED</text>
+<text x="570" y="76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#17314B">Logical E1-E9 responsibilities across protection zones</text>
+<rect x="18" y="112" width="150" height="625" rx="10" fill="#E9F2F9" stroke="#203958" stroke-width="3"/>
+<text x="93" y="156" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="bold" fill="#17314B">E7</text>
+<text x="93" y="189" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">DURABLE</text>
+<text x="93" y="217" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">STATE</text>
+<text x="93" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Versioned</text>
+<text x="93" y="324" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">workflow</text>
+<text x="93" y="388" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Lease +</text>
+<text x="93" y="418" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">epoch</text>
+<text x="93" y="485" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Outbox</text>
+<text x="93" y="515" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">journal</text>
+<rect x="972" y="112" width="150" height="625" rx="10" fill="#F1F4F7" stroke="#203958" stroke-width="3"/>
+<text x="1047" y="156" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="29" font-weight="bold" fill="#17314B">E9</text>
+<text x="1047" y="189" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="19" font-weight="bold" fill="#17314B">ASSURANCE</text>
+<text x="1047" y="294" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Evidence</text>
+<text x="1047" y="388" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Denials</text>
+<text x="1047" y="485" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Alerts</text>
+<text x="1047" y="577" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Holds</text>
+<rect x="192" y="114" width="756" height="94" rx="10" fill="#E9F2F9" stroke="#203958" stroke-width="3"/>
+<text x="570" y="149" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#17314B">ZONE 1 · ENTERPRISE ADMISSION</text>
+<text x="570" y="181" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="normal" fill="#17314B">E1 · identity, tenant, scope</text>
+<rect x="192" y="235" width="756" height="125" rx="10" fill="#E9F2F9" stroke="#203958" stroke-width="3"/>
+<text x="570" y="271" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#17314B">ZONE 2 · COORDINATION AND ADVISORY WORK</text>
+<text x="570" y="305" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="normal" fill="#17314B">E2 owner  |  E3 proposal  |  E4 governed context</text>
+<text x="570" y="336" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="normal" fill="#17314B">No provider credential or payment route</text>
+<rect x="192" y="392" width="756" height="125" rx="10" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570" y="427" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#17314B">ZONE 3 · INDEPENDENT TRUSTED CONTROL</text>
+<text x="570" y="463" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="normal" fill="#17314B">E5 authorization and credential custody  →  E6 adapter</text>
+<text x="570" y="495" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="normal" fill="#17314B">Protected policy, keys and effect-time checks</text>
+<rect x="192" y="550" width="756" height="125" rx="10" fill="#E7F4EB" stroke="#203958" stroke-width="3"/>
+<text x="570" y="584" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#17314B">ZONE 4 · ENTERPRISE SYSTEMS AND TRUTH</text>
+<text x="570" y="620" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="normal" fill="#17314B">External provider effect  |  E8 fact owners</text>
+<text x="570" y="650" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="normal" fill="#17314B">Reconciliation before business completion</text>
+<polyline points="570,208 570,235" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,235 561,221 579,221"/>
+<polyline points="570,360 570,392" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,392 561,378 579,378"/>
+<polyline points="570,517 570,550" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,550 561,536 579,536"/>
+<text x="570" y="780" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#17314B">Mappings are examples; zones are not mandatory services</text>
+<text x="570" y="819" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">E7 and E9 span all zones · no alternate consequential route</text>
+</svg>

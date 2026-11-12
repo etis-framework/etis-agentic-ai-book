@@ -11,6 +11,7 @@ check:
 	python3 publishing/scripts/check_ch10_acceptance.py
 	python3 publishing/scripts/check_ch11_acceptance.py
 	python3 publishing/scripts/check_ch12_acceptance.py
+	python3 publishing/scripts/check_ch13_acceptance.py
 	python3 publishing/scripts/check_single_volume.py
 	python3 publishing/scripts/check_finished_page_ledger.py
 figures:

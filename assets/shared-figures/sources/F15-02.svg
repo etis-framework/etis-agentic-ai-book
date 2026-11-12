@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="3.783in" viewBox="0 0 1140 750">
+<rect width="1140" height="750" fill="white"/>
+<text x="570" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="bold" fill="#1A304A">Owner replacement requires epoch fencing</text>
+<rect x="45" y="92" width="305" height="101" rx="14" fill="#EAF2FA" stroke="#203958" stroke-width="3"/>
+<text x="197.5" y="134.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">OWNER A</text>
+<text x="197.5" y="166.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Epoch 7</text>
+<rect x="420" y="92" width="300" height="101" rx="14" fill="#F2F5F8" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="134.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">DURABLE STATE</text>
+<text x="570.0" y="166.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Current epoch</text>
+<rect x="790" y="92" width="305" height="101" rx="14" fill="#E5F4EB" stroke="#203958" stroke-width="3"/>
+<text x="942.5" y="134.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">OWNER B</text>
+<text x="942.5" y="166.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Epoch 8</text>
+<polyline points="350,143 420,143" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="420,143 405,134 405,152"/>
+<text x="380" y="124" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1A304A">1</text>
+<rect x="420" y="270" width="300" height="82" rx="14" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="303.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Lease expires</text>
+<text x="570.0" y="335.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">State updated to 8</text>
+<polyline points="570,193 570,270" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,270 561,255 579,255"/>
+<polyline points="720,310 758,310 758,225 940,225 940,193" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="940,193 931,208 949,208"/>
+<text x="775" y="273" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1A304A">2</text>
+<rect x="790" y="430" width="305" height="100" rx="14" fill="#E5F4EB" stroke="#203958" stroke-width="3"/>
+<text x="942.5" y="472.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">B reads committed state</text>
+<text x="942.5" y="504.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">Resumes permitted task</text>
+<polyline points="941,352 941,430" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="941,430 932,415 950,415"/>
+<rect x="45" y="430" width="305" height="100" rx="14" fill="#FBE8E6" stroke="#203958" stroke-width="3"/>
+<text x="197.5" y="472.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">A resumes late</text>
+<text x="197.5" y="504.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">Attempts version write</text>
+<polyline points="198,193 198,430" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="198,430 189,415 207,415"/>
+<polyline points="350,480 420,480" fill="none" stroke="#9E3731" stroke-width="4"/>
+<polygon fill="#9E3731" points="420,480 405,471 405,489"/>
+<rect x="420" y="430" width="300" height="100" rx="14" fill="#FBE8E6" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="472.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">REJECT epoch 7</text>
+<text x="570.0" y="504.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">No stale case update</text>
+<rect x="105" y="640" width="930" height="70" rx="14" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="683.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#1A304A">Provider effects need separate E5/E6 protection; epoch is not a payment key</text>
+</svg>

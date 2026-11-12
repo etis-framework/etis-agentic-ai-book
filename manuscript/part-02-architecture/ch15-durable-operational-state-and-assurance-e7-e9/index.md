@@ -1,23 +1,97 @@
-# Chapter 15 — Durable operational state and assurance (E7/E9)
+# Chapter 15 — Durable Operational State and Assurance (E7/E9)
 
-> **STATUS: PLANNED / NOT DRAFTED.** This stub preserves the approved BP-001 chapter inventory. Do not treat it as manuscript content.
+*Part II: Enterprise Reference Architecture*
+
+> **Engineering proposition:** A recoverable workflow is not one that simply restarts. It is one that can establish what was authorized, what was attempted, what remains unknown, who may act next, and which evidence supports each transition—without repeating a consequential effect.
 
 ## Learning objectives
 
-To be developed from BP-001.
+After this chapter, readers should be able to (1) separate durable workflow state from coordinator memory, event logs, and authoritative external business facts; (2) design a versioned workflow record and fenced state-transition protocol; (3) recover from interrupted workers, coordinator replacement, and uncertain provider outcomes without changing financial-operation identity; (4) distinguish retryable internal work from consequential requests awaiting reconciliation; (5) specify operational observability, evidence retention, and accountable intervention; and (6) verify crash, concurrency, and recovery guarantees with executable failure-injection tests.
 
-## Engineering inheritance
+## 15.1 What persists when a process disappears?
 
-Identify prior engineering patterns relevant to this chapter.
+Chapter 10 established one **logical workflow owner** for a case and a replaceable physical coordinator. Chapter 13 established independent authorization, protected credentials, and the trusted financial operation. Chapter 14 separated an integration attempt from the effect established by authoritative external records. This chapter completes that chain with **durable operational state (E7)**—the authoritative, persistently stored account of what the *workflow* knows and what it is permitted to do next—and **operational assurance (E9)**, the controls and evidence that let operators verify and govern its behavior. E7 is not the payment provider's ledger, and E9 does not substitute a reassuring dashboard for evidence.
 
-## Architecture and alternatives
+For `CASE-204`, the customer reports that a replacement did not arrive and requests a **$500 refund**. **Design A** is the deterministic baseline. **Design B** remains the conditional production candidate: bounded AI evidence synthesis followed by independent review and trusted execution. **Design C** is a separately evaluated, **read-only** investigator. The trusted path may create `RF-1042` only after authorization; no reasoning agent, recovered worker, or coordinator promotes itself into a payment authority. Recovery never invents `RF-1043` to replace an uncertain `RF-1042`.
 
-To be developed.
+A worker can lose a computed recommendation; it may be recomputed if current scope still permits. A coordinator can crash after scheduling dispatch; its successor must reconstruct the pending work. A provider may commit a refund before the local system receives an acknowledgment. These are **different recovery classes**. Treating every missing acknowledgment as “retry the job” creates a duplicate-payment hazard. Figure 15.1 locates the durable decisions and the external truth that E7 must not impersonate.
 
-## Implementation and verification
+![Figure 15.1 — Durable workflow state governs local transitions; trusted execution and authoritative provider evidence remain distinct responsibilities.](assets/shared-figures/rendered/F15-01.png){#fig:f15-01 width=5.75in}
 
-To be developed.
+## 15.2 Design the authoritative workflow record
+
+A **workflow instance** is a persisted execution of the admitted business case through defined stages. Its record should contain stable case identity, tenant and purpose, admitted scope reference and expiry, selected workflow/design version, stage and state version, logical owner and fencing epoch, pending task identities, deadlines and budgets, decision references, evidence and policy versions, an exception owner, and terminal disposition. The **state version** is a monotonically increasing revision used for compare-and-set updates; an **ownership epoch** is the increasing generation of the coordinator's ownership introduced in Chapter 10. They solve different races: the former prevents stale updates to an individual state revision; the latter rejects a former owner after takeover.
+
+Only a trusted state-transition service, backed by a transactional store, commits authoritative changes. A model's conversation, an in-memory queue, a telemetry trace, and a worker's `done` message are *observations*, not the current workflow record. A **state machine** is the declared set of stages and permitted transitions. It is useful precisely because it excludes transitions such as `UNKNOWN → REFUNDED` based only on an assistant's explanation.
+
+| Persisted concern | Example for CASE-204 | Constraint |
+|:--|:--|:--|
+| Identity and scope | `CASE-204`, tenant, scope/version | Revalidate current identity and purpose at protected boundaries |
+| Ownership and stage | Epoch 8, version 42, `WAIT_PROVIDER` | Compare epoch and version atomically before advancing |
+| Task and decision | Proposal reference, reviewer decision | Separate advisory completion from business approval |
+| Consequential operation | `RF-1042`, amount `$500`, original payment | One canonical identity; never mint a second on recovery |
+| Evidence and exception | Provider status reference, `UNKNOWN`, financial owner | Record provenance, uncertainty, deadlines, and intervention |
+
+An **event journal** is an append-only record of accepted domain transitions with timestamps, actors, versions, and evidence references. It supports reconstruction and audit, but an event stream alone is not sufficient unless the architecture defines ordering, integrity, and how the current authoritative state is derived. A **snapshot** is a validated materialized view at a known journal position, used to accelerate recovery. If both exist, define which one is authoritative; a stale snapshot must never override a later committed event. The team need not implement event sourcing where a versioned relational state record and append-only audit history meet the requirements.
+
+An **invariant** is a property every accepted transition must preserve. For this example: no more than one canonical financial operation identity for a particular authorized refund intent; a case update must match the active epoch and expected state version; an approval refers to the same customer, tenant, payment, amount, and policy version as the effect; a terminal refund assertion requires provider evidence; and `UNKNOWN` cannot be normalized to `FAILED` merely to clear a queue. Store sufficient identifiers to enforce these properties, including a unique business-intent key under the correct tenant scope.
+
+## 15.3 Commit decisions and dispatch intents together
+
+A **transactional outbox** is a table of intended messages written within the same local database transaction as the corresponding workflow-state change. It prevents the failure in which a trusted approval commits but the process crashes before registering the work for dispatch. For an authorized `RF-1042`, the trusted service atomically records the authorization reference, canonical operation, and one outbox intent; a dispatcher subsequently claims and attempts delivery. The outbox can be delivered more than once, so its consumer and the provider adapter must enforce operation-identity and parameter consistency.
+
+A **transaction boundary** marks what one database can commit atomically. The local state store cannot ordinarily transact atomically with the external payment provider. Therefore a committed outbox intent proves *the system intended to dispatch*, not that the provider executed anything. Likewise, deleting a queue message does not prove completion. A **dispatch attempt** stores the original operation identity, provider key mapping, request fingerprint, attempt identifier, contract version, start time, and result observation. The provider idempotency key is a deduplication field, **not a credential or authorization token**. Credentials remain under E5 custody; the key's scope, lifetime and replay semantics are governed by the E6 provider contract.
+
+Exactly-once **message delivery** is not the required claim, and exactly-once **financial effect** cannot be inferred from local database transactions. The operational goal is a single authorized business intent and, as supported by verified external guarantees and reconciliation, at most one corresponding financial effect. If the provider cannot substantiate that guarantee, the design needs a human-controlled exception path or different provider capability—not a more optimistic retry loop.
+
+## 15.4 Recovery is a state-based decision, not a restart script
+
+A **recovery controller** is deterministic, trusted orchestration that scans persisted incomplete workflows, obtains ownership under fencing, revalidates current constraints, and selects only transitions permitted by the recorded state and fresh evidence. The controller must be safe to run repeatedly and concurrently. A **lease** is a time-limited claim to the logical owner role; **fencing** rejects writes from an expired owner, even if it resumes after a network partition.
+
+Figure 15.2 shows coordinator A's loss of ownership and B's recovery. A begins at epoch 7. B acquires epoch 8 through the authoritative store. B reconstructs the case from committed state and evidence references; A's late epoch-7 update is rejected. The payment provider does not understand those coordinator epochs. Its refund semantics are protected separately by trusted-operation identity, adapter constraints, provider idempotency, and authoritative reconciliation. A stale coordinator must not be able to reach a provider bypass route merely because a local state write was fenced.
+
+![Figure 15.2 — Recovery fences the former coordinator and reconstructs the next permitted action from durable evidence.](assets/shared-figures/rendered/F15-02.png){#fig:f15-02 width=5.75in}
+
+Recovery begins with **classification**. An incomplete read-only investigation may be reassigned under the current admitted scope, budget, task deduplication and owner epoch. A completed but unaccepted proposal is revalidated against current evidence and policy version rather than copied blindly. A pending human approval waits for an accountable reviewer; it is not silently assumed approved. An authorized outbox intent not yet known to have reached the provider requires a contract-specific dispatch decision. Once an attempt *might* have reached the provider, `UNKNOWN` invokes Chapter 14's reconciliation path. A provider `NOT_FOUND` under eventual consistency is not definitive proof of non-effect.
+
+For an ambiguous `RF-1042`, the recovery controller first preserves the operation hold, original payment linkage, and provider mapping. A trusted reconciler queries authoritative provider records within supported consistency guarantees. It may transition to `CONFIRMED` only with matching effect evidence, or to definitive rejection/non-effect only with provider evidence that rules out a late effect. Otherwise it retains `UNKNOWN`, schedules bounded rechecks with backoff, and escalates by a specified deadline. **Backoff** means increasing delay between bounded rechecks to avoid overloading the provider; it must not defer financially significant exceptions indefinitely. No AI proposal, webhook delivery, or owner replacement may itself authorize another $500 payment.
+
+## 15.5 Specify legal transitions and exception ownership
+
+The transition policy must be explicit about the actor, preconditions, evidence and destination. For example, `AWAIT_REVIEW → AUTHORIZED_INTENT` requires a valid reviewer/policy decision plus current eligibility, refundable balance, tenant binding and E5 permission. `AUTHORIZED_INTENT → DISPATCH_PENDING` commits the unique outbox record. `DISPATCH_PENDING → PROVIDER_PENDING` records contract-supported provider acceptance. `DISPATCH_PENDING or PROVIDER_PENDING → UNKNOWN` records an ambiguous outcome. `UNKNOWN → CONFIRMED` requires reconciled provider facts. `UNKNOWN → EXCEPTION_HOLD` is appropriate when evidence conflicts or lookup guarantees are insufficient. A recovery task may be reopened, but the *same* financial operation stays on hold until a defensible disposition exists.
+
+Do not overload `COMPLETED`. A **workflow completion** means the case has a defensible terminal business disposition, evidence references, and any customer communication or follow-up required by policy. A **provider confirmation** establishes only the provider-defined financial outcome; settlement and customer-visible posting may lag. A **closed exception** can mean that accountable humans have accepted a documented unresolved risk, not that an unseen refund has succeeded. Reporting must preserve the distinction.
+
+**Human intervention** should be a governed transition, not an administrator editing the database row. An operator can place a hold, request a fresh query, attach a verified provider statement, or escalate to the designated finance owner, with dual control where risk warrants. Any manual decision records identity, authority, rationale, evidence and before/after state versions. A forced retry after uncertainty must not be exposed as a routine convenience button; it requires documented proof of non-effect and new authorization under the relevant policy. Operational emergency controls can suspend dispatch without granting broader payment rights.
+
+Figure 15.3 is the recovery decision map. It separates safe internal recomputation from the consequential operation hold, and makes the human escalation path visible rather than burying it in an error log.
+
+![Figure 15.3 — Recovery classifies incomplete work by consequence and authoritative evidence, preserving unresolved financial outcomes.](assets/shared-figures/rendered/F15-03.png){#fig:f15-03 width=5.75in}
+
+## 15.6 Observe, retain and test the recovery claim
+
+**Observability** means obtaining enough structured evidence from logs, metrics and traces to explain system behavior and detect divergence. **Assurance evidence** is the versioned, reviewable record that supports a safety, security, reliability or compliance claim. An attractive operations dashboard is neither a source of payment truth nor an audit substitute. E9 needs case and operation correlation, transition history, active owner/epoch, outbox backlog, attempt latency, duplicate suppression, provider-reconciliation age, count and value of unresolved exposures, policy denials, and human overrides. Track **time in UNKNOWN** and the dollar value awaiting resolution; counting only successful API calls conceals business risk.
+
+A useful **recovery-time objective (RTO)** is the target interval to restore orchestration; a **recovery-point objective (RPO)** bounds tolerable data loss. Neither ensures a refund was safely reconciled. Define an additional, risk-based *uncertain-effect resolution target* and escalation threshold. Alert on stuck `UNKNOWN`, lease churn, stale-epoch rejection spikes, outbox buildup, provider lookup failures, and widening differences between local workflow reports and authoritative provider status. Retain enough audit evidence to reconstruct the decisions, while restricting sensitive customer/payment data, avoiding secrets in logs, and applying enterprise retention and deletion rules.
+
+The following executable test families are required before treating recoverability as established. Kill a coordinator between each durable state transition; crash the outbox writer before and after commit; deliver the same outbox item twice; pause owner A until lease expiry and let owner B advance; replay A's late response; lose a provider acknowledgment after the simulated refund commits; return stale `NOT_FOUND`; delay or duplicate webhooks; revoke scope and credentials during recovery; and fail the provider-status endpoint. For each test, assert the active epoch/version check, identical `CASE-204` and `RF-1042` linkage, absence of a second effect, correct `UNKNOWN` handling, bounded attempts, and retained decision evidence. A **fault-injection test** deliberately introduces a specified failure at a controlled boundary to prove recovery behavior, not just normal execution.
+
+A robust test harness includes a deterministic fake payment provider that can commit an effect and drop its response *after commit*, enumerate actual effects by original payment, and simulate eventual consistency. The harness must independently count provider effects, not infer them from internal `CONFIRMED` flags. A passing unit test of the state machine is necessary but not enough: integration tests must cover the real store's atomic compare-and-set and outbox commit behavior, provider sandbox tests must validate contract assumptions, and deployment tests must confirm there is no agent-controlled bypass path. Preserve logs, test seeds, traces, version identifiers and exception evidence for independent reproduction.
+
+## 15.7 Architecture trade-offs and the handoff to Chapter 16
+
+A relational state store plus transactional outbox is often the simplest adequate baseline. A journal and snapshots may improve replay and audit for complex workflows, but increase schema evolution, ordering and rebuild responsibilities. A workflow engine can help with durable timers and retries, yet its default retry policy must not be permitted to replay uncertain financial effects. Across these alternatives, the acceptance question is the same: *Can a replacement owner distinguish committed local knowledge from unknown external consequences and select the next safe action without model judgment or a hidden privilege?*
+
+Record the state authority, transaction boundary, uniqueness scope, schema evolution strategy, lease/epoch semantics, recovery classification, provider consistency limits, manual override controls, retention policy, measurable objectives, and the evidence required for release. **Chapter 16** turns these contracts into trust-boundary and deployment views: which processes and networks enforce the logical responsibilities, where bypass routes could arise, and how to inspect their isolation.
 
 ## Chapter exercises
 
-To be developed.
+1. **State contract:** Define the minimum versioned `CASE-204` record after `RF-1042` dispatch becomes `UNKNOWN`. Separate local observations, provider evidence references and scope/epoch metadata.
+2. **Crash matrix:** Place failures before and after an outbox commit, dispatch, provider commit, and acknowledgment. For each, name the permissible recovery action and the prohibited assumption.
+3. **Fencing test:** Coordinator A holds epoch 7, B acquires epoch 8, and A resumes. Specify the atomic condition that must reject A and explain why this alone does not fence external payments.
+4. **Reconciliation:** A provider status lookup returns `NOT_FOUND` immediately after a timeout. Define the evidence needed to classify a definitive non-effect, and the exception path when it is unavailable.
+5. **Operational defense:** Propose alerts and service objectives for a growing queue of unresolved $500 refunds. Show how an operator safely intervenes without acquiring unrestricted payment authority.
+
+**Engineering checkpoint:** Can a new coordinator reconstruct `CASE-204` from durable, versioned evidence; prove why the only authorized refund operation remains `RF-1042`; and identify the accountable next action even if the payment's external outcome is unknown?
+
+**Sources and further reading:** Transactional recovery, logs and distributed consistency inform these design contracts (Gray and Reuter, 1992; Kleppmann, 2017). Enterprise workflow and process recovery inform task-state design (van der Aalst, 2013). NIST AI RMF (2023) informs operational governance and assurance. The case, state names, recovery policy and acceptance examples are ETIS reference architecture decisions; actual provider guarantees require documented contract and sandbox verification.

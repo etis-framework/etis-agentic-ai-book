@@ -1,6 +1,6 @@
-# Source register — chapters 1–3
+# Source and citation register — developed Chapters 1–16
 
-**Status: curated, not citation-certified.** V7 establishes chapter-level attribution and a claim-verification queue. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
+**Status: claim locations mapped; final publication certification remains open.** Earlier chapters were mapped through Chapter 7; this pass extends mapped, limited-scope attribution through Chapter 16. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
 
 ## Source hierarchy and use
 
@@ -120,3 +120,34 @@ Check future Ch12/13/19/29/31 references for controlled reuse. Exact page-level 
 - NIST AI RMF 1.0 (2023) and the Generative AI Profile (2024) are referenced for risk measurement and governance framing; no universal release acceptance thresholds are attributed to NIST.
 - Gray and Reuter (1992) and Kleppmann (2017) ground distributed transactions and unknown external effect claims. Provider-specific idempotency guarantees remain explicitly illustrative.
 - Original ETIS artifacts: AUTH-01, PAY-03, DATA-01, EV-02, POL-02, OPS-01, EVAL-01, CHG-01; Figures 7.1–7.2; exercise prompts and proposed gate outcomes. Publication citation-level precision remains a later gate.
+
+## Parts I–II claim-location reconciliation — Chapters 8–16 (12 November 2026)
+
+The entries below identify the **local manuscript citation and intended claim**, not proof that every sentence has been checked against the exact printed page. Original ETIS constructs (E1–E9, CASE-204, RF-1042, contract schemas, A/B/C comparisons, and L/M/H profiles) are authorial synthesis. A technical mechanism from a source never grants specific provider or regulatory guarantees.
+
+| Chapter and claim location | Bibliography keys | Narrow supported scope | Provenance/verification and remaining action |
+|---|---|---|---|
+| Ch8 §8.2 architectural views | `bass_clements_kazman_2021` | Quality-attribute and architecture-view discipline | Publisher bibliographic record previously curated; verify relevant chapter/pages |
+| Ch8 §8.4 contract/integration framing | `hohpe_woolf_2003` | Message and integration patterns | Established book; check named pattern chapters before print |
+| Ch9 §9.2 identity and authorization distinction | `nist_sp800_207_2020` | Resource-focused authentication and authorization | Official NIST catalog/DOI verified 2026-11-12; not evidence of the ETIS schema |
+| Ch10 §10.4 event ordering / coordination | `lamport_1978`, `kleppmann_2017` | Ordering of distributed events and consistency risks | Primary DOI previously curated; exact passage mapping remains |
+| Ch11 §11.2 advisory tools and reasoning | `yao_2023`, `schick_2023` | Research on reasoning/action and tool use | Original research bibliography; no claim of protected execution |
+| Ch12 §12.4 retrieval limitations | `lewis_2020` | Research basis of retrieval-augmented generation | Primary research; does not prove access-control enforcement |
+| Ch13 closing source note, relating to §13.2 | `gray_reuter_1992`, `kleppmann_2017`, `nist_sp800_207_2020` | Transaction intent, distributed coordination, resource-level authorization | Source note retained rather than adding to chapter at word ceiling; exact claim-adjacent placement remains an editorial exception |
+| Ch14 §14.2 adapter contract | `hohpe_woolf_2003` | Adapter / message-contract pattern | Book edition curated; provider API behavior is contract-specific |
+| Ch14 §14.3 observations, HTTP semantics | `gray_reuter_1992`, `kleppmann_2017`, `rfc9110_2022` | Local/distributed effects and HTTP-method idempotency | RFC 9110 §9.2.2 verified against official RFC Editor; **not** refund-key semantics |
+| Ch15 §15.3 outbox atomicity | `gray_reuter_1992`, `hohpe_woolf_2003` | Local transaction and asynchronous messaging principles | ETIS outbox sequence is original synthesis; exact pattern-level source audit remains |
+| Ch15 §15.6 assurance/operations | `beyer_2016` | Operational readiness, observation and response | Book available from official SRE site; exact chapter mapping remains |
+| Ch16 §16.3 isolation and zero trust | `nist_sp800_207_2020` | No implicit trust from network location | Official NIST catalog/DOI verified; ETIS L/M/H are not a NIST classification |
+
+### Chapter 1–7 source review disposition
+
+Chapter-specific mappings and bibliographic records for Chapters 1–7 appear in the earlier tables in this register. No newly confirmed absent entry was identified in this targeted reconciliation. The following checks **remain open** before the claim-level certification gate can close: verify all edition/page claims, historical priority statements, policy/standards versions, current OWASP and MCP documents, and whether Chapter 13's compact source note should be adjacent to its exact claim once the full manuscript is copyedited. Avoid growing Chapters 4 and 13 beyond their locked source-word ceilings.
+
+### Citation acceptance policy
+
+- Each non-original, nontrivial technical mechanism or named external standard must have a local, scoped citation and a matching bibliography entry and register row.
+- Bibliographic identification, source existence, paraphrase support, source-page verification, and engineering validation are separate gates.
+- RFC 9110 describes HTTP semantics only. A payment-provider key's scope, lifetime, deduplication or settlement semantics must be established from the selected provider's versioned contract and tested in sandbox.
+- NIST zero-trust architectural guidance does not certify ETIS implementation or constitute a universal deployment policy.
+- When the final word/page budget leaves no room, prefer moving or tightening existing source notes over adding unsourced assertions.

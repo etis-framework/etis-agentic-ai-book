@@ -38,7 +38,7 @@ E7 is not merely a database behind E2. Its trusted transition authority must com
 
 ## 16.3 Choose isolation according to consequence
 
-A **protection domain** is a runtime and administration boundary with its own enforceable permissions. Three example deployment profiles help make the trade-off explicit. They are risk patterns, not universal compliance tiers.
+A **protection domain** is a runtime and administration boundary with its own enforceable permissions. Three example deployment profiles help make the trade-off explicit. They are risk patterns, not universal compliance tiers. NIST SP 800-207 (Rose et al., 2020) supports resource-focused enforcement without implicit trust from network location; the L/M/H deployment profiles are ETIS examples, not NIST-defined tiers.
 
 **Profile L — bounded, low-consequence advisory work:** E2/E3/E4 may share an application process with E1, provided input scope and output contracts are enforced. There is no write-capable consequential path, and any later effect still requires an independently protected E5. This profile reduces overhead but does not authorize direct payment access simply because a case starts as advisory.
 

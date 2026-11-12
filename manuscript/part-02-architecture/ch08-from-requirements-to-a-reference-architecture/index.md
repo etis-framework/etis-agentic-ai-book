@@ -18,7 +18,7 @@ A useful architecture must support all three designs without silently widening t
 
 ## 8.2 Three views of the same system
 
-A **logical responsibility view** names the functions that must exist and the invariants they own. A **contract view** specifies typed inputs, outputs, identity, versioning, denial semantics, and ownership of a handoff. A **deployment view** places those responsibilities in processes, networks, accounts, databases, and operational teams. These views answer different questions. The same logical responsibility might be implemented in one process or several; co-location never removes the need for independently enforceable authorization.
+A **logical responsibility view** names the functions that must exist and the invariants they own. A **contract view** specifies typed inputs, outputs, identity, versioning, denial semantics, and ownership of a handoff. A **deployment view** places those responsibilities in processes, networks, accounts, databases, and operational teams. These views answer different questions. The same logical responsibility might be implemented in one process or several; co-location never removes the need for independently enforceable authorization. Architectural responsibility, contract, and deployment views follow established quality-attribute and design-view practice (Bass, Clements, and Kazman, 2021); the nine-domain grouping itself is an original ETIS synthesis.
 
 The first view should be understandable without a cloud provider. The second should make failures and untrusted inputs visible. The third should be derived only after considering threat boundaries, scaling, failure domains, latency, recovery, and economics. Drawing nine boxes and deploying nine microservices is not architectural rigor; it is premature implementation commitment.
 
@@ -61,7 +61,7 @@ A sound decomposition allocates each requirement to an **enforcer**, an **observ
 
 ## 8.4 A contract is more than a message schema
 
-A contract identifies the producer and consumer, the authorized principal, the scope and versions, the permitted state transition, and what happens on rejection, delay, duplication, or missing acknowledgment. A typed proposal might include a case identifier, evidence references, a suggested disposition, a confidence or uncertainty description, and a producer version. It must not include an executable payment credential or masquerade as a signed approval.
+A contract identifies the producer and consumer, the authorized principal, the scope and versions, the permitted state transition, and what happens on rejection, delay, duplication, or missing acknowledgment. A typed proposal might include a case identifier, evidence references, a suggested disposition, a confidence or uncertainty description, and a producer version. It must not include an executable payment credential or masquerade as a signed approval. Messaging and integration contracts provide useful background (Hohpe and Woolf, 2003), while the particular ETIS boundaries remain design prescriptions.
 
 A trusted effect request requires different evidence: the authorized principal, case and tenant, current policy and approval, amount, operation identity, durable intent, and an auditable outcome. The authorization decision must be revalidated at the consequential boundary rather than inferred from a previously successful read or from the proposal's plausibility.
 

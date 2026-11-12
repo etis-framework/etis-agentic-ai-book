@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="3.833in" viewBox="0 0 1140 760">
+<rect width="1140" height="760" fill="white"/>
+<text x="570" y="42" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="25" font-weight="bold" fill="#1A304A">Classify recovery by consequences and evidence</text>
+<rect x="250" y="85" width="640" height="95" rx="14" fill="#EAF2FA" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="124.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Persisted incomplete work</text>
+<text x="570.0" y="156.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">Acquire fenced ownership + read state</text>
+<rect x="255" y="247" width="630" height="87" rx="14" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="298.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">What might have happened outside?</text>
+<polyline points="570,180 570,247" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,247 561,232 579,232"/>
+<rect x="20" y="450" width="335" height="105" rx="14" fill="#E5F4EB" stroke="#203958" stroke-width="3"/>
+<text x="187.5" y="478.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">READ-ONLY TASK</text>
+<text x="187.5" y="510.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">Revalidate scope</text>
+<text x="187.5" y="542.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="bold" fill="#1A304A">May reassign</text>
+<rect x="400" y="450" width="335" height="105" rx="14" fill="#EAF2FA" stroke="#203958" stroke-width="3"/>
+<text x="567.5" y="478.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1A304A">INTENT NOT DISPATCHED</text>
+<text x="567.5" y="510.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1A304A">Honor outbox + contract</text>
+<text x="567.5" y="542.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="bold" fill="#1A304A">No new operation ID</text>
+<rect x="780" y="450" width="335" height="105" rx="14" fill="#FBE8E6" stroke="#203958" stroke-width="3"/>
+<text x="947.5" y="478.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#1A304A">EFFECT POSSIBLE</text>
+<text x="947.5" y="510.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#1A304A">Keep RF-1042 UNKNOWN</text>
+<text x="947.5" y="542.5" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#1A304A">Reconcile or hold</text>
+<polyline points="310,334 310,450" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="310,450 301,435 319,435"/>
+<polyline points="570,334 570,450" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="570,450 561,435 579,435"/>
+<polyline points="830,334 830,450" fill="none" stroke="#203958" stroke-width="4"/>
+<polygon fill="#203958" points="830,450 821,435 839,435"/>
+<rect x="125" y="640" width="890" height="80" rx="14" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570.0" y="688.0" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="bold" fill="#1A304A">All paths record versioned evidence and exception ownership</text>
+<polyline points="570,555 570,640" fill="none" stroke="#203958" stroke-width="4"/>
+</svg>

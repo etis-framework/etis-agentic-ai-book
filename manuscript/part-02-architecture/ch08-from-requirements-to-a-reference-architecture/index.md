@@ -99,8 +99,6 @@ Architecture evidence and runtime evidence are not interchangeable. The figures 
 
 **Architecture review verdict for the continuing case.** The design is acceptable as a *candidate logical decomposition*, not as an authorized production system. The minimum release-blocking tests include cross-tenant read denial; model-to-payment route denial; changed or revoked approval denial; stable-operation duplicate suppression under the documented provider contract; lost-acknowledgment reconciliation; and operator containment. If the provider cannot support authoritative status resolution, the system must preserve a human-owned unresolved state rather than claim completion.
 
-**Architecture review verdict for the continuing case.** The design is acceptable as a *candidate logical decomposition*, not as an authorized production system. The minimum release-blocking tests include cross-tenant read denial; model-to-payment route denial; changed or revoked approval denial; stable-operation duplicate suppression under the documented provider contract; lost-acknowledgment reconciliation; and operator containment. If the provider cannot support authoritative status resolution, the system must preserve a human-owned unresolved state rather than claim completion.
-
 The next eight chapters make this map operational: admission (9), coordination (10), proposals (11), context (12), authorization (13), integration and business truth (14), state and assurance (15), and deployment boundaries (16). The later pattern, build, verification, and governance parts will use the same case and invariants rather than introducing a more permissive agent by stealth.
 
 ## Chapter exercises

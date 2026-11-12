@@ -57,6 +57,16 @@ def main():
     if i < len(table.rows)-1:
      for cell in row.cells:
       for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
+  # Chapter 14 provider-contract and authority tables are decision artifacts:
+  # keep complete tables together at 7x10, avoiding orphaned partial rows.
+  for table in doc.tables:
+   if not table.rows or table.rows[0].cells[0].text.strip() not in {'Contract concern','Question for CASE-204'}:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i < len(table.rows)-1:
+     for cell in row.cells:
+      for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
   doc.save(dest)
  print(dest)
 if __name__=='__main__':main()

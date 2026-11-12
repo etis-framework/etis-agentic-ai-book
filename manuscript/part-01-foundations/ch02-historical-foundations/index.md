@@ -87,6 +87,8 @@ These mechanisms do not promise exactly-once execution across arbitrary networks
 
 ![Figure 2.3 — A completed external refund may leave the requester uncertain.](assets/shared-figures/rendered/F02-03.png){#fig:f02-03 width=5.75in}
 
+*Identifier note:* Figure 2.3 uses `R-123` for a standalone historical illustration. The continuing `CASE-204` refund example later uses `RF-1042`. They illustrate the same lost-acknowledgment failure mode, not two refund operations in the running case.
+
 ## 2.7 Service-oriented architecture and APIs: interfaces are contracts
 
 Service-oriented architecture and later microservice practices emphasized explicit interfaces between independently managed capabilities. Enterprise service buses, API gateways, adapters, and event-driven integration helped organizations connect systems without requiring every consumer to understand each provider’s internal implementation.

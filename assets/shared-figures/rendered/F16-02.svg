@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="3.859in" viewBox="0 0 1140 765">
+<rect width="1140" height="765" fill="white"/>
+<text x="570" y="43" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="27" font-weight="bold" fill="#17314B">DEPLOYMENT ISOLATION IS A RISK DECISION</text>
+<text x="570" y="76" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" fill="#17314B">Same logical contract; different enforceable protection</text>
+<rect x="35" y="120" width="340" height="345" rx="10" fill="#F1F4F7" stroke="#203958" stroke-width="3"/>
+<text x="205" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">L · IN-PROCESS</text>
+<text x="205" y="224" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">E2/E3/E4 co-located</text>
+<text x="205" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Advisory access only</text>
+<text x="205" y="346" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">No payment write route</text>
+<rect x="61" y="476" width="288" height="66" rx="10" fill="#E7F4EB" stroke="#203958" stroke-width="3"/>
+<text x="205" y="505" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">E5 CHECK REQUIRED</text>
+<text x="205" y="531" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">for any effect</text>
+<rect x="400" y="120" width="340" height="345" rx="10" fill="#E9F2F9" stroke="#203958" stroke-width="3"/>
+<text x="570" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">M · SEPARATE PROCESS</text>
+<text x="570" y="224" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Worker has restricted OS ID</text>
+<text x="570" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Trusted service on host</text>
+<text x="570" y="346" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Credentials never shared</text>
+<rect x="426" y="476" width="288" height="66" rx="10" fill="#E7F4EB" stroke="#203958" stroke-width="3"/>
+<text x="570" y="505" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">E5 CHECK REQUIRED</text>
+<text x="570" y="531" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">for any effect</text>
+<rect x="765" y="120" width="340" height="345" rx="10" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="935" y="162" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">H · REMOTE CONTROL</text>
+<text x="935" y="224" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Central / remote E5-E6</text>
+<text x="935" y="285" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Separate keys and policy</text>
+<text x="935" y="346" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Network denies agent egress</text>
+<rect x="791" y="476" width="288" height="66" rx="10" fill="#E7F4EB" stroke="#203958" stroke-width="3"/>
+<text x="935" y="505" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">E5 CHECK REQUIRED</text>
+<text x="935" y="531" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">for any effect</text>
+<text x="570" y="617" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">Isolation strength rises; authorization does not migrate to E3</text>
+<rect x="88" y="660" width="964" height="65" rx="10" fill="#FFF0CC" stroke="#203958" stroke-width="3"/>
+<text x="570" y="688" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="21" font-weight="bold" fill="#17314B">TEST IN EVERY PROFILE: deny direct E3 → E6/provider path</text>
+<text x="570" y="713" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="20" font-weight="normal" fill="#17314B">Prove credential custody, bypass resistance and safe failure</text>
+</svg>

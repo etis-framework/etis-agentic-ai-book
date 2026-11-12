@@ -17,6 +17,10 @@ The architecture must also account for incomplete knowledge. When a payment prov
 5. Separate logical architecture from deployment topology, defending a simpler deployment when it preserves the necessary enforcement boundaries.
 6. Produce a reviewable architecture package: responsibility ownership, contractual invariants, threat boundaries, failure paths, tests, and unresolved design assumptions.
 
+## The target-state architecture and its progressive decomposition
+
+Part I defined the obligations and acceptance evidence; Part II now develops a **target-state logical reference architecture**: a vendor-neutral arrangement of responsibilities, contracts, and enforceable authority boundaries against which implementations can be evaluated. *Target-state* describes the intended logical design, not an approved production deployment or a claim that the architecture has passed its tests. Chapter 8 establishes the integrated architecture and introduces its nine responsibility domains, E1–E9, in Figure 8.1 and Section 8.3. Chapters 9–15 then progressively engineer those domains and their interfaces; Chapter 16 examines deployment realizations of the same boundaries. The domains are neither a prescribed call sequence nor nine required microservices. E7 (durable operational state) and E9 (assurance and operations) span the system. Every chapter returns to the same `CASE-204` and `RF-1042` contracts, allowing readers to trace an obligation from its architectural location to a testable implementation mechanism.
+
 ## The nine-chapter learning path
 
 | Chapter | Design question | Engineering result |

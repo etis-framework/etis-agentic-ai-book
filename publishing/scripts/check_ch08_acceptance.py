@@ -19,6 +19,10 @@ require('RF-1042' in part and 'CASE-204' in part,'Part II continuity missing')
 require('R-1042' not in ch2.replace('RF-1042',''),'Chapter 2 operation identifier drift')
 require(all(x in ch for x in ('DATA-01','AUTH-01','POL-02','PAY-03','OPS-01')),'Requirement trace incomplete')
 require(len(ch.split())<=3000,'Chapter 8 source word cap exceeded')
+require('target-state logical reference architecture' in ch.lower(),'Missing target-state architecture roadmap')
+require(ch.count('](assets/shared-figures/rendered/F08-0') == 3,'Chapter 8 must contain exactly three distinct figures')
+require(ch.index('F08-01.png') < ch.index('F08-02.png') < ch.index('F08-03.png'),'Chapter 8 figure reading order incorrect')
+require(all(f'**E{i} ' in ch for i in range(1,10)), 'E1-E9 domains not all defined')
 require(ch.count("The diagram's separation is not cosmetic.")==1,'Duplicate paragraph')
 media=set()
 docx=root/'dist/etis-agentic-ai-book.docx'
@@ -26,7 +30,7 @@ if docx.exists():
  with zipfile.ZipFile(docx) as z:
   media={hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if n.startswith('word/media/')}
 else:errors.append('DOCX missing: run make book-docx')
-for name in ('F08-01','F08-02'):
+for name in ('F08-01','F08-02','F08-03'):
  master=root/f'assets/shared-figures/sources/{name}.svg'; render=root/f'assets/shared-figures/rendered/{name}.svg';png=root/f'assets/shared-figures/rendered/{name}.png'
  require(master.exists() and render.exists() and png.exists(),f'{name} master/render missing')
  if not all((master.exists(),render.exists(),png.exists())):continue

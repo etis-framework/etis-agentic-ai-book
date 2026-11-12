@@ -6,7 +6,9 @@ check:
 	python3 publishing/scripts/check_ch05_acceptance.py
 	python3 publishing/scripts/check_ch06_acceptance.py
 	python3 publishing/scripts/check_ch07_acceptance.py
+	python3 publishing/scripts/check_ch08_acceptance.py
 	python3 publishing/scripts/check_single_volume.py
+	python3 publishing/scripts/check_finished_page_ledger.py
 figures:
 	python3 publishing/scripts/figures.py
 check-figures:

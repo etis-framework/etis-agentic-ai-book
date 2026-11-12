@@ -178,12 +178,12 @@ Figure 2.4 summarizes logical responsibilities rather than a required deployment
 
 ## Worked failure trace: the acknowledgment that never arrived
 
-Consider a concrete sequence. The refund application has already approved a $500 refund and persisted operation `R-1042` with the correct payment identifier. The provider receives the request, commits the refund, and sends a success response. The network connection breaks before the application receives that response. The local database therefore has an authorized, dispatched operation but no confirmed provider outcome.
+Consider a concrete sequence. The refund application has already approved a $500 refund and persisted operation `RF-1042` with the correct payment identifier. The provider receives the request, commits the refund, and sends a success response. The network connection breaks before the application receives that response. The local database therefore has an authorized, dispatched operation but no confirmed provider outcome.
 
 | Step | What happened | What the application can safely claim |
 |---|---|---|
-| 1. Durable intent committed | `R-1042` is recorded locally | The application intended to issue one refund |
-| 2. Provider accepts request | Provider processes `R-1042` | The application may not yet know whether it succeeded |
+| 1. Durable intent committed | `RF-1042` is recorded locally | The application intended to issue one refund |
+| 2. Provider accepts request | Provider processes `RF-1042` | The application may not yet know whether it succeeded |
 | 3. Response is lost | Provider effect may be complete | The outcome is **unknown**, not failed |
 | 4. Recovery starts | New worker reads durable operation state | The operation must retain its original identity |
 | 5. Provider lookup resolves status | Authoritative provider evidence is returned | The application can record a confirmed outcome with provenance |

@@ -22,7 +22,7 @@ An **adapter** is an integration component that translates internal operation co
 
 ## 14.2 Specify the provider contract before implementing an SDK call
 
-The internal operation contract remains stable across provider changes. It binds case, tenant, original payment reference, refund amount and currency, authorized action, `RF-1042`, authorization evidence, and contract version. The provider contract must then define *which fields the provider accepts and what their responses mean*. Illustrative names below are **not** a claim about any real payment provider's API.
+The internal operation contract remains stable across provider changes. It binds case, tenant, original payment reference, refund amount and currency, authorized action, `RF-1042`, authorization evidence, and contract version. The provider contract must then define *which fields the provider accepts and what their responses mean*. Illustrative names below are **not** a claim about any real payment provider's API. Provider-adapter and message-contract patterns are treated in Hohpe and Woolf (2003); this chapter does not assume a particular provider implements them.
 
 | Contract concern | Required engineering decision |
 |:--|:--|
@@ -39,7 +39,7 @@ An **integration contract test** verifies that a local request becomes the inten
 
 ## 14.3 Model the attempt and its uncertainty
 
-**Dispatch** means that the integration path attempted to send a request. **Acceptance** means the provider acknowledged receipt or processing according to its contract. **Completion** means authoritative provider evidence establishes the effect specified by the contract; depending on the provider, settlement and availability to the customer can be separate later events. An HTTP `200` or `202`, an SDK return value, or a callback can represent any of these stages: the contract, not the numeric code alone, determines meaning.
+**Dispatch** means that the integration path attempted to send a request. **Acceptance** means the provider acknowledged receipt or processing according to its contract. **Completion** means authoritative provider evidence establishes the effect specified by the contract; depending on the provider, settlement and availability to the customer can be separate later events. An HTTP `200` or `202`, an SDK return value, or a callback can represent any of these stages: the contract, not the numeric code alone, determines meaning. Gray and Reuter (1992) and Kleppmann (2017) distinguish local transaction evidence from distributed effects. RFC 9110 §9.2.2 (Fielding, Nottingham, and Reschke, 2022) defines HTTP-method idempotency; it does **not** establish payment-provider idempotency-key scope, refund deduplication, or settlement guarantees.
 
 Figure 14.2 traces the most dangerous ordinary failure. The authorized `RF-1042` request reaches the payment provider, which may commit the $500 refund, but its acknowledgment is lost. The adapter records **UNKNOWN**, not `FAILED` or `COMPLETED`. It does not create a second operation identity or select a new idempotency key in an attempt to “be safe.”
 

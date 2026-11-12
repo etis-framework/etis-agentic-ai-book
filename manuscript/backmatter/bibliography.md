@@ -1,6 +1,6 @@
 # References and bibliography
 
-This is the curated starting bibliography for the completed foundational chapters. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
+This is the curated bibliography for the developed Chapters 1–16. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
 
 ## Foundational systems engineering
 
@@ -10,6 +10,7 @@ This is the curated starting bibliography for the completed foundational chapter
 - Gray, Jim, and Andreas Reuter. *Transaction Processing: Concepts and Techniques*. Morgan Kaufmann, 1992.
 - Hohpe, Gregor, and Bobby Woolf. *Enterprise Integration Patterns*. Addison-Wesley, 2003.
 - Kleppmann, Martin. *Designing Data-Intensive Applications*. O'Reilly Media, 2017.
+- Fielding, Roy T., Mark Nottingham, and Julian Reschke, eds. *HTTP Semantics*. RFC 9110, June 2022. https://doi.org/10.17487/RFC9110. See §9.2.2 on HTTP-method idempotency; provider-specific payment guarantees require separate contract evidence.
 - Lamport, Leslie. “Time, Clocks, and the Ordering of Events in a Distributed System.” *Communications of the ACM* 21, no. 7 (1978): 558–565. https://doi.org/10.1145/359545.359563
 
 ## Artificial intelligence and agent research
@@ -26,6 +27,7 @@ This is the curated starting bibliography for the completed foundational chapter
 ## Governance and assurance
 
 - International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 42001:2023 — Information Technology — Artificial Intelligence — Management System*. 2023.
+- Rose, Scott, Oliver Borchert, Stu Mitchell, and Sean Connelly. *Zero Trust Architecture*. NIST Special Publication 800-207, August 2020. https://doi.org/10.6028/NIST.SP.800-207.
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1, 2023. https://doi.org/10.6028/NIST.AI.100-1
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1, 2024. https://doi.org/10.6028/NIST.AI.600-1
 - OWASP Foundation. *OWASP GenAI Security Project*. Living resource; version must be pinned before final publication. https://genai.owasp.org/

@@ -30,6 +30,7 @@ This is the curated bibliography for the developed Chapters 1–21. It is organi
 
 - International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 42001:2023 — Information Technology — Artificial Intelligence — Management System*. 2023.
 - Rose, Scott, Oliver Borchert, Stu Mitchell, and Sean Connelly. *Zero Trust Architecture*. NIST Special Publication 800-207, August 2020. https://doi.org/10.6028/NIST.SP.800-207.
+- Hu, Vincent C., David Ferraiolo, David R. Kuhn, et al. *Guide to Attribute Based Access Control (ABAC) Definition and Considerations*. NIST Special Publication 800-162, updated August 2, 2019. https://doi.org/10.6028/NIST.SP.800-162. (ABAC terminology and control attributes; no specific refund-policy guarantee.)
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1, 2023. https://doi.org/10.6028/NIST.AI.100-1
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1, 2024. https://doi.org/10.6028/NIST.AI.600-1
 - OWASP Foundation. *OWASP GenAI Security Project*. Living resource; version must be pinned before final publication. https://genai.owasp.org/

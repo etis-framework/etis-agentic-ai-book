@@ -27,7 +27,7 @@ if word.is_file():
   if p.exists() and hashlib.sha256(p.read_bytes()).hexdigest() not in media:err.append(f'{n}: Word embedded image stale')
 else:print('Word absent: embedded-image check deferred')
 part=(R/'manuscript/part-01-foundations/_part.md').read_text()
-if 'Chapters 1–7 contain substantive draft material' not in part:err.append('Part I status stale')
+if 'Chapters 1–7 constitute the current Part I development draft' not in part:err.append('Part I status stale')
 print(f'Chapter 7: {wc}/{cap} source words; {len(err)} issue(s)')
 for x in err:print('ERROR',x)
 if err:sys.exit(1)

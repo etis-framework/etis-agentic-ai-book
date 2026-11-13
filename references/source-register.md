@@ -176,3 +176,28 @@ This pass confirms the existence of CAB-001's C01–C09 catalog and maps it to C
 - Figure 4.2 illustrates **generic component arrangements**, not case Designs A/B/C. Figure 3.4 and Chapters 8/17 retain the case alternatives.
 - C01–C09 originates in approved `metadata/approved/CAB-001.docx`, Table 3 (contract catalog), not an external normative standard.
 - Exact edition/section validation for standards, vendor guides, and original technical works remains **open** where expressly recorded above. No new source verification is claimed here.
+
+## Chapter 18 — coordination and delegation patterns (November 2026)
+
+| Claim / chapter location | Existing bibliography source | Supported scope / limitation |
+|---|---|---|
+| §18.2, §18.5 architectural alternatives and costs | Bass, Clements, and Kazman (2021) | General quality-attribute tradeoff framing; does not prescribe ETIS topology |
+| §18.4 epoch/fencing, duplicate work, external uncertainty | Kleppmann (2017) | Distributed consistency, concurrency and failure foundations; ETIS implementation is original synthesis |
+| §18.4 distributed event ordering | Lamport (1978) | Event ordering foundations, not a lease implementation specification |
+| §18.5 risk monitoring and governance | NIST AI RMF 1.0 (2023) | Broad risk governance framework; not a validation of CASE-204 controls |
+
+Figures F18-01 and F18-02, the bounded delegation rules, coordinator/peer comparison, CASE-204 scenarios and injection matrix are original ETIS engineering synthesis. Source texts identify foundations, not approval of a specific payment architecture. Existing claim-level edition/page verification remains open.
+
+## Chapter 18 V2 — reviewed claim-specific citations (2026-11-13)
+
+| Chapter locus | Key / source | Precisely supported scope | Evidence limitation / publication gate |
+|---|---|---|---|
+| §18.2 | `bass_clements_kazman_2021` — *Software Architecture in Practice* | Tradeoffs among quality attributes, operational complexity and alternative designs | Not evidence that one agent pattern outperforms another; exact page mapping open |
+| §18.2 | `fowler_microservice_tradeoffs_2015` — Fowler, *Microservice Trade-Offs* (2015) | Independent deployment benefits and distribution/operations costs of services | Analogous software-architecture cost only; not agent benchmarking or mandatory process-per-agent |
+| §18.2, §18.5 | `finops_framework_2025`, `finops_unit_economics` — FinOps Foundation | Business-unit economics and measuring cost relative to completed value | No numeric CASE-204 cost or profitability claim |
+| §18.5 | `hohpe_woolf_2003` — *Enterprise Integration Patterns* | Routing, messaging and delivery-pattern concepts | Does not prescribe ETIS peer authorization or E2 protocol |
+| §18.4–18.5 | `kleppmann_2017` — *Designing Data-Intensive Applications* | Distributed failure, duplicate delivery, state and ordering limitations | No universal payment exactly-once or vendor idempotency guarantee |
+| §18.4 / further reading | `lamport_1978` | Distributed event ordering | Does not define workflow ownership or authorize payments |
+| §18.5–18.6 | `nist_ai_rmf_2023`, `owasp_agentic_2026` (contextual) | Risk management and agentic-system threat categories | ETIS negative-test matrix is original synthesis; no NIST/OWASP certification claimed |
+
+**Bibliography reconciliation:** Fowler added to human bibliography and BibTeX. All other named citations reuse existing entries. Final publisher/edition/page-level checks remain open; do not imply full bibliographic claim certification.

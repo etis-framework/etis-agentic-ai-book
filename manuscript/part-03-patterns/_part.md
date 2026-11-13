@@ -24,6 +24,8 @@ For `CASE-204`, the requested **$500 refund**, the three alternatives remain **D
 | **20 — State, memory and knowledge design** | What belongs in working context, durable state and authoritative records? | Data/state ownership decision |
 | **21 — Architecture decisions and governance as code** | How are architectural assumptions and constraints made testable and reviewable? | Decision record with verifiable guardrails |
 
+**Independent design axes.** Task mechanism (deterministic, model, hybrid), worker specialization, workflow coordination, message topology, and physical deployment can vary independently. Chapter 18 compares them using measurable workload and assurance evidence; registry discovery is not authorization, peer messages do not create case ownership, and the E5/E6 effect path does not migrate to workers.
+
 ## One architecture; several pattern choices
 
 The nine E1–E9 domains remain **logical responsibilities, not nine mandatory services or a prescribed call order**. The reference architecture is the consistency test for every pattern in Part III; it is not a catalog in which every listed mechanism must be deployed. In particular, increasing the capability of E3 reasoning must not create new E5 authority. E7 and E9 remain cross-cutting, and E8 business truth does not migrate into an agent's context store simply because that store is easier to query.

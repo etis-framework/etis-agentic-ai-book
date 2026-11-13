@@ -1,6 +1,6 @@
 # References and bibliography
 
-This is the curated bibliography for the developed Chapters 1–17. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
+This is the curated bibliography for the developed Chapters 1–17 and the new Chapter 18 (Chapters 1–18). It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
 
 ## Foundational systems engineering
 
@@ -23,6 +23,8 @@ This is the curated bibliography for the developed Chapters 1–17. It is organi
 - Anthropic Engineering. “Building Effective Agents.” December 19, 2024. https://www.anthropic.com/research/building-effective-agents (Vendor engineering guidance.)
 - OpenAI. *A Practical Guide to Building Agents*. January 15, 2026. https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf (Vendor engineering guide.)
 - Yao, Shunyu, Noah Shinn, Pedram Razavi, and Karthik Narasimhan. “τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains.” arXiv:2406.12045, 2024. https://arxiv.org/abs/2406.12045
+
+- Fowler, Martin. “Microservice Trade-Offs.” July 1, 2015. https://martinfowler.com/articles/microservice-trade-offs.html (General distributed-service tradeoffs; not empirical agent benchmarking.)
 
 ## Governance and assurance
 

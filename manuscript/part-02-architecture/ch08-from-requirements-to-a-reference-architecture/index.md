@@ -43,6 +43,8 @@ The architecture distinguishes **observing** a case, **proposing** a decision, *
 
 The approved reference architecture groups responsibilities into nine enterprise domains. The identifiers are navigation aids; the names and responsibilities are what matter.
 
+**Table 8.1 — Nine logical architectural responsibilities (E1 to E9).**
+
 | Domain | Primary responsibility | Key boundary or evidence |
 |---|---|---|
 | **E1 — Admission and identity** | Authenticate principal, bind tenant and permitted goal | Rejection of invalid or out-of-scope work |
@@ -52,8 +54,10 @@ The approved reference architecture groups responsibilities into nine enterprise
 | **E5 — Trusted execution** | Independently validate policy, approval, and preconditions | Denial or authorized durable intent |
 | **E6 — Enterprise integration** | Isolate adapters and provider-specific semantics | Correlation, timeout, status query |
 | **E7 — Durable operational state** | Preserve work, intent, attempts, and outcomes | Reconstructable state and operation identity |
-| **E8 — Business truth** | Maintain authoritative business facts and case status | Distinguish claims from confirmed records |
+| **E8 — Business truth** | Maintain authoritative business facts and business-case dispositions | Distinguish external facts from E7 workflow and operation status |
 | **E9 — Assurance and operations** | Audit, monitor, contain, and recover | Evidence, alerts, runbooks, accountable owners |
+
+**State ownership:** E7 owns workflow transitions and the local payment-operation journal; E8 owns authoritative business facts, provider results and business-case dispositions. Reconciliation uses verified E8 evidence to justify E7 state transitions; neither replaces the other.
 
 These domains must not be confused with a pipeline of nine successive model calls. E7 and E9 are cross-cutting responsibilities; E4 supplies evidence but cannot authorize effects; E8 holds business truth but does not turn a generated statement into truth. E5 remains the trusted action boundary even when implemented alongside another domain. In Figure 8.1 the architecture is read as relationships among responsibilities, not as a linear chain. Chapter 9 begins the detailed contract sequence at admission; Chapters 10–15 develop the remaining domains; Chapter 16 maps logical boundaries to deployment.
 
@@ -65,21 +69,27 @@ A contract identifies the producer and consumer, the authorized principal, the s
 
 CAB-001 defines nine cross-domain interface contracts; these are **logical contracts**, not separately deployed services. The names below retain the approved baseline rather than introducing a new taxonomy.
 
+**Table 8.2 — C01–C09 cross-domain contract map.**
+
 | Contract | Responsibility boundary | Essential obligation |
 |---|---|---|
 | **C01 Admission** | E1 → E2 | Bind principal, tenant, workflow, goal, scope, policy and deadline |
 | **C02 Work order** | E2 → E3 | Bound task, tools, context handles, versions and time |
 | **C03 Context query** | E3 → E4 | Enforce identity, purpose, provenance, classification and freshness |
-| **C04 Action proposal** | E3 → E5 | Type requested effect, rationale, evidence and operation identity; no permission implied |
+| **C04 Action proposal** | E3 → E5 | Typed proposed operation reference, requested effect, rationale, evidence, amount and idempotency intent; advisory only |
 | **C05 Decision** | E5 ↔ E9 | Record policy decision, actor, scope, reasons and required approval |
 | **C06 Durable intent** | E5 ↔ E7 | Persist unique operation identity and fenced transition before dispatch |
 | **C07 Provider dispatch** | E5 → E6 → E8 | Bound provider request, idempotency scope, status query and uncertain-result semantics |
 | **C08 Reconciliation** | E7/E5 ↔ E8 | Resolve by stable operation reference, or retain UNKNOWN |
 | **C09 Telemetry** | All E1 through E8 → E9 | Correlate evidence, versions, costs, events, effect state and ownership |
 
-The catalog specifies responsibilities at interfaces; Chapters 9–16 develop their enforcement and failure behavior. The authoritative field-level version remains **CAB-001**. An identifier alone neither grants authority nor proves an external effect.
+**C04 identity semantics:** CAB-001 C04 `operation_id` correlates an E3 proposal; `idempotency intent` requests duplicate-safe handling. Neither is `RF-1042`, a provider key, or financial permission. Following C05 authorization, E5/E7 assigns and persists `RF-1042` under C06. Trusted integration maps provider-specific keys under C07.
+
+**CAB-001** retains field-level definitions; the Appendix summarizes them. An identifier grants no authority or proof of effect.
 
 A trusted effect request requires different evidence: the authorized principal, case and tenant, current policy and approval, amount, operation identity, durable intent, and an auditable outcome. The authorization decision must be revalidated at the consequential boundary rather than inferred from a previously successful read or from the proposal's plausibility.
+
+**Table 8.3 — Requirements to enforcement and negative tests.**
 
 | Chapter 7 obligation | Logical enforcer | Essential negative test |
 |---|---|---|

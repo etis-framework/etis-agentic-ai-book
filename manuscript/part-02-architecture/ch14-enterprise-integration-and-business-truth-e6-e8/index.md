@@ -66,6 +66,8 @@ Business truth is not a “last write wins” contest. E5's decision on eligibil
 
 ## 14.5 Reconcile without creating a second refund
 
+The E7 operation journal is authoritative about what the application has attempted and observed, including `UNKNOWN`; E8 business records and provider evidence are authoritative about the external refund outcome. A workflow status and an external business disposition are distinct records that must be reconciled, not competing versions of the same fact.
+
 **Reconciliation** is the controlled comparison of locally recorded intent and observations against authoritative external evidence, resulting in an evidenced outcome or a documented unresolved exception. The reconciler is trusted, deterministic infrastructure, not an independent refund-authorizing agent. It uses the original `RF-1042`, original provider idempotency mapping and the original payment reference throughout.
 
 Figure 14.3 is a decision procedure, not a promise that every provider exposes all necessary queries. The search first attempts exact provider-operation or key lookup, then checks the original payment's transaction history when contractually supported, and correlates amount, currency, merchant, customer/tenant binding and timestamps. Provider query failures, lag, inconclusive matches and conflicting records remain `UNKNOWN` and go to review. Only unambiguous evidence of the same effect justifies `CONFIRMED`.

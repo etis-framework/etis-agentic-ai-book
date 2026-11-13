@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="4.100in" viewBox="0 0 1140 820">
+<defs><marker id="arr" markerWidth="9" markerHeight="9" refX="7.3" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9" fill="#385c74"/></marker></defs>
+<rect width="1140" height="820" fill="white"/>
+<text x="570" y="41" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">One operation identity across uncertain dispatch</text>
+<text x="570" y="76" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Trusted effect path for CASE-204 • financial operation RF-1042</text>
+<rect x="160" y="112" width="820" height="85" rx="10" fill="#fff0d7" stroke="#9c7138" stroke-width="2"/>
+<text x="570" y="144" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">1  E5 authorizes; E7 commits durable intent</text>
+<text x="570" y="175" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Only after policy, approval and current E8 facts</text>
+<line x1="570" y1="197" x2="570" y2="239" stroke="#385c74" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="160" y="244" width="820" height="85" rx="10" fill="#e1f1e9" stroke="#4b7a69" stroke-width="2"/>
+<text x="570" y="277" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">2  E6 maps trusted identity and dispatches</text>
+<text x="570" y="307" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Provider may accept effect before replying</text>
+<line x1="570" y1="330" x2="570" y2="374" stroke="#385c74" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="160" y="379" width="820" height="77" rx="10" fill="#fbece9" stroke="#a66756" stroke-width="2"/>
+<text x="570" y="411" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">3  Network loses provider acknowledgment</text>
+<text x="570" y="440" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Transport timeout does not prove failure</text>
+<line x1="570" y1="457" x2="570" y2="498" stroke="#385c74" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="160" y="501" width="820" height="87" rx="10" fill="#fff0d7" stroke="#9c7138" stroke-width="2"/>
+<text x="570" y="533" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">4  E7 records UNKNOWN for RF-1042</text>
+<text x="570" y="562" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">No new refund identity; no blind effect retry</text>
+<line x1="570" y1="589" x2="570" y2="633" stroke="#385c74" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="160" y="638" width="820" height="83" rx="10" fill="#e7f1f7" stroke="#405f73" stroke-width="2"/>
+<text x="570" y="670" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">5  E6 queries provider / E8 truth</text>
+<text x="570" y="698" text-anchor="middle" fill="#172e42" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Resolve with evidence or retain UNKNOWN + escalate</text>
+<text x="570" y="783" text-anchor="middle" fill="#a34b34" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">Reconciliation is evidence gathering, not a second payment</text>
+</svg>

@@ -21,6 +21,7 @@ check:
 	python3 publishing/scripts/check_ch18_v2_traceability.py
 	python3 publishing/scripts/check_conceptual_continuity.py
 	python3 publishing/scripts/check_c04_identity_semantics.py
+	python3 publishing/scripts/check_ch19_acceptance.py
 	python3 publishing/scripts/check_parts12_citations.py
 	python3 publishing/scripts/check_parts13_integration.py
 	python3 publishing/scripts/check_mac_word_ch01_ch17.py

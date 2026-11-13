@@ -22,7 +22,7 @@ The nine **E1–E9 logical responsibilities** in Chapter 8, Table 8.1, describe 
 
 **Who owns which state?** E7 is authoritative for local workflow ownership, task transitions, operation intent and the application's knowledge of payment attempts. E8 supplies externally authoritative financial facts and business-case dispositions. E7 may update its local outcome only through verified reconciliation; these are complementary records, not conflicting owners of one field.
 
-**Book path.** Chapter 3 introduces bounded delegation; Chapter 7 converts obligations to requirements; Chapter 8 allocates responsibilities and contracts; Chapters 9–16 explain enforcement and recovery; Chapters 17–18 compare alternatives. Chapters 19–36 are *planned* implementations, tests, and governance work, not completed assurance evidence. The full publishable field-level schema set belongs in Chapter 35 when that chapter is developed; until then, the reader map here is deliberately bounded.
+**Book path.** Chapter 3 introduces bounded delegation; Chapter 7 converts obligations to requirements; Chapter 8 allocates responsibilities and contracts; Chapters 9–16 explain enforcement and recovery; Chapters 17–21 compare architectural alternatives, tools, information ownership, and governance decisions. Chapters 22–36 remain planned implementation, assurance, operations, and reference work—not completed evidence. The full publishable field-level schema set belongs in Chapter 35 when that chapter is developed; until then, the reader map here is deliberately bounded.
 
 ## Remaining planned appendices
 

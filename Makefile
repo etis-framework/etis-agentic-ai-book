@@ -25,6 +25,7 @@ check:
 	python3 publishing/scripts/check_ch20_acceptance.py
 	python3 publishing/scripts/check_ch21_acceptance.py
 	python3 publishing/scripts/check_parts12_citations.py
+	python3 publishing/scripts/check_parts13_reader_paths.py
 	python3 publishing/scripts/check_parts13_integration.py
 	python3 publishing/scripts/check_mac_word_ch01_ch17.py
 	python3 publishing/scripts/check_single_volume.py

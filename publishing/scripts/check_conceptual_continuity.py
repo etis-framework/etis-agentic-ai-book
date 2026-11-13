@@ -23,7 +23,7 @@ expect={
 '14':['E7 operation journal','E8','UNKNOWN'],
 '15':['State ownership reminder','E7','E8'],
 '17':['not a progression from Design A through B to C'],
-'18':['nine logical','cross-domain contracts','not nine required services','RF-1042'],
+'18':['nine **logical responsibilities**','cross-domain contracts','**no additional deployed services**','RF-1042'],
 'app':['C01','C02','C03','C04','C05','C06','C07','C08','C09','UNKNOWN','Chapters 19–36'],
 'map':['CCR-01','CCR-09','six lenses']}
 fail=[]

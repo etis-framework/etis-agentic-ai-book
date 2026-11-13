@@ -28,7 +28,7 @@ if w.exists():
   if p.exists() and hashlib.sha256(p.read_bytes()).hexdigest() not in hs:errors.append(f'{n}: embedded Word image stale')
 else:print('Word not built: embedded checks pending')
 part=(R/'manuscript/part-01-foundations/_part.md').read_text()
-if not any(t in part for t in ('Chapters 1–6 contain substantive draft material; Chapter 7 remains planned.', 'Chapters 1–7 contain substantive draft material')):errors.append('Part I status not updated')
+if not any(t in part for t in ('Chapters 1–6 contain substantive draft material; Chapter 7 remains planned.', 'Chapters 1–7 constitute the current Part I development draft')):errors.append('Part I status not updated')
 print(f'Chapter 6 acceptance: {words}/{cap} words, remaining headroom {cap-words}; {len(errors)} issue(s)')
 for e in errors:print('ERROR '+e)
 if errors:sys.exit(1)

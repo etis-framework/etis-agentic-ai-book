@@ -64,3 +64,11 @@ Before accepting each chapter, inspect front matter through that chapter as a *c
 - **CASE-204 invariant:** $500; Design B is conditional initial production candidate, A/C are alternatives; C04 advisory never mints RF-1042; E7 UNKNOWN cannot be upgraded without E8 reconciliation.
 - **Negative test handoff:** Ch21 §21.6 G21-01–G21-07 → planned Ch22–27 guarded implementation, Ch29 compromised-agent/privileged-provider distinction, Ch31 independent end-to-end assurance. These later chapters are **not yet drafted**.
 - **Source limitation:** Ch21 source-register mapping is claim-scoped; exact edition/page checks and Mac Word physical pagination are open.
+
+## Holistic Parts I–III six-lens editorial review (2026-11-13)
+
+See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citation evidence classifications, repetition and architectural drift review, and measured chapter pagination. This review supersedes any informal description of Parts I–III as *publication complete*. The parts are substantive development drafts until the identified page-budget exceptions, exact claim/source passage checks, and full-size native Word inspection are adjudicated.
+
+**First-use rule:** Introduce E-domain/C-contract with its functional name the first time its specific authority matters in a part or chapter; after one concise explanation, identifiers suffice. Do not reprint the nine-by-nine catalog in every chapter. Part III's entry page serves as a self-contained functional refresher. If a reader must leave the chapter to establish the security meaning of an identifier, the prose is incomplete.
+
+**Cross-part negative test:** A C04 advisory proposal (`operation_id` / `idempotency intent` permitted by CAB-001) cannot assign trusted `RF-1042`, establish E5 approval, reach provider credentials, or upgrade E7 UNKNOWN to CONFIRMED; E8 reconciliation and source evidence are required.

@@ -26,6 +26,7 @@ check:
 	python3 publishing/scripts/check_ch21_acceptance.py
 	python3 publishing/scripts/check_ch22_acceptance.py
 	python3 publishing/scripts/check_reader_companion_access.py
+	python3 publishing/scripts/check_companion_code_quality.py
 	python3 -m unittest discover -s examples/refund-reference-system/build0 -p "test_*.py" -v
 	python3 publishing/scripts/check_parts12_citations.py
 	python3 publishing/scripts/check_parts13_reader_paths.py

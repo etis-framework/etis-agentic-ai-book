@@ -5,7 +5,7 @@
 ## Inspect the files
 
 - `refund.py` — fixed CASE-204 / $500 (50000 integer cents) / RF-1042; trusted fixture approval, durable local intent, mock provider dispatch and reconciliation.
-- `test_refund.py` — six self-contained unittest scenarios using temporary databases.
+- `test_refund.py` — self-contained unittest scenarios using temporary databases; `../TESTING.md` maps each scenario to observed evidence.
 - E7 local status: `operations.sqlite3`; simulated E8 payment truth: `provider.sqlite3`. These are two different SQLite files, **not** a distributed transaction.
 
 The fixed `approved` flag is not a real human-approval system. The provider's unique operation key models a fictional contract, not a verified live-provider guarantee.
@@ -18,11 +18,11 @@ From the repository root:
 python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test_*.py' -v
 ```
 
-Expected: six passing tests. Read the test names and assertions, especially the wrong-tenant, duplicate-dispatch, lost-acknowledgment, missing-provider and conflicting-provider tests. Passing them demonstrates only the tested fixture behavior.
+Expected: all discovered tests passing (the count can grow as coverage improves). Read the test names and assertions, especially the wrong-tenant, duplicate-dispatch, lost-acknowledgment, missing-provider and conflicting-provider tests. Passing them demonstrates only the tested fixture behavior.
 
 ## Exercise 2 — compare E7 and E8 after a lost acknowledgment
 
-Use a **fresh** disposable demo directory. Run these in order from the repository root:
+Use a **fresh** disposable demo directory (for example, change the path below if `/tmp/etis-build0-demo` already exists). Run these in order from the repository root:
 
 ```sh
 python3 examples/refund-reference-system/build0/refund.py prepare --directory /tmp/etis-build0-demo
@@ -62,4 +62,4 @@ The CLI prints local E7 status only. A real provider's absence or contradictory 
 
 Explain why wrong-tenant or missing approval cannot create E7 intent; why a timeout does not mean FAILED; why repeating dispatch after UNKNOWN is prohibited; and what external-provider contract evidence would be needed to claim a live refund occurred.
 
-**Not demonstrated:** concurrent workers, E2 owner fencing, secure E5 isolation, live E1 authentication, credentials, network error models, full E9 audit evidence, or real-world idempotency. Never attach this fixture to a payment service. Use a fresh demo directory each time and delete only the disposable files you created. Chapter 23 will add advisory interpretation *without* payment authority.
+**Test evidence and scope:** See `../TESTING.md` for the scenario matrix and reviewer workflow. **Not demonstrated:** concurrent workers, E2 owner fencing, secure E5 isolation, live E1 authentication, credentials, network error models, full E9 audit evidence, or real-world idempotency. Never attach this fixture to a payment service. Use a fresh demo directory each time and delete only the disposable files you created. Chapter 23 will add advisory interpretation *without* payment authority.

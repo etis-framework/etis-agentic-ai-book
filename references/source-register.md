@@ -213,3 +213,14 @@ Figures F18-01 and F18-02, the bounded delegation rules, coordinator/peer compar
 | §19.6 agentic threat classes | `owasp_agentic_2026` | Tool misuse, identity/privilege and context risks; OWASP taxonomy is guidance, not certification. |
 
 Figures F19-01/F19-02, adapter status mapping, CASE-204 example, negative tests and provider-agnostic contracts are original ETIS design synthesis. Claims about a specific provider's key scope, retention, credentials or reconciliation require its actual documentation and executable contract tests. Exact edition/page audit of textbooks remains an open publication gate.
+
+## Chapter 20 — state, memory and knowledge design (2026-11-13)
+
+| Claim / section | Source | Supported scope and limitation |
+|---|---|---|
+| §§20.1–20.3 classes, ownership, consistency, memory tradeoffs | `kleppmann_2017`; `bass_clements_kazman_2021` | General distributed data integrity, architectural quality attributes; neither defines ETIS E-domains |
+| §20.3 retrieval augmented generation | `lewis_2020` | Retrieval augmentation as technique; not a guarantee of data authorization, freshness or truth |
+| §20.4 revocation, data-use and governance | `nist_ai_rmf_2023`; `nist_sp800_207_2020` | Risk governance and resource-based access constraints; not literal retroactive deletion of prior model inference |
+| §20.5 authoritative operational state and uncertainty | `gray_reuter_1992`; `kleppmann_2017` | Transaction boundaries, distributed state/failure; does not certify payment provider behavior or exactly-once execution |
+
+Figures F20-01/F20-02, the five-way information classification, CASE-204 invalidation-and-fencing scenarios, and release tests are original ETIS synthesis. Exact edition and source-page support remains an open publication gate. The chapter introduces no new normative provider guarantee. Chapter 20 is a design-pattern decision: Chapter 12 remains the foundation for governed E4 retrieval; Chapter 15 owns durable E7 state; Chapter 26/28 implementation and recovery are future work.

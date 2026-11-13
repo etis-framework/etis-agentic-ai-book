@@ -17,7 +17,7 @@ for t in ['CASE-204','$500','RF-1042','Design A','Design B','Design C','conditio
 check('RF-1043' in s and 'blind retry' in s.lower(),'missing negative provider outcome')
 check('Figure 18.1' in s and 'Figure 18.2' in s,'missing named figure references')
 check('Chapter 18' in (R/'references/source-register.md').read_text(),'source register mapping missing')
-check('Chapters 1–19' in (R/'manuscript/backmatter/bibliography.md').read_text(),'bibliography coverage not updated to current manuscript')
+check('Chapters 1–20' in (R/'manuscript/backmatter/bibliography.md').read_text(),'bibliography coverage not updated to current manuscript')
 media=set();doc=R/'dist/etis-agentic-ai-book.docx'
 if doc.exists():
  with zipfile.ZipFile(doc) as z:media={hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist() if n.startswith('word/media/')}

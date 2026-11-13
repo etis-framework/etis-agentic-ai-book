@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="4.350in" viewBox="0 0 1140 870">
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7.3" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9" fill="#36596f"/></marker></defs>
+<rect width="1140" height="870" fill="white"/>
+<text x="570" y="41" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#20384a">Two independent recovery tracks</text>
+<text x="570" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Evidence correction does not rewrite payment outcome</text>
+<rect x="40" y="115" width="510" height="75" rx="10" fill="#e6eff6" stroke="#59748b" stroke-width="2"/>
+<text x="295" y="143" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#20384a">A  Evidence / memory track</text>
+<text x="295" y="174" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">CASE-204 shipment investigation</text>
+<rect x="590" y="115" width="510" height="75" rx="10" fill="#fff0d8" stroke="#a98249" stroke-width="2"/>
+<text x="845" y="143" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#20384a">B  Durable effect track</text>
+<text x="845" y="174" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">RF-1042 independently authorized</text>
+<rect x="40" y="221" width="510" height="96" rx="10" fill="#e5f2ec" stroke="#53846e" stroke-width="2"/>
+<rect x="590" y="221" width="510" height="96" rx="10" fill="#fff0d8" stroke="#a98249" stroke-width="2"/>
+<text x="295" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">Source shipment status changes</text>
+<text x="295" y="291" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">New observed version: delivered</text>
+<text x="845" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E7 holds owner epoch</text>
+<text x="845" y="291" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Stale worker has old epoch</text>
+<path d="M295 318 L295 354" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M845 318 L845 354" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="40" y="359" width="510" height="96" rx="10" fill="#e5f2ec" stroke="#53846e" stroke-width="2"/>
+<rect x="590" y="359" width="510" height="96" rx="10" fill="#fff0d8" stroke="#a98249" stroke-width="2"/>
+<text x="295" y="394" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E4 invalidates cached summary</text>
+<text x="295" y="429" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Link preserved to prior evidence</text>
+<text x="845" y="394" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E7 rejects stale task mutation</text>
+<text x="845" y="429" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Compare-and-set / fencing</text>
+<path d="M295 456 L295 492" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M845 456 L845 492" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="40" y="497" width="510" height="96" rx="10" fill="#e5f2ec" stroke="#53846e" stroke-width="2"/>
+<rect x="590" y="497" width="510" height="96" rx="10" fill="#fff0d8" stroke="#a98249" stroke-width="2"/>
+<text x="295" y="532" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E2 requests bounded re-evaluation</text>
+<text x="295" y="567" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Design B review / C read-only</text>
+<text x="845" y="532" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E6 provider response lost</text>
+<text x="845" y="567" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">Local outcome is UNKNOWN</text>
+<path d="M295 594 L295 630" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<path d="M845 594 L845 630" stroke="#36596f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+<rect x="40" y="635" width="510" height="96" rx="10" fill="#e5f2ec" stroke="#53846e" stroke-width="2"/>
+<rect x="590" y="635" width="510" height="96" rx="10" fill="#fff0d8" stroke="#a98249" stroke-width="2"/>
+<text x="295" y="670" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">New proposal or human review</text>
+<text x="295" y="705" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">No payment authority in memory</text>
+<text x="845" y="670" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E6/E8 reconcile RF-1042</text>
+<text x="845" y="705" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#20384a">No blind retry as RF-1043</text>
+<rect x="104" y="778" width="930" height="57" rx="10" fill="#eaf2f7" stroke="#59748b" stroke-width="2"/>
+<text x="570" y="814" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" fill="#20384a">E9 records both tracks; evidence never becomes payment authorization</text>
+</svg>

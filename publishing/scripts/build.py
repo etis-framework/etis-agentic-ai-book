@@ -67,6 +67,19 @@ def main():
     if i < len(table.rows)-1:
      for cell in row.cells:
       for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
+  # Chapter 20 architectural comparison tables: keep the header with its
+  # first row, and the final two rows together, avoiding orphaned fragments
+  # without forcing a whole long comparison table onto one page.
+  for table in doc.tables:
+   if not table.rows or table.rows[0].cells[0].text.strip() not in {'Information class','Pattern','Failure injection'}:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    # Keep the table header with its first row and last two data rows
+    # together, without forcing a tall table to occupy an entire page.
+    if i in {0,len(table.rows)-2}:
+     for cell in row.cells:
+      for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
   doc.save(dest)
  print(dest)
 if __name__=='__main__':main()

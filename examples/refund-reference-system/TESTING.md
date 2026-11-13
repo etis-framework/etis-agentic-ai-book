@@ -20,9 +20,16 @@ python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test
 | Conflicting provider amount | UNKNOWN, unresolved | Contradictory record | Do not manufacture a confirmed result |
 | New process reads existing SQLite stores | Existing state retained | Existing truth retained | Recovery relies on durable files, not process memory |
 | Unknown operation cannot be reconciled or dispatched | No operation | No row | The effect path requires prior authorized intent |
+| Two concurrent local dispatch callers | Exactly one wins `AUTHORIZED → DISPATCHED` | One RF-1042 only | Local compare-and-set is atomic, not a substitute for E2 fencing |
+| Simulated provider unavailable before commit | DISPATCHED; unresolved | No row | Dependency failure cannot trigger automatic new dispatch |
+| Boolean, float or string monetary input | No operation | No row | Validate value **and** type, never coerce monetary input silently |
+| Contradictory preexisting provider operation | DISPATCHED; unresolved | Contradictory row remains | Do not accept a conflicting observation as confirmation |
+| CLI policy denial | JSON error on stderr, exit status 2 | No row | Expected failures should be diagnosable without a Python traceback |
 
 **What these tests cannot prove:** process isolation, real authentication, human approval, concurrent E2 fencing, secure E5-to-E6 topology, provider idempotency retention, payment settlement, network fault distributions, privacy compliance, or the complete C01–C09 contracts. These require separate implementations, external agreements, and risk-proportionate assurance. A green test demonstrates only its declared fixture result.
 
 ## Reviewer workflow
 
 Read Chapter 22 and `ARCHITECTURE.md`; run the tests; reproduce the CLI sequence in `build0/README.md`; inspect the E7 and mock E8 tables independently; then record which guarantees remain assumptions. Never point these examples at a real payment API.
+
+The added fault scenarios are intentionally *fixture mechanisms*. Build 0 does not record a durable structured escalation queue, audit-grade logging or classified retriable provider error. The full cross-build controls and planned acceptance criteria are in [`ENGINEERING_STANDARD.md`](ENGINEERING_STANDARD.md).

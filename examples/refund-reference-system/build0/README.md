@@ -5,7 +5,7 @@
 ## Inspect the files
 
 - `refund.py` — fixed CASE-204 / $500 (50000 integer cents) / RF-1042; trusted fixture approval, durable local intent, mock provider dispatch and reconciliation.
-- `test_refund.py` — self-contained unittest scenarios using temporary databases; `../TESTING.md` maps each scenario to observed evidence.
+- `test_refund.py` — self-contained unittest scenarios using temporary databases, including two-caller contention, malformed input, provider unavailability and denial behavior; `../TESTING.md` maps each scenario to observed evidence.
 - E7 local status: `operations.sqlite3`; simulated E8 payment truth: `provider.sqlite3`. These are two different SQLite files, **not** a distributed transaction.
 
 The fixed `approved` flag is not a real human-approval system. The provider's unique operation key models a fictional contract, not a verified live-provider guarantee.
@@ -63,3 +63,20 @@ The CLI prints local E7 status only. A real provider's absence or contradictory 
 Explain why wrong-tenant or missing approval cannot create E7 intent; why a timeout does not mean FAILED; why repeating dispatch after UNKNOWN is prohibited; and what external-provider contract evidence would be needed to claim a live refund occurred.
 
 **Test evidence and scope:** See `../TESTING.md` for the scenario matrix and reviewer workflow. **Not demonstrated:** concurrent workers, E2 owner fencing, secure E5 isolation, live E1 authentication, credentials, network error models, full E9 audit evidence, or real-world idempotency. Never attach this fixture to a payment service. Use a fresh demo directory each time and delete only the disposable files you created. Chapter 23 will add advisory interpretation *without* payment authority.
+
+## Exercise 4 — provider unavailable *before* its mock commit
+
+Use a fresh disposable directory distinct from the prior exercise:
+
+```sh
+python3 examples/refund-reference-system/build0/refund.py prepare --directory /tmp/etis-build0-unavailable
+python3 examples/refund-reference-system/build0/refund.py dispatch-provider-unavailable --directory /tmp/etis-build0-unavailable
+python3 examples/refund-reference-system/build0/refund.py status --directory /tmp/etis-build0-unavailable
+python3 examples/refund-reference-system/build0/refund.py reconcile --directory /tmp/etis-build0-unavailable
+```
+
+The second command intentionally exits **2** and prints a bounded `PROVIDER_UNAVAILABLE` error on stderr. E7 remains `DISPATCHED` because it committed the dispatch claim before the simulated failure; mock E8 has no row. Reconciliation returns `UNKNOWN` as an observation, but the last persisted E7 state stays `DISPATCHED` pending investigation. A direct retry of `dispatch` is denied. This is conservative: **absence of a provider row is not a guarantee that a live provider never acted**.
+
+## What counts as professional code here?
+
+The fixture now closes its SQLite connections, validates monetary and approval types, uses an atomic local dispatch claim, and returns a controlled CLI error for expected denials and availability failures. These are executable safety lessons, not a claim of production readiness. The code intentionally omits real identity proof, process-isolated E5 controls, provider credentials, distributed coordinator leases, hardened telemetry, schema migrations and external idempotency-contract verification. See [`../ENGINEERING_STANDARD.md`](../ENGINEERING_STANDARD.md) for the required architecture, error, security and QA standards for future builds. For this educational artifact, leaving such mechanisms explicitly unimplemented is more accurate than adding mock components that look secure but aren't.

@@ -1,6 +1,6 @@
 # Educational companion-code engineering standard
 
-Every change to a build is reviewed with its chapter, tests, figures, source assumptions and E1–E9/C01–C09 traceability. Use **fictional data** only.
+The mandatory, cross-build control requirements and acceptance matrix are in [`ENGINEERING_STANDARD.md`](ENGINEERING_STANDARD.md). Every change to a build is reviewed with its chapter, tests, figures, source assumptions and E1–E9/C01–C09 traceability. Use **fictional data** only.
 
 1. **Teach the reasoning.** Clearly name functions, states and boundaries; explain *why* authorization, durable intent, reconciliation and denials matter. Avoid comments that merely restate obvious Python syntax.
 2. **Document limits.** Label mocked identity, payment, provider uniqueness, concurrency and approval assumptions. A fixture is not production security.

@@ -1,0 +1,62 @@
+# Chapters 1–22: integrated six-lens war-game and companion-code hardening
+
+**Artifact baseline:** user-supplied `ETIS_CH22_END_TO_END_BASELINE.tar.gz` dated 13 November 2026, after Chapter 22/V4 merge. **Authority:** repository source, CAB-001, V12 ledger, and developing manuscript. This review is internal metadata, *not reader-facing book material*. **Scope:** 22 developed chapters; 14 later chapters are stubs, explicitly **not reviewed as authored text**. **Disposition:** guarded code/documentation and QA improvements ready for local revalidation; **publication certification is open**.
+
+## Independent observations (do not conflate with passing tests)
+
+- Baseline: 10/10 `unittest` Build 0 scenarios passed in the extracted repository; new fixture: 16/16 pass. The original `dispatch()` read `AUTHORIZED`, then executed an unverified `UPDATE`, allowing two concurrent calls that had read the same state to proceed to the mock effect. The patch atomically claims local DISPATCHED and requires exactly one updated row before any provider operation. This is a local race control, **not E2 lease/epoch fencing**.
+- Original SQLite `with sqlite3.connect(...)` committed/rolled back but did not guarantee closure; fixture now manages both transactions and connection lifecycle. Strict type checks reject Python booleans, strings, floats and invalid monetary inputs. A simulated provider outage leaves E7 DISPATCHED (uncertain), without mock E8 effect; fresh dispatch is refused. Expected CLI errors return structured JSON on stderr and nonzero status without stack traces. Inconsistent provider records are never promoted to confirmed local truth.
+- Chapter 22 mentions these runnable cases and the limits of the local claim. All companion Markdown files were checked and linked; added `ENGINEERING_STANDARD.md` makes later-build safety requirements and reviewer acceptance criteria explicit. Preserve the *same authoritative book repository*, `examples/refund-reference-system/`, and immutable edition tag policy.
+- The existing `check_single_volume.py` labelled all 14 short planned stubs as `PASS` merely because their word counts were below caps. The patch reports them as `PLANNED — NOT ASSESSED`, excluding them from developed source-word totals. **An upper bound is not an authored-content acceptance test.**
+- Current front matter already identifies the official GitHub repository and code entry point (Preface, Introduction, How to use this book). Chapter 1, Part IV, Chapter 22 and the architecture appendix provide additional navigation; no duplicate external companion repository is needed. The repository remains private until publication, so published access still requires verification.
+
+## Six reader lenses — cross-volume result and required safeguards
+
+| Lens | Chapters and question tested | Observed strength | Residual risk / required action |
+|---|---|---|---|
+| Implementing engineer | Ch1–7 requirements → Ch8 contracts → Ch9–16 boundaries → Ch17–21 decisions → Ch22 source | C01–C09 and E1–E9 are presented as logical responsibilities and reviewable control handoffs. Source demonstrates fixed policy, E7 intent and mock E8 split. | Preserve independently protected E5/E6 contract in Builds 1–5; local functions are not protection. Formalize inputs/errors, durable ownership and role boundaries before new agents or adapters. |
+| Enterprise architect | Ch3/5/7/8, Ch16–21, Ch22 | A/B/C remain alternative allocation choices, not an autonomy ladder; Design B remains conditional, C optional; code does not create a tenth domain. | Require explicit quality-attribute scenarios and risk-based separation decisions for each new capability; no accidental microservice mandate. |
+| Advanced student | Ch1–4 conceptual vocabulary, Ch8 diagrams, Ch22 hands-on | Executable code makes proposal/permission/effect, E7 observation/E8 truth, and UNKNOWN concrete. Existing READMEs offer no-dependency reproduction. | Connect every new subsystem to an observable test, explain *why* each design choice exists, supply error examples and non-guarantees; avoid premature framework complexity. |
+| Security / assurance | Ch6–9, Ch11–16, Ch19, Ch21–22; future 29/31 | Trusted authority is independent of E3/C04 advice. Negative cases deny wrong tenant, principal, amount and policy. | Build 0 is in-process and **does not securely authenticate**. Ch25 and Ch29/31 must demonstrate a hijacked bounded investigator with an authentic token *still cannot* authorize CASE-204, mint RF-1042, obtain E6 secrets or bypass E5. Preserve denial evidence and isolation. |
+| SRE / incident responder | Ch2, Ch10, Ch14–16, Ch19–20, Ch22 | Lost acknowledgment and contradictory provider evidence do not justify a blind second refund. Added precommit outage, local race and explicit resource cleanup. | No real crash harness, durable error/evidence journal, provider SLAs, multi-process fencing, status-query availability model or human escalation queue. Specify before a live integration claim; test those boundaries in Ch25–27 and Ch30–31. |
+| Business owner | Ch3/5/7, Ch17/21/22 | The source is a learning advantage, not a claim of production readiness; no real financial data or payment call. | ROI, human review cost, differentiated quality and documented residual risk must determine whether to adopt Design B/C. Completion of a teaching build ≠ release approval. |
+
+## Code hardening defect register
+
+| ID | Severity | Before | Fix/evidence | Residual qualification |
+|---|---|---|---|---|
+| CODE-01 | High | Read-then-write E7 dispatch transition without checking row ownership | Atomic conditional UPDATE, rowcount==1; two-caller negative test | Local SQLite only; **not** a cross-host E2 fence |
+| CODE-02 | Medium | SQLite connection context did not explicitly close | Own contextmanager, commit/rollback and `finally: close()` | No pooling, migrations, disaster recovery |
+| CODE-03 | Medium | Untyped fixture values allowed `True` as 1, floats/strings not explicitly constrained | Type-strict money and approval validation; negative suite | Fixed single-case fixture, not generic payment schema |
+| CODE-04 | High educational risk | No provider-unavailable-before-commit exercise | Fault injection leaves durable DISPATCHED; no mock E8 record; reconciliation UNKNOWN; resend denied | Real provider outcome may remain unknown even on lookup absence |
+| CODE-05 | Medium | Expected CLI denials threw unhandled exceptions | Safe JSON stderr with process failure status; CLI test | Not audit-grade structured observability or operational alerting |
+| CODE-06 | Medium | Future builds lacked a single normative coding/review standard | `ENGINEERING_STANDARD.md`; cross-build acceptance matrix, stubs/omissions rule | Must be enforced by subsequent chapter acceptance suites |
+| QA-01 | Medium | Word-cap check reported unwritten chapters as passing content | Explicit PLANNED — NOT ASSESSED, developed word total only | Published book cannot include 14 unfinished chapters |
+
+## Book-wide consistency and navigation controls
+
+**Source verified:** Chapter inventory 1–36, of which 1–22 are substantively developed; Book 7 parts; V12 plan: 550 total (485 chapter +65 support), Part IV 85, Chapter 22 14; 59 canonical figure sources; 61 manuscript Markdown files including stubs/front/back; Chapter 22 still within provisional 1,700–2,700 acceptance words after change; routine architecture/figure checks pass. The complete book build can still contain stubs, so build success is not content completion.
+
+**Architecture trace to preserve:** C01 E1 admission, C02 E2 coordination, C03 E4 scoped retrieval, C04 E3 advisory output, C05–C09 protected execution/operational/business/assurance handoffs as defined by CAB-001. Never promote C04 IDs or reasoning text to financial authority. CASE-204/$500 and RF-1042 are a stable case and financial operation; R-123 in the early historical illustration remains explicitly a separate diagram example. A confirmed external effect is an E8 observation, not E7 wishful thinking; ambiguity remains UNKNOWN and needs reconciliation.
+
+**Repeated navigation:** Preface introduces runnable-code value; Introduction names public URL and code directory; How-to-use gives direct GitHub directory and edition-tag guidance; Chapter 1 announces it; Part IV frames progressive checkpoints; Chapter 22 supplies first executable test and E7/E8 exercise; Appendix provides contract reference. `examples/refund-reference-system/README.md` is the single entrypoint and links each supplemental file. No reader needs internal CAB-001 or unpublished metadata to follow the architecture.
+
+**Editorial qualification:** source reading and existing Parts I–III six-lens review revealed the primary material layout problem: a previous LibreOffice 7×10 rendering measured Chapter 1–21 at 297 finished chapter pages versus V12's 280; **Part I alone measured 113 versus 95 (+18)**, with Chapter 2 +6, Chapter 3 +5, Chapter 7 +4. Ch8, Ch16, Ch18 also each exceeded their individual targets by three pages in that measurement. This historical measurement is not native Word for Mac and not a certified full-book forecast. Editorial compression should target redundant narrative/layout waste, **not** delete the engineering evidence or mechanically shorten explanations. An existing QA script reports an **author-supplied** native Mac Word Chapter 1–17 arithmetic of 208/230, but that script expressly does not independently verify page positions. A new native Mac Word page-by-page count for the current 22-chapter build and print-size figure assessment remain necessary before certifying budget compliance.
+
+**Citation qualification:** `references/source-register.md` tracks the source/claim audit as not complete; registry entries and bibliography identification are not evidence that every claim matches the cited original passage or licensed standard. Do not replace with blanket publication certification. The final release needs edition-specific citation verification.
+
+**Publication/reader risks deliberately not papered over:** Title/copyright placeholders and notices pending rights approval; index/glossary/backmatter final pass; all chapter stubs 23–36; edition tag and public GitHub access; QA of every printed figure at 7×10; native Word style/layout; release security and artifact hygiene review. These are open gates, not regressions introduced by code hardening.
+
+## Future chapter implementation decision
+
+**Keep Build 0 as an approachable one-module teaching fixture.** A more complex set of Python packages/services now would falsely imply production isolation. Future Builds 1–5 should introduce *specific protected contracts and executable test seams* at their chapters and retain Build 0 tests as regression evidence. The standard document separates controls that must be operational from explicit, non-executable teaching omissions and explains who will own, implement, and verify them. Do not create fake credential managers, distributed leases, approval services or unused abstractions solely for professional appearance.
+
+## Actual tests and gates
+
+- Baseline: 10 Build 0 tests passed; `check_finished_page_ledger.py` passed planning allocations but explicitly did **not** measure print pages.
+- Hardened checkout: `make book-docx` passed; figure embedding check passed; `make check` completed with exit status 0 on a final rerun, including 16 Build 0 tests, companion, navigation, citations, chapter and budget checks; Ch22 acceptance passed. An earlier end-to-end run had hit the process time limit near the navigation checks; subsequent full rerun completed normally. `check_single_volume.py` now reports 22 developed and 14 planned instead of claiming planned stubs were authored and passing.
+- **Not run / not proven here:** native Microsoft Word 7×10 print QA, external payment and multi-host tests, complete source-to-claim verification, full print-layout figure inspection, publication readiness, and actual user-Mac checkout behavior.
+
+## Closeout condition before Chapter 23
+
+After applying this guarded patch on a new branch created from clean `main`, repeat `make book-docx`, `make check`, `make check-figures`, execute the two guided CLI exercises, inspect the Chapter 22 rendered text and actual Word figure positions, verify unchanged CAB-001 and V12 hashes, review diffs, then commit/PR/merge with required checks. This closes **code/standards development review only**. The Part I page overrun and publication gates remain tracked open until measured remediation.

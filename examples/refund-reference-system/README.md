@@ -29,7 +29,8 @@ The builds are teaching increments, **not a compulsory Design A → B → C migr
 examples/refund-reference-system/
 ├── README.md                 # This reader entry point
 ├── ARCHITECTURE.md           # E1–E9 mapped to actual Build 0 behavior
-├── CONTRIBUTING.md           # Educational QA and review standard
+├── CONTRIBUTING.md           # Contribution and review workflow
+├── ENGINEERING_STANDARD.md  # Normative requirements for Builds 0–5
 ├── TESTING.md                # Scenario-to-evidence matrix and assurance limits
 └── build0/
     ├── README.md             # Executable exercises and observed evidence
@@ -45,7 +46,7 @@ The canonical figure masters remain in `assets/shared-figures/sources/`; do not 
 python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test_*.py' -v
 ```
 
-Consult `TESTING.md` for the complete verification matrix. Then follow `build0/README.md` to reproduce a lost provider acknowledgment and examine the two separate SQLite stores. No `pip` install, real credentials, or live network connection is required.
+Consult `TESTING.md` for the verification matrix and `ENGINEERING_STANDARD.md` for the safeguards and acceptance criteria every later build must preserve. Then follow `build0/README.md` to reproduce a lost provider acknowledgment and examine the two separate SQLite stores. No `pip` install, real credentials, or live network connection is required.
 
 ## Version and publication policy
 

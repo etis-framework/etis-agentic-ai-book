@@ -1,23 +1,89 @@
-# Chapter 21 — Architecture decisions and governance as code
+# Chapter 21 — Architecture Decisions and Governance as Code
 
-> **STATUS: PLANNED / NOT DRAFTED.** This stub preserves the approved BP-001 chapter inventory. Do not treat it as manuscript content.
+*Part III: Patterns and Architectural Decisions*
+
+> **Engineering proposition:** An architecture decision is not operational governance until its authority boundary, policy version, independent enforcement point, change path, and evidence can be inspected and tested. Policy text, a model instruction, and a deployed control are three different artifacts.
 
 ## Learning objectives
 
-To be developed from BP-001.
+By the end of this chapter, readers should be able to record an architectural decision with rejected alternatives and measurable consequences; translate selected decisions into versioned, independently enforced controls; distinguish governance policy from application and model instructions; trace policy change from approval to deployment and incident rollback; and verify that a policy denial, exception, or unknown external outcome leaves reviewable evidence.
 
-## Engineering inheritance
+## 21.1 From patterns to accountable decisions
 
-Identify prior engineering patterns relevant to this chapter.
+Chapters 17–20 compared deterministic, agentic, and hybrid designs, coordination patterns, tool boundaries, and information ownership. Chapter 21 closes Part III by asking how those choices remain **deliberate and enforceable as the implementation changes**. The nine logical responsibilities (E1 through E9) form the governance scope of this chapter: **E1 admission and identity** binds who and what may enter; **E2 coordination and ownership** controls the workflow; **E3 agent reasoning** proposes; **E4 context and retrieval** supplies governed evidence; **E5 trusted execution** independently authorizes effects; **E6 enterprise integration** guards provider access; **E7 durable operational state** preserves fenced workflow and operation records; **E8 business truth** supplies authoritative facts; and **E9 assurance and operations** supplies governance, oversight, and operational evidence. These are responsibilities, not nine deployed services or sequential stages. Their cross-domain contracts **C01–C09** are named at first operational use in §21.4; Chapter 8 Tables 8.1–8.2 and the architectural contract appendix provide the full reference. Chapter 13 established independent trusted execution; Chapter 15 and Chapter 20 distinguished E7 state from E8 business truth. Those invariants must survive policy changes, not merely appear in review slides.
 
-## Architecture and alternatives
+In `CASE-204`, a customer requests a **$500 refund** for a replacement not received. **Design A** is deterministic evidence checking; **Design B** adds advisory interpretation plus independent review and remains the *conditional initial production candidate*; **Design C** optionally delegates **read-only** investigation to a bounded agent. They are design alternatives, **not** successive autonomy levels or mandatory phases. A team might choose Design B now, pilot C for investigation later, or retain A if its measurable outcomes are adequate. Each choice must expose assumptions and criteria for reversal. Policy-as-code does not convert an inadmissible design into an authorized one.
 
-To be developed.
+An **architecture decision record (ADR)** captures a consequential choice, its context, options, rationale, owner, status, consequences, and triggers for review. **Governance policy** states authorized constraints and accountable exceptions. **Policy-as-code** expresses selected rules in machine-evaluable form. **Enforcement** is the trusted action that consumes a verified decision. **Evidence** proves what version was evaluated and what occurred; it does not itself grant authority. Keeping these artifacts separate prevents the familiar failure in which a policy document says “no unapproved refund” while an agent or integration credential still permits one. Decision documentation follows established architecture tradeoff practice (Bass, Clements, and Kazman, 2021); the particular ETIS record and enforcement mapping are original synthesis.
 
-## Implementation and verification
+## 21.2 Record the choice and its limits
 
-To be developed.
+Consider **ADR-021**, an illustrative decision record for CASE-204, rather than a new runtime domain. Its decision is *use Design B for the initial controlled rollout*. The alternatives are A (lower model operating cost and simpler testability, potentially weaker interpretation of ambiguous customer narratives) and C (potential investigation flexibility, with additional delegation, identity, context, evaluation, and containment costs). The reason to choose B is a bounded need for advisory interpretation while preserving independent human and deterministic financial controls—not an assertion that B empirically outperforms A or C. The evidence threshold requires representative case tests, tenant isolation, successful denial tests, operator recovery drills, and cost per **acceptable completed workflow** measured against A. Unknown values remain explicit, not invented benchmark numbers.
+
+| ADR-021 field | Recorded decision obligation |
+|---|---|
+| Status, owner, date | Proposed → reviewed → accepted, with named business and engineering owners |
+| Scope and alternatives | CASE-204; compare A/B/C without implying sequential maturity |
+| Nonnegotiable boundary | E3 proposes; E5 independently authorizes; E6 controls effectful adapter access |
+| Operational invariant | E2 owns one logical workflow; E7 fences epochs; E8 owns external business facts |
+| Assumptions and consequences | Advisory quality, latency, risk, privacy, maintainability, operating cost |
+| Revisit triggers | Failed controls, changed policy/provider contract, excessive operating cost |
+| Evidence links | Policy version, test run, review approval, deployment identity, monitoring results |
+
+An ADR is a reviewable **commitment under assumptions**, not a permanent verdict or a sign-off on the model itself. Once a provider changes duplicate suppression or a data classification changes, reopening the decision is appropriate. Superseding an ADR must preserve the original rationale and the audit trail. A model may help draft options; accountable people approve material risk and release authority. A change from B to C is not a configuration-only adjustment if it broadens tools, data access, or autonomy.
+
+## 21.3 Governance layers and the protected execution boundary
+
+**Enterprise governance (E9)** is cross-cutting: it sets standards, approval authority, assurance requirements, observability, and accountability. The responsibilities named in §21.1 are enforced at different boundaries: E1 limits admission, E4 limits information access, E5 independently authorizes consequential effects, E6 protects provider integration, and E7 enforces fenced operational transitions. E8 remains the source of authoritative business facts. Governance-as-code applies approved constraints at these trusted boundaries; E3-generated prose cannot rewrite them.
+
+A useful three-layer distinction is: (1) **normative authority**, including business policy, statutory and regulatory constraints, and approved exceptions; (2) **versioned evaluation**, including policy rules and input contracts; and (3) **protected enforcement**, including independent E1/E4/E5/E6 gates, secrets custody, E7 transitions, and auditable provider reconciliation. A signed policy bundle or a successful rule evaluation is still insufficient if the executable adapter can be called without the gate. Figure 21.1 depicts the authority and evidence relationships, **not a runtime sequence**.
+
+![Figure 21.1 — Governance authority, evaluation, and independently enforced boundaries.](assets/shared-figures/rendered/F21-01.png){#fig:f21-01 width=5.75in}
+
+The central risk is **policy/control divergence**: the approved rule, deployed ruleset, and actual provider-access privileges differ. A prompt that says “follow refund rules,” a dashboard showing a green policy evaluation, or a capability registry entry cannot substitute for E5 denying a disallowed payment. A valid service credential establishes a kind of access, not transaction-specific business authorization; the protected-door/key distinction from Chapter 13 and tool boundary from Chapter 19 continue to apply. For a privileged provider credential compromise, controls inside E5 can be bypassed; containment, revocation, E8 reconciliation, and incident evidence are separate obligations, developed further in Chapters 29 and 31 (Rose et al., NIST SP 800-207, 2020).
+
+## 21.4 Turn decisions into verifiable policy contracts
+
+For ADR-021, illustrative **POL-021** states: *A $500 CASE-204 refund may be dispatched only if the admitted tenant and principal are in scope, the review and independent business approval are valid for the current policy version, authoritative payment and shipment facts have been checked, and a durable trusted operation identity exists before provider dispatch.* The implementation binds the nine logical contract types: **C01 Admission** scopes principal and goal; **C02 Work order** bounds a task delegated by E2 to E3; **C03 Context query** governs scoped evidence retrieval; **C04 Action proposal** conveys nonauthoritative recommendations; **C05 Decision** records the independent authorization decision; **C06 Durable intent** persists the trusted operation identity and fenced transition; **C07 Provider dispatch** controls the external effect; **C08 Reconciliation** checks authoritative business outcomes; and **C09 Telemetry** preserves governance and operational evidence. These are cross-domain obligations, not a compulsory execution ordering or nine software services. E5/E7 operations must also satisfy CAB-001's approved field and ownership semantics.
+
+A policy rule needs a **decision subject** (who or what is asking), **resource and action** (which refund operation), **context** (tenant, case, amount, evidence, policy version, workflow epoch), **decision** (permit, deny, or refer to an explicitly governed human review path), and **reason/evidence references**. The **policy decision point** evaluates the rule; a separate **policy enforcement point** must make bypass impossible at the protected resource boundary. In-process checks can suffice for low-risk reads if they remain independently protected; consequential financial access demands protected credential and execution boundaries. These are responsibilities and risk-proportionate options, not an infrastructure mandate. An actual decision record should reference the exact policy digest and rule bundle digest, interpreter version, effective time, and authorized exception record.
+
+**Fail-safe behavior must be explicit.** Missing authoritative evidence, expired approval, mismatched tenant, obsolete epoch, or unavailable policy evaluation cannot silently become “permit.” An unavailable financial-provider response after dispatch is not a failed refund; the operation remains `UNKNOWN` until authoritative reconciliation. An operator override is not model discretion: it requires named authority, bounded scope, expiry, dual or independent approval where risk warrants it, and durable evidence. A time-limited emergency policy is still a reviewed change with a rollback and containment plan. The exact institution-specific legal and approval requirements are deliberately not asserted as universal rules.
+
+For example, E3 may emit an advisory C04 proposal correlated to a case; it cannot mint the trusted financial identifier **RF-1042**. After the independent E5 decision, E5/E7 establishes and persists RF-1042 before E6 dispatch. The adapter maps that trusted identity into provider-specific deduplication semantics only under the provider's verified contract. A rejected proposal has no provider effect. If dispatch times out, an unchanged policy or retrying worker may not issue a second refund merely because the original acknowledgment is absent (Gray and Reuter, 1992; Kleppmann, 2017). A later policy change must preserve the original operation's evidence and reconcile its actual outcome.
+
+## 21.5 Govern policy changes like production software
+
+Treat policy definitions, exception schemas, adapter access, and evidence requirements as reviewed changes, with their own owners and test suites. A proposed update proceeds through versioned review, static rule checks, counterexample tests, preproduction replay, approved release, progressive deployment, monitoring, and rollback or containment. **The change authority is not the policy engine itself.** A deployable policy bundle should identify the approved ADR, source policy, change ticket, policy version and digest, schema and evaluator version, authorized approvers, tests and negative-test results, release window, affected workloads, rollback compatibility, and post-deployment attestation. Retain old bundle identity to explain historical decisions.
+
+![Figure 21.2 — Governance-as-code change and evidence lifecycle.](assets/shared-figures/rendered/F21-02.png){#fig:f21-02 width=5.75in}
+
+Policy evaluation must be **deterministic under recorded inputs and version** wherever it protects a consequential action. An LLM may summarize a reason, but should not be the sole mechanism deciding whether a control is in force. Change admission should fail when the proposed rule expands payment access without corresponding test coverage, owner approval, and deployment controls. Conversely, a more restrictive rule may strand in-flight work: compatibility tests must distinguish new authorization decisions from the reconciliation of an already-dispatched RF-1042. Reconciliation is evidence gathering, not retrospective authorization of a new effect. NIST AI RMF frames the broader governance and measurement responsibilities; it does not specify this ETIS change pipeline or certify a provider integration (NIST AI RMF 1.0, 2023).
+
+## 21.6 Verification: prove denial and recoverability
+
+Acceptance evidence must include both **allowed** and **forbidden** cases. For CASE-204, define fixture inputs and expected independently observed outcomes, not merely expected model text.
+
+| Test | Stimulus | Required evidence and outcome |
+|---|---|---|
+| G21-01 valid review | Scoped B proposal and approved $500 refund | E5 authorized version, persisted RF-1042, one controlled E6 dispatch |
+| G21-02 cross-tenant replay | Valid-looking approval from another tenant | Denial at E1/E5; no privileged adapter call |
+| G21-03 stale policy | Cached rule superseded before action | Current-policy recheck or governed hold; version recorded |
+| G21-04 agent/tool bypass | E3 calls payment adapter with agent credential | Protected interface denies; no provider credential disclosure |
+| G21-05 uncertain response | Provider timeout after dispatch | E7 `UNKNOWN`, authoritative E8 reconciliation; no blind new refund |
+| G21-06 ownership change | Old worker sends a stale-epoch transition | E7 fencing rejects write; successor preserves operation evidence |
+| G21-07 emergency exception | Authorized temporary override expires | Expiry enforces denial; approval and release evidence retained |
+
+The tests must be executed against real trust boundaries in integration or equivalent controlled environments. Unit-testing a Boolean policy function alone does not demonstrate that an attacker cannot route around the evaluator. A denied financial operation should leave a correlation ID, policy/rule digest, input evidence references without unnecessary personal information, decision reason, actor/tenant/epoch, enforcement point, and a traceable audit event. A successful operation additionally needs a durable intent, dispatch observations, and reconciliation evidence. Record the test environment and limitations; a passing synthetic test is **not proof** of all provider failure modes. Chapter 31 will require end-to-end assurance and independent negative testing, including the pinned compromised-agent-token versus stolen-provider-credential distinction.
+
+## 21.7 The engineering decision before implementation
+
+Part IV will translate selected decisions into a constrained running implementation, not implement all three CASE-204 designs simultaneously. The readiness gate for moving from architectural patterns into implementation is concrete: **ADR-021 has an accountable owner; POL-021 has an independently enforceable meaning; the rule and adapter boundaries are threat-tested; version and rollback are observable; and the team knows what evidence will close or reopen the decision.** Policies may vary by domain, but the invariant is stable: a model, memory store, tool registry, policy document, or human-facing green indicator never substitutes for trusted execution control.
+
+This chapter's figures, tables, ADR-021, POL-021, and G21 test cases are **original ETIS engineering synthesis**, not externally certified standards. Bass, Clements, and Kazman (2021), Gray and Reuter (1992), Kleppmann (2017), NIST SP 800-207 (2020), and NIST AI RMF 1.0 (2023) provide narrowly relevant architectural, distributed-systems, and governance foundations; none defines CAB-001 or supplies evidence that CASE-204 has been implemented. Exact source-edition and page verification remains a publication gate.
 
 ## Chapter exercises
 
-To be developed.
+1. Draft an alternative ADR-021 favoring Design A over B. Specify measured criteria that could reverse that decision, without claiming that a deterministic baseline is inherently unsafe or obsolete.
+2. Draw the attack path in which a valid E3 service token is used against an E6 payment adapter. Identify which enforcement checks reject it, and separately model theft of a genuinely privileged provider credential.
+3. A policy update arrives while RF-1042 is `UNKNOWN`. Explain why retrying a new refund, deleting the old intent, or upgrading an agent memory summary to E8 truth is prohibited. Specify the reconciliation evidence needed before closure.

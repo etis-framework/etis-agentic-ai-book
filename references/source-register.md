@@ -224,3 +224,15 @@ Figures F19-01/F19-02, adapter status mapping, CASE-204 example, negative tests 
 | §20.5 authoritative operational state and uncertainty | `gray_reuter_1992`; `kleppmann_2017` | Transaction boundaries, distributed state/failure; does not certify payment provider behavior or exactly-once execution |
 
 Figures F20-01/F20-02, the five-way information classification, CASE-204 invalidation-and-fencing scenarios, and release tests are original ETIS synthesis. Exact edition and source-page support remains an open publication gate. The chapter introduces no new normative provider guarantee. Chapter 20 is a design-pattern decision: Chapter 12 remains the foundation for governed E4 retrieval; Chapter 15 owns durable E7 state; Chapter 26/28 implementation and recovery are future work.
+
+
+## Chapter 21 — architecture decisions and governance as code (2026-11-13)
+
+| Claim / section | Source already in bibliography | Supported scope and explicit limitation |
+|---|---|---|
+| §§21.1–21.2 choice/ADR alternatives | `bass_clements_kazman_2021` — *Software Architecture in Practice* | Architectural decisions, evaluation by quality attributes; ADR-021 is original ETIS example, not an external normative format |
+| §§21.3–21.4 protected access/policy enforcement | `nist_sp800_207_2020` — NIST SP 800-207 | Access decisions and resources under zero trust principles; does not certify E5/E6 or define the ETIS contracts |
+| §§21.4, 21.6 distributed intent and uncertainty | `gray_reuter_1992`; `kleppmann_2017` | Transactions, concurrent state and uncertain distributed effects; not specific provider deduplication or refund API guarantees |
+| §21.5 approved change/risk measurement | `nist_ai_rmf_2023` — NIST AI RMF 1.0 | Risk-management governance framing; does not prescribe ETIS policy bundles or guarantee measured outcomes |
+
+Figures F21-01/F21-02, ADR-021, POL-021, G21-01–G21-07 tests and the CASE-204 decision flow are original ETIS engineering synthesis. In-text references are locally claim-scoped. Exact edition, chapter and page checks remain mandatory for publication.

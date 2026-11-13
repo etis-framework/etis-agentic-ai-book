@@ -55,3 +55,12 @@ Before accepting each chapter, inspect front matter through that chapter as a *c
 - **Negative tests:** Ch20 §20.6 → planned Ch24 context implementation, Ch26 reconciliation, Ch28 recovery, Ch29 threat tests, Ch31 end-state verification. These are acceptance obligations, not completed implementation proof.
 - **Pinned credential compromise obligation:** Ch13/Ch19 credential-door/key distinction → planned Ch29 compromised agent token vs privileged provider credential threat analysis and Ch31 independent denial, containment and provider reconciliation tests; this work is not silently closed by Chapter 20.
 - **Sources:** Chapter 20 source-register rows map citations to claims; exact text/edition page verification remains open.
+
+
+## Chapter 21 verified continuity extension (2026-11-13)
+
+- **Decision as enforceable contract:** Ch8 E1–E9 and C01–C09; Ch13 E5, Ch15 E7, Ch17 alternatives, Ch19 effect isolation, Ch20 information ownership → Ch21 §§21.1–21.4 and Figure 21.1. ADR-021 records a candidate decision, POL-021 records a proposed rule, but neither creates financial permission without independent E5/E6 enforcement.
+- **Governance change lifecycle:** Ch7 release and evidence doctrine; Ch16 change/operations; Ch21 §21.5 and Figure 21.2. Approved rules, deployed digests, actual adapter privilege, release identity and rollback evidence must reconcile. No claim that an ADR, policy engine or dashboard is a control by itself.
+- **CASE-204 invariant:** $500; Design B is conditional initial production candidate, A/C are alternatives; C04 advisory never mints RF-1042; E7 UNKNOWN cannot be upgraded without E8 reconciliation.
+- **Negative test handoff:** Ch21 §21.6 G21-01–G21-07 → planned Ch22–27 guarded implementation, Ch29 compromised-agent/privileged-provider distinction, Ch31 independent end-to-end assurance. These later chapters are **not yet drafted**.
+- **Source limitation:** Ch21 source-register mapping is claim-scoped; exact edition/page checks and Mac Word physical pagination are open.

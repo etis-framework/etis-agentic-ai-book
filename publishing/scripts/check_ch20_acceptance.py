@@ -39,7 +39,7 @@ if book.is_file():
   if png.is_file():need(hashlib.sha256(png.read_bytes()).hexdigest() in media,f'{name} current PNG not embedded in complete Word book')
 register=(R/'references/source-register.md').read_text();bib=(R/'manuscript/backmatter/bibliography.md').read_text();trace=(R/'metadata/topic-traceability.md').read_text()
 need('## Chapter 20 — state, memory' in register,'Chapter 20 source-register mapping missing')
-need('Chapters 1–20' in bib,'Bibliography coverage stale')
+need('Chapters 1–21' in bib,'Bibliography coverage stale')
 need('Chapter 20 verified continuity extension' in trace,'Cumulative traceability missing')
 need('Pinned credential compromise obligation' in trace,'Chapter 29/31 pinned future test lost')
 print(f'Chapter 20: {words}/3000 source words, V12 allocation 13 finished pages, {len(errors)} errors')

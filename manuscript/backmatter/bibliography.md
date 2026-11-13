@@ -1,6 +1,6 @@
 # References and bibliography
 
-This is the curated bibliography for the developed Chapters 1–20. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
+This is the curated bibliography for the developed Chapters 1–21. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
 
 ## Foundational systems engineering
 

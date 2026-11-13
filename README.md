@@ -1,17 +1,20 @@
 # Engineering Trustworthy Agentic AI Systems
 
-**ETIS Professional Computing Series — book source repository scaffold**
+**ETIS Professional Computing Series — authoritative Markdown manuscript repository**
 
-This repository is the Markdown source of truth for a proposed 300–500-page, seven-part, 36-chapter professional computing book. It is a *working editorial repository*, not a complete manuscript or certified publication release.
+This repository contains a **single bound 7×10-inch, seven-part, 36-chapter** professional computing textbook. Chapters **1–17** have substantive developed content; Chapters **18–36** remain placeholders. This is not a publication-certified edition.
 
-## Authority and status
+**Locked V12 production plan:** 550 finished pages = 485 chapter pages plus 65 supporting pages. Preferred maximum 575; planning limit 600; absolute maximum 700. The source-of-truth ledger is `publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json`.
 
-- **CAB-001:** approved technical architecture; preserved verbatim under `metadata/approved/`.
-- **BP-001:** approved seven-part, 36-chapter publishing blueprint; preserved verbatim under `metadata/approved/`.
-- **Chapters 1–2:** substantially revised Markdown drafts for review, incorporating the annotated Word comments; not yet publication-approved.
-- **Chapters 3–36:** explicit stubs, not drafted content.
-- **22 figures:** imported from G1.2 in SVG and PNG; visual design accepted but standalone semantic QA and final placement remain open.
-- **Bibliography:** initial candidate sources; claim-level verification and citations remain outstanding.
+## Authority and current status
+
+- **CAB-001:** approved E1–E9 architecture and C01–C09 interface catalog; authoritative Word baseline preserved in `metadata/approved/`.
+- **BP-001:** approved seven-part, 36-chapter publishing blueprint; preserved in `metadata/approved/`.
+- **Chapters 1–7:** Part I developed; **8–16:** Part II developed, including the canonical layered Figure 8.1; **17:** Part III opening chapter developed.
+- **Chapters 18–36:** editorial stubs only; do not count them as completed chapter pages.
+- **Figures:** the current chapter source references 49 figures, with their source masters under `assets/shared-figures/sources/`; automated source/render/Word checks and native print review are separate gates.
+- **Citations:** consolidated bibliography and BibTeX plus `references/source-register.md` provide claim mappings; precise original source passages, standards versions and final citation rendering require publication-level verification.
+- **Review evidence:** `publishing/evidence/PARTS1_3_INTEGRATION_CERTIFICATION_2026-11-13.md` records the through-Chapter-17 integration corrections and remaining acceptance gates.
 
 ## Start here
 
@@ -33,26 +36,23 @@ The book teaches agentic AI as an **evolution of enterprise computing**. It dist
 
 `manuscript/` contains chapter source; `assets/` shared graphics; `references/` bibliography and source verification; `examples/` running implementation; `metadata/` frozen baselines, catalogs and quality standards; `publishing/` build scripts; `archive/` prior Word drafts and review evidence. Keep shared diagrams authoritative in one location. Chapter-local `figures/` is for figures unique to that chapter.
 
-## Known next actions
+## Current production actions
 
-1. Review Chapters 1–2 for duplication and depth, and add verified claim-level citations.
-2. Add teaching illustrations only when they materially improve the story and pass standalone-clarity QA.
-3. Refine approved figure masters semantically before final manuscript placement.
-4. Implement production-grade PDF layout, cross-reference/index processing, and full QA gates.
-5. Expand later chapters only after the opening chapters and build system pass review.
+1. Confirm the Chapters 1–17 integration correction in native Word for Mac, including Chapter 3's documented one-page V12 allocation variance.
+2. Continue Chapters 18–36 as separate protected branches, enforcing chapter-specific V12 budgets and V9 figure standards.
+3. Maintain exact claim-to-source verification as a distinct publication gate; no citation-presence script establishes full bibliographic support.
+4. Recalculate the finished-page forecast from rendered 7×10 evidence after each major Part boundary.
+5. Complete author/imprint/ISBN, glossary, index, permissions and the full-book QA process before publication.
 
+## Current production build (macOS)
 
-## V5 production build (macOS)
-
-From the repository root, install Python dependencies in a virtual environment:
+Graphviz (`dot`) and Python with CairoSVG are required for fresh figure rendering. In the repository root, keep dependencies inside a virtual environment rather than installing them into Homebrew Python:
 
 ```sh
 python3 -m venv .venv
-.venv/bin/python -m pip install python-docx
-export PATH="$PWD/.venv/bin:$PATH"
-make book-docx
-make check
+.venv/bin/python3 -m pip install cairosvg python-docx pillow
+PATH="$PWD/.venv/bin:$PATH" make figures && PATH="$PWD/.venv/bin:$PATH" make book-docx && PATH="$PWD/.venv/bin:$PATH" make check && PATH="$PWD/.venv/bin:$PATH" make check-figures
 open dist/etis-agentic-ai-book.docx
 ```
 
-In Word, select **References → Update Table → Update entire table** to populate the TOC. Review `publishing/PRODUCTION_QA_V5.md` before approving pagination.
+The integrated Word manuscript uses draft Contents text; do not claim a final dynamic table of contents, index, or publication pagination. Inspect figures and captions at final 7×10 print size in native Word for Mac. Every V9 figure master, rendered image, and embedded Word image must agree; CairoSVG is required for fresh PNG regeneration.

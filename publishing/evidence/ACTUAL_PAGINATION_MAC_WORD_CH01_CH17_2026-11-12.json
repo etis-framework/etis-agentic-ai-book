@@ -1,0 +1,63 @@
+{
+  "trim": "7x10",
+  "source": "User-reported Microsoft Word for Mac Navigation Pane chapter and part start pages, 2026-11-12; ETIS_MAC_WORD_PAGINATION.docx uploaded",
+  "verified": true,
+  "verification_scope": "User-measured native Word chapter boundaries; not independently reproduced in Mac Word; source DOCX content separately inspected",
+  "chapters": {
+    "1": 14,
+    "2": 20,
+    "3": 18,
+    "4": 14,
+    "5": 10,
+    "6": 10,
+    "7": 10,
+    "8": 12,
+    "9": 10,
+    "10": 12,
+    "11": 12,
+    "12": 12,
+    "13": 12,
+    "14": 10,
+    "15": 11,
+    "16": 11,
+    "17": 10
+  },
+  "chapter_start_word_pages": {
+    "1": 17,
+    "2": 31,
+    "3": 51,
+    "4": 69,
+    "5": 83,
+    "6": 93,
+    "7": 103,
+    "8": 117,
+    "9": 129,
+    "10": 139,
+    "11": 151,
+    "12": 163,
+    "13": 175,
+    "14": 187,
+    "15": 197,
+    "16": 208,
+    "17": 223,
+    "18": 233
+  },
+  "part_start_word_pages": {
+    "II": 113,
+    "III": 219
+  },
+  "part_introductions_pages": {
+    "II": 4,
+    "III": 4
+  },
+  "supporting_pages_actual": null,
+  "measurement_notes": [
+    "Pages are Word Navigation Pane page positions supplied by the user, not LibreOffice pagination.",
+    "Chapter 7 ends before the Part II opener at page 113; Chapter 16 ends before the Part III opener at page 219.",
+    "Chapter 17 ends before Chapter 18 placeholder at page 233.",
+    "Chapters 2, 3, 4 exceed respective allocations by 2, 3, 2 pages; retain as documented exceptions pending substantive justification to change.",
+    "Other chapters below allocation yield 208 measured pages against 230 allocated for chapters 1-17.",
+    "Supporting material and unfinished placeholder chapters are not measured as completed finished pages.",
+    "Native Word for Mac full figure and paragraph QA remains a human gate."
+  ]
+}

@@ -18,6 +18,8 @@ check:
 	python3 publishing/scripts/check_ch16_acceptance.py
 	python3 publishing/scripts/check_ch17_acceptance.py
 	python3 publishing/scripts/check_parts12_citations.py
+	python3 publishing/scripts/check_parts13_integration.py
+	python3 publishing/scripts/check_mac_word_ch01_ch17.py
 	python3 publishing/scripts/check_single_volume.py
 	python3 publishing/scripts/check_finished_page_ledger.py
 figures:

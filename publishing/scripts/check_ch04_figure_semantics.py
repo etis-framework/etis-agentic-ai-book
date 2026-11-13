@@ -10,7 +10,7 @@ S=R/'assets/shared-figures/sources'; D=R/'assets/shared-figures/rendered'
 errors=[]
 expect={
  'F04-01':['AGENT: INVESTIGATION ONLY','TRUSTED SYSTEM','Scoped objective','Controller: validate','Working state'],
- 'F04-02':['A  FIXED WORKFLOW','B  BOUNDED AGENT','C  HYBRID','Fixed sequence','Choose next read','Policy / review'],
+ 'F04-02':['FIXED WORKFLOW','BOUNDED AGENT','HYBRID WORKFLOW','Fixed sequence','Choose next read','Policy / review'],
  'F04-03':['BOUNDED AGENT','ENTERPRISE CONTROL','EXTERNAL EFFECT','Typed eligibility','Independent policy','Trusted dispatch','CONFIRMED only','PERMIT','DENY']}
 for name,terms in expect.items():
  for ext in ('.svg','.dot'):

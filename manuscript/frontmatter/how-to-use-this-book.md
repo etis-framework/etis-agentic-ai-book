@@ -4,7 +4,7 @@ The book is a continuous engineering argument and a practical reference. Read Pa
 
 **The learning path.** Begin with business requirements and inherited computing patterns; derive logical boundaries; compare deterministic, advisory, and bounded-agentic approaches; implement the refund case incrementally; test failure and abuse; and evaluate governance, economics, and operational readiness.
 
-**The architecture notation.** Later chapters introduce nine logical enterprise responsibilities (E1–E9) and nine interface contracts (C01–C09). The identifiers support traceability; their meanings are always given in prose. They do not imply nine separate services or require multiple agents.
+**The architecture notation.** Later chapters introduce nine logical enterprise responsibilities (E1–E9) and nine interface contracts (C01–C09). Chapter 8 introduces their names, boundaries, and obligations; the approved CAB-001 baseline retains their field-level definitions. The identifiers support traceability and do not substitute for the stated contracts. They do not imply nine separate services or require multiple agents.
 
 **The case and exercises.** The $500 refund is an illustrative running case, not a provider-specific production design. Early exercises ask readers to explain requirements and tradeoffs. Later work asks for schemas, code, policy checks, tests, incident evidence, and defended release decisions. Where a contract depends on a provider, verify its actual guarantees.
 

@@ -33,3 +33,7 @@ python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test
 Read Chapter 22 and `ARCHITECTURE.md`; run the tests; reproduce the CLI sequence in `build0/README.md`; inspect the E7 and mock E8 tables independently; then record which guarantees remain assumptions. Never point these examples at a real payment API.
 
 The added fault scenarios are intentionally *fixture mechanisms*. Build 0 does not record a durable structured escalation queue, audit-grade logging or classified retriable provider error. The full cross-build controls and planned acceptance criteria are in [`ENGINEERING_STANDARD.md`](ENGINEERING_STANDARD.md).
+
+## Build 1 — bounded C04 test evidence
+
+Run `python3 -m unittest discover -s examples/refund-reference-system/build1 -p 'test_*.py' -v` and independently rerun the Build 0 suite. The Build 1 tests cover three deterministic dispositions, forged privilege fields, malformed and cross-tenant inputs, evidence version mismatch, inconsistent correlation, prompt-injection prose as inert data, dependency timeout/errors, and unchanged E7/E8 fixture tables. In particular `test_e7_e8_unchanged_and_no_operation_creation` checks isolated local mock tables with repeated advice, and the import-boundary test checks the supplied source for accidental privileged imports. **These tests do not prove OS isolation, real identity, transaction authorization or live provider denial.** Chapters 25, 29 and 31 require the stronger hijacked-agent valid-token attack with independent E5 enforcement.

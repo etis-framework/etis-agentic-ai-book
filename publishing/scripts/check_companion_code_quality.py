@@ -4,7 +4,7 @@ from pathlib import Path
 import sys
 r=Path(__file__).resolve().parents[2]
 c=r/'examples/refund-reference-system'
-required=['README.md','ARCHITECTURE.md','CONTRIBUTING.md','ENGINEERING_STANDARD.md','TESTING.md','build0/README.md','build0/refund.py','build0/test_refund.py']
+required=['README.md','ARCHITECTURE.md','CONTRIBUTING.md','ENGINEERING_STANDARD.md','TESTING.md','build0/README.md','build0/refund.py','build0/test_refund.py','build1/README.md','build1/contracts.py','build1/advisory.py','build1/model_interface.py','build1/demo.py','build1/test_advisory.py']
 errors=[]
 for rel in required:
     if not (c/rel).is_file():errors.append(f'missing {rel}')

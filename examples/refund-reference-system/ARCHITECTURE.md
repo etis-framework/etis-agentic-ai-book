@@ -20,3 +20,7 @@ The scenario-to-observable-evidence matrix is in `TESTING.md`. The complete arch
 ## Important implementation boundary after the Chapter 22 hardening pass
 
 Build 0 now atomically claims the local E7 `AUTHORIZED → DISPATCHED` transition using a conditional SQLite update. This prevents two *local* callers from winning the same state claim. It is **not** E2 distributed lease/epoch fencing, a protected E5 service, or an E6 provider-specific idempotency guarantee. A simulated provider-unavailable event intentionally leaves E7 `DISPATCHED` and mock E8 empty; only reconciliation or human investigation is permitted, never a blind resend. See `ENGINEERING_STANDARD.md` before adding Builds 1–5.
+
+## Build 1 — advisory-only E3/C04 extension
+
+The C02-like `WorkRequest` remains fixed fixture input (not authenticated E1). E3's `advise()` consumes one explicitly supplied E4-like `Evidence` value; neither retrieval nor its `verified` test bit provides production provenance. `Proposal` is an immutable, schema-checked **C04 untrusted proposal** with an `ADV-` proposal ID and a `TRACE-` correlation ID. Neither is the trusted RF-1042 financial operation identifier. E5 / C05 independently owns authorization and E7 / C06 owns durable consequential intent; Build 1 has no E5/E6/E7/E8 dependency or financial privilege. The optional `CandidateModel` interface returns raw data to a strict parser. A Python source-file boundary is not a hostile-runtime security boundary. Figure 23.1 and `build1/README.md` document the deliberate gaps and future owners.

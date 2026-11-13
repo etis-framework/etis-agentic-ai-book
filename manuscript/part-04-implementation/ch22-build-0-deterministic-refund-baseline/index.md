@@ -63,7 +63,9 @@ This is intentionally conservative. An earlier successful payment does not becom
 Run the Build 0 baseline tests with only the host's existing Python standard library, from the repository root:
 
 ```sh
-python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test_*.py' -v
+python3 -m unittest discover \
+  -s examples/refund-reference-system/build0 \
+  -p 'test_*.py' -v
 ```
 
 The build-specific README also shows how to inspect E7 and simulated E8 records before and after reconciliation. Additional tests exercise two simultaneous local dispatch callers, malformed monetary and approval types, provider unavailability before commit, and contradictory mock-provider records. A conditional SQLite update allows only one local caller to claim `AUTHORIZED → DISPATCHED`; this is a teaching-level local safety property, **not** an E2 distributed ownership or E5 process-isolation guarantee. The companion `ENGINEERING_STANDARD.md` records the non-negotiable contracts and verification obligations for Builds 1–5. The tests use temporary isolated SQLite files; it has no network calls, customer data or external dependencies. To reproduce a restart-sized experiment, use the documented CLI sequence in `examples/refund-reference-system/build0/README.md`: `prepare`, `dispatch-lost-ack`, `status`, then `reconcile`, all with the same fresh `--directory`. Expect E7 UNKNOWN after the lost acknowledgment, an already committed mock E8 provider refund, and E7 CONFIRMED only after status lookup. Verify that `dispatch` refuses to act on an UNKNOWN operation. The record must keep RF-1042 throughout.

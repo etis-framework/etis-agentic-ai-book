@@ -12,3 +12,7 @@ The mandatory, cross-build control requirements and acceptance matrix are in [`E
 8. **Respect local environments.** Do not modify the reader's Python or Homebrew configuration. Build 0 uses the standard library; future dependencies must be isolated and pinned.
 
 An implementing engineer, enterprise architect, advanced student, security reviewer, SRE and business owner must each be able to assess what the code *actually proves* and where it is only a teaching approximation.
+
+## Build 1 contribution check
+
+Keep Build 0 independently runnable and the Build 1 proposal parser fail-closed. Changes to C04 fields must update `contracts.py`, `advisory.py`, the injected-model negative tests, Chapter 23, figures 23.1–23.3 and the source-register/traceability material together. Do not add provider credentials, financial adapter imports or execution functions to `build1/`. For any future model adapter, pin optional versions, keep offline exercises reproducible, and document exceptions and what tests do **not** establish.

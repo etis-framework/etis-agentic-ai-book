@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="5.75in" height="3.833in" viewBox="0 0 1140 760">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#31556B"/></marker></defs>
+<rect x="0" y="0" width="1140" height="760" fill="#ffffff"/>
+<text x="570" y="43" text-anchor="middle" fill="#12243A" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700">One architecture; three investigation alternatives</text>
+<text x="570" y="78" text-anchor="middle" fill="#415164" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">E1–E9 obligations remain fixed; only investigation selection changes</text>
+<rect x="32" y="112" width="345" height="174" rx="13" fill="#E9F3F7" stroke="#2F475F" stroke-width="2"/>
+<text x="204" y="151" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">A  DETERMINISTIC</text>
+<text x="204" y="194" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Rules + known lookups</text>
+<text x="204" y="229" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Structured recommendation</text>
+<line x1="204" y1="286" x2="204" y2="340" stroke="#31556B" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="397" y="112" width="345" height="174" rx="13" fill="#E9F3F7" stroke="#2F475F" stroke-width="2"/>
+<text x="569" y="151" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">B  ADVISORY AI</text>
+<text x="569" y="194" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Model interprets evidence</text>
+<text x="569" y="229" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Reviewed recommendation</text>
+<line x1="569" y1="286" x2="569" y2="340" stroke="#31556B" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="762" y="112" width="345" height="174" rx="13" fill="#E9F3F7" stroke="#2F475F" stroke-width="2"/>
+<text x="934" y="151" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">C  BOUNDED AGENT</text>
+<text x="934" y="194" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Selects allowed read steps</text>
+<text x="934" y="229" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Typed proposal + limits</text>
+<line x1="934" y1="286" x2="934" y2="340" stroke="#31556B" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="65" y="347" width="1010" height="92" rx="13" fill="#F1F5F7" stroke="#2F475F" stroke-width="2"/>
+<text x="570" y="381" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700">E1  scoped admission    •    E2  accountable workflow owner</text>
+<text x="570" y="411" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">E3 outputs advisory  •  E4 context is scoped and sourced</text>
+<line x1="570" y1="439" x2="570" y2="486" stroke="#31556B" stroke-width="3"  marker-end="url(#arr)"/>
+<text x="775" y="469" text-anchor="middle" fill="#945E22" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">INDEPENDENT TRUST BOUNDARY</text>
+<rect x="205" y="493" width="730" height="93" rx="13" fill="#FFF0D1" stroke="#93692B" stroke-width="2"/>
+<text x="570" y="526" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">E5  INDEPENDENT AUTHORIZATION</text>
+<text x="570" y="558" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">Policy • approval • credential custody • durable intent</text>
+<line x1="570" y1="586" x2="570" y2="612" stroke="#31556B" stroke-width="3"  marker-end="url(#arr)"/>
+<rect x="255" y="620" width="630" height="78" rx="13" fill="#E1F1E9" stroke="#3C6E5E" stroke-width="2"/>
+<text x="570" y="649" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700">E6  GOVERNED PROVIDER INTEGRATION</text>
+<text x="570" y="679" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400">External effects require provider evidence / E8 business truth</text>
+<text x="570" y="741" text-anchor="middle" fill="#203349" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700">E7 durable recovery  •  E9 assurance span every alternative</text>
+</svg>

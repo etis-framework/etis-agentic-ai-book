@@ -201,3 +201,15 @@ Figures F18-01 and F18-02, the bounded delegation rules, coordinator/peer compar
 | §18.5–18.6 | `nist_ai_rmf_2023`, `owasp_agentic_2026` (contextual) | Risk management and agentic-system threat categories | ETIS negative-test matrix is original synthesis; no NIST/OWASP certification claimed |
 
 **Bibliography reconciliation:** Fowler added to human bibliography and BibTeX. All other named citations reuse existing entries. Final publisher/edition/page-level checks remain open; do not imply full bibliographic claim certification.
+
+## Chapter 19 — tools, adapters and effect isolation (2026-11-13)
+
+| Claim and location | Source | Supported scope / explicit limit |
+|---|---|---|
+| §19.2 HTTP-method idempotency | `rfc9110_2022` — Fielding, Nottingham, Reschke, RFC 9110 §9.2.2 | Method-level request semantics; not a payment provider's business-operation deduplication guarantee. RFC text checked against RFC Editor in Nov 2026. |
+| §§19.3, 19.7 architectural isolation | `bass_clements_kazman_2021`; `nist_sp800_207_2020` | Quality-attribute tradeoffs and resource authorization principles; neither mandates ETIS E5 or nine services. |
+| §19.3 distribution cost | `fowler_microservice_tradeoffs_2015` | General deployment/operations tradeoffs; not measured agent throughput or cost. |
+| §§19.4–19.5 provider uncertainty | `gray_reuter_1992`; `kleppmann_2017`; `hohpe_woolf_2003` (further reading) | Transactions and distributed observations; no claim that any payment provider implements idempotency or query. |
+| §19.6 agentic threat classes | `owasp_agentic_2026` | Tool misuse, identity/privilege and context risks; OWASP taxonomy is guidance, not certification. |
+
+Figures F19-01/F19-02, adapter status mapping, CASE-204 example, negative tests and provider-agnostic contracts are original ETIS design synthesis. Claims about a specific provider's key scope, retention, credentials or reconciliation require its actual documentation and executable contract tests. Exact edition/page audit of textbooks remains an open publication gate.

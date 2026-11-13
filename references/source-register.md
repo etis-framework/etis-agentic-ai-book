@@ -1,4 +1,4 @@
-# Source and citation register — developed Chapters 1–21
+# Source and citation register — developed Chapters 1–22
 
 **Status: claim locations mapped; final publication certification remains open.** Earlier chapters were mapped through Chapter 7; this pass extends mapped, limited-scope attribution through Chapter 16. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
 
@@ -239,7 +239,7 @@ Figures F21-01/F21-02, ADR-021, POL-021, G21-01–G21-07 tests and the CASE-204 
 
 ## Parts I–III holistic audit and verified source addition (2026-11-13)
 
-The attached Word build covers developed Chapters 1–21, but none of Parts I–III has publication certification. Editorial linkage, exact source-page/edition checks, and Mac Word native pagination remain gates. Refer to `metadata/parts-01-03-six-lens-audit.md` for six reader paths, citation scope, risk dispositions, and measured 345-page LibreOffice review data.
+The attached Word build covers developed Chapters 1–22, but none of Parts I–III has publication certification. Editorial linkage, exact source-page/edition checks, and Mac Word native pagination remain gates. Refer to `metadata/parts-01-03-six-lens-audit.md` for six reader paths, citation scope, risk dispositions, and measured 345-page LibreOffice review data.
 
 | Source key | Official source confirmation | Specific claim scope | Limits / remaining checks |
 |---|---|---|---|
@@ -251,3 +251,14 @@ The attached Word build covers developed Chapters 1–21, but none of Parts I–
 | `mcp_2026` | MCP project, July 28 2026 specification | Ch4/Ch19 tool protocol scope | MCP transport authorization cannot grant refund entitlement |
 
 **Open citation work:** Confirm every quotation, edition, primary-source passage and normative claim; pin OWASP living revisions and provider-specific guarantees; avoid treating bibliographic matching as technical correctness. The official source URLs are embedded in the consolidated bibliography or maintained in this register.
+
+## Chapter 22 — deterministic baseline (2026-11-13)
+
+| Claim location | Source / scope | Verification status |
+|---|---|---|
+| §22.1, §22.4 | Gray and Reuter (1992): local transaction/durable intent; Kleppmann (2017): distributed state, partial observations and failure | Foundational scope mapped; **exact edition/page passage audit OPEN** |
+| §22.3 | Fielding, Nottingham, and Reschke (2022), RFC 9110 §9.2.2: HTTP-method idempotency, **not payment-provider idempotency-key semantics** | Section anchor identified; provider contract intentionally not asserted |
+| §22.5 | NIST AI RMF 1.0 (2023): organizational risk management framing, not approval of an ETIS execution path | General scope mapped; claim-level primary passage audit OPEN |
+| §§22.2–22.7 | ETIS original fixture code, figures, denial tests, and architectural synthesis | **Direct reproducibility tests mandatory**; no external source purported to certify real transactions |
+
+**Carry-forward:** No new external bibliography titles are needed for Chapter 22: all four attributions already occur in `manuscript/backmatter/bibliography.md` and `references/bibliography.bib`. Future provider-specific guarantees require that provider's primary contract and tests. No finished-source claim-level certification is made.

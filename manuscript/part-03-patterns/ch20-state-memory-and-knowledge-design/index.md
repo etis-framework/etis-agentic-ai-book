@@ -86,7 +86,7 @@ For `CASE-204`, the defensible initial choice is **scoped retrieval plus minimal
 | Provider times out after possible dispatch | `RF-1042` stays `UNKNOWN`; no new effect | Intent record, provider query, reconciliation evidence |
 | Human cancels work or access expires | No new task reads or effect dispatch | Stop, revocation and in-flight outcome record |
 
-Run these tests with source versions and controlled time; otherwise a passing happy-path run says little about revocation or races. Evaluating a model's answer is necessary but different from verifying access denial, state integrity, business effect and privacy compliance. Chapters 24 and 26 will implement relevant scoped context and reconciliation examples; Chapters 28–31 will test distributed failure, misuse, and end-state evidence. Those are **planned destinations**, not completed implementation proof.
+Run these tests with source versions and controlled time; otherwise a passing happy-path run says little about revocation or races. Evaluating a model's answer is necessary but different from verifying access denial, state integrity, business effect and privacy compliance. Chapters 24 and 26 will implement relevant scoped context and reconciliation examples; Chapters 28–31 will test distributed failure, misuse, and end-state evidence. Those chapter references identify the intended implementation and verification work; only executable results, with their assumptions, constitute proof.
 
 ## Chapter 20 — Engineering practice
 

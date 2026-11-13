@@ -43,7 +43,7 @@ if doc.exists():
   png=R/f'assets/shared-figures/rendered/{name}.png'
   need(hashlib.sha256(png.read_bytes()).hexdigest() in media,f'{name} not current in Word')
 need('Chapter 19 — tools, adapters' in (R/'references/source-register.md').read_text(),'Source register mapping missing')
-need('Chapters 1–21' in (R/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography scope not updated')
+need('Chapters 1–22' in (R/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography scope not updated')
 print(f'Chapter 19: {words}/3000 source words; allocated 13 finished pages; {len(errors)} failures')
 for e in errors:print('FAIL:',e)
 if errors:sys.exit(1)

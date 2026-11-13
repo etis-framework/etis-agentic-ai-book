@@ -16,7 +16,7 @@ files={
 'app':read('manuscript/backmatter/appendices.md'),
 'map':read('metadata/topic-traceability.md')}
 expect={
-'front':['cross-domain contracts','Appendix','CAB-001'],
+'front':['cross-domain contracts','Appendix','Chapter 35'],
 '8':['Table 8.1','Table 8.2','Table 8.3','proposal','E7','E8'],
 '11':['C04','RF-1042','E5/E7'],
 '13':['C04','C05','C06','RF-1042'],
@@ -24,7 +24,7 @@ expect={
 '15':['State ownership reminder','E7','E8'],
 '17':['not a progression from Design A through B to C'],
 '18':['nine **logical responsibilities**','cross-domain contracts','**no additional deployed services**','RF-1042'],
-'app':['C01','C02','C03','C04','C05','C06','C07','C08','C09','UNKNOWN','Chapters 19–36'],
+'app':['C01','C02','C03','C04','C05','C06','C07','C08','C09','UNKNOWN','Chapters 22–27'],
 'map':['CCR-01','CCR-09','six lenses']}
 fail=[]
 for name,terms in expect.items():

@@ -29,22 +29,44 @@ def main():
   cmd+=['--pdf-engine='+engine]
  if args.format=='docx' and (ROOT/'publishing/templates/reference.docx').exists():cmd+=['--reference-doc='+str(ROOT/'publishing/templates/reference.docx')]
  subprocess.run(cmd,check=True,cwd=ROOT)
- if args.format=='docx' and not args.chapter:
-  subprocess.run([sys.executable,str(ROOT/'publishing/scripts/paginate_docx.py'),str(dest)],check=True)
-  # Keep the illustrative delegation contract legible and consistently monospaced.
+ if args.format=='docx':
+  # All fenced listings use the same restrained terminal/configuration treatment.
+  # Width is set for the actual 7x10 printable measure, not screen display.
   from docx import Document
-  from docx.shared import Inches,Pt,RGBColor
+  from docx.shared import Inches, Pt, RGBColor
+  from docx.oxml import OxmlElement
+  from docx.oxml.ns import qn
   doc=Document(dest)
   for para in doc.paragraphs:
-   if para.style.name=='Source Code' and 'case_id: CASE-204' in para.text:
-    para.paragraph_format.left_indent=Inches(0.20)
-    para.paragraph_format.right_indent=Inches(0.05)
-    para.paragraph_format.space_before=Pt(6)
-    para.paragraph_format.space_after=Pt(6)
-    for run in para.runs:
-     run.font.name='Consolas'
-     run.font.size=Pt(8.5)
-     run.font.color.rgb=RGBColor(32,60,77)
+   if para.style.name != 'Source Code':continue
+   para.paragraph_format.left_indent=Inches(0.22)
+   para.paragraph_format.right_indent=Inches(0.08)
+   para.paragraph_format.space_before=Pt(6)
+   para.paragraph_format.space_after=Pt(7)
+   para.paragraph_format.line_spacing=1.0
+   para.paragraph_format.keep_together=True
+   for run in para.runs:
+    run.font.name='Liberation Mono'
+    run.font.size=Pt(8.2)
+    run.font.color.rgb=RGBColor(28,53,69)
+   pPr=para._p.get_or_add_pPr()
+   shd=pPr.find(qn('w:shd'))
+   if shd is None:
+    shd=OxmlElement('w:shd');pPr.append(shd)
+   shd.set(qn('w:fill'),'F0F4F7')
+   pBdr=pPr.find(qn('w:pBdr'))
+   if pBdr is None:
+    pBdr=OxmlElement('w:pBdr');pPr.append(pBdr)
+   left=pBdr.find(qn('w:left'))
+   if left is None:
+    left=OxmlElement('w:left');pBdr.append(left)
+   for name,val in {'val':'single','sz':'16','space':'7','color':'508091'}.items():
+    left.set(qn('w:'+name),val)
+  doc.save(dest)
+ if args.format=='docx' and not args.chapter:
+  subprocess.run([sys.executable,str(ROOT/'publishing/scripts/paginate_docx.py'),str(dest)],check=True)
+  from docx import Document
+  doc=Document(dest)
   # Keep the compact Chapter 5 economics comparison together in print.
   # A partially printed cost table would make the comparison hard to audit.
   from docx.oxml import OxmlElement

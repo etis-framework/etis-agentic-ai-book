@@ -1,4 +1,4 @@
-# Source and citation register — developed Chapters 1–22
+# Source and citation register — developed Chapters 1–23
 
 **Status: claim locations mapped; final publication certification remains open.** Earlier chapters were mapped through Chapter 7; this pass extends mapped, limited-scope attribution through Chapter 16. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
 
@@ -239,7 +239,7 @@ Figures F21-01/F21-02, ADR-021, POL-021, G21-01–G21-07 tests and the CASE-204 
 
 ## Parts I–III holistic audit and verified source addition (2026-11-13)
 
-The attached Word build covers developed Chapters 1–22, but none of Parts I–III has publication certification. Editorial linkage, exact source-page/edition checks, and Mac Word native pagination remain gates. Refer to `metadata/parts-01-03-six-lens-audit.md` for six reader paths, citation scope, risk dispositions, and measured 345-page LibreOffice review data.
+The attached Word build covers developed Chapters 1–23, but none of Parts I–III has publication certification. Editorial linkage, exact source-page/edition checks, and Mac Word native pagination remain gates. Refer to `metadata/parts-01-03-six-lens-audit.md` for six reader paths, citation scope, risk dispositions, and measured 345-page LibreOffice review data.
 
 | Source key | Official source confirmation | Specific claim scope | Limits / remaining checks |
 |---|---|---|---|
@@ -262,3 +262,11 @@ The attached Word build covers developed Chapters 1–22, but none of Parts I–
 | §§22.2–22.7 | ETIS original fixture code, figures, denial tests, and architectural synthesis | **Direct reproducibility tests mandatory**; no external source purported to certify real transactions |
 
 **Carry-forward:** No new external bibliography titles are needed for Chapter 22: all four attributions already occur in `manuscript/backmatter/bibliography.md` and `references/bibliography.bib`. Future provider-specific guarantees require that provider's primary contract and tests. No finished-source claim-level certification is made.
+
+## Chapter 23 claim and source audit queue
+
+| Location | Referenced source or basis | Narrow claim | Publication gate |
+|---|---|---|---|
+| §23.1 | NIST AI 600-1 (2024), OWASP GenAI security guidance | Generative output/prompt-injection risk motivates untrusted proposal handling | Verify exact NIST category and pin OWASP version; no claim of endorsed ETIS architecture |
+| §§23.2–23.6 | CAB-001 and source-controlled Build 0/1 code | E1–E9/C01–C09 mapping, strict parser, negative evidence | Compare each assertion to actual code/tests and edition tag |
+| §23.7 | ETIS original analysis; cross-references Chapters 31/34 | Proposed adoption metrics and Design B conditional value | Must not imply empirical model improvement without measured study |

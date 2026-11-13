@@ -84,3 +84,10 @@ See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citatio
 | E7 versus E8, UNKNOWN | Ch15 → Ch20 → Ch22 §§22.3–22.5 | Two separate SQLite stores; lost-ack, no-redrive and reconciliation tests; no real provider assertions |
 | Alternative A/B/C versus Build 0–5 | Ch3/17/21 → Part IV opener → Ch22 §§22.1, 22.7 | Build is a teaching sequence, C optional and B conditionally preferred |
 | E9 verification and operations | Ch7/21 → Ch22 §§22.5–22.6 → Ch28–31 planned | Six runnable regression tests; native Word print, real provider contract, concurrency, source-page audit OPEN |
+
+## Chapter 23 / Build 1 traceability
+
+- E3/C04 bounded proposal: `build1/contracts.py`, `build1/advisory.py`, Chapter 23 §§23.2–23.4, F23-01 and F23-02.
+- E1/E4 fixture scope/provenance: `WorkRequest`/`Evidence`, negative cross-tenant/stale tests, Chapter 23 §§23.3, 23.6. Protected variants deferred to Chapter 24.
+- E5/E6 exclusion and E7/E8 no-write: `build1/test_advisory.py`, Chapter 23 §§23.5–23.6, F23-03. Shared-process limits explicitly documented; independent enforcement in Chapter 25.
+- Valid-agent-token hijack regression: future Chapters 25, 29 and 31; Build 1 does not assert token enforcement.

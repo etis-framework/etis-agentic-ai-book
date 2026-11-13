@@ -26,3 +26,11 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | A11 | architecture | Governance and assurance E9 | `assets/shared-figures/rendered/A11.svg` | Review required |
 | B07 | behavior | Release and evidence lifecycle | `assets/shared-figures/rendered/B07.svg` | Review required |
 | D04 | decision | Economic comparison | `assets/shared-figures/rendered/D04.svg` | Review required |
+
+## Chapter 23 canonical figures (source and print review)
+
+| ID | Representation | Semantic scope | Master | Render | Current gate |
+|---|---|---|---|---|---|
+| F23-01 | architecture | Untrusted C04 versus existing financial path | `assets/shared-figures/sources/F23-01.svg` | `assets/shared-figures/rendered/F23-01.png` | Source and PNG inspected; native Word print check open |
+| F23-02 | behavior | Request, validation, review and safe failure; no dispatch | `assets/shared-figures/sources/F23-02.svg` | `assets/shared-figures/rendered/F23-02.png` | Source and PNG inspected; native Word print check open |
+| F23-03 | decision | Reject malformed scope, absent dependency, valid review-only outcome | `assets/shared-figures/sources/F23-03.svg` | `assets/shared-figures/rendered/F23-03.png` | Source and PNG inspected; native Word print check open |

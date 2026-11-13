@@ -84,7 +84,9 @@ If the evidence contradicts B's economic assumptions, select A for more case typ
 
 ## 17.8 Transition to coordination patterns
 
-This chapter answered **which tasks justify adaptive selection**. It did not yet decide how an organization should arrange generalist and specialist workers, supervisor ownership, handoffs or agent registry registration. Chapter 18 compares those coordination and delegation patterns, holding the same E2 logical-owner and fencing requirements from Chapters 10 and 15. Chapters 19–21 will then examine tools and effect isolation, state and memory distinctions, and enforceable architecture decisions. Part III thus extends the Chapter 8 reference architecture by making explicit choices *within* its domains—not by replacing its trust boundaries.
+The sequence of reference-implementation builds in Part IV is a teaching and verification sequence, **not a progression from Design A through B to C**. An increment that implements a bounded tool or durable-state mechanism does not, by itself, change the production decision: B remains the conditional initial candidate; C is optional and must separately demonstrate benefit and assurance.
+
+This chapter answered **which tasks justify adaptive selection**. It did not yet decide how an organization should arrange generalist and specialist workers, supervisor ownership, handoffs or agent registry registration. Chapter 18 compares these choices along **independent axes**: task mechanism, generalist/specialist capability, coordination ownership, hub/peer communication, and physical deployment. It holds the E2 logical-owner and fencing requirements from Chapters 10 and 15 unchanged. Chapters 19–21 will then examine tools and effect isolation, state and memory distinctions, and enforceable architecture decisions. Part III thus extends the Chapter 8 reference architecture by making explicit choices *within* its domains—not by replacing its trust boundaries.
 
 ## Chapter 17 — Engineering practice
 

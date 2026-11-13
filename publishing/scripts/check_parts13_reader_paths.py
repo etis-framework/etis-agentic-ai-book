@@ -43,7 +43,7 @@ need('**C02 Work order**' in ch21 and '**C09 Telemetry**' in ch21,'Ch21 C catalo
 need('NIST SP 800-162' in ch21 and '@techreport{nist_sp800_162_2019' in bib and 'NIST Special Publication 800-162' in back and '`nist_sp800_162_2019`' in source,'New NIST ABAC source not consistently mapped')
 need('113 | 95 | +18' in qa and '122 | 123 | -1' in qa and '62 | 62 | 0' in qa,'Measured V12 exceptions absent from QA report')
 need('NOT certified or frozen' in qa,'Publication-gate warning missing')
-need('Chapters 17–21 compare' in appendix and 'Chapters 22–36 remain planned' in appendix,'Appendix must distinguish drafted Ch17–21 from planned Ch22–36')
+need('Chapters 17–21 compare' in appendix and 'Chapters 22–27' in appendix and 'Chapters 35–36' in appendix,'Appendix must trace the complete book without production status prose')
 need('Chapters 19–36 are *planned*' not in appendix,'Appendix stale developed-chapter status')
 need('CASE-204' in ch21 and 'RF-1042' in ch21,'Running-case identity missing in Ch21')
 need('**conditional initial production candidate**' in ch21 or '*conditional initial production candidate*' in ch21,'Design B status must stay conditional')

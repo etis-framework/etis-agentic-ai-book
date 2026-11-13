@@ -72,3 +72,15 @@ See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citatio
 **First-use rule:** Introduce E-domain/C-contract with its functional name the first time its specific authority matters in a part or chapter; after one concise explanation, identifiers suffice. Do not reprint the nine-by-nine catalog in every chapter. Part III's entry page serves as a self-contained functional refresher. If a reader must leave the chapter to establish the security meaning of an identifier, the prose is incomplete.
 
 **Cross-part negative test:** A C04 advisory proposal (`operation_id` / `idempotency intent` permitted by CAB-001) cannot assign trusted `RF-1042`, establish E5 approval, reach provider credentials, or upgrade E7 UNKNOWN to CONFIRMED; E8 reconciliation and source evidence are required.
+
+## Chapter 22 verified implementation trace (2026-11-13)
+
+| Topic | Reading path | Executable evidence / remaining limitation |
+|---|---|---|
+| CASE-204, $500 and RF-1042 | Ch3 §3.9 → Ch8 §8.4 → Ch13–15 → Ch17 → Ch21 → Ch22 §§22.1, 22.3 | `build0/refund.py` fixed case, operation and 50000 cents; test stable identity; real policy fixture only |
+| E1/E2 admission and ownership | Ch9–10 → Ch18 → Part IV opener → Ch22 §22.2 | Fixed principal/tenant and single controller; authentication and fencing **not implemented** |
+| C04 advisory versus C05/C06 financial intent | Ch11/13 → Ch19/21 → Ch22 §§22.2–22.3 | No C03/C04 or E3/E4 at Build 0; proposal cannot mint operation identity |
+| E5/E6 gate and adapter | Ch13–14 → Ch19/21 → Ch22 §§22.2–22.5 | `authorize`, `dispatch`, denial test; no production privilege isolation/credential custody |
+| E7 versus E8, UNKNOWN | Ch15 → Ch20 → Ch22 §§22.3–22.5 | Two separate SQLite stores; lost-ack, no-redrive and reconciliation tests; no real provider assertions |
+| Alternative A/B/C versus Build 0–5 | Ch3/17/21 → Part IV opener → Ch22 §§22.1, 22.7 | Build is a teaching sequence, C optional and B conditionally preferred |
+| E9 verification and operations | Ch7/21 → Ch22 §§22.5–22.6 → Ch28–31 planned | Six runnable regression tests; native Word print, real provider contract, concurrency, source-page audit OPEN |

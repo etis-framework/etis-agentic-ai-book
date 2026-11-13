@@ -23,7 +23,7 @@ need(c.count('![Figure 17.')==3,'Expected three Chapter 17 figure references')
 need(all(f'F17-0{i}.png' in c for i in range(1,4)),'Figures not linked')
 need(all(s in c for s in ('Parasuraman, Sheridan, and Wickens, 2000','Bass, Clements, and Kazman, 2021','Yao et al., 2024','FinOps Foundation, 2025')),'Missing expected local citations')
 need('Chapter 17' in (r/'references/source-register.md').read_text(),'Chapter 17 source mapping absent')
-need('Chapters 1–21' in (r/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography scope not updated')
+need('Chapters 1–22' in (r/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography scope not updated')
 for bad in ('timeout proves failure','agent can authorize itself','refund payment without approval','model holds payment credentials'):
  need(bad not in c.lower(),f'Unsafe statement: {bad}')
 media=set();doc=r/'dist/etis-agentic-ai-book.docx';need(doc.exists(),'Integrated DOCX absent')

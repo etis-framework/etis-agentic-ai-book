@@ -27,7 +27,7 @@ Part I provides the conceptual foundation for answering them. It distinguishes t
 | **6. Uncertainty, Authority, and Enterprise Trust** | How do uncertainty and permission affect a design? | Explicit authority and uncertainty controls |
 | **7. Engineering Principles and Requirements** | What must be specified before architecture and implementation? | Measurable requirements and evidence obligations |
 
-Chapters 1–7 constitute the current Part I development draft; this is not a publication-completion or certification claim. Editorial continuity, claim-to-source verification, measured page-budget reconciliation, and native print QA remain open. The learning path states each chapter's editorial responsibility, not a claim that later draft chapters have already passed publication review.
+The learning path identifies the evidence and engineering decisions that readers will carry into the reference architecture, its alternative designs, and the runnable companion implementation. The later builds translate these obligations into source code and observable tests; they do not require a transition to greater autonomy.
 
 ## One case, progressively richer decisions
 

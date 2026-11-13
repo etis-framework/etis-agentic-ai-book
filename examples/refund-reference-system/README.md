@@ -1,6 +1,6 @@
 # CASE-204 companion reference implementation
 
-**This code is educational, not a real payment service.** It uses fictional data and cannot send refunds. The book and this companion source are versioned in the same authoritative Git repository.
+**This code is educational, not a real payment service.** Its E7 local operational record and simulated E8 provider record deliberately show why local knowledge differs from authoritative business truth. It uses fictional data and cannot send refunds. The book and this companion source are versioned in the same authoritative Git repository.
 
 ## Locate the book and work through the builds
 
@@ -30,6 +30,7 @@ examples/refund-reference-system/
 ├── README.md                 # This reader entry point
 ├── ARCHITECTURE.md           # E1–E9 mapped to actual Build 0 behavior
 ├── CONTRIBUTING.md           # Educational QA and review standard
+├── TESTING.md                # Scenario-to-evidence matrix and assurance limits
 └── build0/
     ├── README.md             # Executable exercises and observed evidence
     ├── refund.py             # Standard-library local simulator
@@ -44,7 +45,7 @@ The canonical figure masters remain in `assets/shared-figures/sources/`; do not 
 python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test_*.py' -v
 ```
 
-Then follow `build0/README.md` to reproduce a lost provider acknowledgment and examine the two separate SQLite stores. No `pip` install, real credentials, or live network connection is required.
+Consult `TESTING.md` for the complete verification matrix. Then follow `build0/README.md` to reproduce a lost provider acknowledgment and examine the two separate SQLite stores. No `pip` install, real credentials, or live network connection is required.
 
 ## Version and publication policy
 

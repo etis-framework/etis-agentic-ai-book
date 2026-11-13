@@ -5,7 +5,7 @@ Every change to a build is reviewed with its chapter, tests, figures, source ass
 1. **Teach the reasoning.** Clearly name functions, states and boundaries; explain *why* authorization, durable intent, reconciliation and denials matter. Avoid comments that merely restate obvious Python syntax.
 2. **Document limits.** Label mocked identity, payment, provider uniqueness, concurrency and approval assumptions. A fixture is not production security.
 3. **Preserve the running case.** CASE-204, $500 in integer cents and RF-1042 remain consistent. E7 local knowledge is distinct from E8 external truth.
-4. **Test evidence, not just return values.** Include authorization denial, duplicate, lost acknowledgment, missing/conflicting provider, and restart scenarios where relevant; inspect persistent state.
+4. **Test evidence, not just return values.** Maintain `TESTING.md` alongside executable cases; Include authorization denial, duplicate, lost acknowledgment, missing/conflicting provider, and restart scenarios where relevant; inspect persistent state.
 5. **Make steps reproducible.** Provide exact root-relative commands, expected observations, safe cleanup and prerequisites in each build README. Tests should use disposable temporary stores.
 6. **Synchronize the book.** Update manuscript navigation, architecture, canonical figure masters, source register, cross-chapter references and QA records in the same guarded patch.
 7. **Release carefully.** Run chapter and book QA, inspect figures at actual 7×10 Word print size, report open gates, and publish immutable edition tags only after approval.

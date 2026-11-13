@@ -20,7 +20,7 @@ root='https://github.com/etis-framework/etis-agentic-ai-book'
 for title, body in [('front',front),('introduction',intro),('Part IV',part),('Ch22',ch22),('appendix',app),('code README',code)]:
  need(root in body, f'{title}: no official GitHub access path')
 need('examples/refund-reference-system/' in front and 'README.md' in front, 'front: companion reader entry point missing')
-need('edition' in front and 'tag' in front and 'private during manuscript development' in front,'reader access and release expectations unclear')
+need('edition' in front and 'tag' in front and 'Public access to the official repository' in front,'reader access and release expectations unclear')
 for n in range(6):need(f'| {n} |' in code, f'code README: Build {n} missing')
 for title, body in [('front',front),('Part IV',part),('Ch22',ch22),('appendix',app)]:
  need(not re.search(r'(?:Chapters?\s+23[–-]36\s+remain planned|Only Build 0 is presently implemented|planned compromised-investigator|Remaining planned appendices|Chapter 35 is planned)', body, re.I), f'{title}: development status in reader narrative')

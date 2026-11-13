@@ -62,5 +62,43 @@ class Build0Test(unittest.TestCase):
             db.execute('INSERT INTO refunds VALUES (?,?,?,?)',(OPERATION,CASE,100,'CONFIRMED'))
         self.assertEqual(reconcile(self.local,self.provider),'UNKNOWN')
 
+    def test_reopen_databases_after_lost_ack(self):
+        """A separate SQLite connection can recover E7/E8 after an invocation ends."""
+        prepare(self.local)
+        dispatch(self.local, self.provider, lose_ack=True)
+        with sqlite3.connect(self.local) as local_db, sqlite3.connect(self.provider) as provider_db:
+            self.assertEqual(local_db.execute('SELECT status FROM operations').fetchone()[0], 'UNKNOWN')
+            self.assertEqual(provider_db.execute('SELECT operation_id,status FROM refunds').fetchone(),
+                             (OPERATION, 'CONFIRMED'))
+        self.assertEqual(reconcile(self.local, self.provider), 'CONFIRMED')
+        self.assertEqual(self.count(), 1)
+
+    def test_repeated_authorization_cannot_change_immutable_intent(self):
+        """Second preparation does not mutate the authorized operation record."""
+        prepare(self.local)
+        with sqlite3.connect(self.local) as db:
+            before = db.execute('SELECT * FROM operations').fetchall()
+        prepare(self.local)
+        with sqlite3.connect(self.local) as db:
+            after = db.execute('SELECT * FROM operations').fetchall()
+        self.assertEqual(before, after)
+        self.assertEqual(self.count(), 0)
+
+    def test_reconcile_cannot_create_intent_or_provider_effect(self):
+        """Lookup is not an alternate authorization or payment path."""
+        with self.assertRaises(Denied):
+            reconcile(self.local, self.provider)
+        self.assertIsNone(status(self.local))
+        self.assertEqual(self.count(), 0)
+
+    def test_authorized_not_dispatched_is_not_a_provider_success(self):
+        """A durable local AUTHORIZED row is not proof that the provider was called."""
+        prepare(self.local)
+        self.assertEqual(status(self.local)[0], 'AUTHORIZED')
+        self.assertEqual(self.count(), 0)
+        with self.assertRaises(Denied):
+            reconcile(self.local, self.provider)
+        self.assertEqual(self.count(), 0)
+
 if __name__ == '__main__':
     unittest.main(verbosity=2)

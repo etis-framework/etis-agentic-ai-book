@@ -14,14 +14,12 @@ The book is a continuous engineering argument and a practical reference. Read Pa
 
 **Reader pathways.** Developing engineers should complete the exercises in sequence. Architects should focus on responsibility boundaries and alternative decisions. Security and privacy reviewers should trace authority, data use, and human recourse. Operations teams should emphasize unknown outcomes, failure injection, reconciliation, serviceability, and cost of ownership. Business leaders should ask what measurable value is created and which residual risks are explicitly accepted.
 
-**Source and edition notes.** Historical citations, edition metadata, and implementation dependencies are controlled publication work. Verify them before relying on this draft as a definitive external reference.
-
 
 ## The companion reference implementation
 
 This book includes **runnable Python source code, tests, architecture figures, and reproducible exercises**, not merely pseudocode. The same fictional case, **CASE-204**, anchors the examples: a proposed **$500 refund** whose independently authorized payment operation is **RF-1042**. Readers can reproduce the baseline, explore denied actions and uncertain outcomes, and compare each added capability against the deterministic alternative.
 
-**Find the code:** the official ETIS book repository is **https://github.com/etis-framework/etis-agentic-ai-book**. Open the **`examples/refund-reference-system/`** directory and read its `README.md` first. Direct directory link: **https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system**. The repository is private during manuscript development; public reader access will be enabled for publication. For an edition-specific reproduction, use the Git tag identified with that edition rather than assuming that the newest `main` branch matches printed examples. No paid service or payment credentials are necessary for Build 0.
+**Find the code:** the official ETIS book repository is **https://github.com/etis-framework/etis-agentic-ai-book**. Open the **`examples/refund-reference-system/`** directory and read its `README.md` first. Direct directory link: **https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system**. Public access to the official repository will be enabled for the published edition; an edition-specific tag preserves the matching implementation. For an edition-specific reproduction, use the Git tag identified with that edition rather than assuming that the newest `main` branch matches printed examples. No paid service or payment credentials are necessary for Build 0.
 
 | Reading path | Companion experience |
 |---|---|

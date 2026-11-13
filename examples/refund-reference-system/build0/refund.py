@@ -3,6 +3,14 @@
 Two SQLite databases deliberately distinguish local E7 operational knowledge from
 simulated external E8 provider truth. This is NOT a payment integration.
 """
+# Conceptual organization (kept in one readable module for a first-time reader):
+#   1. Fixture identifiers and state storage (E7 / mock E8)
+#   2. Independent authorization and durable intent (E5 / E7)
+#   3. Isolated mock effect dispatch (E6 → simulated E8)
+#   4. Reconciliation and reader-facing CLI (E7 observation of E8)
+# These logical boundaries are NOT separate security processes. Part IV adds the
+# missing isolation and contracts progressively; importing these functions
+# directly is never a production authority boundary.
 import argparse
 import json
 import sqlite3
@@ -21,6 +29,7 @@ class Denied(Exception):
 
 
 def connection(path):
+    """Open one local SQLite file; this is not a cross-database transaction."""
     db = sqlite3.connect(str(path))
     db.execute('PRAGMA busy_timeout = 3000')
     return db

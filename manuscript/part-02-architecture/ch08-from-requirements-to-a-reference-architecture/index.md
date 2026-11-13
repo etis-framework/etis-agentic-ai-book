@@ -63,6 +63,22 @@ A sound decomposition allocates each requirement to an **enforcer**, an **observ
 
 A contract identifies the producer and consumer, the authorized principal, the scope and versions, the permitted state transition, and what happens on rejection, delay, duplication, or missing acknowledgment. A typed proposal might include a case identifier, evidence references, a suggested disposition, a confidence or uncertainty description, and a producer version. It must not include an executable payment credential or masquerade as a signed approval. Messaging and integration contracts provide useful background (Hohpe and Woolf, 2003), while the particular ETIS boundaries remain design prescriptions.
 
+CAB-001 defines nine cross-domain interface contracts; these are **logical contracts**, not separately deployed services. The names below retain the approved baseline rather than introducing a new taxonomy.
+
+| Contract | Responsibility boundary | Essential obligation |
+|---|---|---|
+| **C01 Admission** | E1 → E2 | Bind principal, tenant, workflow, goal, scope, policy and deadline |
+| **C02 Work order** | E2 → E3 | Bound task, tools, context handles, versions and time |
+| **C03 Context query** | E3 → E4 | Enforce identity, purpose, provenance, classification and freshness |
+| **C04 Action proposal** | E3 → E5 | Type requested effect, rationale, evidence and operation identity; no permission implied |
+| **C05 Decision** | E5 ↔ E9 | Record policy decision, actor, scope, reasons and required approval |
+| **C06 Durable intent** | E5 ↔ E7 | Persist unique operation identity and fenced transition before dispatch |
+| **C07 Provider dispatch** | E5 → E6 → E8 | Bound provider request, idempotency scope, status query and uncertain-result semantics |
+| **C08 Reconciliation** | E7/E5 ↔ E8 | Resolve by stable operation reference, or retain UNKNOWN |
+| **C09 Telemetry** | All E1 through E8 → E9 | Correlate evidence, versions, costs, events, effect state and ownership |
+
+The catalog specifies responsibilities at interfaces; Chapters 9–16 develop their enforcement and failure behavior. The authoritative field-level version remains **CAB-001**. An identifier alone neither grants authority nor proves an external effect.
+
 A trusted effect request requires different evidence: the authorized principal, case and tenant, current policy and approval, amount, operation identity, durable intent, and an auditable outcome. The authorization decision must be revalidated at the consequential boundary rather than inferred from a previously successful read or from the proposal's plausibility.
 
 | Chapter 7 obligation | Logical enforcer | Essential negative test |

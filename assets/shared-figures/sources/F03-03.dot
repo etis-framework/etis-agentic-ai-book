@@ -4,7 +4,7 @@ graph [bgcolor="white",pad="0.12",nodesep="0.26",ranksep="0.36",splines=ortho,ou
  envelope [label="DELEGATION ENVELOPE\nIdentity · purpose · scope · expiry",fillcolor="#dcecf3"];
  investigate [label="BOUNDED INVESTIGATION\nRetrieve permitted evidence; propose"];
  gate [label="INDEPENDENT AUTHORIZATION\nCheck policy, approval and operation ID",fillcolor="#fff0ce",penwidth=2.2];
- allowed [label="AUTHORIZED\nPersist intent; execute; reconcile",fillcolor="#e8f1e6"];
+ allowed [label="TRUSTED EXECUTION\nPersist intent; execute; reconcile",fillcolor="#e8f1e6"];
  blocked [label="DENIED OR UNCERTAIN\nHold; escalate; preserve evidence",fillcolor="#f8e8e5"];
  envelope->investigate->gate;
  gate->allowed [label="PERMIT",fontsize=23,fontname="Arial"];

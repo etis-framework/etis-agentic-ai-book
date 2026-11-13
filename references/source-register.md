@@ -1,4 +1,4 @@
-# Source and citation register — developed Chapters 1–16
+# Source and citation register — developed Chapters 1–17
 
 **Status: claim locations mapped; final publication certification remains open.** Earlier chapters were mapped through Chapter 7; this pass extends mapped, limited-scope attribution through Chapter 16. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
 
@@ -164,3 +164,15 @@ Chapter-specific mappings and bibliographic records for Chapters 1–7 appear in
 | §17.6, evaluated tool trajectories | Yao et al. (2024), τ-bench | Repeated trials and end-state evaluation framing; not a production guarantee |
 
 Figures F17-01/F17-02/F17-03, the design selection gate, CASE-204 experiment and conditional ADR are original ETIS synthesis. The sources do not certify this particular architecture. Exact edition/page verification remains a publication-level task. No new bibliography record is needed for Chapter 17.
+
+## Chapter 3 — autonomy and process citation coverage
+
+Chapter 3 uses `van_der_aalst_2013` for BPM context (§3.1), `iso_29148_2018` for requirements (§3.2), `parasuraman_sheridan_wickens_2000` for automation allocation (§3.4), and `gray_reuter_1992`/`kleppmann_2017` for external-effect uncertainty (§3.1/§3.8). These records identify supporting mechanisms, not approval of the original ETIS delegation envelope. Exact page support remains an open gate.
+
+## Integration audit 1–17 — boundary between verified identity and verified claim
+
+This pass confirms the existence of CAB-001's C01–C09 catalog and maps it to Chapter 8. It does **not** elevate the register's previously identified bibliography records to exact-page certification. The source register's existing publication-gate annotations remain binding. Where a chapter cites a standard or provider-independent work, the cited source supports the named mechanism or general design principle, not the ETIS logical architecture, a live payment-provider SLA, or an implemented assurance guarantee.
+
+- Figure 4.2 illustrates **generic component arrangements**, not case Designs A/B/C. Figure 3.4 and Chapters 8/17 retain the case alternatives.
+- C01–C09 originates in approved `metadata/approved/CAB-001.docx`, Table 3 (contract catalog), not an external normative standard.
+- Exact edition/section validation for standards, vendor guides, and original technical works remains **open** where expressly recorded above. No new source verification is claimed here.

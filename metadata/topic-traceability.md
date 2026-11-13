@@ -4,7 +4,7 @@
 
 | Topic | Existing foundation (verified source locus) | Decision/application (verified) | Later planned obligation (unverified) | Evidence / invariant |
 |---|---|---|---|---|
-| E1–E9 / C01–C09 | Ch8 §§8.3–8.4, Fig 8.1; Ch9–16 | Part III introduction; Ch18 §18.1 | Ch19–21 contract application | CAB-001; logical domain ≠ deployable service |
+| E1–E9 / C01–C09 | Ch8 §§8.3–8.4, Fig 8.1; Ch9–16 | Part III introduction; Ch18 §18.1 | Ch19–20 contract application; Ch21 planned | CAB-001; logical domain ≠ deployable service |
 | Logical ownership / fencing | Ch10 §§10.4–10.5, Fig 10.1; Ch15 | Ch18 §§18.2, 18.4, Fig 18.2 | Ch28 recovery; Ch31 verification | E2 one logical owner; E7 epoch/CAS; reject stale writes |
 | Registry, admission and eligibility | Ch10 §§10.2–10.3, Fig 10.1; Ch9 | Ch18 §18.3 | Ch27 implementation; Ch31 tests | Registry ≠ identity grant, E7, or E10; check E1 scope and protected data access |
 | Generalist/specialist vs deterministic worker | Ch4, Ch10 §10.7; Ch17 | Ch18 §18.2 lifecycle matrix | Ch27 scaling; Ch31 evaluation; Ch34 enterprise context | Measure deployment/version/evaluation/operating cost, not agent count |
@@ -46,3 +46,12 @@ Before accepting each chapter, inspect front matter through that chapter as a *c
 - **Negative-test chain:** Ch7 quality-attribute obligations, Ch13 bypass/fault tests → Ch19 §§19.6–19.7; destination controls, wrong-tenant reads, duplicate-effect behavior, provider status mapping and operator stop must be exercised.
 - **Planned obligations:** Ch20 context/state/memory separation; Ch25–26 executable adapter/provider contracts; Ch28 effect recovery; Ch29 tool misuse; Ch31 end-state verification. Future destinations remain unverified until drafted.
 - **Sources:** See Chapter 19 entries in references/source-register.md; exact edition/page audit is still open.
+
+## Chapter 20 verified continuity extension (2026-11-13)
+
+- **Memory classification:** Ch4/Ch12 §12.5 → Ch20 §§20.1–20.3, Figure 20.1. Ephemeral inference, derived case memory and organizational knowledge do not become E7 owner state or E8 business truth.
+- **Freshness, privacy and revocation:** Ch9/Ch12 → Ch20 §§20.3–20.4. Source IDs and versions, tenant/case purpose, invalidation, correction, retention and revocation are distinct mechanisms; completed inference cannot be retroactively erased by revocation.
+- **Durable recoverability:** Ch10/Ch15 → Ch20 §20.5, Figure 20.2. Ownership epochs and fenced E7 mutations survive worker replacement; RF-1042 remains unique and UNKNOWN is reconciled against E8 rather than inferred from agent memory.
+- **Negative tests:** Ch20 §20.6 → planned Ch24 context implementation, Ch26 reconciliation, Ch28 recovery, Ch29 threat tests, Ch31 end-state verification. These are acceptance obligations, not completed implementation proof.
+- **Pinned credential compromise obligation:** Ch13/Ch19 credential-door/key distinction → planned Ch29 compromised agent token vs privileged provider credential threat analysis and Ch31 independent denial, containment and provider reconciliation tests; this work is not silently closed by Chapter 20.
+- **Sources:** Chapter 20 source-register rows map citations to claims; exact text/edition page verification remains open.

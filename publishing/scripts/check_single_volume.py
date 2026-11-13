@@ -3,12 +3,17 @@
 import json,re,sys,pathlib,subprocess
 R=pathlib.Path(__file__).resolve().parents[2]
 B=json.loads((R/'publishing/SINGLE_VOLUME_BUDGET_V10.json').read_text())
-fail=[]; report=[]; total=0
+fail=[]; report=[]; total=0; drafted=0; planned=0
 for p in sorted((R/'manuscript').glob('part-*/ch*/index.md')):
  m=re.search(r'ch(\d+)-',str(p));
  if not m:continue
- n=int(m.group(1));txt=p.read_text();words=len(re.findall(r"\b[\w'-]+\b",txt));total+=words;cap=B['chapter_word_caps'][str(n)]
- status='PASS' if words<=cap else 'FAIL';report.append(f'Chapter {n:02d}: {words} / {cap} words — {status}')
+ n=int(m.group(1));txt=p.read_text();words=len(re.findall(r"\b[\w'-]+\b",txt));cap=B['chapter_word_caps'][str(n)]
+ is_stub='STATUS: PLANNED / NOT DRAFTED' in txt
+ if is_stub:
+  planned+=1;status='PLANNED — NOT ASSESSED'
+ else:
+  drafted+=1;total+=words;status='PASS' if words<=cap else 'FAIL'
+ report.append(f'Chapter {n:02d}: {words} / {cap} words — {status}')
  if words>cap:fail.append(f'Chapter {n} exceeds cap by {words-cap} words')
  if re.search(r'\bE[1-9]\s*[–-]\s*E[1-9]\b',txt):fail.append(f'Chapter {n}: opaque E-number range')
 for name in ['F03-01','F03-02','F03-03','F03-04']:
@@ -24,7 +29,7 @@ for name in ['F03-01','F03-02','F03-03','F03-04']:
  if not fs or min(fs)<22:fail.append(f'{name}: label font below 22pt in source')
  try:subprocess.run(['dot','-Tsvg',str(dot),'-o','/dev/null'],check=True,capture_output=True)
  except Exception as e:fail.append(f'{name}: DOT failed: {e}')
-report.append(f'Current draft source words: {total}; finished pages not certified from source counts.')
+report.append(f'Developed chapters: {drafted}; planned manuscript stubs: {planned}; developed draft words: {total}; finished pages not certified from source counts.')
 report.append(f'Full-book planning allocation: {sum(B["chapter_word_caps"].values())} source words; working target {B["target_finished_pages"]} pages; HARD MAX {B["absolute_max_pages"]}.')
 report.append('Rendered DOCX print-page, font effective-size and human technical figure checks remain separate required gates.')
 print('\n'.join(report));print('\nFAILURES: '+ ('; '.join(fail) if fail else 'none'))

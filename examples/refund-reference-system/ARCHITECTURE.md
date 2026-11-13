@@ -16,3 +16,7 @@ Build 0 illustrates selected E1–E9 logical responsibilities, **not nine produc
 C01, C02 and C05–C09 are illustrated only in a bounded, partial way; C03/C04 are absent. RF-1042 may be created only after the trusted policy check. A local UNKNOWN means the application does not know the provider outcome; it does not grant permission to retry under a new identity.
 
 The scenario-to-observable-evidence matrix is in `TESTING.md`. The complete architecture is described in Chapter 8 and the book's appendix. Do not mistake this fixture for secure credential isolation, an authenticated service boundary, a tested idempotency contract, or production-ready concurrency.
+
+## Important implementation boundary after the Chapter 22 hardening pass
+
+Build 0 now atomically claims the local E7 `AUTHORIZED → DISPATCHED` transition using a conditional SQLite update. This prevents two *local* callers from winning the same state claim. It is **not** E2 distributed lease/epoch fencing, a protected E5 service, or an E6 provider-specific idempotency guarantee. A simulated provider-unavailable event intentionally leaves E7 `DISPATCHED` and mock E8 empty; only reconciliation or human investigation is permitted, never a blind resend. See `ENGINEERING_STANDARD.md` before adding Builds 1–5.

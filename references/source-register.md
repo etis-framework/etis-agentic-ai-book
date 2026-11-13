@@ -151,3 +151,16 @@ Chapter-specific mappings and bibliographic records for Chapters 1–7 appear in
 - RFC 9110 describes HTTP semantics only. A payment-provider key's scope, lifetime, deduplication or settlement semantics must be established from the selected provider's versioned contract and tested in sandbox.
 - NIST zero-trust architectural guidance does not certify ETIS implementation or constitute a universal deployment policy.
 - When the final word/page budget leaves no room, prefer moving or tightening existing source notes over adding unsourced assertions.
+
+## Chapter 17 — pattern selection and architectural decisions (November 2026)
+
+| Claim / chapter location | Existing bibliography source | Supported scope / limitation |
+|---|---|---|
+| §17.1, human/software function allocation | Parasuraman, Sheridan, and Wickens (2000) | Separating acquisition, analysis, decision selection and action; does not define E1–E9 |
+| §17.1, §17.3, architecture tradeoffs | Bass, Clements, and Kazman (2021) | Quality attributes and tradeoff analysis; not an approval of ETIS deployment |
+| §17.2, agent definition | Russell and Norvig (2020) | General/classical agent mechanisms, not a claim that every LLM invocation is agentic |
+| §17.2, workflow vs dynamic tool selection | Anthropic Engineering (2024); OpenAI (2026) | Vendor design guidance, not independent security or provider safety evidence |
+| §17.4, outcome-level costs | FinOps Foundation Framework (2025) | Unit-economic discipline; the illustrative arithmetic and case thresholds are original ETIS |
+| §17.6, evaluated tool trajectories | Yao et al. (2024), τ-bench | Repeated trials and end-state evaluation framing; not a production guarantee |
+
+Figures F17-01/F17-02/F17-03, the design selection gate, CASE-204 experiment and conditional ADR are original ETIS synthesis. The sources do not certify this particular architecture. Exact edition/page verification remains a publication-level task. No new bibliography record is needed for Chapter 17.

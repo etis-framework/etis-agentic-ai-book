@@ -19,7 +19,9 @@ The running case is unchanged: **CASE-204**, an unresolved replacement complaint
 | Chapter 26 — Build 4 | Provider adapter guarantees, uncertain outcomes, reconciliation | Exactly-once behavior without a documented provider contract |
 | Chapter 27 — Build 5 | Durable E2 ownership, one-time attempt and conservative recovery | A required multiagent architecture or E5-enforced end-to-end fencing |
 
-**Build increments are teaching milestones; Designs A, B, and C are competing business/architecture alternatives.** Design A is a deterministic workflow; Design B adds advisory AI with independent review and remains the **conditional initial production candidate** under the assumptions defended in Chapters 3 and 17; Design C is an optional bounded, read-only investigator pilot justified only by its own measurements. The presence of Build 5 does not mandate C. A team can stop at the least complex variant that satisfies its requirements and verification obligations.
+**Build increments are teaching milestones, not a fully composed runtime: Build 5 calls Build 4 trusted execution using Build 2 identity fixtures, but does not run the Build 1 advisory and Build 2 retrieval path as one application.** The cumulative examples illustrate the logical architecture without implementing every boundary at production strength. The [implementation-to-evidence map](examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md) distinguishes executed mechanisms from fixtures, specifications and missing capabilities.
+
+**Designs A, B, and C are competing business/architecture alternatives.** Design A is a deterministic workflow; Design B adds advisory AI with independent review and remains the **conditional initial production candidate** under the assumptions defended in Chapters 3 and 17; Design C is an optional bounded, read-only investigator pilot justified only by its own measurements. The presence of Build 5 does not mandate C. A team can stop at the least complex variant that satisfies its requirements and verification obligations.
 
 ## The reference architecture remains the control structure
 

@@ -73,3 +73,7 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build4 -p 
 ## Build 5 (Chapter 27): optional E2 ownership evidence
 
 Run `python3 -m unittest discover -s examples/refund-reference-system/build5 -p 'test_*.py' -v`. Assertions cover atomic concurrent lease competition, monotonic epoch on takeover, expired and stale-owner denial, durable one-time execute intent before E5 contact, crash-before-send preventing an execute replay, malformed E5 observations producing UNKNOWN, read-only reconciliation after lost acknowledgment, and real Build 4 E5 subprocess integration. **Trust boundary:** trusted execution (E5) still checks finance approval separately; E2 fencing applies to its own SQLite mutations and is **not** propagated to E5. E7 and mock E8 remain independently observable. Extra protection needs E5-side epoch enforcement, protected worker identities, reconciliation-only authority, and multi-site deployment evidence.
+
+## Part IV completion/assurance boundary
+
+The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **109 passing test cases are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.

@@ -1,0 +1,249 @@
+{
+  "status": "development",
+  "locator_type": "chapter/section, not print page",
+  "entries": [
+    {
+      "term": "Admission and identity (E1)",
+      "locator": "Chapters 8–9, 24–25. See also *Authentication and authorization*.",
+      "aliases": [
+        "identity",
+        "admission"
+      ],
+      "see_also": [
+        "Authentication and authorization"
+      ]
+    },
+    {
+      "term": "Advisory correlation",
+      "locator": "Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.",
+      "aliases": [],
+      "see_also": [
+        "RF-1042 (trusted operation ID)"
+      ]
+    },
+    {
+      "term": "Agent definition and boundaries",
+      "locator": "Chapters 3–4, 11, 17.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Architecture decisions and professional review",
+      "locator": "Chapters 7–8, 16–17, 21–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Authentication and authorization",
+      "locator": "Chapters 6, 9, 13, 24–25.",
+      "aliases": [
+        "identity proof",
+        "permission"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Bounded delegation",
+      "locator": "Chapters 3–4, 7–9, 17–18.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 0 — deterministic baseline",
+      "locator": "Chapter 22; `build0/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 1 — advisory reasoning",
+      "locator": "Chapter 23; `build1/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 2 — scoped context and identity",
+      "locator": "Chapter 24; `build2/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 3 — trusted execution",
+      "locator": "Chapter 25; `build3/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 4 — provider and reconciliation",
+      "locator": "Chapter 26; `build4/README.md`.",
+      "aliases": [
+        "provider adapter",
+        "recovery"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Build 5 — optional coordination",
+      "locator": "Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.",
+      "aliases": [
+        "lease",
+        "ownership epoch"
+      ],
+      "see_also": [
+        "Part IV implementation-to-evidence map"
+      ]
+    },
+    {
+      "term": "C01–C09 cross-domain contracts",
+      "locator": "Chapter 8; Chapters 9–16; Appendix.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "CASE-204 ($500 refund)",
+      "locator": "Chapters 1–27, especially 3, 8, 22–27.",
+      "aliases": [
+        "refund case"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Consequential operation and trusted execution (E5)",
+      "locator": "Chapters 6, 8, 13, 19, 22, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Context, retrieval and provenance (E4/C03)",
+      "locator": "Chapters 12, 20, 23–24.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Coordination ownership (E2)",
+      "locator": "Chapters 10, 18, 27. See also *Durable operational state (E7)*.",
+      "aliases": [
+        "workflow ownership",
+        "coordinator"
+      ],
+      "see_also": [
+        "Durable operational state (E7)"
+      ]
+    },
+    {
+      "term": "Decision contract (C05)",
+      "locator": "Chapters 8, 13, 25; Appendix.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Design A / B / C",
+      "locator": "Chapters 3, 7–8, 17, 22–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Dispatch claim and durable intent (C06)",
+      "locator": "Chapters 13–15, 22, 25–26.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Durable operational state (E7)",
+      "locator": "Chapters 15, 20, 22, 25–27.",
+      "aliases": [
+        "workflow state",
+        "local ledger"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Epoch and lease fencing",
+      "locator": "Chapters 10, 18, 27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Error handling and hostile clients",
+      "locator": "Chapters 22–27, especially 25–26.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Evidence and governance (E9)",
+      "locator": "Chapters 7–8, 15–16, 21, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Idempotency and provider contracts",
+      "locator": "Chapters 2, 14, 19, 22, 26.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Independent request-path enforcement",
+      "locator": "Chapters 13, 16, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Model output as untrusted proposal (C04)",
+      "locator": "Chapters 6, 11, 23–25.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Part IV implementation-to-evidence map",
+      "locator": "Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`.",
+      "aliases": [
+        "build coverage",
+        "build completion evidence"
+      ],
+      "see_also": [
+        "Build 5 — optional coordination"
+      ]
+    },
+    {
+      "term": "Provider integration (E6)",
+      "locator": "Chapters 14, 19, 22, 25–26.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Provider truth (E8)",
+      "locator": "Chapters 14–15, 20, 22, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Reconciliation (C08)",
+      "locator": "Chapters 2, 14–15, 20, 22, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "RF-1042 (trusted operation ID)",
+      "locator": "Chapters 2–3, 8, 11, 22–27.",
+      "aliases": [
+        "refund operation",
+        "payment identity"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Security and trust boundaries",
+      "locator": "Chapters 6, 9, 13, 16, 23–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "UNKNOWN provider outcome",
+      "locator": "Chapters 2–3, 14–15, 20, 22, 25–27.",
+      "aliases": [
+        "uncertain outcome",
+        "lost acknowledgment"
+      ],
+      "see_also": []
+    }
+  ]
+}

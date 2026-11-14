@@ -16,3 +16,8 @@
 - **Capability registry**: platform-supported E2 discovery and readiness/identity catalog; not E7 state or independent access authorization.
 
 First-use acronym rule: spell out before abbreviation (e.g., identity and access management (IAM)).
+- **E2 coordination ownership**: work routing, lease/epoch authority and scheduling rules; E7 may persist E2's state but does not acquire E2 decision rights.
+- **E7 durable state**: atomic persisted local intent, observations, transitions and workflow evidence; not an E8 provider truth source or an independent business approval.
+- **E5 independent enforcement**: consequential authorization and controlled dispatch; a process boundary under the same OS identity is not full hostile-process isolation.
+- **RF-1042 trusted payment operation**: E5-controlled stable ID, not a C04 advisory `operation_id`.
+- **Working index**: alphabetical chapter/section navigation while manuscript is developing; final page locators require frozen print proofs.

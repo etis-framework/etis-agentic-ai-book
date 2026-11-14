@@ -1,0 +1,236 @@
+{
+  "status": "development",
+  "locator_type": "chapter/section, not print page",
+  "entries": [
+    {
+      "term": "Admission and identity (E1)",
+      "locator": "Chapters 8\u20139, 24\u201325. See also *Authentication and authorization*.",
+      "aliases": [
+        "identity",
+        "admission"
+      ],
+      "see_also": [
+        "Authentication and authorization"
+      ]
+    },
+    {
+      "term": "Advisory correlation",
+      "locator": "Chapters 11, 23\u201325. See also *RF-1042*.",
+      "aliases": [],
+      "see_also": [
+        "RF-1042"
+      ]
+    },
+    {
+      "term": "Agent definition and boundaries",
+      "locator": "Chapters 3\u20134, 11, 17.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Architecture decisions and professional review",
+      "locator": "Chapters 7\u20138, 16\u201317, 21\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Authentication and authorization",
+      "locator": "Chapters 6, 9, 13, 24\u201325.",
+      "aliases": [
+        "identity proof",
+        "permission"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Bounded delegation",
+      "locator": "Chapters 3\u20134, 7\u20139, 17\u201318.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 0 \u2014 deterministic baseline",
+      "locator": "Chapter 22; `build0/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 1 \u2014 advisory reasoning",
+      "locator": "Chapter 23; `build1/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 2 \u2014 scoped context and identity",
+      "locator": "Chapter 24; `build2/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 3 \u2014 trusted execution",
+      "locator": "Chapter 25; `build3/README.md`.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Build 4 \u2014 provider and reconciliation",
+      "locator": "Chapter 26; `build4/README.md`.",
+      "aliases": [
+        "provider adapter",
+        "recovery"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Build 5 \u2014 optional coordination",
+      "locator": "Chapter 27; `build5/README.md`.",
+      "aliases": [
+        "lease",
+        "ownership epoch"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "C01\u2013C09 cross-domain contracts",
+      "locator": "Chapter 8; Chapters 9\u201316; Appendix.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "CASE-204 ($500 refund)",
+      "locator": "Chapters 1\u201327, especially 3, 8, 22\u201327.",
+      "aliases": [
+        "refund case"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Consequential operation and trusted execution (E5)",
+      "locator": "Chapters 6, 8, 13, 19, 22, 25\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Context, retrieval and provenance (E4/C03)",
+      "locator": "Chapters 12, 20, 23\u201324.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Coordination ownership (E2)",
+      "locator": "Chapters 10, 18, 27. See also *Durable operational state (E7)*.",
+      "aliases": [
+        "workflow ownership",
+        "coordinator"
+      ],
+      "see_also": [
+        "Durable operational state (E7)"
+      ]
+    },
+    {
+      "term": "Decision contract (C05)",
+      "locator": "Chapters 8, 13, 25; Appendix.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Design A / B / C",
+      "locator": "Chapters 3, 7\u20138, 17, 22\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Dispatch claim and durable intent (C06)",
+      "locator": "Chapters 13\u201315, 22, 25\u201326.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Durable operational state (E7)",
+      "locator": "Chapters 15, 20, 22, 25\u201327.",
+      "aliases": [
+        "workflow state",
+        "local ledger"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Epoch and lease fencing",
+      "locator": "Chapters 10, 18, 27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Error handling and hostile clients",
+      "locator": "Chapters 22\u201327, especially 25\u201326.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Evidence and governance (E9)",
+      "locator": "Chapters 7\u20138, 15\u201316, 21, 25\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Idempotency and provider contracts",
+      "locator": "Chapters 2, 14, 19, 22, 26.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Independent request-path enforcement",
+      "locator": "Chapters 13, 16, 25\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Model output as untrusted proposal (C04)",
+      "locator": "Chapters 6, 11, 23\u201325.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Provider integration (E6)",
+      "locator": "Chapters 14, 19, 22, 25\u201326.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Provider truth (E8)",
+      "locator": "Chapters 14\u201315, 20, 22, 25\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Reconciliation (C08)",
+      "locator": "Chapters 2, 14\u201315, 20, 22, 25\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "RF-1042 (trusted operation ID)",
+      "locator": "Chapters 2\u20133, 8, 11, 22\u201327.",
+      "aliases": [
+        "refund operation",
+        "payment identity"
+      ],
+      "see_also": []
+    },
+    {
+      "term": "Security and trust boundaries",
+      "locator": "Chapters 6, 9, 13, 16, 23\u201327.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "UNKNOWN provider outcome",
+      "locator": "Chapters 2\u20133, 14\u201315, 20, 22, 25\u201327.",
+      "aliases": [
+        "uncertain outcome",
+        "lost acknowledgment"
+      ],
+      "see_also": []
+    }
+  ]
+}

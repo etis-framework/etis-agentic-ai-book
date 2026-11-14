@@ -102,6 +102,19 @@ def main():
     if i in {0,len(table.rows)-2}:
      for cell in row.cells:
       for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
+  # CAB-001 reader contract tables: prevent individual rows from breaking
+  # across printed pages, while allowing page breaks between complete rows.
+  for table in doc.tables:
+   if not table.rows: continue
+   header=[c.text.strip() for c in table.rows[0].cells]
+   if not header or header[0] not in {'Contract', 'Contract ID'}: continue
+   if not any('C01' in c.text for row in table.rows for c in row.cells): continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i==0:
+     for cell in row.cells:
+      for para in cell.paragraphs:para.paragraph_format.keep_with_next=True
   doc.save(dest)
  print(dest)
 if __name__=='__main__':main()

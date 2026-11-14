@@ -2,38 +2,42 @@
 
 ## Architectural contract reader reference (C01–C09)
 
-The nine **E1–E9 logical responsibilities** in Chapter 8, Table 8.1, describe accountable work; the **C01–C09 cross-domain contracts** in Table 8.2 govern interactions between responsibilities. Neither list determines a service count, physical topology, or runtime call order. This reader map is an explanatory summary, **not a substitute for the detailed reader-facing schemas in Chapter 35** or tested implementation contracts.
+The logical responsibilities (E1–E9) and cross-domain contracts (C01–C09) are defined in Chapter 8. A responsibility describes accountable work; a contract defines an independently checkable handoff. The following compact map is for navigation, **not** a deployable schema or evidence that an interface is authorized. Several responsibilities may share one service without sharing authority.
 
-| Contract | Logical handoff | What an engineer must demonstrate |
+| Contract | Logical handoff | Required evidence |
 |---|---|---|
-| C01 — Admission | E1 → E2 | Verified principal and tenant; accepted goal, bounded scope, policy and expiration |
-| C02 — Work order | E2 → E3 | Task identity, owner epoch, tool and cost limits, schema version, deadline and denial |
-| C03 — Context query | E3 → E4 | Resource-level authorization, provenance, classification, freshness and safe denial |
-| C04 — Action proposal | E3 → E5 | Proposed `operation_id` (advisory correlation), requested effect, amount, rationale, evidence and idempotency intent; **no financial authorization or provider key** |
-| C05 — Decision | E5 ↔ E9 | Independent policy and approval outcome, actor, current version, reasons and evidence |
-| C06 — Durable intent | E5 ↔ E7 | Trusted stable operation identity, uniqueness and fenced durable transition before dispatch |
-| C07 — Provider dispatch | E5 → E6 → E8 | Bounded provider operation, authenticated adapter, provider-specific idempotency and uncertain results |
-| C08 — Reconciliation | E7/E5 ↔ E8 | Correlate original operation with authoritative evidence; preserve UNKNOWN when inconclusive |
-| C09 — Telemetry/assurance | E1–E8 → E9 | Correlate decisions, denial, cost, ownership, effect observations, privacy and accountability |
+| C01 — Admission | E1 to E2 | Identity, tenant, accepted purpose, scope and expiry |
+| C02 — Work order | E2 to E3 | Work identity, owner/epoch, limits, deadline and denial |
+| C03 — Context query | E3 to E4 | Resource scope, provenance, freshness and refusal |
+| C04 — Action proposal | E3 to E5 | Typed **advisory** request and evidence; no payment approval |
+| C05 — Decision | E5 and E9 (two-way) | Independent policy/approval result and audit evidence |
+| C06 — Durable intent | E5 and E7 (two-way) | Unique trusted operation ID and durable pre-dispatch claim |
+| C07 — Provider dispatch | E5 to E6 to E8 | Provider contract, stable key and uncertain-result handling |
+| C08 — Reconciliation | E7/E5 and E8 (two-way) | Provider observation or explicit unresolved outcome |
+| C09 — Assurance | E1–E8 to E9 | Correlated decisions, ownership, effects and accountability |
 
-**Identifier rule.** Under C04, the advisory `operation_id` identifies a proposed action for review, while `idempotency intent` requests duplicate-safe behavior. Neither is RF-1042 or a provider idempotency key; only the separately authorized trusted path assigns and durably records RF-1042 and maps provider keys under the verified adapter contract.
+**C04 field semantics.** Proposed `operation_id` is an advisory correlation reference; `idempotency intent` expresses the desired duplicate-safe behavior. Neither is RF-1042 or a provider idempotency key. The approved E5 path owns trusted operation identity and the adapter maps provider keys only under its verified contract.
 
-**Reading the refund trace.** CASE-204 is admitted; its task may yield a Design B advisory recommendation or Design C bounded read-only evidence. C04 does not grant E3 a payment credential or the right to create `RF-1042`. After an independently evidenced C05 authorization, E5/E7 creates and durably records the stable payment operation under C06. E5/E6 may then dispatch under C07; if the provider acknowledgment is missing, E7 retains `UNKNOWN` until C08 obtains adequate E8/provider evidence or escalates. C09 assurance runs throughout rather than at the end. A single process may implement several logical responsibilities while preserving their enforcement and audit boundaries.
+**Contract direction.** “Two-way” means a controlled request/response or reconciliation relationship, **not** that either party may grant itself authority. C04's advisory `operation_id` is a proposal-correlation reference; its idempotency intent is a request for duplicate-safe behavior, not a provider key. Following independently evidenced C05 approval, E5 controls creation of RF-1042, the stable financial-operation identity. E7 durably records its intent and observations before any possible E6 dispatch. E8 retains authoritative provider facts, which may differ from E7's current knowledge.
 
-**Who owns which state?** E7 is authoritative for local workflow ownership, task transitions, operation intent and the application's knowledge of payment attempts. E8 supplies externally authoritative financial facts and business-case dispositions. E7 may update its local outcome only through verified reconciliation; these are complementary records, not conflicting owners of one field.
+**E2 ownership versus E7 persistence.** Coordination and registry responsibility (E2) owns scheduling, leases, worker assignment and the logical right to advance the case workflow. Durable operational state (E7) supplies persisted workflow/operation evidence and atomic state transitions under the rules governing that ownership. Build 5's E2-owned coordination record is stored locally in SQLite as an educational fixture; this does not redefine E7 or grant E2 permission to issue a refund. E5 must independently enforce the consequential-operation boundary. Build 5's epoch checks protect E2-local mutations, **not** end-to-end E5 dispatch against a malicious stale process.
 
-**Book path.** Chapter 3 introduces bounded delegation; Chapter 7 converts obligations to requirements; Chapter 8 allocates responsibilities and contracts; Chapters 9–16 explain enforcement and recovery; Chapters 17–21 compare architectural alternatives, tools, information ownership, and governance decisions. Chapters 22–27 turn these controls into six progressive implementation builds; Chapters 28–31 stress them through failure, attack and verification. Chapters 32–34 develop accountable governance and operations, while Chapters 35–36 supply detailed reference artifacts and review exercises. This compact contract map remains a navigation aid rather than a tested deployment schema.
+**CASE-204 trace.** The $500 proposed remedy may emerge from Design A's deterministic process, Design B's bounded advice, or Design C's optional bounded investigation. These are alternatives, not three mandatory sequential phases. E3/C04 cannot assign RF-1042. Following independent E5 authorization, durable intent precedes any E6 dispatch. On lost acknowledgment, E7 records UNKNOWN; C08 queries the provider's existing operation without creating a second refund. E9 evidence and governance apply throughout.
 
-## Companion implementation and edition access
+## Reader paths and companion implementation
 
-The book's **runnable Python examples, build-specific README guides and automated tests** are maintained in the official repository: **https://github.com/etis-framework/etis-agentic-ai-book**. Start at **https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system** (`examples/refund-reference-system/README.md`). Chapter 22 walks through the first executable baseline; Chapter 23 demonstrates the independently runnable, untrusted Build 1 advisory path, with its exercise at `examples/refund-reference-system/build1/README.md`. The same fictional identifiers—CASE-204, $500 and RF-1042—carry across the builds; individual checkpoints are reproducible demonstrations rather than repeated real refunds.
+Chapter 7 establishes requirements; Chapter 8 specifies responsibility and contract names; Chapters 9–16 explain their intended boundaries; Chapters 17–21 compare patterns and accountable decisions. Chapters 22–27 provide executable Builds 0–5. Chapters 28–34 are intended to examine failures, assurance, governance and economics. Chapters 35–36 are reserved for expanded schemas, reusable references and exercises; **those chapters are still planned in this working manuscript**, so this appendix is the current compact reader map, not their substitute.
 
-The repository is private during manuscript development and will be publicly accessible for the published edition. Use the **edition's published Git tag** for an exact code-to-text match. The companion README routes readers to each build and documents the limits of its fixtures, evidence and tests. Neither publication nor passing tests makes the example a live payment platform.
+The companion examples, source diagrams and negative tests live in the official repository at https://github.com/etis-framework/etis-agentic-ai-book, directory `examples/refund-reference-system/`. Begin with its `README.md`, then follow each build's README and embedded `architecture.svg`. The source is private during development; the published edition must identify a fixed Git tag and public access route. Each build is independently runnable as a teaching checkpoint, not a progressively certified payment platform.
 
-## Practical reference materials
+**Build 0 — Deterministic baseline (Chapter 22).** Local E7 state and a separate mock E8 provider record distinguish intended action from observed external effect. See `build0/README.md`.
 
-Chapter 35 supplies detailed contracts, schemas and reference artifacts; Chapter 36 provides exercises, engineering reviews and an adoption roadmap. The companion README supplies installation-free Build 0 reproduction steps and the applicable per-build commands.
+**Build 1 — Advisory proposal (Chapter 23).** E3/C04 produces a typed untrusted recommendation, with no authority to create RF-1042. See `build1/README.md`.
 
-**Build 2 note.** Chapter 24's E1/C01 *fixture* verification is not complete authentication; E4/C03's local source selection is not production context authorization; E3/C04 remains an untrusted proposal, never RF-1042 or E5 permission. The companion `build2/README.md` supplies the independently runnable no-credential scope and provenance tests. The compromised valid-token consequential denial still belongs to Chapter 25 and later adversarial verification.
+**Build 2 — Scoped identity and context (Chapter 24).** E1 fixture assertions and E4/C03 source selection illustrate bounded context, not production authentication or independent tenant isolation. See `build2/README.md`.
 
-**Build 3 reader note.** Chapter 25 distinguishes a legitimate E1 fixture assertion, a separately approved E5 transaction grant, immutable E7 identity RF-1042, and mock E8 effect. The separate E5 process denies a valid-token hijacked investigator *at its request endpoint*; the same-user fixture is not independent OS-level security. See `build3/README.md` and its module architecture diagram. Provider guarantees and authoritative reconciliation remain Chapter 26 obligations.
+**Build 3 — Trusted execution (Chapter 25).** A separate E5 process rejects a valid-token compromised investigator without transaction-specific finance approval. Same-user process execution does not confer OS-level isolation. See `build3/README.md`.
+
+**Build 4 — Provider integration and reconciliation (Chapter 26).** Versioned simulated provider contracts, durable intent, status-only inquiry and preservation of UNKNOWN illustrate idempotency and recovery limits. Actual financial networks, provider credentials, settlement guarantees and long-lived recovery authorization are omitted deliberately. Fault-injection request fields are test-only. See `build4/README.md`.
+
+**Build 5 — Optional coordination (Chapter 27).** Durable E2 work ownership, lease/epoch fencing and conservative takeover add workflow control without expanding E3/E2 financial authority. Local fencing is not independently enforced by E5, and shared-UID fixtures do not model hostile process isolation. See `build5/README.md`.

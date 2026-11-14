@@ -1,5 +1,6 @@
 .PHONY: check figures check-figures chapter book-docx book-pdf book-html qa
 check:
+	python3 publishing/scripts/check_backmatter_integrity.py
 	python3 publishing/scripts/check.py
 	python3 publishing/scripts/check_figures.py
 	python3 publishing/scripts/check_ch04_figure_semantics.py

@@ -77,10 +77,10 @@ CAB-001 defines nine cross-domain interface contracts; these are **logical contr
 | **C02 Work order** | E2 → E3 | Bound task, tools, context handles, versions and time |
 | **C03 Context query** | E3 → E4 | Enforce identity, purpose, provenance, classification and freshness |
 | **C04 Action proposal** | E3 → E5 | Typed proposed operation reference, requested effect, rationale, evidence, amount and idempotency intent; advisory only |
-| **C05 Decision** | E5 ↔ E9 | Record policy decision, actor, scope, reasons and required approval |
-| **C06 Durable intent** | E5 ↔ E7 | Persist unique operation identity and fenced transition before dispatch |
+| **C05 Decision** | E5/E9 (bidirectional) | Record policy decision, actor, scope, reasons and required approval |
+| **C06 Durable intent** | E5/E7 (bidirectional) | Persist unique operation identity and fenced transition before dispatch |
 | **C07 Provider dispatch** | E5 → E6 → E8 | Bound provider request, idempotency scope, status query and uncertain-result semantics |
-| **C08 Reconciliation** | E7/E5 ↔ E8 | Resolve by stable operation reference, or retain UNKNOWN |
+| **C08 Reconciliation** | E7/E5/E8 (bidirectional) | Resolve by stable operation reference, or retain UNKNOWN |
 | **C09 Telemetry** | All E1 through E8 → E9 | Correlate evidence, versions, costs, events, effect state and ownership |
 
 **C04 identity semantics:** CAB-001 C04 `operation_id` correlates an E3 proposal; `idempotency intent` requests duplicate-safe handling. Neither is `RF-1042`, a provider key, or financial permission. Following C05 authorization, E5/E7 assigns and persists `RF-1042` under C06. Trusted integration maps provider-specific keys under C07.

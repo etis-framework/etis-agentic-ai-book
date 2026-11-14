@@ -52,3 +52,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F26-01 | architecture | Independent E5 before E7 durable claim, E6 adapter and separate mock E8 truth | `assets/shared-figures/sources/F26-01.svg` | `assets/shared-figures/rendered/F26-01.png` | Master/PNG inspected, native Word print open |
 | F26-02 | behavior | One effect, lost acknowledgment, read-only E8 status, E7 confirmation | `assets/shared-figures/sources/F26-02.svg` | `assets/shared-figures/rendered/F26-02.png` | Master/PNG inspected, native Word print open |
 | F26-03 | decision | Confirm only on consistent provider proof; NOT_FOUND and conflict remain UNKNOWN | `assets/shared-figures/sources/F26-03.svg` | `assets/shared-figures/rendered/F26-03.png` | Master/PNG inspected, native Word print open |
+
+
+## Chapter 27 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F27-01 | architecture | Optional E2 ownership cannot grant E5 financial authority; local fencing caveat | `assets/shared-figures/sources/F27-01.svg` | `assets/shared-figures/rendered/F27-01.png` | Master/render visual inspected; native Word print open |
+| F27-02 | behavior | Crash/lease takeover permits status-only recovery, no payment replay | `assets/shared-figures/sources/F27-02.svg` | `assets/shared-figures/rendered/F27-02.png` | Master/render visual inspected; native Word print open |
+| F27-03 | decision | Stale ownership denial vs initial E2 intent vs recovery action | `assets/shared-figures/sources/F27-03.svg` | `assets/shared-figures/rendered/F27-03.png` | Master/render visual inspected; native Word print open |

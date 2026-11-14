@@ -28,7 +28,7 @@ The builds are teaching increments, **not a compulsory Design A → B → C migr
 ```text
 examples/refund-reference-system/
 ├── README.md                 # Reader entry point
-├── ARCHITECTURE.md           # Architecture mappings across Builds 0–4
+├── ARCHITECTURE.md           # Architecture mappings across Builds 0–5
 ├── CONTRIBUTING.md           # Contribution and review workflow
 ├── ENGINEERING_STANDARD.md  # Engineering and review requirements
 ├── TESTING.md               # Evidence matrix and assurance limits
@@ -53,7 +53,7 @@ examples/refund-reference-system/
 │   ├── pipeline.py
 │   ├── demo.py
 │   └── test_scope.py
-└── build3/
+├── build3/
     ├── README.md
     ├── architecture.svg
     ├── contracts.py
@@ -61,7 +61,7 @@ examples/refund-reference-system/
     ├── service.py
     ├── demo.py
     └── test_gate.py
-└── build4/
+├── build4/
     ├── README.md
     ├── architecture.svg
     ├── provider_contracts.py
@@ -71,6 +71,13 @@ examples/refund-reference-system/
     ├── service.py
     ├── demo.py
     └── test_provider.py
+└── build5/
+    ├── README.md
+    ├── architecture.svg
+    ├── coordinator.py
+    ├── runner.py
+    ├── demo.py
+    └── test_coordination.py
 ```
 
 The canonical figure masters remain in `assets/shared-figures/sources/`; do not duplicate them inside code builds. The reference architecture is explained in Chapter 8 and the architectural-contract appendix.
@@ -102,3 +109,7 @@ Read [`build3/README.md`](build3/README.md) and its embedded source-architecture
 ## Run Build 4 (Chapter 26)
 
 Build 4 extends the **separately enforced E5 request path** with a versioned **E6/C07 provider adapter**, a mock **E8/C08 authoritative status lookup**, and an explicit **E7/C06 durable operation and reconciliation** path. Begin with [`build4/README.md`](build4/README.md) and its embedded source/module architecture. Run `python3 examples/refund-reference-system/build4/demo.py --scenario lost-ack` followed by the Build 4 tests. E8 may commit the single RF-1042 effect while E7 remains UNKNOWN until read-only reconciliation confirms the provider's record. These are fixture-provider guarantees only, not commercial processor promises, real security isolation or proof of final settlement.
+
+## Run Build 5 (Chapter 27)
+
+Build 5 adds optional local **coordination and durable ownership (E2)** to the still-independent Build 4 **trusted execution (E5)** boundary. Read [`build5/README.md`](build5/README.md) and its embedded source-architecture SVG, then run `python3 examples/refund-reference-system/build5/demo.py --scenario lost-ack`. An expired owner cannot mutate E2; a successor can reconcile but not reissue the $500 refund. **This is not end-to-end execution fencing:** E5 does not consume E2 lease epochs, and the demonstration uses the same local OS identity.

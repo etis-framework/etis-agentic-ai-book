@@ -129,6 +129,8 @@ The recurring questions are deliberately older than generative AI: What business
 
 A design that answers them may use one advisory model, a bounded agent, or no AI at all. The choice should follow the business problem and the evidence—not a desire to maximize autonomy.
 
+**Reading the review from different responsibilities.** The same refund proposal has different acceptance questions: the business owner asks what outcome is worth the risk; engineering asks whether the program and its tests meet the contract; security asks who can actually invoke payment; and operations asks how a lost acknowledgment is recovered. Later chapters turn these complementary professional review perspectives into explicit architecture evidence. They are not additional subsystems or a mandatory review committee.
+
 ## Worked design review: should an agent issue the refund?
 
 **Situation.** A customer requests a $500 refund. The order service reports a captured payment of $500. The delivery service reports an unresolved delivery exception. A language model recommends a full refund and gives a persuasive explanation. The payment provider supports idempotency keys but may time out after accepting a request.

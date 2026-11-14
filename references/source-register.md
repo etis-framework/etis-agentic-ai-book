@@ -299,3 +299,11 @@ The attached Word build covers developed Chapters 1–26, but none of Parts I–
 - **ETIS original artifacts:** CAB-001 E5/C05, E7/C06, E6/C07, E8/C08 mapping; `provider_contracts.py` fixture `Capabilities`/`RefundCommand`/`ProviderObservation`; adapter key identity, lost-ack and read-only query behavior; Figures F26-01/02/03; Build 4 regression tests. These are locally implemented hypotheses, **not externally supported provider capabilities**.
 - **Publication evidence still required:** Pin the actual payment-provider API edition, idempotency-key scope and retention, provider-reference identity, status consistency, error taxonomy, settlement definition, security controls and audited sandbox/live tests. Include vendor-specific citations and correct all provenance claims before any claim of production integration.
 - **Coverage:** Ch26 §§26.1–26.8; tests, architecture SVG, simulated non-guarantees and Chapter 27–31 handoff explicitly mapped.
+
+
+## Chapter 27 source-to-claim and boundary register (publication gate open)
+
+- **Lamport (1978); Kleppmann (2017):** logical event ordering, distributed uncertainty and limitations of single-node ownership; neither certifies the ETIS SQLite lease as a distributed consensus protocol.
+- **Gray and Reuter (1992); van der Aalst (2013):** local durability and long-running workflow ownership; the exact epoch design and state machine are original ETIS teaching constructs. Edition/page passage inspection remains open.
+- **CAB-001 and runnable code:** E2/C02 separate from E5/C05 and E7/C06, E6/C07 and E8/C08. `build5/coordinator.py`, `runner.py`, `test_coordination.py`, the actual Build 4 E5 service and F27-01/02/03 support only the narrow fixture assertions. E2 fences its own SQLite rows, not E5 execution by stale workers.
+- **Open evidence:** real distributed state service, E5 current-epoch enforcement, independent finance issuer, protected service identities, audited reconciliation roles, provider-specific contract and final 7×10 Word/source-page certification.

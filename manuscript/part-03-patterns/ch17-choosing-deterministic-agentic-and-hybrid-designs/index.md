@@ -82,6 +82,8 @@ An **architecture decision record (ADR)** is a durable explanation of a signific
 
 If the evidence contradicts B's economic assumptions, select A for more case types or restrict AI to drafting. If C demonstrates durable improvement, evaluate the *additional* bounded tool-selection contract separately. Neither decision changes E5's authority or permits a worker to access payment credentials. Decisions should also be reviewed after provider-contract changes or production incidents; verification is ongoing, not a one-time diagram review.
 
+**Review the ADR across the responsibilities affected by the decision.** Engineering questions integration and verification effort; enterprise architecture questions coupling and reversibility; security/assurance questions new authority and data exposure; SRE/operations questions recoverability and support; and the business owner questions the measurable benefit and reviewer workload. Not every ADR needs every perspective or five separate sign-offs. Record applicable objections, evidence and the person with actual decision authority.
+
 ## 17.8 Transition to coordination patterns
 
 The sequence of reference-implementation builds in Part IV is a teaching and verification sequence, **not a progression from Design A through B to C**. An increment that implements a bounded tool or durable-state mechanism does not, by itself, change the production decision: B remains the conditional initial candidate; C is optional and must separately demonstrate benefit and assurance.

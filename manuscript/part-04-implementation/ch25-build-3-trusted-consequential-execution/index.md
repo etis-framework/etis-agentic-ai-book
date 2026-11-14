@@ -94,6 +94,8 @@ Consider an enterprise where advisory reasoning saves an investigator two minute
 
 A release review should decline any proposal that relies on prompt instructions such as “do not call the payment API” as its only enforcement. Likewise, deploying `service.py` as another process under the same user, with readable grant keys, must not be represented as a defended security perimeter. The production decision hinges on the actual privilege and credential boundary, tested against the adversary that could reach it. Governance is architecture because permission must affect the executable financial path, not merely be recorded after the fact.
 
+**Multi-perspective architecture review.** The **implementing engineer** demonstrates malformed-request containment, bounded IPC behavior and error-handling tests. The **enterprise architect** traces advisory C04 through the independently evaluated E5/C05 path and confirms there is no E3-to-E6 shortcut. **Security and assurance** challenge the valid-token attack and the shared-OS-identity fixture limitation. **SRE/operations** demand reproducible evidence for disconnects, stalled clients and UNKNOWN provider outcomes. The **business owner** identifies the accountable finance approver and weighs the operational cost of a protected execution service. A role may cover more than one perspective; none of these observations alone constitutes payment approval or production release.
+
 ## 25.9 Professional exercises and review standard
 
 1. **Threat-model.** Let a compromised investigator hold a valid E1 assertion for CASE-204. Identify which claims remain true, which permission is missing, and what executable denial evidence you would require.

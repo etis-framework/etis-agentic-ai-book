@@ -52,7 +52,7 @@ Before accepting each chapter, inspect front matter through that chapter as a *c
 - **Memory classification:** Ch4/Ch12 §12.5 → Ch20 §§20.1–20.3, Figure 20.1. Ephemeral inference, derived case memory and organizational knowledge do not become E7 owner state or E8 business truth.
 - **Freshness, privacy and revocation:** Ch9/Ch12 → Ch20 §§20.3–20.4. Source IDs and versions, tenant/case purpose, invalidation, correction, retention and revocation are distinct mechanisms; completed inference cannot be retroactively erased by revocation.
 - **Durable recoverability:** Ch10/Ch15 → Ch20 §20.5, Figure 20.2. Ownership epochs and fenced E7 mutations survive worker replacement; RF-1042 remains unique and UNKNOWN is reconciled against E8 rather than inferred from agent memory.
-- **Negative tests:** Ch20 §20.6 → planned Ch24 context implementation, Ch26 reconciliation, Ch28 recovery, Ch29 threat tests, Ch31 end-state verification. These are acceptance obligations, not completed implementation proof.
+- **Negative tests:** Ch20 §20.6 → Ch24 scoped-context fixture implementation, planned Ch26 reconciliation, Ch28 recovery, Ch29 threat tests, Ch31 end-state verification. These are acceptance obligations, not completed implementation proof.
 - **Pinned credential compromise obligation:** Ch13/Ch19 credential-door/key distinction → planned Ch29 compromised agent token vs privileged provider credential threat analysis and Ch31 independent denial, containment and provider reconciliation tests; this work is not silently closed by Chapter 20.
 - **Sources:** Chapter 20 source-register rows map citations to claims; exact text/edition page verification remains open.
 
@@ -91,3 +91,15 @@ See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citatio
 - E1/E4 fixture scope/provenance: `WorkRequest`/`Evidence`, negative cross-tenant/stale tests, Chapter 23 §§23.3, 23.6. Protected variants deferred to Chapter 24.
 - E5/E6 exclusion and E7/E8 no-write: `build1/test_advisory.py`, Chapter 23 §§23.5–23.6, F23-03. Shared-process limits explicitly documented; independent enforcement in Chapter 25.
 - Valid-agent-token hijack regression: future Chapters 25, 29 and 31; Build 1 does not assert token enforcement.
+
+## Chapter 24 / Build 2 continuity extension
+
+| Obligation | Grounded implementation / manuscript | Remaining independent owner |
+|---|---|---|
+| E1/C01 simulated claim integrity versus authentication | Ch9/16/20 → Ch24 §§24.2–24.3; `build2/identity.py`; F24-01, F24-02; tamper/expiry tests | Enterprise E1 identity and protected verification, Ch25 boundary test |
+| E4/C03 source, scope, classification and freshness | Ch12/20/23 → Ch24 §§24.4, 24.7; `build2/context.py`; F24-03; stale, cross-tenant, source denial tests | Real E4 access enforcement, source attestation, revocation, E9 audit |
+| C04 remains untrusted, with no financial operation ID | Ch11/13/23 → Ch24 §§24.4–24.6; Build 1 unchanged, `build2/pipeline.py` adapter; no-write tests | Protected E5/E6 in Ch25; RF-1042 only trusted path |
+| E7 knowledge, E8 business truth and UNKNOWN | Ch14–15/22 → Ch24 §§24.5–24.7; Build 0 tests unchanged | Provider contract and recovery Ch26, Ch28/31 |
+| Design A/B/C not build maturity | Ch3/17/Part IV → Ch24 §§24.1, 24.9 | Evaluate net benefit rather than agent count |
+
+All six reader lenses reviewed against CAB-001 terminology and the source-controlled companion. Native Word print and external source-to-claim verification remain publication gates, not completed assurance.

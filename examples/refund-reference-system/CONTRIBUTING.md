@@ -16,3 +16,7 @@ An implementing engineer, enterprise architect, advanced student, security revie
 ## Build 1 contribution check
 
 Keep Build 0 independently runnable and the Build 1 proposal parser fail-closed. Changes to C04 fields must update `contracts.py`, `advisory.py`, the injected-model negative tests, Chapter 23, figures 23.1–23.3 and the source-register/traceability material together. Do not add provider credentials, financial adapter imports or execution functions to `build1/`. For any future model adapter, pin optional versions, keep offline exercises reproducible, and document exceptions and what tests do **not** establish.
+
+## Build 2 review discipline
+
+Review any change to `build2/` with `ENGINEERING_STANDARD.md`, Chapter 24 and F24-01/02/03 open. Require typed denial of malformed identity scope, tamper/expiry, cross-tenant and source-scope violations, stale/invalid context, unavailable E4 dependency, untrusted narrative and repeated no-write proof. Check that fixture HMAC and `VerifiedScope` remain labeled **simulations**, and that Build 0/1 remain independently runnable. Any proposed live credentials or payment interface requires a new risk/ownership review, not a silent import into `pipeline.py`. Preserve edition-specific immutable source tagging.

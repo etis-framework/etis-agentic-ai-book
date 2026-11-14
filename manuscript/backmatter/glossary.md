@@ -9,3 +9,9 @@
 **UNKNOWN:** An operational state indicating the outcome of a possibly dispatched external effect is not yet authoritatively established; not equivalent to failure.
 
 [Additional terms will be edited against the controlled terminology register before final pagination.]
+
+**Fixture-verified scope (Build 2):** A locally validated educational identity assertion bound to tenant, case, purpose, source allowlist and expiry; not independently authenticated enterprise identity or payment authority.
+
+**Scoped context observation:** E4/C03 selected evidence with source, classification, version and observation age checked against a bounded purpose; not authoritative E8 financial truth.
+
+**ContextUnavailable:** A failed E4 fixture dependency, distinct from unauthorized scope and from E7's `UNKNOWN` payment outcome.

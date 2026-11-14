@@ -28,21 +28,28 @@ The builds are teaching increments, **not a compulsory Design A → B → C migr
 ```text
 examples/refund-reference-system/
 ├── README.md                 # This reader entry point
-├── ARCHITECTURE.md           # E1–E9 maps for Builds 0 and 1
+├── ARCHITECTURE.md           # E1–E9 maps for Builds 0–2
 ├── CONTRIBUTING.md           # Contribution and review workflow
 ├── ENGINEERING_STANDARD.md  # Normative requirements for Builds 0–5
 ├── TESTING.md                # Scenario-to-evidence matrix and assurance limits
-└── build0/
+├── build0/
     ├── README.md             # Executable exercises and observed evidence
     ├── refund.py             # Standard-library local simulator
     └── test_refund.py        # Isolated unittest evidence
-└── build1/
+├── build1/
     ├── README.md             # Bounded advisory exercises
     ├── contracts.py          # Typed C02/C04 data and strict validation
     ├── model_interface.py    # Injectable untrusted proposal port
     ├── advisory.py           # Deterministic advisor, no privileged effects
     ├── demo.py               # Offline, zero-payment demonstration
     └── test_advisory.py      # Denial, failure and no-effect tests
+└── build2/
+    ├── README.md             # Scoped identity/context exercises
+    ├── identity.py           # Fixture assertion issuer/verifier
+    ├── context.py            # E4 scoped catalog/provenance gate
+    ├── pipeline.py           # Build 1 composition without effect API
+    ├── demo.py               # Offline negative/positive scenarios
+    └── test_scope.py         # Scope, failure and no-write tests
 ```
 
 The canonical figure masters remain in `assets/shared-figures/sources/`; do not duplicate them inside code builds. The reference architecture is explained in Chapter 8 and the architectural-contract appendix.
@@ -62,3 +69,7 @@ The development repository is the only editable code authority. Every published 
 ## Run Build 1 (Chapter 23)
 
 Build 1 is now an independently runnable **untrusted advisory** checkpoint. Begin with [`build1/README.md`](build1/README.md); execute `python3 examples/refund-reference-system/build1/demo.py` and `python3 -m unittest discover -s examples/refund-reference-system/build1 -p 'test_*.py' -v`. It does not invoke Build 0, change E7/E8 or create RF-1042. Treat its `C04` proposals as review candidates, never approval. The optional model interface is tested with injected fakes; no live model or credentials are needed.
+
+## Run Build 2 (Chapter 24)
+
+Build 2 adds **fixture-only** E1 identity-assertion verification and an E4/C03 scoped context lookup before reusing the unmodified Build 1 adviser. Read [`build2/README.md`](build2/README.md) for exact runnable scenarios and the 13-test matrix; execute `python3 examples/refund-reference-system/build2/demo.py` from the repository root. The assertion key is public educational data, **not** a production credential or authenticated-identity guarantee. C04 advice remains untrusted; RF-1042, E7 and E8 are not touched.

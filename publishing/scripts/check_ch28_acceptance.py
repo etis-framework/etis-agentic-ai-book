@@ -11,7 +11,7 @@ checks={
  'CAB continuity and all six reader lenses':all(s in chapter for s in ('C01','C02','C04','C05','C06','C07','C08','C09','E1','E2','E3','E4','E5','E6','E7','E8','E9','Implementing engineer','Enterprise architect','Advanced student','Security and assurance','SRE and operations','Business owner')),
  'no inferred failure from absent provider proof':('UNKNOWN is not FAILED' in chapter and 'NOT_FOUND' in chapter and ('never mint another refund ID' in chapter or 'Never mint another refund identifier' in chapter) and ('does not consume, validate or compare' in chapter or 'does not consume, validate, or compare' in chapter)),
  'Tables and assessment':all(s in chapter for s in ('Table 28.1','Table 28.2','## 28.10','## 28.9')),
- 'book status': 'Chapters 1–28 developed' in (ROOT/'book.yaml').read_text(),
+ 'book status': 'Chapters 1–29 developed' in (ROOT/'book.yaml').read_text(),
  'recovery test and mapping':(ROOT/'examples/refund-reference-system/reliability/test_recovery_cases.py').exists() and 'Chapter 28 reliability evidence' in (ROOT/'examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md').read_text(),
  'source and index update':'Chapter 28 distributed recovery claims' in (ROOT/'references/source-register.md').read_text() and 'Crash-point matrix' in (ROOT/'metadata/index-term-register.json').read_text(),
 }

@@ -15,8 +15,9 @@
 - **Build 4 — provider and reconciliation**: Chapter 26; `build4/README.md`.
 - **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.
 - **C01–C09 cross-domain contracts**: Chapter 8; Chapters 9–16; Appendix.
-- **CASE-204 ($500 refund)**: Chapters 1–28, especially 3, 8, 22–28.
+- **CASE-204 ($500 refund)**: Chapters 1–29, especially 3, 8, 22–29.
 - **Competing histories**: Chapter 28 §§28.2–28.3.
+- **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
 - **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
@@ -44,5 +45,7 @@
 - **Responsibility boundary**: Chapter 28 §28.2.
 - **RF-1042 (trusted operation ID)**: Chapters 2–3, 8, 11, 22–28.
 - **Security and trust boundaries**: Chapters 6, 9, 13, 16, 23–28.
+- **Security falsifier**: Chapter 29 §29.7; Table 29.3.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.
+- **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2.

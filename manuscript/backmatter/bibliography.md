@@ -28,6 +28,9 @@ This is the curated bibliography for the developed manuscript chapters. It is up
 
 ## Governance and assurance
 
+- National Institute of Standards and Technology. *Security and Privacy Controls for Information Systems and Organizations*. NIST Special Publication 800-53, Revision 5 (updated control catalog; verify edition at publication). https://doi.org/10.6028/NIST.SP.800-53r5. See AC-5 (separation of duties) and AC-6 (least privilege); controls are guidance, not proof of ETIS deployment compliance.
+- Souppaya, Murugiah, Karen Scarfone, and Donna Dodson. *Secure Software Development Framework (SSDF) Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities*. NIST SP 800-218, February 2022. https://doi.org/10.6028/NIST.SP.800-218.
+
 - International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 42001:2023 — Information Technology — Artificial Intelligence — Management System*. 2023.
 - Rose, Scott, Oliver Borchert, Stu Mitchell, and Sean Connelly. *Zero Trust Architecture*. NIST Special Publication 800-207, August 2020. https://doi.org/10.6028/NIST.SP.800-207.
 - Hu, Vincent C., David Ferraiolo, David R. Kuhn, et al. *Guide to Attribute Based Access Control (ABAC) Definition and Considerations*. NIST Special Publication 800-162, updated August 2, 2019. https://doi.org/10.6028/NIST.SP.800-162. (ABAC terminology and control attributes; no specific refund-policy guarantee.)
@@ -49,3 +52,5 @@ This is the curated bibliography for the developed manuscript chapters. It is up
 - FinOps Foundation. *Unit Economics*, FinOps Framework capability guidance. https://www.finops.org/framework/capabilities/unit-economics/ (accessed November 2026).
 
 **Chapter 28 reading guide.** Distributed failure and recovery rely on the existing Lamport (1978), Gray and Reuter (1992), Kleppmann (2017) and van der Aalst (2013) entries in this bibliography. These are conceptual references; Chapter 28's simulated payment-provider capabilities and local E2/E5 limitations derive from the checked-in ETIS code, not a real provider's published contract. Claim-to-page checks remain open.
+
+**Chapter 29 reading guide.** Least-privilege, separation-of-duties, secure development and AI risk-management discussion draws conceptually from NIST SP 800-53 Rev. 5, NIST SP 800-218 (SSDF), NIST AI RMF 1.0 and the versioned OWASP agentic guidance above. Exact control/section citations remain a publication gate. The attack implementation and its scope limitations derive from ETIS code, not a claim of external certification.

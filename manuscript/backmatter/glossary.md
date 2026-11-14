@@ -20,6 +20,10 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Bounded advisory reasoning (E3).** Evidence-based reasoning constrained to proposed actions and traceable outputs without independent execution authority.
 
+**Credential custody.** Control of the creation, storage, use, rotation, revocation and audit of secrets or signing keys, enforced outside lower-trust agents; a source-code import boundary alone does not establish custody.
+
+**Workload identity.** Authenticated service or runtime principal used to obtain purpose-, audience- and time-bounded access; it is not transaction-specific business approval.
+
 **Bounded delegation.** Explicitly limited software discretion over allowed tools, data, steps, cost, duration and actions, with external enforcement and escalation.
 
 **Business owner perspective.** Review of value, acceptability, commercial exposure and accountable outcomes; a perspective, not automatic transaction-approval authority.
@@ -68,6 +72,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Fixture-verified scope.** Local, signed or otherwise validated educational identity/scope assertion; not equivalent to a production identity provider or business approval.
 
+**Hijacked bounded investigator.** Agent or worker whose advisory execution is attacker-controlled despite a legitimate scoped E1 identity assertion; not automatically entitled to finance operations.
+
 **Idempotency key.** Stable request identity used under a provider's documented scope and retention guarantee to suppress duplicate effects; not a blanket exactly-once guarantee.
 
 **Implementing engineer perspective.** Examination of executable contracts, code, validation, tests and maintainability, supported by artifacts.
@@ -98,6 +104,7 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Security and assurance perspective.** Review of adversarial behavior, least privilege, protection, policy and independently verifiable enforcement.
 
+**Security falsifier.** Reproducible attack input and expected independent denial point, accompanied by checks for absent downstream effects within a stated test boundary.
 **SRE/operations perspective.** Review of availability, observability, failure handling, incident response and recoverability.
 
 **System of record.** Authoritative owner of a specified business fact; retrieved context or an AI-generated summary does not replace it.
@@ -109,3 +116,4 @@ Terms below describe the architecture and developed implementation. The definiti
 **UNKNOWN (external effect).** Application knows that an external effect may have occurred but lacks conclusive provider evidence; never equivalent to FAILED and never permission to create a second operation.
 
 **Workflow.** Accountable process coordinating deterministic tasks, agent work, human decisions and recovery; not necessarily agentic.
+

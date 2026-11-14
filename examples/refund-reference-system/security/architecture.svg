@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="420" viewBox="0 0 980 420">
+<rect width="980" height="420" fill="white"/>
+<g font-family="DejaVu Sans,Arial,sans-serif" fill="#183148">
+<text x="30" y="40" font-size="23" font-weight="bold">Chapter 29: actual security-test modules and guarded call</text>
+<rect x="25" y="73" rx="12" width="280" height="180" fill="#fbe9e7" stroke="#b54b4b" stroke-width="2"/>
+<text x="43" y="106" font-size="18" font-weight="bold">Test / attacker-input zone</text>
+<text x="43" y="136" font-size="17">security/test_adversarial_cases.py</text>
+<text x="43" y="168" font-size="16">build2/identity.py (E1 fixture)</text>
+<text x="43" y="202" font-size="16">build3/client.py (C04 caller)</text>
+<text x="43" y="237" font-size="15">Valid E1; no finance grant</text>
+<rect x="365" y="73" rx="12" width="280" height="180" fill="#e4f1e8" stroke="#327c58" stroke-width="2"/>
+<text x="382" y="106" font-size="18" font-weight="bold">Actual E5 subprocess</text>
+<text x="382" y="140" font-size="17">build3/service.py</text>
+<text x="382" y="174" font-size="16">build3/contracts.py</text>
+<text x="382" y="210" font-size="15">Independent grant verification</text>
+<text x="382" y="236" font-size="15">DENY before E7/E8</text>
+<rect x="702" y="73" rx="12" width="250" height="180" fill="#edf0fb" stroke="#687caa" stroke-width="2"/>
+<text x="720" y="106" font-size="18" font-weight="bold">Only after E5 approval</text>
+<text x="720" y="146" font-size="16">build0/refund.py</text>
+<text x="720" y="183" font-size="15">E7 local operation</text>
+<text x="720" y="217" font-size="15">E8 mock provider</text>
+<path d="M305 158 H363" stroke="#ab4646" stroke-width="3"/><path d="M351 150 L364 158 L351 166" fill="none" stroke="#ab4646" stroke-width="3"/>
+<path d="M645 158 H700" stroke="#317c58" stroke-width="3"/><path d="M688 150 L700 158 L688 166" fill="none" stroke="#317c58" stroke-width="3"/>
+<text x="30" y="304" font-size="16">Negative: genuine investigator assertion + forged C04 approval → E5 DENIED → no E7/E8 files</text>
+<text x="30" y="339" font-size="16">Positive control: separate fixture finance grant → E5 accepts → one RF-1042 in mock E8</text>
+<text x="30" y="382" font-size="15" fill="#a04432">All fixture keys are held in test setup: this diagram does NOT prove OS secret isolation.</text>
+</g></svg>

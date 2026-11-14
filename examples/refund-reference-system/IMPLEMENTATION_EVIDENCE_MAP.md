@@ -92,3 +92,7 @@ The [named-test assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) tracks reusab
 ## Post-Chapter-28 deep war-game: state versus evidence history
 
 Build 4's `ledger.py` now retains a transactional local `operation_events` history rather than relying solely on the latest `operations` row. The conflict and lost-ack negative tests in `build4/test_provider.py` prove both transitions are recorded without a second provider insert. This evidence remains local and unprotected against a hostile same-UID actor; the Chapter 30–31 assurance work must not label it an independently immutable E9 audit.
+
+## Chapter 29 — attack harness reusing Build 3
+
+`security/test_adversarial_cases.py` runs the real E5 subprocess via `build3/client.py`; `security/architecture.svg` maps the actual test and dependency modules. Negative tests establish that the valid CASE-204 investigator assertion cannot authorize a $500 RF-1042 and that E7/E8 fixture state is not created. The positive control exercises a separately issued *fixture* grant. The harness is **not** a progressive Build 6, an independently isolated adversary process or a real provider security test; E5-side ownership fencing and secure credential custody remain absent. See Chapter 29 Tables 29.1–29.3.

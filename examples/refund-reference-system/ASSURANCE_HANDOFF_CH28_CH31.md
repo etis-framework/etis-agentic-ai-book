@@ -47,3 +47,9 @@ Build 4 now records each local E7 state transition in an ordered, transactional 
 ## Architecture gap that must remain visible
 
 Build 5 fences E2 ownership transitions in one local SQLite authority. Build 4 E5 **does not consume the E2 epoch** and must not be described as enforcing current-owner fencing. The Build 5 refund scenario directly calls the Build 4 E5 subprocess with preassembled fixture identity/approval; it does **not** run the Build 1/2 E3/C04 and E4/C03 advisory/context pipeline. A production implementation has to choose and verify physical failure domains, trust separation, independent finance grant custody, E5 ownership validation, durable E7 recovery and the actual provider's E8 reconciliation contract. Make these engineering choices based on business impact and expected failure modes, not architectural shorthand.
+
+## Chapter 29 implemented adversarial harness (post-Chapter 28)
+
+`security/test_adversarial_cases.py` starts the **actual Build 3 E5 subprocess** and uses the real Build 2 fixture E1 assertion. Six tests cover denial of a genuine investigator token without finance approval, fake C04 fields, mistaken E1-to-finance-grant promotion, wrong scope/amount, tampered grant, and an independently approved positive control. Denials verify **absence of both local E7 and mock E8 files**. Run `python3 -m unittest discover -s examples/refund-reference-system/security -p 'test_*.py' -v`.
+
+This is not Build 6 and does not prove sandboxed adversary principal isolation: the test harness itself holds fixture keys for setup, and its simulated E6/E8 do not access a real provider. E5 current-owner epoch fencing, credential isolation against a same-UID attacker, token revocation, independent approval custody, multi-site threats and protected E9 audit remain **unimplemented** and must be treated as production release blockers. Chapter 30 should own incident handling; Chapter 31 must evaluate the complete claim/evidence matrix.

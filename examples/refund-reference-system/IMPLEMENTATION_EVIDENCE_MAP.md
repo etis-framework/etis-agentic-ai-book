@@ -71,3 +71,16 @@ A complete *logical* enterprise route would include admission (C01), E2 tasking 
 ## 5. Production-readiness decision: HOLD for real payments
 
 Required accountable work includes independent E1 identity, an E5 finance approval issuer and credential isolation; E5-side E2 epoch fencing where multi-worker concurrency requires it; provider-certified idempotency scope, lookup, retention and settlement semantics under E6/E8; E7 backup, recovery and operator controls; E9 audit, telemetry, incident response, policy evolution, privacy controls, and human recourse. A read-only independently governed recovery authority is required after short-lived approval expires. Economics must compare Build 5 coordination against the simpler Build 4/Design B option before accepting its operational cost. These are **deployment requirements and evidence gaps**, not functionality granted by a green fixture test.
+
+## Chapter 28 reliability evidence (separate from Builds 0–5)
+
+| Claim | Executed evidence | Scope / unimplemented requirement |
+|---|---|---|
+| Uncertain provider effect is never inferred FAILED from NOT_FOUND | `reliability/test_recovery_cases.py` | Pure decision fixture, not E5 enforcement |
+| Wrong operation proof cannot confirm RF-1042 | `reliability/recovery_cases.py` + negative tests | Real E8 provenance, amount and settlement not verified |
+| Crash before E5 IPC still constrains replacement | Build 5 `test_coordination.py` + Ch28 matrix | Liveness may require approved operator adjudication |
+| Lost ack recovers by read-only lookup | Build 4/5 regression tests | Provider retention, consistency and live status not established |
+| Stale worker cannot modify E2 state | Build 5 lease/epoch regression tests | E5 does not verify owner epoch; same-UID fixture not OS isolation |
+
+Chapter 28 does **not** create Build 6. The `reliability/` folder does not make E7 mutation or provider calls and is deliberately separate from effectful runtime code.
+

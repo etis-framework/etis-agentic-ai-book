@@ -28,6 +28,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **CASE-204.** The recurring fictional customer case concerning a proposed $500 refund; not a real customer or provider transaction.
 
+**Competing histories.** Concurrent E2 ownership, E7 local intent and E8 external-effect observations that must be correlated without assuming a cross-store atomic commit.
+
 **Consequential effect.** External business-state change, such as an actual financial refund, requiring independently controlled execution and recovery.
 
 **Context observation.** E4/C03 evidence carrying source, version, classification, age and scope; not automatically authoritative E8 truth.
@@ -35,6 +37,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **ContextUnavailable.** Build 2 context dependency failure; separate from unauthorized scope and from UNKNOWN financial effect.
 
 **Coordination and ownership (E2).** Logical responsibility for work admission from E1, routing, leases, epochs, assignment and workflow progress; does not hold financial authority.
+
+**Crash point.** Boundary immediately before or after a durable write, dispatch or external effect at which process death can change what participants know; see Chapter 28.
 
 **Cross-domain contract (C01–C09).** Named, independently reviewable responsibility handoff; see the appendix's compact mapping and Chapter 8.
 
@@ -46,6 +50,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Durable operational state (E7).** Persisted local workflow and effect-intent records, transitions and observations; storage and recovery mechanisms under accountable logical ownership.
 
+**Effect ambiguity.** State in which an external consequential action may have occurred but available trusted evidence does not prove its outcome; UNKNOWN is not FAILED.
+
 **Enforcement boundary.** Code- or infrastructure-controlled point that rejects unauthorized operations independently of untrusted proposals; logical module lines alone do not establish isolation.
 
 **Enterprise architect perspective.** Examination of responsibility allocation, contracts, topology and tradeoffs; a review perspective, not a new E-domain.
@@ -53,6 +59,10 @@ Terms below describe the architecture and developed implementation. The definiti
 **Epoch (ownership).** Monotonically advancing ownership generation used to reject obsolete coordinators at a boundary that actually verifies it.
 
 **Evidence provenance.** Traceable source, time, identity and transformation context necessary to judge whether information supports a decision.
+
+**Execution-boundary fencing.** Verification at E5 or another independently protected consequential endpoint that an instruction belongs to the current authoritative owner/epoch; not implemented by Build 5's E2-local epoch.
+
+**Failure/deployment boundary.** Actual execution, persistence, or communication separation across which components can fail independently; depends on topology, shared infrastructure, and recovery design rather than E-domain notation alone.
 
 **Fencing.** Enforcement that rejects actions from an outdated owner. E2-local fencing in Build 5 does not prove E5-enforced end-to-end fencing.
 
@@ -66,6 +76,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Lease.** Time-limited coordination claim; expiry enables reassignment but does not by itself stop stale workers from reaching privileged endpoints.
 
+**Logical responsibility and failure zone.** A visualization of responsibilities, contracts, and evidence ownership; not a prescribed process, machine, network, or independent failure domain.
+
 **Mock provider.** Simulated external service and E8 record used for reproducible education, not real settlement or bank truth.
 
 **Operation identity (RF-1042).** Stable, trusted ID for the separately authorized CASE-204 payment operation; distinct from E3 advisory correlation identifiers.
@@ -78,6 +90,10 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **RASR.** Reliability, availability, serviceability and recoverability; quality attributes needing stated measures, not an automatic guarantee. Broader ETIS quality attributes include security, privacy, cost and others.
 
+**Recovery authority.** Separately authenticated, scoped permission to inquire, adjudicate or remediate an existing operation; status-only inquiry does not confer authorization for a new payment.
+
+**Responsibility boundary.** Architectural division establishing ownership of a decision, record, or action; does not alone prove a physically isolated fault or enforcement point.
+
 **RF-1042.** See *Operation identity (RF-1042)*.
 
 **Security and assurance perspective.** Review of adversarial behavior, least privilege, protection, policy and independently verifiable enforcement.
@@ -88,7 +104,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Transaction-specific approval grant.** Separately issued, case/tenant/amount/policy-bound artifact that E5 verifies; a signed local demonstration grant does not simulate real finance approval infrastructure.
 
+**Trust/enforcement boundary.** Independently controlled check that can reject unauthorized actions at the receiving consequential interface; distinct from diagram grouping and physical deployment.
+
 **UNKNOWN (external effect).** Application knows that an external effect may have occurred but lacks conclusive provider evidence; never equivalent to FAILED and never permission to create a second operation.
 
 **Workflow.** Accountable process coordinating deterministic tasks, agent work, human decisions and recovery; not necessarily agentic.
-

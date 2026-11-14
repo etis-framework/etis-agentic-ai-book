@@ -10,4 +10,4 @@ Applies to all developed chapters and future chapter/build additions. The book i
 6. **Figures, tables, and companion READMEs must use readable labels** and distinguish demonstrated local controls from independently protected production boundaries. Align the source-level architecture SVG in each build README with its actual implementation.
 7. **Verify, do not merely assert.** Run `python3 publishing/scripts/check_chapter_first_references.py` and existing chapter/full-book QA. Review the first substantive paragraph and figure/table labels manually from all six ETIS reader lenses. Check native Word line wrap and pagination after textual edits. Automated detection is only a preflight.
 
-The rule applies prospectively to Chapters 26–36; planned placeholders are not certified as substantive chapters.
+The rule is applied through developed Chapter 26 and prospectively to Chapters 27–36; planned placeholders are not certified as substantive chapters.

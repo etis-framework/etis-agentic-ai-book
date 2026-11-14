@@ -4,7 +4,10 @@ from pathlib import Path
 import sys
 r=Path(__file__).resolve().parents[2]
 c=r/'examples/refund-reference-system'
-required=['README.md','ARCHITECTURE.md','CONTRIBUTING.md','ENGINEERING_STANDARD.md','TESTING.md','build0/README.md','build0/refund.py','build0/test_refund.py','build1/README.md','build1/contracts.py','build1/advisory.py','build1/model_interface.py','build1/demo.py','build1/test_advisory.py','build2/README.md','build2/identity.py','build2/context.py','build2/pipeline.py','build2/demo.py','build2/test_scope.py']
+required=['README.md','ARCHITECTURE.md','CONTRIBUTING.md','ENGINEERING_STANDARD.md','TESTING.md','build0/README.md','build0/refund.py','build0/test_refund.py','build1/README.md','build1/contracts.py','build1/advisory.py','build1/model_interface.py','build1/demo.py','build1/test_advisory.py','build2/README.md','build2/identity.py','build2/context.py','build2/pipeline.py','build2/demo.py','build2/test_scope.py',
+'build3/README.md','build3/architecture.svg','build3/client.py','build3/contracts.py','build3/service.py','build3/demo.py','build3/test_gate.py',
+'build4/README.md','build4/architecture.svg','build4/provider_contracts.py','build4/adapter.py',
+'build4/ledger.py','build4/workflow.py','build4/service.py','build4/demo.py','build4/test_provider.py']
 errors=[]
 for rel in required:
     if not (c/rel).is_file():errors.append(f'missing {rel}')

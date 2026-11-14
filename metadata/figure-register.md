@@ -43,3 +43,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F25-01 | architecture | Untrusted caller vs independently evaluating E5 process and E7/E6/E8 fixture | `assets/shared-figures/sources/F25-01.svg` | `assets/shared-figures/rendered/F25-01.png` | Source/PNG inspection required; native Word print open |
 | F25-02 | behavior | Valid-token denial and separate approved operation path | `assets/shared-figures/sources/F25-02.svg` | `assets/shared-figures/rendered/F25-02.png` | Source/PNG inspection required; native Word print open |
 | F25-03 | decision | Schema, E1, finance approval and one-time E7 claim | `assets/shared-figures/sources/F25-03.svg` | `assets/shared-figures/rendered/F25-03.png` | Source/PNG inspection required; native Word print open |
+
+
+## Chapter 26 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F26-01 | architecture | Independent E5 before E7 durable claim, E6 adapter and separate mock E8 truth | `assets/shared-figures/sources/F26-01.svg` | `assets/shared-figures/rendered/F26-01.png` | Master/PNG inspected, native Word print open |
+| F26-02 | behavior | One effect, lost acknowledgment, read-only E8 status, E7 confirmation | `assets/shared-figures/sources/F26-02.svg` | `assets/shared-figures/rendered/F26-02.png` | Master/PNG inspected, native Word print open |
+| F26-03 | decision | Confirm only on consistent provider proof; NOT_FOUND and conflict remain UNKNOWN | `assets/shared-figures/sources/F26-03.svg` | `assets/shared-figures/rendered/F26-03.png` | Master/PNG inspected, native Word print open |

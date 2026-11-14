@@ -28,7 +28,7 @@ The builds are teaching increments, **not a compulsory Design A → B → C migr
 ```text
 examples/refund-reference-system/
 ├── README.md                 # Reader entry point
-├── ARCHITECTURE.md           # Architecture mappings across Builds 0–3
+├── ARCHITECTURE.md           # Architecture mappings across Builds 0–4
 ├── CONTRIBUTING.md           # Contribution and review workflow
 ├── ENGINEERING_STANDARD.md  # Engineering and review requirements
 ├── TESTING.md               # Evidence matrix and assurance limits
@@ -61,6 +61,16 @@ examples/refund-reference-system/
     ├── service.py
     ├── demo.py
     └── test_gate.py
+└── build4/
+    ├── README.md
+    ├── architecture.svg
+    ├── provider_contracts.py
+    ├── adapter.py
+    ├── ledger.py
+    ├── workflow.py
+    ├── service.py
+    ├── demo.py
+    └── test_provider.py
 ```
 
 The canonical figure masters remain in `assets/shared-figures/sources/`; do not duplicate them inside code builds. The reference architecture is explained in Chapter 8 and the architectural-contract appendix.
@@ -88,3 +98,7 @@ Build 2 adds **fixture-only** admission-and-identity (E1) assertion verification
 ## Run Build 3 (Chapter 25)
 
 Read [`build3/README.md`](build3/README.md) and its embedded source-architecture SVG first. Build 3 demonstrates a separate trusted-execution-and-authority (E5) process checking a **valid E1 fixture assertion AND independently issued transaction-specific signed approval** before it may create RF-1042 or call the simulated E6/E8 adapter. Run `python3 examples/refund-reference-system/build3/demo.py --scenario compromised` (expected denial/exit 2), then `--scenario approved` (one confirmed fixture operation). Tests use a fresh, locally generated fixture key; no real payment or credential service is involved. Same-user local processes are **not** an OS-level hostile-code isolation guarantee.
+
+## Run Build 4 (Chapter 26)
+
+Build 4 extends the **separately enforced E5 request path** with a versioned **E6/C07 provider adapter**, a mock **E8/C08 authoritative status lookup**, and an explicit **E7/C06 durable operation and reconciliation** path. Begin with [`build4/README.md`](build4/README.md) and its embedded source/module architecture. Run `python3 examples/refund-reference-system/build4/demo.py --scenario lost-ack` followed by the Build 4 tests. E8 may commit the single RF-1042 effect while E7 remains UNKNOWN until read-only reconciliation confirms the provider's record. These are fixture-provider guarantees only, not commercial processor promises, real security isolation or proof of final settlement.

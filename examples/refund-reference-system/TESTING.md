@@ -63,3 +63,8 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build3 -p 
 | Oversized frame | Rejected before approval processing | No operation created | Bounded memory and framing; no per-principal rate limiter |
 
 The fixture does not prove production-grade OS confinement, finance approval issuer security, revocation, real provider idempotency or reconciled payment truth. Ch26 adds provider-specific contracts; Ch29/31 repeat adversarial verification with a stronger deployment threat model.
+
+
+## Chapter 26 / Build 4 — provider contract and reconciliation
+
+Run `python3 -m unittest discover -s examples/refund-reference-system/build4 -p 'test_*.py' -v`. Verify: E1 valid token without separate E5 finance approval creates no E7/E8 database; an authorized effect is recorded once under RF-1042; a lost acknowledgment leaves E7 UNKNOWN and an E8 confirmed effect; an E8 read-only lookup resolves the same operation; missing or contradictory provider data remains UNKNOWN without send; conflicting immutable provider fields and unsuitable capability declarations fail closed; hostile socket clients cannot permanently stall or terminate the E5 service. All fixture tests must pass with resource warnings treated as errors. Separate SQLite connections must be explicitly closed. **These test results do not establish real provider status consistency, settlement finality, cross-site exactly-once effects, independent OS identities or protected approval issuers.** See `build4/README.md` for the owner/evidence matrix.

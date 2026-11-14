@@ -24,3 +24,8 @@ Review any change to `build2/` with `ENGINEERING_STANDARD.md`, Chapter 24 and F2
 ## Build 3 and architecture-diagram changes
 
 Review `build3/README.md`, `architecture.svg`, Chapter 25 and F25-01/02/03 together. Check strict request and signed-grant contracts, validity of the *actual fixture token* in hostile-client tests, no E7/E8 creation on denial, replay refusal, UNKNOWN on outage, correct trust-boundary labeling, safe output, process lifecycle cleanup, and regression of Builds 0–2. A source-module diagram is **required** for every build directory and must be updated whenever APIs, dependencies, stores or enforcement boundaries change. A separate process using the same OS account is a teaching boundary, not a production security guarantee.
+
+
+### Build 4/provider contribution requirement
+
+Any change to the E6/C07 provider command, E8/C08 observation, E7/C06 state machine, or E5 request path must update the Build 4 module diagram, first-reference explanations and the corresponding negative/reconciliation evidence. A new provider capability is not accepted merely because an SDK exposes it: record vendor version, key scope, retention and failure semantics with externally verifiable contract evidence. A simulated provider is explicitly labeled and must never receive real credentials.

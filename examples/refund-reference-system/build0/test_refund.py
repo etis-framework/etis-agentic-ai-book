@@ -1,3 +1,4 @@
+from contextlib import closing
 """Executable evidence: no real provider, network, secrets, or external packages."""
 import sqlite3
 from concurrent.futures import ThreadPoolExecutor
@@ -18,7 +19,7 @@ class Build0Test(unittest.TestCase):
         initialize(self.local, self.provider)
 
     def count(self):
-        with sqlite3.connect(self.provider) as db:
+        with closing(sqlite3.connect(self.provider)) as db, db:
             return db.execute('SELECT COUNT(*) FROM refunds').fetchone()[0]
 
     def test_two_concurrent_dispatchers_only_one_wins(self):
@@ -78,7 +79,7 @@ class Build0Test(unittest.TestCase):
     def test_conflicting_provider_state_cannot_override_e7(self):
         """A different amount is not silently accepted as a matching refund."""
         prepare(self.local)
-        with sqlite3.connect(self.provider) as db:
+        with closing(sqlite3.connect(self.provider)) as db, db:
             db.execute('INSERT INTO refunds VALUES (?,?,?,?)',
                        (OPERATION, CASE, 1234, 'CONFIRMED'))
         with self.assertRaises(Denied):
@@ -117,7 +118,7 @@ class Build0Test(unittest.TestCase):
 
     def test_provider_absence_does_not_allow_resubmission(self):
         prepare(self.local)
-        with sqlite3.connect(self.local) as db:
+        with closing(sqlite3.connect(self.local)) as db, db:
             db.execute("UPDATE operations SET status='DISPATCHED' WHERE operation_id=?",(OPERATION,))
         self.assertEqual(reconcile(self.local,self.provider),'UNKNOWN')
         with self.assertRaises(Denied): dispatch(self.local,self.provider)
@@ -125,9 +126,9 @@ class Build0Test(unittest.TestCase):
 
     def test_conflicting_provider_record_cannot_be_accepted(self):
         prepare(self.local)
-        with sqlite3.connect(self.local) as db:
+        with closing(sqlite3.connect(self.local)) as db, db:
             db.execute("UPDATE operations SET status='UNKNOWN' WHERE operation_id=?",(OPERATION,))
-        with sqlite3.connect(self.provider) as db:
+        with closing(sqlite3.connect(self.provider)) as db, db:
             db.execute('INSERT INTO refunds VALUES (?,?,?,?)',(OPERATION,CASE,100,'CONFIRMED'))
         self.assertEqual(reconcile(self.local,self.provider),'UNKNOWN')
 
@@ -135,7 +136,7 @@ class Build0Test(unittest.TestCase):
         """A separate SQLite connection can recover E7/E8 after an invocation ends."""
         prepare(self.local)
         dispatch(self.local, self.provider, lose_ack=True)
-        with sqlite3.connect(self.local) as local_db, sqlite3.connect(self.provider) as provider_db:
+        with closing(sqlite3.connect(self.local)) as local_db, local_db, closing(sqlite3.connect(self.provider)) as provider_db, provider_db:
             self.assertEqual(local_db.execute('SELECT status FROM operations').fetchone()[0], 'UNKNOWN')
             self.assertEqual(provider_db.execute('SELECT operation_id,status FROM refunds').fetchone(),
                              (OPERATION, 'CONFIRMED'))
@@ -145,10 +146,10 @@ class Build0Test(unittest.TestCase):
     def test_repeated_authorization_cannot_change_immutable_intent(self):
         """Second preparation does not mutate the authorized operation record."""
         prepare(self.local)
-        with sqlite3.connect(self.local) as db:
+        with closing(sqlite3.connect(self.local)) as db, db:
             before = db.execute('SELECT * FROM operations').fetchall()
         prepare(self.local)
-        with sqlite3.connect(self.local) as db:
+        with closing(sqlite3.connect(self.local)) as db, db:
             after = db.execute('SELECT * FROM operations').fetchall()
         self.assertEqual(before, after)
         self.assertEqual(self.count(), 0)

@@ -1,3 +1,4 @@
+from contextlib import closing
 """Build 2 deterministic scope, provenance, failure and no-effects verification."""
 from datetime import datetime, timedelta, timezone
 import json
@@ -110,7 +111,7 @@ class ScopeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             paths = [Path(temp)/'operations.sqlite3',Path(temp)/'provider.sqlite3']
             for path in paths:
-                with sqlite3.connect(path) as db:
+                with closing(sqlite3.connect(path)) as db, db:
                     db.execute('CREATE TABLE marker (id TEXT PRIMARY KEY)')
                     db.execute('INSERT INTO marker VALUES (?)', ('unchanged',))
             before = [p.read_bytes() for p in paths]

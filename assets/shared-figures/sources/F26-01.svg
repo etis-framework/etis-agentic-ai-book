@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="700" viewBox="0 0 1120 700">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 3.5 L0 7" fill="none" stroke="#205269" stroke-width="1.7"/></marker><style>text{font-family:Arial,Helvetica,sans-serif;fill:#143449} .title{font-size:29px;font-weight:700}.head{font-size:23px;font-weight:700}.body{font-size:20px}.small{font-size:17px}.lane{font-size:19px;font-weight:700}.foot{font-size:19px;font-weight:700;fill:#146060}.big{font-size:27px;font-weight:600}.event{font-size:24px}</style></defs>
+<text x="560" y="48" text-anchor="middle" class="title">Provider integration: separate authority, intent, and truth</text>
+<rect x="35" y="110" width="255" height="112" rx="12" fill="#e9f3f7" stroke="#7e9ca7" stroke-width="2"/>
+<text x="162.5" y="142" text-anchor="middle" class="head">Untrusted client</text>
+<text x="162.5" y="171" text-anchor="middle" class="body">C04 cannot authorize</text>
+<text x="162.5" y="195" text-anchor="middle" class="body">C05 request only</text>
+<rect x="350" y="110" width="340" height="112" rx="12" fill="#fff0cf" stroke="#7e9ca7" stroke-width="2"/>
+<text x="520.0" y="142" text-anchor="middle" class="head">E5 trusted execution</text>
+<text x="520.0" y="171" text-anchor="middle" class="body">E1 scope + finance grant</text>
+<text x="520.0" y="195" text-anchor="middle" class="body">Independent request decision</text>
+<rect x="752" y="110" width="330" height="112" rx="12" fill="#e4f0e9" stroke="#7e9ca7" stroke-width="2"/>
+<text x="917.0" y="142" text-anchor="middle" class="head">E7 durable ledger</text>
+<text x="917.0" y="171" text-anchor="middle" class="body">RF-1042 intent and claim</text>
+<text x="917.0" y="195" text-anchor="middle" class="body">AUTHORIZED → DISPATCHED</text>
+<path d="M290,166 L350,166" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<path d="M690,166 L752,166" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="560" y="270" text-anchor="middle" class="small">After E7 dispatch claim commits, only the E5-owned adapter may send</text>
+<rect x="350" y="320" width="340" height="110" rx="12" fill="#e3eff6" stroke="#7e9ca7" stroke-width="2"/>
+<text x="520.0" y="352" text-anchor="middle" class="head">E6 provider adapter</text>
+<text x="520.0" y="381" text-anchor="middle" class="body">Versioned contract C07</text>
+<text x="520.0" y="405" text-anchor="middle" class="body">Typed evidence / lookup</text>
+<rect x="752" y="320" width="330" height="110" rx="12" fill="#e1f3ea" stroke="#7e9ca7" stroke-width="2"/>
+<text x="917.0" y="352" text-anchor="middle" class="head">Mock E8 provider</text>
+<text x="917.0" y="381" text-anchor="middle" class="body">Separate SQLite truth</text>
+<text x="917.0" y="405" text-anchor="middle" class="body">Unique operation key</text>
+<path d="M902,222 L902,281 L520,281 L520,320" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M690,373 L752,373" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<path d="M752,400 L715,400 L715,486 L520,486 L520,430" fill="none" stroke="#205269" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+<text x="551" y="475" text-anchor="middle" class="small">validated E8 observation</text>
+<path d="M350,394 L211,394 L211,515 L918,515 L918,430" fill="none" stroke="#205269" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+<text x="350" y="499" text-anchor="middle" class="small">read-only status lookup</text>
+<rect x="180" y="562" width="760" height="90" rx="12" fill="#eef1f4" stroke="#7e9ca7" stroke-width="2"/>
+<text x="560.0" y="594" text-anchor="middle" class="head">E9 governance and assurance</text>
+<text x="560.0" y="623" text-anchor="middle" class="body">Negative tests • UNKNOWN traces • escalation</text>
+<text x="560" y="677" text-anchor="middle" class="foot">No untrusted client → E6/E8 path; no blind redispatch on UNKNOWN</text>
+</svg>

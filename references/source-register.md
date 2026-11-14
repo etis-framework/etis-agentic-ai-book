@@ -270,3 +270,13 @@ The attached Word build covers developed Chapters 1–23, but none of Parts I–
 | §23.1 | NIST AI 600-1 (2024), OWASP GenAI security guidance | Generative output/prompt-injection risk motivates untrusted proposal handling | Verify exact NIST category and pin OWASP version; no claim of endorsed ETIS architecture |
 | §§23.2–23.6 | CAB-001 and source-controlled Build 0/1 code | E1–E9/C01–C09 mapping, strict parser, negative evidence | Compare each assertion to actual code/tests and edition tag |
 | §23.7 | ETIS original analysis; cross-references Chapters 31/34 | Proposed adoption metrics and Design B conditional value | Must not imply empirical model improvement without measured study |
+
+## Chapter 24 source and claim reconciliation (publication gate open)
+
+| Chapter location | Supporting source | Precisely supported claim / limitation |
+|---|---|---|
+| §§24.2–24.3, 24.8 | NIST SP 800-207 (2020), `nist_sp800_207_2020` | Resource-centered authentication/authorization and no implicit trust; **does not** define the ETIS HMAC fixture or certify the Build 2 design |
+| §§24.1, 24.4, 24.7 | OWASP GenAI guidance (living) and existing `owasp_agentic_2026` register | Retrieval/prompt-injection and identity/tool misuse threat classes; pin edition and check exact claims before publication |
+| §§24.2–24.9 | CAB-001, `build2/identity.py`, `context.py`, `pipeline.py`, `test_scope.py` | Original ETIS architecture mapping, source contracts, fixture behavior and negative tests; requires reproducible tests and independent edition tag |
+
+**Not claimed:** HMAC fixture identity proofing, real source attestations, protected business authorization, provider guarantees or source-page certification. No new bibliography title is introduced; claim-to-page checks stay open.

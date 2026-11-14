@@ -33,3 +33,5 @@ The repository is private during manuscript development and will be publicly acc
 ## Practical reference materials
 
 Chapter 35 supplies detailed contracts, schemas and reference artifacts; Chapter 36 provides exercises, engineering reviews and an adoption roadmap. The companion README supplies installation-free Build 0 reproduction steps and the applicable per-build commands.
+
+**Build 2 note.** Chapter 24's E1/C01 *fixture* verification is not complete authentication; E4/C03's local source selection is not production context authorization; E3/C04 remains an untrusted proposal, never RF-1042 or E5 permission. The companion `build2/README.md` supplies the independently runnable no-credential scope and provenance tests. The compromised valid-token consequential denial still belongs to Chapter 25 and later adversarial verification.

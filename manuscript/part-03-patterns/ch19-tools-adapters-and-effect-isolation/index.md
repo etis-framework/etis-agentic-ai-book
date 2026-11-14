@@ -6,7 +6,7 @@
 
 ## Learning objectives
 
-By the end of this chapter, readers should be able to distinguish tool description, capability, and authority; specify independently enforced read and write contracts; compare direct, brokered, and trusted-execution integration; design a provider adapter that exposes uncertainty honestly; and defend an effect-isolation decision with negative tests, operational evidence, and lifecycle cost.
+By the end of this chapter, readers should be able to distinguish tool description, capability, and authority; specify independently enforced read and write contracts; compare direct, brokered, and independently controlled trusted-execution integration; design a provider adapter that exposes uncertainty honestly; and defend an effect-isolation decision with negative tests, operational evidence, and lifecycle cost.
 
 ## 19.1 From coordination to a tool boundary
 

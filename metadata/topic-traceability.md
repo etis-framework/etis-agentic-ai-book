@@ -103,3 +103,11 @@ See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citatio
 | Design A/B/C not build maturity | Ch3/17/Part IV → Ch24 §§24.1, 24.9 | Evaluate net benefit rather than agent count |
 
 All six reader lenses reviewed against CAB-001 terminology and the source-controlled companion. Native Word print and external source-to-claim verification remain publication gates, not completed assurance.
+
+## Chapter 25 / Build 3 independent trusted request gate
+
+- E1/C01 fixture token vs E5/C05 case-specific finance approval: Ch25 §§25.2–25.4, `build3/contracts.py`, `service.py`; F25-01, F25-03.
+- Compromised **valid token** negative demonstration: Ch25 §§25.2, 25.6–25.7, `test_gate.py`, actual issuer/verifier assertion and absent E7/E8 databases. Ch29 and Ch31 must deepen threat assumptions and verification.
+- E5/C05→E7/C06 local immutable RF-1042 and E6/C07→E8/C08 simulated external effect: Ch22/25, `build0/refund.py` invoked server-side; F25-02. UNKNOWN/reconciliation Ch26 remains open.
+- E2 durable ownership, multi-worker leases, epochs/fencing intentionally absent until optional Ch27; real OS security and independent finance issuer not supplied by same-user fixture.
+- Build 0–3 README `architecture.svg` figures map actual modules; no change to Designs A/B/C business alternatives.

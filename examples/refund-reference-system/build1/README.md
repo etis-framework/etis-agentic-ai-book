@@ -15,6 +15,12 @@ python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test
 
 Expected first run: JSON object with `untrusted_proposal.disposition` = `RECOMMEND_REVIEW`, `review_required` = `true`, `financial_effects` = `0`, `authorization` = `NOT_GRANTED`. Delivered yields `DO_NOT_RECOMMEND`; unknown yields `INSUFFICIENT_EVIDENCE` and `UNRESOLVED` uncertainty. `--inject` adds adversarial prose to the inert evidence narrative: the resulting outcome is unchanged. None of these commands creates SQLite files. No credentials, `pip`, model service or network are required. Tests use temporary databases where applicable.
 
+## Source-code architecture diagram
+
+![Build 1 actual source-module architecture](architecture.svg)
+
+This version-controlled diagram maps the teaching modules to logical enterprise responsibilities (E1–E9) and cross-domain contracts (C01–C09), as defined in Chapter 8; it does **not** establish an independently protected security boundary. Read the module names, implementation limitations, and executable tests together. Changes to source interfaces or trust boundaries require changing this SVG in the same patch.
+
 ## Read the implementation in control order
 
 1. `contracts.py`: exact `WorkRequest`, `Evidence` and `Proposal` typed contracts. All money uses integer cents and rejects `bool` and `float`; case/tenant/schema/freshness are bounded to fixed fixtures. `Proposal.parse()` rejects unexpected fields such as `approved` and `provider_key` rather than silently ignoring them.

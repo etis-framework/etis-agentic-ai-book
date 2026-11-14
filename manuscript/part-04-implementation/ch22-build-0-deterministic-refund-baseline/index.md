@@ -6,7 +6,7 @@
 
 ## Learning objectives
 
-After this chapter, readers should be able to: (1) map the deterministic CASE-204 baseline to the relevant nine logical enterprise responsibilities without equating them with separate services; (2) distinguish a trusted test fixture from production identity and policy enforcement; (3) implement stable financial operation identity and local durable state; (4) trace a lost acknowledgment through UNKNOWN and safe reconciliation; (5) reproduce negative tests and explain their limits; and (6) decide what must be hardened before introducing an advisory model or live payment adapter.
+After this chapter, readers should be able to: (1) map the deterministic baseline for the recurring $500 refund case to the relevant nine logical enterprise responsibilities without equating them with separate services; (2) distinguish a trusted test fixture from production identity and policy enforcement; (3) implement stable financial operation identity and local durable state; (4) trace a lost acknowledgment through UNKNOWN and safe reconciliation; (5) reproduce negative tests and explain their limits; and (6) decide what must be hardened before introducing an advisory model or live payment adapter.
 
 ## 22.1 Begin from the architecture, not an agent framework
 

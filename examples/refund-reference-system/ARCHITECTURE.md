@@ -1,4 +1,4 @@
-# Companion source architecture — Builds 0–3
+# Companion source architecture — Builds 0–5
 
 The reference architecture names nine logical enterprise responsibilities (E1–E9) and cross-domain contracts (C01–C09); neither identifier range dictates a nine-service deployment. See Chapter 8 for the complete definitions. Here, durable operational state (E7) is the local SQLite operation ledger, while the authoritative business-system responsibility (E8) is represented only by a **simulated** payment-provider SQLite record.
 
@@ -33,7 +33,7 @@ The C02-like `WorkRequest` remains fixed fixture input (not authenticated E1). E
 
 Chapter 24 / F24-01 separates issuer claims, verified **fixture** scope, scoped E4 catalog observation and untrusted E3/C04 recommendation. `build2/identity.py` verifies a canonical HMAC assertion with expiry and a fixed purpose; `context.py` applies tenant/case/source/classification/freshness checks through a controller-preselected C03-style query (not a literal E3->E4 invocation); `pipeline.py` adapts the result to the unchanged Build 1 `WorkRequest`/`Evidence`. No Build 0 payment imports or E7/E8 database writes appear. `TRACE-204` and `ADV-TRACE-204` remain advisory identifiers, not trusted RF-1042. A `VerifiedScope` instance and the signing key are **not** protected against hostile code running inside this Python process. Missing protections: real authentication and resource-policy enforcement (E1/E4 owners), isolated E5 authorization (Build 3), provider reconciliation (Build 4), and optional E2 fencing (Build 5). Inspect `build2/README.md`, the Figure 24 trio and `TESTING.md` before inferring assurance.
 
-## Source-level architecture views — Builds 0–3
+## Source-level architecture views — Builds 0–5
 
 Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), and [`build3/architecture.svg`](build3/architecture.svg). These show *actual Python modules and fixture stores*, not CAB-001's required physical deployment layout. They must be inspected and updated with code changes.
 
@@ -47,3 +47,9 @@ Chapter 25 and F25-01/02/03 add a distinct E5 service process (`build3/service.p
 ![Build 4 actual Python module architecture](build4/architecture.svg)
 
 Build 4 retains the **independently checked E5 request-path service**, reusing Build 2 E1 fixture identity and Build 3 transaction-specific finance approval. After the E5 decision, `build4/workflow.py` commands the local **E7/C06** `ledger.py` to persist RF-1042 and claim one dispatch before `adapter.py` exercises the **E6/C07** pinned provider protocol. `provider_contracts.py` supplies typed provider commands, capabilities, and **E8/C08** status observations; the mock E8 system is a separate SQLite database. The reconciliation path performs status reads only. `build4/demo.py` and `test_provider.py` are separate entry points, not an authorization issuer or independent platform component. This maps logical responsibilities to actual modules without asserting real payment-provider guarantees, hostile same-UID isolation, or multi-worker E2 fencing. See [Build 4 README](build4/README.md) for constraints and executed tests.
+
+## Build 5 — Optional E2 coordination and ownership (Chapter 27)
+
+![Build 5 actual source/module architecture](build5/architecture.svg)
+
+`build5/coordinator.py` owns **only E2/C02** local durable work identity, a SQLite transactional lease, increasing epoch and one-time execute-intent decision; `runner.py` delegates its single selected `execute` or status-only `reconcile` action to the unchanged Build 4 E5 socket. E5 still validates E1 identity and an independent case-specific finance grant before E7 claim and E6/mock E8 work. A valid E2 lease is **not** an E5 authorization, and an E2 `CONFIRMED` is not direct provider proof. Build 5 fences E2 database mutation, **not E5 execution by stale workers**; full distributed fencing, protected service principals, independent reconciliation roles and real provider verification remain outside the educational fixture. See [Build 5 README](build5/README.md) for exact code, evidence and omissions.

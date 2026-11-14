@@ -75,6 +75,8 @@ The exception path is the economic stress test. Missing shipment evidence, dispu
 
 A small, high-performing model can be preferable to a flexible agent when the case fields are stable. A deterministic rule can be preferable to both. The choice should follow evidence, not a requirement to maximize autonomy. The cost of testing additional tool paths and combinations rises with permitted freedom even where the invocation price falls.
 
+**A decision-grade business review is cross-functional.** The business owner tests whether shorter handling time improves acceptable outcomes; engineering tests reproducibility and maintainability; security/assurance estimates control and review costs; operations estimates incidents and unresolved work. Record disagreements as measurable assumptions in the pilot, not as a vote for a more autonomous model.
+
 ## 5.7 Run a decision-grade pilot
 
 Before production, agree an evaluation charter with the process owner, finance, operations, security, privacy, and representatives of customer review. State the population and exclusion rules, counterfactual baseline, sample approach, observation period, metrics, and decision authority. Use historical replay and prospective shadow mode before any live consequential effect. Cases with known outcomes support initial accuracy testing; held-out and adversarial cases probe the exceptions. Observe reviewer behavior, not just model output.

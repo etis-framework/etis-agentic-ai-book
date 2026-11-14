@@ -62,7 +62,7 @@ Before accepting each chapter, inspect front matter through that chapter as a *c
 - **Decision as enforceable contract:** Ch8 E1–E9 and C01–C09; Ch13 E5, Ch15 E7, Ch17 alternatives, Ch19 effect isolation, Ch20 information ownership → Ch21 §§21.1–21.4 and Figure 21.1. ADR-021 records a candidate decision, POL-021 records a proposed rule, but neither creates financial permission without independent E5/E6 enforcement.
 - **Governance change lifecycle:** Ch7 release and evidence doctrine; Ch16 change/operations; Ch21 §21.5 and Figure 21.2. Approved rules, deployed digests, actual adapter privilege, release identity and rollback evidence must reconcile. No claim that an ADR, policy engine or dashboard is a control by itself.
 - **CASE-204 invariant:** $500; Design B is conditional initial production candidate, A/C are alternatives; C04 advisory never mints RF-1042; E7 UNKNOWN cannot be upgraded without E8 reconciliation.
-- **Negative test handoff:** Ch21 §21.6 G21-01–G21-07 → planned Ch22–27 guarded implementation, Ch29 compromised-agent/privileged-provider distinction, Ch31 independent end-to-end assurance. These later chapters are **not yet drafted**.
+- **Negative test handoff:** Ch21 §21.6 G21-01–G21-07 → implemented Ch22–27 guarded teaching examples, Ch29 compromised-agent/privileged-provider distinction, Ch31 independent end-to-end assurance. Ch22–27 are now drafted and executable; Chapters 29 and 31 remain planned.
 - **Source limitation:** Ch21 source-register mapping is claim-scoped; exact edition/page checks and Mac Word physical pagination are open.
 
 ## Holistic Parts I–III six-lens editorial review (2026-11-13)
@@ -83,7 +83,7 @@ See `metadata/parts-01-03-six-lens-audit.md` for the complete route map, citatio
 | E5/E6 gate and adapter | Ch13–14 → Ch19/21 → Ch22 §§22.2–22.5 | `authorize`, `dispatch`, denial test; no production privilege isolation/credential custody |
 | E7 versus E8, UNKNOWN | Ch15 → Ch20 → Ch22 §§22.3–22.5 | Two separate SQLite stores; lost-ack, no-redrive and reconciliation tests; no real provider assertions |
 | Alternative A/B/C versus Build 0–5 | Ch3/17/21 → Part IV opener → Ch22 §§22.1, 22.7 | Build is a teaching sequence, C optional and B conditionally preferred |
-| E9 verification and operations | Ch7/21 → Ch22 §§22.5–22.6 → Ch28–31 planned | Six runnable regression tests; native Word print, real provider contract, concurrency, source-page audit OPEN |
+| E9 verification and operations | Ch7/21 → Ch22 §§22.5–22.6 → Ch28–31 planned | 109 runnable Build 0–5 tests in the Chapter 27 working snapshot; native Word print, real provider contract, cross-site concurrency and source-page audit OPEN |
 
 ## Chapter 23 / Build 1 traceability
 
@@ -126,3 +126,17 @@ All six reader lenses reviewed against CAB-001 terminology and the source-contro
 | Designs A/B/C remain alternatives | Ch3/17/22–26; Part IV intro | Measured benefit and risk-based design choice |
 
 This mapping does not claim a production provider integration or an immutable external audit log; those remain open review gates.
+
+
+## Chapter 27 / Build 5 — optional E2 coordination
+
+| Obligation | Executable/manuscript evidence | Production assurance debt |
+|---|---|---|
+| E2/C02 durable work ownership | Ch27 §§27.2–27.4; `build5/coordinator.py`, F27-01/02 | Trusted multi-site store, service identities, clock/skew and failover semantics |
+| Epoch fencing for E2 state | Ch27 §§27.3–27.5; `test_coordination.py` stale lease / racing owner tests | E5 MUST separately enforce current ownership for **end-to-end** effect fencing |
+| One initial effect attempt and conservative handoff | Ch27 §§27.4–27.6; `runner.py` and crash-before-send tests | Durable E5/E7 acceptance protocol and operator recovery |
+| E5/C05 independent finance authority | Ch25–27; real Build 4 E5 subprocess used by Build 5 demo | Independent issuer/key custody and identity isolation |
+| E7/C06 operation and E6/E8/C07–C08 proof | Ch26–27; no re-execution after UNKNOWN, F27-02/03 | Real provider idempotency/lookup agreement and audited recovery |
+| Companions and learning | `build5/README.md`, `architecture.svg`, tests and QA report | Print Word and real deployment certification remain open |
+
+Build 5 is optional; Designs A/B/C remain alternatives and no C04 proposal can mint RF-1042.

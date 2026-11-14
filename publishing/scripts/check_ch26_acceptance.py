@@ -28,7 +28,7 @@ checks={
  'Hostile transport and recovery negative tests':all(x in files['test_provider.py'] for x in ('test_stalled_connection_has_bounded_delay','test_disconnected_client_cannot_kill_service','test_lost_ack_reconcile_via_service_no_second_send','test_valid_token_without_approval_cannot_create_provider_or_ledger','test_conflicting_stable_operation_key_blocks_dispatch')),
  'README embeds source architecture': '(architecture.svg)' in files['README.md'],
  'README clarifies simulated provider': 'not a payment system' in files['README.md'] and 'Commercial' not in files['README.md'][:80],
- 'Book status and navigation updated': '1–26 developed' in (ROOT/'book.yaml').read_text() and 'Build 4' in (ROOT/'metadata/topic-traceability.md').read_text(),
+ 'Book status and navigation updated': ('1–26 developed' in (ROOT/'book.yaml').read_text() or '1–27 developed' in (ROOT/'book.yaml').read_text()) and 'Build 4' in (ROOT/'metadata/topic-traceability.md').read_text(),
  'Source register coverage updated': 'Chapter 26 source-to-claim' in (ROOT/'references/source-register.md').read_text(),
 }
 for i in (1,2,3):

@@ -17,13 +17,14 @@ EXPLANATION = {
     24: ("context-query contract (C03)", "admission-and-identity (E1)"),
     25: ("advisory action-proposal contract (C04)", "stable consequential-operation identifier RF-1042"),
     26: ("advisory action-proposal contract (C04)", "refund-operation identity, **RF-1042**"),
+    27: ("Coordination and durable ownership (E2)", "RF-1042"),
 }
 errors = []
 checked = 0
 for path in sorted(MANUSCRIPT.glob("part-*/ch*/index.md")):
     number = int(path.parent.name[2:4])
     text = path.read_text(encoding="utf-8")
-    if number > 26 or "STATUS: PLANNED / NOT DRAFTED" in text:
+    if number > 27 or "STATUS: PLANNED / NOT DRAFTED" in text:
         continue
     checked += 1
     match = re.search(r"^## Learning objectives\s*\n\s*([^\n]+)", text, flags=re.M)

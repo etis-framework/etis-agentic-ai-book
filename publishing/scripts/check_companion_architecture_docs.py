@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion reader-entry and architecture documentation guard (Builds 0–4).
+"""Companion reader-entry and architecture documentation guard (Builds 0–5).
 
 This deterministic check catches missing diagrams, misleading security claims,
 wrong tree entries and broken local Markdown file links. It does not establish
@@ -17,7 +17,7 @@ main = (DOCS / "README.md").read_text(encoding="utf-8")
 architecture = (DOCS / "ARCHITECTURE.md").read_text(encoding="utf-8")
 testing = (DOCS / "TESTING.md").read_text(encoding="utf-8")
 
-for build in range(5):
+for build in range(6):
     d = DOCS / f"build{build}"
     readme = d / "README.md"
     diagram = d / "architecture.svg"
@@ -35,7 +35,7 @@ for build in range(5):
     except (OSError, ET.ParseError) as exc:
         errors.append(f"Build {build}: {exc}")
 
-for source in [DOCS / "README.md", DOCS / "ARCHITECTURE.md", DOCS / "TESTING.md"] + [DOCS / f"build{i}" / "README.md" for i in range(5)]:
+for source in [DOCS / "README.md", DOCS / "ARCHITECTURE.md", DOCS / "TESTING.md"] + [DOCS / f"build{i}" / "README.md" for i in range(6)]:
     body = source.read_text(encoding="utf-8")
     for target in re.findall(r"\[[^]]+\]\(([^)]+)\)", body):
         if target.startswith(("http:", "https:", "mailto:", "#")):

@@ -29,3 +29,6 @@ Review `build3/README.md`, `architecture.svg`, Chapter 25 and F25-01/02/03 toget
 ### Build 4/provider contribution requirement
 
 Any change to the E6/C07 provider command, E8/C08 observation, E7/C06 state machine, or E5 request path must update the Build 4 module diagram, first-reference explanations and the corresponding negative/reconciliation evidence. A new provider capability is not accepted merely because an SDK exposes it: record vendor version, key scope, retention and failure semantics with externally verifiable contract evidence. A simulated provider is explicitly labeled and must never receive real credentials.
+
+
+Build 5 contributions must retain the explicit distinction between local E2 fencing and E5-side end-to-end ownership enforcement. Add a negative test for each new state transition, and update `build5/architecture.svg` and the chapter prose with the source modules in the same pull request.

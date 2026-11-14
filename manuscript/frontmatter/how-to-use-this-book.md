@@ -15,6 +15,8 @@ The book is a continuous engineering argument and a practical reference. Read Pa
 **Reader pathways.** Developing engineers should complete the exercises in sequence. Architects should focus on responsibility boundaries and alternative decisions. Security and privacy reviewers should trace authority, data use, and human recourse. Operations teams should emphasize unknown outcomes, failure injection, reconciliation, serviceability, and cost of ownership. Business leaders should ask what measurable value is created and which residual risks are explicitly accepted.
 
 
+**Professional review perspectives.** Where an architecture decision warrants scrutiny, the book asks how an implementing engineer, enterprise architect, security/assurance reviewer, SRE/operations owner, and business owner would challenge its claims. The relevant perspectives vary by decision; they are not new E-domains, a prescribed review board, or a substitute for formal authority. Student exercises train readers to perform these professional reviews, while teaching-quality evaluations remain outside the reader-facing method.
+
 ## The companion reference implementation
 
 This book includes **runnable Python source code, tests, architecture figures, and reproducible exercises**, not merely pseudocode. The same fictional case, **CASE-204**, anchors the examples: a proposed **$500 refund** whose independently authorized payment operation is **RF-1042**. Readers can reproduce the baseline, explore denied actions and uncertain outcomes, and compare each added capability against the deterministic alternative.

@@ -127,9 +127,11 @@ A reviewable architecture package contains: a responsibility map, a contract inv
 
 Architecture evidence and runtime evidence are not interchangeable. The figures in this chapter communicate intended separation; only subsequent implementation tests, access-policy inspection, provider fault injection, and operational exercises can demonstrate that the system enforces it. Do not mark an architecture accepted merely because a diagram has the right colored boxes.
 
+**Professional perspectives challenge Figure 8.1:** engineers trace C04/C05, security demands denial, operations demands recovery, and business ownership requires approval evidence.
+
 **Architecture review verdict for the continuing case.** The design is acceptable as a *candidate logical decomposition*, not as an authorized production system. The minimum release-blocking tests include cross-tenant read denial; model-to-payment route denial; changed or revoked approval denial; stable-operation duplicate suppression under the documented provider contract; lost-acknowledgment reconciliation; and operator containment. If the provider cannot support authoritative status resolution, the system must preserve a human-owned unresolved state rather than claim completion.
 
-The next eight chapters decompose the target-state logical architecture in Figure 8.1: admission (9), coordination (10), proposals (11), context (12), authorization (13), integration and business truth (14), state and assurance (15), and deployment boundaries (16). The later pattern, build, verification, and governance parts will use the same case and invariants rather than introducing a more permissive agent by stealth.
+The next eight chapters decompose the target-state logical architecture in Figure 8.1: admission (9), coordination (10), proposals (11), context (12), authorization (13), integration and business truth (14), state and assurance (15), and deployment boundaries (16). Later parts retain these invariants.
 
 ## Chapter exercises
 

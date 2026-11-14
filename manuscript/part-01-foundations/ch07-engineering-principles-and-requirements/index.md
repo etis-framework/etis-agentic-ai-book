@@ -97,6 +97,8 @@ Assign responsibilities without pretending every organization has the same job t
 
 For a provider timeout, the evidence record is not “the workflow was retried and succeeded.” It must show the original `RF-1042` intent, attempt, unknown observation, blocked duplicate path, reconciliation result or escalation, and responsible owner. This makes the difficult edge case as reviewable as the happy path.
 
+**Multi-perspective review is a way to elicit evidence, not a new governance hierarchy.** An implementing engineer asks whether the control is testable; an enterprise architect asks where it belongs and whether it can be bypassed; security and assurance ask who holds the permission and how denial is proved; site reliability engineering (SRE)/operations ask how the system fails and recovers; and a business owner asks whether the residual risk and cost are acceptable. Select the relevant perspectives for each decision. Record the accountable authority separately: asking a question does not itself authorize a refund or a release.
+
 ## 7.8 Requirements evolve; obligations must not disappear
 
 Requirements are baselines, not permanent guesses. New policy, a changed model, a new provider API, evolving data retention needs, or field incidents may justify revision. A change request should identify impacted claims, affected interfaces, test coverage, approval authority, rollback readiness, and evidence that remains valid. Retirement of a control requires explicit review rather than deletion of an inconvenient failing test.

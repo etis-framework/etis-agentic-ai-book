@@ -88,7 +88,7 @@ The matrix intentionally separates *absence of evidence* from *evidence of absen
 
 ## 28.5 One failure chronology: lost acknowledgment and replacement ownership
 
-The abstract matrix becomes easier to visualize in one concrete sequence. Figure 28.2 shows the most important Chapter 28 teaching scenario: the provider performs the refund, but the original worker never receives the acknowledgment. The replacement worker must recover safely without inventing a second payment.
+Figure 28.2 shows a provider effect with a lost acknowledgment. The replacement worker must recover without another payment.
 
 ![](assets/shared-figures/rendered/F28-02.png)
 
@@ -106,7 +106,7 @@ An **idempotency key** identifies one logical operation within a provider-define
 
 ## 28.7 Fencing, stale ownership, and the real enforcement boundary
 
-Build 5 uses **leases and epochs** so that a stale worker cannot continue mutating E2 coordination state after a takeover. The `CoordinatorStore` increments epochs, the `Coordinator` grants time-bounded ownership, and stale workers are rejected when they try to alter E2 rows. The `BoundedRunner` commits `EXECUTE_IN_FLIGHT` before the first IPC call. After a crash, a replacement uses only `reconcile`; a duplicate `execute` is not offered through that recovery route. This is a useful limited guarantee, and Build 5 tests prove it.
+Build 5 uses **leases and epochs** so that a stale worker cannot continue mutating E2 coordination state after a takeover. The `DurableCoordinator` in `build5/coordinator.py` increments epochs and grants time-bounded ownership, and stale workers are rejected when they try to alter E2 rows. The `BoundedRunner` commits `EXECUTE_IN_FLIGHT` before the first IPC call. After a crash, a replacement uses only `reconcile`; a duplicate `execute` is not offered through that recovery route. Build 5 tests this local guarantee.
 
 **Critical non-guarantee:** the Build 4 E5 interface does not consume, validate, or compare Build 5's E2 epoch. Therefore an old worker with a still-valid, separately issued finance grant might call E5 directly despite losing its E2 lease. E5's independent grant check and E7's one-time local claim reduce risk for the *same* operation, but they must not be described as E5-enforced stale-worker fencing or cross-operation containment. A production deployment must add a trusted, fail-closed current-owner or current-epoch check at E5 for ownership-sensitive commands, with replay protection, service identity, and no bypass path through the provider adapter.
 
@@ -122,7 +122,7 @@ Figure 28.3 converts the architecture and sequence into an accountable recovery 
 
 A resolution record identifies the incident, RF-1042 and scope, finance decision/policy, E2 owner/epoch, E7 event IDs, authenticated E8 observations and retrieval times, contradictory evidence, read-only query, decision owner, escalation basis, customer impact, and proposed remedy. Distinguish **observation** from **interpretation**; never manufacture provider facts from LLM output.
 
-A manual remedy is not simply a restarted agent run. If the provider later proves that no refund occurred and the business still owes the customer $500, **any new consequential operation** requires its own transaction-specific independent E5 authorization, approval policy, distinct operation identity, and duplicate-risk analysis. A reversal or compensating payment is likewise a new privileged effect, not an informal database correction. The original `UNKNOWN` history should be retained even after the case is later closed.
+If the provider proves no refund occurred and the business still owes $500, **any new consequential operation** needs fresh transaction-specific E5 approval, a distinct operation identity, and duplicate-risk analysis. A reversal or compensating payment is likewise a new privileged effect, not an informal database correction. The original `UNKNOWN` history should be retained even after the case is later closed. In the companion Build 4 ledger, transactional `operation_events` entries retain the sequence of local observations, including an earlier confirmation that a later contradictory E8 observation has placed in dispute. This is **local educational evidence**, not an independently protected production audit trail.
 
 A compact guarantee inventory keeps the chapter honest:
 

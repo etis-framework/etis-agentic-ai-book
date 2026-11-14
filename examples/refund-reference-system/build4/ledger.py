@@ -27,11 +27,35 @@ class OperationalLedger:
             tenant_id TEXT NOT NULL, amount_cents INTEGER NOT NULL,
             currency TEXT NOT NULL, status TEXT NOT NULL,
             observation TEXT NOT NULL, provider_reference TEXT)''')
+        db.execute('''CREATE TABLE IF NOT EXISTS operation_events (
+            sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+            operation_id TEXT NOT NULL,
+            event TEXT NOT NULL,
+            status TEXT NOT NULL,
+            observation TEXT NOT NULL,
+            provider_reference TEXT)''')
         try:
             with db:
                 yield db
         finally:
             db.close()
+
+    @staticmethod
+    def _event(db, command: RefundCommand, event: str, status: str,
+               observation: str, provider_reference=None):
+        '''Transactional local evidence history; NOT a tamper-resistant audit log.'''
+        db.execute('''INSERT INTO operation_events
+            (operation_id,event,status,observation,provider_reference)
+            VALUES (?,?,?,?,?)''',
+            (command.operation_id,event,status,observation,provider_reference))
+
+    def history(self, command: RefundCommand):
+        '''Ordered local observations; never infer external settlement from this history.'''
+        command.validate()
+        with self._connect() as db:
+            return db.execute('''SELECT event,status,observation,provider_reference
+                FROM operation_events WHERE operation_id=? ORDER BY sequence''',
+                (command.operation_id,)).fetchall()
 
     def state(self, command: RefundCommand):
         command.validate()
@@ -45,9 +69,11 @@ class OperationalLedger:
     def prepare(self, command: RefundCommand):
         command.validate()
         with self._connect() as db:
-            db.execute('''INSERT OR IGNORE INTO operations VALUES (?,?,?,?,?,?,?,?)''',
+            inserted=db.execute('''INSERT OR IGNORE INTO operations VALUES (?,?,?,?,?,?,?,?)''',
                 (command.operation_id,command.case_id,command.tenant_id,
                  command.amount_cents,command.currency,'AUTHORIZED','grant verified',None))
+            if inserted.rowcount == 1:
+                self._event(db,command,'PREPARE','AUTHORIZED','grant verified')
         row=self.state(command)
         if row is None or row[4] != 'AUTHORIZED':
             raise InvalidTransition('preparation cannot reset an already claimed operation')
@@ -58,14 +84,23 @@ class OperationalLedger:
                 WHERE operation_id=? AND status='AUTHORIZED' ''',(command.operation_id,))
             if c.rowcount != 1:
                 raise InvalidTransition('exactly one authorized dispatch claim required')
+            self._event(db,command,'DISPATCH_CLAIM','DISPATCHED','provider call may have begun')
 
     def observe_unknown(self, command: RefundCommand, detail: str):
         if detail not in {'ack-lost','provider-unavailable','provider-conflict','infrastructure-uncertain'}:
             raise ValueError('unapproved diagnostic classification')
         with self._connect() as db:
+            row=db.execute('''SELECT provider_reference FROM operations
+                WHERE operation_id=? AND status IN ('DISPATCHED','UNKNOWN','CONFIRMED')''',
+                (command.operation_id,)).fetchone()
+            if row is None:
+                raise InvalidTransition('unknown observation requires existing dispatched operation')
             db.execute('''UPDATE operations SET status='UNKNOWN',observation=?
                 WHERE operation_id=? AND status IN ('DISPATCHED','UNKNOWN','CONFIRMED')''',
                 (detail,command.operation_id))
+            # Preserve prior CONFIRMED and its evidence even when a subsequent
+            # contradictory provider query makes the current outcome UNKNOWN.
+            self._event(db,command,'OBSERVE_UNKNOWN','UNKNOWN',detail,row[0])
 
     def confirm(self, command: RefundCommand, provider_reference: str, *, source: str):
         if source not in {'provider-commit','provider-status-query'} or provider_reference != 'MOCK-'+command.operation_id:
@@ -76,3 +111,4 @@ class OperationalLedger:
                 (source,provider_reference,command.operation_id))
             if c.rowcount != 1:
                 raise InvalidTransition('provider proof cannot authorize a new local operation')
+            self._event(db,command,'CONFIRM','CONFIRMED',source,provider_reference)

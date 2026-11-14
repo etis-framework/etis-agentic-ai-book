@@ -1,3 +1,13 @@
+# Companion code architecture: logical contracts and actual modules
+
+The textbook figures define the architecture and trust boundaries. Each working build README additionally includes a **source-level architecture drawing**, with terminology grounded in the E1–E9 responsibilities and C01–C09 contracts. These views distinguish Python modules and local test data from deployable services and enforceable protection boundaries.
+
+- [Build 0 module architecture](build0/README.md#implementation-architecture): deterministic E5 fixture, E7 local record, E6/mock E8 interface
+- [Build 1 module architecture](build1/README.md#implementation-architecture): E3 adviser, strict C04 contract, and excluded financial interfaces
+- [Build 2 module architecture](build2/README.md#implementation-architecture): E1-like fixture scope, E4/C03-style gateway, and E3 advice
+
+Later builds should add matching implementation diagrams without redefining the approved CAB-001 logical architecture. Source-level diagrams supplement, but do not replace, the chapter figures.
+
 # Build 0 architectural scope (read with Chapter 22)
 
 Build 0 illustrates selected E1–E9 logical responsibilities, **not nine production services**. Figure 22.1 shows trust boundaries and Figure 22.2 shows local operation-state transitions; their canonical SVG masters live in `assets/shared-figures/sources/`.

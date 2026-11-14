@@ -2,6 +2,12 @@
 
 **Start here after reading `../ENGINEERING_STANDARD.md` and Chapters 22–24.** This is an executable, credential-free educational fixture. It is not an identity provider, a payment service, an isolated policy enforcement point or a tool capable of transferring money. Uses Python 3.10+ standard library, with no network, `pip` installation, credentials or external provider.
 
+## Implementation architecture
+
+![Build 2 reference-implementation module architecture](architecture.svg)
+
+`pipeline.py` orchestrates fixture E1 verification, E4/C03-style retrieval, and the unchanged Build 1 E3 adviser. The sequence is simulated and the arrow labels are conceptual calls, not cryptographically protected enterprise contracts. The diagram source is [`architecture.svg`](architecture.svg), maintained with this build and independently readable in GitHub or offline Markdown renderers. Follow the book's Chapter 24 figures for the **logical enterprise architecture**; this drawing maps that design to actual educational source files.
+
 ## What this increment adds
 
 Build 0 independently demonstrates local financial intent/reconciliation. Build 1 independently produces C04 untrusted advice from a fixed evidence object. Build 2 deliberately composes E1 claim integrity and E4/C03 scoped provenance *before* calling the unchanged Build 1 E3 adviser. The flow is `fixture assertion -> E1 verify -> scope gate -> E4 catalog retrieve -> Build 1 advise -> untrusted C04 review result`. The fixture controller prefetches a C03-like response **on behalf of E3** so the exercise can verify source controls without introducing dynamic tool selection; this is not a literal E3-to-E4 query protocol or a complete C01/C02 workflow. Missing C01 workflow ID, risk tier, policy version and deadline need independent E1/E2 ownership in a real deployment. It never calls the Build 0 refund module, financial database or E6 adapter. CASE-204 / `retailer_a` / USD 50,000 cents are fixed teaching facts. `TRACE-204` and `ADV-TRACE-204` are correlation and proposal identifiers, **not** RF-1042.

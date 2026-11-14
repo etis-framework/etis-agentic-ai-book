@@ -2,6 +2,12 @@
 
 **No payment is issued by these commands.** Build 1 is a standard-library-only, Python 3.10+ deterministic advisory fixture for fictional `CASE-204`, a potential **$500** (`50000` cents) refund. `RF-1042` remains the separately controlled Build 0 consequential-operation identity; neither `TRACE-204` nor `ADV-TRACE-204` is authorization, an idempotency key, or a payment operation.
 
+## Implementation architecture
+
+![Build 1 reference-implementation module architecture](architecture.svg)
+
+This figure shows executable Python module responsibilities. The source dependency structure prevents accidental Build 0 payment use through the demonstrated entry points; it does **not** provide protected isolation against arbitrary hostile Python code. The diagram source is [`architecture.svg`](architecture.svg), maintained with this build and independently readable in GitHub or offline Markdown renderers. Follow the book's Chapter 23 figures for the **logical enterprise architecture**; this drawing maps that design to actual educational source files.
+
 From the repository root:
 
 ```sh

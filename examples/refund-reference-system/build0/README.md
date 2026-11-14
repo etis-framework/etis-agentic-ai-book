@@ -2,6 +2,12 @@
 
 **Chapter 22 hands-on exercise.** The reference fixture is **not** a production payment service. It uses Python's standard library only and never sends money or uses credentials.
 
+## Implementation architecture
+
+![Build 0 reference-implementation module architecture](architecture.svg)
+
+This is a **module-and-data view**, not a deployment diagram. `refund.py` contains the E5 policy fixture, E6 simulated adapter, and E7 persistence logic. The separate simulated E8 SQLite file does not establish a real payment-provider guarantee. The diagram source is [`architecture.svg`](architecture.svg), maintained with this build and independently readable in GitHub or offline Markdown renderers. Follow the book's Chapter 22 figures for the **logical enterprise architecture**; this drawing maps that design to actual educational source files.
+
 ## Inspect the files
 
 - `refund.py` — fixed CASE-204 / $500 (50000 integer cents) / RF-1042; trusted fixture approval, durable local intent, mock provider dispatch and reconciliation.

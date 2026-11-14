@@ -43,6 +43,7 @@ check:
 	python3 publishing/scripts/check_professional_review_perspectives.py
 	python3 publishing/scripts/check_companion_architecture_docs.py
 	python3 publishing/scripts/check_assurance_handoff.py
+	python3 publishing/scripts/check_deep_wargame_code_contract.py
 	python3 publishing/scripts/check_reader_companion_access.py
 	python3 publishing/scripts/check_companion_code_quality.py
 	python3 -m unittest discover -s examples/refund-reference-system/build0 -p "test_*.py" -v

@@ -88,3 +88,7 @@ Chapter 28 does **not** create Build 6. The `reliability/` folder does not make 
 ## Chapter 28–31 handoff and explicit future gates
 
 The [named-test assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) tracks reusable existing negative/failure demonstrations and distinguishes them from work to be performed in Chapters 29–31. No new autonomous worker or Build 6 has been inserted. Future chapters must verify additional scenarios rather than refer to teaching fixtures as production proof.
+
+## Post-Chapter-28 deep war-game: state versus evidence history
+
+Build 4's `ledger.py` now retains a transactional local `operation_events` history rather than relying solely on the latest `operations` row. The conflict and lost-ack negative tests in `build4/test_provider.py` prove both transitions are recorded without a second provider insert. This evidence remains local and unprotected against a hostile same-UID actor; the Chapter 30–31 assurance work must not label it an independently immutable E9 audit.

@@ -101,6 +101,35 @@ class Build4Test(unittest.TestCase):
         with self.assertRaises(OutcomeUnknown):self.workflow.reconcile(self.command)
         self.assertEqual(self.ledger.state(self.command)[4],'UNKNOWN')
 
+    def test_reconciliation_conflict_preserves_prior_confirmation_history(self):
+        self.assertEqual(self.workflow.execute(self.command),'CONFIRMED')
+        before=self.ledger.history(self.command)
+        self.assertEqual([row[0] for row in before],
+                         ['PREPARE','DISPATCH_CLAIM','CONFIRM'])
+        self.assertEqual(before[-1][2:4],('provider-commit','MOCK-RF-1042'))
+        with closing(sqlite3.connect(self.provider.database)) as db:
+            db.execute('UPDATE provider_refunds SET amount_cents=1 WHERE operation_id=?',
+                       ('RF-1042',))
+            db.commit()
+        with self.assertRaises(OutcomeUnknown):
+            self.workflow.reconcile(self.command)
+        self.assertEqual(self.ledger.state(self.command)[4],'UNKNOWN')
+        after=self.ledger.history(self.command)
+        self.assertEqual(after[:len(before)],before)
+        self.assertEqual(after[-1],('OBSERVE_UNKNOWN','UNKNOWN',
+                                    'provider-conflict','MOCK-RF-1042'))
+
+    def test_lost_ack_and_reconciliation_preserve_all_local_transitions(self):
+        with self.assertRaises(OutcomeUnknown):
+            self.workflow.execute(self.command,lose_ack=True)
+        self.assertEqual(self.workflow.reconcile(self.command),'CONFIRMED')
+        history=self.ledger.history(self.command)
+        self.assertEqual([h[0] for h in history],
+                         ['PREPARE','DISPATCH_CLAIM','OBSERVE_UNKNOWN','CONFIRM'])
+        self.assertEqual(history[-1][2],'provider-status-query')
+        with closing(sqlite3.connect(self.provider.database)) as db:
+            self.assertEqual(db.execute('SELECT COUNT(*) FROM provider_refunds').fetchone()[0],1)
+
     def test_idempotency_scope_must_be_documented(self):
         with self.assertRaises(ContractViolation):
             RefundWorkflow(self.ledger,self.provider,capabilities=Capabilities(stable_key_scope='unknown'))

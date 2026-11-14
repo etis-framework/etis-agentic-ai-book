@@ -66,7 +66,7 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 
 | ID | Representation | Meaning | Master | Render | Acceptance |
 |---|---|---|---|---|---|
-| F28-01 | architecture/evidence | E2/E5/E7/E6/E8 separate records and E9 review | `assets/shared-figures/sources/F28-01.svg` | `assets/shared-figures/rendered/F28-01.png` | Source/PNG visual inspection required; native Word for Mac print review open |
-| F28-02 | behavior | E2 intent, lost reply and read-only takeover | `assets/shared-figures/sources/F28-02.svg` | `assets/shared-figures/rendered/F28-02.png` | Source/PNG visual inspection required; native Word for Mac print review open |
-| F28-03 | decision | Evidence-matched closure vs unresolved escalation | `assets/shared-figures/sources/F28-03.svg` | `assets/shared-figures/rendered/F28-03.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+| F28-01 | architecture/evidence | Layered E1–E9 logical responsibility/failure zones, with E7/E9 cross-cutting and deployment-dependent seams | `assets/shared-figures/sources/F28-01.svg` | `assets/shared-figures/rendered/F28-01.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+| F28-02 | behavior | Lost provider acknowledgment sequence; original RF-1042, separate observations and status-only takeover | `assets/shared-figures/sources/F28-02.svg` | `assets/shared-figures/rendered/F28-02.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+| F28-03 | decision | Recovery decision diamonds: match, sufficient evidence, UNKNOWN and accountable escalation | `assets/shared-figures/sources/F28-03.svg` | `assets/shared-figures/rendered/F28-03.png` | Source/PNG visual inspection required; native Word for Mac print review open |
 

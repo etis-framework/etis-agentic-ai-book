@@ -32,6 +32,7 @@ examples/refund-reference-system/
 ├── CONTRIBUTING.md           # Contribution and review workflow
 ├── ENGINEERING_STANDARD.md  # Engineering and review requirements
 ├── TESTING.md               # Evidence matrix and assurance limits
+├── ASSURANCE_HANDOFF_CH28_CH31.md # Current tests vs future assurance claims
 ├── build0/
 │   ├── README.md
 │   ├── architecture.svg      # Actual source/module architecture
@@ -62,22 +63,26 @@ examples/refund-reference-system/
 │   ├── demo.py
 │   └── test_gate.py
 ├── build4/
+│   ├── README.md
+│   ├── architecture.svg
+│   ├── provider_contracts.py
+│   ├── adapter.py
+│   ├── ledger.py
+│   ├── workflow.py
+│   ├── service.py
+│   ├── demo.py
+│   └── test_provider.py
+├── build5/
+│   ├── README.md
+│   ├── architecture.svg
+│   ├── coordinator.py
+│   ├── runner.py
+│   ├── demo.py
+│   └── test_coordination.py
+└── reliability/
     ├── README.md
-    ├── architecture.svg
-    ├── provider_contracts.py
-    ├── adapter.py
-    ├── ledger.py
-    ├── workflow.py
-    ├── service.py
-    ├── demo.py
-    └── test_provider.py
-└── build5/
-    ├── README.md
-    ├── architecture.svg
-    ├── coordinator.py
-    ├── runner.py
-    ├── demo.py
-    └── test_coordination.py
+    ├── recovery_cases.py
+    └── test_recovery_cases.py
 ```
 
 **Part IV synthesis:** [Implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) traces all six build deltas, E1–E9/C01–C09, three consequential scenarios and production omissions. It explains why the Build 5 E2→Build 4 E5 runtime does not also run the Build 1/2 advisory/retrieval pipeline. The teaching progression is cumulative; the runnable checkpoints are only partly composed.
@@ -115,3 +120,7 @@ Build 4 extends the **separately enforced E5 request path** with a versioned **E
 ## Run Build 5 (Chapter 27)
 
 Build 5 adds optional local **coordination and durable ownership (E2)** to the still-independent Build 4 **trusted execution (E5)** boundary. Read [`build5/README.md`](build5/README.md) and its embedded source-architecture SVG, then run `python3 examples/refund-reference-system/build5/demo.py --scenario lost-ack`. An expired owner cannot mutate E2; a successor can reconcile but not reissue the $500 refund. **This is not end-to-end execution fencing:** E5 does not consume E2 lease epochs, and the demonstration uses the same local OS identity.
+
+## Use the same tested evidence in Chapters 28–31
+
+The [Chapter 28–31 assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) maps exact Build 0–5 and recovery test methods to distributed failure, adversarial denial, operational readiness, and evaluation claims. **Chapters 29–31 are planned, not executed evidence.** The handoff identifies which demonstrations already exist and the tests, protected boundaries and operational artifacts those chapters must still add. It is not a new build and does not compose the checkpoints into one payment service.

@@ -319,3 +319,8 @@ The reader-facing bibliography intentionally avoids a fixed “developed through
 - **Original ETIS repository evidence:** Ch28 §§28.1–28.9; Figures F28-01/02/03; Build 4 `workflow.py`, `ledger.py`, `adapter.py`, `test_*.py`; Build 5 `coordinator.py`, `runner.py`, `test_coordination.py`; pure Chapter 28 `reliability/recovery_cases.py` and `test_recovery_cases.py`. Exact simulated guarantees are defined by source and tests, not external standards.
 - **Remaining source and release gates:** Actual vendor API edition, query consistency, idempotency key namespace/retention, settlement proof, service identity, E5 epoch validation, independent recovery operator privileges, Word-for-Mac 7×10 page measurement and claim-to-page verification. There is no new independently verified vendor guarantee or bibliographic record in Chapter 28.
 
+
+
+### Post-Chapter 28 executable-assurance handoff (internal engineering evidence)
+
+- `examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md` provides 18 existing, named unittest anchors across Builds 0–5 and the Chapter 28 pure recovery fixture. These are **source/test traceability anchors**, not external scholarly citations, commercial provider attestations, proof of native Word pagination, or a completed Chapter 29–31 verification program. The handoff's missing-evidence statements are binding future authoring checks.

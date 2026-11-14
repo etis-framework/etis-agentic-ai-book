@@ -8,6 +8,10 @@ root = Path(__file__).resolve().parents[2]
 errors = []
 checked = 0
 for path in sorted((root / "manuscript").rglob("*.md")):
+    # macOS archive exports can contain binary AppleDouble ._*.md files.
+    # They are filesystem metadata, not manuscript source.
+    if path.name.startswith("._") or any(part.startswith("__MACOSX") for part in path.parts):
+        continue
     text = path.read_text(encoding="utf-8")
     for match in re.finditer(r"^```([^\n]*)\n(.*?)^```[ \t]*$", text, re.M | re.S):
         language = match.group(1).strip().lower()

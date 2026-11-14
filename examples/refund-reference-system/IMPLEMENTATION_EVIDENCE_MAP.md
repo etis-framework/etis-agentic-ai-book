@@ -84,3 +84,7 @@ Required accountable work includes independent E1 identity, an E5 finance approv
 
 Chapter 28 does **not** create Build 6. The `reliability/` folder does not make E7 mutation or provider calls and is deliberately separate from effectful runtime code.
 
+
+## Chapter 28–31 handoff and explicit future gates
+
+The [named-test assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) tracks reusable existing negative/failure demonstrations and distinguishes them from work to be performed in Chapters 29–31. No new autonomous worker or Build 6 has been inserted. Future chapters must verify additional scenarios rather than refer to teaching fixtures as production proof.

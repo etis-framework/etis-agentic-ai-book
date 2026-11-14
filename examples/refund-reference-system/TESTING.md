@@ -77,3 +77,7 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build5 -p 
 ## Part IV completion/assurance boundary
 
 The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **109 passing test cases are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.
+
+## Cross-part assurance handoff (Chapters 28–31)
+
+See [ASSURANCE_HANDOFF_CH28_CH31.md](ASSURANCE_HANDOFF_CH28_CH31.md) for exact named-test navigation, current bounded guarantees, and future adversarial, operational and verification obligations. This is a **planned evidence bridge**, not an assertion that Chapters 29–31, production telemetry, real provider guarantees, or execution-boundary E2 epoch checks exist today.

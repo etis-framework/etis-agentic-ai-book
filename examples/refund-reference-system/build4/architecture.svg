@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="675" viewBox="0 0 1100 675">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 3.5 L0 7" fill="none" stroke="#205269" stroke-width="1.7"/></marker><style>text{font-family:Arial,Helvetica,sans-serif;fill:#143449} .title{font-size:29px;font-weight:700}.head{font-size:23px;font-weight:700}.body{font-size:20px}.small{font-size:17px}.lane{font-size:19px;font-weight:700}.foot{font-size:19px;font-weight:700;fill:#146060}.big{font-size:27px;font-weight:600}.event{font-size:24px}</style></defs>
+<text x="550" y="45" text-anchor="middle" class="title">Build 4 — Actual Python module architecture</text>
+<rect x="15" y="90" width="260" height="98" rx="12" fill="#f7e7e5" stroke="#7e9ca7" stroke-width="2"/>
+<text x="145.0" y="122" text-anchor="middle" class="head">Build 3 client.py</text>
+<text x="145.0" y="151" text-anchor="middle" class="body">untrusted Unix socket</text>
+<text x="145.0" y="175" text-anchor="middle" class="body">No provider imports</text>
+<rect x="328" y="90" width="357" height="98" rx="12" fill="#fff0cf" stroke="#7e9ca7" stroke-width="2"/>
+<text x="506.5" y="122" text-anchor="middle" class="head">build4/service.py</text>
+<text x="506.5" y="151" text-anchor="middle" class="body">E5 separate process</text>
+<text x="506.5" y="175" text-anchor="middle" class="body">Build 2 identity + Build 3 grant</text>
+<path d="M275,139 L328,139" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<rect x="747" y="90" width="338" height="98" rx="12" fill="#e3eff6" stroke="#7e9ca7" stroke-width="2"/>
+<text x="916.0" y="122" text-anchor="middle" class="head">build4/workflow.py</text>
+<text x="916.0" y="151" text-anchor="middle" class="body">Post-approval only</text>
+<text x="916.0" y="175" text-anchor="middle" class="body">E7 claim → E6 call</text>
+<path d="M685,139 L747,139" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<rect x="45" y="280" width="315" height="100" rx="12" fill="#e1f3ea" stroke="#7e9ca7" stroke-width="2"/>
+<text x="202.5" y="312" text-anchor="middle" class="head">build4/ledger.py</text>
+<text x="202.5" y="341" text-anchor="middle" class="body">E7 operations.sqlite3</text>
+<text x="202.5" y="365" text-anchor="middle" class="body">Local state, UNKNOWN</text>
+<rect x="405" y="280" width="315" height="100" rx="12" fill="#e9f3f7" stroke="#7e9ca7" stroke-width="2"/>
+<text x="562.5" y="312" text-anchor="middle" class="head">provider_contracts.py</text>
+<text x="562.5" y="341" text-anchor="middle" class="body">Typed command/observation</text>
+<text x="562.5" y="365" text-anchor="middle" class="body">Capabilities and port</text>
+<rect x="765" y="280" width="315" height="100" rx="12" fill="#e1f3ea" stroke="#7e9ca7" stroke-width="2"/>
+<text x="922.5" y="312" text-anchor="middle" class="head">build4/adapter.py</text>
+<text x="922.5" y="341" text-anchor="middle" class="body">E6 simulated integration</text>
+<text x="922.5" y="365" text-anchor="middle" class="body">Owns mock E8 provider.sqlite3</text>
+<path d="M895,188 L895,239 L202,239 L202,280" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M895,188 L895,257 L922,257 L922,280" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<path d="M565,188 L565,280" fill="none" stroke="#205269" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+<rect x="45" y="480" width="315" height="95" rx="12" fill="#eef1f4" stroke="#7e9ca7" stroke-width="2"/>
+<text x="202.5" y="512" text-anchor="middle" class="head">build4/demo.py</text>
+<text x="202.5" y="541" text-anchor="middle" class="body">Temporary fixture keys</text>
+<text x="202.5" y="565" text-anchor="middle" class="body">Owns subprocess lifecycle</text>
+<rect x="405" y="480" width="315" height="95" rx="12" fill="#eef1f4" stroke="#7e9ca7" stroke-width="2"/>
+<text x="562.5" y="512" text-anchor="middle" class="head">build4/test_provider.py</text>
+<text x="562.5" y="541" text-anchor="middle" class="body">Hostile request + recovery</text>
+<text x="562.5" y="565" text-anchor="middle" class="body">Cross-process evidence</text>
+<text x="550" y="604" text-anchor="middle" class="small">Demo and tests are separate entry points; neither is an authorization issuer</text>
+<text x="550" y="630" text-anchor="middle" class="foot">Same-UID processes and mock provider do not establish production isolation</text>
+</svg>

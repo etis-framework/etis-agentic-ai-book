@@ -111,3 +111,18 @@ All six reader lenses reviewed against CAB-001 terminology and the source-contro
 - E5/C05→E7/C06 local immutable RF-1042 and E6/C07→E8/C08 simulated external effect: Ch22/25, `build0/refund.py` invoked server-side; F25-02. UNKNOWN/reconciliation Ch26 remains open.
 - E2 durable ownership, multi-worker leases, epochs/fencing intentionally absent until optional Ch27; real OS security and independent finance issuer not supplied by same-user fixture.
 - Build 0–3 README `architecture.svg` figures map actual modules; no change to Designs A/B/C business alternatives.
+
+
+## Chapter 26 / Build 4 — provider contract and reconciliation
+
+| Obligation | Book/source evidence | Remaining production requirement |
+|---|---|---|
+| CASE-204 $500; stable RF-1042 | Ch26 §§26.1–26.3; `build4/provider_contracts.py`, `ledger.py`; F26-01/02 | Actual customer/payment identifiers and live authority |
+| E5/C05 denies valid E1 token lacking finance approval | Ch25→26 §§26.2,26.6; `build4/service.py`, negative subprocess test | Independent E5 and finance issuer OS/credential isolation |
+| E7/C06 intent and one dispatch claim | Ch26 §§26.3–26.4; `ledger.py`, replay tests | Durable outbox, E2 ownership fencing / multi-site failover |
+| E6/C07 pinned provider semantics | Ch26 §§26.2,26.4; `provider_contracts.py`, `adapter.py`; F26-01 | Real provider contract, version, key scope/retention and failure tests |
+| E8/C08 authoritative observation; UNKNOWN stays UNKNOWN absent proof | Ch26 §§26.5–26.6; `workflow.reconcile()`, conflict/status tests; F26-02/03 | Real provider lookup consistency, operator escalation, settlement provenance |
+| Source-level architecture in companion README | `build4/architecture.svg`, `build4/README.md` | Actual deployment topology/security review and edition tag |
+| Designs A/B/C remain alternatives | Ch3/17/22–26; Part IV intro | Measured benefit and risk-based design choice |
+
+This mapping does not claim a production provider integration or an immutable external audit log; those remain open review gates.

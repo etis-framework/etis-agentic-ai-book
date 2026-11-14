@@ -1,3 +1,4 @@
+from contextlib import closing
 """Build 3 contract and hostile-client tests; no real keys or payment provider."""
 import json
 import socket
@@ -100,20 +101,20 @@ class IsolatedGateTests(unittest.TestCase):
         from pathlib import Path
         import sqlite3
         provider=self.root/'protected'/'provider.sqlite3'
-        with sqlite3.connect(provider) as db:
+        with closing(sqlite3.connect(provider)) as db, db:
             self.assertEqual(db.execute('select count(*) from refunds').fetchone()[0],1)
         self.assertEqual(request(self.sock,self.body(grant))['status'],'DENIED')
-        with sqlite3.connect(provider) as db:
+        with closing(sqlite3.connect(provider)) as db, db:
             self.assertEqual(db.execute('select count(*) from refunds').fetchone()[0],1)
 
     def test_outage_durable_unresolved_no_blind_retry(self):
         import sqlite3
         grant=self.grant()
         self.assertEqual(request(self.sock,self.body(grant,simulate_outage=True))['status'],'UNKNOWN')
-        with sqlite3.connect(self.root/'protected'/'operations.sqlite3') as db:
+        with closing(sqlite3.connect(self.root/'protected'/'operations.sqlite3')) as db, db:
             self.assertEqual(db.execute('select status from operations').fetchone()[0],'DISPATCHED')
         self.assertEqual(request(self.sock,self.body(grant))['status'],'UNKNOWN')
-        with sqlite3.connect(self.root/'protected'/'provider.sqlite3') as db:
+        with closing(sqlite3.connect(self.root/'protected'/'provider.sqlite3')) as db, db:
             self.assertEqual(db.execute('select count(*) from refunds').fetchone()[0],0)
 
     def test_concurrent_duplicate_requests_only_one_confirmed(self):
@@ -128,15 +129,15 @@ class IsolatedGateTests(unittest.TestCase):
         import sqlite3
         provider=self.root/'protected'/'provider.sqlite3'
         provider.parent.mkdir(parents=True,exist_ok=True)
-        with sqlite3.connect(provider) as db:
+        with closing(sqlite3.connect(provider)) as db, db:
             db.execute('CREATE TABLE refunds(operation_id TEXT PRIMARY KEY,case_id TEXT NOT NULL UNIQUE,amount_cents INTEGER NOT NULL,status TEXT NOT NULL)')
             db.execute('INSERT INTO refunds VALUES(?,?,?,?)',('RF-1042','CASE-204',1,'CONFIRMED'))
         outcome=request(self.sock,self.body(self.grant()))
         self.assertEqual(outcome['status'],'UNKNOWN')
-        with sqlite3.connect(self.root/'protected'/'operations.sqlite3') as db:
+        with closing(sqlite3.connect(self.root/'protected'/'operations.sqlite3')) as db, db:
             self.assertEqual(db.execute('SELECT status FROM operations').fetchone()[0],'DISPATCHED')
         self.assertEqual(request(self.sock,self.body(self.grant()))['status'],'UNKNOWN')
-        with sqlite3.connect(provider) as db:
+        with closing(sqlite3.connect(provider)) as db, db:
             self.assertEqual(db.execute('SELECT amount_cents FROM refunds').fetchone()[0],1)
 
     def test_service_unavailable_is_not_failed_payment(self):
@@ -190,7 +191,7 @@ class IsolatedGateTests(unittest.TestCase):
         self.assertTrue(provider.exists(), 'approved operation was never dispatched')
         self.assertEqual(request(self.sock, self.body(grant))['status'], 'DENIED')
         self.assertIsNone(self.proc.poll())
-        with sqlite3.connect(provider) as db:
+        with closing(sqlite3.connect(provider)) as db, db:
             self.assertEqual(db.execute('SELECT COUNT(*) FROM refunds').fetchone()[0], 1)
 
     def test_incomplete_frame_expires_and_next_request_is_served(self):

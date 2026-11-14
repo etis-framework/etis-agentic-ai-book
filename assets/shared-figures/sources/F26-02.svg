@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="855" viewBox="0 0 1120 855">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 3.5 L0 7" fill="none" stroke="#205269" stroke-width="1.7"/></marker><style>text{font-family:Arial,Helvetica,sans-serif;fill:#143449} .title{font-size:29px;font-weight:700}.head{font-size:23px;font-weight:700}.body{font-size:20px}.small{font-size:17px}.lane{font-size:19px;font-weight:700}.foot{font-size:19px;font-weight:700;fill:#146060}.big{font-size:27px;font-weight:600}.event{font-size:24px}</style></defs>
+<text x="560" y="48" text-anchor="middle" class="title">Lost reply: one refund, read-only recovery</text>
+<text x="170" y="103" text-anchor="middle" class="big">E5 trusted gate</text>
+<path d="M170,123 L170,748" stroke="#a0b6bb" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="550" y="103" text-anchor="middle" class="big">E7 local ledger</text>
+<path d="M550,123 L550,748" stroke="#a0b6bb" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="920" y="103" text-anchor="middle" class="big">E6 / mock E8</text>
+<path d="M920,123 L920,748" stroke="#a0b6bb" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="170" y="150" text-anchor="middle" class="event">Approval checked</text>
+<path d="M170,203 L550,203" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="355" y="191" text-anchor="middle" class="event">1. Persist RF-1042</text>
+<path d="M550,268 L170,268" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="354" y="255" text-anchor="middle" class="event">2. Claim committed</text>
+<path d="M170,341 L920,341" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="546" y="328" text-anchor="middle" class="event">3. Send once (C07)</text>
+<text x="920" y="386" text-anchor="middle" class="event">E8 commits once</text>
+<path d="M920,423 L170,423" fill="none" stroke="#205269" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+<text x="548" y="410" text-anchor="middle" class="event">4. Reply lost</text>
+<text x="550" y="477" text-anchor="middle" class="event">E7 records UNKNOWN</text>
+<path d="M170,543 L920,543" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="550" y="531" text-anchor="middle" class="event">5. Read-only status query</text>
+<path d="M920,626 L170,626" fill="none" stroke="#205269" stroke-width="3" stroke-dasharray="8 7" marker-end="url(#arrow)"/>
+<text x="550" y="614" text-anchor="middle" class="event">6. Matching provider proof</text>
+<path d="M170,705 L550,705" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="358" y="691" text-anchor="middle" class="event">7. E7 CONFIRMED</text>
+<text x="560" y="802" text-anchor="middle" class="foot">No second payment instruction; same operation RF-1042</text>
+</svg>

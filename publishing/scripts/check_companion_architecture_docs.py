@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Companion reader-entry and architecture documentation guard (Builds 0–3).
+"""Companion reader-entry and architecture documentation guard (Builds 0–4).
 
 This deterministic check catches missing diagrams, misleading security claims,
 wrong tree entries and broken local Markdown file links. It does not establish
@@ -17,7 +17,7 @@ main = (DOCS / "README.md").read_text(encoding="utf-8")
 architecture = (DOCS / "ARCHITECTURE.md").read_text(encoding="utf-8")
 testing = (DOCS / "TESTING.md").read_text(encoding="utf-8")
 
-for build in range(4):
+for build in range(5):
     d = DOCS / f"build{build}"
     readme = d / "README.md"
     diagram = d / "architecture.svg"
@@ -35,7 +35,7 @@ for build in range(4):
     except (OSError, ET.ParseError) as exc:
         errors.append(f"Build {build}: {exc}")
 
-for source in [DOCS / "README.md", DOCS / "ARCHITECTURE.md", DOCS / "TESTING.md"] + [DOCS / f"build{i}" / "README.md" for i in range(4)]:
+for source in [DOCS / "README.md", DOCS / "ARCHITECTURE.md", DOCS / "TESTING.md"] + [DOCS / f"build{i}" / "README.md" for i in range(5)]:
     body = source.read_text(encoding="utf-8")
     for target in re.findall(r"\[[^]]+\]\(([^)]+)\)", body):
         if target.startswith(("http:", "https:", "mailto:", "#")):
@@ -70,7 +70,16 @@ service = (DOCS / "build3" / "service.py").read_text(encoding="utf-8")
 for phrase in ("FRAME_DEADLINE_SECONDS", "time.monotonic()", "serve_connection(", "ConnectionResetError"):
     if phrase not in service:
         errors.append(f"Build 3 transport hardening missing: {phrase}")
+# Chapter 26 must introduce the provider's simulated guarantees explicitly,
+# and name the modules and evidence a reader can inspect.
+b4=(DOCS/'build4'/'README.md').read_text(encoding='utf-8')
+for term in ('provider_contracts.py','adapter.py','ledger.py','workflow.py','service.py',
+             'reconcile()', 'NOT_FOUND', 'UNKNOWN', 'same-UID', '86,400'):
+    if term.lower() not in b4.lower():
+        errors.append(f'Build 4 missing explanation: {term}')
+
 for err in errors:
     print("FAIL:", err)
 print(f"Companion architecture/documentation QA: {'FAIL' if errors else 'PASS'}; {len(errors)} issue(s)")
 sys.exit(bool(errors))
+

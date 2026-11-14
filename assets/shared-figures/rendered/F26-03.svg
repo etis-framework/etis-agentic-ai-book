@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 3.5 L0 7" fill="none" stroke="#205269" stroke-width="1.7"/></marker><style>text{font-family:Arial,Helvetica,sans-serif;fill:#143449} .title{font-size:29px;font-weight:700}.head{font-size:23px;font-weight:700}.body{font-size:20px}.small{font-size:17px}.lane{font-size:19px;font-weight:700}.foot{font-size:19px;font-weight:700;fill:#146060}.big{font-size:27px;font-weight:600}.event{font-size:24px}</style></defs>
+<text x="560" y="49" text-anchor="middle" class="title">Decision rules: UNKNOWN does not authorize retry</text>
+<rect x="360" y="86" width="400" height="83" rx="12" fill="#e3eff6" stroke="#7e9ca7" stroke-width="2"/>
+<text x="560.0" y="118" text-anchor="middle" class="head">E7 has dispatched RF-1042?</text>
+<text x="560.0" y="147" text-anchor="middle" class="body">Never create intent in reconcile</text>
+<path d="M360,125 L155,125 L155,223" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="208" y="112" text-anchor="middle" class="small">NO</text>
+<rect x="35" y="223" width="240" height="84" rx="12" fill="#f8e7e5" stroke="#7e9ca7" stroke-width="2"/>
+<text x="155.0" y="255" text-anchor="middle" class="head">DENY / escalate</text>
+<text x="155.0" y="284" text-anchor="middle" class="body">No prior effect to observe</text>
+<path d="M560,169 L560,230" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<text x="610" y="202" text-anchor="middle" class="small">YES</text>
+<rect x="360" y="230" width="400" height="86" rx="12" fill="#e3eff6" stroke="#7e9ca7" stroke-width="2"/>
+<text x="560.0" y="262" text-anchor="middle" class="head">Query provider E8</text>
+<text x="560.0" y="291" text-anchor="middle" class="body">Status read only; validate C08</text>
+<path d="M560,316 L560,369" fill="none" stroke="#205269" stroke-width="3"  marker-end="url(#arrow)"/>
+<rect x="360" y="369" width="400" height="85" rx="12" fill="#fff0cf" stroke="#7e9ca7" stroke-width="2"/>
+<text x="560.0" y="401" text-anchor="middle" class="head">Matching confirmed proof?</text>
+<text x="560.0" y="430" text-anchor="middle" class="body">Operation / amount / version</text>
+<path d="M360,418 L190,418 L190,522" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="272" y="405" text-anchor="middle" class="small">NO / unclear</text>
+<rect x="35" y="522" width="310" height="107" rx="12" fill="#f8e7e5" stroke="#7e9ca7" stroke-width="2"/>
+<text x="190.0" y="554" text-anchor="middle" class="head">UNKNOWN + escalation</text>
+<text x="190.0" y="583" text-anchor="middle" class="body">NOT_FOUND is not FAILED</text>
+<text x="190.0" y="607" text-anchor="middle" class="body">No automatic dispatch</text>
+<path d="M760,414 L928,414 L928,522" fill="none" stroke="#205269" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="860" y="400" text-anchor="middle" class="small">YES</text>
+<rect x="772" y="522" width="310" height="107" rx="12" fill="#e1f3ea" stroke="#7e9ca7" stroke-width="2"/>
+<text x="927.0" y="554" text-anchor="middle" class="head">CONFIRMED in E7</text>
+<text x="927.0" y="583" text-anchor="middle" class="body">Record provider reference</text>
+<text x="927.0" y="607" text-anchor="middle" class="body">Preserve prior operation ID</text>
+<text x="560" y="704" text-anchor="middle" class="foot">Provider conflicts, missing results, or outages stay unresolved</text>
+</svg>

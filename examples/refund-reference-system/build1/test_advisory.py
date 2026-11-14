@@ -1,3 +1,4 @@
+from contextlib import closing
 """Executable positive, hostile-input, failure and no-effect evidence."""
 import copy
 import importlib.util
@@ -120,7 +121,7 @@ class Build1Tests(unittest.TestCase):
             with self.assertRaises(module.Denied):
                 module.prepare(local, approved=False)
             self.assertIsNone(module.status(local))
-            with sqlite3.connect(provider) as db:
+            with closing(sqlite3.connect(provider)) as db, db:
                 self.assertEqual(db.execute("SELECT COUNT(*) FROM refunds").fetchone()[0], 0)
 
     def test_e7_e8_unchanged_and_no_operation_creation(self):
@@ -129,12 +130,12 @@ class Build1Tests(unittest.TestCase):
             local = Path(tmp) / "local.sqlite3"
             provider = Path(tmp) / "provider.sqlite3"
             for path in (local, provider):
-                with sqlite3.connect(path) as db:
+                with closing(sqlite3.connect(path)) as db, db:
                     db.execute("CREATE TABLE entries(operation_id TEXT)")
             for _ in range(20):
                 advise(self.work, self.evidence)
             for path in (local, provider):
-                with sqlite3.connect(path) as db:
+                with closing(sqlite3.connect(path)) as db, db:
                     self.assertEqual(db.execute("SELECT COUNT(*) FROM entries").fetchone()[0], 0)
             self.assertEqual(sorted(p.name for p in Path(tmp).iterdir()), ["local.sqlite3", "provider.sqlite3"])
 

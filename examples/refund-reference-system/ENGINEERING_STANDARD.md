@@ -37,3 +37,8 @@ For each build ask: *Can I execute the exercise from a fresh clone? Can I identi
 ## Mandatory source architecture diagram for all builds (approved series-wide rule)
 
 Every build directory must version-control `architecture.svg` and embed it by relative link in its README. The SVG must map actual modules, interfaces and storage to applicable CAB-001 responsibilities/contracts; distinguish software/module boundaries from independently enforced authority and OS isolation; identify omitted production controls; and be kept in sync with the implementation and tests. Inspect source geometry, rendered readability and GitHub-relative link existence. No build is complete without this diagram.
+
+
+## Mandatory Build 4 and future provider-adapter standard
+
+Provider-facing examples must make interface version, idempotency key/scope/retention, amount units, typed status evidence, the distinction between local dispatch and external truth, and no-blind-retry semantics observable in source and negative tests. Every SQLite connection has explicit close semantics; simulate lost acknowledgments after an effect, absent status evidence and conflicting provider records. Reconciliation must never create intent or dispatch. A provider simulator cannot claim commercial provider guarantees. Every new build directory must contain a checked-in `architecture.svg` embedded in its README and must identify actual Python modules, logical E-domain/C-contract mappings, authentic enforcement boundaries, and deliberately omitted production mechanisms with owners and verification requirements. Diagram and README are part of the same code-review/QA patch as the source.

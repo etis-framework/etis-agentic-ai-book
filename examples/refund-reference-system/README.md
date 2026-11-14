@@ -72,6 +72,10 @@ examples/refund-reference-system/
 │   ├── service.py
 │   ├── demo.py
 │   └── test_provider.py
+├── security/               # Ch29 adversarial harness: real Build 3 E5 subprocess
+│   ├── README.md
+│   ├── architecture.svg      # Actual test/module architecture
+│   └── test_adversarial_cases.py
 ├── build5/
 │   ├── README.md
 │   ├── architecture.svg
@@ -124,3 +128,7 @@ Build 5 adds optional local **coordination and durable ownership (E2)** to the s
 ## Use the same tested evidence in Chapters 28–31
 
 The [Chapter 28–31 assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) maps exact Build 0–5 and recovery test methods to distributed failure, adversarial denial, operational readiness, and evaluation claims. **Chapters 29–31 are planned, not executed evidence.** The handoff identifies which demonstrations already exist and the tests, protected boundaries and operational artifacts those chapters must still add. It is not a new build and does not compose the checkpoints into one payment service.
+
+### Chapter 29 security adversarial harness
+
+[Security harness: valid-token denial and positive-control evidence](security/README.md) is a **non-progressive** test fixture against the actual Build 3 E5 subprocess, not Build 6 or a new payment implementation. It has a checked-in [module architecture SVG](security/architecture.svg), six negative/control tests, and explicit simulated-versus-real assurance limits.

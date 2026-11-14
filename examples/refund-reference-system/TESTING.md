@@ -81,3 +81,11 @@ The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns exe
 ## Cross-part assurance handoff (Chapters 28–31)
 
 See [ASSURANCE_HANDOFF_CH28_CH31.md](ASSURANCE_HANDOFF_CH28_CH31.md) for exact named-test navigation, current bounded guarantees, and future adversarial, operational and verification obligations. This is a **planned evidence bridge**, not an assertion that Chapters 29–31, production telemetry, real provider guarantees, or execution-boundary E2 epoch checks exist today.
+
+## Chapter 29 adversarial regression (valid E1 token, no finance grant)
+
+```bash
+python3 -m unittest discover -s examples/refund-reference-system/security -p 'test_*.py' -v
+```
+
+This uses Build 3's real local subprocess and verifies that denied requests create neither E7 intent nor mock E8 provider data; it also runs one separately authorized positive control. Same-UID fixture tests are **not** OS credential-isolation evidence. See `security/README.md`.

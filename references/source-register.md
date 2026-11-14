@@ -65,7 +65,7 @@ Use readable author–year references in explanatory prose, e.g., **Gray and Reu
 | 2 | §2.9 | OWASP living guidance; NIST AI 600-1 | Prompt-injection threat | Pin OWASP edition |
 | 2 | §2.14 | NIST AI 100-1; ISO/IEC 42001 | Risk management and management-system context | Licensed normative text not reviewed |
 
-**Additional source candidates for later verification, not yet cited as facts:** NIST SP 800-53 Rev. 5 (least privilege, audit); NIST SP 800-218 SSDF (secure development); NIST AI 100-4 (if relevant to evaluation); RFC 9110 (HTTP idempotent method semantics, not provider business idempotency); OWASP Agentic AI guidance (pin version); vendor provider idempotency documentation (only for the selected implementation). This is a prioritized research queue, not a claim of verification.
+**Additional source candidates for later verification, not yet cited as facts:** NIST AI 100-4 (if relevant to evaluation); RFC 9110 (HTTP idempotent method semantics, not provider business idempotency); OWASP Agentic AI guidance (pin version); vendor provider idempotency documentation (only for the selected implementation). This is a prioritized research queue, not a claim of verification.
 
 
 ## Chapter 4 — agent mechanisms and boundaries (November 2026)
@@ -324,3 +324,15 @@ The reader-facing bibliography intentionally avoids a fixed “developed through
 ### Post-Chapter 28 executable-assurance handoff (internal engineering evidence)
 
 - `examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md` provides 18 existing, named unittest anchors across Builds 0–5 and the Chapter 28 pure recovery fixture. These are **source/test traceability anchors**, not external scholarly citations, commercial provider attestations, proof of native Word pagination, or a completed Chapter 29–31 verification program. The handoff's missing-evidence statements are binding future authoring checks.
+
+## Chapter 29 — security and adversarial agent behavior (November 2026)
+
+| Source / evidence | Chapter 29 use | Verification limitation |
+|---|---|---|
+| NIST SP 800-53 Rev. 5 | Least privilege, access-control separation and audit design concepts, §§29.2,29.6 | AC-5/AC-6 names checked against the public NIST Rev. 5 PDF; revision/edition and full section pinning remain publication tasks |
+| NIST SP 800-218 SSDF | Secure development/negative verification lifecycle, §29.7 | Guidance is not a product certification |
+| NIST AI RMF 1.0 | Risk-governance framing, §§29.3,29.6 | Risk framework, not refund authorization semantics |
+| OWASP Agentic AI guidance | Untrusted tool output / prompt-injection threat-class background, §29.2 | Pin exact edition before final citation |
+| ETIS Build 3 `service.py`, `contracts.py`, Ch29 security harness | Valid E1 assertion denial and separately approved control, §§29.4–29.7 | Same-UID fixture, fake keys and provider; no production OS isolation |
+
+Publication gate: independently verify precise cited source sections, edition, and links; do not infer operational compliance.

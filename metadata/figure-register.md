@@ -70,3 +70,11 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F28-02 | behavior | Lost provider acknowledgment sequence; original RF-1042, separate observations and status-only takeover | `assets/shared-figures/sources/F28-02.svg` | `assets/shared-figures/rendered/F28-02.png` | Source/PNG visual inspection required; native Word for Mac print review open |
 | F28-03 | decision | Recovery decision diamonds: match, sufficient evidence, UNKNOWN and accountable escalation | `assets/shared-figures/sources/F28-03.svg` | `assets/shared-figures/rendered/F28-03.png` | Source/PNG visual inspection required; native Word for Mac print review open |
 
+
+## Chapter 29 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F29-01 | architecture | CAB E1–E9 trust and advisory-to-trusted effect boundary under attack | `assets/shared-figures/sources/F29-01.svg` | `assets/shared-figures/rendered/F29-01.png` | SVG/render inspected, native Word print gate open |
+| F29-02 | behavior | Real valid E1 token denial vs separate E5 grant positive control | `assets/shared-figures/sources/F29-02.svg` | `assets/shared-figures/rendered/F29-02.png` | SVG/render inspected, native Word print gate open |
+| F29-03 | decision | E5 schema/identity/grant decision before E7 intent; ambiguity recovery | `assets/shared-figures/sources/F29-03.svg` | `assets/shared-figures/rendered/F29-03.png` | SVG/render inspected, native Word print gate open |

@@ -113,6 +113,16 @@
       "see_also": []
     },
     {
+      "term": "Compromised bounded investigator",
+      "locator": "Chapter 29 §§29.1–29.4; Table 29.1.",
+      "aliases": [
+        "hijacked agent"
+      ],
+      "see_also": [
+        "Valid token versus finance authorization"
+      ]
+    },
+    {
       "term": "Consequential operation and trusted execution (E5)",
       "locator": "Chapters 6, 8, 13, 19, 22, 25–28.",
       "aliases": [],
@@ -297,6 +307,16 @@
       "see_also": []
     },
     {
+      "term": "Security falsifier",
+      "locator": "Chapter 29 §29.7; Table 29.3.",
+      "aliases": [
+        "no-effect negative test"
+      ],
+      "see_also": [
+        "Compromised bounded investigator"
+      ]
+    },
+    {
       "term": "Trust/enforcement boundary",
       "locator": "Chapters 13, 16, 28 §28.2.",
       "aliases": [
@@ -312,6 +332,16 @@
         "lost acknowledgment"
       ],
       "see_also": []
+    },
+    {
+      "term": "Valid token versus finance authorization",
+      "locator": "Chapters 25, 29; Figure 29.2.",
+      "aliases": [
+        "E1 token denial"
+      ],
+      "see_also": [
+        "Trusted execution (E5)"
+      ]
     }
   ]
 }

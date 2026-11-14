@@ -35,7 +35,7 @@ Chapter 24 / F24-01 separates issuer claims, verified **fixture** scope, scoped 
 
 ## Source-level architecture views — Builds 0–5
 
-Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), and [`build3/architecture.svg`](build3/architecture.svg). These show *actual Python modules and fixture stores*, not CAB-001's required physical deployment layout. They must be inspected and updated with code changes.
+Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), [`build3/architecture.svg`](build3/architecture.svg), [`build4/architecture.svg`](build4/architecture.svg), and [`build5/architecture.svg`](build5/architecture.svg). The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) distinguishes the logical architecture path from the runnable Build 5 path and maps negative tests and omitted guarantees. These show *actual Python modules and fixture stores*, not CAB-001's required physical deployment layout. They must be inspected and updated with code changes.
 
 ### Build 3 — separately executed trusted-execution (E5) request gate
 

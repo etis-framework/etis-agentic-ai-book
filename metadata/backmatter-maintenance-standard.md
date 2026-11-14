@@ -12,3 +12,7 @@
 6. Run `python3 publishing/scripts/check_backmatter_integrity.py`, `make check`, and `make book-docx`; inspect tables, print arrows and page breaks at 7×10 in Word. Preserve locked V12 budgets: appendix 6, glossary 5, bibliography 10, index 13 pages (targets, not authority to pad).
 
 **Source of truth:** canonical CAB-001 architecture and actual example code/tests; glossary and index are reader aids. No fixed draft cutoff such as “through Chapter 27” belongs in permanent bibliography or glossary prose. Book-status registers may record current chapter completion and must advance with development.
+
+## Part IV evidence-map maintenance
+
+Whenever any Build 0–5 module, test, contract, boundary, or README changes, verify the mapping in `examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md`, the Part IV synthesis in Chapter 27, and the working index. Distinguish architectural specification, simulated fixture, executed code, and omitted production capability; never imply that Build 5 executes Build 1/2 advisory retrieval as one refund runtime. Future chapters may add their own verification or production evidence without retroactively upgrading fixture claims. Major back-matter headings, including the working subject index, must begin on a deliberate new Word page.

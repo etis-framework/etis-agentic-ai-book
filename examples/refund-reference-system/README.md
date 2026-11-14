@@ -54,13 +54,13 @@ examples/refund-reference-system/
 │   ├── demo.py
 │   └── test_scope.py
 ├── build3/
-    ├── README.md
-    ├── architecture.svg
-    ├── contracts.py
-    ├── client.py
-    ├── service.py
-    ├── demo.py
-    └── test_gate.py
+│   ├── README.md
+│   ├── architecture.svg
+│   ├── contracts.py
+│   ├── client.py
+│   ├── service.py
+│   ├── demo.py
+│   └── test_gate.py
 ├── build4/
     ├── README.md
     ├── architecture.svg
@@ -79,6 +79,8 @@ examples/refund-reference-system/
     ├── demo.py
     └── test_coordination.py
 ```
+
+**Part IV synthesis:** [Implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) traces all six build deltas, E1–E9/C01–C09, three consequential scenarios and production omissions. It explains why the Build 5 E2→Build 4 E5 runtime does not also run the Build 1/2 advisory/retrieval pipeline. The teaching progression is cumulative; the runnable checkpoints are only partly composed.
 
 The canonical figure masters remain in `assets/shared-figures/sources/`; do not duplicate them inside code builds. The reference architecture is explained in Chapter 8 and the architectural-contract appendix.
 

@@ -25,11 +25,20 @@ for para in doc.paragraphs:
  t=para.text.strip()
  if re.match(r'^(Chapter \d+|Part [IVX]+)\s*[—–-]',t):typ='main'
  elif t=='Contents':typ='contents'
- elif t in {'Half title','Title page','Copyright','Preface','Introduction','How to use this book','Appendices','Glossary','References and bibliography','Index','About the author'}:typ='other'
+ elif t in {'Half title','Title page','Copyright','Preface','Introduction','How to use this book','Appendices','Glossary','References and bibliography','Index','Working subject index','About the author'}:typ='other'
  else:continue
  headings.append((para,typ,t))
  para.paragraph_format.keep_with_next=True
  para.paragraph_format.page_break_before=False
+
+# Publication back matter starts on deliberately controlled fresh pages.
+# Do not rely on accidental paragraph flow. A nextPage section break below
+# also preserves the section-specific header/footer and numbering design.
+BACK_OPENINGS={'Appendices','Glossary','References and bibliography','Working subject index','Index','About the author'}
+for para in doc.paragraphs:
+ if para.style.name=='Heading 1' and para.text.strip() in BACK_OPENINGS:
+  para.paragraph_format.page_break_before=True
+  para.paragraph_format.keep_with_next=True
 
 # Add a section break at the END of the preceding paragraph, not as a new paragraph.
 # The break belongs to the preceding section; the new heading begins the next.

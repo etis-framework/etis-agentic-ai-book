@@ -1,6 +1,12 @@
 # Build 0 — Deterministic Refund Baseline
 
-**Chapter 22 hands-on exercise.** The reference fixture is **not** a production payment service. It uses Python's standard library only and never sends money or uses credentials.
+**Chapter 22 hands-on exercise.** The recurring customer refund case (CASE-204) is a proposed $500 remedy; RF-1042 denotes its stable controlled refund-operation identity, not an advisory proposal. The reference fixture is **not** a production payment service. It uses Python's standard library only and never sends money or uses credentials.
+
+## Source-code architecture diagram
+
+![Build 0 actual source-module architecture](architecture.svg)
+
+This version-controlled diagram maps the teaching modules to logical enterprise responsibilities (E1–E9) and cross-domain contracts (C01–C09), as defined in Chapter 8; it does **not** establish an independently protected security boundary. Read the module names, implementation limitations, and executable tests together. Changes to source interfaces or trust boundaries require changing this SVG in the same patch.
 
 ## Inspect the files
 

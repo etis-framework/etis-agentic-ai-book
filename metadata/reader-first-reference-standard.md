@@ -1,0 +1,13 @@
+# Reader-first reference and identifier standard
+
+Applies to all developed chapters and future chapter/build additions. The book is both a continuous argument and a professional reference; a reader entering an individual chapter must understand its *first substantive* identifier without reconstructing previous chapters.
+
+1. **Learning objectives lead with engineering responsibilities.** Prefer admission and identity, advisory proposals, trusted execution, durable operational state, and authoritative business truth over unexplained E/C shorthand. A code may follow an explicit responsibility name where needed; it is never a substitute for that name.
+2. **Introduce materially used E and C identifiers locally.** For example, *trusted execution and authority (E5)* and *advisory action-proposal contract (C04)*. Use CAB-001 names and meanings, not names invented to match a Python module. Do not reproduce the complete catalog in each chapter; refer readers to Chapter 8 and the architectural appendix for the canonical set.
+3. **Identify the running case and operation.** CASE-204 is the recurring customer case concerning a proposed $500 refund. RF-1042 is the stable, independently controlled consequential refund-operation identity, created only through trusted execution. Advisory/correlation IDs such as ADV-TRACE-204 and TRACE-204 are never operation IDs.
+4. **Signing is not approval.** A signed proposal may establish origin and integrity under a stated signing scheme, but not correctness, freshness, authority, or permission to execute a financial effect. Similarly, an authenticated identity assertion is not transaction-specific business authorization.
+5. **Preserve architectural categories.** E1–E9 are logical responsibilities; C01–C09 are contracts; Python files and processes are implementation choices; architectural Designs A/B/C are alternatives; Builds 0–5 are educational checkpoints, not production maturity stages.
+6. **Figures, tables, and companion READMEs must use readable labels** and distinguish demonstrated local controls from independently protected production boundaries. Align the source-level architecture SVG in each build README with its actual implementation.
+7. **Verify, do not merely assert.** Run `python3 publishing/scripts/check_chapter_first_references.py` and existing chapter/full-book QA. Review the first substantive paragraph and figure/table labels manually from all six ETIS reader lenses. Check native Word line wrap and pagination after textual edits. Automated detection is only a preflight.
+
+The rule applies prospectively to Chapters 26–36; planned placeholders are not certified as substantive chapters.

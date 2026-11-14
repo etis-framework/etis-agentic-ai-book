@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="720" viewBox="0 0 1100 720">
+<rect x="0" y="0" width="1100" height="720" fill="white"/>
+<text x="220" y="49" font-family="Arial,sans-serif" font-size="28" fill="#173b4b" font-weight="bold">Build 3 — fail-closed authorization decision</text>
+<rect x="335" y="85" width="430" height="90" rx="13" fill="#e7f2f8" stroke="#35677b" stroke-width="2.5"/>
+<text x="550.0" y="119" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">Strict C05 request schema?</text>
+<rect x="335" y="240" width="430" height="90" rx="13" fill="#e7f2f8" stroke="#35677b" stroke-width="2.5"/>
+<text x="550.0" y="274" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">Verified E1 fixture scope?</text>
+<rect x="335" y="398" width="430" height="90" rx="13" fill="#e7f2f8" stroke="#35677b" stroke-width="2.5"/>
+<text x="550.0" y="432" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">Signed transaction-specific E5 grant?</text>
+<rect x="335" y="575" width="430" height="90" rx="13" fill="#e4f2e8" stroke="#35677b" stroke-width="2.5"/>
+<text x="550.0" y="609" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">Durable one-time E7 claim</text>
+<text x="550.0" y="640" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">Then controlled mock dispatch only</text>
+<path d="M550 175 L550.0 216.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="550,230 545.0,216.0 555.0,216.0" fill="#35677b"/>
+<path d="M550 330 L550.0 374.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="550,388 545.0,374.0 555.0,374.0" fill="#35677b"/>
+<path d="M550 488 L550.0 551.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="550,565 545.0,551.0 555.0,551.0" fill="#35677b"/>
+<rect x="25" y="94" width="230" height="82" rx="13" fill="#fff0ec" stroke="#35677b" stroke-width="2.5"/>
+<text x="140.0" y="128" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">DENY / hold</text>
+<text x="140.0" y="159" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">No new RF-1042</text>
+<path d="M335 130 L279.0 130.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="265,130 279.0,125.0 279.0,135.0" fill="#35677b"/>
+<rect x="25" y="249" width="230" height="82" rx="13" fill="#fff0ec" stroke="#35677b" stroke-width="2.5"/>
+<text x="140.0" y="283" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">DENY / hold</text>
+<text x="140.0" y="314" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">No new RF-1042</text>
+<path d="M335 285 L279.0 285.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="265,285 279.0,280.0 279.0,290.0" fill="#35677b"/>
+<rect x="25" y="409" width="230" height="82" rx="13" fill="#fff0ec" stroke="#35677b" stroke-width="2.5"/>
+<text x="140.0" y="443" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">DENY / hold</text>
+<text x="140.0" y="474" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">No new RF-1042</text>
+<path d="M335 445 L279.0 445.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="265,445 279.0,440.0 279.0,450.0" fill="#35677b"/>
+<text x="780" y="258" font-family="Arial,sans-serif" font-size="19" fill="#173b4b">Identity is not permission</text>
+<text x="780" y="415" font-family="Arial,sans-serif" font-size="19" fill="#173b4b">C04 is not an approval</text>
+<text x="780" y="655" font-family="Arial,sans-serif" font-size="18" fill="#173b4b">UNKNOWN never means retry</text>
+</svg>

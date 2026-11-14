@@ -6,13 +6,13 @@
 
 ## Learning objectives
 
-By the end of this chapter, readers should be able to (1) translate Chapter 7's requirements into logical responsibilities and acceptance evidence; (2) distinguish a logical architecture from its physical deployment; (3) read the nine enterprise domains without mistaking their names for nine services; (4) identify the independent authorization and financial-effect boundary; (5) compare the architectural implications of Designs A, B, and C; and (6) critique an architectural view using negative paths and operational recovery.
+By the end of this chapter, readers should be able to (1) translate Chapter 7's requirements into logical responsibilities and acceptance evidence; (2) distinguish a logical architecture from its physical deployment; (3) read the nine logical enterprise responsibilities without mistaking their names for nine services; (4) identify the independent authorization and financial-effect boundary; (5) compare the architectural implications of Designs A, B, and C; and (6) critique an architectural view using negative paths and operational recovery.
 
 ## 8.1 The transition from obligation to structure
 
 Chapter 7 established what must be true of a trustworthy system: `AUTH-01` excludes AI-originated payment capability; `DATA-01` demands tenant isolation; `POL-02` demands independent checks at execution; `PAY-03` treats an uncertain provider outcome as unresolved rather than failed; and `OPS-01` requires operable containment and recovery. Chapter 8 asks **where those obligations are enforced, what crosses each boundary, and what evidence can establish that enforcement works**. Later chapters make the interfaces and failure handling concrete. A diagram alone cannot satisfy any of these requirements.
 
-The running case remains `CASE-204`: a customer reports a missing replacement and requests a **$500 refund**. Design A is a deterministic comparison baseline. Design B is the *conditional initial production candidate*: AI helps prepare an advisory proposal, while independent trusted workflow and authorized people or services decide and execute. Design C is an *evaluated, read-only investigator*, not a payment agent. `RF-1042` is an illustrative stable payment-operation identity; it does not establish a particular provider's idempotency guarantees.
+The recurring refund case, `CASE-204`, concerns a customer who reports a missing replacement and requests a **$500 refund**. Design A is a deterministic comparison baseline. Design B is the *conditional initial production candidate*: AI helps prepare an advisory proposal, while independent trusted workflow and authorized people or services decide and execute. Design C is an *evaluated, read-only investigator*, not a payment agent. `RF-1042` is the illustrative stable refund-operation identifier; it does not establish a particular provider's idempotency guarantees.
 
 A useful architecture must support all three designs without silently widening the AI's authority. The difference among A, B, and C lies primarily in how evidence is assembled and proposals are produced, not in who can issue the financial effect.
 

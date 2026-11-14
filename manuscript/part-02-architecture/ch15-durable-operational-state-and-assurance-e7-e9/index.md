@@ -8,7 +8,7 @@
 
 After this chapter, readers should be able to (1) separate durable workflow state from coordinator memory, event logs, and authoritative external business facts; (2) design a versioned workflow record and fenced state-transition protocol; (3) recover from interrupted workers, coordinator replacement, and uncertain provider outcomes without changing financial-operation identity; (4) distinguish retryable internal work from consequential requests awaiting reconciliation; (5) specify operational observability, evidence retention, and accountable intervention; and (6) verify crash, concurrency, and recovery guarantees with executable failure-injection tests.
 
-**State ownership reminder.** E7 owns the durable CASE-204 workflow record and the local status/attempt history of `RF-1042`; E8 supplies authoritative provider and business-record facts. Reconciliation promotes corroborated observations into a justified E7 transition. A C04 recommendation or E8 business-case disposition is not itself an E7 owner-epoch transition.
+**State ownership reminder.** Durable operational state (E7) owns the workflow record for the recurring $500 refund case (CASE-204) and the local status/attempt history of its trusted refund-operation identifier (`RF-1042`); authoritative business systems (E8) supply provider and business-record facts. Reconciliation promotes corroborated observations into a justified E7 transition. An advisory proposal under the action-proposal contract (C04), or an E8 business-case disposition, is not an E7 owner-epoch transition.
 
 ## 15.1 What persists when a process disappears?
 

@@ -1,6 +1,10 @@
-# Build 0 architectural scope (read with Chapter 22)
+# Companion source architecture — Builds 0–3
 
-Build 0 illustrates selected E1–E9 logical responsibilities, **not nine production services**. Figure 22.1 shows trust boundaries and Figure 22.2 shows local operation-state transitions; their canonical SVG masters live in `assets/shared-figures/sources/`.
+The reference architecture names nine logical enterprise responsibilities (E1–E9) and cross-domain contracts (C01–C09); neither identifier range dictates a nine-service deployment. See Chapter 8 for the complete definitions. Here, durable operational state (E7) is the local SQLite operation ledger, while the authoritative business-system responsibility (E8) is represented only by a **simulated** payment-provider SQLite record.
+
+## Build 0 architectural scope (read with Chapter 22)
+
+Build 0 illustrates selected logical responsibilities, **not nine production services**. Figure 22.1 shows trust boundaries and Figure 22.2 shows local operation-state transitions; their canonical SVG masters live in `assets/shared-figures/sources/`.
 
 | Domain | Present educational mechanism | Not demonstrated |
 |---|---|---|
@@ -28,3 +32,11 @@ The C02-like `WorkRequest` remains fixed fixture input (not authenticated E1). E
 ## Build 2 — E1 identity and E4/C03 context before E3 advice
 
 Chapter 24 / F24-01 separates issuer claims, verified **fixture** scope, scoped E4 catalog observation and untrusted E3/C04 recommendation. `build2/identity.py` verifies a canonical HMAC assertion with expiry and a fixed purpose; `context.py` applies tenant/case/source/classification/freshness checks through a controller-preselected C03-style query (not a literal E3->E4 invocation); `pipeline.py` adapts the result to the unchanged Build 1 `WorkRequest`/`Evidence`. No Build 0 payment imports or E7/E8 database writes appear. `TRACE-204` and `ADV-TRACE-204` remain advisory identifiers, not trusted RF-1042. A `VerifiedScope` instance and the signing key are **not** protected against hostile code running inside this Python process. Missing protections: real authentication and resource-policy enforcement (E1/E4 owners), isolated E5 authorization (Build 3), provider reconciliation (Build 4), and optional E2 fencing (Build 5). Inspect `build2/README.md`, the Figure 24 trio and `TESTING.md` before inferring assurance.
+
+## Source-level architecture views — Builds 0–3
+
+Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), and [`build3/architecture.svg`](build3/architecture.svg). These show *actual Python modules and fixture stores*, not CAB-001's required physical deployment layout. They must be inspected and updated with code changes.
+
+### Build 3 — separately executed trusted-execution (E5) request gate
+
+Chapter 25 and F25-01/02/03 add a distinct E5 service process (`build3/service.py`) using a bounded Unix socket exposed by `build3/client.py`. The trusted-execution service (E5) checks a **valid admission-and-identity (E1) fixture assertion** independently of a second, short-lived, transaction-specific finance approval before creating RF-1042 through the Build 0 trusted fixture adapter. A valid agent identity token is insufficient. On approval E5 calls `refund.prepare()` (E7 durable operation intent) **before** `refund.dispatch()` (E7 claim then mock E8 effect). Transport parsing has a total framing deadline and peer-disconnect containment, but the single-worker fixture is not a flood-resistant service. E7 and mock E8 are inaccessible through the *client API* and remain separate server-owned SQLite files. The demo still runs both processes under the **same OS user**: this does not protect keys or files from arbitrary same-user host code. Real E5 credential custody/independent OS identity and real E1/E4 protection require production deployment enforcement, not Python module names. Provider integration/reconciliation belongs to Ch26; optional E2 fencing to Ch27; broader compromised-agent verification to Ch29/31.

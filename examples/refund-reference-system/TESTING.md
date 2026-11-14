@@ -1,6 +1,6 @@
 # Verification and evidence guide
 
-This is a **teaching verification plan**, not a production test attestation. The executable cases are in `build0/test_refund.py`. Run them from the repository root with:
+This is a **teaching verification plan**, not a production test attestation. Durable operational state (E7) is the local operation ledger; the authoritative business-system responsibility (E8) is represented by a **simulated** provider record. A valid identity assertion from admission and identity (E1) is not transaction-specific authorization by trusted execution (E5). The executable cases are in `build0/test_refund.py`. Run them from the repository root with:
 
 ```sh
 python3 -m unittest discover -s examples/refund-reference-system/build0 -p 'test_*.py' -v
@@ -34,7 +34,7 @@ Read Chapter 22 and `ARCHITECTURE.md`; run the tests; reproduce the CLI sequence
 
 The added fault scenarios are intentionally *fixture mechanisms*. Build 0 does not record a durable structured escalation queue, audit-grade logging or classified retriable provider error. The full cross-build controls and planned acceptance criteria are in [`ENGINEERING_STANDARD.md`](ENGINEERING_STANDARD.md).
 
-## Build 1 — bounded C04 test evidence
+## Build 1 — bounded advisory action-proposal (C04) test evidence
 
 Run `python3 -m unittest discover -s examples/refund-reference-system/build1 -p 'test_*.py' -v` and independently rerun the Build 0 suite. The Build 1 tests cover three deterministic dispositions, forged privilege fields, malformed and cross-tenant inputs, evidence version mismatch, inconsistent correlation, prompt-injection prose as inert data, dependency timeout/errors, and unchanged E7/E8 fixture tables. In particular `test_e7_e8_unchanged_and_no_operation_creation` checks isolated local mock tables with repeated advice, and the import-boundary test checks the supplied source for accidental privileged imports. **These tests do not prove OS isolation, real identity, transaction authorization or live provider denial.** Chapters 25, 29 and 31 require the stronger hijacked-agent valid-token attack with independent E5 enforcement.
 
@@ -43,3 +43,23 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build1 -p 
 `python3 -m unittest discover -s examples/refund-reference-system/build2 -p 'test_*.py' -v` exercises 13 self-contained tests: valid review-only output and provenance; tampered/malformed assertions; expired/not-yet-valid claims; valid signatures for wrong tenant/case; rejection of arbitrary `VerifiedScope` values at the assertion API; source allowlist and inconsistent catalog keys; stale, future and wrong-version source records; E4 outage category; malformed claim/record types; prompt-injection-as-data; ten repeated recommendations against unmodified SQLite marker files; a valid investigator token without financial authority; and static no-payment-import checks. Run Build 0 and Build 1 tests separately as their READMEs direct.
 
 **What these tests do not prove:** real identity, issuer security, cryptographic source attestation, a live LLM's prompt-injection resistance, protected E5/E6 access, multi-process isolation, provider idempotency or independently authenticated E8 truth. `ContextUnavailable` is not financial `UNKNOWN`. Chapter 25 must test a compromised valid-token investigator against actual independent E5 denial. The negative CLI cases intentionally exit with code 2. See `build2/README.md` for expected outputs and fixture risk table.
+
+## Build 3 / Chapter 25: independently evaluated trusted-execution (E5) request boundary
+
+Run `python3 -m unittest discover -s examples/refund-reference-system/build3 -p 'test_*.py' -v` and independently rerun Builds 0–2. The Build 3 suite uses an actual signed Build 2 fixture identity assertion and an independent signed transaction-specific approval; tests are fresh-process, credential-free and do not access a real provider.
+
+| Negative or positive case | E5 result | Durable E7 and mock E8 observation | Scope of proof |
+|---|---|---|---|
+| Hijacked investigator with valid E1 assertion, no finance grant | DENIED | No E7 or provider database created | Independent request-path refusal, not arbitrary same-UID code isolation |
+| Forged C04 approval/operation ID, extra action fields, bool-money | DENIED | No financial intent/effect | Strict schema and actual absence of fixture effect |
+| Expired/tampered/wrong-scope grant, invalid identity | DENIED | No financial intent/effect | Different assertion and case-approval checks both enforced |
+| Valid finance-granted CASE-204 $500 operation | CONFIRMED | One RF-1042 intent and mock provider effect | Fixed fixture approval, local one-time dispatch |
+| Six concurrent requests with same grant | One confirmed, five denied | Exactly one mock refund | Single-worker SQLite claim and sequential E5 socket handling, not distributed fencing |
+| Outage after E7 claim; retry attempt | UNKNOWN then UNKNOWN, no resend | DISPATCHED unresolved, mock provider empty | Never convert uncertain outcome into new dispatch |
+| Contradictory mock E8 record after E7 dispatch claim | UNKNOWN | E7 remains DISPATCHED; conflicting provider row preserved | Conflict is uncertainty, never clean denial or a second transfer |
+| Unavailable service or malformed IPC | Unavailable or denied | No inference of failure after an uncertain transport | No automatic network retry |
+| Client closes before E5 writes reply | Next request remains serviceable | No operation for unauthorized request | Connection-level send errors contained |
+| Incomplete frame / slow trickle | Worker resumes within total 0.75-second framing deadline | No operation created | Single-worker bounded delay, not flood resilience |
+| Oversized frame | Rejected before approval processing | No operation created | Bounded memory and framing; no per-principal rate limiter |
+
+The fixture does not prove production-grade OS confinement, finance approval issuer security, revocation, real provider idempotency or reconciled payment truth. Ch26 adds provider-specific contracts; Ch29/31 repeat adversarial verification with a stronger deployment threat model.

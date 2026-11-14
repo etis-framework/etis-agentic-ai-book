@@ -15,3 +15,8 @@
 **Scoped context observation:** E4/C03 selected evidence with source, classification, version and observation age checked against a bounded purpose; not authoritative E8 financial truth.
 
 **ContextUnavailable:** A failed E4 fixture dependency, distinct from unauthorized scope and from E7's `UNKNOWN` payment outcome.
+
+
+**Transaction-specific authorization grant (Build 3).** A separately issued, bounded approval artifact specifying the case, tenant, amount, approver, policy version and validity interval. In the ETIS fixture it is independently verified by E5, not inferred from E1 identity or E3/C04 advice. A signed local test grant is not equivalent to a production finance approval service.
+
+**Request-path process boundary.** A distinct E5 service process and IPC endpoint that evaluate authorization independently of the calling adviser. It is not necessarily a security isolation boundary when both run as the same operating-system user with shared file permissions.

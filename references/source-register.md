@@ -280,3 +280,14 @@ The attached Word build covers developed Chapters 1–23, but none of Parts I–
 | §§24.2–24.9 | CAB-001, `build2/identity.py`, `context.py`, `pipeline.py`, `test_scope.py` | Original ETIS architecture mapping, source contracts, fixture behavior and negative tests; requires reproducible tests and independent edition tag |
 
 **Not claimed:** HMAC fixture identity proofing, real source attestations, protected business authorization, provider guarantees or source-page certification. No new bibliography title is introduced; claim-to-page checks stay open.
+
+## Chapter 25 source-to-claim verification queue (publication gates open)
+
+| Section | Basis | Supported claim and limit | Pending gate |
+|---|---|---|---|
+| §§25.1–25.4 | CAB-001 and original ETIS source, Ch13/16/19/21 | E5 independently gates a consequential request; proposed grant format is ETIS fixture, not a standard | CAB field audit and native Word print review |
+| §§25.2–25.4 | NIST SP 800-207 (2020) | Resource-specific verification and no implicit trust; does not certify local same-user socket or HMAC demo | Exact source-page audit |
+| §§25.2, 25.7 | OWASP agentic/GenAI guidance | Compromised-agent and tool-misuse motivations; no claim of compliance | Pin and inspect precise guidance edition |
+| §§25.5–25.7 | Gray/Reuter (1992); Kleppmann (2017); `build3/test_gate.py` | Local intent, partial effects and unknown-outcome controls; test claims are fixture-specific | Source passage and executable evidence audit |
+
+**Open:** final native Word 7×10 pagination, actual printed figures, reference editions and claim-to-page certification, OS security validation under an isolated E5 deployment, and real-provider guarantees. No new external bibliographic record is necessary.

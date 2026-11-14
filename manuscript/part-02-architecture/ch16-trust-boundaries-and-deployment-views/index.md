@@ -6,7 +6,7 @@
 
 ## Learning objectives
 
-After this chapter, readers should be able to (1) map Figure 8.1's nine E-domains logical responsibilities onto physical deployments without equating domains with microservices; (2) select isolation strength from consequence and threat exposure rather than technology fashion; (3) prove agent-originated proposals cannot reach provider credentials or a consequential endpoint without E5; (4) locate state, ownership, integration and business truth across failures; (5) compare deployment alternatives for cost, latency, operability and residual risk; and (6) prepare an evidence-backed deployment decision record and release gate.
+After this chapter, readers should be able to (1) map Figure 8.1's nine logical enterprise responsibilities onto physical deployments without equating domains with microservices; (2) select isolation strength from consequence and threat exposure rather than technology fashion; (3) prove agent-originated proposals cannot reach provider credentials or a consequential endpoint without independent trusted execution and authority (E5); (4) locate state, ownership, integration and business truth across failures; (5) compare deployment alternatives for cost, latency, operability and residual risk; and (6) prepare an evidence-backed deployment decision record and release gate.
 
 ## 16.1 Return to the architecture, not to a new model
 

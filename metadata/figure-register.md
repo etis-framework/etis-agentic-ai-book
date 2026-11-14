@@ -34,3 +34,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F23-01 | architecture | Untrusted C04 versus existing financial path | `assets/shared-figures/sources/F23-01.svg` | `assets/shared-figures/rendered/F23-01.png` | Source and PNG inspected; native Word print check open |
 | F23-02 | behavior | Request, validation, review and safe failure; no dispatch | `assets/shared-figures/sources/F23-02.svg` | `assets/shared-figures/rendered/F23-02.png` | Source and PNG inspected; native Word print check open |
 | F23-03 | decision | Reject malformed scope, absent dependency, valid review-only outcome | `assets/shared-figures/sources/F23-03.svg` | `assets/shared-figures/rendered/F23-03.png` | Source and PNG inspected; native Word print check open |
+
+
+## Chapter 25 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F25-01 | architecture | Untrusted caller vs independently evaluating E5 process and E7/E6/E8 fixture | `assets/shared-figures/sources/F25-01.svg` | `assets/shared-figures/rendered/F25-01.png` | Source/PNG inspection required; native Word print open |
+| F25-02 | behavior | Valid-token denial and separate approved operation path | `assets/shared-figures/sources/F25-02.svg` | `assets/shared-figures/rendered/F25-02.png` | Source/PNG inspection required; native Word print open |
+| F25-03 | decision | Schema, E1, finance approval and one-time E7 claim | `assets/shared-figures/sources/F25-03.svg` | `assets/shared-figures/rendered/F25-03.png` | Source/PNG inspection required; native Word print open |

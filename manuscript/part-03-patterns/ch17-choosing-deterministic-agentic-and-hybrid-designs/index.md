@@ -6,7 +6,7 @@
 
 ## Learning objectives
 
-After this chapter, readers should be able to (1) distinguish task selection from consequential authority; (2) choose among deterministic, advisory, bounded-agentic, and hybrid arrangements; (3) develop a falsifiable selection scorecard, including lifecycle economics; (4) map the chosen approach onto Figure 8.1 without changing the nine domain contracts; (5) specify negative-path and provider-uncertainty acceptance evidence; and (6) record conditional selection, rejection, and reversal criteria in an architecture decision record.
+After this chapter, readers should be able to (1) distinguish task selection from consequential authority; (2) choose among deterministic, advisory, bounded-agentic, and hybrid arrangements; (3) develop a falsifiable selection scorecard, including lifecycle economics; (4) map the chosen approach onto Figure 8.1 without changing the established architectural contracts; (5) specify negative-path and provider-uncertainty acceptance evidence; and (6) record conditional selection, rejection, and reversal criteria in an architecture decision record.
 
 ## 17.1 The decision changes; the architectural obligations do not
 

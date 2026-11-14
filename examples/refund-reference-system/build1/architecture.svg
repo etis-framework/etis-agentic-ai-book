@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620">
+<rect x="0" y="0" width="1000" height="620" fill="white"/>
+<text x="80" y="49" font-family="Arial,sans-serif" font-size="27" fill="#173b4b" font-weight="bold">Build 1 — bounded advisory-only implementation</text>
+<rect x="220" y="100" width="560" height="105" rx="13" fill="#e7f2f8" stroke="#35677b" stroke-width="2.5"/>
+<text x="500.0" y="134" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">demo.py / advisory.py</text>
+<text x="500.0" y="165" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">E3 candidate and deterministic adviser</text>
+<rect x="220" y="258" width="560" height="105" rx="13" fill="#fff0d6" stroke="#35677b" stroke-width="2.5"/>
+<text x="500.0" y="292" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">contracts.py / model_interface.py</text>
+<text x="500.0" y="323" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">Typed C04 proposal + model Protocol</text>
+<path d="M500 205 L500.0 234.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="500,248 495.0,234.0 505.0,234.0" fill="#35677b"/>
+<rect x="220" y="416" width="560" height="105" rx="13" fill="#e4f2e8" stroke="#35677b" stroke-width="2.5"/>
+<text x="500.0" y="450" font-family="Arial,sans-serif" font-size="21" font-weight="bold" fill="#173b4b" text-anchor="middle">E5 / E6 / E7 / E8</text>
+<text x="500.0" y="481" font-family="Arial,sans-serif" font-size="17" fill="#173b4b" text-anchor="middle">NOT IMPORTED; NO FINANCIAL ACCESS</text>
+<path d="M500 363 L500.0 392.0" stroke="#35677b" stroke-width="3" fill="none"/>
+<polygon points="500,406 495.0,392.0 505.0,392.0" fill="#35677b"/>
+<text x="56" y="582" font-family="Arial,sans-serif" font-size="17" fill="#173b4b">Source-module view, not proof of independent production-grade isolation.</text>
+</svg>

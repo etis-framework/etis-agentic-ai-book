@@ -6,7 +6,7 @@
 
 ## Learning objectives
 
-By the end of this chapter, readers should be able to classify information by authority and lifetime; compare retrieval, case-scoped memory, and persistent state patterns; design provenance, freshness, correction, and revocation controls; separate E7 workflow ownership from E8 business truth; and specify negative tests for replay, tenant leakage, stale policy, and uncertain outcomes.
+By the end of this chapter, readers should be able to classify information by authority and lifetime; compare retrieval, case-scoped memory, and persistent state patterns; design provenance, freshness, correction, and revocation controls; separate durable operational state (E7) from authoritative business truth (E8); and specify negative tests for replay, tenant leakage, stale policy, and uncertain outcomes.
 
 ## 20.1 The information boundary after effect isolation
 

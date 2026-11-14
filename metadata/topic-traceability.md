@@ -140,3 +140,22 @@ This mapping does not claim a production provider integration or an immutable ex
 | Companions and learning | `build5/README.md`, `architecture.svg`, tests and QA report | Print Word and real deployment certification remain open |
 
 Build 5 is optional; Designs A/B/C remain alternatives and no C04 proposal can mint RF-1042.
+
+## Chapter 28 — distributed failure and recoverable effects
+
+| Obligation | Manuscript/executable evidence | Not demonstrated in production |
+|---|---|---|
+| CASE-204 $500 / RF-1042 crash chronology | Ch28 Table 28.1, F28-01/02, Build 4 and 5 tests | Cross-store atomic execution or real settlement |
+| E2 local ownership versus E5 fencing | Ch27 §§27.3–27.5, Ch28 §28.6, Build 5 coordinator | E5-enforced epoch and hostile-worker isolation |
+| E5/C05 finance authority before E6/C07 effect | Ch25–28 and Build 4 service tests | Real grant issuer, protected credentials and provider keys |
+| E7/C06 UNKNOWN versus E8/C08 truth | Ch28 §§28.3–28.5, F28-03, reliability tests | Provider retention and status-finality contract |
+| E9/C09 audited adjudication | Ch28 §28.7 and six-lens review | Live operations, incident escalation and release certification |
+| Reference designs and companion scope | Ch28 §§28.1,28.8–28.10 | No Build 6, no automatic Design C adoption |
+
+
+
+## Chapter 28 logical-failure-zone teaching refinement
+
+- **Reader orientation:** Ch8 Figure 8.1 layered CAB-001 reference architecture → Ch16 Figure 16.1 protection-zone deployment options → Ch28 §28.2 Figure 28.1 responsibility/failure zones. Neither the zone mapping nor a service split guarantees physical failure independence.
+- **Three boundary types:** Responsibility ownership, independent trust/enforcement, and actual deployment/fault separation must be evaluated separately. Worked boundary examples in Ch28 §28.2 compare in-process, separate-process/same-host, shared-database, remote-provider, and multi-site cases.
+- **Behavior and recovery:** Ch28 Figures 28.2–28.3 distinguish lost response after provider effect from safe status inquiry and confirmed matching evidence; `UNKNOWN` is not `FAILED`. Build 5 E2-local epoch remains unenforced at E5.

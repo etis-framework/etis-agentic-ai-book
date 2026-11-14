@@ -29,7 +29,7 @@
     },
     {
       "term": "Architecture decisions and professional review",
-      "locator": "Chapters 7–8, 16–17, 21–27.",
+      "locator": "Chapters 7–8, 16–17, 21–28.",
       "aliases": [],
       "see_also": []
     },
@@ -100,15 +100,21 @@
     },
     {
       "term": "CASE-204 ($500 refund)",
-      "locator": "Chapters 1–27, especially 3, 8, 22–27.",
+      "locator": "Chapters 1–28, especially 3, 8, 22–28.",
       "aliases": [
         "refund case"
       ],
       "see_also": []
     },
     {
+      "term": "Competing histories",
+      "locator": "Chapter 28 §§28.2–28.3.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Consequential operation and trusted execution (E5)",
-      "locator": "Chapters 6, 8, 13, 19, 22, 25–27.",
+      "locator": "Chapters 6, 8, 13, 19, 22, 25–28.",
       "aliases": [],
       "see_also": []
     },
@@ -130,6 +136,12 @@
       ]
     },
     {
+      "term": "Crash-point matrix",
+      "locator": "Chapter 28 §28.4.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Decision contract (C05)",
       "locator": "Chapters 8, 13, 25; Appendix.",
       "aliases": [],
@@ -137,7 +149,7 @@
     },
     {
       "term": "Design A / B / C",
-      "locator": "Chapters 3, 7–8, 17, 22–27.",
+      "locator": "Chapters 3, 7–8, 17, 22–28.",
       "aliases": [],
       "see_also": []
     },
@@ -149,7 +161,7 @@
     },
     {
       "term": "Durable operational state (E7)",
-      "locator": "Chapters 15, 20, 22, 25–27.",
+      "locator": "Chapters 15, 20, 22, 25–28.",
       "aliases": [
         "workflow state",
         "local ledger"
@@ -157,8 +169,14 @@
       "see_also": []
     },
     {
+      "term": "Effect ambiguity",
+      "locator": "Chapter 28 §§28.1–28.5",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Epoch and lease fencing",
-      "locator": "Chapters 10, 18, 27.",
+      "locator": "Chapters 10, 18, 27–28.",
       "aliases": [],
       "see_also": []
     },
@@ -170,8 +188,22 @@
     },
     {
       "term": "Evidence and governance (E9)",
-      "locator": "Chapters 7–8, 15–16, 21, 25–27.",
+      "locator": "Chapters 7–8, 15–16, 21, 25–28.",
       "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Execution-boundary fencing",
+      "locator": "Chapter 28 §28.7.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Failure/deployment boundary",
+      "locator": "Chapter 28 §28.2; Figure 28.1.",
+      "aliases": [
+        "fault domain"
+      ],
       "see_also": []
     },
     {
@@ -184,6 +216,14 @@
       "term": "Independent request-path enforcement",
       "locator": "Chapters 13, 16, 25–27.",
       "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Logical responsibility and failure zone",
+      "locator": "Chapter 28 §28.2; Figure 28.1.",
+      "aliases": [
+        "logical zones"
+      ],
       "see_also": []
     },
     {
@@ -204,6 +244,12 @@
       ]
     },
     {
+      "term": "Provider idempotency retention",
+      "locator": "Chapter 28 §28.6.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Provider integration (E6)",
       "locator": "Chapters 14, 19, 22, 25–26.",
       "aliases": [],
@@ -211,19 +257,33 @@
     },
     {
       "term": "Provider truth (E8)",
-      "locator": "Chapters 14–15, 20, 22, 25–27.",
+      "locator": "Chapters 14–15, 20, 22, 25–28.",
       "aliases": [],
       "see_also": []
     },
     {
       "term": "Reconciliation (C08)",
-      "locator": "Chapters 2, 14–15, 20, 22, 25–27.",
+      "locator": "Chapters 2, 14–15, 20, 22, 25–28.",
       "aliases": [],
       "see_also": []
     },
     {
+      "term": "Recovery authority",
+      "locator": "Chapter 28 §§28.7–28.9.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Responsibility boundary",
+      "locator": "Chapter 28 §28.2.",
+      "aliases": [
+        "ownership boundary"
+      ],
+      "see_also": []
+    },
+    {
       "term": "RF-1042 (trusted operation ID)",
-      "locator": "Chapters 2–3, 8, 11, 22–27.",
+      "locator": "Chapters 2–3, 8, 11, 22–28.",
       "aliases": [
         "refund operation",
         "payment identity"
@@ -232,13 +292,21 @@
     },
     {
       "term": "Security and trust boundaries",
-      "locator": "Chapters 6, 9, 13, 16, 23–27.",
+      "locator": "Chapters 6, 9, 13, 16, 23–28.",
       "aliases": [],
       "see_also": []
     },
     {
+      "term": "Trust/enforcement boundary",
+      "locator": "Chapters 13, 16, 28 §28.2.",
+      "aliases": [
+        "enforcement boundary"
+      ],
+      "see_also": []
+    },
+    {
       "term": "UNKNOWN provider outcome",
-      "locator": "Chapters 2–3, 14–15, 20, 22, 25–27.",
+      "locator": "Chapters 2–3, 14–15, 20, 22, 25–28.",
       "aliases": [
         "uncertain outcome",
         "lost acknowledgment"

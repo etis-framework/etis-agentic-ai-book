@@ -18,13 +18,14 @@ EXPLANATION = {
     25: ("advisory action-proposal contract (C04)", "stable consequential-operation identifier RF-1042"),
     26: ("advisory action-proposal contract (C04)", "refund-operation identity, **RF-1042**"),
     27: ("Coordination and durable ownership (E2)", "RF-1042"),
+    28: ("CASE-204", "RF-1042"),
 }
 errors = []
 checked = 0
 for path in sorted(MANUSCRIPT.glob("part-*/ch*/index.md")):
     number = int(path.parent.name[2:4])
     text = path.read_text(encoding="utf-8")
-    if number > 27 or "STATUS: PLANNED / NOT DRAFTED" in text:
+    if number > 28 or "STATUS: PLANNED / NOT DRAFTED" in text:
         continue
     checked += 1
     match = re.search(r"^## Learning objectives\s*\n\s*([^\n]+)", text, flags=re.M)
@@ -34,7 +35,8 @@ for path in sorted(MANUSCRIPT.glob("part-*/ch*/index.md")):
     objective = match.group(1)
     # Expand only identifiers with nearby descriptive names; bare IDs fail.
     normalized = objective
-    normalized = re.sub(r"(?:independent trusted execution and authority|durable operational state|authoritative business truth) \(E[1-9]\)", "explained responsibility", normalized)
+    for pattern in [r"(?:independent trusted execution and authority|trusted execution and authority|coordination and ownership|enterprise integration|durable operational state|authoritative business systems|authoritative business truth|agent reasoning|context retrieval and provenance|admission and identity|governance and assurance) \(E[1-9]\)", r"(?:advisory action-proposal contract|authorization-decision contract|context contract|operational-state contract|provider-dispatch contract|reconciliation contract|telemetry and evidence contract|work-assignment contract|admission contract) \(C0[1-9]\)"]:
+        normalized = re.sub(pattern, "explained responsibility", normalized)
     tokens = IDENTIFIER.findall(normalized)
     if tokens:
         errors.append(f"Chapter {number}: unexplained identifier(s) in learning objectives: {tokens}")

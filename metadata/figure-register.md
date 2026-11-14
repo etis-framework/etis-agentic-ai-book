@@ -61,3 +61,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F27-01 | architecture | Optional E2 ownership cannot grant E5 financial authority; local fencing caveat | `assets/shared-figures/sources/F27-01.svg` | `assets/shared-figures/rendered/F27-01.png` | Master/render visual inspected; native Word print open |
 | F27-02 | behavior | Crash/lease takeover permits status-only recovery, no payment replay | `assets/shared-figures/sources/F27-02.svg` | `assets/shared-figures/rendered/F27-02.png` | Master/render visual inspected; native Word print open |
 | F27-03 | decision | Stale ownership denial vs initial E2 intent vs recovery action | `assets/shared-figures/sources/F27-03.svg` | `assets/shared-figures/rendered/F27-03.png` | Master/render visual inspected; native Word print open |
+
+## Chapter 28 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F28-01 | architecture/evidence | E2/E5/E7/E6/E8 separate records and E9 review | `assets/shared-figures/sources/F28-01.svg` | `assets/shared-figures/rendered/F28-01.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+| F28-02 | behavior | E2 intent, lost reply and read-only takeover | `assets/shared-figures/sources/F28-02.svg` | `assets/shared-figures/rendered/F28-02.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+| F28-03 | decision | Evidence-matched closure vs unresolved escalation | `assets/shared-figures/sources/F28-03.svg` | `assets/shared-figures/rendered/F28-03.png` | Source/PNG visual inspection required; native Word for Mac print review open |
+

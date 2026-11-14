@@ -47,3 +47,5 @@ This is the curated bibliography for the developed manuscript chapters. It is up
 
 - FinOps Foundation. *FinOps Framework 2025*. https://www.finops.org/framework/ (accessed November 2026).
 - FinOps Foundation. *Unit Economics*, FinOps Framework capability guidance. https://www.finops.org/framework/capabilities/unit-economics/ (accessed November 2026).
+
+**Chapter 28 reading guide.** Distributed failure and recovery rely on the existing Lamport (1978), Gray and Reuter (1992), Kleppmann (2017) and van der Aalst (2013) entries in this bibliography. These are conceptual references; Chapter 28's simulated payment-provider capabilities and local E2/E5 limitations derive from the checked-in ETIS code, not a real provider's published contract. Claim-to-page checks remain open.

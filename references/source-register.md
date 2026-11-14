@@ -311,3 +311,11 @@ The attached Word build covers developed Chapters 1–26, but none of Parts I–
 ## Back-matter source and citation publication gate
 
 The reader-facing bibliography intentionally avoids a fixed “developed through Chapter N” cutoff and must be updated with each chapter. Chapters 23–27 already have source/claim queues above; identification in the bibliography or register does **not** certify exact edition, pagination, applicability, or the provider-specific contractual guarantees asserted by a claim. Before a publication edition, audit every in-text attribution against primary source passages, confirm DOI/edition metadata, pin living security guidance (including OWASP) and authoritative protocol versions, and record unresolved source limitations. The current appendix/glossary/index revision introduces no new external publication claims; it clarifies CAB-001 and fixture behavior already defined in the manuscript.
+
+## Chapter 28 distributed recovery claims (publication gate open)
+
+- **Gray and Reuter (1992), Kleppmann (2017), Lamport (1978):** Background for transaction boundaries, distributed uncertainty and event ordering. These sources do not establish provider-specific idempotency guarantees or E5 epoch semantics. Verify exact page passages before publication.
+- **van der Aalst (2013):** General workflow/recovery background; not a specification of CASE-204 finance authority.
+- **Original ETIS repository evidence:** Ch28 §§28.1–28.9; Figures F28-01/02/03; Build 4 `workflow.py`, `ledger.py`, `adapter.py`, `test_*.py`; Build 5 `coordinator.py`, `runner.py`, `test_coordination.py`; pure Chapter 28 `reliability/recovery_cases.py` and `test_recovery_cases.py`. Exact simulated guarantees are defined by source and tests, not external standards.
+- **Remaining source and release gates:** Actual vendor API edition, query consistency, idempotency key namespace/retention, settlement proof, service identity, E5 epoch validation, independent recovery operator privileges, Word-for-Mac 7×10 page measurement and claim-to-page verification. There is no new independently verified vendor guarantee or bibliographic record in Chapter 28.
+

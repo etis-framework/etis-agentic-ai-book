@@ -13,7 +13,7 @@ def check(ok: bool, message: str) -> None:
         ERRORS.append(message)
 
 check(STANDARD.is_file(), 'Missing professional review perspectives editorial standard')
-for n in range(1, 28):
+for n in range(1, 29):
     matches = list(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     check(len(matches) == 1, f'Chapter {n} missing or ambiguous')
     if len(matches) != 1:
@@ -22,7 +22,7 @@ for n in range(1, 28):
     # Public-facing student exercises remain appropriate; student-as-approval-role does not.
     check(not re.search(r'\badvanced student\s*(?:asks|must|should|:)', text, re.I),
           f'Chapter {n} presents advanced student as an enterprise architecture reviewer')
-    if 22 <= n <= 27:
+    if 22 <= n <= 28:
         headings = re.findall(r'^## (.+)$', text, re.M)
         check(('multi-perspective architecture review' in text.lower()), f'Chapter {n} lacks a multi-perspective architecture review')
         for term in ('implementing engineer', 'enterprise architect', 'security', 'SRE', 'business owner'):
@@ -45,5 +45,5 @@ if ERRORS:
     for issue in ERRORS:
         print('FAIL:', issue)
     raise SystemExit(1)
-print('PASS: reader-facing professional review perspectives, Chapters 1–27; '
+print('PASS: reader-facing professional review perspectives, Chapters 1–28; '
       'Part IV professional roles separated from internal student QA')

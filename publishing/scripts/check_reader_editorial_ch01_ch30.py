@@ -5,14 +5,17 @@ import re, sys
 R=Path(__file__).resolve().parents[2]
 P=R/'manuscript'
 errors=[]
-chapters={int(p.parent.name[2:4]):p.read_text() for p in P.glob('part-*/ch*/index.md') if int(p.parent.name[2:4])<=33}
-if sorted(chapters)!=list(range(1,34)):errors.append('Not all 33 developed chapters found')
+chapters={int(p.parent.name[2:4]):p.read_text() for p in P.glob('part-*/ch*/index.md') if int(p.parent.name[2:4])<=34}
+if sorted(chapters)!=list(range(1,35)):errors.append('Not all 34 developed chapters found')
 for n,s in sorted(chapters.items()):
  if 'CAB-001' in s:errors.append(f'Ch{n:02}: internal CAB identifier in published prose')
  if 'Design ' in s and any(re.search(r'\bDesign '+letter+r'\b',s) for letter in 'ABC'):
   # A local definition may appear in the original section (before or after the heading)
   definitions=('deterministic','advisory','bounded AI advice','bounded investigation','investigator')
   if not any(x.lower() in s[:3500].lower() for x in definitions):errors.append(f'Ch{n:02}: opening design context not found')
+ if n==34:
+  for item in ('security/test_adversarial_cases.py','reliability/test_recovery_cases.py','operations/test_incident.py','assurance/test_collect.py','build5/test_coordination.py','UNKNOWN','E5','Table 34.2'):
+   if item not in s:errors.append(f'Ch34 missing economics/companion navigation: {item}')
  if n==33:
   for item in ('security/test_adversarial_cases.py','reliability/test_recovery_cases.py','operations/test_incident.py','assurance/test_collect.py','build5/test_coordination.py','UNKNOWN','E5','Runbook 33-A'):
    if item not in s:errors.append(f'Ch33 missing release/operations navigation: {item}')
@@ -31,6 +34,6 @@ for rel in ('assets/shared-figures/sources/F28-01.svg','assets/shared-figures/re
  if 'CAB-001' in (R/rel).read_text():errors.append(f'Internal name in reader figure: {rel}')
 for rel in ('examples/refund-reference-system/operations/incident.py','examples/refund-reference-system/operations/test_incident.py','examples/refund-reference-system/build4/adapter.py','examples/refund-reference-system/build4/ledger.py','examples/refund-reference-system/build5/coordinator.py'):
  if not (R/rel).is_file():errors.append(f'Referenced code missing: {rel}')
-print('Reader editorial audit: 33 chapters; errors:',len(errors))
+print('Reader editorial audit: 34 chapters; errors:',len(errors))
 for error in errors:print('FAIL:',error)
 sys.exit(bool(errors))

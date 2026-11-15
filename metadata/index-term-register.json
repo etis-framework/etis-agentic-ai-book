@@ -3,6 +3,12 @@
   "locator_type": "chapter/section, not print page",
   "entries": [
     {
+      "term": "Acceptable completed workflow",
+      "locator": "Chapter 34 §§34.1–34.3; Table 34.2.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Accountable human governance",
       "locator": "Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.",
       "aliases": [],
@@ -173,6 +179,12 @@
       ]
     },
     {
+      "term": "Cost per acceptable completed workflow",
+      "locator": "Chapter 34 §§34.2–34.3; Table 34.1; Figure 34.1.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Crash-point matrix",
       "locator": "Chapter 28 §28.4.",
       "aliases": [],
@@ -289,8 +301,20 @@
       "see_also": []
     },
     {
+      "term": "Incremental economics of Designs A/B/C",
+      "locator": "Chapter 34 §34.3; Table 34.2.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Independent request-path enforcement",
       "locator": "Chapters 13, 16, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Lifecycle investment and retirement",
+      "locator": "Chapter 34 §§34.6–34.8; Table 34.4; Figure 34.3.",
       "aliases": [],
       "see_also": []
     },
@@ -419,6 +443,12 @@
       "see_also": [
         "Compromised bounded investigator"
       ]
+    },
+    {
+      "term": "Sensitivity and human review capacity",
+      "locator": "Chapter 34 §34.5; Figure 34.2.",
+      "aliases": [],
+      "see_also": []
     },
     {
       "term": "Service-level objectives (SLOs)",

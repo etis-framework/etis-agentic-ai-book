@@ -388,3 +388,15 @@ Chapter 32 adds no new external empirical claims or invented citations. Before r
 - **Supporting context:** NIST AI RMF 1.0 (2023) provides AI-risk governance framing; ISO/IEC 42001:2023 is management-system context only (licensed normative clauses not reproduced or certified); Kleppmann (2017) supports distributed-state and failure caution. Verify exact edition and claim-level section/page before final publication.
 - **Authorial engineering prescriptions:** proposed release manifest, `PREPARED`/`APPROVED`/`LIMITED`/`PAUSED` states, financial canary stop conditions, and Runbook 33-A are ETIS designs, not features implemented by an external standard or companion demo.
 - **Local evidence navigation:** Build 3 E5 denial, Build 4 original-operation ledger and status-only recovery, Build 5 E2 ownership, Chapter 29 security, Chapter 30 operations, Chapter 31 assurance. Signed releases, production rollback, live provider correctness and protected audit remain external.
+
+
+## Chapter 34 — economics, risk and lifecycle decisions (November 2026)
+
+| Claim / locus | Source and status | Important limitation |
+|---|---|---|
+| §34.1, §34.2 | Original ETIS outcome-denominator and lifecycle costing framework, consistent with Ch5, Ch16–17 and Ch32–33 | Not a measured commercial workflow or audited cost allocation |
+| §34.3, Tables 34.2–34.3 | Original ETIS fully hypothetical economic scenarios and arithmetic | No performance, value, loss or causality observations; all values illustrative |
+| §34.4 | NIST AI RMF 1.0 (2023), risk governance context (already in bibliography) | No NIST approval of E5 control, monetary estimate or release gate; exact passages require final verification |
+| §§34.5–34.7 | Existing Builds 0–5, security, reliability, operations, assurance fixtures and companion READMEs | Tests establish bounded simulation evidence only; no real invoices, staffing telemetry, live provider, release policy or ROI tracking |
+
+**Publication source gate:** verify edition/precise passage of the existing NIST AI RMF reference and provide real enterprise observations before making empirical or production claims. No new external bibliographic entry is asserted in this chapter.

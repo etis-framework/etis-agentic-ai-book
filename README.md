@@ -1,4 +1,8 @@
-# Engineering Trustworthy Agentic AI Systems
+# Engineering Agentic AI Systems
+
+**Subtitle:** Build, Secure, Verify, and Operate Trustworthy AI Agents  
+**Series:** ETIS Professional Computing Series  
+**Editorial scope:** The title describes end-to-end agentic *systems* engineering. Companion code provides six educational Python builds and cross-chapter recovery, security, operations and assurance fixtures; it is not production-certified software. Chapters 32–36 remain under development.
 
 **ETIS Professional Computing Series — authoritative Markdown manuscript repository**
 

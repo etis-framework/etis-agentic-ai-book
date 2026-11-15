@@ -14,6 +14,9 @@ This is also not an argument that every workflow needs an agent. Sometimes a det
 
 ## The system, not the model, is the unit of trust
 
+The subtitle's four verbs describe responsibilities rather than a maturity ladder. **Build** includes the simplest adequate deterministic, advisory or bounded-agent design. **Secure** means consequential permissions remain independently enforced, even if an agent is compromised. **Verify** means a claim can be falsified with tests and evidence, not accepted because a demonstration looked convincing. **Operate** means uncertainty, recovery, incident response, governance and business accountability remain first-class design obligations. No single agent framework or language guarantees any of them.
+
+
 The model may propose a refund, recommend a maintenance action, classify a suspicious transaction, or summarize a regulatory obligation. None of those proposals, by itself, constitutes permission to change an enterprise system. Permission must come from explicit policy and delegated authority. Consequential execution must be independently controlled. Durable records must survive interruption. External effects must be reconciled against systems of record. Human operators must have a credible path to intervene, investigate, and recover.
 
 The same rigor applies to dimensions that are sometimes treated as nonfunctional afterthoughts: reliability, availability, serviceability, recoverability, security, privacy, performance, scalability, cost, maintainability, interoperability, compliance, and business or brand trust. These are requirements that shape the architecture from its first decision. They can conflict. A good engineer makes those tradeoffs explicit and supplies evidence rather than slogans.

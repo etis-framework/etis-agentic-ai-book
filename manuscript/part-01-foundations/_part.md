@@ -1,5 +1,7 @@
 # Part I — Foundations, Evolution, and Business Context
 
+**Engineering thread — Build.** Before choosing how autonomous an AI agent should be, determine the business outcome, the authority it must never invent, and the observable evidence that would justify its use. This foundation also defines what must later be secured, verified and operated.
+
 ## The problem this part prepares you to solve
 
 An enterprise can deploy a model that explains a refund policy in minutes. It cannot responsibly delegate a $500 refund merely because the model can generate a plausible explanation. The enterprise must decide who may act, which facts are authoritative, which operations are reversible, how failures are detected, and who is accountable when the result is uncertain. These are systems-engineering questions. They precede the selection of an agent framework.

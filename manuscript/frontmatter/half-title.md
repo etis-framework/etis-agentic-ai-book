@@ -1,3 +1,3 @@
 # Half title
 
-Engineering Trustworthy Agentic AI Systems
+Engineering Agentic AI Systems

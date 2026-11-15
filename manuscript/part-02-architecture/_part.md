@@ -1,5 +1,7 @@
 # Part II — Enterprise Reference Architecture
 
+**Engineering thread — Secure by design.** The reference architecture identifies where agent recommendations stop and independently governed consequential authority begins. Controls must be testable across contracts, not inferred from an agent's reasoning or from a logical diagram.
+
 ## The problem this part prepares you to solve
 
 Part I established the business obligations of a trustworthy agentic AI system. It did not establish that a credible refund recommendation is an authorized financial instruction. For `CASE-204`, the customer requests a $500 refund after a replacement does not arrive. An AI component may help interpret the complaint, but the retailer still must verify identity, consult authoritative payment records, apply current policy, record the responsible approval, execute through a controlled payment interface, and determine whether money was actually returned. The reference architecture must make those responsibilities separately identifiable, enforceable, testable, and operable.

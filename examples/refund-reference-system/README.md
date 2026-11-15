@@ -25,7 +25,7 @@ The builds are teaching increments, **not a compulsory Design A → B → C migr
 
 ## Chapter-to-implementation navigation (recovery, security and operations)
 
-Chapters **28–30** use the same stable CASE-204/RF-1042 case and existing Builds 0–5, rather than three new payment implementations. Open the indicated README before changing code:
+Chapters **28–31** use the same stable CASE-204/RF-1042 case and existing Builds 0–5, rather than introducing four new payment implementations. Open the indicated README before changing code:
 
 | Chapter | Reader starting point | Executable verification | What the exercise must not claim |
 |---|---|---|---|

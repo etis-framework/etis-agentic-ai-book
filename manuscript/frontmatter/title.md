@@ -1,8 +1,8 @@
 # Title page
 
-**Engineering Trustworthy Agentic AI Systems**
+**Engineering Agentic AI Systems**
 
-*Enterprise Architecture, Implementation, Governance, and Operational Trust*
+*Build, Secure, Verify, and Operate Trustworthy AI Agents*
 
 ETIS Professional Computing Series
 

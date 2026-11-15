@@ -1,5 +1,7 @@
 # Introduction
 
+**Build, secure, verify, and operate trustworthy AI agents** is the practical promise of this book. The object of engineering is the **whole agentic AI system**—not an impressive model response, an agent framework, or a successful workflow demonstration. Building makes delegated behavior explicit; securing constrains the authority behind it; verifying challenges claims with negative tests and provenance; operating preserves safe decisions when dependencies fail and people must intervene.
+
 ## The day after the demonstration
 
 Imagine a successful pilot in a large enterprise. A customer asks for a refund. An AI-powered assistant retrieves the order, understands the complaint, applies what appears to be the policy, and produces a confident response. In the demonstration, the case is resolved in seconds. The room sees a reduction in handling time, a better customer experience, and a plausible business case.

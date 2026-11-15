@@ -5,8 +5,8 @@ import re, sys
 R=Path(__file__).resolve().parents[2]
 P=R/'manuscript'
 errors=[]
-chapters={int(p.parent.name[2:4]):p.read_text() for p in P.glob('part-*/ch*/index.md') if int(p.parent.name[2:4])<=34}
-if sorted(chapters)!=list(range(1,35)):errors.append('Not all 34 developed chapters found')
+chapters={int(p.parent.name[2:4]):p.read_text() for p in P.glob('part-*/ch*/index.md') if int(p.parent.name[2:4])<=36}
+if sorted(chapters)!=list(range(1,37)):errors.append('Not all 36 developed chapters found')
 for n,s in sorted(chapters.items()):
  if 'CAB-001' in s:errors.append(f'Ch{n:02}: internal CAB identifier in published prose')
  if 'Design ' in s and any(re.search(r'\bDesign '+letter+r'\b',s) for letter in 'ABC'):
@@ -34,6 +34,6 @@ for rel in ('assets/shared-figures/sources/F28-01.svg','assets/shared-figures/re
  if 'CAB-001' in (R/rel).read_text():errors.append(f'Internal name in reader figure: {rel}')
 for rel in ('examples/refund-reference-system/operations/incident.py','examples/refund-reference-system/operations/test_incident.py','examples/refund-reference-system/build4/adapter.py','examples/refund-reference-system/build4/ledger.py','examples/refund-reference-system/build5/coordinator.py'):
  if not (R/rel).is_file():errors.append(f'Referenced code missing: {rel}')
-print('Reader editorial audit: 34 chapters; errors:',len(errors))
+print('Reader editorial audit: 36 chapters; errors:',len(errors))
 for error in errors:print('FAIL:',error)
 sys.exit(bool(errors))

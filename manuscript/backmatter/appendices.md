@@ -124,3 +124,6 @@ An absent signal is not evidence of no effect. Local hash checks are not protect
 | Proposed fields versus actual fixtures | Chapter 35 Table 35.2; `IMPLEMENTATION_EVIDENCE_MAP.md` | No production governance/release schema or protected E5 ownership epoch |
 | Fast test/source navigation | Chapter 35 Table 35.3; `build0/README.md` through `build5/README.md` | Independent educational checkpoints; Build 5 omits Build 1/2 advisory pipeline |
 | Evidence packet and review owner | Chapter 35 Table 35.4; `assurance/README.md` | Local bounded tests, not external settlement or release certification |
+
+
+**Chapter 36 capstone navigation.** The integrated exercises in Chapter 36 draw on Builds 0–5 plus the reliability, security, operations and assurance fixture directories. Table 36.1 maps decisions to architectural and operating evidence; Table 36.3 records the minimum reviewable assurance packet. These are exercises, not another executable build or a certified release.

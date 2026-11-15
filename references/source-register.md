@@ -405,3 +405,8 @@ Chapter 32 adds no new external empirical claims or invented citations. Before r
 ## Chapter 35 — contracts, schemas and reference artifacts
 
 Chapter 35 consolidates the original ETIS architecture, the Chapters 22–31 educational implementation, and the existing Chapter 32–34 decision artifacts. It makes no claim that a new external standard certifies the schema crosswalk. The source of truth for executed fixture behavior is `examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md` plus checked-in source and negative tests; production enforcement and source-page verification remain separate. No new external citation was introduced.
+
+
+## Chapter 36 — exercises, reviews and adoption roadmap
+
+Chapter 36 synthesizes original ETIS decisions, the CASE-204/RF-1042 running example, and the existing Chapters 22–35 source/test evidence. Its scenarios, rubrics and adoption gates are **authorial engineering exercises**, not new measured case studies or external certification standards. All source paths resolve into the existing educational companion implementation. No additional empirical bibliography item is introduced; the full-volume external citation and edition verification gate remains open.

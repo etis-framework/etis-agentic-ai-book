@@ -26,6 +26,24 @@
       ]
     },
     {
+      "term": "Adoption capstone and evidence rubric",
+      "locator": "Chapter 36 §§36.1–36.8; Tables 36.1–36.3.",
+      "aliases": [
+        "capstone"
+      ],
+      "see_also": [
+        "Assurance claims and falsifiers"
+      ]
+    },
+    {
+      "term": "Adoption stop and retirement decision",
+      "locator": "Chapter 36 §§36.6–36.8; Tables 36.2–36.3.",
+      "aliases": [],
+      "see_also": [
+        "Lifecycle investment and retirement"
+      ]
+    },
+    {
       "term": "Advisory correlation",
       "locator": "Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.",
       "aliases": [],
@@ -392,6 +410,14 @@
       "locator": "Chapter 28 §§28.7–28.9.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Recovery exercise for RF-1042",
+      "locator": "Chapter 36 §36.4; Figure 36.2.",
+      "aliases": [],
+      "see_also": [
+        "UNKNOWN provider outcome"
+      ]
     },
     {
       "term": "Reference artifacts and schema crosswalk",

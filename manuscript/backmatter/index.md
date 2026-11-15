@@ -5,6 +5,8 @@
 - **Acceptable completed workflow**: Chapter 34 §§34.1–34.3; Table 34.2.
 - **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
 - **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
+- **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3.
+- **Adoption stop and retirement decision**: Chapter 36 §§36.6–36.8; Tables 36.2–36.3.
 - **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.
 - **Agent definition and boundaries**: Chapters 3–4, 11, 17.
 - **Approval versus transaction authority**: Chapter 32 §§32.1–32.4, 32.6; Appendix A.
@@ -59,6 +61,7 @@
 - **Provider truth (E8)**: Chapters 14–15, 20, 22, 25–28.
 - **Reconciliation (C08)**: Chapters 2, 14–15, 20, 22, 25–28.
 - **Recovery authority**: Chapter 28 §§28.7–28.9.
+- **Recovery exercise for RF-1042**: Chapter 36 §36.4; Figure 36.2.
 - **Reference artifacts and schema crosswalk**: Chapter 35 §35.3, Table 35.2; Appendix B.
 - **Release acceptance and stop rules**: Chapter 31 §§31.5–31.6; Figure 31.3.
 - **Release candidate manifest**: Chapter 33 §33.2; Table 33.1; Figure 33.1.

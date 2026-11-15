@@ -208,3 +208,11 @@ Chapters 34–36 remain placeholders. V12 allocation of Chapter 32 is 13 finishe
 | Companion paths and honest local assertions | Ch33 §§33.8–33.9; Table 33.3; Appendix B/C | Builds 0–5 and four fixture directories, not a release pipeline or production certification |
 
 V12 Chapter 33 budget remains 13 finished pages; native Mac Word whole-book pagination, print inspection and external implementation evidence remain publication gates.
+
+
+## Chapter 34 lifecycle economics completion
+
+- **Evaluation unit:** Ch5, Ch16–17, Ch32–33 → Ch34 §§34.1–34.3, Tables 34.1–34.2. Cost per acceptable completed workflow includes human/assurance/recovery and honest denominators; illustrative economic values are not measured outcomes.
+- **Hard authorization versus expected loss:** Ch13/25/29 E5 denial and Ch28/30–33 UNKNOWN/stop semantics → Ch34 §34.4 Table 34.3; no priced risk score permits a missing E5 or live stop boundary.
+- **Workforce and lifecycle decisions:** Ch17 Design A/B/C, Ch27 E2, Ch32 decision rights, Ch33 promotion → Ch34 §§34.5–34.8 Figures 34.2–34.3. Pilot/scale/restrict/retire are human-gated decisions, not Python implementation stages.
+- **Executable limitation:** all six Builds + security/reliability/operations/assurance remain local fixtures; no economic telemetry, ROI dashboard or production attestation is asserted.

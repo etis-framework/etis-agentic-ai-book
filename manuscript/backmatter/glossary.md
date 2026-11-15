@@ -2,6 +2,7 @@
 
 Terms below describe the architecture and developed implementation. The definitions are governed by the corresponding chapters and the ETIS reference architecture; this reader reference does not introduce new authority or implementation requirements.
 
+**Acceptable completed workflow.** Case outcome meeting a declared standard for business disposition, financial authorization, recoverability and supporting evidence; an unresolved UNKNOWN does not count as completed.
 **Accountable governance decision.** A version- and scope-bound approval, denial, suspension or restoration made by an authorized human under an identifiable policy; neither an advisory suggestion nor an automatic financial grant.
 **Action proposal (C04).** Typed untrusted request and supporting evidence from agent reasoning (E3); a proposal, even if signed or provenance-bearing, is not transaction authorization.
 **Admission and identity (E1).** Authenticates and scopes incoming work under a principal, tenant, purpose and constraints; neither a verified token nor a capability listing grants a refund.
@@ -24,6 +25,7 @@ Terms below describe the architecture and developed implementation. The definiti
 **Context observation.** E4/C03 evidence carrying source, version, classification, age and scope; not automatically authoritative E8 truth.
 **ContextUnavailable.** Build 2 context dependency failure; separate from unauthorized scope and from UNKNOWN financial effect.
 **Coordination and ownership (E2).** Logical responsibility for work admission from E1, routing, leases, epochs, assignment and workflow progress; does not hold financial authority.
+**Cost per acceptable completed workflow.** Total attributable lifecycle cost for a defined period and cohort divided by the number of acceptable completed outcomes; include failures, denials and review labor in the numerator.
 **Crash point.** Boundary immediately before or after a durable write, dispatch or external effect at which process death can change what participants know; see Chapter 28.
 **Credential custody.** Control of the creation, storage, use, rotation, revocation and audit of secrets or signing keys, enforced outside lower-trust agents; a source-code import boundary alone does not establish custody.
 **Cross-domain contract (C01–C09).** Named, independently reviewable responsibility handoff; see the appendix's compact mapping and Chapter 8.
@@ -50,8 +52,10 @@ Terms below describe the architecture and developed implementation. The definiti
 **Implementing engineer perspective.** Examination of executable contracts, code, validation, tests and maintainability, supported by artifacts.
 **Incident disposition.** Evidence-qualified operational recommendation to quarantine, inquire, escalate or review an unresolved workflow; not permission to execute a refund.
 **Incident observer.** Chapter 30 read-only fixture in `examples/refund-reference-system/operations/incident.py` that classifies synthetic signals and existing Build 4/5 state without issuing an effect; see `operations/test_incident.py`.
+**Incremental cost per additional acceptable outcome.** Difference in total lifecycle cost between comparable designs divided by the difference in acceptable completed outcomes, with a shared cohort and acceptance definition.
 **Independent request-path enforcement.** An E5 subprocess checks consequential requests independently of advisory calling code; same-UID fixtures do not imply complete security isolation.
 **Lease.** Time-limited coordination claim; expiry enables reassignment but does not by itself stop stale workers from reaching privileged endpoints.
+**Lifecycle retirement.** Controlled withdrawal of future capability while preserving mandated records, provider reconciliation, privileges revocation and ownership of outstanding effects.
 **Logical responsibility and failure zone.** A visualization of responsibilities, contracts, and evidence ownership; not a prescribed process, machine, network, or independent failure domain.
 **Mock provider.** Simulated external service and E8 record used for reproducible education, not real settlement or bank truth.
 **Observability evidence gap.** Missing, delayed, duplicated or inconsistent telemetry that lowers confidence in reconstructed sequence without proving the absence of a consequential effect.
@@ -66,6 +70,7 @@ Terms below describe the architecture and developed implementation. The definiti
 **Release readiness.** Evidence that independently authorized controls, operators, incident response, recovery, monitoring and stop mechanisms can support the intended live scope.
 **Responsibility boundary.** Architectural division establishing ownership of a decision, record, or action; does not alone prove a physically isolated fault or enforcement point.
 **RF-1042.** See *Operation identity (RF-1042)*.
+**Risk-adjusted decision.** Architecture and investment decision evaluating plausible impact and uncertainty only after non-negotiable safety, authority and compliance gates are satisfied.
 **Rollback boundary.** The distinction between reverting software exposure for future work and preserving already committed or uncertain external business effects.
 **Security and assurance perspective.** Review of adversarial behavior, least privilege, protection, policy and independently verifiable enforcement.
 **Security falsifier.** Reproducible attack input and expected independent denial point, accompanied by checks for absent downstream effects within a stated test boundary.

@@ -18,7 +18,7 @@ checks={
  'Read-only observer SQL and output allowlist': all(k in source for k in ('?mode=ro','PRAGMA query_only=ON','as_record','READ_ONLY_RECONCILE_OR_ESCALATE','expected_epoch')) and not any(x in source for x in ('from adapter import','from workflow import','from client import','provider.send(','.executescript(')),
  'Reader educational docs and diagram': '![Chapter 30 source/module architecture and read-only trust boundary](architecture.svg)' in readme and 'not Build 6' in readme and 'Build 4' in readme and 'Build 5' in readme,
  'Handoff and evidence register': all('Chapter 30' in (R/p).read_text() for p in ('examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md','examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md','references/source-register.md','metadata/topic-traceability.md')),
- 'Book status and navigation': 'Chapters 1–33 developed' in (R/'book.yaml').read_text() and 'Incident response and quarantine' in (R/'manuscript/backmatter/index.md').read_text(),
+ 'Book status and navigation': 'Chapters 1–34 developed' in (R/'book.yaml').read_text() and 'Incident response and quarantine' in (R/'manuscript/backmatter/index.md').read_text(),
 }
 for i in (1,2,3):
  stem=f'F30-{i:02d}'

@@ -98,7 +98,7 @@ def main():
   for table in doc.tables:
    if not table.rows:continue
    head=table.rows[0].cells[0].text.strip()
-   if head not in {'Field / decision','Gate','Release claim'}:continue
+   if head not in {'Field / decision','Gate','Release claim','Cost or exposure','Measure','Scenario and possible impact','Decision'}:continue
    for i,row in enumerate(table.rows):
     trPr=row._tr.get_or_add_trPr()
     if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))

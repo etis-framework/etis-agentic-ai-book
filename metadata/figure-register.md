@@ -107,3 +107,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F33-01 | architecture | Candidate evidence and release approval remain separate from independent E5 financial authorization | `assets/shared-figures/sources/F33-01.svg` | `assets/shared-figures/rendered/F33-01.png` | SVG/render visual and native Mac proof |
 | F33-02 | state machine | Approved bounded activation, pauses and retirement cannot replay effects | `assets/shared-figures/sources/F33-02.svg` | `assets/shared-figures/rendered/F33-02.png` | SVG/render visual and native Mac proof |
 | F33-03 | decision | Rollback and UNKNOWN original operation reconciled without payment replay | `assets/shared-figures/sources/F33-03.svg` | `assets/shared-figures/rendered/F33-03.png` | SVG/render visual and native Mac proof |
+
+
+## Chapter 34 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Publication gate |
+|---|---|---|---|---|---|
+| F34-01 | economic architecture | Complete lifecycle cost divided by acceptable completed outcomes, not model calls | `assets/shared-figures/sources/F34-01.svg` | `assets/shared-figures/rendered/F34-01.png` | SVG/PNG visual and native Mac proof |
+| F34-02 | sensitivity/capacity model | Model benefit competes with staffing, risk and recovery load while E5 is a hard gate | `assets/shared-figures/sources/F34-02.svg` | `assets/shared-figures/rendered/F34-02.png` | SVG/PNG visual and native Mac proof |
+| F34-03 | investment decision | Hard enforcement/reconciliation prerequisite before conditional pilot/scale/retire choice | `assets/shared-figures/sources/F34-03.svg` | `assets/shared-figures/rendered/F34-03.png` | SVG/PNG visual and native Mac proof |

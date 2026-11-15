@@ -1,5 +1,7 @@
 # Chapter 26 — Build 4: Provider Integration and Reconciliation
 
+> **Agentic-system emphasis:** The provider adapter must be insensitive to how persuasive or autonomous the agent's proposed action was. Once an effect has possibly occurred, only trusted original-operation evidence—not a fresh model plan—may justify reconciliation and any subsequent business disposition.
+
 Part IV: Progressive Reference Implementation
 
 > **Engineering proposition:** A financial adapter must express an actual provider's contract and its uncertainty, not conceal them. A local dispatch record proves intent, a successful transport call is not necessarily business truth, and an absent status response cannot authorize a new refund.

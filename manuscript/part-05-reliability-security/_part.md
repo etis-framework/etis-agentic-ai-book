@@ -1,5 +1,7 @@
 # Part V — Reliability, Security and Recovery
 
+**Engineering thread — Secure, verify and operate.** Agent decisions can continue under bounded uncertainty; consequential payments cannot. Recovery, adversarial testing and incident tooling must show that independent business authority survives compromised advice, missing acknowledgment and incomplete telemetry.
+
 ## When correct boundaries meet partial failure
 
 Parts I–III established the distinction between an advisory recommendation, an independently trusted authorization decision, durable operational intent, and authoritative business truth. Part IV exercised those distinctions in six executable checkpoints. **Part V asks whether the same controls still hold when components crash, requests are duplicated, observers disagree, credentials are abused, and recovery happens under pressure.** A correct happy path is not enough: the hardest failures happen between a durable local decision and a consequential remote effect.

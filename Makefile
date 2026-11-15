@@ -1,5 +1,6 @@
 .PHONY: check figures check-figures chapter book-docx book-pdf book-html qa
 check:
+	python3 publishing/scripts/check_publishing_identity.py
 	python3 publishing/scripts/check_part4_capstone.py
 	python3 publishing/scripts/check_backmatter_integrity.py
 	python3 publishing/scripts/check_backmatter_publication.py
@@ -50,6 +51,7 @@ check:
 	python3 publishing/scripts/check_assurance_handoff.py
 	python3 publishing/scripts/check_deep_wargame_code_contract.py
 	python3 publishing/scripts/check_reader_companion_access.py
+	python3 publishing/scripts/check_reader_evidence_freshness.py
 	python3 publishing/scripts/check_companion_code_quality.py
 	python3 -m unittest discover -s examples/refund-reference-system/build0 -p "test_*.py" -v
 	python3 -m unittest discover -s examples/refund-reference-system/build1 -p "test_*.py" -v

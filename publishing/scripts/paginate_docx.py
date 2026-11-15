@@ -107,13 +107,13 @@ for i,sec in enumerate(doc.sections):
  h=sec.header.paragraphs[0];h.text=''
  if typ=='main':
   sec.different_first_page_header_footer=True
-  h.text='ETIS  •  Engineering Trustworthy Agentic AI Systems'
+  h.text='ETIS  •  Engineering Agentic AI Systems'
   h.style='Normal'
   # First-page footer must carry the chapter-opening page number.
   fp=sec.first_page_footer;fp.is_linked_to_previous=False
   p=fp.paragraphs[0];p.text='';p.alignment=2;field(p,'PAGE')
  elif title not in {'Contents','Preface','Introduction','How to use this book'}:
-  h.text='ETIS  •  Engineering Trustworthy Agentic AI Systems'
+  h.text='ETIS  •  Engineering Agentic AI Systems'
 
 # Visible draft contents: unlike an unpopulated Word field, entries always show.
 # Entries are inserted BEFORE the paragraph carrying the next-section break.

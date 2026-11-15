@@ -1,7 +1,7 @@
 # Copyright
 
-**Engineering Trustworthy Agentic AI Systems**  
-*Enterprise Architecture, Implementation, Governance, and Operational Trust*
+**Engineering Agentic AI Systems**  
+*Build, Secure, Verify, and Operate Trustworthy AI Agents*
 
 ETIS Professional Computing Series  
 **Publication metadata — pending confirmation**

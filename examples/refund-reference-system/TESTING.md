@@ -62,7 +62,7 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build3 -p 
 | Incomplete frame / slow trickle | Worker resumes within total 0.75-second framing deadline | No operation created | Single-worker bounded delay, not flood resilience |
 | Oversized frame | Rejected before approval processing | No operation created | Bounded memory and framing; no per-principal rate limiter |
 
-The fixture does not prove production-grade OS confinement, finance approval issuer security, revocation, real provider idempotency or reconciled payment truth. Ch26 adds provider-specific contracts; Ch29/31 repeat adversarial verification with a stronger deployment threat model.
+The fixture does not prove production-grade OS confinement, finance approval issuer security, revocation, real provider idempotency or reconciled payment truth. Ch26 adds provider-specific contracts; Chapters 29 and 31 add adversarial and cross-build evidence; their local fixture tests do not establish stronger production deployment isolation.
 
 
 ## Chapter 26 / Build 4 — provider contract and reconciliation
@@ -76,11 +76,11 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build5 -p 
 
 ## Part IV completion/assurance boundary
 
-The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **109 passing test cases are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.
+The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **153 current local regression cases across ten suites are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.
 
 ## Cross-part assurance handoff (Chapters 28–31)
 
-See [ASSURANCE_HANDOFF_CH28_CH31.md](ASSURANCE_HANDOFF_CH28_CH31.md) for exact named-test navigation, current bounded guarantees, and future adversarial, operational and verification obligations. This is a **planned evidence bridge**, not an assertion that Chapters 29–31, production telemetry, real provider guarantees, or execution-boundary E2 epoch checks exist today.
+See [ASSURANCE_HANDOFF_CH28_CH31.md](ASSURANCE_HANDOFF_CH28_CH31.md) for exact named-test navigation, current bounded guarantees, and future adversarial, operational and verification obligations. Chapters 28–31 now have developed, runnable local fixtures; the handoff records their scope. This is **not** evidence of production telemetry, independently protected credentials, real provider guarantees, or E5-side enforcement of E2 owner epochs.
 
 ## Chapter 29 adversarial regression (valid E1 token, no finance grant)
 

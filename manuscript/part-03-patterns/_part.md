@@ -1,5 +1,7 @@
 # Part III — Patterns and Architectural Decisions
 
+**Engineering thread — Build with judgment.** A deterministic design can be more trustworthy than unnecessary autonomy. Every pattern must defend its delegated scope, cost, failure behavior and evidence requirements, not merely its sophistication.
+
 ## From a reference architecture to defensible choices
 
 Part II ended with a vendor-neutral, target-state logical reference architecture (Figure 8.1) and its possible deployment realizations (Chapter 16). It established **what must remain true**: authenticated and scoped work, one accountable workflow owner, advisory reasoning, provenance-bearing context, independent consequential authorization, controlled integration, durable state, authoritative business records, and observable assurance. Part III addresses a different question: **which design patterns are sufficient, and under which assumptions?** An architecture can be coherent while still being unnecessarily elaborate, financially unsustainable, or unsuitable for a particular provider or risk profile.

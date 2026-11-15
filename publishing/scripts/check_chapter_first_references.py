@@ -25,13 +25,14 @@ EXPLANATION = {
     32: ("CASE-204", "RF-1042"),
     33: ("CASE-204", "RF-1042"),
     34: ("CASE-204", "RF-1042"),
+    35: ("CASE-204", "RF-1042"),
 }
 errors = []
 checked = 0
 for path in sorted(MANUSCRIPT.glob("part-*/ch*/index.md")):
     number = int(path.parent.name[2:4])
     text = path.read_text(encoding="utf-8")
-    if number > 34 or "STATUS: PLANNED / NOT DRAFTED" in text:
+    if number > 35 or "STATUS: PLANNED / NOT DRAFTED" in text:
         continue
     checked += 1
     match = re.search(r"^## Learning objectives\s*\n\s*([^\n]+)", text, flags=re.M)

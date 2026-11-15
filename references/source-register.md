@@ -400,3 +400,8 @@ Chapter 32 adds no new external empirical claims or invented citations. Before r
 | §§34.5–34.7 | Existing Builds 0–5, security, reliability, operations, assurance fixtures and companion READMEs | Tests establish bounded simulation evidence only; no real invoices, staffing telemetry, live provider, release policy or ROI tracking |
 
 **Publication source gate:** verify edition/precise passage of the existing NIST AI RMF reference and provide real enterprise observations before making empirical or production claims. No new external bibliographic entry is asserted in this chapter.
+
+
+## Chapter 35 — contracts, schemas and reference artifacts
+
+Chapter 35 consolidates the original ETIS architecture, the Chapters 22–31 educational implementation, and the existing Chapter 32–34 decision artifacts. It makes no claim that a new external standard certifies the schema crosswalk. The source of truth for executed fixture behavior is `examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md` plus checked-in source and negative tests; production enforcement and source-page verification remain separate. No new external citation was introduced.

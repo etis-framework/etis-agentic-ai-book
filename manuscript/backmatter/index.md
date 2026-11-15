@@ -1,6 +1,6 @@
 # Working subject index
 
-*Development edition: alphabetical chapter/section locators, not final print-page numbers.* This provisional navigation aid is regenerated and reviewed as chapters are written. Final page locators and cross-references will be prepared after source freeze and native 7 × 10 pagination. Planned chapters do not receive invented references.
+*Development edition: alphabetical chapter/section locators, not final print-page numbers.* This provisional navigation aid is regenerated and reviewed as chapters are written. Final page locators and cross-references will be prepared after source freeze and native 7 × 10 pagination. Unwritten material receives no invented references.
 
 - **Acceptable completed workflow**: Chapter 34 §§34.1–34.3; Table 34.2.
 - **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
@@ -25,6 +25,7 @@
 - **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
+- **Contract lookup and failure meanings**: Chapter 35 §35.2, Table 35.1; Appendix A.
 - **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
 - **Cost per acceptable completed workflow**: Chapter 34 §§34.2–34.3; Table 34.1; Figure 34.1.
 - **Crash-point matrix**: Chapter 28 §28.4.
@@ -58,6 +59,7 @@
 - **Provider truth (E8)**: Chapters 14–15, 20, 22, 25–28.
 - **Reconciliation (C08)**: Chapters 2, 14–15, 20, 22, 25–28.
 - **Recovery authority**: Chapter 28 §§28.7–28.9.
+- **Reference artifacts and schema crosswalk**: Chapter 35 §35.3, Table 35.2; Appendix B.
 - **Release acceptance and stop rules**: Chapter 31 §§31.5–31.6; Figure 31.3.
 - **Release candidate manifest**: Chapter 33 §33.2; Table 33.1; Figure 33.1.
 - **Release readiness and promotion gates**: Chapter 33 §§33.3–33.5; Tables 33.1–33.2.
@@ -66,6 +68,7 @@
 - **Rollback and UNKNOWN effect**: Chapter 33 §§33.6–33.7; Runbook 33-A; Figure 33.3.
 - **Security and trust boundaries**: Chapters 6, 9, 13, 16, 23–28.
 - **Security falsifier**: Chapter 29 §29.7; Table 29.3.
+- **Selective professional reading paths**: Chapter 35 §35.7; Appendix B.
 - **Sensitivity and human review capacity**: Chapter 34 §34.5; Figure 34.2.
 - **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.

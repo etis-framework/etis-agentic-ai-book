@@ -168,6 +168,14 @@
       "see_also": []
     },
     {
+      "term": "Contract lookup and failure meanings",
+      "locator": "Chapter 35 §35.2, Table 35.1; Appendix A.",
+      "aliases": [
+        "contract failures"
+      ],
+      "see_also": []
+    },
+    {
       "term": "Coordination ownership (E2)",
       "locator": "Chapters 10, 18, 27. See also *Durable operational state (E7)*.",
       "aliases": [
@@ -386,6 +394,14 @@
       "see_also": []
     },
     {
+      "term": "Reference artifacts and schema crosswalk",
+      "locator": "Chapter 35 §35.3, Table 35.2; Appendix B.",
+      "aliases": [
+        "schema crosswalk"
+      ],
+      "see_also": []
+    },
+    {
       "term": "Release acceptance and stop rules",
       "locator": "Chapter 31 §§31.5–31.6; Figure 31.3.",
       "aliases": [
@@ -443,6 +459,14 @@
       "see_also": [
         "Compromised bounded investigator"
       ]
+    },
+    {
+      "term": "Selective professional reading paths",
+      "locator": "Chapter 35 §35.7; Appendix B.",
+      "aliases": [
+        "entry points"
+      ],
+      "see_also": []
     },
     {
       "term": "Sensitivity and human review capacity",

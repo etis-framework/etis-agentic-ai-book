@@ -104,6 +104,22 @@ def main():
     if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
     if i==0 and trPr.find(qn('w:tblHeader')) is None:
      repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');trPr.append(repeat)
+  # Chapter 35 contract crosswalk is a printed lookup table: preserve complete
+  # source paths and readable independent-evidence columns at 7x10.
+  from docx.shared import Inches,Pt
+  for table in doc.tables:
+   if not table.rows or table.rows[0].cells[0].text.strip() != 'Record family and key fields':continue
+   table.autofit=False
+   for row in table.rows:
+    for i,cell in enumerate(row.cells):
+     cell.width=Inches((1.66,2.30,1.74)[i])
+     for para in cell.paragraphs:
+      for run in para.runs:run.font.size=Pt(8.4)
+   for i,row in enumerate(table.rows):
+    trpr=row._tr.get_or_add_trPr()
+    if trpr.find(qn('w:cantSplit')) is None:trpr.append(OxmlElement('w:cantSplit'))
+    if i==0 and trpr.find(qn('w:tblHeader')) is None:
+     hd=OxmlElement('w:tblHeader');hd.set(qn('w:val'),'true');trpr.append(hd)
   doc.save(dest)
  if args.format=='docx' and not args.chapter:
   subprocess.run([sys.executable,str(ROOT/'publishing/scripts/paginate_docx.py'),str(dest)],check=True)

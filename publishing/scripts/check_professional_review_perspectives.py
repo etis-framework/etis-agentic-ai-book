@@ -25,8 +25,12 @@ for n in range(1, 30):
     if 22 <= n <= 29:
         headings = re.findall(r'^## (.+)$', text, re.M)
         check(('multi-perspective architecture review' in text.lower() or 'professional review' in text.lower()), f'Chapter {n} lacks a multi-perspective architecture review')
-        for term in ('implementing engineer', 'enterprise architect', 'security', 'SRE', 'business owner'):
+        for term in ('implementing engineer', 'enterprise architect', 'security', 'business owner'):
             check(term.lower() in text.lower(), f'Chapter {n} review lacks {term}')
+        # The role may be written out for readers instead of abbreviated as SRE.
+        # Accept either; do not require an acronym in otherwise clear textbook prose.
+        check(bool(re.search(r'\bSRE\b|\bsite[- ]reliability\b|\bsite reliability and operations\b', text, re.I)),
+              f'Chapter {n} review lacks SRE/site-reliability perspective')
         check('six-lens' not in text.lower(), f'Chapter {n} exposes internal six-lens QA label')
         check(not re.search(r'^## [^\n]*war.game', text, re.M|re.I),
               f'Chapter {n} exposes internal war-game as reader-facing section heading')
@@ -45,5 +49,5 @@ if ERRORS:
     for issue in ERRORS:
         print('FAIL:', issue)
     raise SystemExit(1)
-print('PASS: reader-facing professional review perspectives, Chapters 1–29; '
+print('PASS: reader-facing professional review perspectives, Chapters 1–30; '
       'Part IV professional roles separated from internal student QA')

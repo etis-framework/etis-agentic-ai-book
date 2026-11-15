@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to: (1) frame an agentic business case around a measurable outcome and counterfactual; (2) compare deterministic, advisory, and bounded-agent designs without changing their authorization boundary; (3) calculate expected net value and cost per *correctly resolved* case; (4) account for review, rework, exception, recovery, and change costs; (5) design a pilot with decision thresholds and evidence; and (6) determine when to expand, contain, or stop delegation.
 
+**Reader orientation for the alternatives.** Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 5.1 Start with the outcome, not the technology
 
 Chapters 1–4 established the system obligation, historical inheritance, decision rights, and the difference between a model and an agent. Economic judgment is the next gate. The enterprise should first state what is wrong with the existing process: delayed resolution, inconsistent evidence gathering, rework, customer dissatisfaction, or cost. The proposal is then a hypothesis: bounded interpretation or investigation might improve one of those outcomes **without weakening the controls that make the result legitimate**.

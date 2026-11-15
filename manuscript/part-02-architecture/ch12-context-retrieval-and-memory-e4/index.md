@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to (1) distinguish source records, retrieved context, summaries, model working state, and durable workflow state; (2) design purpose-scoped retrieval using identity, tenant, case, and data-policy controls; (3) describe **provenance**—where information came from and how it was obtained—and **freshness**—whether it is recent enough for a stated use; (4) recognize prompt injection and cross-tenant leakage at the retrieval boundary; (5) define memory lifetime, revocation, retention, and correction rules; and (6) test context quality separately from financial authorization and payment outcomes.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 12.1 From the proposal contract to defensible evidence
 
 Figure 8.1 locates E4 as scoped evidence for E3, not as an independent business authority. Chapter 9 established who may submit `CASE-204` and what resources are in scope. Chapter 10 assigned durable ownership of the admitted investigation. Chapter 11 described the typed recommendation that agent reasoning and proposals (E3) may return. We now examine the evidence on which that recommendation depends: **context and retrieval (E4)**. A structured proposal with perfect field names is still wrong if it cites another customer's order, a superseded policy, or a generated summary that conceals a contrary fact.

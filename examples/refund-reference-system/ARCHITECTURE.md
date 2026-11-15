@@ -35,7 +35,7 @@ Chapter 24 / F24-01 separates issuer claims, verified **fixture** scope, scoped 
 
 ## Source-level architecture views — Builds 0–5
 
-Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), [`build3/architecture.svg`](build3/architecture.svg), [`build4/architecture.svg`](build4/architecture.svg), and [`build5/architecture.svg`](build5/architecture.svg). The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) distinguishes the logical architecture path from the runnable Build 5 path and maps negative tests and omitted guarantees. These show *actual Python modules and fixture stores*, not CAB-001's required physical deployment layout. They must be inspected and updated with code changes.
+Each build README embeds its checked-in `architecture.svg`: [`build0/architecture.svg`](build0/architecture.svg), [`build1/architecture.svg`](build1/architecture.svg), [`build2/architecture.svg`](build2/architecture.svg), [`build3/architecture.svg`](build3/architecture.svg), [`build4/architecture.svg`](build4/architecture.svg), and [`build5/architecture.svg`](build5/architecture.svg). The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) distinguishes the logical architecture path from the runnable Build 5 path and maps negative tests and omitted guarantees. These show *actual Python modules and fixture stores*, not ETIS reference architecture's required physical deployment layout. They must be inspected and updated with code changes.
 
 ### Build 3 — separately executed trusted-execution (E5) request gate
 
@@ -53,3 +53,7 @@ Build 4 retains the **independently checked E5 request-path service**, reusing B
 ![Build 5 actual source/module architecture](build5/architecture.svg)
 
 `build5/coordinator.py` owns **only E2/C02** local durable work identity, a SQLite transactional lease, increasing epoch and one-time execute-intent decision; `runner.py` delegates its single selected `execute` or status-only `reconcile` action to the unchanged Build 4 E5 socket. E5 still validates E1 identity and an independent case-specific finance grant before E7 claim and E6/mock E8 work. A valid E2 lease is **not** an E5 authorization, and an E2 `CONFIRMED` is not direct provider proof. Build 5 fences E2 database mutation, **not E5 execution by stale workers**; full distributed fencing, protected service principals, independent reconciliation roles and real provider verification remain outside the educational fixture. See [Build 5 README](build5/README.md) for exact code, evidence and omissions.
+
+## Chapter 30 operations observer
+
+The separate `operations/` directory has a README-embedded source/module `architecture.svg`, `incident.py` and 14 tests. It observes Build 5 E2 and Build 4 E7 persistent state without importing E5/E6 effect interfaces. Synthetic E8 evidence is a parameter, never authoritative financial proof; `Finding` is an E9-oriented operator recommendation, not a grant or C07 command. See Chapter 30 Figure 30.1 and `IMPLEMENTATION_EVIDENCE_MAP.md`.

@@ -67,7 +67,7 @@ A sound decomposition allocates each requirement to an **enforcer**, an **observ
 
 A contract identifies the producer and consumer, the authorized principal, the scope and versions, the permitted state transition, and what happens on rejection, delay, duplication, or missing acknowledgment. A typed proposal might include a case identifier, evidence references, a suggested disposition, a confidence or uncertainty description, and a producer version. It must not include an executable payment credential or masquerade as a signed approval. Messaging and integration contracts provide useful background (Hohpe and Woolf, 2003), while the particular ETIS boundaries remain design prescriptions.
 
-CAB-001 defines nine cross-domain interface contracts; these are **logical contracts**, not separately deployed services. The names below retain the approved baseline rather than introducing a new taxonomy.
+The architecture defines nine cross-domain contracts; these are **logical contracts**, not separately deployed services. The names below retain the approved baseline rather than introducing a new taxonomy.
 
 **Table 8.2 — C01–C09 cross-domain contract map.**
 
@@ -83,9 +83,9 @@ CAB-001 defines nine cross-domain interface contracts; these are **logical contr
 | **C08 Reconciliation** | E7/E5/E8 (bidirectional) | Resolve by stable operation reference, or retain UNKNOWN |
 | **C09 Telemetry** | All E1 through E8 → E9 | Correlate evidence, versions, costs, events, effect state and ownership |
 
-**C04 identity semantics:** CAB-001 C04 `operation_id` correlates an E3 proposal; `idempotency intent` requests duplicate-safe handling. Neither is `RF-1042`, a provider key, or financial permission. Following C05 authorization, E5/E7 assigns and persists `RF-1042` under C06. Trusted integration maps provider-specific keys under C07.
+**C04 identity semantics:** the action-proposal contract (C04) `operation_id` correlates an E3 proposal; `idempotency intent` requests duplicate-safe handling. Neither is `RF-1042`, a provider key, or financial permission. Following C05 authorization, E5/E7 assigns and persists `RF-1042` under C06. Trusted integration maps provider-specific keys under C07.
 
-**CAB-001** retains field-level definitions; the Appendix summarizes them. An identifier grants no authority or proof of effect.
+**The reference architecture** retains controlled definitions; the Appendix summarizes them. An identifier grants no authority or proof of effect.
 
 A trusted effect request requires different evidence: the authorized principal, case and tenant, current policy and approval, amount, operation identity, durable intent, and an auditable outcome. The authorization decision must be revalidated at the consequential boundary rather than inferred from a previously successful read or from the proposal's plausibility.
 

@@ -12,7 +12,7 @@ After this chapter, readers should be able to locate the main failure windows ac
 
 The case is **CASE-204**, a replacement complaint for which a **$500 refund** may be proposed. The independently approved consequential operation is **RF-1042**. Chapter 27's optional Build 5 coordinator can acquire bounded ownership, durably mark that an attempt may be in progress, call the Build 4 trusted-execution service, and recover after an ambiguous response. But Build 5 cannot establish financial truth from its own lease record. If a provider performs the refund and the acknowledgment disappears, durable operational state (E7) may record `UNKNOWN` while authoritative business systems (E8) hold the actual `CONFIRMED` effect. Both records can be internally honest while differing temporarily.
 
-Any distributed system can lose a response after a remote effect. Agentic designs increase risk when fluent summaries or eager replacement workers are mistaken for proof. The objective is **controlled uncertainty**, not automatic success: an unresolved review is preferable to an unauthorized second $500 credit. General transaction/distribution principles are drawn from Gray and Reuter and Kleppmann; CASE-204's policy is an ETIS construct.
+Any distributed system can lose a response after an external effect. Agentic systems add probabilistic proposals, delegated tool use and replacement workers whose fluent summaries can be mistaken for payment proof. The objective is **controlled uncertainty**, not automatic success: an unresolved review is preferable to an unauthorized second $500 credit. General transaction/distribution principles are drawn from Gray and Reuter and Kleppmann; CASE-204's policy is an ETIS construct.
 
 Part IV established a local ownership protocol in coordination and ownership (E2) and an independently guarded trusted-execution service (E5). This chapter deliberately does **not** introduce a new Build 6 or an extra autonomous component. Instead, it stress-tests the existing example and states the additional production controls required to strengthen its guarantees.
 
@@ -146,7 +146,7 @@ The **multi-perspective architecture review** should ask the following questions
 
 **Security and assurance reviewer.** Can a valid agent token, stale lease, forged provider proof, or untrusted C04 text reach privileged E6 credentials? E5 must reject missing finance authorization. The stale-lease/E5 gap and real service isolation remain explicit open risks, not falsely claimed protections.
 
-**SRE and operations reviewer.** How will an operator diagnose a crash after remote success, prove that the retained request key is still recognized, and restore service without paying twice? Name the telemetry, reconciliation evidence, quarantine trigger, and escalation owner. Chapter 30 expands these operational requirements.
+**Site reliability and operations reviewer.** How will an operator diagnose a crash after remote success, prove that the retained request key is still recognized, and restore service without paying twice? Name the telemetry, reconciliation evidence, quarantine trigger, and escalation owner. Chapter 30 expands these operational requirements.
 
 **Business owner.** Who explains to the customer why a $500 refund is delayed? Under what evidence can it be described as completed? Who may approve a compensating action? A plausible screen summary is not a financial record.
 

@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to (1) distinguish logical workflow ownership from the process currently executing it; (2) separate admission, capability discovery, task assignment, authoritative state, and financial authorization; (3) design deterministic coordinator decisions and bounded worker handoffs; (4) explain leases, epochs, and fencing under coordinator failure; (5) trace a lost acknowledgment without creating a second refund; and (6) specify operational tests and evidence for a recoverable coordination architecture.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 10.1 From admitted work to accountable progress
 
 The target-state map in Figure 8.1 locates coordination and workflow ownership (E2) as accountable for progress, not payment authority. Chapter 9 established the authenticated, purpose-limited admission envelope for `CASE-204`. The customer reports a missing replacement and requests a **$500 refund**. Admission and identity (E1) establishes the tenant, principal, case binding, permitted investigation, and expiration. Yet admission does not answer a different question: **who is responsible for moving the case forward when several services, workers, or people participate, and who resumes it after a failure?** That is the work of coordination and ownership (E2).

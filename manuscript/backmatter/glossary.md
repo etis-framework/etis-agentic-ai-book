@@ -1,6 +1,6 @@
 # Glossary
 
-Terms below describe the architecture and developed implementation. The definitions are governed by the corresponding chapters and CAB-001; this reader reference does not introduce new authority or implementation requirements.
+Terms below describe the architecture and developed implementation. The definitions are governed by the corresponding chapters and the ETIS reference architecture; this reader reference does not introduce new authority or implementation requirements.
 
 **Action proposal (C04).** Typed untrusted request and supporting evidence from agent reasoning (E3); a proposal, even if signed or provenance-bearing, is not transaction authorization.
 
@@ -19,10 +19,6 @@ Terms below describe the architecture and developed implementation. The definiti
 **Authorization.** Enforced decision permitting a particular operation under policy, identity, scope, business facts and approval; stronger than authentication.
 
 **Bounded advisory reasoning (E3).** Evidence-based reasoning constrained to proposed actions and traceable outputs without independent execution authority.
-
-**Credential custody.** Control of the creation, storage, use, rotation, revocation and audit of secrets or signing keys, enforced outside lower-trust agents; a source-code import boundary alone does not establish custody.
-
-**Workload identity.** Authenticated service or runtime principal used to obtain purpose-, audience- and time-bounded access; it is not transaction-specific business approval.
 
 **Bounded delegation.** Explicitly limited software discretion over allowed tools, data, steps, cost, duration and actions, with external enforcement and escalation.
 
@@ -44,11 +40,13 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Crash point.** Boundary immediately before or after a durable write, dispatch or external effect at which process death can change what participants know; see Chapter 28.
 
+**Credential custody.** Control of the creation, storage, use, rotation, revocation and audit of secrets or signing keys, enforced outside lower-trust agents; a source-code import boundary alone does not establish custody.
+
 **Cross-domain contract (C01–C09).** Named, independently reviewable responsibility handoff; see the appendix's compact mapping and Chapter 8.
 
 **Decision contract (C05).** Independently evidenced policy and approval decision involving trusted execution (E5) and governance/assurance (E9).
 
-**Design A / B / C.** Alternative deterministic, advisory-assisted and bounded-investigation designs for the same case, not compulsory production maturity levels.
+**Design A / B / C.** Design A is deterministic; Design B uses bounded AI advice under independent review and trusted execution; Design C adds optional bounded agent investigation without payment authority. These alternatives are not compulsory production maturity levels.
 
 **Dispatch claim.** Durable, atomic pre-dispatch assertion of a single operation's right to attempt an effect; not evidence that the provider completed it.
 
@@ -78,6 +76,10 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Implementing engineer perspective.** Examination of executable contracts, code, validation, tests and maintainability, supported by artifacts.
 
+**Incident disposition.** Evidence-qualified operational recommendation to quarantine, inquire, escalate or review an unresolved workflow; not permission to execute a refund.
+
+**Incident observer.** Chapter 30 read-only fixture in `examples/refund-reference-system/operations/incident.py` that classifies synthetic signals and existing Build 4/5 state without issuing an effect; see `operations/test_incident.py`.
+
 **Independent request-path enforcement.** An E5 subprocess checks consequential requests independently of advisory calling code; same-UID fixtures do not imply complete security isolation.
 
 **Lease.** Time-limited coordination claim; expiry enables reassignment but does not by itself stop stale workers from reaching privileged endpoints.
@@ -85,6 +87,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **Logical responsibility and failure zone.** A visualization of responsibilities, contracts, and evidence ownership; not a prescribed process, machine, network, or independent failure domain.
 
 **Mock provider.** Simulated external service and E8 record used for reproducible education, not real settlement or bank truth.
+
+**Observability evidence gap.** Missing, delayed, duplicated or inconsistent telemetry that lowers confidence in reconstructed sequence without proving the absence of a consequential effect.
 
 **Operation identity (RF-1042).** Stable, trusted ID for the separately authorized CASE-204 payment operation; distinct from E3 advisory correlation identifiers.
 
@@ -105,6 +109,9 @@ Terms below describe the architecture and developed implementation. The definiti
 **Security and assurance perspective.** Review of adversarial behavior, least privilege, protection, policy and independently verifiable enforcement.
 
 **Security falsifier.** Reproducible attack input and expected independent denial point, accompanied by checks for absent downstream effects within a stated test boundary.
+
+**Service-level objective (SLO).** Explicitly scoped target for a service indicator, denominator and window; not a substitute for an independent financial correctness invariant.
+
 **SRE/operations perspective.** Review of availability, observability, failure handling, incident response and recoverability.
 
 **System of record.** Authoritative owner of a specified business fact; retrieved context or an AI-generated summary does not replace it.
@@ -117,3 +124,4 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Workflow.** Accountable process coordinating deterministic tasks, agent work, human decisions and recovery; not necessarily agentic.
 
+**Workload identity.** Authenticated service or runtime principal used to obtain purpose-, audience- and time-bounded access; it is not transaction-specific business approval.

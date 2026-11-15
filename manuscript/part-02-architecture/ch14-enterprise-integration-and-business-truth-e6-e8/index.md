@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to (1) separate authorization, integration dispatch, provider acceptance, and confirmed business effects; (2) design a versioned provider contract with explicit failure and idempotency semantics; (3) identify authoritative records for customer, order, payment, and refund facts; (4) reconcile lost acknowledgments without causing duplicate refunds; (5) validate provider callbacks rather than treating them as instant truth; and (6) construct tests that demonstrate integration boundaries under ordinary and adversarial failures.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 14.1 From permission to external consequence
 
 Figure 8.1 distinguishes the governed E6 adapter from E8 authoritative business facts and external payment effects. Chapter 13 established **trusted execution and authority (E5)**: independent authorization, protected payment credentials, durable intent, and the stable refund-operation identity `RF-1042`. The customer in `CASE-204` reports that a replacement never arrived and requests a **$500 refund**. **Design A** remains the deterministic baseline; **Design B** is the conditional production candidate with AI advice and independent review; **Design C** is a bounded, **read-only** investigative alternative, not an approved payment actor. None changes the route to an external financial effect.
@@ -18,7 +20,7 @@ Figure 14.1 separates *who can authorize* from *who can transmit* and *which rec
 
 ![Figure 14.1 — Trusted authorization controls the guarded adapter; authoritative records, not the agent or local dispatch log, establish external effects.](assets/shared-figures/rendered/F14-01.png){#fig:f14-01 width=5.75in}
 
-An **adapter** is an integration component that translates internal operation contracts into a specific provider's protocol and translates provider responses into explicit evidence-bearing observations. A provider interface is not a trustworthy boundary merely because it has an SDK. The adapter is part of the trusted execution path, but does not independently invent a new authorization decision.
+An **adapter** is an integration component that translates internal operation contracts into a specific provider's protocol and translates provider responses into explicit evidence-bearing observations. A provider interface is not a trustworthy boundary merely because it has an software development kit (SDK). The adapter is part of the trusted execution path, but does not independently invent a new authorization decision.
 
 ## 14.2 Specify the provider contract before implementing an SDK call
 

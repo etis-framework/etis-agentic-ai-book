@@ -16,7 +16,7 @@ checks={
  'Actual Build 4 E5 subprocess':"HERE.parent/'build4'/'service.py'" in files['demo.py'],
  'Negative concurrency/recovery and actual E5 test':all(x in files['test_coordination.py'] for x in ('test_concurrent_acquire_has_one_winner','test_crash_after_intent_before_e5_call_does_not_retry','test_stale_owner_cannot_override_new_owner_reconcile','test_direct_run_demonstrations_with_real_e5_subprocess')),
  'Embedded actual source architecture':'(architecture.svg)' in files['README.md'],
- 'Book status and navigation updated':('1–29 developed' in (R/'book.yaml').read_text()) and 'Build 5' in (R/'metadata/topic-traceability.md').read_text(),
+ 'Book status and navigation updated':(bool(re.search(r'Chapters 1–(?:29|3[0-6]) developed', (R/'book.yaml').read_text()))) and 'Build 5' in (R/'metadata/topic-traceability.md').read_text(),
  'Source register coverage':'Chapter 27 source-to-claim' in (R/'references/source-register.md').read_text(),
 }
 try:ET.parse(root/'architecture.svg');checks['Source diagram valid SVG']=True

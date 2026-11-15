@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to (1) separate authentication, case binding, delegation, and consequential authorization; (2) specify an admission contract for a customer-service case; (3) distinguish caller identity from an agent's workload identity; (4) enforce tenant, purpose, resource, tool, time, and budget scopes; (5) design rejection, revocation, and scope-change paths; and (6) demonstrate admission controls with negative tests and reconstructable evidence.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 9.1 Admission is the first enforceable enterprise boundary
 
 Figure 8.1 presents the complete target-state logical architecture; this chapter engineers its E1 admission boundary. Chapter 8 derived nine logical responsibilities from Chapter 7's requirements. E1—**admission and identity**—is the entry point for work, but not the place where a refund becomes authorized. The input may be a customer's message, a case worker's request, or an authenticated enterprise event. Before an agent investigates, the enterprise must establish **who is requesting work, for which tenant and case, under whose delegated authority, for what purpose, and within what constraints**. Otherwise a system can correctly process the wrong customer's records.
@@ -45,7 +47,7 @@ An admitted request needs a durable, inspectable form. The following is a **conc
 | `limits` / `expires_at` | Step, time, cost, and tool-use bounds; fail closed when invalid |
 | `issuer` / `version` / `trace_id` | Who issued the scope, how it is verified, and how to reconstruct it |
 
-The envelope belongs in **durable, authoritative workflow state**, not only in an LLM prompt or a mutable conversation summary. The coordination and ownership responsibility (E2) holds the admitted task and its owner; context and retrieval (E4) supplies scoped evidence; agent reasoning (E3) returns advice or a typed proposal. Each relevant read or tool interface must enforce its own authorization against trusted scope information. Admission and identity (E1) is therefore the start of an enforcement chain, not an all-purpose perimeter that eliminates downstream checks.
+The envelope belongs in **durable, authoritative workflow state**, not only in an large language model (LLM) prompt or a mutable conversation summary. The coordination and ownership responsibility (E2) holds the admitted task and its owner; context and retrieval (E4) supplies scoped evidence; agent reasoning (E3) returns advice or a typed proposal. Each relevant read or tool interface must enforce its own authorization against trusted scope information. Admission and identity (E1) is therefore the start of an enforcement chain, not an all-purpose perimeter that eliminates downstream checks.
 
 The envelope must express **both resource limits and action limits**. “May read order records” is insufficient if a caller can replace the order identifier with another customer's number. “May use a refund tool” is unsafe if one endpoint combines read and write operations behind an optional flag. Tool selection may be dynamic; permission cannot be dynamically invented. A new scope requires a trusted issuer and a recorded authorization decision.
 

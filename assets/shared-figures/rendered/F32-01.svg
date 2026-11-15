@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6" fill="none" stroke="#334155" stroke-width="1.5"/></marker></defs>
+<text x="40" y="46" font-family="DejaVu Sans" font-size="27" font-weight="bold" fill="#102f46">Decision rights and trusted enforcement</text>
+<text x="40" y="73" font-family="DejaVu Sans" font-size="15" fill="#415566">Three distinct authorities: advice, transaction approval, deployment control</text>
+<rect x="40" y="125" width="275" height="132" rx="11" fill="#eff4f7" stroke="#234359" stroke-width="1.5"/>
+<text x="53" y="151" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#234359">Agent / workflow</text>
+<text x="53" y="177" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E1–E4: scoped work</text>
+<text x="53" y="196" font-family="DejaVu Sans" font-size="14.5" fill="#263742">C04: advisory proposal only</text>
+<text x="53" y="215" font-family="DejaVu Sans" font-size="14.5" fill="#263742">No provider credentials</text>
+<rect x="365" y="125" width="280" height="132" rx="11" fill="#e4f3ec" stroke="#17583b" stroke-width="1.5"/>
+<text x="378" y="151" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#17583b">Trusted transaction gate</text>
+<text x="378" y="177" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E5: check case-bound grant</text>
+<text x="378" y="196" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E7: durable intent RF-1042</text>
+<text x="378" y="215" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E6 → E8: controlled effect</text>
+<rect x="695" y="125" width="270" height="132" rx="11" fill="#fdf1df" stroke="#82531f" stroke-width="1.5"/>
+<text x="708" y="151" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#82531f">Finance approval issuer</text>
+<text x="708" y="177" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Authenticated approver + scope</text>
+<text x="708" y="196" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Amount / tenant / policy</text>
+<text x="708" y="215" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Separate from agent identity</text>
+<rect x="40" y="335" width="420" height="130" rx="11" fill="#fdf1df" stroke="#82531f" stroke-width="1.5"/>
+<text x="53" y="361" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#82531f">Enterprise governance (E9)</text>
+<text x="53" y="387" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Release authority, policy versions</text>
+<text x="53" y="406" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Suspension / restoration conditions</text>
+<text x="53" y="425" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Protected assurance evidence</text>
+<rect x="545" y="335" width="420" height="130" rx="11" fill="#eff4f7" stroke="#234359" stroke-width="1.5"/>
+<text x="558" y="361" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#234359">Provider and recovery evidence</text>
+<text x="558" y="387" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E8: actual provider truth</text>
+<text x="558" y="406" font-family="DejaVu Sans" font-size="14.5" fill="#263742">C08: original ID, read-only</text>
+<text x="558" y="425" font-family="DejaVu Sans" font-size="14.5" fill="#263742">UNKNOWN never permits redrive</text>
+<path d="M315 190 L365 190" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M695 190 L645 190" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M460 405 L545 405" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<rect x="35" y="541" width="930" height="42" rx="6" fill="#f1f5f9"/>
+<text x="50" y="566" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#253b4f">A release approval or a human message never bypasses E5 financial authorization.</text></svg>

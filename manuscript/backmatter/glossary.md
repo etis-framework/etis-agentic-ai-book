@@ -2,6 +2,8 @@
 
 Terms below describe the architecture and developed implementation. The definitions are governed by the corresponding chapters and the ETIS reference architecture; this reader reference does not introduce new authority or implementation requirements.
 
+**Accountable governance decision.** A version- and scope-bound approval, denial, suspension or restoration made by an authorized human under an identifiable policy; neither an advisory suggestion nor an automatic financial grant.
+
 **Action proposal (C04).** Typed untrusted request and supporting evidence from agent reasoning (E3); a proposal, even if signed or provenance-bearing, is not transaction authorization.
 
 **Admission and identity (E1).** Authenticates and scopes incoming work under a principal, tenant, purpose and constraints; neither a verified token nor a capability listing grants a refund.
@@ -23,6 +25,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **Bounded advisory reasoning (E3).** Evidence-based reasoning constrained to proposed actions and traceable outputs without independent execution authority.
 
 **Bounded delegation.** Explicitly limited software discretion over allowed tools, data, steps, cost, duration and actions, with external enforcement and escalation.
+
+**Break-glass authority.** Exceptionally scoped, logged emergency privilege; it cannot convert an unknown payment effect into permission to resend.
 
 **Business owner perspective.** Review of value, acceptability, commercial exposure and accountable outcomes; a perspective, not automatic transaction-approval authority.
 
@@ -47,6 +51,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **Cross-domain contract (C01–C09).** Named, independently reviewable responsibility handoff; see the appendix's compact mapping and Chapter 8.
 
 **Decision contract (C05).** Independently evidenced policy and approval decision involving trusted execution (E5) and governance/assurance (E9).
+
+**Decision right.** Authority to decide a defined action within boundaries of role, tenant, policy, transaction and time, subject to separation of duties and revocation.
 
 **Design A / B / C.** Design A is deterministic; Design B uses bounded AI advice under independent review and trusted execution; Design C adds optional bounded agent investigation without payment authority. These alternatives are not compulsory production maturity levels.
 
@@ -76,7 +82,11 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Fixture-verified scope.** Local, signed or otherwise validated educational identity/scope assertion; not equivalent to a production identity provider or business approval.
 
+**Governance policy version.** The identified rules effective for a consequential decision, recorded with its evidence and re-evaluated across material changes.
+
 **Hijacked bounded investigator.** Agent or worker whose advisory execution is attacker-controlled despite a legitimate scoped E1 identity assertion; not automatically entitled to finance operations.
+
+**Human intervention.** Enforceable hold, denial, quarantine or authorized restoration at the appropriate trusted boundary, not merely a message to an agent.
 
 **Idempotency key.** Stable request identity used under a provider's documented scope and retention guarantee to suppress duplicate effects; not a blanket exactly-once guarantee.
 

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6" fill="none" stroke="#334155" stroke-width="1.5"/></marker></defs>
+<text x="40" y="46" font-family="DejaVu Sans" font-size="27" font-weight="bold" fill="#102f46">Human intervention and controlled resumption</text>
+<text x="40" y="73" font-family="DejaVu Sans" font-size="15" fill="#415566">Illustrative runbook sequence; not an implemented companion state machine</text>
+<rect x="35" y="124" width="292" height="107" rx="11" fill="#fdf1df" stroke="#82531f" stroke-width="1.5"/>
+<text x="48" y="150" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#82531f">1. Incident command</text>
+<text x="48" y="176" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Quarantine affected route</text>
+<text x="48" y="195" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Assign finance and security owners</text>
+<rect x="355" y="124" width="292" height="107" rx="11" fill="#e4f3ec" stroke="#17583b" stroke-width="1.5"/>
+<text x="368" y="150" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#17583b">2. Trusted boundary</text>
+<text x="368" y="176" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E5 / E6 disables dispatch</text>
+<text x="368" y="195" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Preserve E7 and E9 records</text>
+<rect x="675" y="124" width="292" height="107" rx="11" fill="#eff4f7" stroke="#234359" stroke-width="1.5"/>
+<text x="688" y="150" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#234359">3. Recovery principal</text>
+<text x="688" y="176" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Read-only C08 on RF-1042</text>
+<text x="688" y="195" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Verify original provider evidence</text>
+<rect x="35" y="335" width="292" height="115" rx="11" fill="#e4f3ec" stroke="#17583b" stroke-width="1.5"/>
+<text x="48" y="361" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#17583b">6. Controlled restore</text>
+<text x="48" y="387" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Reopen eligible future work</text>
+<text x="48" y="406" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Do not replay RF-1042</text>
+<rect x="355" y="335" width="292" height="115" rx="11" fill="#fdf1df" stroke="#82531f" stroke-width="1.5"/>
+<text x="368" y="361" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#82531f">5. Authorized decision</text>
+<text x="368" y="387" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Finance / security / SRE signoff</text>
+<text x="368" y="406" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Record deployment conditions</text>
+<rect x="675" y="335" width="292" height="115" rx="11" fill="#fbe8e8" stroke="#852e39" stroke-width="1.5"/>
+<text x="688" y="361" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#852e39">4. Evidence review</text>
+<text x="688" y="387" font-family="DejaVu Sans" font-size="14.5" fill="#263742">UNKNOWN stays unresolved</text>
+<text x="688" y="406" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Escalate NOT_FOUND or conflict</text>
+<path d="M327 176 L355 176" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M647 176 L675 176" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M820 231 L820 335" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M675 394 L647 394" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M355 394 L327 394" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<rect x="35" y="541" width="930" height="42" rx="6" fill="#f1f5f9"/>
+<text x="50" y="566" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#253b4f">Quarantine and restoration are trusted operational controls, not prompts to agents.</text></svg>

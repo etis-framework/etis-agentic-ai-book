@@ -130,7 +130,7 @@ Negative test coverage must also consider **false confidence**. A passing static
 
 **Enterprise architect.** Where are E5 finance credentials held, and what *actual* process or principal prevents E3 from obtaining them? Does the threat diagram separate logical the ETIS reference architecture boundaries from independently enforced deployment zones? Reject a claim of isolation based solely on `architecture.svg`.
 
-**Advanced student.** Contrast a valid E1 token, a C04 proposal, an E2 lease, and a separately signed C05 finance grant. Only one is the transaction-specific financial approval. Explain why the signed grant still needs scope, freshness and policy validation.
+**Evidence reasoning.** Contrast a valid E1 token, a C04 proposal, an E2 lease, and a separately signed C05 finance grant. Only one is the transaction-specific financial approval. Explain why the signed grant still needs scope, freshness and policy validation.
 
 **Security and assurance reviewer.** Assume E3 is hijacked without assuming E5 has been compromised. Attempt wrong tenant, amount, extra fields, and a valid token with no grant. Then change the threat model to a stolen E5 grant or same-user filesystem access and document which guarantees disappear.
 

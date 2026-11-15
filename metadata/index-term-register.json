@@ -3,6 +3,12 @@
   "locator_type": "chapter/section, not print page",
   "entries": [
     {
+      "term": "Accountable human governance",
+      "locator": "Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Admission and identity (E1)",
       "locator": "Chapters 8–9, 24–25. See also *Authentication and authorization*.",
       "aliases": [
@@ -24,6 +30,12 @@
     {
       "term": "Agent definition and boundaries",
       "locator": "Chapters 3–4, 11, 17.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Approval versus transaction authority",
+      "locator": "Chapter 32 §§32.1–32.4, 32.6; Appendix A.",
       "aliases": [],
       "see_also": []
     },
@@ -167,6 +179,12 @@
       "see_also": []
     },
     {
+      "term": "Decision right and separation of duties",
+      "locator": "Chapter 32 §§32.2–32.4; Table 32.1.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Design A / B / C",
       "locator": "Chapters 3, 7–8, 17, 22–28.",
       "aliases": [],
@@ -235,6 +253,24 @@
       "see_also": []
     },
     {
+      "term": "Federated agentic governance and lifecycle economics",
+      "locator": "Chapter 32 §32.8; Table 32.3.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Governance companion evidence and external obligations",
+      "locator": "Chapter 32 §§32.9–32.10; Table 32.4; Appendix B.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Human intervention and route quarantine",
+      "locator": "Chapter 32 §§32.4, 32.7; Runbook 32-A.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Idempotency and provider contracts",
       "locator": "Chapters 2, 14, 19, 22, 26.",
       "aliases": [],
@@ -282,6 +318,12 @@
       "see_also": [
         "Build 5 — optional coordination"
       ]
+    },
+    {
+      "term": "Policy version, revocation and stale grants",
+      "locator": "Chapter 32 §§32.4–32.5; Table 32.2.",
+      "aliases": [],
+      "see_also": []
     },
     {
       "term": "Provider idempotency retention",

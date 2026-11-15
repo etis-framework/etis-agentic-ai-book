@@ -90,3 +90,12 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F31-01 | assurance architecture | Bounded claims, executable evidence, falsifiers, release owners and external gaps | `assets/shared-figures/sources/F31-01.svg` | `assets/shared-figures/rendered/F31-01.png` | SVG and print-width PNG inspected; native Mac Word gate open |
 | F31-02 | behavioral sequence | Exact unittest method, bounded result, safe output digest and reviewer | `assets/shared-figures/sources/F31-02.svg` | `assets/shared-figures/rendered/F31-02.png` | SVG and print-width PNG inspected; native Mac Word gate open |
 | F31-03 | decision | Block release on absent controls or evidence; only then controlled rollout | `assets/shared-figures/sources/F31-03.svg` | `assets/shared-figures/rendered/F31-03.png` | SVG and print-width PNG inspected; native Mac Word gate open |
+
+
+## Chapter 32 canonical figure suite
+
+| ID | Representation | Semantic claim | Master | Render | Publication gate |
+|---|---|---|---|---|---|
+| F32-01 | architecture | Agent proposal, case-specific finance authorization and enterprise release governance are different authorities | `assets/shared-figures/sources/F32-01.svg` | `assets/shared-figures/rendered/F32-01.png` | Source/render visual review; native Mac Word print open |
+| F32-02 | behavior | Trusted route containment, status-only original-operation inquiry and controlled restoration | `assets/shared-figures/sources/F32-02.svg` | `assets/shared-figures/rendered/F32-02.png` | Source/render visual review; native Mac Word print open |
+| F32-03 | decision | Denial with absent grant; approved RF-1042 and unresolved provider result never redriven | `assets/shared-figures/sources/F32-03.svg` | `assets/shared-figures/rendered/F32-03.png` | Source/render visual review; native Mac Word print open |

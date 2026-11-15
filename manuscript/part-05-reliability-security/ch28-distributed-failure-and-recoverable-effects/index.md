@@ -142,7 +142,7 @@ The **multi-perspective architecture review** should ask the following questions
 
 **Enterprise architect.** Does the E2 lease compose with E5 ownership enforcement? Not yet. The architecture must therefore show the missing trusted epoch-validation seam and state what happens if its authority store is partitioned. The current example must not be relabeled as distributed consensus.
 
-**Advanced student.** Given E2 `EXECUTE_IN_FLIGHT`, E7 `UNKNOWN`, and E8 `NOT_FOUND`, explain why a worker cannot conclude `FAILED`. Then compare that with an E8 `CONFIRMED` record for the wrong operation or amount. The objective is to reason from contracts and evidence, not from optimism.
+**Evidence reasoning.** Given E2 `EXECUTE_IN_FLIGHT`, E7 `UNKNOWN`, and E8 `NOT_FOUND`, explain why a worker cannot conclude `FAILED`. Then compare that with an E8 `CONFIRMED` record for the wrong operation or amount. The objective is to reason from contracts and evidence, not from optimism.
 
 **Security and assurance reviewer.** Can a valid agent token, stale lease, forged provider proof, or untrusted C04 text reach privileged E6 credentials? E5 must reject missing finance authorization. The stale-lease/E5 gap and real service isolation remain explicit open risks, not falsely claimed protections.
 
@@ -150,7 +150,7 @@ The **multi-perspective architecture review** should ask the following questions
 
 **Business owner.** Who explains to the customer why a $500 refund is delayed? Under what evidence can it be described as completed? Who may approve a compensating action? A plausible screen summary is not a financial record.
 
-Across these six lenses, the conclusion is consistent: the educational implementation supports a **bounded, testable recovery principle**, while production release remains conditional on independent approval infrastructure, a verified provider contract, execution-boundary fencing, operational ownership, and real incident evidence.
+Together, these reviews establish a constrained conclusion: the educational implementation supports a **bounded, testable recovery principle**, while production release remains conditional on independent approval infrastructure, a verified provider contract, execution-boundary fencing, operational ownership, and real incident evidence.
 
 ## 28.10 Engineering exercises and transition
 

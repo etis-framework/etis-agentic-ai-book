@@ -185,3 +185,14 @@ Chapters 1–30 are drafted; Chapters 31–36 remain planned. The cross-build [C
 - **Negative-test chain:** Chapter 28 recovery, Chapter 29 E5 actual-subprocess valid-token denial and Chapter 30 incident fixture → `examples/refund-reference-system/assurance/collect.py` seven *named* methods and `assurance/test_collect.py` 12 collector contract tests. Results are local/fixture-scoped; exclusions and falsifiers travel with the evidence item.
 - **Production release blockers:** Chapter 31 §§31.5–31.6 explicitly keep E5 epoch enforcement, OS-secret custody, external provider contract/settlement and protected E9 audit unimplemented or evidence-required. F31-03 does not allow model evaluation performance to offset an unmet safety gate.
 - **Next handoff:** Chapters 32–34 must inherit named approval/rollback owners, provenance and explicit evidence freshness; Chapter 35's detailed contracts remain planned. Independently measured native Word 7×10 pagination, visual print QA and exact source-page verification are still open.
+
+## Chapter 32 — human oversight and accountable governance (developed)
+
+| Claim | Manuscript / figure | Existing executable evidence and production limit |
+|---|---|---|
+| Advice, case approval and deployment authority are distinct | Ch32 §§32.1–32.3; F32-01; Table 32.1 | `security/README.md`, Build 3 E5 subprocess; real independent grant issuer and audit required |
+| Human decision scope, expiry, policy version, revocation | Ch32 §32.4; Table 32.2; F32-03 | Governance record is a design contract only; no protected human grant issuance or revocation implementation |
+| Incident suspension and safe restoration | Ch32 §§32.6–32.7; F32-02; Runbook 32-A | `reliability/README.md`, `operations/README.md`; route kill switch and real provider proof external |
+| Federated accountability, economics and evidence | Ch32 §§32.8–32.10; Tables 32.3–32.4 | `assurance/README.md` and six builds remain educational; E5 owner-epoch checking NOT IMPLEMENTED |
+
+Chapters 33–36 remain planned. V12 allocation of Chapter 32 is 13 finished pages; macOS Word 7×10 measured pagination and external source claims remain publication gates.

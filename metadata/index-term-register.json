@@ -120,6 +120,12 @@
       "see_also": []
     },
     {
+      "term": "Canary activation",
+      "locator": "Chapter 33 §§33.3–33.5; Table 33.2; Figure 33.2.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "CASE-204 ($500 refund)",
       "locator": "Chapters 1–31, especially 3, 8, 22–30.",
       "aliases": [
@@ -364,6 +370,18 @@
       "see_also": []
     },
     {
+      "term": "Release candidate manifest",
+      "locator": "Chapter 33 §33.2; Table 33.1; Figure 33.1.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Release readiness and promotion gates",
+      "locator": "Chapter 33 §§33.3–33.5; Tables 33.1–33.2.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Responsibility boundary",
       "locator": "Chapter 28 §28.2.",
       "aliases": [
@@ -378,6 +396,12 @@
         "refund operation",
         "payment identity"
       ],
+      "see_also": []
+    },
+    {
+      "term": "Rollback and UNKNOWN effect",
+      "locator": "Chapter 33 §§33.6–33.7; Runbook 33-A; Figure 33.3.",
+      "aliases": [],
       "see_also": []
     },
     {

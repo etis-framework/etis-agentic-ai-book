@@ -18,6 +18,7 @@
 - **Build 4 — provider and reconciliation**: Chapter 26; `build4/README.md`.
 - **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.
 - **C01–C09 cross-domain contracts**: Chapter 8; Chapters 9–16; Appendix.
+- **Canary activation**: Chapter 33 §§33.3–33.5; Table 33.2; Figure 33.2.
 - **CASE-204 ($500 refund)**: Chapters 1–31, especially 3, 8, 22–30.
 - **Competing histories**: Chapter 28 §§28.2–28.3.
 - **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1.
@@ -54,8 +55,11 @@
 - **Reconciliation (C08)**: Chapters 2, 14–15, 20, 22, 25–28.
 - **Recovery authority**: Chapter 28 §§28.7–28.9.
 - **Release acceptance and stop rules**: Chapter 31 §§31.5–31.6; Figure 31.3.
+- **Release candidate manifest**: Chapter 33 §33.2; Table 33.1; Figure 33.1.
+- **Release readiness and promotion gates**: Chapter 33 §§33.3–33.5; Tables 33.1–33.2.
 - **Responsibility boundary**: Chapter 28 §28.2.
 - **RF-1042 (trusted operation ID)**: Chapters 2–3, 8, 11, 22–28.
+- **Rollback and UNKNOWN effect**: Chapter 33 §§33.6–33.7; Runbook 33-A; Figure 33.3.
 - **Security and trust boundaries**: Chapters 6, 9, 13, 16, 23–28.
 - **Security falsifier**: Chapter 29 §29.7; Table 29.3.
 - **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.

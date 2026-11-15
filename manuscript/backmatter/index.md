@@ -2,9 +2,11 @@
 
 *Development edition: alphabetical chapter/section locators, not final print-page numbers.* This provisional navigation aid is regenerated and reviewed as chapters are written. Final page locators and cross-references will be prepared after source freeze and native 7 × 10 pagination. Planned chapters do not receive invented references.
 
+- **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
 - **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
 - **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.
 - **Agent definition and boundaries**: Chapters 3–4, 11, 17.
+- **Approval versus transaction authority**: Chapter 32 §§32.1–32.4, 32.6; Appendix A.
 - **Architecture decisions and professional review**: Chapters 7–8, 16–17, 21–31.
 - **Assurance claims and falsifiers**: Chapter 31 §§31.1–31.5; Table 31.1; `assurance/collect.py`.
 - **Authentication and authorization**: Chapters 6, 9, 13, 24–25.
@@ -24,6 +26,7 @@
 - **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
 - **Crash-point matrix**: Chapter 28 §28.4.
 - **Decision contract (C05)**: Chapters 8, 13, 25; Appendix.
+- **Decision right and separation of duties**: Chapter 32 §§32.2–32.4; Table 32.1.
 - **Design A / B / C**: Chapters 3, 7–8, 17, 22–28.
 - **Dispatch claim and durable intent (C06)**: Chapters 13–15, 22, 25–26.
 - **Durable operational state (E7)**: Chapters 15, 20, 22, 25–28.
@@ -34,6 +37,9 @@
 - **Evidence bundle and provenance**: Chapter 31 §§31.3–31.4; Table 31.2; `assurance/README.md`.
 - **Execution-boundary fencing**: Chapter 28 §28.7.
 - **Failure/deployment boundary**: Chapter 28 §28.2; Figure 28.1.
+- **Federated agentic governance and lifecycle economics**: Chapter 32 §32.8; Table 32.3.
+- **Governance companion evidence and external obligations**: Chapter 32 §§32.9–32.10; Table 32.4; Appendix B.
+- **Human intervention and route quarantine**: Chapter 32 §§32.4, 32.7; Runbook 32-A.
 - **Idempotency and provider contracts**: Chapters 2, 14, 19, 22, 26.
 - **Incident response and quarantine**: Chapter 30 §§30.4–30.7; Runbook 30-A.
 - **Independent request-path enforcement**: Chapters 13, 16, 25–27.
@@ -41,6 +47,7 @@
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
 - **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
 - **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`.
+- **Policy version, revocation and stale grants**: Chapter 32 §§32.4–32.5; Table 32.2.
 - **Provider idempotency retention**: Chapter 28 §28.6.
 - **Provider integration (E6)**: Chapters 14, 19, 22, 25–26.
 - **Provider truth (E8)**: Chapters 14–15, 20, 22, 25–28.

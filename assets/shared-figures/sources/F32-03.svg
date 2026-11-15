@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0 0 L7 3 L0 6" fill="none" stroke="#334155" stroke-width="1.5"/></marker></defs>
+<text x="40" y="46" font-family="DejaVu Sans" font-size="27" font-weight="bold" fill="#102f46">Accountable decision: CASE-204</text>
+<text x="40" y="73" font-family="DejaVu Sans" font-size="15" fill="#415566">Gate each authority separately; preserve UNKNOWN provider outcomes</text>
+<rect x="35" y="130" width="278" height="108" rx="11" fill="#eff4f7" stroke="#234359" stroke-width="1.5"/>
+<text x="48" y="156" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#234359">Recommendation received</text>
+<text x="48" y="182" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Design B/C agent: $500 advice</text>
+<text x="48" y="201" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Human note may accompany it</text>
+<rect x="365" y="130" width="278" height="108" rx="11" fill="#e4f3ec" stroke="#17583b" stroke-width="1.5"/>
+<text x="378" y="156" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#17583b">Independent E5 decision</text>
+<text x="378" y="182" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Verify case-bound finance grant</text>
+<text x="378" y="201" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Deny missing / stale / mismatch</text>
+<rect x="695" y="130" width="270" height="108" rx="11" fill="#fbe8e8" stroke="#852e39" stroke-width="1.5"/>
+<text x="708" y="156" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#852e39">Denied or held</text>
+<text x="708" y="182" font-family="DejaVu Sans" font-size="14.5" fill="#263742">No E7 financial intent</text>
+<text x="708" y="201" font-family="DejaVu Sans" font-size="14.5" fill="#263742">No E8 provider effect</text>
+<rect x="365" y="328" width="278" height="115" rx="11" fill="#e4f3ec" stroke="#17583b" stroke-width="1.5"/>
+<text x="378" y="354" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#17583b">Approved and durable</text>
+<text x="378" y="380" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E7 claims RF-1042 once</text>
+<text x="378" y="399" font-family="DejaVu Sans" font-size="14.5" fill="#263742">E6 sends approved operation</text>
+<rect x="695" y="328" width="270" height="115" rx="11" fill="#fdf1df" stroke="#82531f" stroke-width="1.5"/>
+<text x="708" y="354" font-family="DejaVu Sans" font-size="17" font-weight="bold" fill="#82531f">Outcome unresolved?</text>
+<text x="708" y="380" font-family="DejaVu Sans" font-size="14.5" fill="#263742">Query E8 by original RF-1042</text>
+<text x="708" y="399" font-family="DejaVu Sans" font-size="14.5" fill="#263742">UNKNOWN → review, no replay</text>
+<path d="M313 185 L365 185" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M643 185 L695 185" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M500 238 L500 328" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<path d="M643 388 L695 388" stroke="#334155" stroke-width="2.4" fill="none" marker-end="url(#arrow)"/>
+<rect x="35" y="541" width="930" height="42" rx="6" fill="#f1f5f9"/>
+<text x="50" y="566" font-family="DejaVu Sans" font-size="15" font-weight="bold" fill="#253b4f">Human release authority cannot turn an invalid grant or UNKNOWN effect into payment.</text></svg>

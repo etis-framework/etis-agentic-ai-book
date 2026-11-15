@@ -8,7 +8,7 @@ part=(ROOT/'manuscript/part-05-reliability-security/_part.md').read_text()
 checks={
  'chapter complete, within editorial source band':2600<=len(re.findall(r"\b[\w'-]+\b",chapter))<=3900,
  'Part V transition and complete case':all(s in part for s in ('CASE-204','$500','RF-1042','E2','E5','E7','E8','Chapter 31')),
- 'CAB continuity and all six reader lenses':all(s in chapter for s in ('C01','C02','C04','C05','C06','C07','C08','C09','E1','E2','E3','E4','E5','E6','E7','E8','E9','Implementing engineer','Enterprise architect','Advanced student','Security and assurance','Site reliability and operations','Business owner')),
+ 'CAB continuity and professional review plus reasoning exercise':all(s in chapter for s in ('C01','C02','C04','C05','C06','C07','C08','C09','E1','E2','E3','E4','E5','E6','E7','E8','E9','Implementing engineer','Enterprise architect','Evidence reasoning','Security and assurance','Site reliability and operations','Business owner')),
  'no inferred failure from absent provider proof':('UNKNOWN is not FAILED' in chapter and 'NOT_FOUND' in chapter and ('never mint another refund ID' in chapter or 'Never mint another refund identifier' in chapter) and ('does not consume, validate or compare' in chapter or 'does not consume, validate, or compare' in chapter)),
  'Tables and assessment':all(s in chapter for s in ('Table 28.1','Table 28.2','## 28.10','## 28.9')),
  'book status': bool(re.search(r'Chapters 1–(?:29|3[0-6]) developed', (ROOT/'book.yaml').read_text())),

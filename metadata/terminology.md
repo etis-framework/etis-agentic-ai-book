@@ -21,3 +21,6 @@ First-use acronym rule: spell out before abbreviation (e.g., identity and access
 - **E5 independent enforcement**: consequential authorization and controlled dispatch; a process boundary under the same OS identity is not full hostile-process isolation.
 - **RF-1042 trusted payment operation**: E5-controlled stable ID, not a C04 advisory `operation_id`.
 - **Working index**: alphabetical chapter/section navigation while manuscript is developing; final page locators require frozen print proofs.
+
+
+Chapter 32: *decision right*, *accountable governance decision*, *human intervention*, *break-glass authority*, and *governance policy version* are specified governance concepts, not new companion implementation interfaces. Reviewers must distinguish release approval, case-bound finance approval and trusted provider dispatch.

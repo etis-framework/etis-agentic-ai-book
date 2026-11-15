@@ -75,3 +75,15 @@ The example tests establish narrow facts about *local simulated behavior*. They 
 | Is the cross-chapter assurance bundle reproducible? | Chapter 31 registered tests and source digests | Independent attestation, protected E9 audit, agent evaluation and release signoff |
 
 An absent signal is not evidence of no effect. Local hash checks are not protected audit trails. An `EXECUTED_PASS` in a development bundle is not a production approval; `NOT_IMPLEMENTED` and `EXTERNAL_EVIDENCE_REQUIRED` remain visible obligations. Production acceptance must identify accountable owners, evidence provenance, falsification criteria and recovery authority before any consequential financial capability is enabled.
+
+**Governance and approval (Chapter 32).** A release decision and a human manager's message are neither case-bound finance grants nor provider credentials. Figure 32.1 distinguishes agent delegation, independently verified financial authority and enterprise release governance. Figures 32.2–32.3 show controlled containment, read-only reconciliation and transaction denial. Chapter 32 Tables 32.1–32.2 specify human roles and the governance-decision record as **design requirements**, not implemented fixture features. E5 independent approver revocation and owner-epoch validation, protected audit custody, a live route-disable control and real provider evidence remain external production gates.
+
+**Chapter 32 companion navigation (existing fixtures, no Build 6)**
+
+| Governance decision | Companion entry point | Actual boundary |
+|---|---|---|
+| Compromised valid-token investigator | `security/README.md`, `build3/README.md` | Build 3 actual E5 subprocess denies without case-bound finance grant |
+| Unknown provider effect | `reliability/README.md`, `build4/README.md` | Simulated original-operation status lookup; no blind resend |
+| Stale coordination owner | `build5/README.md` | Local E2 fencing only; E5 owner enforcement missing |
+| Incident containment analysis | `operations/README.md` | Read-only local observation, **not** a live route-disable action |
+| Assurance for review | `assurance/README.md` | Local source/test evidence, not signoff or protected E9 audit |

@@ -370,3 +370,14 @@ The published bibliography holds **source entries only**, not chapter reading gu
 | 31 | AI RMF 1.0; NIST SP 800-207; Gray and Reuter (1992); Kleppmann (2017) | Claim matrix, seven-case local evidence collector, falsification exercises | Verify exact edition and passage applicability; independently attest production controls and agent evaluation |
 
 No new external title is introduced by this **back-matter structural revision**. A new claim or newly introduced source in a later chapter must trigger a fresh primary-source review, source-register mapping and a properly formatted bibliography entry. Source existence is not evidence that an engineering guarantee has been independently verified.
+
+## Chapter 32 — human oversight and accountable governance (publication source QA open)
+
+| Claim location | Basis and appropriate scope | Required publication verification |
+|---|---|---|
+| §§32.1–32.3, 32.6 | Original ETIS reference architecture and Chapter 29 Build 3/security harness; transaction identity distinct from grant | Audit precise source/test names and externally protected E5/issuer identity; no production privilege assurance |
+| §§32.4–32.5 | Original ETIS human governance design; NIST AI RMF 1.0 (2023) governance context and NIST SP 800-53 Rev. 5 access/separation concepts | Verify specific normative passages before attributing any described control to NIST; do not assert regulatory certification |
+| §32.7 | Chapter 30 original Runbook 30-A and simulated `operations/` fixture | Validate actual enterprise incident command, protected E5/E6 disablement and C08 provider inquiry before production |
+| §§32.8–32.10 | Original ETIS federated operating model and cost framework; Chapter 31 reproducible educational assurance | No empirical cost improvement or actual human approval/revocation fixture asserted; independent deployment evidence required |
+
+Chapter 32 adds no new external empirical claims or invented citations. Before release, verify exact source passages, current source versions and authoritative provider/policy contracts. Figure 32.1–32.3 inspection and Word-for-Mac 7×10 pagination remain open.

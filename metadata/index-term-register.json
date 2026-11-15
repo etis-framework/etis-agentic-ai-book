@@ -1,5 +1,5 @@
 {
-  "status": "final candidate: live page fields; native Word print proof required",
+  "status": "expanded professional subject index: live book-page references, native Word proof pending",
   "locator_type": "chapter/section anchors used to generate live print page fields",
   "entries": [
     {
@@ -7,6 +7,14 @@
       "locator": "Chapter 34 §§34.1–34.3; Table 34.2.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Access-token validity versus business permission",
+      "locator": "Chapters 13, 25, 29.",
+      "aliases": [],
+      "see_also": [
+        "Authentication and authorization"
+      ]
     },
     {
       "term": "Accountable human governance",
@@ -50,6 +58,22 @@
       ]
     },
     {
+      "term": "Adversarial tests — forged approval",
+      "locator": "Chapter 29.",
+      "aliases": [],
+      "see_also": [
+        "Security falsifier"
+      ]
+    },
+    {
+      "term": "Adversarial tests — prompt injection",
+      "locator": "Chapters 12, 29.",
+      "aliases": [],
+      "see_also": [
+        "Security and trust boundaries"
+      ]
+    },
+    {
       "term": "Advisory correlation",
       "locator": "Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.",
       "aliases": [],
@@ -64,10 +88,34 @@
       "see_also": []
     },
     {
+      "term": "Agent coordination — handoff and replacement",
+      "locator": "Chapters 10, 18, 27.",
+      "aliases": [],
+      "see_also": [
+        "Epoch and lease fencing"
+      ]
+    },
+    {
       "term": "Agent definition and boundaries",
       "locator": "Chapters 3–4, 11, 17.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Agent memory — provenance and retention",
+      "locator": "Chapters 12, 20.",
+      "aliases": [],
+      "see_also": [
+        "Context, retrieval and provenance (E4/C03)"
+      ]
+    },
+    {
+      "term": "Agent registry — readiness and eligibility",
+      "locator": "Chapters 10, 18.",
+      "aliases": [],
+      "see_also": [
+        "Capability registry"
+      ]
     },
     {
       "term": "Agentic AI system",
@@ -88,6 +136,22 @@
       "see_also": []
     },
     {
+      "term": "Architecture — logical versus physical separation",
+      "locator": "Chapters 8, 16.",
+      "aliases": [],
+      "see_also": [
+        "Trust/enforcement boundary"
+      ]
+    },
+    {
+      "term": "Architecture — risk-proportionate isolation",
+      "locator": "Chapters 13, 16, 29.",
+      "aliases": [],
+      "see_also": [
+        "Security and trust boundaries"
+      ]
+    },
+    {
       "term": "Assurance claim",
       "locator": "Chapter 31; Chapter 35.",
       "aliases": [],
@@ -101,6 +165,22 @@
         "falsification"
       ],
       "see_also": []
+    },
+    {
+      "term": "Assurance — negative evidence",
+      "locator": "Chapters 29, 31, 36.",
+      "aliases": [],
+      "see_also": [
+        "Assurance claims and falsifiers"
+      ]
+    },
+    {
+      "term": "Audit trail — source and policy version",
+      "locator": "Chapters 11, 15, 31.",
+      "aliases": [],
+      "see_also": [
+        "Evidence bundle and provenance"
+      ]
     },
     {
       "term": "Authentication",
@@ -180,6 +260,14 @@
       ]
     },
     {
+      "term": "Business outcome versus model output",
+      "locator": "Chapters 1, 3, 34.",
+      "aliases": [],
+      "see_also": [
+        "Cost per acceptable completed workflow"
+      ]
+    },
+    {
       "term": "C01–C09 cross-domain contracts",
       "locator": "Chapter 8; Chapters 9–16; Appendix.",
       "aliases": [],
@@ -190,6 +278,14 @@
       "locator": "Chapter 33 §§33.3–33.5; Table 33.2; Figure 33.2.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Capability discovery versus authorization",
+      "locator": "Chapters 9, 10, 13.",
+      "aliases": [],
+      "see_also": [
+        "Authentication and authorization"
+      ]
     },
     {
       "term": "Capability registry",
@@ -206,6 +302,38 @@
       "see_also": []
     },
     {
+      "term": "CASE-204 — refund investigation",
+      "locator": "Chapters 3, 22, 23, 24.",
+      "aliases": [],
+      "see_also": [
+        "RF-1042 (trusted operation ID)"
+      ]
+    },
+    {
+      "term": "CASE-204 — security denial",
+      "locator": "Chapters 25, 29, 31.",
+      "aliases": [],
+      "see_also": [
+        "Security falsifier"
+      ]
+    },
+    {
+      "term": "CASE-204 — uncertain provider result",
+      "locator": "Chapters 26, 28, 36.",
+      "aliases": [],
+      "see_also": [
+        "UNKNOWN provider outcome"
+      ]
+    },
+    {
+      "term": "Change and release evidence",
+      "locator": "Chapters 31, 33.",
+      "aliases": [],
+      "see_also": [
+        "Release candidate manifest"
+      ]
+    },
+    {
       "term": "Competing histories",
       "locator": "Chapter 28 §§28.2–28.3.",
       "aliases": [],
@@ -219,6 +347,14 @@
       ],
       "see_also": [
         "Valid token versus finance authorization"
+      ]
+    },
+    {
+      "term": "Consequential actions — independent enforcement",
+      "locator": "Chapters 13, 25, 29.",
+      "aliases": [],
+      "see_also": [
+        "Consequential operation and trusted execution (E5)"
       ]
     },
     {
@@ -277,6 +413,22 @@
       "see_also": []
     },
     {
+      "term": "Cost — human review staffing",
+      "locator": "Chapters 32, 34.",
+      "aliases": [],
+      "see_also": [
+        "Sensitivity and human review capacity"
+      ]
+    },
+    {
+      "term": "Cost — recovery and exception work",
+      "locator": "Chapters 30, 34.",
+      "aliases": [],
+      "see_also": [
+        "Cost per acceptable completed workflow"
+      ]
+    },
+    {
       "term": "Crash-point matrix",
       "locator": "Chapter 28 §28.4.",
       "aliases": [],
@@ -289,10 +441,26 @@
       "see_also": []
     },
     {
+      "term": "Data minimization and purpose limitation",
+      "locator": "Chapters 9, 12, 29.",
+      "aliases": [],
+      "see_also": [
+        "Context, retrieval and provenance (E4/C03)"
+      ]
+    },
+    {
       "term": "Decision contract (C05)",
       "locator": "Chapters 8, 13, 25; Appendix.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Decision gate — approve, hold, or retire",
+      "locator": "Chapters 33, 34, 36.",
+      "aliases": [],
+      "see_also": [
+        "Lifecycle investment and retirement"
+      ]
     },
     {
       "term": "Decision right",
@@ -311,6 +479,30 @@
       "locator": "Chapters 3, 7–8, 17, 22–28.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Design A — deterministic workflow",
+      "locator": "Chapters 3, 17, 22.",
+      "aliases": [],
+      "see_also": [
+        "Design A / B / C"
+      ]
+    },
+    {
+      "term": "Design B — advisory assistance",
+      "locator": "Chapters 3, 17, 23.",
+      "aliases": [],
+      "see_also": [
+        "Design A / B / C"
+      ]
+    },
+    {
+      "term": "Design C — bounded agent investigation",
+      "locator": "Chapters 4, 17, 27.",
+      "aliases": [],
+      "see_also": [
+        "Design A / B / C"
+      ]
     },
     {
       "term": "Dispatch claim",
@@ -385,6 +577,22 @@
       "see_also": []
     },
     {
+      "term": "Evidence — scenario reproducibility",
+      "locator": "Chapters 22, 31, 35.",
+      "aliases": [],
+      "see_also": [
+        "Evidence bundle"
+      ]
+    },
+    {
+      "term": "Evidence — source/code/test crosswalk",
+      "locator": "Chapters 31, 35, 36.",
+      "aliases": [],
+      "see_also": [
+        "Reference artifacts and schema crosswalk"
+      ]
+    },
+    {
       "term": "Execution-boundary fencing",
       "locator": "Chapter 28 §28.7.",
       "aliases": [],
@@ -417,6 +625,14 @@
       "see_also": []
     },
     {
+      "term": "Fencing — stale coordinator epoch",
+      "locator": "Chapters 10, 27, 28.",
+      "aliases": [],
+      "see_also": [
+        "Epoch and lease fencing"
+      ]
+    },
+    {
       "term": "Governance companion evidence and external obligations",
       "locator": "Chapter 32 §§32.9–32.10; Table 32.4; Appendix B.",
       "aliases": [],
@@ -441,6 +657,14 @@
       "see_also": []
     },
     {
+      "term": "Human review — meaningful decision rights",
+      "locator": "Chapters 3, 32, 36.",
+      "aliases": [],
+      "see_also": [
+        "Human intervention"
+      ]
+    },
+    {
       "term": "Idempotency and provider contracts",
       "locator": "Chapters 2, 14, 19, 22, 26.",
       "aliases": [],
@@ -453,6 +677,14 @@
       "see_also": []
     },
     {
+      "term": "Identity — tenant and principal scoping",
+      "locator": "Chapters 9, 24, 29.",
+      "aliases": [],
+      "see_also": [
+        "Authentication and authorization"
+      ]
+    },
+    {
       "term": "Incident disposition",
       "locator": "Chapter 30.",
       "aliases": [],
@@ -463,6 +695,14 @@
       "locator": "Chapter 30 §§30.4–30.7; Runbook 30-A.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Incident response — quarantine and restoration",
+      "locator": "Chapters 30, 32, 33.",
+      "aliases": [],
+      "see_also": [
+        "Incident response and quarantine"
+      ]
     },
     {
       "term": "Incremental cost per additional acceptable outcome",
@@ -481,6 +721,14 @@
       "locator": "Chapters 13, 16, 25–27.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Integration adapter — provider contract",
+      "locator": "Chapters 14, 19, 26.",
+      "aliases": [],
+      "see_also": [
+        "Idempotency and provider contracts"
+      ]
     },
     {
       "term": "Lease",
@@ -515,10 +763,26 @@
       "see_also": []
     },
     {
+      "term": "Observability — case reconstruction",
+      "locator": "Chapters 15, 30, 32.",
+      "aliases": [],
+      "see_also": [
+        "Operational observability (C09)"
+      ]
+    },
+    {
       "term": "Operation identity (RF-1042)",
       "locator": "Chapter 24.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Operation ledger — durable intent",
+      "locator": "Chapters 15, 25, 26.",
+      "aliases": [],
+      "see_also": [
+        "Dispatch claim and durable intent (C06)"
+      ]
     },
     {
       "term": "Operational observability (C09)",
@@ -538,10 +802,42 @@
       ]
     },
     {
+      "term": "Partial outcome — reconciliation before retry",
+      "locator": "Chapters 26, 28, 33.",
+      "aliases": [],
+      "see_also": [
+        "UNKNOWN provider outcome"
+      ]
+    },
+    {
       "term": "Policy version, revocation and stale grants",
       "locator": "Chapter 32 §§32.4–32.5; Table 32.2.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Policy — versioning and revocation",
+      "locator": "Chapters 13, 21, 32.",
+      "aliases": [],
+      "see_also": [
+        "Policy version, revocation and stale grants"
+      ]
+    },
+    {
+      "term": "Production limitation — simulated provider",
+      "locator": "Chapters 22, 25, 26, 35.",
+      "aliases": [],
+      "see_also": [
+        "Mock provider"
+      ]
+    },
+    {
+      "term": "Production limitation — unintegrated Build 5",
+      "locator": "Chapters 27, 31, 35.",
+      "aliases": [],
+      "see_also": [
+        "Build 5 — optional coordination"
+      ]
     },
     {
       "term": "Production release gate",
@@ -574,6 +870,14 @@
       "see_also": []
     },
     {
+      "term": "Readiness — progressive activation",
+      "locator": "Chapters 31, 33.",
+      "aliases": [],
+      "see_also": [
+        "Canary activation"
+      ]
+    },
+    {
       "term": "Reconciliation (C08)",
       "locator": "Chapters 2, 14–15, 20, 22, 25–28.",
       "aliases": [],
@@ -591,6 +895,22 @@
       "aliases": [],
       "see_also": [
         "UNKNOWN provider outcome"
+      ]
+    },
+    {
+      "term": "Recovery — acknowledgment loss",
+      "locator": "Chapters 2, 26, 28.",
+      "aliases": [],
+      "see_also": [
+        "UNKNOWN provider outcome"
+      ]
+    },
+    {
+      "term": "Recovery — durable workflow ownership",
+      "locator": "Chapters 10, 27, 28.",
+      "aliases": [],
+      "see_also": [
+        "Coordination ownership (E2)"
       ]
     },
     {
@@ -626,6 +946,14 @@
       "locator": "Chapter 33 §§33.3–33.5; Tables 33.1–33.2.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Release — stop authority",
+      "locator": "Chapters 32, 33.",
+      "aliases": [],
+      "see_also": [
+        "Release readiness and promotion gates"
+      ]
     },
     {
       "term": "Responsibility boundary",
@@ -664,6 +992,22 @@
       ],
       "see_also": [
         "Compromised bounded investigator"
+      ]
+    },
+    {
+      "term": "Security — compromised agent token",
+      "locator": "Chapters 25, 29.",
+      "aliases": [],
+      "see_also": [
+        "Valid token versus finance authorization"
+      ]
+    },
+    {
+      "term": "Security — privilege escalation denial",
+      "locator": "Chapters 13, 25, 29.",
+      "aliases": [],
+      "see_also": [
+        "Independent request-path enforcement"
       ]
     },
     {
@@ -726,10 +1070,26 @@
       ]
     },
     {
+      "term": "Verification — assertion versus evidence",
+      "locator": "Chapters 7, 31, 36.",
+      "aliases": [],
+      "see_also": [
+        "Assurance claims and falsifiers"
+      ]
+    },
+    {
       "term": "Workflow",
       "locator": "Chapter 2; Chapter 15.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Workflow state — confirmed versus unknown",
+      "locator": "Chapters 15, 26, 28.",
+      "aliases": [],
+      "see_also": [
+        "UNKNOWN provider outcome"
+      ]
     },
     {
       "term": "Workload identity",

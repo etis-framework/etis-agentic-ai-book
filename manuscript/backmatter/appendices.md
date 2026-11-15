@@ -62,6 +62,18 @@ Each build includes a source/module architecture SVG embedded in its README and 
 
 The Chapter 28 reliability fixture is an analytical classifier; use Build 4/5 architecture diagrams to study the effectful runtime. The security, operations and assurance READMEs include their own source/module diagrams. For exact commands, test names, educational comments, simulation boundaries and evidence outputs, follow the corresponding README rather than treating this printed reference as an executable manual. Designs A (deterministic baseline), B (bounded AI advice with independent financial review), and C (optional bounded agent investigation) are alternatives, not mandatory sequential runtime stages.
 
+**Release/readiness navigation (Chapter 33; no new build)**
+
+| Release question | Existing companion entry point | What remains unimplemented |
+|---|---|---|
+| Finance gate survives deployment or token misuse | `build3/README.md`, `security/README.md` | Production issuer revocation, live E5 isolation and keys |
+| Lost reply during rollback, no redrive | `build4/README.md`, `reliability/README.md` | Actual provider C08 evidence and controlled rollback |
+| Coordinator ownership across upgrades | `build5/README.md` | E5 authoritative current-owner epoch validation |
+| Halt, incident and protected signals | `operations/README.md` | Independent live stop path, canary telemetry and incident drill |
+| Release claims and source digests | `assurance/README.md` | Signed deployment artifact, attestations, change authorization |
+
+Table 33.1 describes a **proposed** release manifest. No `release_id` class, automated canary, production release state machine, route switch or rollback mechanism is supplied by the companion Python project.
+
 ## Appendix C — Evidence and assurance reference
 
 The example tests establish narrow facts about *local simulated behavior*. They do not establish external settlement, general model quality, hostile-process containment or production certification. Chapter 31 supplies the claim/falsifier method; the companion evidence map supplies source-to-test navigation.
@@ -87,3 +99,5 @@ An absent signal is not evidence of no effect. Local hash checks are not protect
 | Stale coordination owner | `build5/README.md` | Local E2 fencing only; E5 owner enforcement missing |
 | Incident containment analysis | `operations/README.md` | Read-only local observation, **not** a live route-disable action |
 | Assurance for review | `assurance/README.md` | Local source/test evidence, not signoff or protected E9 audit |
+
+**Release authorization (Chapter 33).** A passing local regression is not release approval. Tables 33.1–33.3 identify proposed manifest fields, release-stage gates and exact fixture evidence, separated from external implementation and production proof. Figures 33.1–33.3 distinguish candidate evidence from E5 authority and software rollback from irreversible/uncertain provider effects. Runbook 33-A is a manuscript-local operating procedure, not software.

@@ -195,4 +195,16 @@ Chapters 1–30 are drafted; Chapters 31–36 remain planned. The cross-build [C
 | Incident suspension and safe restoration | Ch32 §§32.6–32.7; F32-02; Runbook 32-A | `reliability/README.md`, `operations/README.md`; route kill switch and real provider proof external |
 | Federated accountability, economics and evidence | Ch32 §§32.8–32.10; Tables 32.3–32.4 | `assurance/README.md` and six builds remain educational; E5 owner-epoch checking NOT IMPLEMENTED |
 
-Chapters 33–36 remain planned. V12 allocation of Chapter 32 is 13 finished pages; macOS Word 7×10 measured pagination and external source claims remain publication gates.
+Chapters 34–36 remain placeholders. V12 allocation of Chapter 32 is 13 finished pages; macOS Word 7×10 measured pagination and external source claims remain publication gates.
+
+## Chapter 33 — release engineering and operational readiness (developed)
+
+| Claim | Manuscript and figure | Existing executable evidence / missing production evidence |
+|---|---|---|
+| Release manifest is versioned, accountable and not a model checkpoint | Ch33 §§33.1–33.2; Table 33.1; F33-01 | `assurance/collect.py` local source digests only; signed artifacts and deployment attestation external |
+| Promotion tests negative authorization, recovery and operational invariants | Ch33 §33.3; Table 33.2 | Build 3, 4, 5 and security/reliability/operations suites; production independent E5 epoch and real provider unproved |
+| Canary and stop are bounded business risk, not just traffic percentage | Ch33 §§33.4–33.5; F33-02 | Proposed release state machine, no production cohort route or stop implementation |
+| Rollback must never replay RF-1042 | Ch33 §§33.6–33.7; F33-03; Runbook 33-A | Build 4/reliability status-only fixture; protected E7/E8 and live reconciliation external |
+| Companion paths and honest local assertions | Ch33 §§33.8–33.9; Table 33.3; Appendix B/C | Builds 0–5 and four fixture directories, not a release pipeline or production certification |
+
+V12 Chapter 33 budget remains 13 finished pages; native Mac Word whole-book pagination, print inspection and external implementation evidence remain publication gates.

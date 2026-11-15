@@ -42,6 +42,7 @@ check:
 	python3 publishing/scripts/check_ch30_acceptance.py
 	python3 publishing/scripts/check_ch31_acceptance.py
 	python3 publishing/scripts/check_ch32_acceptance.py
+	python3 publishing/scripts/check_ch33_acceptance.py
 	python3 publishing/scripts/check_ch27_figure_geometry.py
 	python3 publishing/scripts/check_ch23_ch24_arrow_geometry.py
 	python3 publishing/scripts/check_code_listing_layout.py

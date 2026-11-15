@@ -89,6 +89,21 @@ def main():
     if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
     if i==0 and trPr.find(qn('w:tblHeader')) is None:
      repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');trPr.append(repeat)
+  # Chapter 33 release-readiness figures and operational tables are print artifacts.
+  # Keep each diagram with its explanatory caption; repeat table headers and
+  # never split a release-gate/evidence row across 7x10 pages.
+  for para in doc.paragraphs:
+   if para._p.xpath('.//w:drawing'):
+    para.paragraph_format.keep_with_next=True
+  for table in doc.tables:
+   if not table.rows:continue
+   head=table.rows[0].cells[0].text.strip()
+   if head not in {'Field / decision','Gate','Release claim'}:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i==0 and trPr.find(qn('w:tblHeader')) is None:
+     repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');trPr.append(repeat)
   doc.save(dest)
  if args.format=='docx' and not args.chapter:
   subprocess.run([sys.executable,str(ROOT/'publishing/scripts/paginate_docx.py'),str(dest)],check=True)

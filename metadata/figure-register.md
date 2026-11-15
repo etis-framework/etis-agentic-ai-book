@@ -99,3 +99,11 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F32-01 | architecture | Agent proposal, case-specific finance authorization and enterprise release governance are different authorities | `assets/shared-figures/sources/F32-01.svg` | `assets/shared-figures/rendered/F32-01.png` | Source/render visual review; native Mac Word print open |
 | F32-02 | behavior | Trusted route containment, status-only original-operation inquiry and controlled restoration | `assets/shared-figures/sources/F32-02.svg` | `assets/shared-figures/rendered/F32-02.png` | Source/render visual review; native Mac Word print open |
 | F32-03 | decision | Denial with absent grant; approved RF-1042 and unresolved provider result never redriven | `assets/shared-figures/sources/F32-03.svg` | `assets/shared-figures/rendered/F32-03.png` | Source/render visual review; native Mac Word print open |
+
+## Chapter 33 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Publication gate |
+|---|---|---|---|---|---|
+| F33-01 | architecture | Candidate evidence and release approval remain separate from independent E5 financial authorization | `assets/shared-figures/sources/F33-01.svg` | `assets/shared-figures/rendered/F33-01.png` | SVG/render visual and native Mac proof |
+| F33-02 | state machine | Approved bounded activation, pauses and retirement cannot replay effects | `assets/shared-figures/sources/F33-02.svg` | `assets/shared-figures/rendered/F33-02.png` | SVG/render visual and native Mac proof |
+| F33-03 | decision | Rollback and UNKNOWN original operation reconciled without payment replay | `assets/shared-figures/sources/F33-03.svg` | `assets/shared-figures/rendered/F33-03.png` | SVG/render visual and native Mac proof |

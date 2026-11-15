@@ -22,7 +22,7 @@ checks={
  'Collector is allowlisted and non-effectful':all(x in SRC for x in ('CASES: tuple[FixtureCase','validate_registry','result_status','run_case','output_sha256','source_sha256',"'production_certified': False")) and not any(s in SRC for s in ('from adapter import','from client import','provider.send(', 'issue_fixture_grant(')),
  'Collector has 7 exact methods and 12 negative/structural tests':SRC.count('FixtureCase(')>=7 and len(re.findall(r'^    def test_',TEST,re.M))>=12,
  'Embedded actual module diagram in README':'![Chapter 31 assurance collector source/module architecture, test invocation and evidence flow](architecture.svg)' in README and 'not Build 6' in README and 'production' in README,
- 'Book, appendix and evidence metadata updated':'Chapters 1–32 developed' in (R/'book.yaml').read_text() and all('Chapter 31' in (R/p).read_text() for p in ('manuscript/backmatter/appendices.md','references/source-register.md','metadata/topic-traceability.md','examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md','examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md')),
+ 'Book, appendix and evidence metadata updated':'Chapters 1–33 developed' in (R/'book.yaml').read_text() and all('Chapter 31' in (R/p).read_text() for p in ('manuscript/backmatter/appendices.md','references/source-register.md','metadata/topic-traceability.md','examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md','examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md')),
  'E5 gaps remain visible':all(x in README for x in ('E5','PROVIDER_SETTLEMENT','PROTECTED_AUDIT','AGENT_EVALUATION')),
 }
 for n in range(1,4):

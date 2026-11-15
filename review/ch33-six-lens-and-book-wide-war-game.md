@@ -1,0 +1,23 @@
+# Chapter 33 six-lens and whole-book adversarial review — 2026-11-15
+
+**Internal-only review record.** “Advanced student” is an internal educational-quality lens, never a reader-facing enterprise approval role. Scope examined: all seven-part chapter inventory; opening/Part VI handoff; Chapters 28–33; Appendix A/B/C, glossary/index/source/figure registers; actual paths and test names; six progressive builds and four exercise directories. All Chapters 1–33 are developed; 34–36 remain placeholders. This review does not certify publication or live production.
+
+| Lens | Adversarial question | Finding / disposition | Residual limitation |
+|---|---|---|---|
+| Implementing engineer | Can I find the release fields in executable Python? | Table 33.1 says explicitly **proposed** manifest, maps exact source files and identifies fields/capabilities not implemented; Table 33.3 gives executable tests/README navigation. | No signed artifact, model registry, deployment/canary or live rollback module. |
+| Enterprise architect | Can CD, release committee or Design C bypass E5 or invent a transaction authority? | No: C04 untrusted; E5/C05 grant separate; E7/C06 before E6/C07; C08 read-only. Designs A/B/C are alternatives, not progressive builds. Figures 33.1–33.3 separate authorities. | E5 current-owner epoch and physical isolation external. |
+| Advanced student (internal) | Can the chapter be read standalone; are the figures and examples distinguishable from reality? | Opening defines Design A/B/C, CASE-204, RF-1042 and all E1–E9/C04–C09 responsibilities; no internal CAB/BP IDs. Proposed states and 33-A clearly defined as not code. Three exercises require defensible engineering choices. | Source reading comprehension needs human instructional validation. |
+| Security/assurance | Could a valid agent token, manager chat approval or counterfeit release certificate cause $500 effect? | Explicit compromised-token denial; finance grant never substituted; missing issuer/rotation/signed provenance identified; negative tests and real verifier proof must be separately obtained. | Local subprocess/SQLite credentials and mock adapter do not establish production custody. |
+| SRE/operations | Does rollback clear UNKNOWN or replay RF-1042? Could monitoring loss be ignored? | Figure 33.3, Table 33.2 and Runbook 33-A block new effectful work, preserve E7/E8, and reconcile original RF-1042 status-only. Independent E5/E6 stop required. | No live route switch, real provider E8 status service or actual audit sink; on-call drills pending. |
+| Business/finance owner | Can traffic percentages or speed justify exposure despite financial integrity risk? | Section 33.4 insists on financial scope limits, explicit approvals, review workload and veto. SLO error budget cannot offset an unauthorized payment. | Actual costs/ROI deferred to Chapter 34; no fabricated production metrics. |
+
+## Continuity and publication challenge
+
+- Part I design/requirements vocabulary, Part II logical architecture, Part III bounded agency, Part IV Builds 0–5, Part V failure/security/incident/assurance, Part VI human governance and release, Part VII capstone all retain their assigned responsibilities; no new controller or payment adapter is invented.
+- Chapter 31 proof is prerequisite evidence not release permission. Chapter 32 decision authority cannot bypass E5. Chapter 33 is activation/readiness; Chapter 34 economics is forward-referenced substantively, never described as “planned” inside published prose. Historical development status remains limited to metadata and repository stubs.
+- Source trace includes exact existing `security`, `reliability`, `operations`, `assurance` and Build 3–5 entry points. Appendix B adds the release navigation table; Appendix C explains evidence limitations. Glossary and index register synchronized alphabetically; original V12 allocations unchanged.
+- Internal war-game terminology and “advanced student” do not appear in Chapter 33. Reflected review responsibilities are ordinary engineering roles, not QA personas or substitute human authorities.
+- Figure types: F33-01 architecture, F33-02 proposed activation state machine, F33-03 recovery decision diagram. Masters are 1000×600 and image/figure text was visually examined at reduced print scale. Initial split caption defect corrected in build rule.
+- Regression commands passed individually as recorded in `publishing/CH33_QA_REPORT.md`. Cannot assert production certification or fully uninterrupted `make check` from container runner.
+
+**Disposition:** ready for guarded local application and native-Mac publication inspection; not production-certified or unconditional publication sign-off.

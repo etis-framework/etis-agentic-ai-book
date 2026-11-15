@@ -381,3 +381,10 @@ No new external title is introduced by this **back-matter structural revision**.
 | §§32.8–32.10 | Original ETIS federated operating model and cost framework; Chapter 31 reproducible educational assurance | No empirical cost improvement or actual human approval/revocation fixture asserted; independent deployment evidence required |
 
 Chapter 32 adds no new external empirical claims or invented citations. Before release, verify exact source passages, current source versions and authoritative provider/policy contracts. Figure 32.1–32.3 inspection and Word-for-Mac 7×10 pagination remain open.
+
+## Chapter 33 — release engineering and operational readiness (November 2026)
+
+- **Foundational source context:** Beyer et al. (2016), *Site Reliability Engineering*, informs service ownership, release engineering, operational safety and staged rollout as a professional discipline; the ETIS CASE-204 gates and stop criteria are authored examples, not measured production outcomes.
+- **Supporting context:** NIST AI RMF 1.0 (2023) provides AI-risk governance framing; ISO/IEC 42001:2023 is management-system context only (licensed normative clauses not reproduced or certified); Kleppmann (2017) supports distributed-state and failure caution. Verify exact edition and claim-level section/page before final publication.
+- **Authorial engineering prescriptions:** proposed release manifest, `PREPARED`/`APPROVED`/`LIMITED`/`PAUSED` states, financial canary stop conditions, and Runbook 33-A are ETIS designs, not features implemented by an external standard or companion demo.
+- **Local evidence navigation:** Build 3 E5 denial, Build 4 original-operation ledger and status-only recovery, Build 5 E2 ownership, Chapter 29 security, Chapter 30 operations, Chapter 31 assurance. Signed releases, production rollback, live provider correctness and protected audit remain external.

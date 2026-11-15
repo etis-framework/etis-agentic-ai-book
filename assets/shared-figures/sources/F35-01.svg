@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#fcfcfb"/>
+<style>text{font-family:Arial,Helvetica,sans-serif}.title{font-size:25px;font-weight:bold;fill:#20344a}.sub{font-size:15px;fill:#42576b}.head{font-size:18px;font-weight:bold;fill:#1f344a}.body{font-size:13px;fill:#2d4357}.note{font-size:15px;fill:#23384e}</style>
+<text x="40" y="42" class="title">Contract authority — proposal is not payment</text>
+<text x="40" y="67" class="sub">Logical handoffs; E5 is an independently enforced receiving boundary</text>
+<rect x="40" y="108" width="225" height="105" rx="10" fill="#e7f1fa" stroke="#46637b" stroke-width="1.6"/>
+<text x="54" y="134" class="head">E1 / E2</text>
+<text x="54" y="157" class="body">C01 admitted identity</text>
+<text x="54" y="176" class="body">C02 bounded work order</text>
+<rect x="320" y="108" width="265" height="105" rx="10" fill="#f4ead8" stroke="#46637b" stroke-width="1.6"/>
+<text x="334" y="134" class="head">E3 / E4</text>
+<text x="334" y="157" class="body">C03 scoped context</text>
+<text x="334" y="176" class="body">C04 untrusted proposal</text>
+<rect x="655" y="108" width="305" height="105" rx="10" fill="#e1f1e9" stroke="#46637b" stroke-width="1.6"/>
+<text x="669" y="134" class="head">E5 — trusted decision</text>
+<text x="669" y="157" class="body">C05 case-bound finance grant</text>
+<text x="669" y="176" class="body">Deny without independent approval</text>
+<rect x="655" y="295" width="305" height="115" rx="10" fill="#e1f1e9" stroke="#46637b" stroke-width="1.6"/>
+<text x="669" y="321" class="head">E7 — durable intent</text>
+<text x="669" y="344" class="body">C06 RF-1042 after authorization</text>
+<text x="669" y="363" class="body">One trusted original identity</text>
+<rect x="315" y="295" width="270" height="115" rx="10" fill="#e7f1fa" stroke="#46637b" stroke-width="1.6"/>
+<text x="329" y="321" class="head">E6 / E8 — effect and truth</text>
+<text x="329" y="344" class="body">C07 restricted provider dispatch</text>
+<text x="329" y="363" class="body">C08 status-only reconciliation</text>
+<rect x="40" y="295" width="225" height="115" rx="10" fill="#ece8f7" stroke="#46637b" stroke-width="1.6"/>
+<text x="54" y="321" class="head">E9 — assurance</text>
+<text x="54" y="344" class="body">C09 correlated evidence</text>
+<text x="54" y="363" class="body">Never creates finance authority</text>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#345b78"/></marker></defs>
+<path d="M265,162 L320,162" stroke="#345b78" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+<text x="292" y="155" class="body" text-anchor="middle">C02</text>
+<path d="M585,162 L655,162" stroke="#345b78" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+<text x="620" y="155" class="body" text-anchor="middle">C04</text>
+<path d="M810,213 L810,295" stroke="#345b78" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+<text x="810" y="247" class="body" text-anchor="middle">C06</text>
+<path d="M655,352 L585,352" stroke="#345b78" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+<text x="620" y="345" class="body" text-anchor="middle">C07</text>
+<path d="M315,352 L265,352" stroke="#345b78" stroke-width="2.4" marker-end="url(#arrow)" fill="none"/>
+<text x="290" y="345" class="body" text-anchor="middle">C09</text>
+<text x="46" y="505" class="note">Critical invariant: E3/E4 and C04 cannot authorize RF-1042.</text>
+<text x="46" y="530" class="note">The diagram describes responsibilities, not proof of deployed isolation.</text>
+</svg>

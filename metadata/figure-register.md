@@ -116,3 +116,11 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F34-01 | economic architecture | Complete lifecycle cost divided by acceptable completed outcomes, not model calls | `assets/shared-figures/sources/F34-01.svg` | `assets/shared-figures/rendered/F34-01.png` | SVG/PNG visual and native Mac proof |
 | F34-02 | sensitivity/capacity model | Model benefit competes with staffing, risk and recovery load while E5 is a hard gate | `assets/shared-figures/sources/F34-02.svg` | `assets/shared-figures/rendered/F34-02.png` | SVG/PNG visual and native Mac proof |
 | F34-03 | investment decision | Hard enforcement/reconciliation prerequisite before conditional pilot/scale/retire choice | `assets/shared-figures/sources/F34-03.svg` | `assets/shared-figures/rendered/F34-03.png` | SVG/PNG visual and native Mac proof |
+
+
+## Chapter 35 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Publication gate |
+|---|---|---|---|---|---|
+| F35-01 | contract/authority architecture | C04 advisory does not cross E5 as authority; E7 before E6 | `assets/shared-figures/sources/F35-01.svg` | `assets/shared-figures/rendered/F35-01.png` | 7×10 visual inspection; native Mac proof outstanding |
+| F35-02 | recovery decision diagram | Lost RF-1042 reply means status-only inquiry, never blind replay | `assets/shared-figures/sources/F35-02.svg` | `assets/shared-figures/rendered/F35-02.png` | 7×10 visual inspection; native Mac proof outstanding |

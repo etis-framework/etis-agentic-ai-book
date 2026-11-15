@@ -9,7 +9,7 @@ checks={}
 def check(name,v): checks[name]=bool(v)
 words=len(re.findall(r"\b[\w'-]+\b",ch))
 check('substantive source and V12 13-page allocation',2300<=words<=3100 and json.loads((R/'publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json').read_text())['chapter_pages']['33']==13)
-check('developed status and truthful forward reference','STATUS: PLANNED' not in ch and 'Chapters 1–34 developed' in (R/'book.yaml').read_text() and not re.search(r'Chapter (34|35|36).{0,30}(planned|not written|not drafted)',ch+part,re.I))
+check('developed status and truthful forward reference','STATUS: PLANNED' not in ch and 'Chapter 35 developed' in (R/'book.yaml').read_text() and not re.search(r'Chapter (34|35|36).{0,30}(planned|not written|not drafted)',ch+part,re.I))
 check('first reference and running scenario', all(t in ch[:4200] for t in ['Design A','Design B','Design C','CASE-204','RF-1042','$500','admission and identity (E1)','independently trusted execution (E5)','C04','C05','C06','C07','C08','C09']))
 check('no internal manuscript identifiers / QA personas',not re.search(r'CAB-001|BP-001|advanced student|six-lens|six lenses',ch,re.I))
 check('architectural negative evidence',all(t in ch for t in ['UNKNOWN','NOT_FOUND','no C07 blind retry','E5 current-owner epoch','independent E5','protected','no live deploy']))

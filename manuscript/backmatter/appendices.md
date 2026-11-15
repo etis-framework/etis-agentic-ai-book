@@ -114,3 +114,13 @@ An absent signal is not evidence of no effect. Local hash checks are not protect
 **Lifecycle investment and retirement (Chapter 34).** Cost per acceptable completed workflow includes review, assurance, monitoring, recovery, staffing, residual exposure and exit. The hypothetical comparison in Table 34.2 is not companion telemetry or a prediction of deployed benefits. Missing E5 enforcement or authoritative E8 evidence is a hard gate, not a risk price. Figure 34.3 and Table 34.4 prescribe accountable decisions, not an autonomous deployment controller.
 
 **Release authorization (Chapter 33).** A passing local regression is not release approval. Tables 33.1–33.3 identify proposed manifest fields, release-stage gates and exact fixture evidence, separated from external implementation and production proof. Figures 33.1–33.3 distinguish candidate evidence from E5 authority and software rollback from irreversible/uncertain provider effects. Runbook 33-A is a manuscript-local operating procedure, not software.
+
+
+**Chapter 35 — Contract lookup and executable falsifiers (no new build)**
+
+| Reader need | Reference | Evidence boundary |
+|---|---|---|
+| Contract meanings and failures (C01–C09) | Chapter 35 Table 35.1; Appendix A | Logical handoffs; not one composed Python call graph |
+| Proposed fields versus actual fixtures | Chapter 35 Table 35.2; `IMPLEMENTATION_EVIDENCE_MAP.md` | No production governance/release schema or protected E5 ownership epoch |
+| Fast test/source navigation | Chapter 35 Table 35.3; `build0/README.md` through `build5/README.md` | Independent educational checkpoints; Build 5 omits Build 1/2 advisory pipeline |
+| Evidence packet and review owner | Chapter 35 Table 35.4; `assurance/README.md` | Local bounded tests, not external settlement or release certification |

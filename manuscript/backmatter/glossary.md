@@ -66,6 +66,7 @@ Terms below describe the architecture and developed implementation. The definiti
 **Provider idempotency scope.** Exact semantics, key namespace, duration and amount/payload treatment under which the provider suppresses repeated effects.
 **RASR.** Reliability, availability, serviceability and recoverability; quality attributes needing stated measures, not an automatic guarantee. Broader ETIS quality attributes include security, privacy, cost and others.
 **Recovery authority.** Separately authenticated, scoped permission to inquire, adjudicate or remediate an existing operation; status-only inquiry does not confer authorization for a new payment.
+**Reference artifact.** A typed decision, contract, operation or evidence record with an identified owner, scope, falsifier and implementation/evidence boundary; see Chapter 35.
 **Release candidate manifest.** A proposed independently protected record pinning versions, evaluation evidence, residual gaps, ownership and release scope; not provided as a Python schema.
 **Release readiness.** Evidence that independently authorized controls, operators, incident response, recovery, monitoring and stop mechanisms can support the intended live scope.
 **Responsibility boundary.** Architectural division establishing ownership of a decision, record, or action; does not alone prove a physically isolated fault or enforcement point.

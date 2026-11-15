@@ -48,6 +48,9 @@ t = p.read_text(encoding='utf-8').lower()
 for term in ('implementing engineer', 'enterprise architect', 'security', 'business owner', 'site reliability engineering'):
     check(term in t, f'Chapter 34 lacks professional responsibility {term}')
 check(not re.search(r'advanced student|six-lens|reviewer-lens',t), 'Chapter 34 contains internal reviewer taxonomy')
+p = next(MANUSCRIPT.glob('part-*/ch35-*/index.md'))
+u = p.read_text().lower()
+check(not re.search(r'advanced student|six-lens|reviewer-lens|cab-001',u), 'Chapter 35 contains internal reviewer/catalog terminology')
 for n in (7, 8, 16, 21):
     p = next(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     t = p.read_text(encoding='utf-8').lower()
@@ -63,5 +66,5 @@ if ERRORS:
     for issue in ERRORS:
         print('FAIL:', issue)
     raise SystemExit(1)
-print('PASS: reader-facing professional review perspectives, Chapters 1–34; '
+print('PASS: reader-facing professional review perspectives, Chapters 1–35; '
       'Part IV professional roles separated from internal student QA')

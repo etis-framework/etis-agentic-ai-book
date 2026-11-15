@@ -184,7 +184,7 @@ Chapters 1–30 are drafted; Chapters 31–36 remain planned. The cross-build [C
 - **From bounded advice to testable effect claims:** Chapter 8 E1–E9/C01–C09 → Chapters 22–27 runnable Builds 0–5 → Chapter 31 §§31.1–31.3 and Table 31.1. Designs A/B/C remain alternatives, not build stages. The actual Build 5 payment demonstration does not incorporate the Build 1/2 advice pipeline.
 - **Negative-test chain:** Chapter 28 recovery, Chapter 29 E5 actual-subprocess valid-token denial and Chapter 30 incident fixture → `examples/refund-reference-system/assurance/collect.py` seven *named* methods and `assurance/test_collect.py` 12 collector contract tests. Results are local/fixture-scoped; exclusions and falsifiers travel with the evidence item.
 - **Production release blockers:** Chapter 31 §§31.5–31.6 explicitly keep E5 epoch enforcement, OS-secret custody, external provider contract/settlement and protected E9 audit unimplemented or evidence-required. F31-03 does not allow model evaluation performance to offset an unmet safety gate.
-- **Next handoff:** Chapters 32–34 must inherit named approval/rollback owners, provenance and explicit evidence freshness; Chapter 35's detailed contracts remain planned. Independently measured native Word 7×10 pagination, visual print QA and exact source-page verification are still open.
+- **Next handoff:** Chapters 32–34 must inherit named approval/rollback owners, provenance and explicit evidence freshness; Chapter 35 contract crosswalk and artifact navigation are developed. Independently measured native Word 7×10 pagination, visual print QA and exact source-page verification are still open.
 
 ## Chapter 32 — human oversight and accountable governance (developed)
 
@@ -216,3 +216,15 @@ V12 Chapter 33 budget remains 13 finished pages; native Mac Word whole-book pagi
 - **Hard authorization versus expected loss:** Ch13/25/29 E5 denial and Ch28/30–33 UNKNOWN/stop semantics → Ch34 §34.4 Table 34.3; no priced risk score permits a missing E5 or live stop boundary.
 - **Workforce and lifecycle decisions:** Ch17 Design A/B/C, Ch27 E2, Ch32 decision rights, Ch33 promotion → Ch34 §§34.5–34.8 Figures 34.2–34.3. Pilot/scale/restrict/retire are human-gated decisions, not Python implementation stages.
 - **Executable limitation:** all six Builds + security/reliability/operations/assurance remain local fixtures; no economic telemetry, ROI dashboard or production attestation is asserted.
+
+
+## Chapter 35 — reader-facing reference and executable falsifier handoff
+
+| Manuscript artifact | Existing source evidence | Explicit absent boundary |
+|---|---|---|
+| Table 35.1 C01–C09 handoffs | Appendix A and Chapter 8; implementation evidence map | Not one integrated Build 5 C01→C09 runtime |
+| Table 35.2 fields and records | Build 1–5 source modules and tests | Protected finance issuer, real provider, E5 epoch gate, live governance/release state |
+| Table 35.3 runnable falsifiers | Build 1–5, security, reliability, operations, assurance READMEs | No production certification or hostile-host guarantee |
+| Table 35.4 evidence packet | Chapter 31 and `assurance/collect.py` | No signed deployment or external audit custody |
+
+Part VII Chapter 36 will apply these established artifacts; Chapter 35 does not introduce a new reference architecture.

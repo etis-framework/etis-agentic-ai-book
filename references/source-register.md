@@ -1,6 +1,6 @@
-# Source and citation register — developed Chapters 1–26
+# Source and citation register — developed Chapters 1–31
 
-**Status: claim locations mapped; final publication certification remains open.** Earlier chapters were mapped through Chapter 7; this pass extends mapped, limited-scope attribution through Chapter 16. Publication certification still requires checking exact passages, edition/page numbers, stable links, and whether each source actually supports each claim. The dates below describe publications, **not** a claim that the research landscape has been comprehensively checked through November 2026.
+**Status: developed Chapters 1–31 are covered by chapter-specific source/claim notes; final publication certification remains open.** This is a cumulative engineering register, not the reader bibliography. Coverage and verification depth vary by chapter: presence of a mapping does not certify a primary passage, edition/page, stable link, claim applicability or production guarantee. Historical working-pass headings below preserve the chronology of earlier citation reviews; they are not current coverage limits.
 
 ## Source hierarchy and use
 
@@ -28,15 +28,15 @@ Primary research supports specific research findings; foundational books support
 
 Use readable author–year references in explanatory prose, e.g., **Gray and Reuter (1992)**, and maintain the stable bibliography key in this register. Before final publication, select one citation-rendering workflow and replace editorial references with linked, consistently formatted citations. A title in the bibliography is not evidence that every associated claim has been verified.
 
-## Claim-level QA queue
+## Historical claim-level QA queue — Chapters 1–2
 
 - [ ] Ch1: distinguish research findings about agents from recommended enterprise control design.
 - [ ] Ch1: establish evidence for any quantitative business, latency, accuracy, or cost claim before adding it.
 - [ ] Ch2: verify any priority claim such as “first,” “invented,” or “originated.”
 - [ ] Ch2: check the exact semantics of ACID, idempotency, at-least-once delivery, and external effects.
 - [ ] Ch2: ensure all diagrams express ownership and observations accurately.
-- [ ] Both: confirm edition, authors, identifiers, and stable URLs against original publisher or standards body.
-- [ ] Both: complete source-specific page or section references and editorial sign-off.
+- [ ] Chapters 1–2: confirm edition, authors, identifiers, and stable URLs against original publisher or standards body.
+- [ ] Chapters 1–2: complete source-specific page or section references and editorial sign-off.
 
 ## V8 — new sources and verified bibliographic identification
 
@@ -346,3 +346,27 @@ Publication gate: independently verify precise cited source sections, edition, a
 | §§30.5–30.7 | ETIS original Runbook 30-A, `operations/incident.py`, 14 named local tests, Chapter 28/29 harness | Read-only recommendation and non-mutation apply only to fixture; no real E5 epoch enforcement, revocation, immutable external audit or real provider assurance |
 
 **Publication source QA:** verify edition/passage specificity for existing cited works and incident policy against chosen enterprise/provider standards; do not infer provider guarantees from generic reliability sources. Native Word 7×10 and figure proofs remain open.
+
+## Chapter 31 — verification and evidence source/claim register (publication gate open)
+
+| Claim location | Existing source / original artifact | Narrow evidentiary scope | Outstanding source and production gate |
+|---|---|---|---|
+| §§31.1–31.2 | Original ETIS reference architecture; Chapter 8 and appendix | Separate advisory evidence, trusted E5 decision, E7 local intent and E8 external truth | Contract field audit against controlled catalog; no claim of nine physical services |
+| §§31.3–31.4 | NIST AI RMF 1.0 (2023); NIST SP 800-207 (2020); original `assurance/collect.py` | Risk-governed evaluation and resource-centered enforcement are contextual principles; fixture registry and hash format are **ETIS constructions** | Verify exact source passages/editions; no NIST certification claim |
+| §§31.3–31.5 | Gray & Reuter (1992), Kleppmann (2017); named Build 4/5, recovery, security and operations tests | Local transactional history, partial effects, bounded evidence, observed fixture non-effects | Actual provider settlement/status contract, protected identity and E9 evidence custody |
+| §§31.5–31.7 | `assurance/README.md`, `collect.py`, `test_collect.py`; Figures F31-01/02/03 | Registered seven-method demonstration, 12 collector negative/contract tests and declared exclusions | Independent execution attestation, audit immutability, drift/red-team evaluation and live release rehearsal |
+
+**Source discipline:** Retain existing bibliography records unless adding a claim requires new primary evidence. A claim-to-test link is not a substitute for independent source inspection; exact citations and edition/page certification remain OPEN.
+
+## Chapters 28–31 — reader-bibliography reconciliation and release gate (2026-11-15)
+
+The published bibliography holds **source entries only**, not chapter reading guides, simulated test inventories, status reports or release caveats. These belong in this controlled register, the chapter, `metadata/` QA records, or the relevant companion README. The Appendix B tables give stable reader navigation; Appendix C distinguishes local evidence from external assurance.
+
+| Chapter | Already listed external sources requiring claim/passage review | Original ETIS material (not an externally certified guarantee) | Open publication task |
+|---|---|---|---|
+| 28 | Lamport (1978); Gray and Reuter (1992); Kleppmann (2017); van der Aalst (2013) | Failure classifier, CASE-204 recovery matrix, local Build 4/5 tests | Verify exact cited passages; establish provider-specific original-operation status contract |
+| 29 | NIST SP 800-53 Rev. 5; NIST SP 800-218; AI RMF 1.0; OWASP agentic 2026 guidance | Build 3 adversarial valid-token denial fixture | Pin standard/guidance editions and control scope; validate real credential isolation and revocation |
+| 30 | Beyer et al. (2016); Gray and Reuter (1992); Kleppmann (2017) | Illustrative SLOs, incident runbook, read-only operations fixture | Verify reliability claims against source passages and provider/enterprise operating policy; no measured SLO claim |
+| 31 | AI RMF 1.0; NIST SP 800-207; Gray and Reuter (1992); Kleppmann (2017) | Claim matrix, seven-case local evidence collector, falsification exercises | Verify exact edition and passage applicability; independently attest production controls and agent evaluation |
+
+No new external title is introduced by this **back-matter structural revision**. A new claim or newly introduced source in a later chapter must trigger a fresh primary-source review, source-register mapping and a properly formatted bibliography entry. Source existence is not evidence that an engineering guarantee has been independently verified.

@@ -12,6 +12,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Agentic AI system.** Complete arrangement of software, people, data, controls and operations around one or more agents; the model alone is not the system.
 
+**Assurance claim.** Narrowly stated behavior tied to system version, scope, threat model, execution conditions and responsible reviewer; must be backed by relevant, disprovable evidence.
+
 **Authentication.** Establishing and verifying the claimed identity of an actor; independent of business authorization.
 
 **Authoritative business system (E8).** System whose records govern external business facts, such as the payment provider's actual refund status; differs from an application's E7 observations.
@@ -60,11 +62,15 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Epoch (ownership).** Monotonically advancing ownership generation used to reject obsolete coordinators at a boundary that actually verifies it.
 
+**Evidence bundle.** Versioned set of registered tests, results, source digests, exclusions and outstanding gates; a local fixture bundle does not prove independent production trust.
+
 **Evidence provenance.** Traceable source, time, identity and transformation context necessary to judge whether information supports a decision.
 
 **Execution-boundary fencing.** Verification at E5 or another independently protected consequential endpoint that an instruction belongs to the current authoritative owner/epoch; not implemented by Build 5's E2-local epoch.
 
 **Failure/deployment boundary.** Actual execution, persistence, or communication separation across which components can fail independently; depends on topology, shared infrastructure, and recovery design rather than E-domain notation alone.
+
+**Falsifier.** Test or observation which, if it occurs, defeats a declared assurance claim even when other tests pass.
 
 **Fencing.** Enforcement that rejects actions from an outdated owner. E2-local fencing in Build 5 does not prove E5-enforced end-to-end fencing.
 
@@ -93,6 +99,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **Operation identity (RF-1042).** Stable, trusted ID for the separately authorized CASE-204 payment operation; distinct from E3 advisory correlation identifiers.
 
 **Operational reconciliation (C08).** Read-only verification of the original operation against available authoritative provider evidence; unresolved results remain UNKNOWN.
+
+**Production release gate.** Explicit, accountable approval condition for a defined deployment and risk; safety-critical gaps cannot be offset with performance improvements.
 
 **Provider dispatch (C07).** Controlled E5/E6 instruction to an external provider, governed by provider-specific contracts and uncertainty handling.
 

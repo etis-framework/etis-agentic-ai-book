@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="500" viewBox="0 0 900 500">
+<style>text{font:19px DejaVu Sans,Arial;fill:#18344a}.head{font-size:25px;font-weight:bold}.small{font-size:17px}.box{fill:#edf4f8;stroke:#43708d;stroke-width:2}.boundary{fill:none;stroke:#aa713a;stroke-width:3;stroke-dasharray:9 7}.flow{stroke:#426d84;stroke-width:3;fill:none}</style>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#426d84"/></marker></defs>
+<rect width="900" height="500" fill="white"/>
+<text class="head" x="450" y="37" text-anchor="middle">Chapter 31 source / module assurance architecture</text>
+<rect class="box" x="28" y="90" width="260" height="120" rx="10"/><text x="158" y="121" text-anchor="middle">assurance/collect.py</text><text class="small" x="158" y="152" text-anchor="middle">Fixed registry + subprocess</text><text class="small" x="158" y="179" text-anchor="middle">SHA-256 + result allowlist</text>
+<rect class="box" x="330" y="84" width="250" height="142" rx="10"/><text x="455" y="119" text-anchor="middle">Existing test modules</text><text class="small" x="455" y="151" text-anchor="middle">security / reliability</text><text class="small" x="455" y="177" text-anchor="middle">build4 / build5 / ops</text><text class="small" x="455" y="203" text-anchor="middle">E1–E9; C01–C09 slices</text>
+<rect class="box" x="620" y="90" width="250" height="120" rx="10"/><text x="745" y="123" text-anchor="middle">Local JSON report</text><text class="small" x="745" y="151" text-anchor="middle">Status + source digests</text><text class="small" x="745" y="179" text-anchor="middle">No raw logs / secrets</text>
+<path class="flow" d="M288 148 L327 148" marker-end="url(#a)"/><path class="flow" d="M580 148 L617 148" marker-end="url(#a)"/>
+<rect class="box" x="28" y="282" width="260" height="89" rx="10"/><text x="158" y="319" text-anchor="middle">assurance/test_collect.py</text><text class="small" x="158" y="348" text-anchor="middle">12 negative/contract tests</text>
+<path class="flow" d="M158 280 L158 213" marker-end="url(#a)"/>
+<rect class="boundary" x="317" y="268" width="548" height="118" rx="12"/><text x="591" y="306" text-anchor="middle">Unimplemented / external production proof</text><text class="small" x="591" y="340" text-anchor="middle">E5 epoch; secrets; real E8 settlement; protected E9 audit</text><text class="small" x="591" y="367" text-anchor="middle">Model evaluation, operations, signed attestation</text>
+<text class="small" x="450" y="439" text-anchor="middle">Read-only evidence tool: no E5 client, E6 provider dispatch or credentials</text>
+<text class="small" x="450" y="468" text-anchor="middle">Local subprocess tests may be effectful only against temporary simulated fixtures</text>
+</svg>

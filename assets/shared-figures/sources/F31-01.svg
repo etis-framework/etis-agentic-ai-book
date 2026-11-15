@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<style>text{font-family:DejaVu Sans,Arial,sans-serif;fill:#172a3b} .head{font-weight:700;font-size:26px} .label{font-size:22px;font-weight:600} .small{font-size:19px} .tiny{font-size:17px} .line{fill:none;stroke:#315b78;stroke-width:3;stroke-linecap:round;stroke-linejoin:round} .dash{fill:none;stroke:#a65f28;stroke-width:3;stroke-dasharray:9,6} </style>
+<rect width="1000" height="600" fill="#fff"/>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#315b78"/></marker></defs>
+<text class="head" x="500" y="40" text-anchor="middle">ASSURANCE: CLAIMS ARE NOT TEST RESULTS</text>
+<rect x="20" y="82" width="290" height="136" rx="14" fill="#e9f3fb" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="165" y="116" text-anchor="middle">Bounded claim</text>
+<text class="small" x="165" y="155" text-anchor="middle">CASE-204 / RF-1042</text>
+<text class="small" x="165" y="187" text-anchor="middle">Scope + threat model</text>
+<rect x="355" y="82" width="290" height="136" rx="14" fill="#e4f5ee" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="500" y="116" text-anchor="middle">Observed evidence</text>
+<text class="small" x="500" y="155" text-anchor="middle">Builds 0–5 tests</text>
+<text class="small" x="500" y="187" text-anchor="middle">Recovery / attack / ops</text>
+<rect x="690" y="82" width="290" height="136" rx="14" fill="#fff2e3" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="835" y="116" text-anchor="middle">Release decision</text>
+<text class="small" x="835" y="155" text-anchor="middle">Human acceptance</text>
+<text class="small" x="835" y="187" text-anchor="middle">Production blockers</text>
+<path class="line" d="M310 150 L349 150" marker-end="url(#arrow)"/>
+<path class="line" d="M645 150 L685 150" marker-end="url(#arrow)"/>
+<rect x="45" y="278" width="430" height="120" rx="14" fill="#f7f9fc" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="260" y="314" text-anchor="middle">Falsifier</text>
+<text class="small" x="260" y="349" text-anchor="middle">Invalid grant / wrong proof</text>
+<text class="small" x="260" y="375" text-anchor="middle">Unknown outcome / stale owner</text>
+<rect x="525" y="278" width="430" height="120" rx="14" fill="#fff6f0" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="740" y="314" text-anchor="middle">Evidence gaps</text>
+<text class="small" x="740" y="349" text-anchor="middle">E5 epoch / credential custody</text>
+<text class="small" x="740" y="375" text-anchor="middle">Real provider / protected audit</text>
+<path class="line" d="M260 219 L260 273" marker-end="url(#arrow)"/>
+<path class="line" d="M740 219 L740 273" marker-end="url(#arrow)"/>
+<rect x="160" y="457" width="680" height="75" rx="14" fill="#f3f3f7" stroke="#426b86" stroke-width="2"/>
+<text class="label" x="500" y="487" text-anchor="middle">Passing fixture != production certification</text>
+<text class="small" x="500" y="515" text-anchor="middle">Record exclusions, owner and stop conditions</text>
+<path class="line" d="M500 398 L500 452" marker-end="url(#arrow)"/>
+</svg>

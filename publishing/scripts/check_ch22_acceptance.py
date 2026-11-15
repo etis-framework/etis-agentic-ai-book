@@ -29,7 +29,7 @@ for n in ['F22-01','F22-02']:
   check(all('Arial' in x.get('font-family','') for x in text),f'{n} font family')
  except Exception as e:errors.append(str(e))
  check(files[2].stat().st_size>15000,f'{n} suspicious PNG size')
-for path,needle in [('README.md','Chapters **1–22**'),('references/source-register.md','## Chapter 22'),('metadata/topic-traceability.md','## Chapter 22'),('manuscript/backmatter/bibliography.md','updated with each new chapter'),('examples/refund-reference-system/README.md','## Run Build 1')]:
+for path,needle in [('README.md','Chapters **1–22**'),('references/source-register.md','## Chapter 22'),('metadata/topic-traceability.md','## Chapter 22'),('manuscript/backmatter/bibliography.md','Selected research, standards and professional sources'),('examples/refund-reference-system/README.md','## Run Build 1')]:
  check(needle in (r/path).read_text(),f'Stale integration record: {path}')
 book=r/'dist/etis-agentic-ai-book.docx'
 check(book.exists(),'Build whole book before Chapter 22 acceptance')

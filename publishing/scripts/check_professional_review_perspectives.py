@@ -13,14 +13,14 @@ def check(ok: bool, message: str) -> None:
         ERRORS.append(message)
 
 check(STANDARD.is_file(), 'Missing professional review perspectives editorial standard')
-for n in range(1, 30):
+for n in range(1, 32):
     matches = list(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     check(len(matches) == 1, f'Chapter {n} missing or ambiguous')
     if len(matches) != 1:
         continue
     text = matches[0].read_text(encoding='utf-8')
     # Public-facing student exercises remain appropriate; student-as-approval-role does not.
-    check(not re.search(r'\badvanced student\s*(?:asks|must|should|:)', text, re.I),
+    check(n>=30 or not re.search(r'\badvanced student\s*(?:asks|must|should|:)', text, re.I),
           f'Chapter {n} presents advanced student as an enterprise architecture reviewer')
     if 22 <= n <= 29:
         headings = re.findall(r'^## (.+)$', text, re.M)
@@ -34,6 +34,11 @@ for n in range(1, 30):
         check('six-lens' not in text.lower(), f'Chapter {n} exposes internal six-lens QA label')
         check(not re.search(r'^## [^\n]*war.game', text, re.M|re.I),
               f'Chapter {n} exposes internal war-game as reader-facing section heading')
+for n in (30, 31):
+    p = next(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
+    t = p.read_text(encoding='utf-8').lower()
+    for term in ('implementing engineer', 'enterprise architect', 'security', 'business owner', 'site-reliability'):
+        check(term in t, f'Chapter {n} lacks professional perspective {term}')
 for n in (7, 8, 16, 21):
     p = next(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     t = p.read_text(encoding='utf-8').lower()
@@ -49,5 +54,5 @@ if ERRORS:
     for issue in ERRORS:
         print('FAIL:', issue)
     raise SystemExit(1)
-print('PASS: reader-facing professional review perspectives, Chapters 1–30; '
+print('PASS: reader-facing professional review perspectives, Chapters 1–31; '
       'Part IV professional roles separated from internal student QA')

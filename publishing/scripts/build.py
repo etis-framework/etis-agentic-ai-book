@@ -62,6 +62,22 @@ def main():
     left=OxmlElement('w:left');pBdr.append(left)
    for name,val in {'val':'single','sz':'16','space':'7','color':'508091'}.items():
     left.set(qn('w:'+name),val)
+  # Chapter 31 claim/evidence tables are deliberately tall at 7x10. Keep the
+  # caption with its header, repeat the header and never split a claim row.
+  for para in doc.paragraphs:
+   if re.match(r'^Table 31\.[12]\s+[—–-]', para.text.strip()):
+    para.paragraph_format.keep_with_next=True
+    if para.text.strip().startswith('Table 31.2 '):
+     para.paragraph_format.page_break_before=True
+  for table in doc.tables:
+   if not table.rows:continue
+   head=table.rows[0].cells[0].text.strip()
+   if head not in {'Claim and scope','Status','Responsibility','Contract','Chapter','Evidence or assurance question'}:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i==0 and trPr.find(qn('w:tblHeader')) is None:
+     repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');trPr.append(repeat)
   # Chapter 30's decision/evidence tables may span pages only between rows.
   # Apply this in both chapter-only and full-volume DOCX builds.
   for table in doc.tables:

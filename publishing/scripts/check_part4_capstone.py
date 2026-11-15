@@ -13,7 +13,7 @@ chk('27.9 Part IV capstone' in ch and 'does not call Build 1' in ch,'Chapter cap
 chk(ch.index('## 27.9 Part IV capstone') < ch.index('## Chapter synthesis and transition to Part V'), 'Part IV capstone must precede final synthesis')
 chk(ch.count('## Chapter synthesis')==1, 'Chapter 27 must have exactly one closing synthesis')
 appendix=(R/'manuscript/backmatter/appendices.md').read_text()
-chk('C04 field semantics and contract direction.' in appendix, 'Consolidated C04 appendix explanation missing')
+chk('Proposed `operation_id` in C04' in appendix and 'advisory correlation reference' in appendix and 'two-way notation' in appendix, 'Consolidated C04 appendix explanation missing')
 chk('**Contract direction.**' not in appendix and '**C04 field semantics.**' not in appendix, 'Repeated C04 appendix explanation remains')
 
 chk(all(f'Build {i}' in mp for i in range(6)),'Missing build in map')

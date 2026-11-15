@@ -9,13 +9,14 @@ def read(path):return (R/path).read_text()
 chapters={int(re.search(r'ch(\d+)-',str(p)).group(1)) for p in (R/'manuscript').glob('part-*/ch*/index.md') if 'STATUS: PLANNED / NOT DRAFTED' not in p.read_text()}
 app=read('manuscript/backmatter/appendices.md');gloss=read('manuscript/backmatter/glossary.md');idx=read('manuscript/backmatter/index.md');bib=read('manuscript/backmatter/bibliography.md');ch8=next((R/'manuscript/part-02-architecture').glob('ch08-*/index.md')).read_text();src=read('references/source-register.md')
 need(chapters and min(chapters)==1 and sorted(chapters)==list(range(1,max(chapters)+1)),'Developed chapter sequence is not contiguous')
-need('updated with each new chapter' in bib and not re.search(r'curated bibliography for the developed Chapters 1[–-]\d+',bib),'Bibliography coverage text is frozen to an obsolete chapter number')
+need('Selected research, standards and professional sources' in bib and not re.search(r'curated bibliography for the developed Chapters 1[–-]\d+',bib),'Bibliography needs evergreen reader-facing introduction')
 for n in range(1,10): need(len(re.findall(r'^\| C0'+str(n)+r'\b',app,re.M))==1,f'C0{n} appendix row count');need(f'**C0{n}' in ch8 or f'| **C0{n}' in ch8,f'C0{n} Chapter 8 catalog')
 need('↔' not in app and '↔' not in ch8,'Bidirectional glyph may render as emoji in contract tables')
 for n in range(0,6):
- if 22+n in chapters: need(f'**Build {n} ' in app and f'**Build {n} ' in idx,f'Build {n} missing appendix/index locator')
-need('E2 ownership versus E7 persistence' in app and 'end-to-end E5' in app,'E2/E7/E5 distinction missing')
-if 35 not in chapters: need('Chapters 35–36' in app and 'still planned' in app.lower(),'Chapter 35 future reference must not appear completed')
+ if 22+n in chapters: need(f'Build {n} —' in app and f'**Build {n} ' in idx,f'Build {n} missing appendix/index locator')
+need('E2 coordinates work while E7 persists' in app and 'E5 does *not* independently enforce' in app,'E2/E7/E5 distinction missing')
+need(all(f'## Appendix {letter} —' in app for letter in 'ABC'),'Appendix A/B/C structure missing')
+need('still planned' not in app.lower(),'Development status must not appear in published appendix')
 terms=[m.group(1) for m in re.finditer(r'^\*\*(.+?)\.\*\*',gloss,re.M)]
 need(len(terms)>=35,'Glossary lacks developed-chapter scope')
 need(terms==sorted(terms,key=str.casefold),'Glossary terms are not alphabetized')

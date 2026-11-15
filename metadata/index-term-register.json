@@ -29,8 +29,17 @@
     },
     {
       "term": "Architecture decisions and professional review",
-      "locator": "Chapters 7–8, 16–17, 21–30.",
+      "locator": "Chapters 7–8, 16–17, 21–31.",
       "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Assurance claims and falsifiers",
+      "locator": "Chapter 31 §§31.1–31.5; Table 31.1; `assurance/collect.py`.",
+      "aliases": [
+        "claims",
+        "falsification"
+      ],
       "see_also": []
     },
     {
@@ -100,7 +109,7 @@
     },
     {
       "term": "CASE-204 ($500 refund)",
-      "locator": "Chapters 1–30, especially 3, 8, 22–30.",
+      "locator": "Chapters 1–31, especially 3, 8, 22–30.",
       "aliases": [
         "refund case"
       ],
@@ -203,6 +212,15 @@
       "see_also": []
     },
     {
+      "term": "Evidence bundle and provenance",
+      "locator": "Chapter 31 §§31.3–31.4; Table 31.2; `assurance/README.md`.",
+      "aliases": [
+        "test provenance",
+        "digests"
+      ],
+      "see_also": []
+    },
+    {
       "term": "Execution-boundary fencing",
       "locator": "Chapter 28 §28.7.",
       "aliases": [],
@@ -293,6 +311,14 @@
       "term": "Recovery authority",
       "locator": "Chapter 28 §§28.7–28.9.",
       "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Release acceptance and stop rules",
+      "locator": "Chapter 31 §§31.5–31.6; Figure 31.3.",
+      "aliases": [
+        "release gates"
+      ],
       "see_also": []
     },
     {

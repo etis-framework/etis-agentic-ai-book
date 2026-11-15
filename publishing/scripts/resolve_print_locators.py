@@ -15,8 +15,13 @@ doc=Document(args.docx); pdf=fitz.open(args.pdf)
 parts=[]
 for i,p in enumerate(pdf):
  txt=p.get_text('text',sort=False)
- lines=[x.strip() for x in txt.splitlines() if x.strip()]
- val=next((x for x in lines[:5] if re.fullmatch(r'[ivxlcdm]+|[0-9]{1,4}',x,re.I)),None)
+ # Retrieve the folio from its actual geometric footer; do not mistake a
+ # heading or chapter number in the body for a print page label.
+ footer=[]
+ for b in p.get_text('blocks'):
+  if b[1] >= p.rect.height*.88:
+   footer.extend(re.findall(r'(?m)^\s*([ivxlcdm]+|[0-9]{1,4})\s*$',str(b[4]),re.I))
+ val=footer[-1] if footer else None
  parts.append((txt,val,i))
 first_main=next(i for i,(t,_,_) in enumerate(parts) if re.search(r'(?m)^Chapter 1\s*[—–-]',t) and i>8)
 

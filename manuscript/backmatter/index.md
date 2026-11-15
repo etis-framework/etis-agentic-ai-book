@@ -3,19 +3,29 @@
 *Entries are linked to live page references in the generated print manuscript. Final page numbering is verified in the native Word proof.*
 
 - **Acceptable completed workflow**: Chapter 34 §§34.1–34.3; Table 34.2.
+- **Access-token validity versus business permission**: Chapters 13, 25, 29. See also *Authentication and authorization*.
 - **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
 - **Action proposal (C04)**: Chapter 30; Chapter 31.
-- **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
-- **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3.
-- **Adoption stop and retirement decision**: Chapter 36 §§36.6–36.8; Tables 36.2–36.3.
-- **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.
+- **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*. See also *Authentication and authorization*.
+- **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3. See also *Assurance claims and falsifiers*.
+- **Adoption stop and retirement decision**: Chapter 36 §§36.6–36.8; Tables 36.2–36.3. See also *Lifecycle investment and retirement*.
+- **Adversarial tests — forged approval**: Chapter 29. See also *Security falsifier*.
+- **Adversarial tests — prompt injection**: Chapters 12, 29. See also *Security and trust boundaries*.
+- **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*. See also *RF-1042 (trusted operation ID)*.
 - **Agent**: Chapter 1; Chapter 4.
+- **Agent coordination — handoff and replacement**: Chapters 10, 18, 27. See also *Epoch and lease fencing*.
 - **Agent definition and boundaries**: Chapters 3–4, 11, 17.
+- **Agent memory — provenance and retention**: Chapters 12, 20. See also *Context, retrieval and provenance (E4/C03)*.
+- **Agent registry — readiness and eligibility**: Chapters 10, 18. See also *Capability registry*.
 - **Agentic AI system**: Chapter 1.
 - **Approval versus transaction authority**: Chapter 32 §§32.1–32.4, 32.6; Appendix A.
 - **Architecture decisions and professional review**: Chapters 7–8, 16–17, 21–31.
+- **Architecture — logical versus physical separation**: Chapters 8, 16. See also *Trust/enforcement boundary*.
+- **Architecture — risk-proportionate isolation**: Chapters 13, 16, 29. See also *Security and trust boundaries*.
 - **Assurance claim**: Chapter 31; Chapter 35.
 - **Assurance claims and falsifiers**: Chapter 31 §§31.1–31.5; Table 31.1; `assurance/collect.py`.
+- **Assurance — negative evidence**: Chapters 29, 31, 36. See also *Assurance claims and falsifiers*.
+- **Audit trail — source and policy version**: Chapters 11, 15, 31. See also *Evidence bundle and provenance*.
 - **Authentication**: Chapter 9; Chapter 29.
 - **Authentication and authorization**: Chapters 6, 9, 13, 24–25.
 - **Authorization**: Chapter 13; Chapter 24.
@@ -26,31 +36,45 @@
 - **Build 2 — scoped context and identity**: Chapter 24; `build2/README.md`.
 - **Build 3 — trusted execution**: Chapter 25; `build3/README.md`.
 - **Build 4 — provider and reconciliation**: Chapter 26; `build4/README.md`.
-- **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.
+- **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*. See also *Part IV implementation-to-evidence map*.
+- **Business outcome versus model output**: Chapters 1, 3, 34. See also *Cost per acceptable completed workflow*.
 - **C01–C09 cross-domain contracts**: Chapter 8; Chapters 9–16; Appendix.
 - **Canary activation**: Chapter 33 §§33.3–33.5; Table 33.2; Figure 33.2.
+- **Capability discovery versus authorization**: Chapters 9, 10, 13. See also *Authentication and authorization*.
 - **Capability registry**: Chapter 9; Chapter 10.
 - **CASE-204 ($500 refund)**: Chapters 1–31, especially 3, 8, 22–30.
+- **CASE-204 — refund investigation**: Chapters 3, 22, 23, 24. See also *RF-1042 (trusted operation ID)*.
+- **CASE-204 — security denial**: Chapters 25, 29, 31. See also *Security falsifier*.
+- **CASE-204 — uncertain provider result**: Chapters 26, 28, 36. See also *UNKNOWN provider outcome*.
+- **Change and release evidence**: Chapters 31, 33. See also *Release candidate manifest*.
 - **Competing histories**: Chapter 28 §§28.2–28.3.
-- **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1.
+- **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1. See also *Valid token versus finance authorization*.
+- **Consequential actions — independent enforcement**: Chapters 13, 25, 29. See also *Consequential operation and trusted execution (E5)*.
 - **Consequential effect**: Chapter 1; Chapter 3.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
 - **ContextUnavailable**: Chapter 24.
 - **Contract lookup and failure meanings**: Chapter 35 §35.2, Table 35.1; Appendix A.
 - **Coordination and ownership (E2)**: Chapter 10; Chapter 28.
-- **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
+- **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*. See also *Durable operational state (E7)*.
 - **Cost per acceptable completed workflow**: Chapter 34 §§34.2–34.3; Table 34.1; Figure 34.1.
+- **Cost — human review staffing**: Chapters 32, 34. See also *Sensitivity and human review capacity*.
+- **Cost — recovery and exception work**: Chapters 30, 34. See also *Cost per acceptable completed workflow*.
 - **Crash-point matrix**: Chapter 28 §28.4.
 - **Credential custody**: Chapter 13; Chapter 29.
+- **Data minimization and purpose limitation**: Chapters 9, 12, 29. See also *Context, retrieval and provenance (E4/C03)*.
 - **Decision contract (C05)**: Chapters 8, 13, 25; Appendix.
+- **Decision gate — approve, hold, or retire**: Chapters 33, 34, 36. See also *Lifecycle investment and retirement*.
 - **Decision right**: Chapter 6; Chapter 32.
 - **Decision right and separation of duties**: Chapter 32 §§32.2–32.4; Table 32.1.
 - **Design A / B / C**: Chapters 3, 7–8, 17, 22–28.
+- **Design A — deterministic workflow**: Chapters 3, 17, 22. See also *Design A / B / C*.
+- **Design B — advisory assistance**: Chapters 3, 17, 23. See also *Design A / B / C*.
+- **Design C — bounded agent investigation**: Chapters 4, 17, 27. See also *Design A / B / C*.
 - **Dispatch claim**: Chapter 27; Chapter 28.
 - **Dispatch claim and durable intent (C06)**: Chapters 13–15, 22, 25–26.
 - **Durable operational state (E7)**: Chapters 15, 20, 22, 25–28.
-- **Effect ambiguity**: Chapter 28 §§28.1–28.5
+- **Effect ambiguity**: Chapter 28 §§28.1–28.5.
 - **Enforcement boundary**: Chapter 28; Chapter 32.
 - **Epoch and lease fencing**: Chapters 10, 18, 27–28.
 - **Error handling and hostile clients**: Chapters 22–27, especially 25–26.
@@ -58,49 +82,68 @@
 - **Evidence bundle**: Chapter 31; Chapter 35.
 - **Evidence bundle and provenance**: Chapter 31 §§31.3–31.4; Table 31.2; `assurance/README.md`.
 - **Evidence provenance**: Chapter 11; Chapter 18.
+- **Evidence — scenario reproducibility**: Chapters 22, 31, 35. See also *Evidence bundle*.
+- **Evidence — source/code/test crosswalk**: Chapters 31, 35, 36. See also *Reference artifacts and schema crosswalk*.
 - **Execution-boundary fencing**: Chapter 28 §28.7.
 - **Failure/deployment boundary**: Chapter 28 §28.2; Figure 28.1.
 - **Falsifier**: Chapter 31; Chapter 33.
 - **Federated agentic governance and lifecycle economics**: Chapter 32 §32.8; Table 32.3.
 - **Fencing**: Chapter 10; Chapter 27.
+- **Fencing — stale coordinator epoch**: Chapters 10, 27, 28. See also *Epoch and lease fencing*.
 - **Governance companion evidence and external obligations**: Chapter 32 §§32.9–32.10; Table 32.4; Appendix B.
 - **Hijacked bounded investigator**: Chapter 25.
 - **Human intervention**: Chapter 18; Chapter 32.
 - **Human intervention and route quarantine**: Chapter 32 §§32.4, 32.7; Runbook 32-A.
+- **Human review — meaningful decision rights**: Chapters 3, 32, 36. See also *Human intervention*.
 - **Idempotency and provider contracts**: Chapters 2, 14, 19, 22, 26.
 - **Idempotency key**: Chapter 14; Chapter 28.
+- **Identity — tenant and principal scoping**: Chapters 9, 24, 29. See also *Authentication and authorization*.
 - **Incident disposition**: Chapter 30.
 - **Incident response and quarantine**: Chapter 30 §§30.4–30.7; Runbook 30-A.
+- **Incident response — quarantine and restoration**: Chapters 30, 32, 33. See also *Incident response and quarantine*.
 - **Incremental cost per additional acceptable outcome**: Chapter 34.
 - **Incremental economics of Designs A/B/C**: Chapter 34 §34.3; Table 34.2.
 - **Independent request-path enforcement**: Chapters 13, 16, 25–27.
+- **Integration adapter — provider contract**: Chapters 14, 19, 26. See also *Idempotency and provider contracts*.
 - **Lease**: Chapter 27; Chapter 33.
 - **Lifecycle investment and retirement**: Chapter 34 §§34.6–34.8; Table 34.4; Figure 34.3.
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
 - **Mock provider**: Chapter 22; Chapter 25.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
+- **Observability — case reconstruction**: Chapters 15, 30, 32. See also *Operational observability (C09)*.
 - **Operation identity (RF-1042)**: Chapter 24.
+- **Operation ledger — durable intent**: Chapters 15, 25, 26. See also *Dispatch claim and durable intent (C06)*.
 - **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
-- **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`.
+- **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`. See also *Build 5 — optional coordination*.
+- **Partial outcome — reconciliation before retry**: Chapters 26, 28, 33. See also *UNKNOWN provider outcome*.
 - **Policy version, revocation and stale grants**: Chapter 32 §§32.4–32.5; Table 32.2.
+- **Policy — versioning and revocation**: Chapters 13, 21, 32. See also *Policy version, revocation and stale grants*.
+- **Production limitation — simulated provider**: Chapters 22, 25, 26, 35. See also *Mock provider*.
+- **Production limitation — unintegrated Build 5**: Chapters 27, 31, 35. See also *Build 5 — optional coordination*.
 - **Production release gate**: Chapter 31.
 - **Provider dispatch (C07)**: Chapter 33; Chapter 35.
 - **Provider idempotency retention**: Chapter 28 §28.6.
 - **Provider integration (E6)**: Chapters 14, 19, 22, 25–26.
 - **Provider truth (E8)**: Chapters 14–15, 20, 22, 25–28.
+- **Readiness — progressive activation**: Chapters 31, 33. See also *Canary activation*.
 - **Reconciliation (C08)**: Chapters 2, 14–15, 20, 22, 25–28.
 - **Recovery authority**: Chapter 28 §§28.7–28.9.
-- **Recovery exercise for RF-1042**: Chapter 36 §36.4; Figure 36.2.
+- **Recovery exercise for RF-1042**: Chapter 36 §36.4; Figure 36.2. See also *UNKNOWN provider outcome*.
+- **Recovery — acknowledgment loss**: Chapters 2, 26, 28. See also *UNKNOWN provider outcome*.
+- **Recovery — durable workflow ownership**: Chapters 10, 27, 28. See also *Coordination ownership (E2)*.
 - **Reference artifact**: Chapter 35.
 - **Reference artifacts and schema crosswalk**: Chapter 35 §35.3, Table 35.2; Appendix B.
 - **Release acceptance and stop rules**: Chapter 31 §§31.5–31.6; Figure 31.3.
 - **Release candidate manifest**: Chapter 33 §33.2; Table 33.1; Figure 33.1.
 - **Release readiness and promotion gates**: Chapter 33 §§33.3–33.5; Tables 33.1–33.2.
+- **Release — stop authority**: Chapters 32, 33. See also *Release readiness and promotion gates*.
 - **Responsibility boundary**: Chapter 28 §28.2.
 - **RF-1042 (trusted operation ID)**: Chapters 2–3, 8, 11, 22–28.
 - **Rollback and UNKNOWN effect**: Chapter 33 §§33.6–33.7; Runbook 33-A; Figure 33.3.
 - **Security and trust boundaries**: Chapters 6, 9, 13, 16, 23–28.
-- **Security falsifier**: Chapter 29 §29.7; Table 29.3.
+- **Security falsifier**: Chapter 29 §29.7; Table 29.3. See also *Compromised bounded investigator*.
+- **Security — compromised agent token**: Chapters 25, 29. See also *Valid token versus finance authorization*.
+- **Security — privilege escalation denial**: Chapters 13, 25, 29. See also *Independent request-path enforcement*.
 - **Selective professional reading paths**: Chapter 35 §35.7; Appendix B.
 - **Sensitivity and human review capacity**: Chapter 34 §34.5; Figure 34.2.
 - **Service-level objective (SLO)**: Chapter 30; Chapter 33.
@@ -108,6 +151,8 @@
 - **System of record**: Chapter 2; Chapter 14.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.
-- **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2.
+- **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2. See also *Trusted execution (E5)*.
+- **Verification — assertion versus evidence**: Chapters 7, 31, 36. See also *Assurance claims and falsifiers*.
 - **Workflow**: Chapter 2; Chapter 15.
+- **Workflow state — confirmed versus unknown**: Chapters 15, 26, 28. See also *UNKNOWN provider outcome*.
 - **Workload identity**: Chapter 10; Chapter 18.

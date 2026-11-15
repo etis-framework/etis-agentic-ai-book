@@ -24,7 +24,7 @@ def ref(para,name):
     r=para.add_run();x=OxmlElement('w:fldChar');x.set(qn('w:fldCharType'),'begin');r._r.append(x)
     r=para.add_run();x=OxmlElement('w:instrText');x.set(qn('xml:space'),'preserve');x.text=' PAGEREF '+name+' \\h ';r._r.append(x)
     r=para.add_run();x=OxmlElement('w:fldChar');x.set(qn('w:fldCharType'),'separate');r._r.append(x)
-    para.add_run('—')   # visible uncalculated page, never an invented locator
+    para.add_run('—')   # uncached Word PAGEREF; final print proof must populate and verify
     r=para.add_run();x=OxmlElement('w:fldChar');x.set(qn('w:fldCharType'),'end');r._r.append(x)
 
 names={};positions={};seq=1

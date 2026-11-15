@@ -104,3 +104,8 @@ check-publication-pass02: book-docx
 	python3 publishing/scripts/check_publication_certification_pass_02.py
 resolve-print-locators:
 	python3 publishing/scripts/resolve_print_locators.py dist/etis-agentic-ai-book.docx "$(PDF)" --strict
+
+# Publication pass 3: extended reference index, biography, and live page fields.
+.PHONY: check-publication-pass03
+check-publication-pass03: book-docx
+	python3 publishing/scripts/check_publication_certification_pass_03.py

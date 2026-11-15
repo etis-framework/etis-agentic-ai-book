@@ -1,6 +1,6 @@
 # Part IV — Implementation, contracts, and verification evidence
 
-This is a **source-accurate teaching map**, not a certification report. Chapter 8 owns the canonical reference architecture (CAB-001). The same CASE-204 customer case concerns a proposed $500 refund; **RF-1042 is created only by the trusted consequential path**. A C04 advisory `operation_id` is not RF-1042 or a payment-provider key. **Statuses are scoped to the indicated runnable checkpoint, not production compliance.**
+This is a **source-accurate teaching map**, not a certification report. Chapter 8 owns the canonical reference architecture (ETIS reference architecture). The same CASE-204 customer case concerns a proposed $500 refund; **RF-1042 is created only by the trusted consequential path**. A C04 advisory `operation_id` is not RF-1042 or a payment-provider key. **Statuses are scoped to the indicated runnable checkpoint, not production compliance.**
 
 ## 1. Why six builds exist and how much they compose
 
@@ -96,3 +96,14 @@ Build 4's `ledger.py` now retains a transactional local `operation_events` histo
 ## Chapter 29 — attack harness reusing Build 3
 
 `security/test_adversarial_cases.py` runs the real E5 subprocess via `build3/client.py`; `security/architecture.svg` maps the actual test and dependency modules. Negative tests establish that the valid CASE-204 investigator assertion cannot authorize a $500 RF-1042 and that E7/E8 fixture state is not created. The positive control exercises a separately issued *fixture* grant. The harness is **not** a progressive Build 6, an independently isolated adversary process or a real provider security test; E5-side ownership fencing and secure credential custody remain absent. See Chapter 29 Tables 29.1–29.3.
+
+## Chapter 30 operational evidence: non-effectful observer, no Build 6
+
+| Falsifier / teaching claim | Executable location | Boundary / unimplemented production claim |
+|---|---|---|
+| Lost acknowledgment creates E7 UNKNOWN after one mock E8 effect; observer causes none | `operations/test_incident.py::test_lost_ack_unknown_with_confirmed_synthetic_e8_still_requires_review`, `check_read_only` | Build 4 provider is simulated; no external settlement |
+| E8 NOT_FOUND and unavailable evidence do not infer failed payment | `test_not_found_is_not_payment_failure`, `test_outage_never_produces_dispatch` | Real provider consistency, status retention and finality untested |
+| Event order, gaps and duplicates are explicit | `test_out_of_order_signals_have_identical_disposition`, `test_missing_telemetry_never_closes_case`, `test_duplicate_event_identity_rejected` | Collector delivery, clock trust, protected E9 audit untested |
+| E2 stale-epoch, verifier outage and revoked-token signal lead to quarantine | `test_stale_epoch_cannot_authorize_action`, `test_unavailable_verifier_quarantines`, `test_revoked_token_quarantines` | No E5 epoch check, actual token revocation or key custody |
+| Local historical confirmation preserved across provider conflict | `test_local_conflicting_confirmation_history_is_not_erased` | SQLite history is not protected against privileged tampering |
+| Output contains only declared fields and no supplied credentials | `test_no_credential_or_untrusted_payload_in_report` | Operational privacy/redaction configuration still must be tested at deployment |

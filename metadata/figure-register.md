@@ -78,3 +78,7 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F29-01 | architecture | CAB E1–E9 trust and advisory-to-trusted effect boundary under attack | `assets/shared-figures/sources/F29-01.svg` | `assets/shared-figures/rendered/F29-01.png` | SVG/render inspected, native Word print gate open |
 | F29-02 | behavior | Real valid E1 token denial vs separate E5 grant positive control | `assets/shared-figures/sources/F29-02.svg` | `assets/shared-figures/rendered/F29-02.png` | SVG/render inspected, native Word print gate open |
 | F29-03 | decision | E5 schema/identity/grant decision before E7 intent; ambiguity recovery | `assets/shared-figures/sources/F29-03.svg` | `assets/shared-figures/rendered/F29-03.png` | SVG/render inspected, native Word print gate open |
+
+| F30-01 | architecture | E1–E9 layered operational responsibilities, E5 enforcement and C09 telemetry | `assets/shared-figures/sources/F30-01.svg` | `assets/shared-figures/rendered/F30-01.png` | SVG/PNG checked; native 7×10 Word proof pending |
+| F30-02 | behavior | Lost acknowledgment and read-only C08 incident timeline | `assets/shared-figures/sources/F30-02.svg` | `assets/shared-figures/rendered/F30-02.png` | SVG/PNG checked; native 7×10 Word proof pending |
+| F30-03 | decision | Credential/owner containment and evidence-based escalation | `assets/shared-figures/sources/F30-03.svg` | `assets/shared-figures/rendered/F30-03.png` | SVG/PNG checked; native 7×10 Word proof pending |

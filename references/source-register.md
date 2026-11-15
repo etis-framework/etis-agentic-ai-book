@@ -336,3 +336,13 @@ The reader-facing bibliography intentionally avoids a fixed “developed through
 | ETIS Build 3 `service.py`, `contracts.py`, Ch29 security harness | Valid E1 assertion denial and separately approved control, §§29.4–29.7 | Same-UID fixture, fake keys and provider; no production OS isolation |
 
 Publication gate: independently verify precise cited source sections, edition, and links; do not infer operational compliance.
+
+## Chapter 30 — reliability, observability and incident response (publication gate open)
+
+| Location | Basis | Supported claim / required limitation |
+|---|---|---|
+| §§30.1, 30.3–30.5 | Original ETIS operational SLO/incident rubric; CAB-001; Beyer et al., *Site Reliability Engineering* (2016), existing bibliography | Numeric SLOs are explicitly *illustrative*, not empirical performance; map actual denominators, ownership and business risk before use |
+| §§30.2–30.4 | CAB-001 C01–C09, Kleppmann (2017), Gray and Reuter (1992); existing Build 4/5 source | Local event histories can conflict with E8; telemetry cannot certify external settlement or protected audit custody; exact external passage verification remains open |
+| §§30.5–30.7 | ETIS original Runbook 30-A, `operations/incident.py`, 14 named local tests, Chapter 28/29 harness | Read-only recommendation and non-mutation apply only to fixture; no real E5 epoch enforcement, revocation, immutable external audit or real provider assurance |
+
+**Publication source QA:** verify edition/passage specificity for existing cited works and incident policy against chosen enterprise/provider standards; do not infer provider guarantees from generic reliability sources. Native Word 7×10 and figure proofs remain open.

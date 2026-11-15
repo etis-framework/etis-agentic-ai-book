@@ -24,7 +24,7 @@ for num,term in enumerate(['Admission','Work order','Context query','Action prop
     need(key in ch08, f'Chapter 8 contract catalog missing {key}')
     need(f'C{num:02d}' in cat, f'CAB catalog summary missing C{num:02d}')
 need('C01–C09' in front and 'Chapter 8' in front,'Front matter contract introduction incorrect')
-need('CAB-001' in ch08 and 'not separately deployed services' in ch08,'CAB origin/deployment distinction missing')
+need('reference architecture' in ch08.lower() and 'not separately deployed services' in ch08 and 'CAB-001' in cat,'Controlled catalog and reader-facing architecture/deployment distinction missing')
 need('CASE-204' in ch17 and 'RF-1042' in ch17 and '$500' in ch17,'Chapter 17 case identifiers missing')
 need('Design B' in ch03 and 'Design C' in ch17,'Case alternative continuity missing')
 F=ROOT/'assets/shared-figures/sources'

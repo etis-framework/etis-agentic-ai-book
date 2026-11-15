@@ -37,10 +37,12 @@ check:
 	python3 publishing/scripts/check_ch28_acceptance.py
 	python3 publishing/scripts/check_ch28_figure_geometry.py
 	python3 publishing/scripts/check_ch29_acceptance.py
+	python3 publishing/scripts/check_ch30_acceptance.py
 	python3 publishing/scripts/check_ch27_figure_geometry.py
 	python3 publishing/scripts/check_ch23_ch24_arrow_geometry.py
 	python3 publishing/scripts/check_code_listing_layout.py
 	python3 publishing/scripts/check_chapter_first_references.py
+	python3 publishing/scripts/check_reader_editorial_ch01_ch30.py
 	python3 publishing/scripts/check_professional_review_perspectives.py
 	python3 publishing/scripts/check_companion_architecture_docs.py
 	python3 publishing/scripts/check_assurance_handoff.py
@@ -55,6 +57,7 @@ check:
 	python3 -m unittest discover -s examples/refund-reference-system/build5 -p "test_*.py" -v
 	python3 -m unittest discover -s examples/refund-reference-system/reliability -p "test_*.py" -v
 	python3 -m unittest discover -s examples/refund-reference-system/security -p "test_*.py" -v
+	python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v
 	python3 publishing/scripts/check_parts12_citations.py
 	python3 publishing/scripts/check_parts13_reader_paths.py
 	python3 publishing/scripts/check_parts13_integration.py

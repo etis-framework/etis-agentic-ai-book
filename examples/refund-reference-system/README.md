@@ -23,6 +23,18 @@ Each chapter identifies its executable checkpoint and corresponding test evidenc
 
 The builds are teaching increments, **not a compulsory Design A → B → C migration**. Design C remains an optional bounded investigator. A professional reader should review each build's source, tests, figures and stated non-guarantees together.
 
+## Chapter-to-implementation navigation (recovery, security and operations)
+
+Chapters **28–30** use the same stable CASE-204/RF-1042 case and existing Builds 0–5, rather than three new payment implementations. Open the indicated README before changing code:
+
+| Chapter | Reader starting point | Executable verification | What the exercise must not claim |
+|---|---|---|---|
+| 28 — recovery | `reliability/README.md`; `build4/ledger.py`, `build4/workflow.py` | `reliability/test_recovery_cases.py` and `build4/test_provider.py` | A missing acknowledgment means payment failure or retry permission |
+| 29 — security | `security/README.md`; `build3/service.py` | `security/test_adversarial_cases.py` | Valid E1 token means business approval or OS-isolated credential custody |
+| 30 — incidents | `operations/README.md`; `operations/incident.py` | `operations/test_incident.py` | A synthetic provider status proves settlement, or an incident observer can issue an effect |
+
+All paths are relative to `examples/refund-reference-system/`. The Chapter 30 observer's read-only database queries and serialized `Finding` output are implemented in `operations/incident.py`. The simulated `provider_refunds` records originate in `build4/adapter.py`; historical `operation_events` are in `build4/ledger.py`. Test code deliberately constructs fixture records; the observer has no payment client or provider credentials. All three exercises should explicitly relate agent behavior (untrusted proposals, bounded delegation, stale agents and tool misuse) to deterministic independent control and operational accountability.
+
 ## Directory layout
 
 ```text
@@ -72,6 +84,11 @@ examples/refund-reference-system/
 │   ├── service.py
 │   ├── demo.py
 │   └── test_provider.py
+├── operations/             # Ch30 read-only incident observer and evidence tests
+│   ├── README.md
+│   ├── architecture.svg
+│   ├── incident.py
+│   └── test_incident.py
 ├── security/               # Ch29 adversarial harness: real Build 3 E5 subprocess
 │   ├── README.md
 │   ├── architecture.svg      # Actual test/module architecture

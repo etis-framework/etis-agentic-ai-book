@@ -8,6 +8,8 @@
 
 After this chapter, readers should be able to (1) distinguish task selection from consequential authority; (2) choose among deterministic, advisory, bounded-agentic, and hybrid arrangements; (3) develop a falsifiable selection scorecard, including lifecycle economics; (4) map the chosen approach onto Figure 8.1 without changing the established architectural contracts; (5) specify negative-path and provider-uncertainty acceptance evidence; and (6) record conditional selection, rejection, and reversal criteria in an architecture decision record.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 17.1 The decision changes; the architectural obligations do not
 
 Chapter 16 completed the transition from the **target-state logical reference architecture** to deployable protection boundaries. Figure 8.1 shows four responsibility layers and the cross-cutting E7 durable state and E9 assurance domains. Chapter 17 begins Part III by examining the choices *within* that architecture. It does not invent a new reference model or relocate authority. The fundamental question is not whether an enterprise can run an agent, but where a component that selects its next steps produces measurable value compared with an adequate simpler design.
@@ -82,7 +84,7 @@ An **architecture decision record (ADR)** is a durable explanation of a signific
 
 If the evidence contradicts B's economic assumptions, select A for more case types or restrict AI to drafting. If C demonstrates durable improvement, evaluate the *additional* bounded tool-selection contract separately. Neither decision changes E5's authority or permits a worker to access payment credentials. Decisions should also be reviewed after provider-contract changes or production incidents; verification is ongoing, not a one-time diagram review.
 
-**Review the ADR across the responsibilities affected by the decision.** Engineering questions integration and verification effort; enterprise architecture questions coupling and reversibility; security/assurance questions new authority and data exposure; SRE/operations questions recoverability and support; and the business owner questions the measurable benefit and reviewer workload. Not every ADR needs every perspective or five separate sign-offs. Record applicable objections, evidence and the person with actual decision authority.
+**Review the ADR across the responsibilities affected by the decision.** Engineering questions integration and verification effort; enterprise architecture questions coupling and reversibility; security/assurance questions new authority and data exposure; site reliability engineering (SRE)/operations questions recoverability and support; and the business owner questions the measurable benefit and reviewer workload. Not every ADR needs every perspective or five separate sign-offs. Record applicable objections, evidence and the person with actual decision authority.
 
 ## 17.8 Transition to coordination patterns
 

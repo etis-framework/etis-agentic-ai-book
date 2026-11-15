@@ -5,7 +5,7 @@
 - **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
 - **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*.
 - **Agent definition and boundaries**: Chapters 3–4, 11, 17.
-- **Architecture decisions and professional review**: Chapters 7–8, 16–17, 21–28.
+- **Architecture decisions and professional review**: Chapters 7–8, 16–17, 21–30.
 - **Authentication and authorization**: Chapters 6, 9, 13, 24–25.
 - **Bounded delegation**: Chapters 3–4, 7–9, 17–18.
 - **Build 0 — deterministic baseline**: Chapter 22; `build0/README.md`.
@@ -15,7 +15,7 @@
 - **Build 4 — provider and reconciliation**: Chapter 26; `build4/README.md`.
 - **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.
 - **C01–C09 cross-domain contracts**: Chapter 8; Chapters 9–16; Appendix.
-- **CASE-204 ($500 refund)**: Chapters 1–29, especially 3, 8, 22–29.
+- **CASE-204 ($500 refund)**: Chapters 1–30, especially 3, 8, 22–30.
 - **Competing histories**: Chapter 28 §§28.2–28.3.
 - **Compromised bounded investigator**: Chapter 29 §§29.1–29.4; Table 29.1.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
@@ -23,7 +23,7 @@
 - **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
 - **Crash-point matrix**: Chapter 28 §28.4.
 - **Decision contract (C05)**: Chapters 8, 13, 25; Appendix.
-- **Design A / B / C**: Chapters 3, 7–8, 17, 22–28.
+- **Design A / B / C**: Chapters 3–30 where alternatives are compared; canonical explanation Chapter 8.
 - **Dispatch claim and durable intent (C06)**: Chapters 13–15, 22, 25–26.
 - **Durable operational state (E7)**: Chapters 15, 20, 22, 25–28.
 - **Effect ambiguity**: Chapter 28 §§28.1–28.5
@@ -33,9 +33,11 @@
 - **Execution-boundary fencing**: Chapter 28 §28.7.
 - **Failure/deployment boundary**: Chapter 28 §28.2; Figure 28.1.
 - **Idempotency and provider contracts**: Chapters 2, 14, 19, 22, 26.
+- **Incident response and quarantine**: Chapter 30 §§30.4–30.7; Runbook 30-A; `operations/incident.py` and `operations/test_incident.py`.
 - **Independent request-path enforcement**: Chapters 13, 16, 25–27.
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
+- **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
 - **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`.
 - **Provider idempotency retention**: Chapter 28 §28.6.
 - **Provider integration (E6)**: Chapters 14, 19, 22, 25–26.
@@ -46,6 +48,7 @@
 - **RF-1042 (trusted operation ID)**: Chapters 2–3, 8, 11, 22–28.
 - **Security and trust boundaries**: Chapters 6, 9, 13, 16, 23–28.
 - **Security falsifier**: Chapter 29 §29.7; Table 29.3.
+- **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.
 - **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2.

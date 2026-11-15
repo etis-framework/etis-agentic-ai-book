@@ -8,6 +8,8 @@
 
 By the end of this chapter, readers should be able to classify information by authority and lifetime; compare retrieval, case-scoped memory, and persistent state patterns; design provenance, freshness, correction, and revocation controls; separate durable operational state (E7) from authoritative business truth (E8); and specify negative tests for replay, tenant leakage, stale policy, and uncertain outcomes.
 
+**Reader orientation for the alternatives.** Design A is the deterministic baseline; Design B adds bounded AI advice subject to independent review and trusted execution; Design C optionally delegates bounded investigation without granting agents payment authority. These are architectural choices, not mandatory development stages (Chapter 8).
+
 ## 20.1 The information boundary after effect isolation
 
 Chapter 19 established that a discoverable tool is not authorization: **trusted execution (E5)** and **enterprise integration (E6)** independently constrain financial effects. Chapter 20 asks a different question: **which information may a worker remember, reuse, or regard as authoritative?** Chapter 12 established **governed context and retrieval (E4)**; Chapter 15 established **durable operational state (E7)** and assurance. Here we compare information patterns and their authority boundaries. The full E1 through E9 responsibility map and C01–C09 contract names are in Chapter 8 and the Appendix; this chapter defines the relevant owners in place, without requiring separate services.

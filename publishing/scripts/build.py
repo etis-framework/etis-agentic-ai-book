@@ -62,6 +62,17 @@ def main():
     left=OxmlElement('w:left');pBdr.append(left)
    for name,val in {'val':'single','sz':'16','space':'7','color':'508091'}.items():
     left.set(qn('w:'+name),val)
+  # Chapter 30's decision/evidence tables may span pages only between rows.
+  # Apply this in both chapter-only and full-volume DOCX builds.
+  for table in doc.tables:
+   if not table.rows:continue
+   head=table.rows[0].cells[0].text.strip()
+   if head not in {'Indicator','Signal','Executed fixture evidence'}:continue
+   for i,row in enumerate(table.rows):
+    trPr=row._tr.get_or_add_trPr()
+    if trPr.find(qn('w:cantSplit')) is None:trPr.append(OxmlElement('w:cantSplit'))
+    if i==0 and trPr.find(qn('w:tblHeader')) is None:
+     repeat=OxmlElement('w:tblHeader');repeat.set(qn('w:val'),'true');trPr.append(repeat)
   doc.save(dest)
  if args.format=='docx' and not args.chapter:
   subprocess.run([sys.executable,str(ROOT/'publishing/scripts/paginate_docx.py'),str(dest)],check=True)

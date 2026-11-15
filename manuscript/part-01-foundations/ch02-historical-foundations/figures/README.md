@@ -1,1 +1,1 @@
-Chapter-specific figure sources belong here. Reused CAB-001 figures stay in assets/shared-figures.
+Chapter-specific figure sources belong here. Shared reference-architecture figures stay in assets/shared-figures.

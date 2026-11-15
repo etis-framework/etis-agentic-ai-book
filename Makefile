@@ -72,6 +72,7 @@ check:
 	python3 publishing/scripts/check_mac_word_ch01_ch17.py
 	python3 publishing/scripts/check_single_volume.py
 	python3 publishing/scripts/check_finished_page_ledger.py
+	python3 publishing/scripts/check_pre_part_vii_audit.py
 figures:
 	python3 publishing/scripts/figures.py
 check-figures:

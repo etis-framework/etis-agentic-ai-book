@@ -16,7 +16,7 @@ qa = (companion / 'test_adversarial_cases.py').read_text()
 readme = (companion / 'README.md').read_text()
 checks = {
     'Complete chapter under V12 source band': 2400 <= len(re.findall(r"\b[\w'-]+\b", chapter)) <= 3500,
-    'Source status updated': bool(re.search(r'Chapters 1–(?:29|3[0-6]) developed', (R / 'book.yaml').read_text())),
+    'Source status updated': ('chapters: 36' in (R / 'book.yaml').read_text() and 'All 36 chapters developed' in (R / 'book.yaml').read_text()),
     'Core case, approval and epoch gaps': all(x in chapter for x in ('CASE-204', '$500', 'RF-1042', 'valid E1', 'finance grant', 'E5', 'Build 5', 'epoch')),
     'CAB contracts and responsibilities': all(x in chapter for x in ('C01', 'C02', 'C03', 'C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9')),
     'Credential custody and delegation chapter coverage': all(x in chapter for x in ('Workload identity, credential custody, and delegated authority', 'Table 29.3', 'Table 29.4', 'confused-deputy', 'wrong-audience', 'read-only C08', 'revocation', 'key rotation', 'not implement')),

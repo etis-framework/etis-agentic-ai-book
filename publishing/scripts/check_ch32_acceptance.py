@@ -10,7 +10,7 @@ checks={}
 def check(name,ok):checks[name]=ok
 words=len(re.findall(r"\b[\w'-]+\b",CH))
 check('V12 13-page allocation and <=3000 words',len(CH.split())>2300 and words<=3000 and '\"32\": 13' in (R/'publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json').read_text())
-check('Chapter 32 developed / future truthful', 'STATUS: PLANNED' not in CH and 'Chapter 33' in PART and 'Chapter 34' in PART and 'remains planned' not in PART and 'Chapter 35 developed' in (R/'book.yaml').read_text())
+check('Chapter 32 developed / future truthful', 'STATUS: PLANNED' not in CH and 'Chapter 33' in PART and 'Chapter 34' in PART and 'remains planned' not in PART and 'All 36 chapters developed' in (R/'book.yaml').read_text())
 check('Agentic identity and first-use definitions',all(x in CH[:5200] for x in ('Design A','Design B','Design C','CASE-204','RF-1042','$500','admission and identity (E1)','trusted execution (E5)','C04','C05','E9')))
 check('No internal authoring baseline identifiers', 'CAB-001' not in CH and 'BP-001' not in CH)
 check('Authority, intervention and revocation distinctions',all(x.lower() in CH.lower() for x in ('separation of duties','transaction-specific','policy version','revocation','quarantine','incident commander','release authority','human','grant issuer','read-only')))

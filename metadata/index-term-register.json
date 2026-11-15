@@ -1,6 +1,6 @@
 {
-  "status": "development",
-  "locator_type": "chapter/section, not print page",
+  "status": "final candidate: live page fields; native Word print proof required",
+  "locator_type": "chapter/section anchors used to generate live print page fields",
   "entries": [
     {
       "term": "Acceptable completed workflow",
@@ -11,6 +11,12 @@
     {
       "term": "Accountable human governance",
       "locator": "Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Action proposal (C04)",
+      "locator": "Chapter 30; Chapter 31.",
       "aliases": [],
       "see_also": []
     },
@@ -52,8 +58,20 @@
       ]
     },
     {
+      "term": "Agent",
+      "locator": "Chapter 1; Chapter 4.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Agent definition and boundaries",
       "locator": "Chapters 3–4, 11, 17.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Agentic AI system",
+      "locator": "Chapter 1.",
       "aliases": [],
       "see_also": []
     },
@@ -70,6 +88,12 @@
       "see_also": []
     },
     {
+      "term": "Assurance claim",
+      "locator": "Chapter 31; Chapter 35.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Assurance claims and falsifiers",
       "locator": "Chapter 31 §§31.1–31.5; Table 31.1; `assurance/collect.py`.",
       "aliases": [
@@ -79,12 +103,30 @@
       "see_also": []
     },
     {
+      "term": "Authentication",
+      "locator": "Chapter 9; Chapter 29.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Authentication and authorization",
       "locator": "Chapters 6, 9, 13, 24–25.",
       "aliases": [
         "identity proof",
         "permission"
       ],
+      "see_also": []
+    },
+    {
+      "term": "Authorization",
+      "locator": "Chapter 13; Chapter 24.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Bounded advisory reasoning (E3)",
+      "locator": "Chapter 31.",
+      "aliases": [],
       "see_also": []
     },
     {
@@ -150,6 +192,12 @@
       "see_also": []
     },
     {
+      "term": "Capability registry",
+      "locator": "Chapter 9; Chapter 10.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "CASE-204 ($500 refund)",
       "locator": "Chapters 1–31, especially 3, 8, 22–30.",
       "aliases": [
@@ -174,6 +222,12 @@
       ]
     },
     {
+      "term": "Consequential effect",
+      "locator": "Chapter 1; Chapter 3.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Consequential operation and trusted execution (E5)",
       "locator": "Chapters 6, 8, 13, 19, 22, 25–28.",
       "aliases": [],
@@ -186,11 +240,23 @@
       "see_also": []
     },
     {
+      "term": "ContextUnavailable",
+      "locator": "Chapter 24.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Contract lookup and failure meanings",
       "locator": "Chapter 35 §35.2, Table 35.1; Appendix A.",
       "aliases": [
         "contract failures"
       ],
+      "see_also": []
+    },
+    {
+      "term": "Coordination and ownership (E2)",
+      "locator": "Chapter 10; Chapter 28.",
+      "aliases": [],
       "see_also": []
     },
     {
@@ -217,8 +283,20 @@
       "see_also": []
     },
     {
+      "term": "Credential custody",
+      "locator": "Chapter 13; Chapter 29.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Decision contract (C05)",
       "locator": "Chapters 8, 13, 25; Appendix.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Decision right",
+      "locator": "Chapter 6; Chapter 32.",
       "aliases": [],
       "see_also": []
     },
@@ -231,6 +309,12 @@
     {
       "term": "Design A / B / C",
       "locator": "Chapters 3, 7–8, 17, 22–28.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Dispatch claim",
+      "locator": "Chapter 27; Chapter 28.",
       "aliases": [],
       "see_also": []
     },
@@ -256,6 +340,12 @@
       "see_also": []
     },
     {
+      "term": "Enforcement boundary",
+      "locator": "Chapter 28; Chapter 32.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Epoch and lease fencing",
       "locator": "Chapters 10, 18, 27–28.",
       "aliases": [],
@@ -274,12 +364,24 @@
       "see_also": []
     },
     {
+      "term": "Evidence bundle",
+      "locator": "Chapter 31; Chapter 35.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Evidence bundle and provenance",
       "locator": "Chapter 31 §§31.3–31.4; Table 31.2; `assurance/README.md`.",
       "aliases": [
         "test provenance",
         "digests"
       ],
+      "see_also": []
+    },
+    {
+      "term": "Evidence provenance",
+      "locator": "Chapter 11; Chapter 18.",
+      "aliases": [],
       "see_also": []
     },
     {
@@ -297,14 +399,38 @@
       "see_also": []
     },
     {
+      "term": "Falsifier",
+      "locator": "Chapter 31; Chapter 33.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Federated agentic governance and lifecycle economics",
       "locator": "Chapter 32 §32.8; Table 32.3.",
       "aliases": [],
       "see_also": []
     },
     {
+      "term": "Fencing",
+      "locator": "Chapter 10; Chapter 27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Governance companion evidence and external obligations",
       "locator": "Chapter 32 §§32.9–32.10; Table 32.4; Appendix B.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Hijacked bounded investigator",
+      "locator": "Chapter 25.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Human intervention",
+      "locator": "Chapter 18; Chapter 32.",
       "aliases": [],
       "see_also": []
     },
@@ -321,8 +447,26 @@
       "see_also": []
     },
     {
+      "term": "Idempotency key",
+      "locator": "Chapter 14; Chapter 28.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Incident disposition",
+      "locator": "Chapter 30.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Incident response and quarantine",
       "locator": "Chapter 30 §§30.4–30.7; Runbook 30-A.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Incremental cost per additional acceptable outcome",
+      "locator": "Chapter 34.",
       "aliases": [],
       "see_also": []
     },
@@ -335,6 +479,12 @@
     {
       "term": "Independent request-path enforcement",
       "locator": "Chapters 13, 16, 25–27.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Lease",
+      "locator": "Chapter 27; Chapter 33.",
       "aliases": [],
       "see_also": []
     },
@@ -353,8 +503,20 @@
       "see_also": []
     },
     {
+      "term": "Mock provider",
+      "locator": "Chapter 22; Chapter 25.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Model output as untrusted proposal (C04)",
       "locator": "Chapters 6, 11, 23–25.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Operation identity (RF-1042)",
+      "locator": "Chapter 24.",
       "aliases": [],
       "see_also": []
     },
@@ -378,6 +540,18 @@
     {
       "term": "Policy version, revocation and stale grants",
       "locator": "Chapter 32 §§32.4–32.5; Table 32.2.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Production release gate",
+      "locator": "Chapter 31.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Provider dispatch (C07)",
+      "locator": "Chapter 33; Chapter 35.",
       "aliases": [],
       "see_also": []
     },
@@ -418,6 +592,12 @@
       "see_also": [
         "UNKNOWN provider outcome"
       ]
+    },
+    {
+      "term": "Reference artifact",
+      "locator": "Chapter 35.",
+      "aliases": [],
+      "see_also": []
     },
     {
       "term": "Reference artifacts and schema crosswalk",
@@ -501,8 +681,20 @@
       "see_also": []
     },
     {
+      "term": "Service-level objective (SLO)",
+      "locator": "Chapter 30; Chapter 33.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
       "term": "Service-level objectives (SLOs)",
       "locator": "Chapter 30 §30.1; Table 30.1.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "System of record",
+      "locator": "Chapter 2; Chapter 14.",
       "aliases": [],
       "see_also": []
     },
@@ -532,6 +724,18 @@
       "see_also": [
         "Trusted execution (E5)"
       ]
+    },
+    {
+      "term": "Workflow",
+      "locator": "Chapter 2; Chapter 15.",
+      "aliases": [],
+      "see_also": []
+    },
+    {
+      "term": "Workload identity",
+      "locator": "Chapter 10; Chapter 18.",
+      "aliases": [],
+      "see_also": []
     }
   ]
 }

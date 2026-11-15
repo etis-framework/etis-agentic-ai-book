@@ -128,7 +128,7 @@ Negative test coverage must also consider **false confidence**. A passing static
 
 **Implementing engineer.** Can the valid investigator token be replayed against the real E5 endpoint, and does the test verify forbidden side effects rather than merely matching an error? Point to the exact E5 verifier and fixture file assertions. Identify the missing E5 epoch argument in Build 5 integration.
 
-**Enterprise architect.** Where are E5 finance credentials held, and what *actual* process or principal prevents E3 from obtaining them? Does the threat diagram separate logical the ETIS reference architecture boundaries from independently enforced deployment zones? Reject a claim of isolation based solely on `architecture.svg`.
+**Enterprise architect.** Where are E5 finance credentials held, and what *actual* process or principal prevents E3 from obtaining them? Does the threat diagram separate the logical ETIS reference-architecture boundaries from independently enforced deployment zones? Reject a claim of isolation based solely on `architecture.svg`.
 
 **Evidence reasoning.** Contrast a valid E1 token, a C04 proposal, an E2 lease, and a separately signed C05 finance grant. Only one is the transaction-specific financial approval. Explain why the signed grant still needs scope, freshness and policy validation.
 

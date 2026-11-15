@@ -25,7 +25,7 @@ for para in doc.paragraphs:
  t=para.text.strip()
  if re.match(r'^(Chapter \d+|Part [IVX]+)\s*[—–-]',t):typ='main'
  elif t=='Contents':typ='contents'
- elif t in {'Half title','Title page','Copyright','Preface','Introduction','How to use this book','Appendices','Glossary','References and bibliography','Index','Working subject index','About the author'}:typ='other'
+ elif t in {'Half title','Series page','Title page','Copyright','Preface','Introduction','How to use this book','Appendices','Glossary','References and bibliography','Index','Working subject index','About the author','About the Author'}:typ='other'
  else:continue
  headings.append((para,typ,t))
  para.paragraph_format.keep_with_next=True
@@ -34,7 +34,7 @@ for para in doc.paragraphs:
 # Publication back matter starts on deliberately controlled fresh pages.
 # Do not rely on accidental paragraph flow. A nextPage section break below
 # also preserves the section-specific header/footer and numbering design.
-BACK_OPENINGS={'Appendices','Glossary','References and bibliography','Working subject index','Index','About the author'}
+BACK_OPENINGS={'Appendices','Glossary','References and bibliography','Working subject index','Index','About the author','About the Author'}
 for para in doc.paragraphs:
  if para.style.name=='Heading 1' and para.text.strip() in BACK_OPENINGS:
   para.paragraph_format.page_break_before=True
@@ -100,7 +100,18 @@ for i,sec in enumerate(doc.sections):
  elif title.startswith('Chapter 1 '):set_numbering(sec,'decimal',1);main_started=True
  elif main_started:set_numbering(sec,'decimal')
  elif title!='Contents':set_numbering(sec,'lowerRoman')
- if title in {'Title page','Copyright'}:sec.footer.is_linked_to_previous=False;sec.footer.paragraphs[0].text=''
+ if title in {'Series page','Title page','Copyright'}:
+  sec.footer.is_linked_to_previous=False
+  sec.footer.paragraphs[0].text=''
+  if title in {'Series page','Title page'}:
+   from docx.enum.text import WD_ALIGN_PARAGRAPH
+   imprint=sec.footer.paragraphs[0]
+   imprint.alignment=WD_ALIGN_PARAGRAPH.CENTER
+   r=imprint.add_run('ETIS FRAMEWORK' if title=='Series page' else 'ETIS Framework')
+   r.bold=(title=='Series page');r.font.size=Pt(10)
+   r.add_break()
+   url=imprint.add_run('etisframework.org');url.font.size=Pt(10)
+
  else:folio(sec)
  # Set simple running heads; no header on chapter or part opening pages.
  sec.header.is_linked_to_previous=False
@@ -112,9 +123,10 @@ for i,sec in enumerate(doc.sections):
   # First-page footer must carry the chapter-opening page number.
   fp=sec.first_page_footer;fp.is_linked_to_previous=False
   p=fp.paragraphs[0];p.text='';p.alignment=2;field(p,'PAGE')
- elif title not in {'Contents','Preface','Introduction','How to use this book'}:
+ elif title not in {'Contents','Preface','Introduction','How to use this book','Series page','Title page','Copyright'}:
   h.text='ETIS  •  Engineering Agentic AI Systems'
 
+# Live page references and the final index are inserted by finalize_navigation.py.
 # Visible draft contents: unlike an unpopulated Word field, entries always show.
 # Entries are inserted BEFORE the paragraph carrying the next-section break.
 for p in doc.paragraphs:
@@ -135,7 +147,57 @@ for p in doc.paragraphs:
  p.paragraph_format.space_after=Pt(1)
  for r in p.runs:r.font.size=Pt(8.4)
  break
+# Opening pages match the series typography and deliberate vertical hierarchy
+# of From Data Structures to Engineering Judgment (first edition, 2026).
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import RGBColor
+
+def style_line(para, size, *, bold=False, italic=False, font='Carlito', before=0, after=0):
+ para.alignment=WD_ALIGN_PARAGRAPH.CENTER
+ para.paragraph_format.space_before=Pt(before)
+ para.paragraph_format.space_after=Pt(after)
+ para.paragraph_format.line_spacing=1.08
+ for run in para.runs:
+  run.font.name=font;run.font.size=Pt(size);run.bold=bold;run.italic=italic;run.font.color.rgb=RGBColor(0,0,0)
+
+opening=None
+for para in doc.paragraphs:
+ if para.style.name=='Heading 1' and para.text.strip() in {'Half title','Series page','Title page'}:
+  label=para.text.strip();opening={'Half title':'half','Series page':'series','Title page':'title'}[label]
+  if opening=='half':
+   para.text='ENGINEERING AGENTIC\nAI SYSTEMS'
+   style_line(para,25,bold=True,before=170,after=0)
+  elif opening=='series':
+   para.text='ETIS PROFESSIONAL COMPUTING SERIES'
+   style_line(para,17,bold=True,font='Caladea',before=42,after=24)
+  else:
+   para.text='ETIS Professional Computing Series'
+   style_line(para,12,font='Caladea',before=0,after=45)
+  continue
+ if opening is None:continue
+ if para.style.name=='Heading 1':opening=None;continue
+ if not para.text.strip():continue
+ val=para.text.strip()
+ if opening=='series':
+  if val.startswith('ETIS FRAMEWORK'):
+   for run in para.runs:run.text=''  # imprint is in series-page footer
+  else:
+   style_line(para,10.6,font='Caladea',before=0,after=19)
+ elif opening=='title':
+  if val=='Engineering Agentic AI Systems':
+   para.text='ENGINEERING AGENTIC\nAI SYSTEMS'
+   style_line(para,25,bold=True,before=0,after=10)
+  elif val.startswith('Build, Secure, Verify'):
+   style_line(para,14.5,italic=True,font='Caladea',after=64)
+  elif val=='William T. O’Connell, Ph.D.':
+   style_line(para,12.5,bold=True,after=0)
+  elif val.startswith('ETIS Framework'):
+   for run in para.runs:run.text=''  # imprint is in title-page footer
+
 settings=doc.settings.element
 for e in settings.findall(qn('w:updateFields')):settings.remove(e)
 doc.save(path)
+if not __import__('os').environ.get('ETIS_SKIP_FINAL_NAV'):
+ import subprocess
+ subprocess.run([sys.executable,str(Path(__file__).with_name('finalize_navigation.py')),str(path)],check=True)
 print(f'ETIS pagination: {len(doc.sections)} sections; Roman front matter; Arabic Chapter 1; draft Contents listing')

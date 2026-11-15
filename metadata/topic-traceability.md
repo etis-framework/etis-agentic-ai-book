@@ -162,14 +162,14 @@ Build 5 is optional; Designs A/B/C remain alternatives and no C04 proposal can m
 
 ## Parts I–V end-to-end evidence status (post-Chapter 28 gate)
 
-Chapters 1–30 are drafted; Chapters 31–36 remain planned. The cross-build [Chapter 28–31 assurance handoff](../examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md) maps *named tests* for crash recovery, valid-token denial, C04 proposal containment, E2-local fencing and provider ambiguity. These are educational fixtures, not a production payment system or a single assembled six-build pipeline. Chapter 29 now verifies valid-token denial through the real Build 3 subprocess but not physical isolation. Chapter 30 now supplies an incident observer, 14 tests, and Runbook 30-A; Chapter 31 release evidence **must be verified when written**. E5-side E2 epoch checking, a separately protected OS principal, actual provider retention/finality and operational response evidence remain unimplemented. Historical earlier rows in this register record the state at the original Part III checkpoint; this section is the current status and does not silently mark those planned obligations complete.
+Chapters 1–36 are developed and Chapter 36 is the professional capstone; publication certification remains open. The cross-build [Chapter 28–31 assurance handoff](../examples/refund-reference-system/ASSURANCE_HANDOFF_CH28_CH31.md) maps *named tests* for crash recovery, valid-token denial, C04 proposal containment, E2-local fencing and provider ambiguity. These are educational fixtures, not a production payment system or a single assembled six-build pipeline. Chapter 29 now verifies valid-token denial through the real Build 3 subprocess but not physical isolation. Chapter 30 now supplies an incident observer, 14 tests, and Runbook 30-A; Chapter 31 assurance fixtures exist and their bounded evidence **must be independently verified before production release**. E5-side E2 epoch checking, a separately protected OS principal, actual provider retention/finality and operational response evidence remain unimplemented. Historical earlier rows in this register record the state at the original Part III checkpoint; this section is the current status and does not silently mark those planned obligations complete.
 
 ## Chapter 30 operational bridge to Chapter 31
 
 - Chapter 30 §§30.1–30.3: SLO measurement, E1–E9/C01–C09 signal ownership, physical versus logical failure zones; Fig. F30-01.
 - Chapter 30 §§30.4–30.5: RF-1042 lost acknowledgment, evidence-preserving response, escalation authority, Runbook 30-A; F30-02/F30-03.
 - Chapter 30 §§30.6–30.7: `operations/incident.py` read-only E2/E7 snapshots, 14 negative tests, outcome and production claim limits; companion READMEs and assurance handoff.
-- Chapter 31 pending gate: falsify claims using collected evidence and demand production E5 epoch checks, protected E9 audit, real key custody/revocation and authoritative provider C08.
+- Chapter 31 completed developmental handoff: falsify claims using collected fixture evidence; production E5 epoch checks, protected E9 audit, real key custody/revocation and authoritative provider C08 still require independent verification.
 
 ## Chapters 1–30 reader-reference editorial integration (2026-11-15)
 

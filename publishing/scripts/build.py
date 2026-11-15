@@ -6,7 +6,7 @@ CHAPTERS=list((ROOT/'manuscript').glob('part-*/ch*/index.md'))
 def order(p):
  m=re.search(r'/ch(\d+)-',str(p));return int(m.group(1)) if m else 999
 CHAPTERS.sort(key=order)
-FRONT=['half-title','title','copyright','contents','preface','introduction','how-to-use-this-book']
+FRONT=['half-title','series','title','copyright','contents','preface','introduction','how-to-use-this-book']
 BACK=['appendices','glossary','bibliography','index','about-the-author']
 def main():
  ap=argparse.ArgumentParser();ap.add_argument('--chapter',type=int);ap.add_argument('--format',choices=['docx','pdf','html'],default='docx');args=ap.parse_args()

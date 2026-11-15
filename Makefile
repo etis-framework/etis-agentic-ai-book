@@ -90,3 +90,17 @@ book-html:
 	python3 publishing/scripts/build.py --format html
 qa: check
 	@echo "Manual figure, technical, citation, and print QA still required."
+
+# Publication pass is a separate release gate, not a substitute for make check.
+.PHONY: check-publication
+check-publication: book-docx
+	python3 publishing/scripts/check_publication_certification_pass.py
+
+# Publication pass 02 validates source and Word structural readiness.
+# After exporting the final Word-for-Mac PDF, populate cached PAGEREF
+# values so opening the review DOCX does not display draft dashes.
+.PHONY: check-publication-pass02 resolve-print-locators
+check-publication-pass02: book-docx
+	python3 publishing/scripts/check_publication_certification_pass_02.py
+resolve-print-locators:
+	python3 publishing/scripts/resolve_print_locators.py dist/etis-agentic-ai-book.docx "$(PDF)" --strict

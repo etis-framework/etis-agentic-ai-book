@@ -4,10 +4,7 @@
 
 *Build, Secure, Verify, and Operate Trustworthy AI Agents*
 
-ETIS Professional Computing Series
+**William T. O’Connell, Ph.D.**
 
-**Author:** [Author name and professional byline — confirm before publication]
-
-**Publisher / imprint:** [To be confirmed]
-
-**Edition:** Working manuscript — not for distribution
+ETIS Framework  
+etisframework.org

@@ -36,7 +36,7 @@ The reference architecture separates logical responsibilities from trust boundar
 
 ## Appendix B — Companion implementation guide
 
-The authoritative companion tree is `examples/refund-reference-system/` in the project repository, https://github.com/etis-framework/etis-agentic-ai-book. Start with `examples/refund-reference-system/README.md` and `IMPLEMENTATION_EVIDENCE_MAP.md`. Paths in the tables are **relative to that companion tree**, not to this manuscript file. These are repository-relative file identifiers suitable for both printed and digital editions; a published edition must provide a fixed public release tag.
+The authoritative companion tree is `examples/refund-reference-system/` in the project repository, https://github.com/etis-framework/etis-agentic-ai-book. Start with `examples/refund-reference-system/README.md` and `IMPLEMENTATION_EVIDENCE_MAP.md`. Paths in the tables are **relative to that companion tree**, not to this manuscript file. These are repository-relative file identifiers suitable for the printed edition; a published edition must provide a fixed public release tag.
 
 **Progressive reference implementation (Chapters 22–27)**
 

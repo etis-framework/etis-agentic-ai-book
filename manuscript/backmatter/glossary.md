@@ -16,7 +16,6 @@ Terms below describe the architecture and developed implementation. The definiti
 **Bounded advisory reasoning (E3).** Evidence-based reasoning constrained to proposed actions and traceable outputs without independent execution authority.
 **Bounded delegation.** Explicitly limited software discretion over allowed tools, data, steps, cost, duration and actions, with external enforcement and escalation.
 **Break-glass authority.** Exceptionally scoped, logged emergency privilege; it cannot convert an unknown payment effect into permission to resend.
-**Business owner perspective.** Review of value, acceptability, commercial exposure and accountable outcomes; a perspective, not automatic transaction-approval authority.
 **Canary activation.** A bounded rollout to a restricted cohort with explicit stop conditions; the percentage of traffic alone is not a limit on consequential risk.
 **Capability registry.** E2-managed catalog of available and eligible workers/capabilities; discovery is not authorization.
 **CASE-204.** The recurring fictional customer case concerning a proposed $500 refund; not a real customer or provider transaction.
@@ -36,7 +35,6 @@ Terms below describe the architecture and developed implementation. The definiti
 **Durable operational state (E7).** Persisted local workflow and effect-intent records, transitions and observations; storage and recovery mechanisms under accountable logical ownership.
 **Effect ambiguity.** State in which an external consequential action may have occurred but available trusted evidence does not prove its outcome; UNKNOWN is not FAILED.
 **Enforcement boundary.** Code- or infrastructure-controlled point that rejects unauthorized operations independently of untrusted proposals; logical module lines alone do not establish isolation.
-**Enterprise architect perspective.** Examination of responsibility allocation, contracts, topology and tradeoffs; a review perspective, not a new E-domain.
 **Epoch (ownership).** Monotonically advancing ownership generation used to reject obsolete coordinators at a boundary that actually verifies it.
 **Evidence bundle.** Versioned set of registered tests, results, source digests, exclusions and outstanding gates; a local fixture bundle does not prove independent production trust.
 **Evidence provenance.** Traceable source, time, identity and transformation context necessary to judge whether information supports a decision.
@@ -49,7 +47,6 @@ Terms below describe the architecture and developed implementation. The definiti
 **Hijacked bounded investigator.** Agent or worker whose advisory execution is attacker-controlled despite a legitimate scoped E1 identity assertion; not automatically entitled to finance operations.
 **Human intervention.** Enforceable hold, denial, quarantine or authorized restoration at the appropriate trusted boundary, not merely a message to an agent.
 **Idempotency key.** Stable request identity used under a provider's documented scope and retention guarantee to suppress duplicate effects; not a blanket exactly-once guarantee.
-**Implementing engineer perspective.** Examination of executable contracts, code, validation, tests and maintainability, supported by artifacts.
 **Incident disposition.** Evidence-qualified operational recommendation to quarantine, inquire, escalate or review an unresolved workflow; not permission to execute a refund.
 **Incident observer.** Chapter 30 read-only fixture in `examples/refund-reference-system/operations/incident.py` that classifies synthetic signals and existing Build 4/5 state without issuing an effect; see `operations/test_incident.py`.
 **Incremental cost per additional acceptable outcome.** Difference in total lifecycle cost between comparable designs divided by the difference in acceptable completed outcomes, with a shared cohort and acceptance definition.
@@ -73,10 +70,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **RF-1042.** See *Operation identity (RF-1042)*.
 **Risk-adjusted decision.** Architecture and investment decision evaluating plausible impact and uncertainty only after non-negotiable safety, authority and compliance gates are satisfied.
 **Rollback boundary.** The distinction between reverting software exposure for future work and preserving already committed or uncertain external business effects.
-**Security and assurance perspective.** Review of adversarial behavior, least privilege, protection, policy and independently verifiable enforcement.
 **Security falsifier.** Reproducible attack input and expected independent denial point, accompanied by checks for absent downstream effects within a stated test boundary.
 **Service-level objective (SLO).** Explicitly scoped target for a service indicator, denominator and window; not a substitute for an independent financial correctness invariant.
-**SRE/operations perspective.** Review of availability, observability, failure handling, incident response and recoverability.
 **System of record.** Authoritative owner of a specified business fact; retrieved context or an AI-generated summary does not replace it.
 **Transaction-specific approval grant.** Separately issued, case/tenant/amount/policy-bound artifact that E5 verifies; a signed local demonstration grant does not simulate real finance approval infrastructure.
 **Trust/enforcement boundary.** Independently controlled check that can reject unauthorized actions at the receiving consequential interface; distinct from diagram grouping and physical deployment.

@@ -12,6 +12,6 @@ Applies to all developed chapters and future chapter/build additions. The book i
 8. **Keep the agentic distinction visible.** Reliability, identity and operations chapters must explain how probabilistic advice, dynamic tool selection, bounded delegation and replacement agents alter risk, and what deterministic controls remain independent.
 9. **Verify, do not merely assert.** Run `python3 publishing/scripts/check_chapter_first_references.py` and existing chapter/full-book QA. Review the first substantive paragraph and figure/table labels manually from all six ETIS reader lenses. Check native Word line wrap and pagination after textual edits. Automated detection is only a preflight.
 
-The rule is applied through developed Chapter 31 and prospectively to Chapters 32–36; planned placeholders are not certified as substantive chapters.
+The rule applies to all 36 developed chapters. Final complete-volume publication certification and manual print proof remain separate obligations.
 
 **Professional review perspectives:** Use `metadata/professional-review-perspectives-standard.md` for the reader-facing method versus the internal six-lens QA distinction.

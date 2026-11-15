@@ -27,7 +27,7 @@ need(any(e['aliases'] for e in entries),'Index aliases register must be maintain
 need(len(names)>=25 and len(names)==len(set(names)),'Index register is incomplete or duplicate')
 need(len(re.findall(r'^\- \*\*',idx,re.M))==len(entries),'Index markdown/register count drift')
 for e in entries:need(f'**{e["term"]}**:' in idx,f'Index entry missing: {e["term"]}')
-need('print-page numbers' in idx and 'Development edition' in idx,'Provisional index not identified')
+need('entries are linked to live page references' in idx.lower(), 'Live print-index generation is not identified')
 for n in range(22,min(max(chapters),27)+1):need(f'Chapter {n}' in src,f'Developed Chapter {n} source queue absent')
 need('metadata/backmatter-maintenance-standard.md' in read('Makefile') or 'check_backmatter_integrity.py' in read('Makefile'),'Back matter gate absent from make check')
 print('Back-matter dynamic coverage:',len(chapters),'developed chapters;',len(terms),'glossary terms;',len(entries),'index entries; failures:',len(errors))

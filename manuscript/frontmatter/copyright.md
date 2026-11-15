@@ -3,21 +3,18 @@
 **Engineering Agentic AI Systems**  
 *Build, Secure, Verify, and Operate Trustworthy AI Agents*
 
-ETIS Professional Computing Series  
-**Publication metadata — pending confirmation**
+ETIS Professional Computing Series · First Edition · 2026
 
-Copyright © [year of publication] [legal copyright owner]. All rights reserved.  
-Author: [author-approved byline]  
-Publisher / imprint: [confirmed imprint]  
-Edition and printing: [confirmed edition / printing]  
-Paperback ISBN: [assigned identifier]  
-Hardcover ISBN: [assigned identifier]  
-Digital edition ISBN: [assigned identifier, if applicable]
+Copyright © 2026 William T. O’Connell. All rights reserved.
 
-**Rights and permissions.** Except as allowed by applicable copyright law or a separate written license, reproduction, distribution, or adaptation requires permission from the rights holder. Requests and permission contact: [publisher-approved contact]. Third-party material credits and permissions will be recorded in the final edition.
+Published by ETIS Framework, United States of America.  
+Publisher website: etisframework.org
 
-**Professional and technical notice.** This book presents engineering methods and illustrative designs, not a certified implementation, legal opinion, security guarantee, or substitute for organization-specific professional review. Laws, regulations, vendor interfaces, model behavior, and operating conditions change. Readers are responsible for verifying requirements, testing implementations, and obtaining the approvals appropriate to their environments.
+Paperback ISBN: To be assigned.  
+Hardcover ISBN: To be assigned.
 
-**Trademarks and examples.** Product and organization names, if used, remain the property of their respective owners. The recurring refund case and its values are illustrative; they do not describe an actual customer or production payment service.
+**Rights and permissions.** No part of this work may be reproduced, stored, or transmitted by any means without permission of the copyright holder except where allowed by applicable copyright law. Inquiries: etisframework.org. Third-party images, quotations, and other copyrighted material remain subject to their respective rights.
 
-*Production gate: replace every bracketed item, confirm all rights and permissions, and obtain publisher/legal review before release.*
+**Professional notice.** The architectural patterns, fictional CASE-204/RF-1042 scenario, reference code, and tests are educational and professional engineering illustrations; they are not a certified production implementation, legal advice, or security guarantee. Organizations must independently verify provider contracts, credentials, controls, regulatory obligations, and operational fitness before use.
+
+Product and organization names belong to their respective owners. Mention does not imply affiliation or endorsement.

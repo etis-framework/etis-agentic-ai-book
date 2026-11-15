@@ -1,6 +1,6 @@
-# Source and citation register — developed Chapters 1–31
+# Source and citation register — Chapters 1–36
 
-**Status: developed Chapters 1–31 are covered by chapter-specific source/claim notes; final publication certification remains open.** This is a cumulative engineering register, not the reader bibliography. Coverage and verification depth vary by chapter: presence of a mapping does not certify a primary passage, edition/page, stable link, claim applicability or production guarantee. Historical working-pass headings below preserve the chronology of earlier citation reviews; they are not current coverage limits.
+**Status: Chapters 1–36 have cumulative source/claim notes; final passage-level publication certification remains open.** This is a cumulative engineering register, not the reader bibliography. Coverage and verification depth vary by chapter: presence of a mapping does not certify a primary passage, edition/page, stable link, claim applicability or production guarantee. Historical working-pass headings below preserve the chronology of earlier citation reviews; they are not current coverage limits.
 
 ## Source hierarchy and use
 

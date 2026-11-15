@@ -24,15 +24,15 @@ chk('not** call Build 1' in (root/'build5/README.md').read_text(),'Build5 README
 chk(all(f'build{i}/architecture.svg' in (root/'ARCHITECTURE.md').read_text() for i in range(6)),'Architecture diagram navigation incomplete')
 for i in range(6):chk((root/f'build{i}/architecture.svg').exists(),f'Missing Build {i} SVG')
 source=(R/'publishing/scripts/paginate_docx.py').read_text()
-chk("'Working subject index'" in source and 'page_break_before=True' in source,'Index heading page-break rule missing')
-for label in ('Appendices','Glossary','References and bibliography','Working subject index'):
+chk("'Index'" in source and 'page_break_before=True' in source,'Index heading page-break rule missing')
+for label in ('Appendices','Glossary','References and bibliography','Index'):
  chk(label in source,f'Back-matter opening not governed: {label}')
 # Check built artifact when it exists. The docx build is generated separately.
 build_source=(R/'publishing/scripts/build.py').read_text()
 chk("['Demonstration','Executed evidence','Not established']" in build_source and "w:tblHeader" in build_source and "w:cantSplit" in build_source, 'Capstone table pagination and header controls missing from builder')
 doc=R/'dist/etis-agentic-ai-book.docx'
 if doc.exists():
- d=Document(doc);matches=[p for p in d.paragraphs if p.text.strip()=='Working subject index']
+ d=Document(doc);matches=[p for p in d.paragraphs if p.text.strip()=='Index']
  chk(len(matches)==1,'Index heading count in built DOCX')
  if matches:chk(matches[0].paragraph_format.page_break_before is True,'Index not marked page-break-before in DOCX')
  tables=[t for t in d.tables if t.rows and [c.text.strip() for c in t.rows[0].cells]==['Demonstration','Executed evidence','Not established']]

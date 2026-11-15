@@ -7,7 +7,7 @@ p=R/'manuscript/part-06-governance-operations/ch34-economics-risk-and-lifecycle-
 def check(label,ok):checks[label]=bool(ok)
 words=len(re.findall(r"\b[\w'-]+\b",ch))
 check('V12 12-page allocation and substantive length',2400<=words<=3000 and json.loads((R/'publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json').read_text())['chapter_pages']['34']==12)
-check('developed manuscript and Part VI closing','STATUS: PLANNED' not in ch and 'Chapter 35 developed' in (R/'book.yaml').read_text() and 'Part VI conclusion' in ch)
+check('developed manuscript and Part VI closing','STATUS: PLANNED' not in ch and 'All 36 chapters developed' in (R/'book.yaml').read_text() and 'Part VI conclusion' in ch)
 check('first references and CASE-204',all(t in ch[:4200] for t in ['CASE-204','$500','RF-1042','Design A','Design B','Design C','admission and identity (E1)','independent trusted execution (E5)','C04','C05','C06','C07','C08','C09']))
 check('no internal review vocabulary or catalog IDs',not re.search(r'CAB-001|BP-001|advanced student|six-lens|six lenses',ch,re.I))
 check('economics unique to agentic systems',all(t in ch for t in ['cost per **acceptable completed workflow**','incremental cost','acceptable completions','human review','E5','UNKNOWN']))
@@ -21,7 +21,7 @@ for i in range(1,4):
  except Exception:ok=False
  check('figure '+n,ok)
 check('appendix, source and figure trace',all('Chapter 34' in (R/rel).read_text() for rel in ['references/source-register.md','metadata/topic-traceability.md','manuscript/backmatter/appendices.md','metadata/figure-register.md']))
-check('Part VII completed with development evidence','STATUS: PLANNED / NOT DRAFTED' not in (R/'manuscript/part-07-reference/ch36-exercises-reviews-and-adoption-roadmap/index.md').read_text() and 'Chapter 36 developed' in (R/'book.yaml').read_text())
+check('Part VII completed with development evidence','STATUS: PLANNED / NOT DRAFTED' not in (R/'manuscript/part-07-reference/ch36-exercises-reviews-and-adoption-roadmap/index.md').read_text() and 'All 36 chapters developed' in (R/'book.yaml').read_text())
 for key,val in checks.items():print(('PASS' if val else 'FAIL')+': '+key)
 print('Chapter 34 source words:',words,'; actual integrated Word/Mac pagination and production controls are independent gates')
 sys.exit(not all(checks.values()))

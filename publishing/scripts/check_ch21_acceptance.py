@@ -53,7 +53,7 @@ if book.is_file():
  for stem in ['F21-01','F21-02']:
   p=base/'rendered'/f'{stem}.png'
   if p.is_file():require(hashlib.sha256(p.read_bytes()).hexdigest() in media,f'{stem} not current in Word')
-require('updated with each new chapter' in (R/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography coverage old')
+require('Selected research, standards and professional sources' in (R/'manuscript/backmatter/bibliography.md').read_text(),'Bibliography coverage old')
 require('## Chapter 21 — architecture decisions' in (R/'references/source-register.md').read_text(),'Chapter 21 source map absent')
 require('## Chapter 21 verified continuity extension' in (R/'metadata/topic-traceability.md').read_text(),'Chapter 21 trace absent')
 print(f'Chapter 21: {w}/3000 words; allocation 12 pages; {len(errors)} issue(s)')

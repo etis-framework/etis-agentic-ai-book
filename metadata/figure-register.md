@@ -82,3 +82,11 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 | F30-01 | architecture | E1–E9 layered operational responsibilities, E5 enforcement and C09 telemetry | `assets/shared-figures/sources/F30-01.svg` | `assets/shared-figures/rendered/F30-01.png` | SVG/PNG checked; native 7×10 Word proof pending |
 | F30-02 | behavior | Lost acknowledgment and read-only C08 incident timeline | `assets/shared-figures/sources/F30-02.svg` | `assets/shared-figures/rendered/F30-02.png` | SVG/PNG checked; native 7×10 Word proof pending |
 | F30-03 | decision | Credential/owner containment and evidence-based escalation | `assets/shared-figures/sources/F30-03.svg` | `assets/shared-figures/rendered/F30-03.png` | SVG/PNG checked; native 7×10 Word proof pending |
+
+## Chapter 31 canonical figure suite
+
+| ID | Representation | Meaning | Master | Render | Acceptance |
+|---|---|---|---|---|---|
+| F31-01 | assurance architecture | Bounded claims, executable evidence, falsifiers, release owners and external gaps | `assets/shared-figures/sources/F31-01.svg` | `assets/shared-figures/rendered/F31-01.png` | SVG and print-width PNG inspected; native Mac Word gate open |
+| F31-02 | behavioral sequence | Exact unittest method, bounded result, safe output digest and reviewer | `assets/shared-figures/sources/F31-02.svg` | `assets/shared-figures/rendered/F31-02.png` | SVG and print-width PNG inspected; native Mac Word gate open |
+| F31-03 | decision | Block release on absent controls or evidence; only then controlled rollout | `assets/shared-figures/sources/F31-03.svg` | `assets/shared-figures/rendered/F31-03.png` | SVG and print-width PNG inspected; native Mac Word gate open |

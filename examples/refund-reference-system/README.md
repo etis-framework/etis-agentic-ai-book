@@ -4,8 +4,8 @@
 
 ## Locate the book and work through the builds
 
-**Official repository:** https://github.com/etis-framework/etis-agentic-ai-book  
-**Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system  
+**Official repository:** https://github.com/etis-framework/etis-agentic-ai-book
+**Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system
 **Reader entry point:** `examples/refund-reference-system/README.md`
 
 The GitHub repository is private while the manuscript is in development and is intended to become public with the book. In the published edition, use the corresponding Git release/tag to reproduce the printed code exactly; `main` may have advanced.
@@ -32,6 +32,7 @@ Chapters **28–30** use the same stable CASE-204/RF-1042 case and existing Buil
 | 28 — recovery | `reliability/README.md`; `build4/ledger.py`, `build4/workflow.py` | `reliability/test_recovery_cases.py` and `build4/test_provider.py` | A missing acknowledgment means payment failure or retry permission |
 | 29 — security | `security/README.md`; `build3/service.py` | `security/test_adversarial_cases.py` | Valid E1 token means business approval or OS-isolated credential custody |
 | 30 — incidents | `operations/README.md`; `operations/incident.py` | `operations/test_incident.py` | A synthetic provider status proves settlement, or an incident observer can issue an effect |
+| 31 — assurance | `assurance/README.md`; `assurance/collect.py` | `assurance/test_collect.py` plus seven registered earlier methods | Green local fixture results equal real provider, independent credential or protected E9 certification |
 
 All paths are relative to `examples/refund-reference-system/`. The Chapter 30 observer's read-only database queries and serialized `Finding` output are implemented in `operations/incident.py`. The simulated `provider_refunds` records originate in `build4/adapter.py`; historical `operation_events` are in `build4/ledger.py`. Test code deliberately constructs fixture records; the observer has no payment client or provider credentials. All three exercises should explicitly relate agent behavior (untrusted proposals, bounded delegation, stale agents and tool misuse) to deterministic independent control and operational accountability.
 
@@ -89,6 +90,11 @@ examples/refund-reference-system/
 │   ├── architecture.svg
 │   ├── incident.py
 │   └── test_incident.py
+├── assurance/              # Ch31 evidence collector (not Build 6)
+│   ├── README.md
+│   ├── architecture.svg      # Actual collector and source/test dependencies
+│   ├── collect.py
+│   └── test_collect.py
 ├── security/               # Ch29 adversarial harness: real Build 3 E5 subprocess
 │   ├── README.md
 │   ├── architecture.svg      # Actual test/module architecture
@@ -144,8 +150,12 @@ Build 5 adds optional local **coordination and durable ownership (E2)** to the s
 
 ## Use the same tested evidence in Chapters 28–31
 
-The [Chapter 28–31 assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) maps exact Build 0–5 and recovery test methods to distributed failure, adversarial denial, operational readiness, and evaluation claims. **Chapters 29–31 are planned, not executed evidence.** The handoff identifies which demonstrations already exist and the tests, protected boundaries and operational artifacts those chapters must still add. It is not a new build and does not compose the checkpoints into one payment service.
+The [Chapter 28–31 assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) maps exact Build 0–5 and recovery test methods to distributed failure, adversarial denial, operational readiness, and evaluation claims. **Chapters 29–31 now contain executable, bounded local fixtures.** The handoff distinguishes observed results from protected boundaries and independent production evidence that is still missing. It is not a new build and does not compose the checkpoints into one payment service.
 
 ### Chapter 29 security adversarial harness
 
 [Security harness: valid-token denial and positive-control evidence](security/README.md) is a **non-progressive** test fixture against the actual Build 3 E5 subprocess, not Build 6 or a new payment implementation. It has a checked-in [module architecture SVG](security/architecture.svg), six negative/control tests, and explicit simulated-versus-real assurance limits.
+
+## Chapter 31 — assurance is not Build 6
+
+[`assurance/README.md`](assurance/README.md) embeds the collector's source/module `architecture.svg`, explains seven source-controlled cross-chapter test registrations and 12 fail-closed harness tests, and gives a reproducible versioned JSON evidence command. The collector does not call E5/E6, mutate E7 or contact E8; its tests invoke *existing* fixtures whose mock effects are isolated in temporary databases. Passing output explicitly marks production certification false and enumerates unimplemented/external controls.

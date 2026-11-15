@@ -93,3 +93,7 @@ This uses Build 3's real local subprocess and verifies that denied requests crea
 ## Chapter 30 read-only incident drill
 
 `operations/test_incident.py` exercises 14 synthetic-incident scenarios backed by actual Build 4 and Build 5 SQLite fixtures. It compares pre/post E2/E7/E8 file hashes and the provider row count. Evidence is **local non-mutation**, event-order checks, gaps, containment classification and strict output allowlisting. Run `python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v`. This is not a production audit, live provider verification, credential revocation or E5 epoch enforcement.
+
+## Chapter 31 — cross-build assurance collector
+
+Run `python3 -m unittest discover -s examples/refund-reference-system/assurance -p 'test_*.py' -v` (12 contract/negative tests), then run `python3 examples/refund-reference-system/assurance/collect.py --output /tmp/etis-ch31-evidence.json` to invoke seven existing exact test methods and write a nonsecret, environment-specific JSON record. The report is not a production authorization, E9 protected audit or live-provider settlement record; never reuse a stored green file after changing source or external contracts. Inspect `assurance/README.md` and Chapter 31 Table 31.1 for tested claims, falsifiers and persistent production blockers.

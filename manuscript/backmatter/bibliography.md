@@ -1,6 +1,6 @@
 # References and bibliography
 
-This is the curated bibliography for the developed manuscript chapters. It is updated with each new chapter; planned chapters are not represented as completed scholarship. It is organized for reader use; the controlled source register (`references/source-register.md`) records chapter mappings and outstanding claim-level verification. Inclusion does not imply that a source has been reviewed page by page or that it supports every claim in the manuscript.
+Selected research, standards and professional sources referenced in this volume. Chapter-level claim mappings and remaining passage-verification requirements are maintained separately in the editorial source register; the bibliography is a reader reference, not a certification of any particular implementation.
 
 ## Foundational systems engineering
 
@@ -50,9 +50,3 @@ This is the curated bibliography for the developed manuscript chapters. It is up
 
 - FinOps Foundation. *FinOps Framework 2025*. https://www.finops.org/framework/ (accessed November 2026).
 - FinOps Foundation. *Unit Economics*, FinOps Framework capability guidance. https://www.finops.org/framework/capabilities/unit-economics/ (accessed November 2026).
-
-**Chapter 28 reading guide.** Distributed failure and recovery rely on the existing Lamport (1978), Gray and Reuter (1992), Kleppmann (2017) and van der Aalst (2013) entries in this bibliography. These are conceptual references; Chapter 28's simulated payment-provider capabilities and local E2/E5 limitations derive from the checked-in ETIS code, not a real provider's published contract. Claim-to-page checks remain open.
-
-**Chapter 29 reading guide.** Least-privilege, separation-of-duties, secure development and AI risk-management discussion draws conceptually from NIST SP 800-53 Rev. 5, NIST SP 800-218 (SSDF), NIST AI RMF 1.0 and the versioned OWASP agentic guidance above. Exact control/section citations remain a publication gate. The attack implementation and its scope limitations derive from ETIS code, not a claim of external certification.
-
-**Chapter 30 reading guide.** Service-level objective and error-budget principles derive from the Beyer et al. (2016) site-reliability engineering volume already listed above; distributed failure and competing histories draw on Gray and Reuter (1992) and Kleppmann (2017). The sample SLO percentages, CASE-204 runbook, operational observer and incident tests are original ETIS instructional artifacts, not measured service performance or certified provider behavior. Protected audit custody, independent E5 owner-epoch enforcement, real credential revocation and provider settlement remain evidence gates for Chapter 31.

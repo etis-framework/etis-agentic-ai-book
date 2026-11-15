@@ -2,6 +2,7 @@
 check:
 	python3 publishing/scripts/check_part4_capstone.py
 	python3 publishing/scripts/check_backmatter_integrity.py
+	python3 publishing/scripts/check_backmatter_publication.py
 	python3 publishing/scripts/check.py
 	python3 publishing/scripts/check_figures.py
 	python3 publishing/scripts/check_ch04_figure_semantics.py
@@ -38,6 +39,7 @@ check:
 	python3 publishing/scripts/check_ch28_figure_geometry.py
 	python3 publishing/scripts/check_ch29_acceptance.py
 	python3 publishing/scripts/check_ch30_acceptance.py
+	python3 publishing/scripts/check_ch31_acceptance.py
 	python3 publishing/scripts/check_ch27_figure_geometry.py
 	python3 publishing/scripts/check_ch23_ch24_arrow_geometry.py
 	python3 publishing/scripts/check_code_listing_layout.py
@@ -58,6 +60,7 @@ check:
 	python3 -m unittest discover -s examples/refund-reference-system/reliability -p "test_*.py" -v
 	python3 -m unittest discover -s examples/refund-reference-system/security -p "test_*.py" -v
 	python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v
+	python3 -m unittest discover -s examples/refund-reference-system/assurance -p "test_*.py" -v
 	python3 publishing/scripts/check_parts12_citations.py
 	python3 publishing/scripts/check_parts13_reader_paths.py
 	python3 publishing/scripts/check_parts13_integration.py

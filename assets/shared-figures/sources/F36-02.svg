@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+<rect width="1000" height="600" fill="#ffffff"/>
+<text x="45" y="48" font-family="DejaVu Sans" font-size="26" font-weight="700" fill="#123147">F36-02 | Unknown financial effect recovery</text>
+<rect x="90" y="77" rx="13" ry="13" width="825" height="81" fill="#f0f6fa" stroke="#28738b" stroke-width="2"/>
+<circle cx="124" cy="117" r="23" fill="#28738b"/>
+<text x="124" y="124" font-family="DejaVu Sans" font-weight="bold" font-size="19" fill="white" text-anchor="middle">1</text>
+<text x="170" y="106" font-family="DejaVu Sans" font-weight="bold" font-size="21" fill="#123147">Initial intent</text>
+<text x="505" y="107" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">RF-1042 authorized and</text>
+<text x="505" y="128" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">recorded before dispatch</text>
+<path d="M 505 158 v 17" stroke="#28738b" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="90" y="176" rx="13" ry="13" width="825" height="81" fill="#f8fafc" stroke="#28738b" stroke-width="2"/>
+<circle cx="124" cy="216" r="23" fill="#28738b"/>
+<text x="124" y="223" font-family="DejaVu Sans" font-weight="bold" font-size="19" fill="white" text-anchor="middle">2</text>
+<text x="170" y="205" font-family="DejaVu Sans" font-weight="bold" font-size="21" fill="#123147">Lost acknowledgment</text>
+<text x="505" y="206" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">Provider result is UNKNOWN;</text>
+<text x="505" y="227" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">lease ownership may change</text>
+<path d="M 505 257 v 17" stroke="#28738b" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="90" y="275" rx="13" ry="13" width="825" height="81" fill="#f0f6fa" stroke="#28738b" stroke-width="2"/>
+<circle cx="124" cy="315" r="23" fill="#28738b"/>
+<text x="124" y="322" font-family="DejaVu Sans" font-weight="bold" font-size="19" fill="white" text-anchor="middle">3</text>
+<text x="170" y="304" font-family="DejaVu Sans" font-weight="bold" font-size="21" fill="#123147">Read-only inquiry</text>
+<text x="505" y="305" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">Query original operation</text>
+<text x="505" y="326" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">with E8/provider evidence</text>
+<path d="M 505 356 v 17" stroke="#28738b" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="90" y="374" rx="13" ry="13" width="825" height="81" fill="#f8fafc" stroke="#28738b" stroke-width="2"/>
+<circle cx="124" cy="414" r="23" fill="#28738b"/>
+<text x="124" y="421" font-family="DejaVu Sans" font-weight="bold" font-size="19" fill="white" text-anchor="middle">4</text>
+<text x="170" y="403" font-family="DejaVu Sans" font-weight="bold" font-size="21" fill="#123147">Outcome known?</text>
+<text x="505" y="404" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">If verified, reconcile E7;</text>
+<text x="505" y="425" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">if unknown, maintain hold</text>
+<path d="M 505 455 v 17" stroke="#28738b" stroke-width="2" stroke-dasharray="4 3"/>
+<rect x="90" y="473" rx="13" ry="13" width="825" height="81" fill="#f0f6fa" stroke="#91601a" stroke-width="2"/>
+<circle cx="124" cy="513" r="23" fill="#91601a"/>
+<text x="124" y="520" font-family="DejaVu Sans" font-weight="bold" font-size="19" fill="white" text-anchor="middle">5</text>
+<text x="170" y="502" font-family="DejaVu Sans" font-weight="bold" font-size="21" fill="#123147">No second effect</text>
+<text x="505" y="503" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">Never create new operation</text>
+<text x="505" y="524" font-family="DejaVu Sans" font-size="16.5" fill="#29465b">to resolve uncertainty</text>
+</svg>

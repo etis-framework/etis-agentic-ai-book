@@ -21,7 +21,7 @@ for i in range(1,4):
  except Exception:ok=False
  check('figure '+n,ok)
 check('appendix, source and figure trace',all('Chapter 34' in (R/rel).read_text() for rel in ['references/source-register.md','metadata/topic-traceability.md','manuscript/backmatter/appendices.md','metadata/figure-register.md']))
-check('Part VII no fictitious completion','STATUS: PLANNED / NOT DRAFTED' in (R/'manuscript/part-07-reference/ch36-exercises-reviews-and-adoption-roadmap/index.md').read_text())
+check('Part VII completed with development evidence','STATUS: PLANNED / NOT DRAFTED' not in (R/'manuscript/part-07-reference/ch36-exercises-reviews-and-adoption-roadmap/index.md').read_text() and 'Chapter 36 developed' in (R/'book.yaml').read_text())
 for key,val in checks.items():print(('PASS' if val else 'FAIL')+': '+key)
 print('Chapter 34 source words:',words,'; actual integrated Word/Mac pagination and production controls are independent gates')
 sys.exit(not all(checks.values()))

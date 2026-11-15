@@ -124,3 +124,7 @@ All 22 figures are imported from the G1.2 review package. **Visual direction app
 |---|---|---|---|---|---|
 | F35-01 | contract/authority architecture | C04 advisory does not cross E5 as authority; E7 before E6 | `assets/shared-figures/sources/F35-01.svg` | `assets/shared-figures/rendered/F35-01.png` | 7×10 visual inspection; native Mac proof outstanding |
 | F35-02 | recovery decision diagram | Lost RF-1042 reply means status-only inquiry, never blind replay | `assets/shared-figures/sources/F35-02.svg` | `assets/shared-figures/rendered/F35-02.png` | 7×10 visual inspection; native Mac proof outstanding |
+
+
+| F36-01 | Chapter 36 | Integrated evidence-to-adoption review | `assets/shared-figures/sources/F36-01.svg` | `assets/shared-figures/rendered/F36-01.png` | Five decision stages; not an implemented controller |
+| F36-02 | Chapter 36 | Unknown financial effect recovery | `assets/shared-figures/sources/F36-02.svg` | `assets/shared-figures/rendered/F36-02.png` | Original-operation inquiry; no blind replay |

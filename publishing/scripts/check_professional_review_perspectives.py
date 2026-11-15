@@ -13,7 +13,7 @@ def check(ok: bool, message: str) -> None:
         ERRORS.append(message)
 
 check(STANDARD.is_file(), 'Missing professional review perspectives editorial standard')
-for n in range(1, 35):
+for n in range(1, 37):
     matches = list(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     check(len(matches) == 1, f'Chapter {n} missing or ambiguous')
     if len(matches) != 1:
@@ -51,6 +51,9 @@ check(not re.search(r'advanced student|six-lens|reviewer-lens',t), 'Chapter 34 c
 p = next(MANUSCRIPT.glob('part-*/ch35-*/index.md'))
 u = p.read_text().lower()
 check(not re.search(r'advanced student|six-lens|reviewer-lens|cab-001',u), 'Chapter 35 contains internal reviewer/catalog terminology')
+p = next(MANUSCRIPT.glob('part-*/ch36-*/index.md'))
+t = p.read_text().lower()
+check(not re.search(r'advanced student|six-lens|reviewer-lens|cab-001',t), 'Chapter 36 contains internal reviewer/catalog terminology')
 for n in (7, 8, 16, 21):
     p = next(MANUSCRIPT.glob(f'part-*/ch{n:02d}-*/index.md'))
     t = p.read_text(encoding='utf-8').lower()
@@ -66,5 +69,5 @@ if ERRORS:
     for issue in ERRORS:
         print('FAIL:', issue)
     raise SystemExit(1)
-print('PASS: reader-facing professional review perspectives, Chapters 1–35; '
+print('PASS: reader-facing professional review perspectives, Chapters 1–36; '
       'Part IV professional roles separated from internal student QA')

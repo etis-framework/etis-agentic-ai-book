@@ -195,7 +195,7 @@ Chapters 1–30 are drafted; Chapters 31–36 remain planned. The cross-build [C
 | Incident suspension and safe restoration | Ch32 §§32.6–32.7; F32-02; Runbook 32-A | `reliability/README.md`, `operations/README.md`; route kill switch and real provider proof external |
 | Federated accountability, economics and evidence | Ch32 §§32.8–32.10; Tables 32.3–32.4 | `assurance/README.md` and six builds remain educational; E5 owner-epoch checking NOT IMPLEMENTED |
 
-Chapters 34–36 remain placeholders. V12 allocation of Chapter 32 is 13 finished pages; macOS Word 7×10 measured pagination and external source claims remain publication gates.
+The historical Chapter 32 source audit allocated 13 finished pages under V12. Chapters 34–36 are now developed; integrated native Word 7×10 pagination and external source verification remain publication gates.
 
 ## Chapter 33 — release engineering and operational readiness (developed)
 
@@ -228,3 +228,15 @@ V12 Chapter 33 budget remains 13 finished pages; native Mac Word whole-book pagi
 | Table 35.4 evidence packet | Chapter 31 and `assurance/collect.py` | No signed deployment or external audit custody |
 
 Part VII Chapter 36 will apply these established artifacts; Chapter 35 does not introduce a new reference architecture.
+
+
+## Chapter 36 — integrated review and adoption capstone
+
+| Claim / exercise | Existing evidence | Qualification |
+|---|---|---|
+| Architecture decision A/B/C (Table 36.1; Figure 36.1) | Ch7–8, 17, 35; Build 0–5 READMEs | Alternatives are designs; builds are discrete teaching checkpoints |
+| Compromised worker denied (Exercise B) | `build3/test_gate.py`, `security/README.md` | Local token/grant denial, not protected production issuer |
+| Unknown refund and owner change (Exercise C; Figure 36.2) | `build4/test_provider.py`, `build5/test_coordination.py`, `reliability/README.md` | E5 owner-epoch enforcement and real provider result unproved |
+| Release and restoration (Exercise D) | `operations/README.md`, `assurance/README.md`; Ch30–33 | Runbooks and promotion manifest are designs, not running release service |
+| Value and retirement (Exercise E, Table 36.2) | Chapter 34 hypothetical economics | No measured enterprise outcome or ROI |
+| Final assurance packet (Table 36.3) | Chapter 31, Appendix C, companion evidence map | Simulated tests do not establish production certification |

@@ -28,6 +28,16 @@ need(len(names)>=25 and len(names)==len(set(names)),'Index register is incomplet
 need(len(re.findall(r'^\- \*\*',idx,re.M))==len(entries),'Index markdown/register count drift')
 for e in entries:need(f'**{e["term"]}**:' in idx,f'Index entry missing: {e["term"]}')
 need('entries are linked to live page references' in idx.lower(), 'Live print-index generation is not identified')
+# Referential integrity: no duplicated cross-references, no dead target headings,
+# and no free-form See also fragment inside locator text.
+index_names=set(names)
+for entry in entries:
+    see=entry.get('see_also',[])
+    need(len(see)==len(set(see)),f'Duplicate See also targets for {entry["term"]}')
+    need('See also' not in entry.get('locator',''),f'Duplicate/embedded See also in locator for {entry["term"]}')
+    for target in see:
+        need(target in index_names,f'Broken See also target {entry["term"]} -> {target}')
+
 for n in range(22,min(max(chapters),27)+1):need(f'Chapter {n}' in src,f'Developed Chapter {n} source queue absent')
 need('metadata/backmatter-maintenance-standard.md' in read('Makefile') or 'check_backmatter_integrity.py' in read('Makefile'),'Back matter gate absent from make check')
 print('Back-matter dynamic coverage:',len(chapters),'developed chapters;',len(terms),'glossary terms;',len(entries),'index entries; failures:',len(errors))

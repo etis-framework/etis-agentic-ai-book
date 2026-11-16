@@ -14,7 +14,7 @@ for term in ['IBM Distinguished Engineer','two Chief Technology Officer','Loyola
  req(term in a,'Missing author credential: '+term)
 copy=(front/'copyright.md').read_text()
 req('Digital edition' not in copy and 'digital edition' not in copy and 'eBook ISBN' not in copy,'Digital edition wording remains')
-req('ISBN: To be assigned' in copy,'Unassigned print ISBN must be explicit')
+req('Paperback ISBN: 979-8-9966760-6-4' in copy and 'Hardcover ISBN: 979-8-9966760-7-1' in copy,'Assigned print ISBNs must be explicit')
 for name in ['half-title','series','title']:
  req((front/f'{name}.md').is_file(),f'Missing {name} source')
 req('Build, Secure, Verify, and Operate Trustworthy AI Agents' in (front/'title.md').read_text(),'Subtitle drift')

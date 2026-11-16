@@ -1,6 +1,6 @@
 # Publishing identity and scope — editorial decision
 
-**Working approved direction for manuscript integration; external ISBN and retail metadata remain pending author confirmation.**
+**Working approved direction for manuscript integration; print ISBNs confirmed by author; cover and retail metadata remain under review.**
 
 - Series: ETIS Professional Computing Series
 - Title: **Engineering Agentic AI Systems**
@@ -10,5 +10,5 @@
 - Reader promise: Build an explicit architecture; secure authority boundaries; verify with negative tests and limits; operate through uncertainty with human accountability.
 - All 36 chapters are developed; final layout, page-index, source and release certification remain open. Development completion is not production assurance.
 - No source-controlled code, evidence collector, or observer proves independent E5 epoch enforcement, genuine production secret custody, immutable E9 audit, or real provider settlement. These remain external assurance work.
-- Author byline: William T. O’Connell, Ph.D. (confirmed by the supplied CV). ISBNs, spine, KDP categories, and final cover design await author/publisher confirmation.
+- Author byline: William T. O’Connell, Ph.D. (confirmed by the supplied CV). Paperback ISBN: 979-8-9966760-6-4; hardcover ISBN: 979-8-9966760-7-1 (author-supplied). Spine, retail categories, and final cover design remain pending.
 - Manuscript title page, half-title, copyright, book.yaml, build headers and root README must agree; chapter titles and authoritative technical diagrams must not be rebranded mechanically.

@@ -177,4 +177,4 @@ For the refund system, a design review should translate qualities into measurabl
 
 ## Further reading and historical bridge
 
-Chapter 2 develops the engineering inheritance behind these controls. The book's source register distinguishes verified bibliography entries from references still requiring editorial verification; no historical priority claims should rest on unsupported recollection.
+Chapter 2 develops the engineering inheritance behind these controls. Its historical references are collected in the bibliography; the engineering conclusions remain subject to the cited sources and their stated scope.

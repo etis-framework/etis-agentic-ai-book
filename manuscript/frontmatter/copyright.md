@@ -10,8 +10,8 @@ Copyright © 2026 William T. O’Connell. All rights reserved.
 Published by ETIS Framework, United States of America.  
 Publisher website: etisframework.org
 
-Paperback ISBN: To be assigned.  
-Hardcover ISBN: To be assigned.
+Paperback ISBN: 979-8-9966760-6-4.  
+Hardcover ISBN: 979-8-9966760-7-1.
 
 **Rights and permissions.** No part of this work may be reproduced, stored, or transmitted by any means without permission of the copyright holder except where allowed by applicable copyright law. Inquiries: etisframework.org. Third-party images, quotations, and other copyrighted material remain subject to their respective rights.
 

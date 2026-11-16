@@ -117,7 +117,7 @@ Unlike a conventional API whose behavior is defined mainly by explicit program l
 
 The important distinction is between probabilistic assistance and authoritative effect. A model can improve how the system understands a complaint; it should not become the final authority on whether a financial transaction is permissible. The trusted execution path can accept a typed proposal while independently verifying the payment, amount, policy, approval, and operation identity.
 
-New failure modes also appear. Prompt injection can cause retrieved content to masquerade as instructions. This risk is documented in the OWASP GenAI Security Project (living guidance; consult the pinned edition before publication) and NIST AI 600-1 (2024). Tool-output manipulation can contaminate plans. Long-running reasoning can accumulate cost and compound errors. These require modern evaluation and containment techniques layered on top of the established security, reliability, and transaction foundations.
+New failure modes also appear. Prompt injection can cause retrieved content to masquerade as instructions. This risk is documented in the OWASP GenAI Security Project (living guidance, with version-dependent recommendations) and NIST AI 600-1 (2024). Tool-output manipulation can contaminate plans. Long-running reasoning can accumulate cost and compound errors. These require modern evaluation and containment techniques layered on top of the established security, reliability, and transaction foundations.
 
 ## 2.10 Systems architecture: separation is a design decision
 

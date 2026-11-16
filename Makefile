@@ -76,6 +76,7 @@ check:
 	python3 publishing/scripts/check_finished_page_ledger.py
 	python3 publishing/scripts/check_pre_part_vii_audit.py
 	python3 publishing/scripts/check_publication_pass04.py
+	python3 publishing/scripts/check_pass4_teaching_and_sources.py
 figures:
 	python3 publishing/scripts/figures.py
 check-figures:
@@ -115,3 +116,9 @@ check-publication-pass03: book-docx
 .PHONY: check-publication-pass04
 check-publication-pass04:
 	python3 publishing/scripts/check_publication_pass04.py
+	python3 publishing/scripts/check_pass4_teaching_and_sources.py
+
+.PHONY: check-publication-pass04b
+check-publication-pass04b:
+	python3 publishing/scripts/check_publication_pass04.py
+	python3 publishing/scripts/check_pass4_teaching_and_sources.py

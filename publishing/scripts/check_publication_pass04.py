@@ -21,7 +21,7 @@ for n,fragments in {
     for x in fragments:need(x.casefold() in ch[n].casefold(),f'Chapter {n} missing {x}')
 for path,needed in {
     'references/bibliography.bib':['a2a_protocol_2026','mcp_2026','nist_agent_standards_2026'],
-    'manuscript/backmatter/bibliography.md':['A2A Protocol Ships v1.0','AI Agent Standards Initiative'],
+    'manuscript/backmatter/bibliography.md':['Agent2Agent (A2A) Protocol Specification','AI Agent Standards Initiative'],
     'references/source-register.md':['Pass 4 — emerging agent engineering','cross-task poisoning','trajectory-level'],
     'manuscript/backmatter/glossary.md':['Agent2Agent (A2A) protocol','Context engineering','Memory poisoning','Long-horizon trajectory evaluation'],
     'metadata/topic-traceability.md':['Pass 4 modern-agent scope audit'],

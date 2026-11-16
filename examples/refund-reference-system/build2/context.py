@@ -72,10 +72,14 @@ def retrieve(scope: VerifiedScope, *, source_id: str, catalog: FixtureCatalog,
     if scope.purpose != 'review_replacement_complaint' or int(utc.timestamp()) >= scope.expires_at:
         raise ScopeDenied('scope expired or wrong purpose')
     record = catalog.get(scope.tenant_id, scope.case_id, source_id)
+    # Compare trusted fixture timestamps, not model-authored claims of freshness.
+    # Negative age is future-dated evidence, not magically newer authority.
     age = (utc - record.observed_at.astimezone(timezone.utc)).total_seconds()
     if age < 0 or age > MAX_AGE_SECONDS:
         raise ScopeDenied('source observation outside freshness window')
     if record.classification != 'CASE_RESTRICTED':
         raise ScopeDenied('unsupported classification')
+    # A provenance label travels with advice; it never turns context into
+    # policy, payment approval, or proof of settlement.
     return ScopedEvidence(record, utc, scope.subject, scope.purpose,
                           provenance='fixture-catalog/v1;untrusted-for-E5')

@@ -99,6 +99,8 @@ def execute(message: object, *, secret: bytes, identity_authority: LocalAssertio
         raise AuthorizationDenied('E1 fixture scope mismatch')
     # An agent assertion is deliberately never business authorization; even a
     # legitimately valid E1 token cannot replace an independently signed grant.
+    # A *separate* business grant is checked after identity. A syntactically
+    # valid or authentic agent assertion cannot authorize this refund.
     verify_grant(request['approval_grant'],secret,now=now)
     refund.initialize(local,provider)
     refund.prepare(local,case_id=CASE,tenant=TENANT,principal=refund.PRINCIPAL,

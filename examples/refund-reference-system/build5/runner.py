@@ -17,6 +17,8 @@ class BoundedRunner:
         self.e5_request=e5_request
 
     def step(self, owner: Ownership, *, now: int) -> str:
+        # E2 fences its own state writes, but this owner epoch is NOT verified
+        # inside Build 4 E5. Do not infer production end-to-end fencing.
         action=self.coordinator.choose(owner,now=now)
         if action=='none':
             return self.coordinator.state()['phase']

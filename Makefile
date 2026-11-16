@@ -122,3 +122,8 @@ check-publication-pass04:
 check-publication-pass04b:
 	python3 publishing/scripts/check_publication_pass04.py
 	python3 publishing/scripts/check_pass4_teaching_and_sources.py
+
+# Focused final Pass-4 verification of MCP/A2A architecture and teaching claims.
+.PHONY: check-publication-pass04-protocols
+check-publication-pass04-protocols:
+	python3 publishing/scripts/check_pass4_protocol_boundaries.py

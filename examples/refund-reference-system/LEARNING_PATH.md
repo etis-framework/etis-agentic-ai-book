@@ -41,6 +41,10 @@ python3 -m unittest discover -s examples/refund-reference-system/build2 -p 'test
 
 Change `build2` to another directory listed above; run all ten suites using `make check` at repository root. Do not paste a financial test fixture into production or reuse its public educational keys.
 
+## Protocol integration (architectural extension, not an executable build)
+
+After Lab B, read [**PROTOCOL_BOUNDARY_STUDY.md**](PROTOCOL_BOUNDARY_STUDY.md). Map a host-owned MCP client to a server that advertises tools, reject discovery-as-permission, route every consequential proposal through independently enforced E5, and contrast tool calls with A2A peer task delegation. Trace the comparable negative assertions in Build 2, Build 3, and the Chapter 29 security fixture. No MCP/A2A protocol stack or compliance evidence is present in this source tree.
+
 ## Three guided traces with expected engineering conclusions
 
 ### Lab A — context engineering: evidence is never permission

@@ -40,6 +40,10 @@ All paths are relative to `examples/refund-reference-system/`. The Chapter 30 ob
 
 Start with [**Read the implementation as an engineer**](LEARNING_PATH.md) after the chapter overview. It supplies one source-to-test path for every build and the Chapter 28–31 fixtures, three guided falsification labs, observed-versus-proposed evidence distinctions, and a concise submission rubric. Follow **actual named functions and test assertions** rather than treating the green suite count as proof of production trust. It does not add code, a seventh build, or an unimplemented memory/protocol guarantee.
 
+## Protocol boundary exercise — MCP and A2A (design-only)
+
+Read [**MCP/A2A boundary study**](PROTOCOL_BOUNDARY_STUDY.md) after the Build 3 authorization and Build 4 recovery labs. It maps a conceptual MCP client, untrusted tool listings, optional server facades, shared E5/credential enforcement and A2A peer tasks to the **actual** educational modules. It includes five falsification questions and identifies the real tests demonstrating transfer principles. **No MCP client, MCP server, A2A implementation, token-exchange service, or protocol-conformance test exists in Builds 0–5.**
+
 ## Directory layout
 
 ```text

@@ -67,7 +67,7 @@ The Chapter 28 reliability fixture is an analytical classifier; use Build 4/5 ar
 | Engineering question | Closest existing source/test | Explicit limitation |
 |---|---|---|
 | Context selection, stale input and denial | `build2/README.md`, `build2/test_scope.py` | No persistent cross-task memory, poisoning/forgetting lifecycle or model-scale retrieval benchmark |
-| MCP tool or A2A peer interoperability | `build2/README.md` (scoped read), `build3/README.md` (independent effect denial) | No MCP/A2A stack, protocol conformance or peer-token verification is implemented |
+| MCP tool or A2A peer interoperability | `PROTOCOL_BOUNDARY_STUDY.md`; `build2/test_scope.py` (scoped read), `build3/test_gate.py` (independent effect denial) | Architectural MCP client/server, dynamic `tools/list` and centralized E5 are design exercises; no MCP/A2A stack, protocol conformance or peer-token verification is implemented |
 | Long-horizon trajectories and repeated trials | `assurance/README.md`, `assurance/test_collect.py` | Deterministic bounded test registry; no empirical cohort, statistical model study or live trajectory monitor |
 
 The protocol and memory scenarios are **design exercises**, not hidden implementation claims. The same E4 scope, E5 authority and E7/E8 reconciliation requirements would apply to a production implementation of those interfaces.

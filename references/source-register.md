@@ -410,3 +410,26 @@ Chapter 35 consolidates the original ETIS architecture, the Chapters 22–31 edu
 ## Chapter 36 — exercises, reviews and adoption roadmap
 
 Chapter 36 synthesizes original ETIS decisions, the CASE-204/RF-1042 running example, and the existing Chapters 22–35 source/test evidence. Its scenarios, rubrics and adoption gates are **authorial engineering exercises**, not new measured case studies or external certification standards. All source paths resolve into the existing educational companion implementation. No additional empirical bibliography item is introduced; the full-volume external citation and edition verification gate remains open.
+
+## Pass 4 — emerging agent engineering and protocol currency (2026-11-16)
+
+| Manuscript claim / locus | Source or original engineering basis | Verification boundary |
+|---|---|---|
+| Chapter 19 §19.2 — MCP interoperability, July 28 2026 revision | Model Context Protocol official 2026-07-28 release notice and published specification; bibliography key `mcp_2026` | Source establishes protocol interfaces and transport/auth changes, **not** refund eligibility, E5 isolation or production conformance |
+| Chapter 19 §19.2 — A2A discovery and task exchange | A2A Protocol Community's March 12 2026 v1.0 announcement; bibliography key `a2a_protocol_2026` | Source establishes interoperable agent messaging; original ETIS authorization and recovery controls remain distinct, and no A2A client is implemented |
+| Chapters 12 §12.6 and 20 — cross-task poisoning and context assembly | Original ETIS adversarial scenarios derived from scoped evidence, provenance and denial architecture; Chapter 24 Build 2 local scope tests | No empirical persistent-memory evaluation, cross-session store or independent audit is claimed |
+| Chapter 31 §31.3 — trajectory-level evaluation criteria | Original ETIS evaluation design synthesized from existing Chapter 31 falsification method | No independently measured trial distributions or production statistical assurance; study protocol required |
+| Chapter 33 §33.2 — change governance for adaptive agents | Original ETIS release-governance prescription; NIST February 17 2026 standards initiative contextualizes identity/interoperability risk (`nist_agent_standards_2026`) | Initiative is not a technical standard mandating a particular release procedure |
+
+**Open claim-level gate:** inspect exact cited specification sections and edition-specific pages against the intended publication snapshot, verify repository code in a pinned runtime, and do not treat protocol-version identification or initiative announcements as proof of implementation conformance.
+
+## Pass 4 independent teaching/source audit — edition and claim discipline
+
+- **MCP, dated 2026-07-28:** official normative page `https://modelcontextprotocol.io/specification/2026-07-28` describes hosts/clients/servers, context and tools. Protocol interface and transport authorization do **not** prove case-specific refund eligibility, E5 approval, provider status or secure deployment. Any quoted MUST/SHOULD needs the exact normative subsection, not a release blog.
+- **A2A, released 1.0 series:** official specification `https://a2a-protocol.org/v1.0.0/specification/` documents interoperable discovery, tasks and protocol versioning. This citation pins version **1.0.0** rather than a mutable latest alias. Do not cite a product announcement as proof of trust, authentication or settlement.
+- **OWASP 2026 agentic guidance:** `https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/` is security risk guidance, dated December 9, 2025 and titled for 2026; it is **not** an accreditation of the fictional E5 implementation or a prescriptive implementation standard.
+- **NIST agent initiative:** `https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure` is a February 17, 2026 *initiative announcement* about identity/security/interoperability priorities, **not** an agent-specific normative standard or an ETIS compliance certificate.
+- **Vendor engineering guidance:** Anthropic's *Building effective agents* is dated December 19, 2024; its named patterns are illustrative, not an external evaluation of this book's CASE-204 system. OpenAI's *A Practical Guide to Building Agents* has an official January 15, 2026 publication page (`https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents/`); cited PDF content remains vendor engineering guidance, not normative authority or deployment verification.
+- **Unit economics:** FinOps Foundation's `https://www.finops.org/framework/capabilities/unit-economics/` supports relating technology cost to business unit value; the book's “cost per acceptable completed workflow” is an original ETIS metric, not a measured FinOps benchmark.
+
+**Verification boundary:** This pass checked the above public source identity, dates/scope and official destinations, and audited book wording for overclaiming. It has **not** independently validated every cited page of every book, every licensed ISO clause, every historical quotation, or actual provider contracts. Retain the final claim-by-claim/edition verification and permissions gate before print release.

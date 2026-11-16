@@ -118,6 +118,14 @@
       ]
     },
     {
+      "term": "Agent2Agent (A2A) interoperability",
+      "locator": "Chapter 19 §19.2; Chapter 18.",
+      "aliases": [],
+      "see_also": [
+        "Tool protocol interoperability"
+      ]
+    },
+    {
       "term": "Agentic AI system",
       "locator": "Chapter 1.",
       "aliases": [],
@@ -368,6 +376,14 @@
       "locator": "Chapters 6, 8, 13, 19, 22, 25–28.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Context engineering — assembly and budget",
+      "locator": "Chapter 12 §§12.3–12.6; Chapter 20.",
+      "aliases": [],
+      "see_also": [
+        "Provenance"
+      ]
     },
     {
       "term": "Context, retrieval and provenance (E4/C03)",
@@ -751,6 +767,14 @@
       "see_also": []
     },
     {
+      "term": "Long-horizon trajectory evaluation",
+      "locator": "Chapter 31 §§31.3–31.5.",
+      "aliases": [],
+      "see_also": [
+        "Agent evaluation"
+      ]
+    },
+    {
       "term": "Mock provider",
       "locator": "Chapter 22; Chapter 25.",
       "aliases": [],
@@ -807,6 +831,14 @@
       "aliases": [],
       "see_also": [
         "UNKNOWN provider outcome"
+      ]
+    },
+    {
+      "term": "Persistent memory poisoning",
+      "locator": "Chapter 12 §12.6; Chapter 20.",
+      "aliases": [],
+      "see_also": [
+        "Context poisoning"
       ]
     },
     {
@@ -1019,6 +1051,14 @@
       "see_also": []
     },
     {
+      "term": "Self-modifying agents — release governance",
+      "locator": "Chapter 33 §§33.2–33.3.",
+      "aliases": [],
+      "see_also": [
+        "Release gates"
+      ]
+    },
+    {
       "term": "Sensitivity and human review capacity",
       "locator": "Chapter 34 §34.5; Figure 34.2.",
       "aliases": [],
@@ -1041,6 +1081,14 @@
       "locator": "Chapter 2; Chapter 14.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Tool protocol interoperability",
+      "locator": "Chapter 19 §19.2; Chapter 4.",
+      "aliases": [],
+      "see_also": [
+        "Agent2Agent (A2A) interoperability"
+      ]
     },
     {
       "term": "Trust/enforcement boundary",

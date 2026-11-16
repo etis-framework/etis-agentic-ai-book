@@ -36,11 +36,16 @@ Chapters **28–31** use the same stable CASE-204/RF-1042 case and existing Buil
 
 All paths are relative to `examples/refund-reference-system/`. The Chapter 30 observer's read-only database queries and serialized `Finding` output are implemented in `operations/incident.py`. The simulated `provider_refunds` records originate in `build4/adapter.py`; historical `operation_events` are in `build4/ledger.py`. Test code deliberately constructs fixture records; the observer has no payment client or provider credentials. All three exercises should explicitly relate agent behavior (untrusted proposals, bounded delegation, stale agents and tool misuse) to deterministic independent control and operational accountability.
 
+## Guided source-reading lab (recommended before changing code)
+
+Start with [**Read the implementation as an engineer**](LEARNING_PATH.md) after the chapter overview. It supplies one source-to-test path for every build and the Chapter 28–31 fixtures, three guided falsification labs, observed-versus-proposed evidence distinctions, and a concise submission rubric. Follow **actual named functions and test assertions** rather than treating the green suite count as proof of production trust. It does not add code, a seventh build, or an unimplemented memory/protocol guarantee.
+
 ## Directory layout
 
 ```text
 examples/refund-reference-system/
 ├── README.md                 # Reader entry point
+├── LEARNING_PATH.md          # Guided source, negative-test and evidence labs
 ├── ARCHITECTURE.md           # Architecture mappings across Builds 0–5
 ├── CONTRIBUTING.md           # Contribution and review workflow
 ├── ENGINEERING_STANDARD.md  # Engineering and review requirements

@@ -30,6 +30,9 @@ class RefundWorkflow:
         command.validate()
         if type(lose_ack) is not bool or type(outage_before_send) is not bool:
             raise ContractViolation('invalid simulation flags')
+        # Two durable local transitions precede the possible external effect.
+        # Once DISPATCHED is claimed, a crash may leave its outcome unknown;
+        # retrying under a fresh operation identity risks a duplicate refund.
         self.ledger.prepare(command)
         self.ledger.claim_dispatch(command)  # committed before E6 call
         try:
@@ -51,6 +54,8 @@ class RefundWorkflow:
 
     def reconcile(self, command: RefundCommand) -> str:
         command.validate()
+        # Reconciliation is for an *existing dispatched operation* only.
+        # It must never initialize a new refund or call provider.send().
         row=self.ledger.state(command)
         if row is None or row[4] not in {'DISPATCHED','UNKNOWN','CONFIRMED'}:
             raise InvalidTransition('no previously dispatched operation to reconcile')

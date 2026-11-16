@@ -1,7 +1,6 @@
 # Index
 
 *Entries are linked to live page references in the generated print manuscript. Final page numbering is verified in the native Word proof.*
-
 - **Acceptable completed workflow**: Chapter 34 §§34.1–34.3; Table 34.2.
 - **Access-token validity versus business permission**: Chapters 13, 25, 29. See also *Authentication and authorization*.
 - **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
@@ -17,6 +16,7 @@
 - **Agent definition and boundaries**: Chapters 3–4, 11, 17.
 - **Agent memory — provenance and retention**: Chapters 12, 20. See also *Context, retrieval and provenance (E4/C03)*.
 - **Agent registry — readiness and eligibility**: Chapters 10, 18. See also *Capability registry*.
+- **Agent2Agent (A2A) interoperability**: Chapter 19 §19.2; Chapter 18. See also *Tool protocol interoperability*.
 - **Agentic AI system**: Chapter 1.
 - **Approval versus transaction authority**: Chapter 32 §§32.1–32.4, 32.6; Appendix A.
 - **Architecture decisions and professional review**: Chapters 7–8, 16–17, 21–31.
@@ -52,6 +52,7 @@
 - **Consequential actions — independent enforcement**: Chapters 13, 25, 29. See also *Consequential operation and trusted execution (E5)*.
 - **Consequential effect**: Chapter 1; Chapter 3.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
+- **Context engineering — assembly and budget**: Chapter 12 §§12.3–12.6; Chapter 20. See also *Provenance*.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
 - **ContextUnavailable**: Chapter 24.
 - **Contract lookup and failure meanings**: Chapter 35 §35.2, Table 35.1; Appendix A.
@@ -108,6 +109,7 @@
 - **Lease**: Chapter 27; Chapter 33.
 - **Lifecycle investment and retirement**: Chapter 34 §§34.6–34.8; Table 34.4; Figure 34.3.
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
+- **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5. See also *Agent evaluation*.
 - **Mock provider**: Chapter 22; Chapter 25.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
 - **Observability — case reconstruction**: Chapters 15, 30, 32. See also *Operational observability (C09)*.
@@ -116,6 +118,7 @@
 - **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
 - **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`. See also *Build 5 — optional coordination*.
 - **Partial outcome — reconciliation before retry**: Chapters 26, 28, 33. See also *UNKNOWN provider outcome*.
+- **Persistent memory poisoning**: Chapter 12 §12.6; Chapter 20. See also *Context poisoning*.
 - **Policy version, revocation and stale grants**: Chapter 32 §§32.4–32.5; Table 32.2.
 - **Policy — versioning and revocation**: Chapters 13, 21, 32. See also *Policy version, revocation and stale grants*.
 - **Production limitation — simulated provider**: Chapters 22, 25, 26, 35. See also *Mock provider*.
@@ -145,10 +148,12 @@
 - **Security — compromised agent token**: Chapters 25, 29. See also *Valid token versus finance authorization*.
 - **Security — privilege escalation denial**: Chapters 13, 25, 29. See also *Independent request-path enforcement*.
 - **Selective professional reading paths**: Chapter 35 §35.7; Appendix B.
+- **Self-modifying agents — release governance**: Chapter 33 §§33.2–33.3. See also *Release gates*.
 - **Sensitivity and human review capacity**: Chapter 34 §34.5; Figure 34.2.
 - **Service-level objective (SLO)**: Chapter 30; Chapter 33.
 - **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.
 - **System of record**: Chapter 2; Chapter 14.
+- **Tool protocol interoperability**: Chapter 19 §19.2; Chapter 4. See also *Agent2Agent (A2A) interoperability*.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.
 - **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2. See also *Trusted execution (E5)*.

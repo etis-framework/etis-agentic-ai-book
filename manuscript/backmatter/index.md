@@ -5,7 +5,7 @@
 - **Access-token validity versus business permission**: Chapters 13, 25, 29. See also *Authentication and authorization*.
 - **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
 - **Action proposal (C04)**: Chapter 30; Chapter 31.
-- **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*. See also *Authentication and authorization*.
+- **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
 - **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3. See also *Assurance claims and falsifiers*.
 - **Adoption stop and retirement decision**: Chapter 36 §§36.6–36.8; Tables 36.2–36.3. See also *Lifecycle investment and retirement*.
 - **Adversarial tests — forged approval**: Chapter 29. See also *Security falsifier*.
@@ -36,7 +36,7 @@
 - **Build 2 — scoped context and identity**: Chapter 24; `build2/README.md`.
 - **Build 3 — trusted execution**: Chapter 25; `build3/README.md`.
 - **Build 4 — provider and reconciliation**: Chapter 26; `build4/README.md`.
-- **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*. See also *Part IV implementation-to-evidence map*.
+- **Build 5 — optional coordination**: Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.
 - **Business outcome versus model output**: Chapters 1, 3, 34. See also *Cost per acceptable completed workflow*.
 - **C01–C09 cross-domain contracts**: Chapter 8; Chapters 9–16; Appendix.
 - **Canary activation**: Chapter 33 §§33.3–33.5; Table 33.2; Figure 33.2.
@@ -52,12 +52,12 @@
 - **Consequential actions — independent enforcement**: Chapters 13, 25, 29. See also *Consequential operation and trusted execution (E5)*.
 - **Consequential effect**: Chapter 1; Chapter 3.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
-- **Context engineering — assembly and budget**: Chapter 12 §§12.3–12.6; Chapter 20. See also *Provenance*.
+- **Context engineering — assembly and budget**: Chapter 12 §§12.3–12.6; Chapter 20. See also *Evidence provenance*.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
 - **ContextUnavailable**: Chapter 24.
 - **Contract lookup and failure meanings**: Chapter 35 §35.2, Table 35.1; Appendix A.
 - **Coordination and ownership (E2)**: Chapter 10; Chapter 28.
-- **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*. See also *Durable operational state (E7)*.
+- **Coordination ownership (E2)**: Chapters 10, 18, 27. See also *Durable operational state (E7)*.
 - **Cost per acceptable completed workflow**: Chapter 34 §§34.2–34.3; Table 34.1; Figure 34.1.
 - **Cost — human review staffing**: Chapters 32, 34. See also *Sensitivity and human review capacity*.
 - **Cost — recovery and exception work**: Chapters 30, 34. See also *Cost per acceptable completed workflow*.
@@ -75,7 +75,7 @@
 - **Dispatch claim**: Chapter 27; Chapter 28.
 - **Dispatch claim and durable intent (C06)**: Chapters 13–15, 22, 25–26.
 - **Durable operational state (E7)**: Chapters 15, 20, 22, 25–28.
-- **Effect ambiguity**: Chapter 28 §§28.1–28.5.
+- **Effect ambiguity**: Chapter 28 §§28.1–28.5
 - **Enforcement boundary**: Chapter 28; Chapter 32.
 - **Epoch and lease fencing**: Chapters 10, 18, 27–28.
 - **Error handling and hostile clients**: Chapters 22–27, especially 25–26.
@@ -109,7 +109,7 @@
 - **Lease**: Chapter 27; Chapter 33.
 - **Lifecycle investment and retirement**: Chapter 34 §§34.6–34.8; Table 34.4; Figure 34.3.
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
-- **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5. See also *Agent evaluation*.
+- **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5. See also *Long-horizon trajectory evaluation*.
 - **Mock provider**: Chapter 22; Chapter 25.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
 - **Observability — case reconstruction**: Chapters 15, 30, 32. See also *Operational observability (C09)*.
@@ -118,7 +118,7 @@
 - **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
 - **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`. See also *Build 5 — optional coordination*.
 - **Partial outcome — reconciliation before retry**: Chapters 26, 28, 33. See also *UNKNOWN provider outcome*.
-- **Persistent memory poisoning**: Chapter 12 §12.6; Chapter 20. See also *Context poisoning*.
+- **Persistent memory poisoning**: Chapter 12 §12.6; Chapter 20. See also *Persistent memory poisoning*.
 - **Policy version, revocation and stale grants**: Chapter 32 §§32.4–32.5; Table 32.2.
 - **Policy — versioning and revocation**: Chapters 13, 21, 32. See also *Policy version, revocation and stale grants*.
 - **Production limitation — simulated provider**: Chapters 22, 25, 26, 35. See also *Mock provider*.
@@ -148,7 +148,7 @@
 - **Security — compromised agent token**: Chapters 25, 29. See also *Valid token versus finance authorization*.
 - **Security — privilege escalation denial**: Chapters 13, 25, 29. See also *Independent request-path enforcement*.
 - **Selective professional reading paths**: Chapter 35 §35.7; Appendix B.
-- **Self-modifying agents — release governance**: Chapter 33 §§33.2–33.3. See also *Release gates*.
+- **Self-modifying agents — release governance**: Chapter 33 §§33.2–33.3. See also *Release readiness and promotion gates*.
 - **Sensitivity and human review capacity**: Chapter 34 §34.5; Figure 34.2.
 - **Service-level objective (SLO)**: Chapter 30; Chapter 33.
 - **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.
@@ -156,7 +156,7 @@
 - **Tool protocol interoperability**: Chapter 19 §19.2; Chapter 4. See also *Agent2Agent (A2A) interoperability*.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.
-- **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2. See also *Trusted execution (E5)*.
+- **Valid token versus finance authorization**: Chapters 25, 29; Figure 29.2. See also *Consequential operation and trusted execution (E5)*.
 - **Verification — assertion versus evidence**: Chapters 7, 31, 36. See also *Assurance claims and falsifiers*.
 - **Workflow**: Chapter 2; Chapter 15.
 - **Workflow state — confirmed versus unknown**: Chapters 15, 26, 28. See also *UNKNOWN provider outcome*.

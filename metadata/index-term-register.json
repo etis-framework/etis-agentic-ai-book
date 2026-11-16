@@ -30,7 +30,7 @@
     },
     {
       "term": "Admission and identity (E1)",
-      "locator": "Chapters 8–9, 24–25. See also *Authentication and authorization*.",
+      "locator": "Chapters 8–9, 24–25.",
       "aliases": [
         "identity",
         "admission"
@@ -258,7 +258,7 @@
     },
     {
       "term": "Build 5 — optional coordination",
-      "locator": "Chapter 27; `build5/README.md`. See also *Part IV implementation-to-evidence map*.",
+      "locator": "Chapter 27; `build5/README.md`.",
       "aliases": [
         "lease",
         "ownership epoch"
@@ -382,7 +382,7 @@
       "locator": "Chapter 12 §§12.3–12.6; Chapter 20.",
       "aliases": [],
       "see_also": [
-        "Provenance"
+        "Evidence provenance"
       ]
     },
     {
@@ -413,7 +413,7 @@
     },
     {
       "term": "Coordination ownership (E2)",
-      "locator": "Chapters 10, 18, 27. See also *Durable operational state (E7)*.",
+      "locator": "Chapters 10, 18, 27.",
       "aliases": [
         "workflow ownership",
         "coordinator"
@@ -771,7 +771,7 @@
       "locator": "Chapter 31 §§31.3–31.5.",
       "aliases": [],
       "see_also": [
-        "Agent evaluation"
+        "Long-horizon trajectory evaluation"
       ]
     },
     {
@@ -838,7 +838,7 @@
       "locator": "Chapter 12 §12.6; Chapter 20.",
       "aliases": [],
       "see_also": [
-        "Context poisoning"
+        "Persistent memory poisoning"
       ]
     },
     {
@@ -1055,7 +1055,7 @@
       "locator": "Chapter 33 §§33.2–33.3.",
       "aliases": [],
       "see_also": [
-        "Release gates"
+        "Release readiness and promotion gates"
       ]
     },
     {
@@ -1114,7 +1114,7 @@
         "E1 token denial"
       ],
       "see_also": [
-        "Trusted execution (E5)"
+        "Consequential operation and trusted execution (E5)"
       ]
     },
     {

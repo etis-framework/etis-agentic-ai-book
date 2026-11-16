@@ -1,5 +1,7 @@
 .PHONY: check figures check-figures chapter book-docx book-pdf book-html qa
 check:
+	python3 publishing/scripts/check_glossary_print_integrity.py
+	python3 publishing/scripts/check_print_isbns.py
 	python3 publishing/scripts/check_publishing_identity.py
 	python3 publishing/scripts/check_part4_capstone.py
 	python3 publishing/scripts/check_backmatter_integrity.py
@@ -127,3 +129,12 @@ check-publication-pass04b:
 .PHONY: check-publication-pass04-protocols
 check-publication-pass04-protocols:
 	python3 publishing/scripts/check_pass4_protocol_boundaries.py
+
+# Pass 5 print-format identity: both ISBNs are checked independently.
+.PHONY: check-publication-pass05-isbns
+check-publication-pass05-isbns:
+	python3 publishing/scripts/check_print_isbns.py
+
+.PHONY: check-publication-pass05-glossary
+check-publication-pass05-glossary: book-docx
+	python3 publishing/scripts/check_glossary_print_integrity.py

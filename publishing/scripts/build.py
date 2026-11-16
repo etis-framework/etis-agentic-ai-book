@@ -62,6 +62,26 @@ def main():
     left=OxmlElement('w:left');pBdr.append(left)
    for name,val in {'val':'single','sz':'16','space':'7','color':'508091'}.items():
     left.set(qn('w:'+name),val)
+  # Reference glossary: each Markdown definition is a separate paragraph.
+  # Use compact, legible reference typography and keep each definition intact.
+  in_glossary=False
+  glossary_entries=0
+  for para in doc.paragraphs:
+   if para.text.strip() == 'Glossary' and para.style.name == 'Heading 1':
+    in_glossary=True
+    continue
+   if in_glossary and para.style.name == 'Heading 1':
+    in_glossary=False
+   if not in_glossary or not para.text.strip():
+    continue
+   if para.runs and para.runs[0].bold:
+    glossary_entries += 1
+    para.paragraph_format.space_before=Pt(0)
+    para.paragraph_format.space_after=Pt(5)
+    para.paragraph_format.keep_together=True
+    for run in para.runs:run.font.size=Pt(9.5)
+  if not args.chapter and glossary_entries < 60:
+   raise SystemExit(f'Glossary generation failed: only {glossary_entries} entries were independently typeset')
   # Chapter 31 claim/evidence tables are deliberately tall at 7x10. Keep the
   # caption with its header, repeat the header and never split a claim row.
   for para in doc.paragraphs:

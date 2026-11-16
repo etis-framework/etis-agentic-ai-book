@@ -1,6 +1,6 @@
 # References and bibliography
 
-Selected research, standards and professional sources referenced in this volume. Chapter-level claim mappings and remaining passage-verification requirements are maintained separately in the editorial source register; the bibliography is a reader reference, not a certification of any particular implementation.
+Selected research, standards and professional sources referenced in this volume. These sources inform the historical, technical, architectural and governance discussion; citing a source does not establish that any particular implementation conforms to its requirements.
 
 ## Foundational systems engineering
 
@@ -28,7 +28,7 @@ Selected research, standards and professional sources referenced in this volume.
 
 ## Governance and assurance
 
-- National Institute of Standards and Technology. *Security and Privacy Controls for Information Systems and Organizations*. NIST Special Publication 800-53, Revision 5 (updated control catalog; verify edition at publication). https://doi.org/10.6028/NIST.SP.800-53r5. See AC-5 (separation of duties) and AC-6 (least privilege); controls are guidance, not proof of ETIS deployment compliance.
+- National Institute of Standards and Technology. *Security and Privacy Controls for Information Systems and Organizations*. NIST Special Publication 800-53, Revision 5 (Revision 5 control catalog). https://doi.org/10.6028/NIST.SP.800-53r5. See AC-5 (separation of duties) and AC-6 (least privilege); controls are guidance, not proof of ETIS deployment compliance.
 - Souppaya, Murugiah, Karen Scarfone, and Donna Dodson. *Secure Software Development Framework (SSDF) Version 1.1: Recommendations for Mitigating the Risk of Software Vulnerabilities*. NIST SP 800-218, February 2022. https://doi.org/10.6028/NIST.SP.800-218.
 
 - International Organization for Standardization and International Electrotechnical Commission. *ISO/IEC 42001:2023 — Information Technology — Artificial Intelligence — Management System*. 2023.
@@ -36,7 +36,7 @@ Selected research, standards and professional sources referenced in this volume.
 - Hu, Vincent C., David Ferraiolo, David R. Kuhn, et al. *Guide to Attribute Based Access Control (ABAC) Definition and Considerations*. NIST Special Publication 800-162, updated August 2, 2019. https://doi.org/10.6028/NIST.SP.800-162. (ABAC terminology and control attributes; no specific refund-policy guarantee.)
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework (AI RMF 1.0)*. NIST AI 100-1, 2023. https://doi.org/10.6028/NIST.AI.100-1
 - National Institute of Standards and Technology. *Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile*. NIST AI 600-1, 2024. https://doi.org/10.6028/NIST.AI.600-1
-- OWASP Foundation. *OWASP GenAI Security Project*. Living resource; version must be pinned before final publication. https://genai.owasp.org/
+- OWASP Foundation. *OWASP GenAI Security Project*. Living guidance; specific recommendations depend on the edition cited. https://genai.owasp.org/
 
 - OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. December 9, 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 - Model Context Protocol. *Model Context Protocol Specification*, dated July 28, 2026. https://modelcontextprotocol.io/specification/2026-07-28 (Normative protocol scope; see authorization/security sections; not business policy enforcement.)

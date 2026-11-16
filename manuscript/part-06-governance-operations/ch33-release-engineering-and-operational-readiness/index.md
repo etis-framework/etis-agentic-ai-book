@@ -36,6 +36,8 @@ The logical reference architecture divides admission and identity (E1), durable 
 
 *Figure 33.1 — The governed release boundary. Candidate evidence informs, but does not grant, accountable activation. Advisory change is separated from independently controlled financial execution and operational truth.*
 
+**Changing agents are changing release artifacts.** A new model version, tool catalog, prompt policy, retrieval index, persistent-memory migration or learned behavior can alter a deployed agent's decision surface without changing its calling application. Treat each such change as a versioned candidate with impact analysis, regression evidence, rollback/containment and accountable approval. An agent may propose an improvement, but it cannot self-approve a broader tool grant, modify E5 policy, change its own release cohort or silently replace the evidence standard. Online adaptation with consequential permissions remains a separately controlled production design problem; Builds 0–5 do not supply a safe self-modification mechanism.
+
 ## 33.3 Promotion gates must test invariants, not attractive averages
 
 Promote through development, preproduction integration, and progressively exposed production cohorts only when each environment provides the evidence appropriate to the risk. In development use local, deterministic fixtures for typed contracts and negative authorization cases. In preproduction use representative tenant separation, identity/credential service behavior, deployment topology, provider contract sandboxes, migration rehearsal, failure injection and independent log collection. Production admission requires named authorities and live restrictions; passing preproduction is necessary evidence, not automatic entitlement.

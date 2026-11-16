@@ -40,6 +40,8 @@ Selected research, standards and professional sources referenced in this volume.
 
 - OWASP GenAI Security Project. *OWASP Top 10 for Agentic Applications for 2026*. December 9, 2025. https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 - Model Context Protocol. “The 2026-07-28 Specification.” July 28, 2026. https://blog.modelcontextprotocol.io/posts/2026-07-28/
+- A2A Protocol Community. “A2A Protocol Ships v1.0: Production-Ready Standard for Agent-to-Agent Communication.” March 12, 2026. https://a2a-protocol.org/dev/blog/2026/03/12/a2a-protocol-ships-v10-production-ready-standard-for-agent-to-agent-communication/
+- National Institute of Standards and Technology. “Announcing the AI Agent Standards Initiative for Interoperable and Secure Innovation.” February 17, 2026. https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure
 
 ## Business processes, requirements, and human–automation interaction
 

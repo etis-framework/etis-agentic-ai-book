@@ -75,6 +75,7 @@ check:
 	python3 publishing/scripts/check_single_volume.py
 	python3 publishing/scripts/check_finished_page_ledger.py
 	python3 publishing/scripts/check_pre_part_vii_audit.py
+	python3 publishing/scripts/check_publication_pass04.py
 figures:
 	python3 publishing/scripts/figures.py
 check-figures:
@@ -109,3 +110,8 @@ resolve-print-locators:
 .PHONY: check-publication-pass03
 check-publication-pass03: book-docx
 	python3 publishing/scripts/check_publication_certification_pass_03.py
+
+# Pass 4: agent-engineering depth, protocol and source/code traceability.
+.PHONY: check-publication-pass04
+check-publication-pass04:
+	python3 publishing/scripts/check_publication_pass04.py

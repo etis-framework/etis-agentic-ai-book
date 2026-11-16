@@ -8,6 +8,7 @@ Terms below describe the architecture and developed implementation. The definiti
 **Admission and identity (E1).** Authenticates and scopes incoming work under a principal, tenant, purpose and constraints; neither a verified token nor a capability listing grants a refund.
 **Advisory correlation identifier.** Identifier linking a proposed action, trace and review evidence; distinct from the trusted financial operation RF-1042.
 **Agent.** Goal-directed bounded software component that selects permitted steps; it need not use a large language model or have authority to cause external effects.
+**Agent2Agent (A2A) protocol.** Versioned interoperability specification for discovery and task communication among independent agent systems; protocol participation does not confer enterprise business authorization.
 **Agentic AI system.** Complete arrangement of software, people, data, controls and operations around one or more agents; the model alone is not the system.
 **Assurance claim.** Narrowly stated behavior tied to system version, scope, threat model, execution conditions and responsible reviewer; must be backed by relevant, disprovable evidence.
 **Authentication.** Establishing and verifying the claimed identity of an actor; independent of business authorization.
@@ -21,6 +22,7 @@ Terms below describe the architecture and developed implementation. The definiti
 **CASE-204.** The recurring fictional customer case concerning a proposed $500 refund; not a real customer or provider transaction.
 **Competing histories.** Concurrent E2 ownership, E7 local intent and E8 external-effect observations that must be correlated without assuming a cross-store atomic commit.
 **Consequential effect.** External business-state change, such as an actual financial refund, requiring independently controlled execution and recovery.
+**Context engineering.** Controlled assembly, filtering, classification, budgeting and reevaluation of evidence supplied to an agent; selected context never becomes an authorization grant.
 **Context observation.** E4/C03 evidence carrying source, version, classification, age and scope; not automatically authoritative E8 truth.
 **ContextUnavailable.** Build 2 context dependency failure; separate from unauthorized scope and from UNKNOWN financial effect.
 **Coordination and ownership (E2).** Logical responsibility for work admission from E1, routing, leases, epochs, assignment and workflow progress; does not hold financial authority.
@@ -54,7 +56,10 @@ Terms below describe the architecture and developed implementation. The definiti
 **Lease.** Time-limited coordination claim; expiry enables reassignment but does not by itself stop stale workers from reaching privileged endpoints.
 **Lifecycle retirement.** Controlled withdrawal of future capability while preserving mandated records, provider reconciliation, privileges revocation and ownership of outstanding effects.
 **Logical responsibility and failure zone.** A visualization of responsibilities, contracts, and evidence ownership; not a prescribed process, machine, network, or independent failure domain.
+**Long-horizon trajectory evaluation.** Assessment of intermediate tool choices, evidence fidelity, budget compliance, recovery and final business outcomes across extended and repeated agent tasks.
+**Memory poisoning.** Manipulation of stored derived observations or summaries so that malicious or false content influences later decisions; persistence does not make the content authoritative.
 **Mock provider.** Simulated external service and E8 record used for reproducible education, not real settlement or bank truth.
+**Model Context Protocol (MCP).** Versioned tool/resource interaction protocol; transport identity and protocol authorization are not the same as transaction-specific E5 business permission.
 **Observability evidence gap.** Missing, delayed, duplicated or inconsistent telemetry that lowers confidence in reconstructed sequence without proving the absence of a consequential effect.
 **Operation identity (RF-1042).** Stable, trusted ID for the separately authorized CASE-204 payment operation; distinct from E3 advisory correlation identifiers.
 **Operational reconciliation (C08).** Read-only verification of the original operation against available authoritative provider evidence; unresolved results remain UNKNOWN.

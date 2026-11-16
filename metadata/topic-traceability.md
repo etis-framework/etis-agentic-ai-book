@@ -240,3 +240,11 @@ Part VII Chapter 36 will apply these established artifacts; Chapter 35 does not 
 | Release and restoration (Exercise D) | `operations/README.md`, `assurance/README.md`; Ch30–33 | Runbooks and promotion manifest are designs, not running release service |
 | Value and retirement (Exercise E, Table 36.2) | Chapter 34 hypothetical economics | No measured enterprise outcome or ROI |
 | Final assurance packet (Table 36.3) | Chapter 31, Appendix C, companion evidence map | Simulated tests do not establish production certification |
+
+## Pass 4 modern-agent scope audit (2026-11-16)
+
+- **Context and persistent memory:** Chapters 12 §§12.3–12.6 and 20 describe context assembly, fresh authoritative checks and a cross-task poisoned-summary falsifier; Build 2 supports only scoped/stale/hostile local inputs, **not** persistent-memory lifecycle enforcement.
+- **Protocol interoperability:** Chapter 19 §19.2 distinguishes MCP tool interfaces and A2A peer task exchange; neither protocol is implemented by the companion and neither grants E5 authorization.
+- **Long-horizon evaluation:** Chapter 31 §31.3 specifies trajectory/outcome/evidence/recovery metrics and repeated-trial limits; the assurance fixture remains local and deterministic.
+- **Adaptive agents:** Chapter 33 §33.2 requires controlled release of model, tool, memory and policy changes rather than self-authorized adaptation.
+- **Scope decision:** Multimodal/computer-use and digital twins remain boundary/verification examples, not separate builds or required implementation. See `review/pass4-state-of-the-art-six-lens.md` for explicit coverage and production limitations.

@@ -410,3 +410,15 @@ Chapter 35 consolidates the original ETIS architecture, the Chapters 22–31 edu
 ## Chapter 36 — exercises, reviews and adoption roadmap
 
 Chapter 36 synthesizes original ETIS decisions, the CASE-204/RF-1042 running example, and the existing Chapters 22–35 source/test evidence. Its scenarios, rubrics and adoption gates are **authorial engineering exercises**, not new measured case studies or external certification standards. All source paths resolve into the existing educational companion implementation. No additional empirical bibliography item is introduced; the full-volume external citation and edition verification gate remains open.
+
+## Pass 4 — emerging agent engineering and protocol currency (2026-11-16)
+
+| Manuscript claim / locus | Source or original engineering basis | Verification boundary |
+|---|---|---|
+| Chapter 19 §19.2 — MCP interoperability, July 28 2026 revision | Model Context Protocol official 2026-07-28 release notice and published specification; bibliography key `mcp_2026` | Source establishes protocol interfaces and transport/auth changes, **not** refund eligibility, E5 isolation or production conformance |
+| Chapter 19 §19.2 — A2A discovery and task exchange | A2A Protocol Community's March 12 2026 v1.0 announcement; bibliography key `a2a_protocol_2026` | Source establishes interoperable agent messaging; original ETIS authorization and recovery controls remain distinct, and no A2A client is implemented |
+| Chapters 12 §12.6 and 20 — cross-task poisoning and context assembly | Original ETIS adversarial scenarios derived from scoped evidence, provenance and denial architecture; Chapter 24 Build 2 local scope tests | No empirical persistent-memory evaluation, cross-session store or independent audit is claimed |
+| Chapter 31 §31.3 — trajectory-level evaluation criteria | Original ETIS evaluation design synthesized from existing Chapter 31 falsification method | No independently measured trial distributions or production statistical assurance; study protocol required |
+| Chapter 33 §33.2 — change governance for adaptive agents | Original ETIS release-governance prescription; NIST February 17 2026 standards initiative contextualizes identity/interoperability risk (`nist_agent_standards_2026`) | Initiative is not a technical standard mandating a particular release procedure |
+
+**Open claim-level gate:** inspect exact cited specification sections and edition-specific pages against the intended publication snapshot, verify repository code in a pinned runtime, and do not treat protocol-version identification or initiative announcements as proof of implementation conformance.

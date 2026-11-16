@@ -44,6 +44,12 @@ One passing positive control is valuable: it demonstrates that an authorized pat
 
 These layers are cumulative, not interchangeable. The same repository can pass 100% of its local assertions and still fail production admission because an attacker sharing the E5 process identity can access credentials or because the real provider cannot verify an RF-1042 settlement.
 
+### Long-horizon trajectories need separate evaluation
+
+A final “case resolved” label can conceal unsafe intermediate tool choices. For each representative case, capture a privacy-controlled **trajectory**: admitted objective, permitted tool set, step/elapsed budgets, retrieved source/version, model proposal, controller decision, denial, state transition, and authoritative observed effect. Score at least four independent properties: **outcome correctness**, **trajectory constraint compliance** (including every forbidden action attempt), **evidence fidelity** (unsupported or stale citations), and **recovery behavior** under injected interruption. Report per-case distributions and worst-case safety violations, not only aggregate success rates.
+
+For model-driven paths, repeat trials across specified model and prompt versions, sampling settings, adversarial variants, task lengths and workload cohorts. Preserve denominators, failures, escalation rates, uncertainty intervals where sample sizes support them, and the cost per *acceptable* completed case. A longer trajectory that eventually returns the correct answer after attempting an unauthorized refund is a failed safety test. The companion fixture registry establishes deterministic local outcomes, not statistical confidence in long-horizon model behavior; production evaluation requires a separately curated representative dataset, live safeguards and ongoing monitoring.
+
 ## 31.4 Reproducible evidence: provenance before pass rate
 
 Figure 31.2 follows one negative case from setup through independently reviewed result. A reproducible bundle needs a test identifier, declared property, exact source and fixture digests, test command, execution time, Python/runtime description, result, sanitized output digest, expected non-effects, environmental limitations and accountable reviewer. **A percentage alone is neither traceability nor proof.** Preserve failures; do not silently replace an unsuccessful run with the best successful attempt.

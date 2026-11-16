@@ -62,6 +62,16 @@ Each build includes a source/module architecture SVG embedded in its README and 
 
 The Chapter 28 reliability fixture is an analytical classifier; use Build 4/5 architecture diagrams to study the effectful runtime. The security, operations and assurance READMEs include their own source/module diagrams. For exact commands, test names, educational comments, simulation boundaries and evidence outputs, follow the corresponding README rather than treating this printed reference as an executable manual. Designs A (deterministic baseline), B (bounded AI advice with independent financial review), and C (optional bounded agent investigation) are alternatives, not mandatory sequential runtime stages.
 
+**Emerging agent-engineering evidence boundaries (Chapters 12, 19, 20 and 31)**
+
+| Engineering question | Closest existing source/test | Explicit limitation |
+|---|---|---|
+| Context selection, stale input and denial | `build2/README.md`, `build2/test_scope.py` | No persistent cross-task memory, poisoning/forgetting lifecycle or model-scale retrieval benchmark |
+| MCP tool or A2A peer interoperability | `build2/README.md` (scoped read), `build3/README.md` (independent effect denial) | No MCP/A2A stack, protocol conformance or peer-token verification is implemented |
+| Long-horizon trajectories and repeated trials | `assurance/README.md`, `assurance/test_collect.py` | Deterministic bounded test registry; no empirical cohort, statistical model study or live trajectory monitor |
+
+The protocol and memory scenarios are **design exercises**, not hidden implementation claims. The same E4 scope, E5 authority and E7/E8 reconciliation requirements would apply to a production implementation of those interfaces.
+
 **Release/readiness navigation (Chapter 33; no new build)**
 
 | Release question | Existing companion entry point | What remains unimplemented |

@@ -90,6 +90,10 @@ For `CASE-204`, the defensible initial choice is **scoped retrieval plus minimal
 
 Run these tests with source versions and controlled time; otherwise a passing happy-path run says little about revocation or races. Evaluating a model's answer is necessary but different from verifying access denial, state integrity, business effect and privacy compliance. Chapters 24 and 26 will implement relevant scoped context and reconciliation examples; Chapters 28–31 will test distributed failure, misuse, and end-state evidence. Those chapter references identify the intended implementation and verification work; only executable results, with their assumptions, constitute proof.
 
+### Cross-task memory contamination review
+
+A persistent memory record may outlive the worker that created it, and its provenance may be obscured by successive summaries. For `CASE-204`, construct two investigations: in the first, a malicious customer note is summarized as “approved $500 refund”; in the second, an unrelated worker retrieves that summary. The second worker must receive the original trust classification and source links, not a promoted policy decision. A changed policy, new shipment event, tenant reassignment or revoked purpose must invalidate or hold derived memory before it is reused. Measure not only answer accuracy but *contamination propagation*: how many subsequent decisions cite the injected claim, which decision gate rejected it, and whether deletion/retention obligations were met. This is a proposed adversarial exercise; the Python companion has no cross-task persistent-memory implementation.
+
 ## Chapter 20 — Engineering practice
 
 1. **Classify.** Label the authoritative owner, TTL, scope, provenance and correction path for order data, shipment evidence, model scratchpad, policy excerpt, E7 workflow epoch, and `RF-1042` status.

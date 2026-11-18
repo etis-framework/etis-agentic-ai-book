@@ -3,7 +3,7 @@
 *Entries are linked to live page references in the generated print manuscript. Final page numbering is verified in the native Word proof.*
 - **Acceptable completed workflow**: Chapter 34 §§34.1–34.3; Table 34.2.
 - **Access-token validity versus business permission**: Chapters 13, 25, 29. See also *Authentication and authorization*.
-- **Accountable human governance**: Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.
+- **Accountable human governance**: Chapter 32 §32.1.
 - **Action proposal (C04)**: Chapter 30; Chapter 31.
 - **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
 - **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3. See also *Assurance claims and falsifiers*.
@@ -109,7 +109,7 @@
 - **Lease**: Chapter 27; Chapter 33.
 - **Lifecycle investment and retirement**: Chapter 34 §§34.6–34.8; Table 34.4; Figure 34.3.
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
-- **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5. See also *Long-horizon trajectory evaluation*.
+- **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5.
 - **Mock provider**: Chapter 22; Chapter 25.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
 - **Observability — case reconstruction**: Chapters 15, 30, 32. See also *Operational observability (C09)*.
@@ -118,7 +118,7 @@
 - **Operational observability (C09)**: Chapter 30 §§30.2–30.3; Figure 30.1.
 - **Part IV implementation-to-evidence map**: Chapter 27 §27.9; companion `IMPLEMENTATION_EVIDENCE_MAP.md`. See also *Build 5 — optional coordination*.
 - **Partial outcome — reconciliation before retry**: Chapters 26, 28, 33. See also *UNKNOWN provider outcome*.
-- **Persistent memory poisoning**: Chapter 12 §12.6; Chapter 20. See also *Persistent memory poisoning*.
+- **Persistent memory poisoning**: Chapter 12 §12.6; Chapter 20.
 - **Policy version, revocation and stale grants**: Chapter 32 §§32.4–32.5; Table 32.2.
 - **Policy — versioning and revocation**: Chapters 13, 21, 32. See also *Policy version, revocation and stale grants*.
 - **Production limitation — simulated provider**: Chapters 22, 25, 26, 35. See also *Mock provider*.

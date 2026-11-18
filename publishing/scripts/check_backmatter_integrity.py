@@ -35,6 +35,7 @@ for entry in entries:
     see=entry.get('see_also',[])
     need(len(see)==len(set(see)),f'Duplicate See also targets for {entry["term"]}')
     need('See also' not in entry.get('locator',''),f'Duplicate/embedded See also in locator for {entry["term"]}')
+    need(entry['term'] not in see, f'Self-referential See also target for {entry["term"]}')
     for target in see:
         need(target in index_names,f'Broken See also target {entry["term"]} -> {target}')
 

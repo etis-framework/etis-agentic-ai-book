@@ -18,7 +18,7 @@
     },
     {
       "term": "Accountable human governance",
-      "locator": "Chapter 32 §§32.1–32.10; Tables 32.1–32.4; Figures 32.1–32.3.",
+      "locator": "Chapter 32 §32.1.",
       "aliases": [],
       "see_also": []
     },
@@ -770,9 +770,7 @@
       "term": "Long-horizon trajectory evaluation",
       "locator": "Chapter 31 §§31.3–31.5.",
       "aliases": [],
-      "see_also": [
-        "Long-horizon trajectory evaluation"
-      ]
+      "see_also": []
     },
     {
       "term": "Mock provider",
@@ -837,9 +835,7 @@
       "term": "Persistent memory poisoning",
       "locator": "Chapter 12 §12.6; Chapter 20.",
       "aliases": [],
-      "see_also": [
-        "Persistent memory poisoning"
-      ]
+      "see_also": []
     },
     {
       "term": "Policy version, revocation and stale grants",

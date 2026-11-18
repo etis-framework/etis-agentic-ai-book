@@ -82,6 +82,18 @@ def main():
     for run in para.runs:run.font.size=Pt(9.5)
   if not args.chapter and glossary_entries < 60:
    raise SystemExit(f'Glossary generation failed: only {glossary_entries} entries were independently typeset')
+  # Compact final author biography: prevent a single trailing paragraph
+  # from occupying a nearly empty extra page in the 7x10 print proof.
+  in_author=False
+  for para in doc.paragraphs:
+   if para.text.strip() == 'About the Author' and para.style.name == 'Heading 1':
+    in_author=True
+    continue
+   if in_author and para.text.strip():
+    para.paragraph_format.space_before=Pt(0)
+    para.paragraph_format.space_after=Pt(5)
+    para.paragraph_format.line_spacing=1.05
+    for run in para.runs:run.font.size=Pt(9.75)
   # Chapter 31 claim/evidence tables are deliberately tall at 7x10. Keep the
   # caption with its header, repeat the header and never split a claim row.
   for para in doc.paragraphs:

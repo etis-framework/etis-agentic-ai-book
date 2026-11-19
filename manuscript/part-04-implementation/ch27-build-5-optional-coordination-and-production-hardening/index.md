@@ -123,7 +123,7 @@ A trustworthy deployment decision must withstand review by professionals respons
 
 **Release decision exercise.** Would Design B without an E2 coordinator meet the retailer's measured needs more simply? If Build 5 were considered for live refunds, identify the owners and evidence for an independent identity and finance issuer (E1/E5), E5-enforced fencing (E2/E5), a real provider's idempotency and query contract (E6/E8), recoverable operational state (E7), and monitoring, incident handling and human recourse (E9). **Passing the educational tests is not permission to deploy.** Chapters 28–31 deliberately challenge these guarantees; Chapters 32–34 determine release governance and lifecycle responsibility.
 
-**Sources and scope.** Lamport (1978), Gray and Reuter (1992), Kleppmann (2017) and van der Aalst (2013) support the inherited distributed coordination, transaction and workflow principles. The precise CASE-204 implementation, E2 local lease protocol and executable tests are original ETIS educational fixtures, not guarantees attributed to an external publication. Publication-level claim/page audit and real-system acceptance remain separate release gates.
+**Sources and scope.** Lamport (1978), Gray and Reuter (1992), Kleppmann (2017) and van der Aalst (2013) support the inherited distributed coordination, transaction and workflow principles. The precise CASE-204 implementation, E2 local lease protocol and executable tests are original ETIS educational fixtures, not guarantees attributed to an external publication.
 
 ## Chapter synthesis and transition to Part V
 

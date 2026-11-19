@@ -116,7 +116,7 @@ Start at `examples/refund-reference-system/README.md` and `examples/refund-refer
 
 **There is no executable cost model, production invoice collector, benefits attribution, staff-capacity service, loss estimator, live release gate or integrated ROI dashboard in Builds 0–5.** Tables 34.1–34.4 and Figures 34.1–34.3 are *proposed management/engineering decision artifacts*, not Python fields, output files, or business results measured by the companion tests. To implement them in production, establish a governed case denominator, actual invoices and labor allocation, independent adjudication of acceptable outcomes, versioned risk/incident histories, human owner signoff, and privacy-preserving evidence custody. Do not create Build 6 merely to imply these guarantees.
 
-Use `make check` at repository root for the complete local manuscript and companion checks and `make book-docx` to build the book. A passing local regression cannot establish production isolation, provider settlement truth, actual economic return, or policy compliance. The key outstanding gap remains independent current-owner-epoch enforcement in E5 and real approval issuer/revocation, provider and audit controls; cost arithmetic cannot retire those obligations.
+A passing local regression cannot establish production isolation, provider settlement truth, actual economic return, or policy compliance. The key outstanding gap remains independent current-owner-epoch enforcement in E5 and real approval issuer/revocation, provider and audit controls; cost arithmetic cannot retire those obligations.
 
 ## 34.8 Professional challenge and Part VI synthesis
 

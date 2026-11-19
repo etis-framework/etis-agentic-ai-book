@@ -108,7 +108,7 @@ Begin with `examples/refund-reference-system/README.md` and `examples/refund-ref
 | Incident classification is non-effectful | `operations/test_incident.py` | Live independent stop control, protected monitoring and on-call rehearsal |
 | Local evidence claims are reproducible | `assurance/test_collect.py` and `assurance/collect.py` | Signed artifacts, controlled attestations, independent review and change record |
 
-The tests are **not a deployment pipeline**, and none can demonstrate actual production activation, signed supply-chain provenance, canary routing or rollback control. Do not introduce a fictitious Build 6 to bridge this gap. The professional requirement is to state the missing system and evidence before requesting authorization. For a full local regression run use `make check` at repository root; `make book-docx` builds the manuscript, and `make check-figures` validates rendered figure artifacts. A passing test is a bounded claim about fixtures, not production certification.
+The tests are **not a deployment pipeline**, and none can demonstrate actual production activation, signed supply-chain provenance, canary routing or rollback control. Do not introduce a fictitious Build 6 to bridge this gap. The professional requirement is to state the missing system and evidence before requesting authorization. A passing test is a bounded claim about fixtures, not production certification.
 
 ## 33.9 Engineering review and exercises
 

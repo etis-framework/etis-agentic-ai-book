@@ -11,7 +11,7 @@ This is the source repository and **executable teaching companion** for the 503-
 
 ## Start in under five minutes
 
-Requires **Python 3.10 or newer**, `git`, and a terminal on macOS, Linux, or Windows. The educational companion uses Python's standard library.
+The **full ten-suite companion** requires **Python 3.10+**, `git`, and a terminal on **macOS or Linux** (Builds 3–5 use Unix-domain sockets). The educational companion uses only Python's standard library. On Windows, portable Builds 0–2 can be tested separately; see [platform support](docs/GETTING_STARTED.md#platform-support).
 
 ```bash
 git clone https://github.com/etis-framework/etis-agentic-ai-book.git
@@ -21,7 +21,7 @@ git checkout v1.0.0
 python3 publishing/scripts/check_companion_release.py
 ```
 
-On Windows, substitute `py -3` for `python3`, including in the final command. The checker runs all ten suites, checks the documented diagrams, and reports a clear PASS/FAIL. It creates no payments and needs no network after cloning. A passing run is evidence of **local fixture behavior**, not production trust. See [complete setup, verification, and troubleshooting](docs/GETTING_STARTED.md).
+On macOS/Linux, the checker runs all ten suites, checks the documented diagrams, and reports a clear PASS/FAIL. On Windows, use `py -3 publishing/scripts/check_companion_release.py --portable` to run **Builds 0–2 only**; this is **not** a full companion certification. It creates no payments and needs no network after cloning. A passing run is evidence of **local fixture behavior**, not production trust. See [complete setup, verification, and troubleshooting](docs/GETTING_STARTED.md).
 
 To run the first hands-on lesson, follow [Build 0](examples/refund-reference-system/build0/README.md): prepare a fictional refund, simulate a **lost provider acknowledgment**, observe E7 `UNKNOWN` despite simulated E8 `CONFIRMED`, and reconcile **without sending another effect**.
 
@@ -58,7 +58,7 @@ To run the first hands-on lesson, follow [Build 0](examples/refund-reference-sys
 - [`assets/`](assets/): book figure sources and rendered artwork.
 - [`references/`](references/): bibliography and source register.
 - [`metadata/`](metadata/): approved architecture and publication traceability.
-- [`publishing/`](publishing/README.md): manuscript generation and QA, separate from companion tests.
+- [`publishing/`](publishing/README.md): manuscript generation and QA, separate from companion tests. Historical root-level QA notes are preserved in [`publishing/reviews/legacy-qa/`](publishing/reviews/legacy-qa/README.md).
 - [`review/`](review/) and [`archive/`](archive/): retained historical engineering/editorial materials. Historical status statements in these folders are **not current publication status**.
 
 ## Versions, rights and scope

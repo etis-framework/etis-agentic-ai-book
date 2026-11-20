@@ -1,10 +1,13 @@
-# Figures and publishing integration
+# Figure sources, generated renditions, and publishing integration
 
-- **Editable source:** `assets/shared-figures/sources/*.dot` (Graphviz).
-- **Vector output:** `assets/shared-figures/rendered/*.svg` (preferred scalable master).
-- **DOCX compatibility:** `assets/shared-figures/rendered/*.png` (180 dpi generated rendering). Markdown currently references PNG to ensure reliable embedding in Word; SVG remains the vector publication master.
-- **Build:** `make figures` regenerates both formats; `make check` validates references; `make book-docx` generates `dist/etis-agentic-ai-book.docx`.
-- **QA:** `python3 publishing/scripts/check_figures.py` checks embedded media for built DOCX files. Visually inspect print-size readability and layout before publication.
-- **New figures:** F01-01 (engineering inheritance), F01-02 (workflow comparison), F02-01 (lost acknowledgment). They are **new instructional drafts**, not CAB-001-certified architecture diagrams.
-- **Existing 22 CAB-001 figures:** retained, with SVG and PNG generated from DOT. Not automatically inserted; placement requires editorial approval.
-- **Word warning:** The field-update prompt is a separate issue. These image references are embedded by Pandoc; the patch does not claim to resolve every Word field prompt.
+[Publishing overview](README.md) · [Repository home](../README.md)
+
+Not all figures use the same editable master format. **Do not regenerate an SVG-authored diagram from an obsolete DOT file.**
+
+- **DOT-authored figures:** editable Graphviz sources, when present, are in `assets/shared-figures/sources/*.dot`. The figure script uses DOT to produce renditions where no authoritative SVG master supersedes the DOT source.
+- **SVG-authored figures:** editable SVG masters are in `assets/shared-figures/sources/*.svg` for some diagrams. For the seven early F01/F02 diagrams, their individual `*.README.md` files explicitly identify the SVG in `assets/shared-figures/rendered/` as the editable master. Inspect the figure-specific note before changing its source.
+- **Output and compatibility:** `assets/shared-figures/rendered/*.svg` provides scalable vector artwork; `*.png` is used for Word-compatible image embedding. Source-linked assets and checked-in rendered artwork are different concerns.
+- **Regeneration:** `make figures` invokes `publishing/scripts/figures.py`. It requires Graphviz (`dot`) for DOT masters and may require Python `cairosvg` for fresh PNG renditions of SVG masters. Regeneration can update committed art; review each diff rather than assuming byte-identical results.
+- **Verification:** `make check` checks source references and figure constraints. `python3 publishing/scripts/check_figures.py --built` validates built DOCX image integration where applicable. Manual inspection at the actual 7 × 10 print size remains required.
+
+CAB-001 architecture figures, pedagogical diagrams, and reference-build `architecture.svg` diagrams serve **different purposes**. A successful render does not prove architectural correctness or print certification. Preserve approved architecture semantics and the frozen print artifacts.

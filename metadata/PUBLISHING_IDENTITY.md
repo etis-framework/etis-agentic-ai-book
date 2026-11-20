@@ -1,3 +1,5 @@
+> **Historical editorial decision record (retained unchanged below this notice).** The working-state statements in this file reflect the stage when it was written, and are **not** the current KDP, cover, manuscript, or release status. See the [root README](../README.md), [publishing overview](../publishing/README.md), and [first-edition release policy](../RELEASE.md) for current navigation. The repository release/tag remains intentionally pending.
+
 # Publishing identity and scope — editorial decision
 
 **Working approved direction for manuscript integration; print ISBNs confirmed by author; cover and retail metadata remain under review.**

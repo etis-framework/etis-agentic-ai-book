@@ -28,18 +28,19 @@ Use `test_coordination.py:test_stale_owner_cannot_override_new_owner_reconcile` 
 **Learner deliverable:** Identify one negative test that passes today and one E5-side ownership test that would require a production-grade implementation beyond this fixture.
 
 
-## Run from the book root
+## Run from the repository root
 
-Python 3.10+ on macOS or Linux with Unix sockets. Standard library only. No external accounts, model, payment API, live provider credentials or customer data.
+Run these commands in a terminal from the top-level `etis-agentic-ai-book` directory—the same directory containing `README.md` and `publishing/`. This keeps the commands consistent with Builds 0–4 and Chapters 28–31. Python 3.10+ on macOS or Linux with Unix-domain sockets is required for this build. Standard library only; no external accounts, models, payment APIs, live credentials or customer data.
 
 ```sh
-cd examples/refund-reference-system/build5
-python3 demo.py --scenario approved
-python3 demo.py --scenario denied
-python3 demo.py --scenario lost-ack
-python3 demo.py --scenario outage
-python3 -m unittest discover -s . -p 'test_*.py' -v
+python3 examples/refund-reference-system/build5/demo.py --scenario approved
+python3 examples/refund-reference-system/build5/demo.py --scenario denied
+python3 examples/refund-reference-system/build5/demo.py --scenario lost-ack
+python3 examples/refund-reference-system/build5/demo.py --scenario outage
+python3 -m unittest discover -s examples/refund-reference-system/build5 -p 'test_*.py' -v
 ```
+
+An intentional `DENIED`, `NEEDS_RECONCILIATION`, or `UNKNOWN` observation is a lesson about the simulated workflow, not by itself a failed installation. Check each scenario against the table below and read the associated negative tests. To verify the entire companion from this same directory, use `python3 publishing/scripts/check_companion_release.py`.
 
 | Scenario | E2 observation | E5 / E7 / mock E8 evidence |
 |---|---|---|

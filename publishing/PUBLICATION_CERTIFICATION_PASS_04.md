@@ -1,5 +1,7 @@
 # ETIS Publication Certification — Pass 4 technical and currency review
 
+> **Archived development-pass evidence — not the current publication status.** This dated report records the scope, limitations and decisions of its own engineering pass. Statements such as "not certified," "pending," and "open gate" are preserved as historical findings, not the status of the first-edition companion or the author-approved KDP interior. See [Release Policy](../RELEASE.md) for the current companion release procedure and [Pagination](PAGINATION.md) for print-layout source/approval boundaries.
+
 **Status: NOT CERTIFIED for final publication.** Date: 2026-11-16.
 
 ## Inputs and baseline

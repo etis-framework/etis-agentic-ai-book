@@ -1,5 +1,7 @@
 # Book certification Pass 4B — second independent technical and teaching pass
 
+> **Archived development-pass evidence — not the current publication status.** This dated report records the scope, limitations and decisions of its own engineering pass. Statements such as "not certified," "pending," and "open gate" are preserved as historical findings, not the status of the first-edition companion or the author-approved KDP interior. See [Release Policy](../RELEASE.md) for the current companion release procedure and [Pagination](PAGINATION.md) for print-layout source/approval boundaries.
+
 **Scope:** 36 chapters, seven parts, six Python builds, four supplemental test fixtures, seven internal review lenses, eight selective entry paths, current protocol sources and claim-specific provenance. See `review/pass4b-complete-book-teaching-and-source-audit.md` for the chapter-by-chapter and cross-lens record.
 
 **Change classification:** educational documentation, nonbehavioral source comments, reader Appendix B navigation, bibliography/source-register normalization and automated guide checks. No architecture, figures, model interfaces, financial effect logic, or test behavior changed.

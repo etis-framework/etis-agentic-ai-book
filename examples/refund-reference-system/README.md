@@ -8,7 +8,7 @@
 **Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system
 **Reader entry point:** `examples/refund-reference-system/README.md`
 
-The GitHub repository is private while the manuscript is in development and is intended to become public with the book. In the published edition, use the corresponding Git release/tag to reproduce the printed code exactly; `main` may have advanced.
+For the first printed edition, use the immutable **`v1.0.0`** Git tag once published (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
 
 | Build | Book chapter | Engineering lesson |
 |---|---|---|
@@ -135,7 +135,7 @@ Consult `TESTING.md` for the verification matrix and `ENGINEERING_STANDARD.md` f
 
 ## Version and publication policy
 
-The development repository is the only editable code authority. Every published edition must identify its matching **immutable Git tag or source snapshot** with a tested release and errata trail. The publication plan is to make the book repository publicly readable, subject to a review that excludes restricted editorial content. If distribution needs require an examples-only archive, generate it from this single authoritative repository and its immutable edition tag rather than independently maintaining another implementation.
+This Git repository is the single code authority. The first-edition companion release is **`v1.0.0`** once its tag is published, with a [release procedure](../../RELEASE.md), [changelog](../../CHANGELOG.md) and [errata process](../../ERRATA.md). Use the tagged source for printed-edition reproduction; `main` may evolve. No separate, independently maintained examples archive is authoritative.
 
 ## Run Build 1 (Chapter 23)
 

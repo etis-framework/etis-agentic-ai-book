@@ -5,8 +5,17 @@
 ## Prerequisites
 
 - Python 3.10+; tested locally with Python 3.13 during publication preparation. The GitHub workflow tests additional versions.
-- Git and terminal. macOS/Linux `python3`; Windows `py -3` (or `python` if your installation uses that command).
+- Git and terminal. macOS/Linux `python3`; Windows `py -3` (or `python` if your installation uses that command) for the portable subset only.
 - **No** pip dependencies, credentials, accounts, local model, internet service, or payment provider for the companion tests. Cloning requires network access; tests do not.
+
+## Platform support
+
+| Environment | Supported verification | Command |
+|---|---|---|
+| macOS or Linux, Python 3.10+ | Full Builds 0–5, Chapters 28–31 and architecture checks | `python3 publishing/scripts/check_companion_release.py` |
+| Windows, Python 3.10+ | Portable Builds 0–2 and architecture checks **only** | `py -3 publishing/scripts/check_companion_release.py --portable` |
+
+Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permissions**, and later exercises depend on this path. The full companion is **not verified or supported on native Windows**. Windows users wanting all ten suites should use an appropriate Linux environment (for example WSL2); that environment must be verified independently. Do not interpret a portable-subset pass as a full companion pass. No paid services or dependencies are required for either command.
 
 ## Download the version that matches your book
 
@@ -27,9 +36,9 @@ From the repository root:
 python3 publishing/scripts/check_companion_release.py
 ```
 
-Windows: `py -3 publishing/scripts/check_companion_release.py`.
+Windows (portable subset **only**): `py -3 publishing/scripts/check_companion_release.py --portable`. On native Windows, the full command exits early with an explanation instead of reporting spurious Build 3 failures.
 
-The checker runs ten suites in this order: Builds 0–5; Chapter 28 reliability; Chapter 29 security; Chapter 30 operations; Chapter 31 assurance. Then it runs the architecture/companion-documentation checker. It exits nonzero when anything fails. For full printed-book production QA, see [`publishing/`](../publishing/README.md); that is a distinct toolchain and may require a generated Word file and image tools.
+In full mode, the checker runs ten suites in this order: Builds 0–5; Chapter 28 reliability; Chapter 29 security; Chapter 30 operations; Chapter 31 assurance. In portable mode, it runs Builds 0–2 only. Both modes run the architecture/companion-documentation checker. It exits nonzero when anything fails. For full printed-book production QA, see [`publishing/`](../publishing/README.md); that is a distinct toolchain and may require a generated Word file and image tools.
 
 To inspect test names and assertions without the helper:
 
@@ -66,7 +75,8 @@ Use a **new output path every run**; the collector intentionally refuses to over
 
 | Symptom | Action |
 |---|---|
-| `python3: command not found` | Use `py -3` on Windows or install Python 3.10+; check `python3 --version`. |
+| `python3: command not found` | Use `py -3` on Windows for the portable subset or install Python 3.10+; check `python3 --version`. |
+| Full tests unsupported on native Windows | Run `py -3 publishing/scripts/check_companion_release.py --portable` for Builds 0–2; use macOS/Linux for all ten suites. |
 | Cannot check out `v1.0.0` | Confirm the [first-edition Release](https://github.com/etis-framework/etis-agentic-ai-book/releases) has been published; run `git fetch --tags`. |
 | SQLite file already contains a demonstration | Use a fresh, disposable directory; exercises retain state intentionally. |
 | Evidence path exists | Choose a different unique filename; collector will not overwrite. |

@@ -39,7 +39,7 @@ Paths below are relative to `examples/refund-reference-system/`. Open each `READ
 python3 -m unittest discover -s examples/refund-reference-system/build2 -p 'test_*.py' -v
 ```
 
-Change `build2` to another directory listed above; run all ten suites using `make check` at repository root. Do not paste a financial test fixture into production or reuse its public educational keys.
+Change `build2` to another directory listed above. On macOS/Linux, run all ten companion suites from the **repository root** with `python3 publishing/scripts/check_companion_release.py` (on Windows, `py -3 publishing/scripts/check_companion_release.py --portable` runs Builds 0–2 only). `make check` is a separate book-production QA task and is not the reader's companion test command. Do not paste a financial test fixture into production or reuse its public educational keys.
 
 ## Protocol integration (architectural extension, not an executable build)
 

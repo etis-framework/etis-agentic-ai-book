@@ -1,16 +1,15 @@
 # Change history
 
-[Home](README.md) · [First-edition release procedure](RELEASE.md) · [Errata](ERRATA.md)
+[Home](README.md) · [First-edition release notes](RELEASE_NOTES_v1.0.0.md) · [Release policy](RELEASE.md) · [Errata](ERRATA.md)
 
-## [Unreleased]
+## v1.0.0 — First-edition teaching companion (2026)
 
-- Reader-oriented repository navigation and concise getting-started guide.
-- Repeatable, standard-library-only companion regression command and GitHub Actions checks.
-- Clear licensing scope, security reporting guidance, release procedure and errata reporting process.
-- **No** changes to the frozen book manuscript or the CAB-001 architecture.
+- Six progressive runnable standard-library Python builds, Chapters 22–27, for CASE-204 and RF-1042.
+- Four additional educational exercise suites covering reliability (Chapter 28), adversarial authorization (Chapter 29), incident operations (Chapter 30) and reproducible assurance (Chapter 31).
+- Source-backed architecture diagrams, guided code-reading paths, negative tests, bounded evidence collection and chapter-to-test navigation.
+- Platform-specific quick start for macOS/Linux and the native-Windows portable subset; a version-pinned source ZIP route without Git.
+- Ten-suite CI-backed companion verification, architecture-documentation checks, errata workflow and private vulnerability reporting guidance.
 
-## [v1.0.0] — planned first-edition companion (November 26, 2026)
+This release establishes **educational, locally simulated behavior**, not real-provider settlement, protected operational credentials, independent E5 epoch fencing, or production certification. See [full GitHub Release notes](RELEASE_NOTES_v1.0.0.md).
 
-The version becomes final **only when tagged and released**. First-edition source includes six progressive Python builds (Chapters 22–27), chapter 28 recovery, chapter 29 adversarial authorization, chapter 30 read-only operations, and chapter 31 bounded evidence collector. All tests operate against local fictional fixtures. A green suite is **not** a commercial provider, protected audit, or production security assurance.
-
-**Release-note checklist:** record exact Git commit SHA; supported Python versions; CI matrix pass URLs; local test counts on the release commit; five production assurance gaps; frozen architecture and CASE-204/RF-1042 invariants; errata and security-reporting paths.
+Future corrections will be recorded under a new version without modifying the immutable first-edition tag.

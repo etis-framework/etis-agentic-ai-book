@@ -1,25 +1,24 @@
-# Release policy — first edition
+# First-edition companion — version and release policy
 
-[Home](README.md) · [Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
+[Home](README.md) · [GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Release notes](RELEASE_NOTES_v1.0.0.md) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
 
-The intended public first-edition release is **`v1.0.0`**, synchronized with the November 26, 2026 paperback publication. This file is **the procedure**, not proof that a tag or release already exists. Confirm actual remote tag, branch, CI and release state before publication.
+**Edition:** `v1.0.0` is the immutable source version accompanying the first printed edition of *Engineering Agentic AI Systems* (2026). The GitHub Release and annotated tag are published **before** the Amazon book launch. The first-edition code is a credential-free, standard-library-only teaching fixture; it is not a real payment system, a provider certification, or a production deployment.
 
-## Release gate (maintainer)
+## Maintainer release sequence
 
-1. Approve and merge the publication-only correction PR; confirm licensing and historical materials suitable for public exposure.
-2. Make a **fresh clone** of the candidate commit; run `python3 publishing/scripts/check_companion_release.py` on **macOS/Linux**, review the GitHub Actions Ubuntu/macOS matrix, and record results. On Windows, `--portable` verifies only Builds 0–2 and is not a substitute for full testing.
-3. Independently execute `python3 examples/refund-reference-system/assurance/collect.py --output <unique-absolute-path-outside-repo>` and verify its `production_certified=false` result and enumerated gaps.
-4. Inspect Build 0–5 SVGs in GitHub, all landing-page links, negative tests, and chapter map. The original publication checks involving Word/DOCX remain a separate, already frozen manuscript process.
-5. Confirm no secrets, accidental source drafts, personal information, unintended licensing grants, or OS metadata are tracked (`git ls-files`, `git status`, secrets review). If the repository is already public, resolve any inappropriate disclosures immediately; do not assume publication review has already occurred.
-6. Merge to `main`, establish a clean, documented release commit SHA and CI result, and create an annotated tag **only once**: `git tag -a v1.0.0 -m "ETIS Agentic AI first-edition companion v1.0.0"`.
-7. `git push origin main` (if not already pushed) and `git push origin v1.0.0`; publish a GitHub Release from the tag using the template in [CHANGELOG.md](CHANGELOG.md), explicitly explaining simulated vs real guarantees.
-8. Confirm intended visibility and verify anonymous access (if public) to README, diagrams, source, release/tag, errata, license and tests. Verify the public site link.
+1. Merge the final documentation PR, confirm the candidate `main` commit and clean working tree, and check that all four required Ubuntu/macOS Python CI jobs passed on that exact commit.
+2. Run `python3 publishing/scripts/check_companion_release.py` in a fresh macOS/Linux checkout; inspect Builds 0–5 and Chapter 28–31 exercise guides. Native Windows `--portable` covers Builds 0–2 only.
+3. Review the fixed release notes in [RELEASE_NOTES_v1.0.0.md](RELEASE_NOTES_v1.0.0.md), the rights boundary in [RIGHTS.md](RIGHTS.md), and secret-free sample files. The final KDP print viewer and manuscript are handled separately from the GitHub companion.
+4. On the verified `main` commit, create and push the annotated **`v1.0.0`** tag once. Publish a GitHub Release from that tag, using the prepared release notes and leaving **Set as pre-release** unchecked.
+5. Verify anonymous access to the GitHub Release, source ZIP, README, architecture SVGs, exercise tests, security reporting guidance and errata process **before** launching the book on Amazon.
 
 ## Version semantics
 
-- `v1.0.0`: exact source version associated with the **first printed edition**; immutable.
-- `v1.0.1`, etc.: backward-compatible companion documentation or code fixes with changelog and errata; new tags, never retag `v1.0.0`.
-- `main`: ongoing development; may differ from printed examples.
-- Material contract changes or a new edition require an explicit new compatibility assessment; no silent breaking changes under a patch release.
+- **`v1.0.0`** is fixed to the first-edition source commit. Never move or recreate the tag to change its contents.
+- **`v1.0.1` and later** may deliver explicitly documented corrections and errata, under new tags.
+- **`main`** is the development branch and is not the edition-specific source once new commits arrive.
+- Source ZIPs provided automatically by GitHub under the selected Release are the simplest version-pinned option for non-Git readers.
 
-Maintainer release notes should state Python versions tested and include an explicit **not production-certified** caveat. Archive downloads supplied by GitHub for the exact tag are preferable to independently repackaged examples.
+## Verified scope of this release
+
+The companion runs six progressive Python builds (Chapters 22–27) plus Chapter 28 reliability, Chapter 29 security, Chapter 30 incident operations and Chapter 31 evidence exercises. The full verification workflow uses Ubuntu/macOS with Python 3.10 and 3.13. All payment/identity/provider operations use fictional local fixtures; the reference implementation does **not** claim hardened credential custody, provider settlement, complete E5-side lease fencing or external audit attestation.

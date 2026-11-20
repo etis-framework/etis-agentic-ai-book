@@ -21,6 +21,17 @@ Expected first run: JSON object with `untrusted_proposal.disposition` = `RECOMME
 
 This version-controlled diagram maps the teaching modules to logical enterprise responsibilities (E1–E9) and cross-domain contracts (C01–C09), as defined in Chapter 8; it does **not** establish an independently protected security boundary. Read the module names, implementation limitations, and executable tests together. Changes to source interfaces or trust boundaries require changing this SVG in the same patch.
 
+## Guided source-reading checkpoint
+
+Follow one fixed CASE-204 request rather than reading the files alphabetically:
+
+1. Start in `demo.py:main` to see the fictional evidence and optional injection switch.
+2. Inspect `contracts.py:WorkRequest`, `Evidence`, `Proposal.parse`, and `validate_proposal`. Ask why extra fields and Boolean money are rejected instead of coerced.
+3. Read `advisory.py:advise` and `model_interface.py:CandidateModel`. The candidate proposes C04 data; it never obtains E5/E6 tools.
+4. Run `test_advisory.py:test_adversarial_narrative_is_inert`, then `test_e7_e8_unchanged_and_no_operation_creation` to falsify the claim that prose can authorize a payment.
+
+**Explain the result:** A syntactically valid, scope-matched recommendation remains untrusted. The lesson is *independent business authorization*, not model accuracy or how to call a vendor API.
+
 ## Read the implementation in control order
 
 1. `contracts.py`: exact `WorkRequest`, `Evidence` and `Proposal` typed contracts. All money uses integer cents and rejects `bool` and `float`; case/tenant/schema/freshness are bounded to fixed fixtures. `Proposal.parse()` rejects unexpected fields such as `approved` and `provider_key` rather than silently ignoring them.

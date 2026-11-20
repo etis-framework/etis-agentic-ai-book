@@ -30,6 +30,15 @@ The continuing case is **CASE-204**, the proposed **$500 (50,000-cent)** refund;
 
 `ProviderObservation` carries an outcome, stable operation ID, provider reference (only for confirmation), evidence source and protocol version. A valid transport response or a model claim cannot substitute for a confirmed provider observation. For the fixture, idempotency-key scope is `provider-account`, declared retention is 86,400 seconds and status lookup is required. Those are **teaching assumptions**, not measured provider behavior. The fixture does not implement expiry enforcement or a remote payment network. Actual adapters must verify a provider's idempotency window, status freshness, key reuse rules, settlement semantics, amount/currency precision, and credential/access policies.
 
+## Guided source-reading checkpoint
+
+Read the success and failure paths in this order: `demo.py:run` → `service.py:handle` (independent E5 checks) → `workflow.py:RefundWorkflow.execute` → `ledger.py:OperationalLedger.prepare` and `.claim_dispatch` → `adapter.py:SQLiteFixtureProvider.send`. Then trace `RefundWorkflow.reconcile` to `SQLiteFixtureProvider.lookup` and `OperationalLedger.confirm`.
+
+Compare `test_provider.py:test_lost_ack_requires_authoritative_reconciliation` with `test_replayed_execute_does_not_call_provider_twice` and `test_outage_missing_record_stays_unknown`. **Identify the durable write made before the mock external effect.** Explain why E8 `NOT_FOUND` cannot establish that an earlier request failed and why the provider-side unique key is only a fixture model of idempotency.
+
+**Learner deliverable:** Draw two columns labeled *E7 local observation* and *mock E8 provider truth* for the lost-ack scenario. Explain which one can support confirmation and which one cannot.
+
+
 ## Run from the repository root
 
 **Prerequisites:** Python 3.10+ and Unix-domain sockets (macOS or Linux). Only Python's standard library is required; no real secrets, model, payment provider or external network access. Each demo is isolated in a temporary directory with ephemeral locally generated keys.

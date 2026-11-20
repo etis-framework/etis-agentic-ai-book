@@ -160,6 +160,7 @@ class CoordinatorTests(unittest.TestCase):
         self.assertEqual(len(failures),7)
 
     def test_stale_owner_cannot_override_new_owner_reconcile(self):
+        # E2 epochs fence stale local writes, not an E5 financial request.
         a=self.owner()
         self.store.mark_execute_intent(a,now=100)
         b=self.owner('b',now=105)

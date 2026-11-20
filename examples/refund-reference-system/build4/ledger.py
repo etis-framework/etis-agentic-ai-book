@@ -66,6 +66,8 @@ class OperationalLedger:
             raise ContractViolation('durable operation identity reused with different immutable attributes')
         return row
 
+    # E7 intent is written before external execution. Reusing the fixed
+    # operation identity cannot reset a previously dispatched attempt.
     def prepare(self, command: RefundCommand):
         command.validate()
         with self._connect() as db:
@@ -78,6 +80,8 @@ class OperationalLedger:
         if row is None or row[4] != 'AUTHORIZED':
             raise InvalidTransition('preparation cannot reset an already claimed operation')
 
+    # The database row-count is the local concurrency gate: exactly one
+    # claimant may advance AUTHORIZED -> DISPATCHED and approach mock E8.
     def claim_dispatch(self, command: RefundCommand):
         with self._connect() as db:
             c=db.execute('''UPDATE operations SET status='DISPATCHED',observation='provider call may have begun'
@@ -102,6 +106,8 @@ class OperationalLedger:
             # contradictory provider query makes the current outcome UNKNOWN.
             self._event(db,command,'OBSERVE_UNKNOWN','UNKNOWN',detail,row[0])
 
+    # Confirmation is tied to validated provider evidence and a stable
+    # operation reference. A local success string by itself proves nothing.
     def confirm(self, command: RefundCommand, provider_reference: str, *, source: str):
         if source not in {'provider-commit','provider-status-query'} or provider_reference != 'MOCK-'+command.operation_id:
             raise ContractViolation('cannot confirm without validated provider evidence')

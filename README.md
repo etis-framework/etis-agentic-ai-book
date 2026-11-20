@@ -9,21 +9,24 @@ This is the source repository and **executable teaching companion** for the 503-
 
 > **Engineering rule:** AI proposes; trusted controls independently authorize consequential execution. The CASE-204 **$500** fictional refund uses the stable operation identity **RF-1042**. Passing tests does **not** certify a production payment system or security boundary.
 
-## Start in under five minutes
+## Start here — no Git experience required
 
-The **full ten-suite companion** requires **Python 3.10+**, `git`, and a terminal on **macOS or Linux** (Builds 3–5 use Unix-domain sockets). The educational companion uses only Python's standard library. On Windows, portable Builds 0–2 can be tested separately; see [platform support](docs/GETTING_STARTED.md#platform-support).
+**New to GitHub?** Read the [step-by-step setup guide](docs/GETTING_STARTED.md). It explains how to **download the first-edition ZIP without Git**, find the extracted folder, check Python, and run the first example. You do not need an AI account, payment provider, or Python packages.
+
+**macOS/Linux readers who use Git** can run these commands in a terminal after the [`v1.0.0` first-edition release](https://github.com/etis-framework/etis-agentic-ai-book/releases) is published:
 
 ```bash
 git clone https://github.com/etis-framework/etis-agentic-ai-book.git
 cd etis-agentic-ai-book
-# For the exact first-edition companion, once the release is published:
 git checkout v1.0.0
 python3 publishing/scripts/check_companion_release.py
 ```
 
-On macOS/Linux, the checker runs all ten suites, checks the documented diagrams, and reports a clear PASS/FAIL. On Windows, use `py -3 publishing/scripts/check_companion_release.py --portable` to run **Builds 0–2 only**; this is **not** a full companion certification. It creates no payments and needs no network after cloning. A passing run is evidence of **local fixture behavior**, not production trust. See [complete setup, verification, and troubleshooting](docs/GETTING_STARTED.md).
+**Windows:** from the extracted repository folder, run `py -3 publishing/scripts/check_companion_release.py --portable` instead. Native Windows supports Builds 0–2 and documentation checks; the full ten suites need macOS/Linux. The Python **standard library is sufficient**; no `pip install` is needed.
 
-To run the first hands-on lesson, follow [Build 0](examples/refund-reference-system/build0/README.md): prepare a fictional refund, simulate a **lost provider acknowledgment**, observe E7 `UNKNOWN` despite simulated E8 `CONFIRMED`, and reconcile **without sending another effect**.
+The checker reports `PASS` when its local fixture tests and checks succeed. An intentionally denied refund or unresolved provider acknowledgment can also be **correct** behavior within an individual exercise. A passing test is not production certification.
+
+**Next:** [run Build 0's fictional lost-acknowledgment lesson](examples/refund-reference-system/build0/README.md), then [follow the six-build learning path](examples/refund-reference-system/LEARNING_PATH.md). Build 0 shows why E7 can record uncertainty even when mock E8 contains one confirmed RF-1042, and how reconciliation avoids a second effect.
 
 ## Find what you need
 
@@ -63,7 +66,7 @@ To run the first hands-on lesson, follow [Build 0](examples/refund-reference-sys
 
 ## Versions, rights and scope
 
-The **first-edition companion is `v1.0.0`**, to be published with the printed book. At release, use its immutable Git tag and GitHub Release, **not a later `main` revision**, for exact reproduction. See [release policy](RELEASE.md). The paperback ISBN is **979-8-9966760-6-4**; hardcover ISBN is **979-8-9966760-7-1**.
+The **first-edition companion is `v1.0.0`**. Download the [GitHub Release](https://github.com/etis-framework/etis-agentic-ai-book/releases) and its immutable tag for exact first-edition reproduction; `main` can change later. See [release policy](RELEASE.md). The paperback ISBN is **979-8-9966760-6-4**; hardcover ISBN is **979-8-9966760-7-1**.
 
 **The educational code is not production-ready.** The same-user subprocess fixture does not provide OS isolation, mock keys are not protected credentials, E2 fencing does not extend into E5, mock E8 is not a financial provider, and local evidence is not independently attested. Conceptual MCP/A2A discussions do **not** imply implemented MCP/A2A stacks. Review the [limits and proofs](docs/CHAPTER_MAP.md) before drawing architectural conclusions.
 

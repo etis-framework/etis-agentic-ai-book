@@ -1,6 +1,6 @@
 # Source and citation register — Chapters 1–36
 
-**Status: Chapters 1–36 have cumulative source/claim notes; final passage-level publication certification remains open.** This is a cumulative engineering register, not the reader bibliography. Coverage and verification depth vary by chapter: presence of a mapping does not certify a primary passage, edition/page, stable link, claim applicability or production guarantee. Historical working-pass headings below preserve the chronology of earlier citation reviews; they are not current coverage limits.
+**Status: Historical manuscript source-and-claim review record for Chapters 1–36.** This is an engineering provenance register, **not a live release checklist** and not the reader bibliography. Historical labels such as “open,” “gate,” “pending,” and unchecked boxes below describe the state of earlier development passes; they do not state the current GitHub companion release status. A mapping does not independently certify every external passage, edition/page, link, or production guarantee. The textbook and its source record must not be mistaken for external provider or standards accreditation.
 
 ## Source hierarchy and use
 

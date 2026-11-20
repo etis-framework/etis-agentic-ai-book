@@ -4,7 +4,7 @@ This repository contains **fictional educational code**; it is not an online pay
 
 ## Report privately
 
-If you discover a vulnerability, **do not publish exploits, credentials, or sensitive details in a public issue**. Use GitHub's **Report a vulnerability** feature under the repository's Security tab **if the maintainer has enabled private vulnerability reporting**. If unavailable, use the [ETIS website](https://etisframework.org) to identify an official contact route; do not assume a mailbox address. For a public repository, the maintainer should enable and verify private vulnerability reporting before issuing the first-edition release. Do not assume the feature is currently enabled.
+If you discover a vulnerability, **do not publish exploits, credentials, or sensitive details in a public issue**. Use GitHub's **Report a vulnerability** feature under this repository's **Security** tab for private disclosure. If the feature is temporarily unavailable, use the [ETIS website](https://etisframework.org) to locate an official contact route; never paste exploit details into a public issue or guess an email address.
 
 ## Supported versions
 

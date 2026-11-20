@@ -7,6 +7,6 @@
 - **Repository guidance:** human-readable README guides, changelog, issue templates and policy documentation may be read and linked to; their presence does not license reproduction of the commercial book or grant ETIS trademarks.
 - **Third parties:** any third-party text, media or components retain their applicable rights; the software license does not replace them.
 
-**Maintainer verification before the first-edition tag:** Confirm that the stated software-license scope reflects the copyright owner’s intent and that no excluded third-party code has been distributed under Apache-2.0 without permission. Repository public visibility alone does not certify that review. If you need to republish figures, textbook passages, or branding, seek separate written permission via [ETIS Framework](https://etisframework.org).
+**Permissions:** The scope above defines this repository's public offer and does not transfer rights in separately protected book text, figures, branding or third-party materials. For permission to republish figures, textbook passages, or branding, contact [ETIS Framework](https://etisframework.org).
 
 The code is an educational example, not a payment service or a warranty of suitability for any purpose. See [SECURITY.md](SECURITY.md) and each build's implementation limitations.

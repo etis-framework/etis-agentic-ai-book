@@ -20,6 +20,10 @@ from identity import LocalAssertionAuthority, ScopeDenied
 from contracts import (InvalidRequest,AuthorizationDenied,EffectUncertain,
                        bounded_object,verify_grant,CASE,TENANT,AMOUNT,OPERATION)
 
+# Educational request path: bound/framing check -> strict JSON contract ->
+# verified E1 assertion -> independently signed E5 finance grant ->
+# server-owned E7 intent/dispatch -> simulated E6/mock E8 observation.
+# The agent-side client neither issues approvals nor imports the adapter.
 MAX_BYTES = 8192
 # A deliberately single-worker educational service must still bound hostile
 # connections. The deadline applies to the entire frame, not each recv(), so
@@ -27,6 +31,8 @@ MAX_BYTES = 8192
 FRAME_DEADLINE_SECONDS = 0.75
 
 
+# Frame validation is deliberately before request authorization. An oversized
+# or trickle-fed frame must not monopolize the single educational E5 worker.
 def read_frame(conn: socket.socket, *, deadline_seconds: float = FRAME_DEADLINE_SECONDS) -> object:
     """Read one newline-delimited JSON object with a total monotonic deadline.
 

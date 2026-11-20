@@ -20,6 +20,15 @@ Build 0 independently demonstrates local financial intent/reconciliation. Build 
 | `demo.py` | Deterministic positive, abuse, stale and dependency-outage CLI scenarios |
 | `test_scope.py` | 13 isolated tests for integrity, scope, freshness, failure and no financial writes |
 
+## Guided source-reading checkpoint
+
+Read `demo.py:main` first, then follow the call path through `identity.py:LocalAssertionAuthority.issue` and `.verify`, `context.py:retrieve`, and `pipeline.py:bounded_review` into the existing Build 1 adviser. Trace the exact moment when an untrusted token becomes a `VerifiedScope`, and why the evidence gateway still performs a separate source-allowlist and freshness check.
+
+Use `test_scope.py:test_other_tenant_and_case_even_with_valid_signature` and `test_stale_future_and_wrong_version` as negative controls. A correctly signed claim may still be out of scope or expired; provenance-bearing context never becomes E5 approval. The HMAC key is a public fixture, not a production secret.
+
+**Learner question:** Which precise checks would still be needed if the model's narrative said it had already obtained permission to refund CASE-204?
+
+
 ## Run from the repository root
 
 ```sh

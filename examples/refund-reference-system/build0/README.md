@@ -16,6 +16,13 @@ This version-controlled diagram maps the teaching modules to logical enterprise 
 
 The fixed `approved` flag is not a real human-approval system. The provider's unique operation key models a fictional contract, not a verified live-provider guarantee.
 
+## Guided source-reading checkpoint
+
+Begin at `refund.py:prepare`, continue to `dispatch`, and finish at `reconcile`. Mark where the E7 SQLite transaction commits *before* the separate mock E8 provider write. Compare that order with `test_refund.py:test_lost_ack_and_recovery` and `test_two_concurrent_dispatchers_only_one_wins`. The tests should make you defend why the second caller cannot issue another simulated effect.
+
+**Learner question:** After a lost acknowledgment, why is the local state uncertain even when the mock provider has already committed RF-1042? What evidence, rather than a retry, resolves the uncertainty?
+
+
 ## Exercise 1 — run the negative and recovery tests
 
 From the repository root:

@@ -39,6 +39,9 @@ def required_id(value: object, name: str) -> str:
         raise InvalidAdvisory(f"invalid {name}")
     return value
 
+# Model output is data from a lower-trust source. Compare the entire key set:
+# accepting an extra ``approved`` or ``provider_key`` would silently expand C04.
+# In particular, never coerce unknown fields into a trusted authorization shape.
 def exact_fields(raw: Mapping[str, Any], expected: frozenset[str]) -> None:
     if not isinstance(raw, dict) or frozenset(raw) != expected:
         raise InvalidAdvisory("proposal field set mismatch")
@@ -54,6 +57,8 @@ class WorkRequest:
     evidence_version: str
 
     def __post_init__(self) -> None:
+        # The advisory correlation identifies an investigation, never a payment.
+        # Using the fixed operation ID here would blur the C04/E5 boundary.
         required_id(self.correlation_id, "correlation_id")
         if self.correlation_id == "RF-1042":
             raise InvalidAdvisory("financial operation identifiers are prohibited")
@@ -132,6 +137,8 @@ class Proposal:
             raise InvalidAdvisory("unresolved advice must declare uncertainty")
 
     @classmethod
+    # Validate candidate fields before interpreting enum values.
+    # This C04 data is never an E5 finance grant.
     def parse(cls, raw: Mapping[str, Any]) -> "Proposal":
         """Reject additional fields, including forged approved/provider_key."""
         exact_fields(raw, frozenset(cls.__dataclass_fields__))

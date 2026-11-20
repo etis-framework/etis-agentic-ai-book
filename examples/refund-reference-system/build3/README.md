@@ -16,6 +16,16 @@
 
 `service.py` imports existing `build0/refund.py` only on the *server side*. The client module cannot import a privileged E6 interface through its own intended call graph. `service.py` explicitly verifies the existing Build 2 `LocalAssertionAuthority` contract, while the demo uses a uniquely generated fixture key to obtain a genuinely valid E1 assertion. The **separate signed transaction approval** has different claims and a different key from the E1 assertion. The E5 grant **does not** originate from E3/C04, and the E5 process exposes no `approve` endpoint. E7 (`operations.sqlite3`) and mock E8 (`provider.sqlite3`) remain separate, and the server owns their paths. The server calls `refund.prepare()` to commit E7 durable RF-1042 intent **before** `refund.dispatch()` claims the E7 dispatch transition and attempts the mock E8 effect. No direct client-to-adapter call is exposed. E2 fencing and real provider integration are not provided.
 
+## Guided source-reading checkpoint
+
+1. Follow `demo.py:run` to see the temporary fixture keys and the separate E5 subprocess.
+2. Read `client.py:request` and `service.py:read_frame` for the bounded Unix-socket message. A transport frame is not an authorization grant.
+3. Trace `service.py:execute` and `contracts.py:verify_grant`: E1 identifies the agent; the distinct finance grant authorizes the specific consequence. The service, not the adviser, owns `refund.py` and the two database paths.
+4. In `test_gate.py`, compare `test_valid_agent_token_is_not_payment_approval` with `test_authorized_one_effect_and_replay_refused`. Then inspect `test_slow_trickle_does_not_extend_absolute_frame_deadline` for resource-exhaustion containment.
+
+**Explain the result:** A separate process and checked request path are useful teaching boundaries, but the two processes share an OS user. This example does not demonstrate protected key custody or a hardened process sandbox.
+
+
 ## Requirements and execution
 
 Python 3.10+ standard library, macOS/Linux with Unix-domain sockets; no pip dependencies, cloud SDK, credentials, model account or payment provider. From the **repository root**:

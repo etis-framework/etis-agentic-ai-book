@@ -19,6 +19,15 @@ For the continuing **CASE-204** proposed **$500** refund, the stable consequenti
 
 **Most important non-guarantee:** Build 5 fences *coordination-state mutations* in E2, not external E5 calls. A stale worker with independently valid finance grant can still attempt to contact E5 directly; E5/E7 have their own authorization and one-time dispatch protections, but E5 does not presently consume/verify the E2 epoch. A real multi-worker production implementation MUST enforce current workflow ownership or an equivalent fencing condition at the trusted consequential boundary, using protected identities and authoritative state. Do not call this demonstration full end-to-end fencing.
 
+## Guided source-reading checkpoint
+
+Follow `demo.py:run` → `coordinator.py:DurableCoordinator.acquire`, `.choose`, `.mark_execute_intent` → `runner.py:BoundedRunner.step` → the existing Build 4 E5 service through its request client. After a lost reply, trace the *reconcile* branch rather than constructing a second execute.
+
+Use `test_coordination.py:test_stale_owner_cannot_override_new_owner_reconcile` and `test_crash_after_intent_before_e5_call_does_not_retry` to test the E2 state machine. **Important distinction:** a newer epoch rejects stale E2 database mutations, but does not reach inside the E5 service to fence a stale worker's financial request. A full production design must independently enforce that boundary.
+
+**Learner deliverable:** Identify one negative test that passes today and one E5-side ownership test that would require a production-grade implementation beyond this fixture.
+
+
 ## Run from the book root
 
 Python 3.10+ on macOS or Linux with Unix sockets. Standard library only. No external accounts, model, payment API, live provider credentials or customer data.

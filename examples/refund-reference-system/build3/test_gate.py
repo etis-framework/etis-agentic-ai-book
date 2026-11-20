@@ -67,6 +67,7 @@ class IsolatedGateTests(unittest.TestCase):
     def grant(self,**changes):return issue_fixture_grant(self.secret,now=int(time.time()),**changes)
 
     def test_valid_agent_token_is_not_payment_approval(self):
+        # An authenticated investigator is still not a finance approver.
         self.assertEqual(request(self.sock,self.body())['status'],'DENIED')
         self.assert_no_effect()
 

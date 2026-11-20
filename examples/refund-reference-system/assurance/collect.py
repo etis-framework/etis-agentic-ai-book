@@ -81,6 +81,8 @@ def validate_registry(root: Path, registry: tuple[FixtureCase, ...] = CASES) -> 
                 raise ValueError('Missing evidence source: ' + relative)
 
 
+# A green exit without exactly one named test could be a false positive
+# (e.g. discovery executed zero tests). The claim is bound to one method.
 def result_status(returncode: int | None, completed: bool, test_count: int) -> str:
     """A test is green only after clean exit and exactly one executed test."""
     return 'EXECUTED_PASS' if completed and returncode == 0 and test_count == 1 else 'EXECUTED_FAIL'
@@ -111,6 +113,8 @@ def run_case(case: FixtureCase, root: Path, timeout: int = 40,
     except (OSError, ValueError):
         state = 'UNAVAILABLE'
     status = result_status(exit_code, state == 'COMPLETED', count)
+    # A digest helps compare outputs without publishing their contents. It is
+    # neither a digital signature nor evidence of independent audit custody.
     digest = hashlib.sha256(output).hexdigest() if state == 'COMPLETED' else None
     return {
         'claim_id': case.claim_id,

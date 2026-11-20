@@ -65,6 +65,7 @@ class Build4Test(unittest.TestCase):
             self.assertEqual(db.execute('SELECT count(*) FROM provider_refunds').fetchone()[0],1)
 
     def test_lost_ack_requires_authoritative_reconciliation(self):
+        # Ambiguous send result requires provider inquiry, never a second effect.
         with self.assertRaises(OutcomeUnknown):self.workflow.execute(self.command,lose_ack=True)
         self.assertEqual(self.ledger.state(self.command)[4],'UNKNOWN')
         self.assertEqual(self.workflow.reconcile(self.command),'CONFIRMED')

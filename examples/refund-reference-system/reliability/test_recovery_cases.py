@@ -10,6 +10,7 @@ class RecoveryTests(unittest.TestCase):
         return Snapshot(CASE, OPERATION, True, "UNKNOWN", view)
 
     def test_not_found_never_declares_failure(self):
+        # An absent provider record cannot prove that the previous send failed.
         self.assertEqual(decide(self.base()), RecoveryDecision.ESCALATE)
 
     def test_unavailable_requires_inquiry_not_execution(self):

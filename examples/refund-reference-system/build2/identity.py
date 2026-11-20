@@ -47,6 +47,9 @@ class VerifiedScope:
     expires_at: int
 
 
+# Both issuer and verifier must sign/check the *same bytes*. Sorted keys and
+# compact separators prevent two JSON spellings of one claim set from drifting.
+# Canonicalization establishes encoding agreement, not issuer independence.
 def _canonical(claims: dict[str, Any]) -> bytes:
     return json.dumps(claims, sort_keys=True, separators=(',', ':'), ensure_ascii=True).encode('ascii')
 
@@ -68,6 +71,8 @@ class LocalAssertionAuthority:
                       allowed_sources=list(allowed_sources), issued_at=stamp,
                       expires_at=stamp + lifetime_seconds)
         self._validate_claims(claims)
+        # Construct the integrity envelope from validated scope claims. Possession
+        # of the fixture key is sufficient to forge it; keep that limitation visible.
         payload = _canonical(claims)
         signature = hmac.new(self._key, payload, hashlib.sha256).hexdigest()
         return payload.hex() + '.' + signature
@@ -106,10 +111,15 @@ class LocalAssertionAuthority:
                 raise ScopeDenied('noncanonical assertion')
         except (ValueError, UnicodeError, TypeError) as exc:
             raise ScopeDenied('malformed identity assertion') from exc
+        # Recompute on the received canonical bytes, then use constant-time
+        # digest comparison. A valid HMAC authenticates these fixture claims,
+        # but is NOT the separate transaction-specific finance approval.
         digest = hmac.new(self._key, payload, hashlib.sha256).hexdigest()
         if len(signature) != len(digest) or not hmac.compare_digest(signature, digest):
             raise ScopeDenied('assertion integrity failure')
         self._validate_claims(claims)
+        # Check both ends of the lifetime after signature verification: a valid
+        # signature must not make a future-dated or expired assertion usable.
         if not claims['issued_at'] <= stamp < claims['expires_at'] or claims['issued_at'] > stamp:
             raise ScopeDenied('assertion expired or not yet valid')
         return VerifiedScope(claims['subject'], claims['tenant_id'], claims['case_id'],

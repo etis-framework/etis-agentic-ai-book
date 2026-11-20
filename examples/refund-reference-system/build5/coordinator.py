@@ -74,6 +74,9 @@ class DurableCoordinator:
             if row != (OPERATION,):
                 raise CoordinationError('case identity conflicts with durable state')
 
+    # A monotonically increasing epoch rejects a stale worker's E2 writes.
+    # This is deliberately NOT a complete E5-side fencing protocol: the trusted
+    # financial service does not check the E2 epoch in this fixture.
     def acquire(self, worker: str, *, now: int) -> Ownership:
         """Acquire after expiration; each takeover permanently increases epoch."""
         self._check_worker(worker)
@@ -113,6 +116,8 @@ class DurableCoordinator:
             db.execute('UPDATE work SET expires_at=? WHERE case_id=?',(expiry,CASE))
             return Ownership(owner.worker,owner.epoch,expiry)
 
+    # An unresolved prior execute can only choose a status-only reconcile.
+    # Never choose another execute just because a lease was transferred.
     def choose(self, owner: Ownership, *, now: int) -> str:
         """Return exactly one permitted E5 action; no execution side effect."""
         self._check_now(now)

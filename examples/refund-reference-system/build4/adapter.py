@@ -43,6 +43,9 @@ class SQLiteFixtureProvider:
         result.validate()
         return result
 
+    # The provider's PRIMARY KEY models scoped idempotency for this one
+    # fictional SQLite account. Real processors require a documented scope,
+    # retention period, conflict behavior, and authoritative status API.
     def send(self, command: RefundCommand, *, lose_ack: bool = False) -> ProviderObservation:
         command.validate()
         if type(lose_ack) is not bool:
@@ -57,10 +60,15 @@ class SQLiteFixtureProvider:
             if actual != (command.case_id, command.tenant_id, command.amount_cents,
                           command.currency, 'MOCK-' + command.operation_id, 'CONFIRMED', PROVIDER_VERSION):
                 raise ProviderConflict('same provider key has contradictory immutable attributes')
+        # The transaction has committed when this fault is injected. The caller
+        # must treat the missing reply as UNKNOWN, not as a failed payment or
+        # permission to retry under another operation ID.
         if lose_ack:
             raise ProviderUnavailable('acknowledgment lost after potential effect; lookup required')
         return self._confirmed(command, 'provider-commit')
 
+    # This is a read-only inquiry into mock E8 business truth. NOT_FOUND is
+    # ambiguous evidence, not proof the earlier request had no effect.
     def lookup(self, command: RefundCommand) -> ProviderObservation:
         command.validate()
         with self._connect() as db:

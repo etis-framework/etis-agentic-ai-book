@@ -51,6 +51,8 @@ class FixtureCatalog:
     def get(self, tenant_id: str, case_id: str, source_id: str) -> CatalogRecord:
         if self._fail:
             raise ContextUnavailable('context source unavailable')
+        # The lookup key restricts selection, but the record's own provenance
+        # is checked below too: a misindexed entry must fail closed.
         record = self._records.get((tenant_id, case_id, source_id))
         if record is None:
             raise ScopeDenied('source not available for asserted scope')
@@ -67,10 +69,14 @@ def retrieve(scope: VerifiedScope, *, source_id: str, catalog: FixtureCatalog,
     if not isinstance(now, datetime) or now.tzinfo is None or now.utcoffset() is None:
         raise ScopeDenied('aware time required')
     utc = now.astimezone(timezone.utc)
+    # A signed identity assertion alone does not authorize arbitrary retrieval:
+    # the selected source must also be on the delegation allowlist.
     if not isinstance(source_id, str) or source_id not in scope.allowed_sources:
         raise ScopeDenied('source not delegated')
     if scope.purpose != 'review_replacement_complaint' or int(utc.timestamp()) >= scope.expires_at:
         raise ScopeDenied('scope expired or wrong purpose')
+    # The tenant/case restriction comes from VerifiedScope (E1 verifier output),
+    # not from text supplied by the adviser or the retrieved narrative.
     record = catalog.get(scope.tenant_id, scope.case_id, source_id)
     # Compare trusted fixture timestamps, not model-authored claims of freshness.
     # Negative age is future-dated evidence, not magically newer authority.

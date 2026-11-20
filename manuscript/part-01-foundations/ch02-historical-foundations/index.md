@@ -243,4 +243,4 @@ Imagine a vendor demonstrating an agent that reads a complaint, finds the order,
 
 ## Sources and further reading
 
-The consolidated bibliography now identifies foundational publications and current governance and agentic-AI research. The source register maps each to the sections it supports and distinguishes bibliographic identification from claim-level verification. No source should be treated as proving an implementation guarantee without examining its scope and assumptions.
+The bibliography identifies foundational research, standards, and current guidance relevant to the engineering disciplines discussed in this chapter. These sources provide historical and technical foundations; they do not independently establish the correctness of a particular implementation. Provider-specific guarantees and architectural claims must be evaluated against the applicable contracts, assumptions, and evidence.

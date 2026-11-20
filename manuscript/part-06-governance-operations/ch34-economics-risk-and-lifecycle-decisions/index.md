@@ -104,7 +104,7 @@ Lifecycle governance is a repeated decision with explicit observation windows, o
 | Restrict or pause | E5 anomalies, missing telemetry, unresolved effects, policy drift or rising backlog | Incident command and designated control owners |
 | Replace or retire | Comparable economics, migration plan, retention, credential revocation and open-operation disposition | Risk, finance, data owner and operations |
 
-Figure 34.3 is a decision diagram, not an implemented auto-scaling policy. In particular, **no score may authorize release when required control evidence is missing**. Chapter 32 allocates decision rights; Chapter 33 requires a controlled release candidate and safe halt; Chapter 31 states what the verification evidence actually covers. Runbooks 30-A, 32-A and 33-A remain manuscript procedures, not deployable automations.
+Figure 34.3 is a decision diagram, not an implemented auto-scaling policy. In particular, **no score may authorize release when required control evidence is missing**. Chapter 32 allocates decision rights; Chapter 33 requires a controlled release candidate and safe halt; Chapter 31 states what the verification evidence actually covers. Runbooks 30-A, 32-A and 33-A describe illustrative operational procedures; they are not executable automation supplied by the companion implementation.
 
 ![](assets/shared-figures/rendered/F34-03.png)
 

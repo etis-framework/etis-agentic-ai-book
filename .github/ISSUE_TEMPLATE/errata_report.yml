@@ -1,0 +1,25 @@
+name: First-edition errata report
+description: Printed book or versioned companion correction (not a security report)
+body:
+  - type: markdown
+    attributes:
+      value: "For security issues see SECURITY.md. Avoid pasting lengthy book passages or private data."
+  - type: input
+    id: edition
+    attributes:
+      label: Edition and format
+      placeholder: First edition (2026), paperback
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Printed page/chapter or exact repository path
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Observed issue, correction proposed, and supporting evidence
+    validations:
+      required: true

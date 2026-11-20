@@ -1,66 +1,70 @@
 # Engineering Agentic AI Systems
 
-**Subtitle:** Build, Secure, Verify, and Operate Trustworthy AI Agents  
-**Series:** ETIS Professional Computing Series  
-**Editorial scope:** The title describes end-to-end agentic *systems* engineering. Companion code provides six educational Python builds and cross-chapter recovery, security, operations and assurance fixtures; it is not production-certified software. Chapters 32–36 remain under development.
+**Build, Secure, Verify, and Operate Trustworthy AI Agents**
+*ETIS Professional Computing Series · First Edition (2026) · William T. O’Connell, Ph.D.*
 
-**ETIS Professional Computing Series — authoritative Markdown manuscript repository**
+[ETIS Framework](https://etisframework.org) · [Books](https://etisframework.org/Books/) · [Companion code](examples/refund-reference-system/README.md) · [First-edition releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Errata](ERRATA.md)
 
-This repository contains a **single bound 7×10-inch, seven-part, 36-chapter** professional computing textbook. Chapters **1–22** have substantive development drafts; Chapters **23–36** remain placeholders. This is not a publication-certified edition.
+This is the source repository and **executable teaching companion** for the 503-page, 7 × 10-inch book (36 chapters, seven parts). It contains six progressive Python reference builds, actual source-module architecture diagrams, executable tests, and recovery, security, operations, and assurance exercises. **No payment service, paid AI API, API key, external provider, or package installation is required to run the companion tests.**
 
-**Locked V12 production plan:** 550 finished pages = 485 chapter pages plus 65 supporting pages. Preferred maximum 575; planning limit 600; absolute maximum 700. The source-of-truth ledger is `publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json`.
+> **Engineering rule:** AI proposes; trusted controls independently authorize consequential execution. The CASE-204 **$500** fictional refund uses the stable operation identity **RF-1042**. Passing tests does **not** certify a production payment system or security boundary.
 
-## Authority and current status
+## Start in under five minutes
 
-- **CAB-001:** approved E1–E9 architecture and C01–C09 interface catalog; authoritative Word baseline preserved in `metadata/approved/`.
-- **BP-001:** approved seven-part, 36-chapter publishing blueprint; preserved in `metadata/approved/`.
-- **Chapters 1–7:** Part I developed; **8–16:** Part II developed; **17–21:** Part III developed; **22:** Part IV Build 0 development draft.
-- **Chapters 23–36:** editorial stubs only; do not count them as completed chapter pages.
-- **Figures:** the current chapter source references 59 figures, with their source masters under `assets/shared-figures/sources/`; automated source/render/Word checks and native print review are separate gates.
-- **Citations:** consolidated bibliography and BibTeX plus `references/source-register.md` provide claim mappings; precise original source passages, standards versions and final citation rendering require publication-level verification.
-- **Review evidence:** `publishing/evidence/PARTS1_3_INTEGRATION_CERTIFICATION_2026-11-13.md` records the through-Chapter-17 integration corrections and remaining acceptance gates.
-
-## Start here
+Requires **Python 3.10 or newer**, `git`, and a terminal on macOS, Linux, or Windows. The educational companion uses Python's standard library.
 
 ```bash
-make check
-make chapter CH=01 FORMAT=docx
-make chapter CH=02 FORMAT=docx
-make book-docx
-make book-html
+git clone https://github.com/etis-framework/etis-agentic-ai-book.git
+cd etis-agentic-ai-book
+# For the exact first-edition companion, once the release is published:
+git checkout v1.0.0
+python3 publishing/scripts/check_companion_release.py
 ```
 
-PDF generation is conditional on a LaTeX engine. `dist/` is generated and excluded from source control.
+On Windows, substitute `py -3` for `python3`, including in the final command. The checker runs all ten suites, checks the documented diagrams, and reports a clear PASS/FAIL. It creates no payments and needs no network after cloning. A passing run is evidence of **local fixture behavior**, not production trust. See [complete setup, verification, and troubleshooting](docs/GETTING_STARTED.md).
 
-## Working principles
+To run the first hands-on lesson, follow [Build 0](examples/refund-reference-system/build0/README.md): prepare a fictional refund, simulate a **lost provider acknowledgment**, observe E7 `UNKNOWN` despite simulated E8 `CONFIRMED`, and reconcile **without sending another effect**.
 
-The book teaches agentic AI as an **evolution of enterprise computing**. It distinguishes an AI model, a goal-directed agent, an agentic workflow, and the complete engineered system. It explains inherited patterns, architectural alternatives, implementation mechanisms, failure and recovery, and verifiable evidence. It is intended for junior engineers to learn and build and experienced engineers to review and use.
+## Find what you need
 
-## Companion source and reader access
+| I want to... | Go to |
+|---|---|
+| Run the examples | [Getting started](docs/GETTING_STARTED.md) · [Companion overview](examples/refund-reference-system/README.md) |
+| Trace a chapter to source and tests | [Chapter-to-code map](docs/CHAPTER_MAP.md) · [Evidence map](examples/refund-reference-system/IMPLEMENTATION_EVIDENCE_MAP.md) |
+| Understand architecture and contracts | [Architecture](examples/refund-reference-system/ARCHITECTURE.md) · [CAB-001 architecture catalog](metadata/architecture-catalog.md) |
+| Learn by investigating failure | [Guided learning path](examples/refund-reference-system/LEARNING_PATH.md) · [Verification matrix](examples/refund-reference-system/TESTING.md) |
+| Examine adversarial authorization | [Chapter 29 security](examples/refund-reference-system/security/README.md) |
+| Collect bounded reproducible evidence | [Chapter 31 assurance](examples/refund-reference-system/assurance/README.md) |
+| Report an error or security concern | [Errata](ERRATA.md) · [Security](SECURITY.md) · [Contributing](CONTRIBUTING.md) |
+| Understand release compatibility | [Releases](RELEASE.md) · [Changelog](CHANGELOG.md) · [Rights](RIGHTS.md) |
 
-Part IV includes actual, runnable teaching code under [`examples/refund-reference-system/`](examples/refund-reference-system/README.md). See its `ARCHITECTURE.md` for E1–E9 scope and `CONTRIBUTING.md` for educational code quality rules. Build 0 is implemented at this development checkpoint; subsequent builds ship with their chapter patches. Manuscript, code, tests, figures and traceability remain versioned in this **single authoritative Git repository**. The repository is currently private and is intended to be public at publication after a release audit of internal assets. Published editions will pin immutable tags. Any examples-only archive must be generated from this repository, never independently maintained.
+## Six runnable builds
 
-## Repository boundaries
+| Chapter | Checkpoint | Engineering subject | Start |
+|---|---|---|---|
+| 22 | Build 0 | Deterministic authorization, E7/E8, UNKNOWN and reconciliation | [Read and run](examples/refund-reference-system/build0/README.md) |
+| 23 | Build 1 | Bounded **untrusted** advisory proposal | [Read and run](examples/refund-reference-system/build1/README.md) |
+| 24 | Build 2 | Scoped identity and context provenance | [Read and run](examples/refund-reference-system/build2/README.md) |
+| 25 | Build 3 | Independently checked E5 approval boundary | [Read and run](examples/refund-reference-system/build3/README.md) |
+| 26 | Build 4 | Provider contracts, ambiguous effects, reconciliation | [Read and run](examples/refund-reference-system/build4/README.md) |
+| 27 | Build 5 | Local ownership, fencing limits, and recovery | [Read and run](examples/refund-reference-system/build5/README.md) |
 
-`manuscript/` contains chapter source; `assets/` shared graphics; `references/` bibliography and source verification; `examples/` running implementation; `metadata/` frozen baselines, catalogs and quality standards; `publishing/` build scripts; `archive/` prior Word drafts and review evidence. Keep shared diagrams authoritative in one location. Chapter-local `figures/` is for figures unique to that chapter.
+**Beyond the six builds:** [Chapter 28: reliability](examples/refund-reference-system/reliability/README.md) · [29: security](examples/refund-reference-system/security/README.md) · [30: incident operations](examples/refund-reference-system/operations/README.md) · [31: verification evidence](examples/refund-reference-system/assurance/README.md).
 
-## Current production actions
+## Repository organization
 
-1. Confirm the Chapters 1–17 integration correction in native Word for Mac, including Chapter 3's documented one-page V12 allocation variance.
-2. Continue Chapters 23–36 as separate protected branches, enforcing chapter-specific V12 budgets and V9 figure standards.
-3. Maintain exact claim-to-source verification as a distinct publication gate; no citation-presence script establishes full bibliographic support.
-4. Recalculate the finished-page forecast from rendered 7×10 evidence after each major Part boundary.
-5. Complete author/imprint/ISBN, glossary, index, permissions and the full-book QA process before publication.
+- [`examples/refund-reference-system/`](examples/refund-reference-system/README.md): reader-focused runnable implementation, tests, architecture SVGs, and learning guides.
+- [`manuscript/`](manuscript/): **frozen first-edition book sources**; not the preferred reader navigation experience.
+- [`assets/`](assets/): book figure sources and rendered artwork.
+- [`references/`](references/): bibliography and source register.
+- [`metadata/`](metadata/): approved architecture and publication traceability.
+- [`publishing/`](publishing/README.md): manuscript generation and QA, separate from companion tests.
+- [`review/`](review/) and [`archive/`](archive/): retained historical engineering/editorial materials. Historical status statements in these folders are **not current publication status**.
 
-## Current production build (macOS)
+## Versions, rights and scope
 
-Graphviz (`dot`) and Python with CairoSVG are required for fresh figure rendering. In the repository root, keep dependencies inside a virtual environment rather than installing them into Homebrew Python:
+The **first-edition companion is `v1.0.0`**, to be published with the printed book. At release, use its immutable Git tag and GitHub Release, **not a later `main` revision**, for exact reproduction. See [release policy](RELEASE.md). The paperback ISBN is **979-8-9966760-6-4**; hardcover ISBN is **979-8-9966760-7-1**.
 
-```sh
-python3 -m venv .venv
-.venv/bin/python3 -m pip install cairosvg python-docx pillow
-PATH="$PWD/.venv/bin:$PATH" make figures && PATH="$PWD/.venv/bin:$PATH" make book-docx && PATH="$PWD/.venv/bin:$PATH" make check && PATH="$PWD/.venv/bin:$PATH" make check-figures
-open dist/etis-agentic-ai-book.docx
-```
+**The educational code is not production-ready.** The same-user subprocess fixture does not provide OS isolation, mock keys are not protected credentials, E2 fencing does not extend into E5, mock E8 is not a financial provider, and local evidence is not independently attested. Conceptual MCP/A2A discussions do **not** imply implemented MCP/A2A stacks. Review the [limits and proofs](docs/CHAPTER_MAP.md) before drawing architectural conclusions.
 
-The integrated Word manuscript uses draft Contents text; do not claim a final dynamic table of contents, index, or publication pagination. Inspect figures and captions at final 7×10 print size in native Word for Mac. Every V9 figure master, rendered image, and embedded Word image must agree; CairoSVG is required for fresh PNG regeneration.
+Software licensing and commercial textbook rights are **separate**: see [LICENSE](LICENSE) and [RIGHTS.md](RIGHTS.md). The manuscript and branding are **not** granted under the software license. Report factual book errors through [ERRATA.md](ERRATA.md); do not open a public issue containing secrets or a vulnerability exploit.

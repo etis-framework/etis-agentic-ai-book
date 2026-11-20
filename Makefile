@@ -138,3 +138,8 @@ check-publication-pass05-isbns:
 .PHONY: check-publication-pass05-glossary
 check-publication-pass05-glossary: book-docx
 	python3 publishing/scripts/check_glossary_print_integrity.py
+
+# Independently reproducible companion tests: no DOCX, Graphviz, or paid services.
+.PHONY: check-companion
+check-companion:
+	python3 publishing/scripts/check_companion_release.py

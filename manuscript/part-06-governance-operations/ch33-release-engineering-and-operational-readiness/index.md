@@ -85,7 +85,7 @@ At the same time, pause new effectful cohorts at E5/E6, protect E7 state and E8 
 
 ## 33.7 Runbook 33-A — Controlled deployment halt and recovery
 
-**Runbook 33-A** is the first *manuscript* runbook in this chapter, following the chapter-local numbering introduced by Runbooks 30-A and 32-A; it is not a file in the companion tree or a deployable automation.
+**Runbook 33-A** describes an illustrative procedure for controlled deployment halt and recovery. It defines operational responsibilities and decision points rather than executable automation. Organizations must adapt the procedure to their own deployment architecture, incident authority, and recovery capabilities.
 
 1. **Declare the change and scope.** Release engineering records immutable candidate identity, active cohort, configuration/policy versions, evidence coverage, authorization owners, and a reversible *future-traffic* routing plan. Finance confirms E5 case approval is unchanged by deployment authority.
 2. **Measure and challenge.** An independent on-call observer checks denied and allowed E5 verdicts, E2 epoch anomalies, C08 availability, E7/E8 discrepancies, missing audit events, queue age and human review saturation. Separate uncertain effects from ordinary application latency.

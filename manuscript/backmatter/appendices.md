@@ -36,7 +36,7 @@ The reference architecture separates logical responsibilities from trust boundar
 
 ## Appendix B — Companion implementation guide
 
-The authoritative companion tree is `examples/refund-reference-system/` in the project repository, https://github.com/etis-framework/etis-agentic-ai-book. Start with `examples/refund-reference-system/README.md`, then the guided source-and-negative-test lab in `LEARNING_PATH.md`, and the implementation/limitation crosswalk in `IMPLEMENTATION_EVIDENCE_MAP.md`. Paths in the tables are **relative to that companion tree**, not to this manuscript file. These are repository-relative file identifiers suitable for this printed edition; a fixed public release tag is provided.
+The authoritative companion tree is `examples/refund-reference-system/` in the project repository, https://github.com/etis-framework/etis-agentic-ai-book. Start with `examples/refund-reference-system/README.md`, then the guided source-and-negative-test lab in `LEARNING_PATH.md`, and the implementation/limitation crosswalk in `IMPLEMENTATION_EVIDENCE_MAP.md`. All paths in the following tables are relative to `examples/refund-reference-system/` in the official ETIS book repository. For reproducible exercises, consult the repository's edition-specific release information rather than assuming that the latest development revision matches the printed examples.
 
 **Progressive reference implementation (Chapters 22–27)**
 
@@ -123,7 +123,7 @@ An absent signal is not evidence of no effect. Local hash checks are not protect
 
 **Lifecycle investment and retirement (Chapter 34).** Cost per acceptable completed workflow includes review, assurance, monitoring, recovery, staffing, residual exposure and exit. The hypothetical comparison in Table 34.2 is not companion telemetry or a prediction of deployed benefits. Missing E5 enforcement or authoritative E8 evidence is a hard gate, not a risk price. Figure 34.3 and Table 34.4 prescribe accountable decisions, not an autonomous deployment controller.
 
-**Release authorization (Chapter 33).** A passing local regression is not release approval. Tables 33.1–33.3 identify proposed manifest fields, release-stage gates and exact fixture evidence, separated from external implementation and production proof. Figures 33.1–33.3 distinguish candidate evidence from E5 authority and software rollback from irreversible/uncertain provider effects. Runbook 33-A is a manuscript-local operating procedure, not software.
+**Release authorization (Chapter 33).** A passing local regression is not release approval. Tables 33.1–33.3 identify proposed manifest fields, release-stage gates and exact fixture evidence, separated from external implementation and production proof. Figures 33.1–33.3 distinguish candidate evidence from E5 authority and software rollback from irreversible/uncertain provider effects. Runbook 33-A provides an illustrative operating procedure; the companion implementation does not automate it.
 
 
 **Chapter 35 — Contract lookup and executable falsifiers (no new build)**

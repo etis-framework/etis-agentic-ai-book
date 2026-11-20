@@ -108,7 +108,7 @@ For example, a service agent may be permitted to **investigate** case `CASE-204`
 
 ![Figure 3.3 — The delegation envelope constrains proposals; trusted execution enforces authority.](assets/shared-figures/rendered/F03-03.png){#fig:f03-03 width=5.75in}
 
-**Illustrative delegation contract (conceptual, not executable production policy).** The following fixed-width example is intended to be read as structured configuration; each key is a separate obligation. In the printed edition, long values must wrap without truncation:
+**Illustrative delegation contract (conceptual, not executable production policy).** The following structured example identifies the constraints governing the delegated investigation. Each field represents an obligation that must be validated and enforced by trusted system components:
 
 ```yaml
 case_id: CASE-204

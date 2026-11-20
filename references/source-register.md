@@ -1,6 +1,6 @@
 # Source and citation register — Chapters 1–36
 
-**Status: Historical manuscript source-and-claim review record for Chapters 1–36.** This is an engineering provenance register, **not a live release checklist** and not the reader bibliography. Historical labels such as “open,” “gate,” “pending,” and unchecked boxes below describe the state of earlier development passes; they do not state the current GitHub companion release status. A mapping does not independently certify every external passage, edition/page, link, or production guarantee. The textbook and its source record must not be mistaken for external provider or standards accreditation.
+**Status: Archived manuscript source-and-claim review record for Chapters 1–36.** This is an engineering provenance register, **not a live release checklist** and not the reader bibliography. Historical labels such as “open,” “gate,” “pending,” and unchecked boxes below are preserved evidence from earlier development passes, **not outstanding actions or current first-edition publication gates**. For current reader instructions and companion versioning use [Getting Started](../docs/GETTING_STARTED.md) and [Release Policy](../RELEASE.md). A mapping does not independently certify every external passage, edition/page, link, or production guarantee. The textbook and its source record must not be mistaken for external provider or standards accreditation.
 
 ## Source hierarchy and use
 
@@ -271,7 +271,7 @@ The attached Word build covers developed Chapters 1–26, but none of Parts I–
 | §§23.2–23.6 | CAB-001 and source-controlled Build 0/1 code | E1–E9/C01–C09 mapping, strict parser, negative evidence | Compare each assertion to actual code/tests and edition tag |
 | §23.7 | ETIS original analysis; cross-references Chapters 31/34 | Proposed adoption metrics and Design B conditional value | Must not imply empirical model improvement without measured study |
 
-## Chapter 24 source and claim reconciliation (publication gate open)
+## Historical source-review record — Chapter 24
 
 | Chapter location | Supporting source | Precisely supported claim / limitation |
 |---|---|---|
@@ -301,7 +301,7 @@ The attached Word build covers developed Chapters 1–26, but none of Parts I–
 - **Coverage:** Ch26 §§26.1–26.8; tests, architecture SVG, simulated non-guarantees and Chapter 27–31 handoff explicitly mapped.
 
 
-## Chapter 27 source-to-claim and boundary register (publication gate open)
+## Historical source-review record — Chapter 27
 
 - **Lamport (1978); Kleppmann (2017):** logical event ordering, distributed uncertainty and limitations of single-node ownership; neither certifies the ETIS SQLite lease as a distributed consensus protocol.
 - **Gray and Reuter (1992); van der Aalst (2013):** local durability and long-running workflow ownership; the exact epoch design and state machine are original ETIS teaching constructs. Edition/page passage inspection remains open.
@@ -312,7 +312,7 @@ The attached Word build covers developed Chapters 1–26, but none of Parts I–
 
 The reader-facing bibliography intentionally avoids a fixed “developed through Chapter N” cutoff and must be updated with each chapter. Chapters 23–27 already have source/claim queues above; identification in the bibliography or register does **not** certify exact edition, pagination, applicability, or the provider-specific contractual guarantees asserted by a claim. Before a publication edition, audit every in-text attribution against primary source passages, confirm DOI/edition metadata, pin living security guidance (including OWASP) and authoritative protocol versions, and record unresolved source limitations. The current appendix/glossary/index revision introduces no new external publication claims; it clarifies CAB-001 and fixture behavior already defined in the manuscript.
 
-## Chapter 28 distributed recovery claims (publication gate open)
+## Historical source-review record — Chapter 28
 
 - **Gray and Reuter (1992), Kleppmann (2017), Lamport (1978):** Background for transaction boundaries, distributed uncertainty and event ordering. These sources do not establish provider-specific idempotency guarantees or E5 epoch semantics. Verify exact page passages before publication.
 - **van der Aalst (2013):** General workflow/recovery background; not a specification of CASE-204 finance authority.
@@ -337,7 +337,7 @@ The reader-facing bibliography intentionally avoids a fixed “developed through
 
 Publication gate: independently verify precise cited source sections, edition, and links; do not infer operational compliance.
 
-## Chapter 30 — reliability, observability and incident response (publication gate open)
+## Historical source-review record — Chapter 30: reliability and incident response
 
 | Location | Basis | Supported claim / required limitation |
 |---|---|---|
@@ -347,7 +347,7 @@ Publication gate: independently verify precise cited source sections, edition, a
 
 **Publication source QA:** verify edition/passage specificity for existing cited works and incident policy against chosen enterprise/provider standards; do not infer provider guarantees from generic reliability sources. Native Word 7×10 and figure proofs remain open.
 
-## Chapter 31 — verification and evidence source/claim register (publication gate open)
+## Historical source-review record — Chapter 31: verification and evidence
 
 | Claim location | Existing source / original artifact | Narrow evidentiary scope | Outstanding source and production gate |
 |---|---|---|---|
@@ -371,7 +371,7 @@ The published bibliography holds **source entries only**, not chapter reading gu
 
 No new external title is introduced by this **back-matter structural revision**. A new claim or newly introduced source in a later chapter must trigger a fresh primary-source review, source-register mapping and a properly formatted bibliography entry. Source existence is not evidence that an engineering guarantee has been independently verified.
 
-## Chapter 32 — human oversight and accountable governance (publication source QA open)
+## Historical source-review record — Chapter 32: human oversight and governance
 
 | Claim location | Basis and appropriate scope | Required publication verification |
 |---|---|---|

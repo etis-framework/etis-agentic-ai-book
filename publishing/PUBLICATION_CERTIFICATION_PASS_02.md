@@ -1,5 +1,7 @@
 # Publication certification pass 02 — front matter, print navigation and six-lens QA
 
+> **Archived development-pass evidence — not the current publication status.** This dated report records the scope, limitations and decisions of its own engineering pass. Statements such as "not certified," "pending," and "open gate" are preserved as historical findings, not the status of the first-edition companion or the author-approved KDP interior. See [Release Policy](../RELEASE.md) for the current companion release procedure and [Pagination](PAGINATION.md) for print-layout source/approval boundaries.
+
 ## Changes made
 
 - Matched the ETIS Professional Computing Series 2026 reference book's half-title, series/title hierarchy and bottom imprints, with an explicit production-stable series/title footer treatment.

@@ -1,5 +1,7 @@
 # Publication certification — Pass 3: editorial navigation and author credibility
 
+> **Archived development-pass evidence — not the current publication status.** This dated report records the scope, limitations and decisions of its own engineering pass. Statements such as "not certified," "pending," and "open gate" are preserved as historical findings, not the status of the first-edition companion or the author-approved KDP interior. See [Release Policy](../RELEASE.md) for the current companion release procedure and [Pagination](PAGINATION.md) for print-layout source/approval boundaries.
+
 ## Scope and disposition
 
 This pass strengthens the published author biography, materially improves subject indexing, and corrects print page-reference extraction. **It is an editorial/navigation correction pass, not final publication certification.** The user-provided November 15 Word build is the print-layout comparison baseline; exact merged `main` commit verification remains the guarded installer's responsibility.

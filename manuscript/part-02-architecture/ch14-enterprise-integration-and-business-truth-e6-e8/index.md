@@ -20,7 +20,7 @@ Figure 14.1 separates *who can authorize* from *who can transmit* and *which rec
 
 ![Figure 14.1 — Trusted authorization controls the guarded adapter; authoritative records, not the agent or local dispatch log, establish external effects.](assets/shared-figures/rendered/F14-01.png){#fig:f14-01 width=5.75in}
 
-An **adapter** is an integration component that translates internal operation contracts into a specific provider's protocol and translates provider responses into explicit evidence-bearing observations. A provider interface is not a trustworthy boundary merely because it has an software development kit (SDK). The adapter is part of the trusted execution path, but does not independently invent a new authorization decision.
+An **adapter** is an integration component that translates internal operation contracts into a specific provider's protocol and translates provider responses into explicit evidence-bearing observations. A provider interface is not a trustworthy boundary merely because it has a software development kit (SDK). The adapter is part of the trusted execution path, but does not independently invent a new authorization decision.
 
 ## 14.2 Specify the provider contract before implementing an SDK call
 

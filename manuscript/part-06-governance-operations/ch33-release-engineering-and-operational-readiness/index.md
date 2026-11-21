@@ -16,7 +16,7 @@ The running case is **CASE-204**, a customer complaint involving a possible **$5
 
 The logical reference architecture divides admission and identity (E1), durable coordination and ownership (E2), untrusted agent reasoning (E3), context and provenance (E4), independently trusted execution (E5), controlled provider integration (E6), durable operational state (E7), authoritative external business truth (E8), and governance and assurance (E9). The advisory proposal (C04) is *not* the independent decision (C05). Durable intent (C06) precedes provider dispatch (C07). Status-only reconciliation (C08) consults existing E8 evidence; assurance collection (C09) never creates financial permission. These responsibilities are logical; production isolation, independent keys and enforcement must be verified. A deployment system that replaces E5 verification with an agent's approval label has changed architecture, even if all unit tests still run.
 
-## 33.2 The immutable release candidate and its authority boundaries
+## 33.2 Release integrity, independent control, and authority boundaries
 
 **Table 33.1 — Release candidate manifest: required fields and provenance**
 
@@ -36,7 +36,11 @@ The logical reference architecture divides admission and identity (E1), durable 
 
 *Figure 33.1 — The governed release boundary. Candidate evidence informs, but does not grant, accountable activation. Advisory change is separated from independently controlled financial execution and operational truth.*
 
-**Changing agents are changing release artifacts.** A new model version, tool catalog, prompt policy, retrieval index, persistent-memory migration or learned behavior can alter a deployed agent's decision surface without changing its calling application. Treat each such change as a versioned candidate with impact analysis, regression evidence, rollback/containment and accountable approval. An agent may propose an improvement, but it cannot self-approve a broader tool grant, modify E5 policy, change its own release cohort or silently replace the evidence standard. Online adaptation with consequential permissions remains a separately controlled production design problem; Builds 0–5 do not supply a safe self-modification mechanism.
+**Changing agents are changing release artifacts.** Changes to models, tool catalogs, prompt policies, retrieval indexes, persistent memory or learned behavior can alter an agent’s decision surface without changing its calling application. Treat each change as a versioned candidate requiring impact analysis, regression evidence, rollback/containment and accountable approval.
+
+An agent may propose improvements but cannot expand its own tool grants, modify E5 policy, change its release cohort or replace evidence standards. Mechanisms that constrain execution, authorize effects, record actions or suspend operations must remain independently governed and verified. Independence must be demonstrated: agents must not be able to modify these controls, obtain their privileged credentials, manipulate authoritative inputs or bypass enforcement. Containment and termination must not depend on agent cooperation.
+
+Online adaptation with consequential permissions remains a separately controlled production design problem; Builds 0–5 do not supply a safe self-modification mechanism.
 
 ## 33.3 Promotion gates must test invariants, not attractive averages
 

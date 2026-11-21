@@ -8,6 +8,7 @@
 - **Admission and identity (E1)**: Chapters 8–9, 24–25. See also *Authentication and authorization*.
 - **Adoption capstone and evidence rubric**: Chapter 36 §§36.1–36.8; Tables 36.1–36.3. See also *Assurance claims and falsifiers*.
 - **Adoption stop and retirement decision**: Chapter 36 §§36.6–36.8; Tables 36.2–36.3. See also *Lifecycle investment and retirement*.
+- **Adversarial behavior — agent-generated**: Chapter 29 §29.1. See also *Compromised bounded investigator*.
 - **Adversarial tests — forged approval**: Chapter 29. See also *Security falsifier*.
 - **Adversarial tests — prompt injection**: Chapters 12, 29. See also *Security and trust boundaries*.
 - **Advisory correlation**: Chapters 11, 23–25. Contrast with *RF-1042 (trusted operation ID)*. See also *RF-1042 (trusted operation ID)*.
@@ -29,6 +30,7 @@
 - **Authentication**: Chapter 9; Chapter 29.
 - **Authentication and authorization**: Chapters 6, 9, 13, 24–25.
 - **Authorization**: Chapter 13; Chapter 24.
+- **Behavioral evaluation**: Chapter 31 §31.1. See also *Enforcement verification*.
 - **Bounded advisory reasoning (E3)**: Chapter 31.
 - **Bounded delegation**: Chapters 3–4, 7–9, 17–18.
 - **Build 0 — deterministic baseline**: Chapter 22; `build0/README.md`.
@@ -52,6 +54,7 @@
 - **Consequential actions — independent enforcement**: Chapters 13, 25, 29. See also *Consequential operation and trusted execution (E5)*.
 - **Consequential effect**: Chapter 1; Chapter 3.
 - **Consequential operation and trusted execution (E5)**: Chapters 6, 8, 13, 19, 22, 25–28.
+- **Containment — independent control**: Chapter 33 §33.2. See also *Termination — independent control*.
 - **Context engineering — assembly and budget**: Chapter 12 §§12.3–12.6; Chapter 20. See also *Evidence provenance*.
 - **Context, retrieval and provenance (E4/C03)**: Chapters 12, 20, 23–24.
 - **ContextUnavailable**: Chapter 24.
@@ -77,6 +80,7 @@
 - **Durable operational state (E7)**: Chapters 15, 20, 22, 25–28.
 - **Effect ambiguity**: Chapter 28 §§28.1–28.5
 - **Enforcement boundary**: Chapter 28; Chapter 32.
+- **Enforcement verification**: Chapter 31 §31.1. See also *Assurance claims and falsifiers*.
 - **Epoch and lease fencing**: Chapters 10, 18, 27–28.
 - **Error handling and hostile clients**: Chapters 22–27, especially 25–26.
 - **Evidence and governance (E9)**: Chapters 7–8, 15–16, 21, 25–28.
@@ -111,6 +115,7 @@
 - **Logical responsibility and failure zone**: Chapter 28 §28.2; Figure 28.1.
 - **Long-horizon trajectory evaluation**: Chapter 31 §§31.3–31.5.
 - **Mock provider**: Chapter 22; Chapter 25.
+- **Model alignment**: Introduction; Chapter 29 §29.1; Chapter 31 §31.1. See also *Behavioral evaluation*.
 - **Model output as untrusted proposal (C04)**: Chapters 6, 11, 23–25.
 - **Observability — case reconstruction**: Chapters 15, 30, 32. See also *Operational observability (C09)*.
 - **Operation identity (RF-1042)**: Chapter 24.
@@ -148,11 +153,13 @@
 - **Security — compromised agent token**: Chapters 25, 29. See also *Valid token versus finance authorization*.
 - **Security — privilege escalation denial**: Chapters 13, 25, 29. See also *Independent request-path enforcement*.
 - **Selective professional reading paths**: Chapter 35 §35.7; Appendix B.
+- **Self-modification — authority restrictions**: Chapter 33 §33.2. See also *Self-modifying agents — release governance*.
 - **Self-modifying agents — release governance**: Chapter 33 §§33.2–33.3. See also *Release readiness and promotion gates*.
 - **Sensitivity and human review capacity**: Chapter 34 §34.5; Figure 34.2.
 - **Service-level objective (SLO)**: Chapter 30; Chapter 33.
 - **Service-level objectives (SLOs)**: Chapter 30 §30.1; Table 30.1.
 - **System of record**: Chapter 2; Chapter 14.
+- **Termination — independent control**: Chapter 33 §33.2. See also *Containment — independent control*.
 - **Tool protocol interoperability**: Chapter 19 §19.2; Chapter 4. See also *Agent2Agent (A2A) interoperability*.
 - **Trust/enforcement boundary**: Chapters 13, 16, 28 §28.2.
 - **UNKNOWN provider outcome**: Chapters 2–3, 14–15, 20, 22, 25–28.

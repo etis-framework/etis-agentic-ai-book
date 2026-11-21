@@ -27,6 +27,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Authorization.** Enforced decision permitting a particular operation under policy, identity, scope, business facts and approval; stronger than authentication.
 
+**Behavioral evaluation.** Assessment of an AI component's observed behavior under specified tasks, environments, and experimental conditions.
+
 **Bounded advisory reasoning (E3).** Evidence-based reasoning constrained to proposed actions and traceable outputs without independent execution authority.
 
 **Bounded delegation.** Explicitly limited software discretion over allowed tools, data, steps, cost, duration and actions, with external enforcement and escalation.
@@ -53,6 +55,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Cost per acceptable completed workflow.** Total attributable lifecycle cost for a defined period and cohort divided by the number of acceptable completed outcomes; include failures, denials and review labor in the numerator.
 
+**Covert communication channel.** A communication path not authorized or intended by the system's governing security architecture.
+
 **Crash point.** Boundary immediately before or after a durable write, dispatch or external effect at which process death can change what participants know; see Chapter 28.
 
 **Credential custody.** Control of the creation, storage, use, rotation, revocation and audit of secrets or signing keys, enforced outside lower-trust agents; a source-code import boundary alone does not establish custody.
@@ -73,7 +77,11 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Enforcement boundary.** Code- or infrastructure-controlled point that rejects unauthorized operations independently of untrusted proposals; logical module lines alone do not establish isolation.
 
+**Enforcement verification.** Examination and testing of whether specified system constraints and authority boundaries hold within a defined system and threat model.
+
 **Epoch (ownership).** Monotonically advancing ownership generation used to reject obsolete coordinators at a boundary that actually verifies it.
+
+**Evaluation gaming.** Satisfying or manipulating evaluation criteria without demonstrating the intended behavioral or system property.
 
 **Evidence bundle.** Versioned set of registered tests, results, source digests, exclusions and outstanding gates; a local fixture bundle does not prove independent production trust.
 
@@ -117,6 +125,8 @@ Terms below describe the architecture and developed implementation. The definiti
 
 **Mock provider.** Simulated external service and E8 record used for reproducible education, not real settlement or bank truth.
 
+**Model Alignment.** The degree to which an AI model's behavior conforms to intended objectives, values, and constraints. Model alignment does not establish system-level authorization, containment, or operational trustworthiness.
+
 **Model Context Protocol (MCP).** Versioned tool/resource interaction protocol; transport identity and protocol authorization are not the same as transaction-specific E5 business permission.
 
 **Observability evidence gap.** Missing, delayed, duplicated or inconsistent telemetry that lowers confidence in reconstructed sequence without proving the absence of a consequential effect.
@@ -142,6 +152,8 @@ Terms below describe the architecture and developed implementation. The definiti
 **Release readiness.** Evidence that independently authorized controls, operators, incident response, recovery, monitoring and stop mechanisms can support the intended live scope.
 
 **Responsibility boundary.** Architectural division establishing ownership of a decision, record, or action; does not alone prove a physically isolated fault or enforcement point.
+
+**Reward hacking.** Exploiting an optimization objective or success measure in a manner that undermines its intended purpose.
 
 **RF-1042.** See *Operation identity (RF-1042)*.
 

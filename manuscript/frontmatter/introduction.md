@@ -46,6 +46,10 @@ We will also challenge the temptation to overbuild. A single agent may be suffic
 
 ## The promise this book makes
 
-By the end, a reader should be able to derive an enterprise agentic architecture from business requirements, explain the responsibility and failure boundaries, implement bounded delegation, evaluate operational and ethical consequences, and make a defensible production-readiness decision. The book does not promise a universal framework or risk-free autonomy. It offers a method for engineering systems whose claims can be examined and whose failures can be contained and recovered.
+By the end, a reader should be able to derive an enterprise agentic architecture from business requirements, explain the responsibility and failure boundaries, implement bounded delegation, evaluate operational and ethical consequences, and make a defensible production-readiness decision.
+
+Model alignment-directing AI behavior toward intended objectives and constraints-and system trustworthiness are related but distinct concerns. Even an extensively evaluated AI model may produce incorrect, unauthorized, or deceptive behavior under conditions not anticipated during training or evaluation. A trustworthy agentic AI system must therefore not depend exclusively on the trustworthiness of its AI components. Consequential authority must be independently constrained, enforced, and verified.
+
+This book addresses that system-level engineering responsibility. It does not claim to solve the broader scientific problem of AI alignment, eliminate the systemic risks of advanced AI, or guarantee risk-free autonomy. It offers a method for engineering systems whose claims can be examined and whose failures can be contained and recovered within explicitly defined and verified boundaries.
 
 The next two chapters establish why the problem matters and which decades of computing practice provide its foundation. The later architecture and implementation chapters turn those principles into explicit contracts, code, tests, and operational evidence.

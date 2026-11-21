@@ -8,13 +8,17 @@ Part V: Reliability, Security and Recovery
 
 After this chapter, the reader should be able to define an adversary's capabilities separately from the permissions the system grants; locate the trust boundary between agent reasoning (E3) and trusted execution and authority (E5); distinguish authentication, scoped task permission, transaction-specific authorization, and execution ownership; follow a hostile request across reference-architecture contracts without accidentally granting financial authority; design denial evidence that establishes the *absence of an effect* within a specified fixture; and evaluate when physical separation and credential custody justify stronger business guarantees.
 
-## 29.1 The valid-token attack
+## 29.1 Adversarial agent behavior and the valid-token attack
 
 Recall CASE-204, a retailer's replacement complaint. The possible refund is **$500**, and the one legitimate consequential operation, if approved, is **RF-1042**. The bounded investigator has a legitimate E1 identity assertion for reading scoped complaint evidence. The attacker takes control of that investigator. Its token is valid, but the investigator has **no independently issued financial approval grant**. The attacker's objective is to send the $500 refund through the provider-facing adapter, or persuade another component to do so. The attacker may modify the investigator's proposed action, rationale, tool arguments, and any lower-trust text it can supply. It cannot initially change E5's verifier code, mint an E5-valid finance grant, or obtain the protected provider credentials. Those exclusions are *threat-model assumptions*, not conclusions from an illustration.
 
 The security outcome must be observable. A negative test should submit the real, valid fixture E1 token through the same Build 3 E5 process used by the legitimate path, attempt a financial command without a valid finance grant, and verify **DENIED**, no E7 operation database, no E8 provider database, and no RF-1042. A second request should show that adding fake C04 approval language or the string `RF-1042` cannot bypass the gate. A separately authorized positive control confirms that these denials do not merely come from a broken service. Figure 29.2 shows this contrast.
 
-A valid token is not a trusted author. Possession of an agent/service access token says nothing about approval to make a particular payment. Likewise, a valid E2 lease says who may coordinate work; it does not confer finance approval. The same principle applies when the adversary uses an LLM, a deterministic program, or an otherwise legitimate tool call. Threat analysis must examine the **effective control of the workflow**, not the mechanism's branding.
+A valid token is not a trusted author. Possession of an agent/service access token says nothing about approval to make a particular payment. Likewise, a valid E2 lease says who may coordinate work; it does not confer finance approval. The same principle applies when the adversary uses an LLM, a deterministic program, or an otherwise legitimate tool call.
+
+Adversarial behavior need not originate with an external attacker. An AI agent may produce unauthorized or deceptive behavior through objective misalignment, unintended optimization, manipulated context, or learned behavior. Such behavior may include reward hacking, gaming evaluation criteria, circumventing restrictions, or coordinating through unauthorized communication channels. The enforcement boundary must not depend on determining the agent’s intent or the origin of that behavior.
+
+Whether a hostile proposal originates from a compromised agent or from the agent’s own reasoning, E5 must independently enforce the same authorization constraints. Threat analysis must examine effective control of the workflow, not the mechanism’s branding. The valid-token experiment demonstrates an authorization property within its stated threat model; it does not establish model alignment or general resistance to deception.
 
 ## 29.2 Revisit the logical architecture as an attacker would
 
@@ -84,6 +88,8 @@ An E5 security service must validate the **meaning** of the request, not merely 
 ## 29.6 Compromise containment is an operational architecture choice
 
 The six attack entry points in Table 29.1 have different containment strategies. An E4 document injection can be isolated at the retrieval and data-to-instruction boundary. A legitimate but compromised investigator requires tool allowlists, scoped task tokens, and no privileged provider egress. A compromised coordinator requires E5-side current-owner enforcement, not reliance on E2 log entries. A compromised trusted executor or key issuer requires independent secrets, emergency revoke/rotate controls, and a documented quarantine path. These controls are proportionate to the business consequence and must be translated into physical deployment and operations design.
+
+Restrictions on agent communication must extend beyond approved delegation interfaces. Shared storage, external services, unrestricted network access, and tool-mediated exchanges may create unintended coordination channels. Communication controls must therefore be enforced at the deployment boundary, not solely through agent instructions or protocol conventions.
 
 ### Workload identity, credential custody, and delegated authority
 

@@ -18,7 +18,7 @@ Build 0 independently demonstrates local financial intent/reconciliation. Build 
 | `context.py` | Read-only fixture catalog, tenant/case/source allowlist, observation age, classification and provenance |
 | `pipeline.py` | Adapter to unchanged Build 1, no effect path; returns `ReviewResult` |
 | `demo.py` | Deterministic positive, abuse, stale and dependency-outage CLI scenarios |
-| `test_scope.py` | 13 isolated tests for integrity, scope, freshness, failure and no financial writes |
+| `test_scope.py` | 14 isolated tests for integrity, scope, freshness, failure and no financial writes |
 
 ## Guided source-reading checkpoint
 

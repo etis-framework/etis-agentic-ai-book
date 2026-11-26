@@ -1,10 +1,10 @@
 # First-edition companion — version and release policy
 
-[Home](README.md) · [GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Release notes](RELEASE_NOTES_v1.0.0.md) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
+[Home](README.md) · [GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Original release notes](RELEASE_NOTES_v1.0.0.md) · [Maintenance release notes](RELEASE_NOTES_v1.0.1.md) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
 
-**Edition:** `v1.0.0` is the immutable source version accompanying the first printed edition of *Engineering Agentic AI Systems* (2026). The GitHub Release and annotated tag are published **before** the Amazon book launch. The first-edition code is a credential-free, standard-library-only teaching fixture; it is not a real payment system, a provider certification, or a production deployment.
+**Edition:** `v1.0.0` is the immutable source version accompanying the first printed edition of *Engineering Agentic AI Systems* (2026). Both `v1.0.0` and `v1.0.1` are published and immutable. The first-edition code is a credential-free, standard-library-only teaching fixture; it is not a real payment system, a provider certification, or a production deployment.
 
-## Maintainer release sequence
+## Historical first-edition launch sequence (completed)
 
 1. Merge the final documentation PR, confirm the candidate `main` commit and clean working tree, and check that all four required Ubuntu/macOS Python CI jobs passed on that exact commit.
 2. Run `python3 publishing/scripts/check_companion_release.py` in a fresh macOS/Linux checkout; inspect Builds 0–5 and Chapter 28–31 exercise guides. Native Windows `--portable` covers Builds 0–2 only.
@@ -15,7 +15,7 @@
 ## Version semantics
 
 - **`v1.0.0`** is fixed to the first-edition source commit. Never move or recreate the tag to change its contents.
-- **`v1.0.1` and later** may deliver explicitly documented corrections and errata, under new tags.
+- **Patch releases** deliver corrections and errata; **minor releases** add compatible companion capabilities. Neither changes the printed edition. Never move any published tag.
 - **`main`** is the development branch and is not the edition-specific source once new commits arrive.
 - Source ZIPs provided automatically by GitHub under the selected Release are the simplest version-pinned option for non-Git readers.
 
@@ -26,8 +26,8 @@ The companion runs six progressive Python builds (Chapters 22–27) plus Chapter
 ## Maintenance release procedure (v1.0.1 and later)
 
 1. Review the correction diff, errata, regression evidence and release notes; verify that frozen manuscript and figure assets are unchanged from the edition tag.
-2. Run `make check-companion` and the applicable publication QA gates. Confirm the four CI jobs on the exact release commit before tagging.
-3. Create a new annotated patch tag on the verified clean `main` commit. Publish its GitHub Release using the matching release notes; do not move `v1.0.0`.
-4. Verify anonymous access to both release versions and source ZIPs. Recommend the corrected companion for exercises; retain the original for exact reproduction.
+2. Run `make check-companion` and the applicable publication QA gates. Confirm all required CI jobs on the exact release commit before tagging; new execution environments require their own verification gates.
+3. Create a new annotated patch or minor-version tag as appropriate on the verified clean `main` commit. Publish its GitHub Release using the matching release notes; do not move any published tag.
+4. Verify anonymous access to the original and new release versions and source ZIPs. Recommend the corrected companion for exercises; retain the original for exact reproduction.
 
 The Chapter 29 source planning exception is documented in [maintenance notes](RELEASE_NOTES_v1.0.1.md). It does not change the frozen manuscript, any budget, or the requirement for separate print QA. Generated index metadata corrections do not revise already printed copies.

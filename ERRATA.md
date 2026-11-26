@@ -2,7 +2,7 @@
 
 [Home](README.md) · [Issue tracker](https://github.com/etis-framework/etis-agentic-ai-book/issues) · [Release history](CHANGELOG.md)
 
-**Applies to:** First Edition (2026), paperback ISBN **979-8-9966760-6-4**, hardcover ISBN **979-8-9966760-7-1**, companion baseline **`v1.0.0`** (on release). This document is a controlled list of **confirmed** corrections to the printed edition or its matching companion. Absence of entries is not certification that no errors exist.
+**Applies to:** First Edition (2026), paperback ISBN **979-8-9966760-6-4**, hardcover ISBN **979-8-9966760-7-1**, companion baseline **`v1.0.0`**. This document is a controlled list of **confirmed** corrections to the printed edition or its matching companion. Absence of entries is not certification that no errors exist.
 
 ## Submit a reproducible correction
 
@@ -10,20 +10,22 @@ Open an [errata issue](https://github.com/etis-framework/etis-agentic-ai-book/is
 
 ## Confirmed errata
 
-The following verified companion corrections are included in the v1.0.1 maintenance candidate; availability is established by publication of its tagged release. No printed chapter changes are required.
+The following register distinguishes published companion corrections from verified changes awaiting a new release. No printed chapter changes are required.
 
 | ID | Affected page / file | Description | Correction or workaround | Status | First fixed in |
 |---|---|---|---|---|---|
-| ETIS-E001 | Builds 2–4: identity and finance verifiers | Malformed non-ASCII signatures could escape typed denial; Build 3 worker could terminate | Validate ASCII before digest comparison; test denial and worker survival | Verified candidate | v1.0.1 |
-| ETIS-E002 | Builds 3–4: IPC | Ambiguous or excessively nested JSON could evade controlled rejection | Strict decoding and bounded rejection | Verified candidate | v1.0.1 |
-| ETIS-E003 | Build 4: adapter, ledger, service | Unresolved replay could report DENIED; read-only inquiries could create stores; malformed observations could raise unexpected errors | Preserve UNKNOWN, nonmutating inquiry and typed validation; close connections | Verified candidate | v1.0.1 |
-| ETIS-E004 | Builds 1 and 5 | Valid long correlation identifiers and extreme lease timestamps could violate contracts | Bounded identifiers and timestamp validation | Verified candidate | v1.0.1 |
-| ETIS-E005 | Chapter 28 reliability; Chapter 30 operations | Invalid states, confirmation before dispatch, empty telemetry | Typed rejection, escalation and explicit missing-evidence handling | Verified candidate | v1.0.1 |
-| ETIS-E006 | Chapter 31 assurance | Skipped or incomplete test results, missing dependency hashes and source drift could undermine evidence | Require actual passing execution and stable source hashes | Verified candidate | v1.0.1 |
+| ETIS-E001 | Builds 2–4: identity and finance verifiers | Malformed non-ASCII signatures could escape typed denial; Build 3 worker could terminate | Validate ASCII before digest comparison; test denial and worker survival | Released | v1.0.1 |
+| ETIS-E002 | Builds 3–4: IPC | Ambiguous or excessively nested JSON could evade controlled rejection | Strict decoding and bounded rejection | Released | v1.0.1 |
+| ETIS-E003 | Build 4: adapter, ledger, service | Unresolved replay could report DENIED; read-only inquiries could create stores; malformed observations could raise unexpected errors | Preserve UNKNOWN, nonmutating inquiry and typed validation; close connections | Released | v1.0.1 |
+| ETIS-E004 | Builds 1 and 5 | Valid long correlation identifiers and extreme lease timestamps could violate contracts | Bounded identifiers and timestamp validation | Released | v1.0.1 |
+| ETIS-E005 | Chapter 28 reliability; Chapter 30 operations | Invalid states, confirmation before dispatch, empty telemetry | Typed rejection, escalation and explicit missing-evidence handling | Released | v1.0.1 |
+| ETIS-E006 | Chapter 31 assurance | Skipped or incomplete test results, missing dependency hashes and source drift could undermine evidence | Require actual passing execution and stable source hashes | Released | v1.0.1 |
+
+| ETIS-E007 | Companion release verification runner | Empty or skipped test suites could return success without complete execution | Require actual ordinary unittest results, minimum suite inventory and fresh completion records | Unreleased | Pending |
 
 ## Change control
 
-1. Triage and reproduce reports against the immutable `v1.0.0` source tag and the matching printed edition.
+1. Triage and reproduce reports against the reported release tag, the immutable original baseline where relevant, and the matching printed edition.
 2. Confirm whether the issue affects print text, companion behavior, or both.
 3. Record a stable erratum ID, affected page/source, impact, correction, and status here.
 4. Publish companion fixes in a **new** patch tag (`v1.0.1`, etc.); never move or rewrite the first-edition tag.

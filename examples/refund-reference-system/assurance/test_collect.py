@@ -62,6 +62,34 @@ class AssuranceTests(unittest.TestCase):
         self.assertEqual(len(record['output_sha256']), 64)
         self.assertNotIn('command', record)
 
+    def test_skipped_named_test_is_not_executed_pass(self):
+        def simulated(*args, **kwargs):
+            return subprocess.CompletedProcess(args,0,'','Ran 1 test in 0.001s\n\nOK (skipped=1)\n')
+        record = run_case(CASES[0], ROOT, runner=simulated)
+        self.assertEqual(record['status'], 'EXECUTED_FAIL')
+
+    def test_authorization_claim_hashes_shared_verifiers(self):
+        record = run_case(CASES[0], ROOT, runner=lambda a, **kw: subprocess.CompletedProcess(a,0,'','Ran 1 test in 0.1s\nOK\n'))
+        for path in ('build2/identity.py','build3/contracts.py','build3/client.py','build0/refund.py'):
+            self.assertIn(path, record['source_sha256'])
+
+    def test_incomplete_summary_and_expected_failure_are_not_passes(self):
+        for summary in ('Ran 1 test in 0.001s\n', 'Ran 1 test in 0.001s\nOK (expected failures=1)\n'):
+            with self.subTest(summary=summary):
+                record=run_case(CASES[0],ROOT,runner=lambda a,**kw:subprocess.CompletedProcess(a,0,'',summary))
+                self.assertEqual(record['status'],'EXECUTED_FAIL')
+
+    def test_source_changes_during_execution_cannot_produce_green_evidence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp)
+            case=FixtureCase('SOURCE_DRIFT','reliability','sample.Test.test_one',('source.py',),'narrow test claim','not production evidence')
+            source=root/'source.py';source.write_text('before')
+            def mutate(*args,**kwargs):
+                source.write_text('after')
+                return subprocess.CompletedProcess(args,0,'','Ran 1 test in 0.001s\nOK\n')
+            record=run_case(case,root,runner=mutate)
+            self.assertEqual(record['status'],'EXECUTED_FAIL')
+
     def test_timeout_fails_without_output(self):
         def timeout(*args, **kwargs):
             raise subprocess.TimeoutExpired(args[0], 1, output=b'SECRET')

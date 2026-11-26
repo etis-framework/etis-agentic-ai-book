@@ -22,3 +22,12 @@
 ## Verified scope of this release
 
 The companion runs six progressive Python builds (Chapters 22–27) plus Chapter 28 reliability, Chapter 29 security, Chapter 30 incident operations and Chapter 31 evidence exercises. The full verification workflow uses Ubuntu/macOS with Python 3.10 and 3.13. All payment/identity/provider operations use fictional local fixtures; the reference implementation does **not** claim hardened credential custody, provider settlement, complete E5-side lease fencing or external audit attestation.
+
+## Maintenance release procedure (v1.0.1 and later)
+
+1. Review the correction diff, errata, regression evidence and release notes; verify that frozen manuscript and figure assets are unchanged from the edition tag.
+2. Run `make check-companion` and the applicable publication QA gates. Confirm the four CI jobs on the exact release commit before tagging.
+3. Create a new annotated patch tag on the verified clean `main` commit. Publish its GitHub Release using the matching release notes; do not move `v1.0.0`.
+4. Verify anonymous access to both release versions and source ZIPs. Recommend the corrected companion for exercises; retain the original for exact reproduction.
+
+The Chapter 29 source planning exception is documented in [maintenance notes](RELEASE_NOTES_v1.0.1.md). It does not change the frozen manuscript, any budget, or the requirement for separate print QA. Generated index metadata corrections do not revise already printed copies.

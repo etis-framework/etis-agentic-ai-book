@@ -30,7 +30,7 @@ for n,folder in [(28,'reliability'),(29,'security'),(30,'operations'),(31,'assur
  rel=f'{folder}/README.md'
  require(re.search(r'^\| '+str(n)+r' \S*.*`'+re.escape(rel)+r'`',A,re.M) is not None,f'Chapter {n} table locator missing')
  require((R/'examples/refund-reference-system'/rel).is_file(),f'Chapter {n} README absent')
-require('examples/refund-reference-system/' in A and 'Paths in the tables' in A,'Companion root/path convention missing')
+require('examples/refund-reference-system/' in A and 'All paths in the following tables' in A,'Companion root/path convention missing')
 require(not re.search(r'\]\(examples/refund-reference-system/',A),'Invalid manuscript-relative repository link')
 for term in ['UNKNOWN','RF-1042','E5','E7','E8','not','production']:
  require(term in A,f'Assurance qualification missing {term}')

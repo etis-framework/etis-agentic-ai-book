@@ -125,8 +125,8 @@ def assess(e2_db: Path, e7_db: Path, *, provider: ProviderStatus,
     if len({s.event_id for s in signals}) != len(signals) or len({s.seq for s in signals}) != len(signals):
         raise IncidentInputError('duplicate event identity or sequence')
     ordered = sorted(signals, key=lambda s: s.seq)
-    gap = (bool(ordered) and (
-        ordered[0].seq != 1 or any(b.seq != a.seq + 1 for a, b in zip(ordered, ordered[1:]))))
+    gap = (not ordered or ordered[0].seq != 1 or
+           any(b.seq != a.seq + 1 for a, b in zip(ordered, ordered[1:])))
     kinds = {s.kind for s in ordered}
     e2 = _read_one(e2_db, 'SELECT operation_id,phase,epoch FROM work WHERE case_id=?', (CASE,))
     e7 = _read_one(e7_db, 'SELECT case_id,tenant_id,amount_cents,currency,status FROM operations WHERE operation_id=?', (OPERATION,))

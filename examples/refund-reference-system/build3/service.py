@@ -18,7 +18,7 @@ import refund  # E5-owned deterministic E7/E6 teaching adapter, never imported b
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'build2'))
 from identity import LocalAssertionAuthority, ScopeDenied
 from contracts import (InvalidRequest,AuthorizationDenied,EffectUncertain,
-                       bounded_object,verify_grant,CASE,TENANT,AMOUNT,OPERATION)
+                       bounded_object,decode_request,verify_grant,CASE,TENANT,AMOUNT,OPERATION)
 
 # Educational request path: bound/framing check -> strict JSON contract ->
 # verified E1 assertion -> independently signed E5 finance grant ->
@@ -55,7 +55,7 @@ def read_frame(conn: socket.socket, *, deadline_seconds: float = FRAME_DEADLINE_
         if b'\n' in chunk:
             if raw.count(b'\n') != 1 or not raw.endswith(b'\n'):
                 raise InvalidRequest('trailing data or multiple request frames')
-            return json.loads(raw[:-1].decode('utf-8'))
+            return decode_request(raw[:-1])
 
 
 def serve_connection(conn: socket.socket, *, secret: bytes,

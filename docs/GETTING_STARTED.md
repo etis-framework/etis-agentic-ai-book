@@ -19,6 +19,8 @@ Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permi
 
 ## Download the first-edition code
 
+For corrected exercises select `v1.0.1` once published, substituting that tag and extracted folder version in the instructions below. Use `v1.0.0` for exact original-edition reproduction. See [maintenance notes](../RELEASE_NOTES_v1.0.1.md).
+
 **Option A — easiest: ZIP download (no Git installation).**
 
 1. Open [First-edition GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) and select **`v1.0.0`**.

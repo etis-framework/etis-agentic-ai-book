@@ -8,7 +8,7 @@
 **Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system
 **Reader entry point:** `examples/refund-reference-system/README.md`
 
-For the first printed edition, use the immutable **`v1.0.0`** Git tag once published (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
+For corrected exercises, use `v1.0.1` once published ([maintenance notes](../../RELEASE_NOTES_v1.0.1.md)). For exact original first-edition reproduction, use the immutable **`v1.0.0`** Git tag once published (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
 
 | Build | Book chapter | Engineering lesson |
 |---|---|---|

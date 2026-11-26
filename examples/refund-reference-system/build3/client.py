@@ -30,5 +30,5 @@ def request(socket_path: Path, body: dict[str, Any]) -> dict[str, Any]:
         if type(response) is not dict or response.get('status') not in {'CONFIRMED','DENIED','UNKNOWN'}:
             raise ServiceUnavailable('invalid service response; outcome uncertain')
         return response
-    except (OSError,TimeoutError,ValueError,TypeError) as exc:
+    except (OSError,TimeoutError,ValueError,TypeError,RecursionError) as exc:
         raise ServiceUnavailable('trusted service unavailable; reconcile before retry') from exc

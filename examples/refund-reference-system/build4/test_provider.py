@@ -82,6 +82,23 @@ class Build4Test(unittest.TestCase):
         with self.assertRaises(InvalidTransition):self.workflow.reconcile(self.command)
         self.assertFalse(self.provider.database.exists())
 
+    def test_status_only_reads_do_not_create_fixture_stores(self):
+        self.assertIsNone(self.ledger.state(self.command))
+        self.assertEqual(self.ledger.history(self.command), [])
+        self.assertFalse(self.ledger.database.exists())
+        self.assertEqual(self.provider.lookup(self.command).outcome, Outcome.NOT_FOUND)
+        self.assertFalse(self.provider.database.exists())
+        with self.assertRaises(InvalidTransition):self.workflow.reconcile(self.command)
+        self.assertFalse(self.ledger.database.exists())
+        self.assertFalse(self.provider.database.exists())
+
+    def test_malformed_provider_observation_rejected_as_contract_violation(self):
+        from dataclasses import replace
+        observation = self.provider._confirmed(self.command, 'provider-commit')
+        for value in ([], {}, None):
+            with self.subTest(value=value),self.assertRaises(ContractViolation):
+                replace(observation,source=value).validate()
+
     def test_conflicting_stable_operation_key_blocks_dispatch(self):
         with self.provider._connect() as db:
             db.execute('INSERT INTO provider_refunds VALUES (?,?,?,?,?,?,?,?)',
@@ -212,6 +229,38 @@ class ProcessBoundaryTest(unittest.TestCase):
         self.assertEqual(response['status'],'DENIED')
         self.assertFalse((self.root/'data'/'operations.sqlite3').exists())
         self.assertFalse((self.root/'data'/'provider.sqlite3').exists())
+
+    def test_non_ascii_signatures_denied_with_correct_contract_error(self):
+        for field, token in (('agent_assertion', self.token), ('approval_grant', self.grant)):
+            for char in ('\u00e9', '\uff10', '\ud800', '\U0001f600'):
+                with self.subTest(field=field, char=ascii(char)):
+                    self.assertEqual(self.call(self.body(**{field:token[:-1]+char})),
+                                     {'status':'DENIED','error':'AuthorizationDenied'})
+                    self.assertFalse((self.root/'data'/'operations.sqlite3').exists())
+                    self.assertFalse((self.root/'data'/'provider.sqlite3').exists())
+                    self.assertIsNone(self.proc.poll())
+        self.assertEqual(self.call(self.body())['status'], 'CONFIRMED')
+
+    def test_duplicate_and_deep_json_frames_denied_without_effect(self):
+        import json
+        valid = json.dumps(self.body())
+        for raw in ('{"amount_cents":1,'+valid[1:], '['*1500+'0'+']'*1500):
+            with self.subTest(frame=raw[:30]):
+                with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as peer:
+                    peer.settimeout(3)
+                    peer.connect(str(self.sock)); peer.sendall(raw.encode()+b'\n')
+                    self.assertEqual(json.loads(peer.recv(4096))['status'],'DENIED')
+                self.assertFalse((self.root/'data'/'operations.sqlite3').exists())
+                self.assertFalse((self.root/'data'/'provider.sqlite3').exists())
+                self.assertIsNone(self.proc.poll())
+        self.assertEqual(self.call(self.body())['status'],'CONFIRMED')
+
+    def test_unresolved_execute_replay_reports_unknown_without_resend(self):
+        self.assertEqual(self.call(self.body(lose_ack=True))['status'],'UNKNOWN')
+        self.assertEqual(self.call(self.body())['status'],'UNKNOWN')
+        self.assertEqual(self.call(self.body(action='reconcile'))['status'],'CONFIRMED')
+        with closing(sqlite3.connect(self.root/'data'/'provider.sqlite3')) as db:
+            self.assertEqual(db.execute('SELECT count(*) FROM provider_refunds').fetchone()[0],1)
 
     def test_signed_approval_happy_path_and_replay(self):
         self.assertEqual(self.call(self.body())['status'],'CONFIRMED')

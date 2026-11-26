@@ -62,6 +62,17 @@ class CoordinatorTests(unittest.TestCase):
         for t in (True,-1,'now'):
             with self.subTest(now=t),self.assertRaises(CoordinationError):self.owner(now=t)
 
+    def test_clock_cannot_overflow_sqlite_lease_timestamp(self):
+        for now in (2**63-1,2**63):
+            with self.subTest(now=now),self.assertRaises(CoordinationError):
+                self.owner(now=now)
+        self.assertEqual(self.store.state()['epoch'],0)
+        owner=self.owner(now=2**63-6)
+        self.assertEqual(owner.expires_at,2**63-1)
+        with self.assertRaises(CoordinationError):
+            self.store.renew(owner,now=2**63-5)
+        self.assertEqual(self.store.state()['expires_at'],owner.expires_at)
+
     def test_execute_intent_committed_before_e5_failure(self):
         a=self.owner()
         def disconnected(_):raise RunnerUnavailable('lost reply')

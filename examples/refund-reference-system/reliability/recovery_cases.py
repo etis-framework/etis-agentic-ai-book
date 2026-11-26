@@ -43,7 +43,7 @@ class Snapshot:
             raise EvidenceError("unrecognized recovery identity")
         if type(self.intent_committed) is not bool:
             raise EvidenceError("intent flag must be bool")
-        if self.e7_state not in {"ABSENT", "PREPARED", "DISPATCHED", "UNKNOWN", "CONFIRMED"}:
+        if type(self.e7_state) is not str or self.e7_state not in {"ABSENT", "PREPARED", "DISPATCHED", "UNKNOWN", "CONFIRMED"}:
             raise EvidenceError("invalid E7 state")
         if not isinstance(self.provider_view, ProviderView):
             raise EvidenceError("invalid provider observation")
@@ -67,7 +67,7 @@ def decide(snapshot: Snapshot) -> RecoveryDecision:
     if snapshot.provider_view == ProviderView.CONFIRMED:
         if (snapshot.proof_case_id, snapshot.proof_operation_id) != (CASE, OPERATION):
             return RecoveryDecision.ESCALATE
-        if not snapshot.intent_committed or snapshot.e7_state == "ABSENT":
+        if not snapshot.intent_committed or snapshot.e7_state not in {"DISPATCHED", "UNKNOWN", "CONFIRMED"}:
             return RecoveryDecision.ESCALATE
         return RecoveryDecision.CONFIRM
     if snapshot.provider_view == ProviderView.CONFLICT:

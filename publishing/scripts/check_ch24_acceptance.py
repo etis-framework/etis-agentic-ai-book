@@ -13,7 +13,7 @@ checks = {
     'source-to-contract and financial boundaries': all(term in ch for term in ('CASE-204','RF-1042','E1','E3','E4','E5','E6','E7','E8','C01','C03','C04','UNKNOWN','Design B','Design C')),
     'executable Build 2, Build 1, Build 0 examples': all(re.search(r'unittest discover\s+\\\s*-s examples/refund-reference-system/build'+str(n),ch) for n in (0,1,2)),
     'scope, source, and limitations documented': all(term in (code/'README.md').read_text() for term in ('HMAC','cross-tenant','outage','Chapter 25','untrusted','RF-1042')),
-    'source register and navigation updated': 'Chapter 24 source and claim' in (root/'references/source-register.md').read_text() and 'Chapter 24 / Build 2' in (root/'metadata/topic-traceability.md').read_text(),
+    'source register and navigation updated': '## Historical source-review record — Chapter 24' in (root/'references/source-register.md').read_text() and 'Chapter 24 / Build 2' in (root/'metadata/topic-traceability.md').read_text(),
 }
 for label, ok in checks.items():
     print(('PASS' if ok else 'FAIL')+': '+label)

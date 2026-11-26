@@ -6,7 +6,7 @@ This is a **small, read-only evidence-collection layer** over the **actual, inde
 
 ## Reproduce from the repository root
 
-First run the collector's own 12 negative/contract tests:
+First run the collector's own 16 negative/contract tests:
 
 ```bash
 python3 -m unittest discover -s examples/refund-reference-system/assurance -p 'test_*.py' -v

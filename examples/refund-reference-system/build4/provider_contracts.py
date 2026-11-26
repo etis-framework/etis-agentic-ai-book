@@ -82,7 +82,7 @@ class ProviderObservation:
     def validate(self) -> None:
         if (not isinstance(self.outcome, Outcome) or self.operation_id != OPERATION or
             self.contract_version != PROVIDER_VERSION or
-            self.source not in {'provider-commit', 'provider-status-query'}):
+            type(self.source) is not str or self.source not in {'provider-commit', 'provider-status-query'}):
             raise ContractViolation('invalid provider observation metadata')
         if self.outcome == Outcome.CONFIRMED:
             if (type(self.amount_cents) is not int or self.amount_cents != AMOUNT_CENTS or

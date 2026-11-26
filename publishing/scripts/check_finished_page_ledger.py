@@ -11,6 +11,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from frozen_edition_exception import approved_word_overage
 
 ROOT = Path(__file__).resolve().parents[2]
 PARTS = [(1,7,'I'),(8,16,'II'),(17,21,'III'),(22,27,'IV'),(28,31,'V'),(32,34,'VI'),(35,36,'VII')]
@@ -45,8 +46,12 @@ for chapter in (ROOT/'manuscript').glob('part-*/ch*/index.md'):
     if not match: continue
     n = int(match.group(1))
     count = len(re.findall(r"\b[\w'-]+\b",chapter.read_text()))
-    if count > w['chapter_word_caps'][str(n)]:
-        errors.append(f'Chapter {n} exceeds existing word cap: {count}')
+    cap = w['chapter_word_caps'][str(n)]
+    if count > cap:
+        if approved_word_overage(ROOT, chapter, count, cap):
+            print(f'NOTICE: frozen first-edition Chapter {n} planning exception: {count} / {cap} words')
+        else:
+            errors.append(f'Chapter {n} exceeds existing word cap: {count}')
 print(f'V12 LOCKED PLAN: {sum(chapters.values())} chapter + {x["front_back_reserve_pages"]} supporting = {total} pages; preferred <=575; escalation >575; planning limit 600')
 if args.actual_pages:
     data = json.loads(args.actual_pages.read_text())

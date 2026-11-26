@@ -3,7 +3,7 @@
 This is a single-site SQLite educational ledger. It does not implement E2
 multi-worker ownership fencing, distributed locking, or a durable outbox worker.
 """
-from contextlib import contextmanager
+from contextlib import contextmanager, closing
 from pathlib import Path
 import sqlite3
 from provider_contracts import RefundCommand, ContractViolation
@@ -21,24 +21,32 @@ class OperationalLedger:
     def _connect(self):
         self.database.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
         db = sqlite3.connect(self.database, timeout=2.0)
-        db.execute('PRAGMA busy_timeout=2000')
-        db.execute('''CREATE TABLE IF NOT EXISTS operations (
-            operation_id TEXT PRIMARY KEY, case_id TEXT NOT NULL,
-            tenant_id TEXT NOT NULL, amount_cents INTEGER NOT NULL,
-            currency TEXT NOT NULL, status TEXT NOT NULL,
-            observation TEXT NOT NULL, provider_reference TEXT)''')
-        db.execute('''CREATE TABLE IF NOT EXISTS operation_events (
-            sequence INTEGER PRIMARY KEY AUTOINCREMENT,
-            operation_id TEXT NOT NULL,
-            event TEXT NOT NULL,
-            status TEXT NOT NULL,
-            observation TEXT NOT NULL,
-            provider_reference TEXT)''')
         try:
+            db.execute('PRAGMA busy_timeout=2000')
+            db.execute('''CREATE TABLE IF NOT EXISTS operations (
+                operation_id TEXT PRIMARY KEY, case_id TEXT NOT NULL,
+                tenant_id TEXT NOT NULL, amount_cents INTEGER NOT NULL,
+                currency TEXT NOT NULL, status TEXT NOT NULL,
+                observation TEXT NOT NULL, provider_reference TEXT)''')
+            db.execute('''CREATE TABLE IF NOT EXISTS operation_events (
+                sequence INTEGER PRIMARY KEY AUTOINCREMENT,
+                operation_id TEXT NOT NULL,
+                event TEXT NOT NULL,
+                status TEXT NOT NULL,
+                observation TEXT NOT NULL,
+                provider_reference TEXT)''')
             with db:
                 yield db
         finally:
             db.close()
+
+    @contextmanager
+    def _read(self):
+        """Read existing E7 evidence; never create a store or schema."""
+        with closing(sqlite3.connect(self.database.resolve().as_uri()+'?mode=ro',
+                                     uri=True, timeout=2.0)) as db:
+            db.execute('PRAGMA query_only=ON')
+            yield db
 
     @staticmethod
     def _event(db, command: RefundCommand, event: str, status: str,
@@ -52,14 +60,18 @@ class OperationalLedger:
     def history(self, command: RefundCommand):
         '''Ordered local observations; never infer external settlement from this history.'''
         command.validate()
-        with self._connect() as db:
+        if not self.database.exists():
+            return []
+        with self._read() as db:
             return db.execute('''SELECT event,status,observation,provider_reference
                 FROM operation_events WHERE operation_id=? ORDER BY sequence''',
                 (command.operation_id,)).fetchall()
 
     def state(self, command: RefundCommand):
         command.validate()
-        with self._connect() as db:
+        if not self.database.exists():
+            return None
+        with self._read() as db:
             row = db.execute('SELECT case_id,tenant_id,amount_cents,currency,status,observation,provider_reference FROM operations WHERE operation_id=?',
                              (command.operation_id,)).fetchone()
         if row and row[:4] != (command.case_id, command.tenant_id, command.amount_cents, command.currency):

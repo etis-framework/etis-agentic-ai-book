@@ -1,4 +1,5 @@
 """Bounded deterministic E3 fixture; never imports the refund adapter."""
+import hashlib
 from contracts import (ADVISER_VERSION, SCHEMA_VERSION, AdvisoryUnavailable,
                        Disposition, Evidence, InvalidAdvisory, Proposal,
                        Uncertainty, WorkRequest, validate_proposal)
@@ -35,8 +36,14 @@ def advise(work: WorkRequest, evidence: Evidence, model: CandidateModel | None =
             disposition, reason, uncertainty, explanation = (
                 Disposition.INSUFFICIENT_EVIDENCE, "DELIVERY_UNRESOLVED", Uncertainty.UNRESOLVED,
                 "Delivery is unresolved; obtain independent evidence before review.")
+        # Preserve the short human-readable ID. Long valid correlations need
+        # a bounded deterministic identifier; '0' distinguishes this namespace
+        # from direct IDs, whose correlation begins with an ASCII letter.
+        proposal_id = "ADV-" + work.correlation_id
+        if len(proposal_id) > 64:
+            proposal_id = "ADV-0" + hashlib.sha256(work.correlation_id.encode('ascii')).hexdigest()[:59]
         proposal = Proposal(schema_version=SCHEMA_VERSION,
-            proposal_id="ADV-" + work.correlation_id,
+            proposal_id=proposal_id,
             correlation_id=work.correlation_id, case_id=work.case_id,
             tenant_id=work.tenant_id, requested_amount_cents=work.requested_amount_cents,
             currency=work.currency, source_ids=(evidence.source_id,),

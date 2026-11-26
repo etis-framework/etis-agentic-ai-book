@@ -54,6 +54,14 @@ class ScopeTests(unittest.TestCase):
             with self.subTest(bad=str(bad)[:15]), self.assertRaises(ScopeDenied):
                 self.run_review(assertion=bad)
 
+    def test_non_ascii_assertion_signature_is_scope_denied(self):
+        # Same-length invalid Unicode must never escape as TypeError.
+        for char in ('\u00e9', '\uff10', '\ud800', '\U0001f600'):
+            malformed = self.token[:-1] + char
+            with self.subTest(char=ascii(char)), self.assertRaises(ScopeDenied):
+                self.run_review(assertion=malformed)
+        self.assertEqual(self.run_review().principal, 'reviewer_204')
+
     def test_expired_and_future_assertions(self):
         for moment in (NOW+timedelta(minutes=6),NOW-timedelta(seconds=1)):
             with self.subTest(moment=moment),self.assertRaises(ScopeDenied):

@@ -156,6 +156,45 @@ class IsolatedGateTests(unittest.TestCase):
                 self.assertEqual(request(self.sock,self.body(grant,agent_assertion=assertion))['status'],'DENIED')
                 self.assert_no_effect()
 
+    def test_non_ascii_identity_signature_denied_and_worker_survives(self):
+        grant = self.grant()
+        for char in ('\u00e9', '\uff10', '\ud800', '\U0001f600'):
+            with self.subTest(char=ascii(char)):
+                response = request(self.sock, self.body(grant, agent_assertion=self.agent_token[:-1]+char))
+                self.assertEqual(response, {'status':'DENIED','error':'AuthorizationDenied'})
+                self.assert_no_effect()
+                self.assertIsNone(self.proc.poll())
+        self.assertEqual(request(self.sock, self.body(grant))['status'], 'CONFIRMED')
+
+    def test_non_ascii_finance_signature_denied_and_worker_survives(self):
+        grant = self.grant()
+        for char in ('\u00e9', '\uff10', '\ud800', '\U0001f600'):
+            with self.subTest(char=ascii(char)):
+                malformed = grant[:-1]+char
+                response = request(self.sock, self.body(malformed))
+                with self.assertRaises(AuthorizationDenied):
+                    verify_grant(malformed, self.secret, now=int(time.time()))
+                self.assertEqual(response, {'status':'DENIED','error':'AuthorizationDenied'})
+                self.assert_no_effect()
+                self.assertIsNone(self.proc.poll())
+        self.assertEqual(request(self.sock, self.body(grant))['status'], 'CONFIRMED')
+
+    def test_duplicate_and_deep_json_frames_denied_without_effect(self):
+        grant = self.grant()
+        valid = json.dumps(self.body(grant))
+        # Duplicate amount is ambiguous even if the last value is authorized.
+        duplicate = '{"amount_cents":1,' + valid[1:]
+        nested = '['*1500 + '0' + ']'*1500
+        for raw in (duplicate, nested):
+            with self.subTest(frame=raw[:30]):
+                with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as peer:
+                    peer.settimeout(3)
+                    peer.connect(str(self.sock)); peer.sendall(raw.encode()+b'\n')
+                    self.assertEqual(json.loads(peer.recv(4096))['status'], 'DENIED')
+                self.assert_no_effect()
+                self.assertIsNone(self.proc.poll())
+        self.assertEqual(request(self.sock, self.body(grant))['status'], 'CONFIRMED')
+
     def test_non_json_request_refused(self):
         import socket
         with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as s:

@@ -16,7 +16,7 @@ for n,fragments in {
     19:['Model Context Protocol (MCP)','Agent2Agent (A2A) protocol','particular `CASE-204` refund','computer-use'],
     20:['Cross-task memory contamination review','cross-task persistent-memory'],
     31:['Long-horizon trajectories need separate evaluation','trajectory constraint compliance','statistical confidence'],
-    33:['Changing agents are changing release artifacts','self-approve'],
+    33:['Changing agents are changing release artifacts','cannot expand its own tool grants, modify E5 policy, change its release cohort or replace evidence standards','must remain independently governed and verified'],
 }.items():
     for x in fragments:need(x.casefold() in ch[n].casefold(),f'Chapter {n} missing {x}')
 for path,needed in {

@@ -10,11 +10,16 @@ Open an [errata issue](https://github.com/etis-framework/etis-agentic-ai-book/is
 
 ## Confirmed errata
 
-No first-edition errata have been accepted into this register at creation. Items are added **only** after maintainer verification; pending reports remain in issues.
+The following verified companion corrections are included in the v1.0.1 maintenance candidate; availability is established by publication of its tagged release. No printed chapter changes are required.
 
 | ID | Affected page / file | Description | Correction or workaround | Status | First fixed in |
 |---|---|---|---|---|---|
-| — | — | — | — | — | — |
+| ETIS-E001 | Builds 2–4: identity and finance verifiers | Malformed non-ASCII signatures could escape typed denial; Build 3 worker could terminate | Validate ASCII before digest comparison; test denial and worker survival | Verified candidate | v1.0.1 |
+| ETIS-E002 | Builds 3–4: IPC | Ambiguous or excessively nested JSON could evade controlled rejection | Strict decoding and bounded rejection | Verified candidate | v1.0.1 |
+| ETIS-E003 | Build 4: adapter, ledger, service | Unresolved replay could report DENIED; read-only inquiries could create stores; malformed observations could raise unexpected errors | Preserve UNKNOWN, nonmutating inquiry and typed validation; close connections | Verified candidate | v1.0.1 |
+| ETIS-E004 | Builds 1 and 5 | Valid long correlation identifiers and extreme lease timestamps could violate contracts | Bounded identifiers and timestamp validation | Verified candidate | v1.0.1 |
+| ETIS-E005 | Chapter 28 reliability; Chapter 30 operations | Invalid states, confirmation before dispatch, empty telemetry | Typed rejection, escalation and explicit missing-evidence handling | Verified candidate | v1.0.1 |
+| ETIS-E006 | Chapter 31 assurance | Skipped or incomplete test results, missing dependency hashes and source drift could undermine evidence | Require actual passing execution and stable source hashes | Verified candidate | v1.0.1 |
 
 ## Change control
 

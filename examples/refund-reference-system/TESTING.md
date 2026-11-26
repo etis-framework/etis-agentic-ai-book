@@ -76,7 +76,7 @@ Run `python3 -m unittest discover -s examples/refund-reference-system/build5 -p 
 
 ## Part IV completion/assurance boundary
 
-The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **153 current local regression cases across ten suites are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.
+The [implementation-to-evidence map](IMPLEMENTATION_EVIDENCE_MAP.md) assigns executed, simulated, specified-only and not-implemented statuses to each E-domain and contract. It identifies specific modules and named negative-test methods; **171 current local regression cases across ten suites are bounded fixture evidence**, not end-to-end production approval. The Build 5 fixture does not execute the Build 1 adviser and Build 2 scoped retrieval before its Build 4 financial request.
 
 ## Cross-part assurance handoff (Chapters 28–31)
 
@@ -92,8 +92,12 @@ This uses Build 3's real local subprocess and verifies that denied requests crea
 
 ## Chapter 30 read-only incident drill
 
-`operations/test_incident.py` exercises 14 synthetic-incident scenarios backed by actual Build 4 and Build 5 SQLite fixtures. It compares pre/post E2/E7/E8 file hashes and the provider row count. Evidence is **local non-mutation**, event-order checks, gaps, containment classification and strict output allowlisting. Run `python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v`. This is not a production audit, live provider verification, credential revocation or E5 epoch enforcement.
+`operations/test_incident.py` exercises 15 synthetic-incident scenarios backed by actual Build 4 and Build 5 SQLite fixtures. It compares pre/post E2/E7/E8 file hashes and the provider row count. Evidence is **local non-mutation**, event-order checks, gaps, containment classification and strict output allowlisting. Run `python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v`. This is not a production audit, live provider verification, credential revocation or E5 epoch enforcement.
 
 ## Chapter 31 — cross-build assurance collector
 
-Run `python3 -m unittest discover -s examples/refund-reference-system/assurance -p 'test_*.py' -v` (12 contract/negative tests), then run `python3 examples/refund-reference-system/assurance/collect.py --output /tmp/etis-ch31-evidence.json` to invoke seven existing exact test methods and write a nonsecret, environment-specific JSON record. The report is not a production authorization, E9 protected audit or live-provider settlement record; never reuse a stored green file after changing source or external contracts. Inspect `assurance/README.md` and Chapter 31 Table 31.1 for tested claims, falsifiers and persistent production blockers.
+Run `python3 -m unittest discover -s examples/refund-reference-system/assurance -p 'test_*.py' -v` (16 contract/negative tests), then run `python3 examples/refund-reference-system/assurance/collect.py --output /tmp/etis-ch31-evidence.json` to invoke seven existing exact test methods and write a nonsecret, environment-specific JSON record. The report is not a production authorization, E9 protected audit or live-provider settlement record; never reuse a stored green file after changing source or external contracts. Inspect `assurance/README.md` and Chapter 31 Table 31.1 for tested claims, falsifiers and persistent production blockers.
+
+## Post-publication adversarial regression (proposed v1.0.1)
+
+Eighteen added test methods cover malformed Unicode identity and finance signatures, duplicate JSON members, service survival and positive controls, unresolved replay classification, boundary-length proposal IDs, invalid recovery states, dispatch prerequisites, read-only lookup nonmutation, malformed provider observations, clock overflow, missing telemetry, clean unittest completion, source drift and dependent source hashes. The collector requires exactly one ordinary successful test and checks source hashes before and after execution. A skipped or expected-failure test is not passing evidence. All claims remain educational fixture claims.

@@ -19,7 +19,7 @@ import time
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/'build3'))
 from contracts import (AMOUNT, CASE, TENANT, AuthorizationDenied, InvalidRequest,
-                       bounded_object, verify_grant)
+                       bounded_object, decode_request, verify_grant)
 sys.path.insert(0,str(HERE.parent/'build2'))
 from identity import LocalAssertionAuthority, ScopeDenied
 from ledger import InvalidTransition, OperationalLedger
@@ -53,7 +53,7 @@ def read_frame(conn: socket.socket) -> object:
         if b'\n' in chunk:
             if data.count(b'\n')!=1 or not data.endswith(b'\n'):
                 raise InvalidRequest('multiple frames or trailing content')
-            return json.loads(data[:-1].decode('utf-8'))
+            return decode_request(data[:-1])
 
 
 def handle(message: object, *, identity: LocalAssertionAuthority, grant_key: bytes,
@@ -81,8 +81,16 @@ def handle(message: object, *, identity: LocalAssertionAuthority, grant_key: byt
         provider=SQLiteFixtureProvider(provider_path)
         workflow=RefundWorkflow(ledger,provider)
         if req['action']=='execute':
-            outcome=workflow.execute(command,lose_ack=req['lose_ack'],
-                                     outage_before_send=req['outage_before_send'])
+            try:
+                outcome=workflow.execute(command,lose_ack=req['lose_ack'],
+                                         outage_before_send=req['outage_before_send'])
+            except InvalidTransition as exc:
+                # Refusing a second dispatch is not proof of the first outcome.
+                # Match Build 3: unresolved intent stays UNKNOWN; never resend.
+                row=ledger.state(command)
+                if row is not None and row[4] in {'DISPATCHED','UNKNOWN'}:
+                    raise OutcomeUnknown('prior dispatch unresolved; reconcile') from exc
+                raise
         else:
             outcome=workflow.reconcile(command)
         return {'status':outcome,'data':{'case_id':CASE,'operation_id':command.operation_id}}

@@ -40,8 +40,8 @@ class DurableCoordinator:
     def _transaction(self):
         self.path.parent.mkdir(mode=0o700, parents=True, exist_ok=True)
         db = sqlite3.connect(self.path, timeout=2, isolation_level=None)
-        db.execute('PRAGMA busy_timeout=2000')
         try:
+            db.execute('PRAGMA busy_timeout=2000')
             db.execute('BEGIN IMMEDIATE')
             db.execute('''CREATE TABLE IF NOT EXISTS work (
                 case_id TEXT PRIMARY KEY, operation_id TEXT NOT NULL,
@@ -55,9 +55,9 @@ class DurableCoordinator:
         finally:
             db.close()
 
-    @staticmethod
-    def _check_now(now: int):
-        if type(now) is not int or now < 0:
+    def _check_now(self, now: int):
+        # SQLite INTEGER is signed 64-bit; reserve space for a new lease.
+        if type(now) is not int or not 0 <= now <= 2**63-1-self.lease_seconds:
             raise CoordinationError('invalid authoritative fixture clock')
 
     @staticmethod

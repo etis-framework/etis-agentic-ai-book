@@ -11,6 +11,8 @@ This is the source repository and **executable teaching companion** for the 503-
 
 ## Start here — no Git experience required
 
+**Companion maintenance:** use `v1.0.1` once its [tagged release](https://github.com/etis-framework/etis-agentic-ai-book/releases) is available for corrected exercises. See [maintenance release notes](RELEASE_NOTES_v1.0.1.md). Keep `v1.0.0` for exact first-edition source reproduction. The printed book is unchanged.
+
 **New to GitHub?** Read the [step-by-step setup guide](docs/GETTING_STARTED.md). It explains how to **download the first-edition ZIP without Git**, find the extracted folder, check Python, and run the first example. You do not need an AI account, payment provider, or Python packages.
 
 **macOS/Linux readers who use Git** can run these commands in a terminal after the [`v1.0.0` first-edition release](https://github.com/etis-framework/etis-agentic-ai-book/releases) is published:

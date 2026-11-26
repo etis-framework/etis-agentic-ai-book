@@ -9,7 +9,7 @@ def req(ok,msg):
  if not ok:issues.append(msg)
 words=len(re.findall(r"\b[\w'-]+\b",s))
 req(2100<=words<=2700 and json.loads((R/'publishing/SINGLE_VOLUME_FINISHED_PAGE_LEDGER_V12.json').read_text())['chapter_pages']['35']==10,'10-page ledger/source length')
-req('STATUS: PLANNED' not in s and 'All 36 chapters developed' in (R/'book.yaml').read_text(),'chapter status')
+req('STATUS: PLANNED' not in s and 'First-edition manuscript frozen; companion source aligned with edition' in (R/'book.yaml').read_text(),'chapter status')
 req(not re.search(r'CAB-001|BP-001|advanced student|six[- ]lens|six perspectives',s,re.I),'internal QA/catalog vocabulary')
 req(all(t in s[:3200] for t in ['Design A','Design B','Design C','CASE-204','$500','RF-1042','admission and identity (E1)','independent trusted execution (E5)']),'early first references')
 req(all('C0'+str(i) in s for i in range(1,10)),'contract catalog')

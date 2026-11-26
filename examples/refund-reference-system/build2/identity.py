@@ -109,13 +109,14 @@ class LocalAssertionAuthority:
             claims = json.loads(payload.decode('ascii'))
             if type(claims) is not dict or _canonical(claims) != payload:
                 raise ScopeDenied('noncanonical assertion')
-        except (ValueError, UnicodeError, TypeError) as exc:
+        except (ValueError, UnicodeError, TypeError, RecursionError) as exc:
             raise ScopeDenied('malformed identity assertion') from exc
         # Recompute on the received canonical bytes, then use constant-time
         # digest comparison. A valid HMAC authenticates these fixture claims,
         # but is NOT the separate transaction-specific finance approval.
         digest = hmac.new(self._key, payload, hashlib.sha256).hexdigest()
-        if len(signature) != len(digest) or not hmac.compare_digest(signature, digest):
+        if (not signature.isascii() or len(signature) != len(digest)
+                or not hmac.compare_digest(signature, digest)):
             raise ScopeDenied('assertion integrity failure')
         self._validate_claims(claims)
         # Check both ends of the lifetime after signature verification: a valid

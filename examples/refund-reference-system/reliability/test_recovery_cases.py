@@ -50,6 +50,17 @@ class RecoveryTests(unittest.TestCase):
         with self.assertRaises(EvidenceError):
             decide(replace(self.base(),provider_view="CONFIRMED"))
 
+    def test_unhashable_e7_state_is_typed_evidence_error(self):
+        for state in ([], {}):
+            with self.subTest(state=state), self.assertRaises(EvidenceError):
+                decide(replace(self.base(), e7_state=state))
+
+    def test_confirmation_before_dispatch_is_escalated(self):
+        # A PREPARED record is not evidence of a durable dispatch claim.
+        snapshot = replace(self.base(ProviderView.CONFIRMED), e7_state='PREPARED',
+                           proof_case_id=CASE, proof_operation_id=OPERATION)
+        self.assertEqual(decide(snapshot), RecoveryDecision.ESCALATE)
+
     def test_fixture_does_not_expose_effectful_method(self):
         import recovery_cases
         for unsafe in ("execute", "send", "dispatch", "refund", "issue_grant"):

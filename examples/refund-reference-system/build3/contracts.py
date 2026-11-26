@@ -32,6 +32,21 @@ def bounded_object(value: Any, fields: frozenset[str]) -> dict[str, Any]:
     return value
 
 
+def decode_request(raw: bytes) -> object:
+    """Reject ambiguous duplicate JSON fields before contract validation."""
+    def unique_object(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise InvalidRequest('duplicate JSON field')
+            result[key] = value
+        return result
+    try:
+        return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_object)
+    except (ValueError, UnicodeError, TypeError, OverflowError, RecursionError) as exc:
+        raise InvalidRequest('invalid JSON request') from exc
+
+
 def canonical(obj: dict[str, Any]) -> bytes:
     return json.dumps(obj,sort_keys=True,separators=(',',':'),ensure_ascii=True,allow_nan=False).encode('ascii')
 
@@ -70,10 +85,11 @@ def verify_grant(value: Any, secret: bytes, *, now: int) -> dict[str, Any]:
                         'approval_id','policy_version','issued_at','expires_at'}))
         if canonical(obj)!=raw:
             raise AuthorizationDenied('noncanonical transaction approval')
-    except (ValueError,UnicodeError,TypeError,OverflowError) as exc:
+    except (ValueError,UnicodeError,TypeError,OverflowError,RecursionError) as exc:
         raise AuthorizationDenied('invalid transaction approval') from exc
     expected=signature(secret,raw)
-    if len(mac)!=len(expected) or not hmac.compare_digest(mac,expected):
+    if (not mac.isascii() or len(mac)!=len(expected)
+            or not hmac.compare_digest(mac,expected)):
         raise AuthorizationDenied('transaction approval integrity failure')
     if (obj['schema']!='etis-e5-grant-v1' or obj['case_id']!=CASE or
             obj['tenant_id']!=TENANT or type(obj['amount_cents']) is not int or

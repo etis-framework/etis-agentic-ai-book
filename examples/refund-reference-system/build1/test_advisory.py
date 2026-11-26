@@ -24,6 +24,16 @@ class Build1Tests(unittest.TestCase):
         self.assertNotIn("approved", p.to_dict())
         self.assertNotIn("provider_key", p.to_dict())
 
+    def test_all_valid_correlation_lengths_produce_bounded_advice(self):
+        for size in (3,60,61,64):
+            with self.subTest(size=size):
+                work = WorkRequest('T'*size, CASE, TENANT, AMOUNT_CENTS, 'USD', EVIDENCE_VERSION)
+                proposal = advise(work, self.evidence)
+                self.assertEqual(proposal.correlation_id, work.correlation_id)
+                self.assertLessEqual(len(proposal.proposal_id), 64)
+                self.assertEqual(proposal.proposal_id, advise(work,self.evidence).proposal_id)
+        self.assertEqual(advise(self.work,self.evidence).proposal_id,'ADV-TRACE-204')
+
     def test_delivered_and_unknown_branches(self):
         delivered = Evidence("EV-204", CASE, TENANT, EVIDENCE_VERSION, True, True, "")
         missing = Evidence("EV-204", CASE, TENANT, EVIDENCE_VERSION, None, True, "")

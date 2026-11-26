@@ -58,6 +58,14 @@
       ]
     },
     {
+      "term": "Adversarial behavior — agent-generated",
+      "locator": "Chapter 29 §29.1.",
+      "aliases": [],
+      "see_also": [
+        "Compromised bounded investigator"
+      ]
+    },
+    {
       "term": "Adversarial tests — forged approval",
       "locator": "Chapter 29.",
       "aliases": [],
@@ -210,6 +218,14 @@
       "locator": "Chapter 13; Chapter 24.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Behavioral evaluation",
+      "locator": "Chapter 31 §31.1.",
+      "aliases": [],
+      "see_also": [
+        "Enforcement verification"
+      ]
     },
     {
       "term": "Bounded advisory reasoning (E3)",
@@ -376,6 +392,14 @@
       "locator": "Chapters 6, 8, 13, 19, 22, 25–28.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Containment — independent control",
+      "locator": "Chapter 33 §33.2.",
+      "aliases": [],
+      "see_also": [
+        "Termination — independent control"
+      ]
     },
     {
       "term": "Context engineering — assembly and budget",
@@ -552,6 +576,14 @@
       "locator": "Chapter 28; Chapter 32.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Enforcement verification",
+      "locator": "Chapter 31 §31.1.",
+      "aliases": [],
+      "see_also": [
+        "Assurance claims and falsifiers"
+      ]
     },
     {
       "term": "Epoch and lease fencing",
@@ -777,6 +809,14 @@
       "locator": "Chapter 22; Chapter 25.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Model alignment",
+      "locator": "Introduction; Chapter 29 §29.1; Chapter 31 §31.1.",
+      "aliases": [],
+      "see_also": [
+        "Behavioral evaluation"
+      ]
     },
     {
       "term": "Model output as untrusted proposal (C04)",
@@ -1047,6 +1087,14 @@
       "see_also": []
     },
     {
+      "term": "Self-modification — authority restrictions",
+      "locator": "Chapter 33 §33.2.",
+      "aliases": [],
+      "see_also": [
+        "Self-modifying agents — release governance"
+      ]
+    },
+    {
       "term": "Self-modifying agents — release governance",
       "locator": "Chapter 33 §§33.2–33.3.",
       "aliases": [],
@@ -1077,6 +1125,14 @@
       "locator": "Chapter 2; Chapter 14.",
       "aliases": [],
       "see_also": []
+    },
+    {
+      "term": "Termination — independent control",
+      "locator": "Chapter 33 §33.2.",
+      "aliases": [],
+      "see_also": [
+        "Containment — independent control"
+      ]
     },
     {
       "term": "Tool protocol interoperability",

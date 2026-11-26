@@ -35,13 +35,13 @@ class FixtureCase:
 
 # Declared, fixed registry. No arbitrary shell commands or user-controlled test paths.
 CASES: tuple[FixtureCase, ...] = (
-    FixtureCase('AUTH_DENIAL', 'security', 'test_adversarial_cases.HijackedInvestigatorAgainstRealE5.test_valid_identity_without_finance_grant_denied_without_effect', ('security/test_adversarial_cases.py', 'build3/service.py'), 'Local E5 denial and no fixture E7/E8 effect', 'No production credential isolation'),
+    FixtureCase('AUTH_DENIAL', 'security', 'test_adversarial_cases.HijackedInvestigatorAgainstRealE5.test_valid_identity_without_finance_grant_denied_without_effect', ('security/test_adversarial_cases.py', 'build3/service.py', 'build3/contracts.py', 'build3/client.py', 'build2/identity.py', 'build0/refund.py'), 'Local E5 denial and no fixture E7/E8 effect', 'No production credential isolation'),
     FixtureCase('WRONG_PROOF', 'reliability', 'test_recovery_cases.RecoveryTests.test_wrong_operation_proof_escalates', ('reliability/recovery_cases.py', 'reliability/test_recovery_cases.py'), 'Wrong operation evidence cannot confirm RF-1042', 'No real provider settlement proof'),
     FixtureCase('NOT_FOUND', 'reliability', 'test_recovery_cases.RecoveryTests.test_not_found_never_declares_failure', ('reliability/recovery_cases.py', 'reliability/test_recovery_cases.py'), 'Missing provider observation does not prove payment failure', 'No real-world provider consistency'),
-    FixtureCase('NO_REPLAY', 'build4', 'test_provider.Build4Test.test_replayed_execute_does_not_call_provider_twice', ('build4/test_provider.py', 'build4/ledger.py', 'build4/adapter.py'), 'Repeated local call makes no second mock effect', 'No global exactly-once guarantee'),
+    FixtureCase('NO_REPLAY', 'build4', 'test_provider.Build4Test.test_replayed_execute_does_not_call_provider_twice', ('build4/test_provider.py', 'build4/workflow.py', 'build4/provider_contracts.py', 'build4/ledger.py', 'build4/adapter.py', 'build3/contracts.py', 'build2/identity.py'), 'Repeated local call makes no second mock effect', 'No global exactly-once guarantee'),
     FixtureCase('STALE_OWNER', 'build5', 'test_coordination.CoordinatorTests.test_stale_owner_cannot_override_new_owner_reconcile', ('build5/coordinator.py', 'build5/test_coordination.py'), 'Old worker rejected at local E2 state', 'E5 does not enforce current E2 epoch'),
-    FixtureCase('READ_ONLY', 'operations', 'test_incident.IncidentTests.test_lost_ack_unknown_with_confirmed_synthetic_e8_still_requires_review', ('operations/incident.py', 'operations/test_incident.py'), 'Observer does not create another local effect', 'No protected operational audit'),
-    FixtureCase('TELEMETRY_GAP', 'operations', 'test_incident.IncidentTests.test_missing_telemetry_never_closes_case', ('operations/incident.py', 'operations/test_incident.py'), 'Missing signal remains observable and unresolved', 'No guaranteed collector delivery'),
+    FixtureCase('READ_ONLY', 'operations', 'test_incident.IncidentTests.test_lost_ack_unknown_with_confirmed_synthetic_e8_still_requires_review', ('operations/incident.py', 'operations/test_incident.py', 'build4/workflow.py', 'build4/provider_contracts.py', 'build4/ledger.py', 'build4/adapter.py', 'build5/coordinator.py'), 'Observer does not create another local effect', 'No protected operational audit'),
+    FixtureCase('TELEMETRY_GAP', 'operations', 'test_incident.IncidentTests.test_missing_telemetry_never_closes_case', ('operations/incident.py', 'operations/test_incident.py', 'build4/workflow.py', 'build4/provider_contracts.py', 'build4/ledger.py', 'build4/adapter.py', 'build5/coordinator.py'), 'Missing signal remains observable and unresolved', 'No guaranteed collector delivery'),
 )
 
 # Static declaration is a teaching aid, never automatically turned into implemented evidence.
@@ -96,7 +96,9 @@ def run_case(case: FixtureCase, root: Path, timeout: int = 40,
     only an output digest and a bounded reason code, never raw output.
     """
     command = [sys.executable, '-m', 'unittest', '-q', case.test_id]
+    before = {p: sha256(root / p) for p in case.source_files}
     state = 'COMPLETED'
+    clean_summary = False
     exit_code: int | None = None
     count = 0
     output = b''
@@ -107,12 +109,19 @@ def run_case(case: FixtureCase, root: Path, timeout: int = 40,
         output = (result.stdout + '\n' + result.stderr).encode('utf-8', 'replace')
         matches = re.findall(r'\bRan (\d+) tests? in\b', result.stderr)
         count = int(matches[-1]) if matches else 0
+        # Skips and expected failures can exit zero and count as one test.
+        # Require the ordinary clean unittest result, not merely a run count.
+        summaries = re.findall(r'^OK(?: \([^\n]*\))?\s*$', result.stderr, re.M)
+        clean_summary = len(summaries) == 1 and summaries[0].strip() == 'OK'
     except subprocess.TimeoutExpired as exc:
         state = 'TIMEOUT'
         # Discard potentially sensitive process streams even on timeout.
     except (OSError, ValueError):
         state = 'UNAVAILABLE'
-    status = result_status(exit_code, state == 'COMPLETED', count)
+    after = {p: sha256(root / p) for p in case.source_files}
+    if before != after:
+        state = 'SOURCE_CHANGED'
+    status = result_status(exit_code, state == 'COMPLETED' and clean_summary, count)
     # A digest helps compare outputs without publishing their contents. It is
     # neither a digital signature nor evidence of independent audit custody.
     digest = hashlib.sha256(output).hexdigest() if state == 'COMPLETED' else None
@@ -126,7 +135,7 @@ def run_case(case: FixtureCase, root: Path, timeout: int = 40,
         'output_sha256': digest,
         'expected_narrow_claim': case.expected,
         'not_established': case.excluded,
-        'source_sha256': {p: sha256(root / p) for p in case.source_files},
+        'source_sha256': before,
     }
 
 

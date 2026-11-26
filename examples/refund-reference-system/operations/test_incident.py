@@ -4,6 +4,7 @@ The tests may set up a mock provider effect with Build 4. The *observer* does
 not import or invoke that provider; before/after database digests make a local
 non-mutation claim falsifiable. Tests do NOT prove external provider absence.
 """
+from contextlib import closing
 from hashlib import sha256
 from pathlib import Path
 import sys
@@ -49,11 +50,11 @@ class IncidentTests(unittest.TestCase):
     def check_read_only(self, provider, signals, **kwargs):
         files = (self.e2_file,self.e7_file,self.e8_file)
         old = tuple(sha256(f.read_bytes()).hexdigest() for f in files)
-        with sqlite3.connect(self.e8_file) as db:
+        with closing(sqlite3.connect(self.e8_file)) as db, db:
             count = db.execute('SELECT count(*) FROM provider_refunds').fetchone()[0]
         result = assess(self.e2_file,self.e7_file,provider=provider,signals=signals,**kwargs)
         self.assertEqual(tuple(sha256(f.read_bytes()).hexdigest() for f in files),old)
-        with sqlite3.connect(self.e8_file) as db:
+        with closing(sqlite3.connect(self.e8_file)) as db, db:
             self.assertEqual(db.execute('SELECT count(*) FROM provider_refunds').fetchone()[0], count)
         self.assertEqual(count,1)
         self.assertEqual(result.operation_id,'RF-1042')
@@ -86,6 +87,12 @@ class IncidentTests(unittest.TestCase):
     def test_missing_telemetry_never_closes_case(self):
         values=(Signal(1,'evt1',SignalKind.E7_UNKNOWN),Signal(3,'evt3',SignalKind.E8_UNAVAILABLE))
         result=self.check_read_only(ProviderStatus.CONFIRMED,values)
+        self.assertTrue(result.event_gap)
+        self.assertEqual(result.disposition,'INQUIRE')
+
+    def test_empty_signal_stream_is_missing_evidence(self):
+        self.assertEqual(self.workflow.reconcile(self.command),'CONFIRMED')
+        result=self.check_read_only(ProviderStatus.CONFIRMED,())
         self.assertTrue(result.event_gap)
         self.assertEqual(result.disposition,'INQUIRE')
 
@@ -131,7 +138,7 @@ class IncidentTests(unittest.TestCase):
         # First reconcile provides local CONFIRMED, then new evidence contradicts it.
         self.assertEqual(self.workflow.reconcile(self.command),'CONFIRMED')
         before = self.ledger.history(self.command)
-        with sqlite3.connect(self.e8_file) as db:
+        with closing(sqlite3.connect(self.e8_file)) as db, db:
             db.execute('UPDATE provider_refunds SET amount_cents=1 WHERE operation_id=?',('RF-1042',))
         with self.assertRaises(OutcomeUnknown):
             self.workflow.reconcile(self.command)

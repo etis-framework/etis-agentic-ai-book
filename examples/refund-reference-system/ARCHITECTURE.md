@@ -56,7 +56,7 @@ Build 4 retains the **independently checked E5 request-path service**, reusing B
 
 ## Chapter 30 operations observer
 
-The separate `operations/` directory has a README-embedded source/module `architecture.svg`, `incident.py` and 14 tests. It observes Build 5 E2 and Build 4 E7 persistent state without importing E5/E6 effect interfaces. Synthetic E8 evidence is a parameter, never authoritative financial proof; `Finding` is an E9-oriented operator recommendation, not a grant or C07 command. See Chapter 30 Figure 30.1 and `IMPLEMENTATION_EVIDENCE_MAP.md`.
+The separate `operations/` directory has a README-embedded source/module `architecture.svg`, `incident.py` and 15 tests. It observes Build 5 E2 and Build 4 E7 persistent state without importing E5/E6 effect interfaces. Synthetic E8 evidence is a parameter, never authoritative financial proof; `Finding` is an E9-oriented operator recommendation, not a grant or C07 command. See Chapter 30 Figure 30.1 and `IMPLEMENTATION_EVIDENCE_MAP.md`.
 
 ## Chapter 31 non-effectful assurance collector
 

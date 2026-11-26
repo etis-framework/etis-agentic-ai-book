@@ -2,7 +2,13 @@
 
 [Home](README.md) · [First-edition release notes](RELEASE_NOTES_v1.0.0.md) · [Release policy](RELEASE.md) · [Errata](ERRATA.md)
 
-## v1.0.1 — Companion adversarial validation and assurance maintenance (release candidate)
+## Unreleased — repository maintenance
+
+- Align reader navigation with the published corrected release and distinguish historical release records from active instructions.
+- Fail closed when companion verification discovers or executes too few tests, skips tests, or fails to complete; report actual suite totals.
+- Check active reader Markdown link targets, pin native CI actions, and ignore disposable exercise output.
+
+## v1.0.1 — Companion adversarial validation and assurance maintenance (2026-11-26)
 
 - Reject malformed identity and finance signatures and ambiguous JSON at the request boundary; preserve service availability and independent approval.
 - Preserve unresolved financial outcomes on replay and make status inquiries nonmutating.

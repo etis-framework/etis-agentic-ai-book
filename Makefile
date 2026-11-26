@@ -60,16 +60,7 @@ check:
 	python3 publishing/scripts/check_reader_companion_access.py
 	python3 publishing/scripts/check_reader_evidence_freshness.py
 	python3 publishing/scripts/check_companion_code_quality.py
-	python3 -m unittest discover -s examples/refund-reference-system/build0 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/build1 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/build2 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/build3 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/build4 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/build5 -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/reliability -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/security -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/operations -p "test_*.py" -v
-	python3 -m unittest discover -s examples/refund-reference-system/assurance -p "test_*.py" -v
+	$(MAKE) check-companion
 	python3 publishing/scripts/check_parts12_citations.py
 	python3 publishing/scripts/check_parts13_reader_paths.py
 	python3 publishing/scripts/check_parts13_integration.py
@@ -142,4 +133,6 @@ check-publication-pass05-glossary: book-docx
 # Independently reproducible companion tests: no DOCX, Graphviz, or paid services.
 .PHONY: check-companion
 check-companion:
+	python3 publishing/scripts/test_companion_release.py -v
 	python3 publishing/scripts/check_companion_release.py
+	python3 publishing/scripts/check_active_reader_links.py

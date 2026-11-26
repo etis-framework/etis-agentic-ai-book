@@ -11,16 +11,16 @@ This is the source repository and **executable teaching companion** for the 503-
 
 ## Start here — no Git experience required
 
-**Companion maintenance:** use `v1.0.1` once its [tagged release](https://github.com/etis-framework/etis-agentic-ai-book/releases) is available for corrected exercises. See [maintenance release notes](RELEASE_NOTES_v1.0.1.md). Keep `v1.0.0` for exact first-edition source reproduction. The printed book is unchanged.
+**Companion maintenance:** use the published [`v1.0.1` release](https://github.com/etis-framework/etis-agentic-ai-book/releases/tag/v1.0.1) for corrected exercises. See [maintenance release notes](RELEASE_NOTES_v1.0.1.md). Keep `v1.0.0` for exact first-edition source reproduction. The printed book is unchanged.
 
 **New to GitHub?** Read the [step-by-step setup guide](docs/GETTING_STARTED.md). It explains how to **download the first-edition ZIP without Git**, find the extracted folder, check Python, and run the first example. You do not need an AI account, payment provider, or Python packages.
 
-**macOS/Linux readers who use Git** can run these commands in a terminal after the [`v1.0.0` first-edition release](https://github.com/etis-framework/etis-agentic-ai-book/releases) is published:
+**macOS/Linux readers who use Git** can run these commands in a terminal using the corrected companion release:
 
 ```bash
 git clone https://github.com/etis-framework/etis-agentic-ai-book.git
 cd etis-agentic-ai-book
-git checkout v1.0.0
+git checkout v1.0.1
 python3 publishing/scripts/check_companion_release.py
 ```
 
@@ -68,7 +68,7 @@ The checker reports `PASS` when its local fixture tests and checks succeed. An i
 
 ## Versions, rights and scope
 
-The **first-edition companion is `v1.0.0`**. Download the [GitHub Release](https://github.com/etis-framework/etis-agentic-ai-book/releases) and its immutable tag for exact first-edition reproduction; `main` can change later. See [release policy](RELEASE.md). The paperback ISBN is **979-8-9966760-6-4**; hardcover ISBN is **979-8-9966760-7-1**.
+The **original first-edition companion is `v1.0.0`**; `v1.0.1` is the recommended published correction release. Download the [appropriate GitHub Release](https://github.com/etis-framework/etis-agentic-ai-book/releases) and use its immutable tag. Use `v1.0.0` only when exact original source reproduction is required; `main` can change later. See [release policy](RELEASE.md). The paperback ISBN is **979-8-9966760-6-4**; hardcover ISBN is **979-8-9966760-7-1**.
 
 **The educational code is not production-ready.** The same-user subprocess fixture does not provide OS isolation, mock keys are not protected credentials, E2 fencing does not extend into E5, mock E8 is not a financial provider, and local evidence is not independently attested. Conceptual MCP/A2A discussions do **not** imply implemented MCP/A2A stacks. Review the [limits and proofs](docs/CHAPTER_MAP.md) before drawing architectural conclusions.
 

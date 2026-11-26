@@ -10,7 +10,7 @@ If you discover a vulnerability, **do not publish exploits, credentials, or sens
 
 | Version | Status |
 |---|---|
-| First-edition `v1.0.x` | Supported after release; use most recent patch |
+| First-edition `v1.0.x` | Published; use the most recent corrected release |
 | Unreleased `main` | Development; no stability promise |
 | Earlier drafts | Not supported |
 

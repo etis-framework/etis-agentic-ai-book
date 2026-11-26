@@ -1,6 +1,6 @@
 # v1.0.1 — Companion adversarial validation and assurance maintenance
 
-Release candidate for *Engineering Agentic AI Systems*, First Edition (2026). This is a companion maintenance release, not a new printed edition. The original v1.0.0 tag remains immutable.
+Published maintenance release for *Engineering Agentic AI Systems*, First Edition (2026). This is a companion maintenance release, not a new printed edition. The original v1.0.0 tag remains immutable.
 
 ## Corrections
 
@@ -9,13 +9,13 @@ Release candidate for *Engineering Agentic AI Systems*, First Edition (2026). Th
 - Bound advisory identifiers and lease timestamps; close SQLite connections explicitly.
 - Reject malformed recovery states, escalate confirmation without dispatch, and detect empty telemetry.
 - Require actual successful test execution and stable dependency hashes for Chapter 31 evidence.
-- Add 18 regression methods; see [errata](ERRATA.md) and [changelog](CHANGELOG.md).
+- Add 18 regression methods; see [current errata](https://github.com/etis-framework/etis-agentic-ai-book/blob/main/ERRATA.md) and [current changelog](https://github.com/etis-framework/etis-agentic-ai-book/blob/main/CHANGELOG.md).
 
 Thanks to Sean for identifying the original non-ASCII identity signature defect that prompted the wider review.
 
 ## Verification and limitations
 
-The maintenance candidate passed 171 local tests in ten suites and the architecture/documentation check on macOS with Python 3.14.7. Earlier Linux constituent-suite verification passed with Python 3.13.5. CI confirmation on the final release commit is required before tagging. Local fixtures do not establish live-provider behavior, protected credentials, OS isolation, independent E5-side owner fencing, external audit custody or production certification. Native Windows supports only the documented portable subset.
+The maintenance release passed 171 local tests in ten suites and the architecture/documentation check on macOS with Python 3.14.7. Earlier Linux constituent-suite verification passed with Python 3.13.5. The merged release commit `d1591a61aa235a74ca0e2e7d0c478377a63f809d` passed the [four-job macOS/Ubuntu Python 3.10/3.13 CI run](https://github.com/etis-framework/etis-agentic-ai-book/actions/runs/45876023877). Local fixtures do not establish live-provider behavior, protected credentials, OS isolation, independent E5-side owner fencing, external audit custody or production certification. Native Windows supports only the documented portable subset.
 
 ## Frozen first-edition planning exception
 
@@ -28,4 +28,6 @@ Publication infrastructure also restores seven index-register entries and aligns
 
 ## Reader selection
 
-After publication, download the v1.0.1 source ZIP or check out the tag for corrected exercises. Keep v1.0.0 for exact original first-edition source reproduction. Follow [setup](docs/GETTING_STARTED.md) and [release policy](RELEASE.md).
+Download the v1.0.1 source ZIP or check out the tag for corrected exercises. Keep v1.0.0 for exact original first-edition source reproduction. Follow [current setup guide](https://github.com/etis-framework/etis-agentic-ai-book/blob/main/docs/GETTING_STARTED.md) and [release policy](https://github.com/etis-framework/etis-agentic-ai-book/blob/main/RELEASE.md).
+
+The tagged source archives are immutable, so their original documentation may contain pre-publication wording. The current setup guide supersedes that wording; select the desired release tag explicitly.

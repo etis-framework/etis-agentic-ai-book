@@ -8,7 +8,7 @@
 **Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system
 **Reader entry point:** `examples/refund-reference-system/README.md`
 
-For corrected exercises, use `v1.0.1` once published ([maintenance notes](../../RELEASE_NOTES_v1.0.1.md)). For exact original first-edition reproduction, use the immutable **`v1.0.0`** Git tag once published (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
+For corrected exercises, use the published `v1.0.1` release ([maintenance notes](../../RELEASE_NOTES_v1.0.1.md)). For exact original first-edition reproduction, use the immutable **`v1.0.0`** Git tag (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
 
 | Build | Book chapter | Engineering lesson |
 |---|---|---|
@@ -135,7 +135,7 @@ Consult `TESTING.md` for the verification matrix and `ENGINEERING_STANDARD.md` f
 
 ## Version and publication policy
 
-This Git repository is the single code authority. The first-edition companion release is **`v1.0.0`** once its tag is published, with a [release procedure](../../RELEASE.md), [changelog](../../CHANGELOG.md) and [errata process](../../ERRATA.md). Use the tagged source for printed-edition reproduction; `main` may evolve. No separate, independently maintained examples archive is authoritative.
+This Git repository is the single code authority. The original first-edition companion release is **`v1.0.0`**; the recommended corrected release is **`v1.0.1`**, with a [release procedure](../../RELEASE.md), [changelog](../../CHANGELOG.md) and [errata process](../../ERRATA.md). Use the tagged source for printed-edition reproduction; `main` may evolve. No separate, independently maintained examples archive is authoritative.
 
 ## Run Build 1 (Chapter 23)
 
@@ -143,7 +143,7 @@ Build 1 is now an independently runnable **untrusted advisory** checkpoint. Begi
 
 ## Run Build 2 (Chapter 24)
 
-Build 2 adds **fixture-only** admission-and-identity (E1) assertion verification and a scoped context (E4) lookup via the context-query contract (C03) before reusing the unmodified Build 1 adviser. Read [`build2/README.md`](build2/README.md) for exact runnable scenarios and the 13-test matrix; execute `python3 examples/refund-reference-system/build2/demo.py` from the repository root. The assertion key is public educational data, **not** a production credential or authenticated-identity guarantee. C04 advice remains untrusted; RF-1042, E7 and E8 are not touched.
+Build 2 adds **fixture-only** admission-and-identity (E1) assertion verification and a scoped context (E4) lookup via the context-query contract (C03) before reusing the unmodified Build 1 adviser. Read [`build2/README.md`](build2/README.md) for exact runnable scenarios and the 14-test matrix; execute `python3 examples/refund-reference-system/build2/demo.py` from the repository root. The assertion key is public educational data, **not** a production credential or authenticated-identity guarantee. C04 advice remains untrusted; RF-1042, E7 and E8 are not touched.
 
 ## Run Build 3 (Chapter 25)
 
@@ -167,4 +167,4 @@ The [Chapter 28–31 assurance handoff](ASSURANCE_HANDOFF_CH28_CH31.md) maps exa
 
 ## Chapter 31 — assurance is not Build 6
 
-[`assurance/README.md`](assurance/README.md) embeds the collector's source/module `architecture.svg`, explains seven source-controlled cross-chapter test registrations and 12 fail-closed harness tests, and gives a reproducible versioned JSON evidence command. The collector does not call E5/E6, mutate E7 or contact E8; its tests invoke *existing* fixtures whose mock effects are isolated in temporary databases. Passing output explicitly marks production certification false and enumerates unimplemented/external controls.
+[`assurance/README.md`](assurance/README.md) embeds the collector's source/module `architecture.svg`, explains seven source-controlled cross-chapter test registrations and 16 fail-closed harness tests, and gives a reproducible versioned JSON evidence command. The collector does not call E5/E6, mutate E7 or contact E8; its tests invoke *existing* fixtures whose mock effects are isolated in temporary databases. Passing output explicitly marks production certification false and enumerates unimplemented/external controls.

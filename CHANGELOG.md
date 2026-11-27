@@ -8,6 +8,9 @@
 - Add Docker Compose, Make convenience targets, and an optional VS Code Dev Container configuration.
 - Separate read-only, offline, image-contained verification from editable development, persistent exercise state and evidence export.
 - Preserve all ten fixture suites (171 baseline tests), seven existing runner regressions and the active reader-link gate; add container tooling regressions and multi-architecture CI acceptance.
+- Harden runtime images: remove unnecessary packaging tools, omit Git from development, strip setuid/setgid bits from regular files under `/usr`, and remove `infocmp` from verification only.
+- Pin signed Debian snapshot inputs and add multi-architecture vulnerability scanning, SBOMs, installed package inventories and runtime applicability evidence.
+- Retain all raw scanner findings and enforce exact, time-limited maintainer dispositions; critical, new or changed unassessed high, high with a supported fix, and expired decisions for outstanding findings block. Weekly CI monitors the dependency baseline.
 - Document container trust limitations, platform acceptance, state lifecycle and image maintenance. Thank Sean for proposing container-based execution.
 
 ### Repository maintenance included in v1.1.0

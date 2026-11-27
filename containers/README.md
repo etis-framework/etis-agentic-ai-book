@@ -10,6 +10,7 @@ This directory contains execution tooling, **not Build 6**. The unchanged compan
 - `dev_probe.py`: acceptance of non-root development mode and writable workspace/project state.
 - `test_container_tools.py`: standard-library tests for the new tooling. They do not replace actual Docker runtime tests.
 - `ACCEPTANCE.md`: reproducible runtime/platform gates and explicit limitations.
+- `scan-images.sh` and [supply-chain assurance](assurance/README.md): host-side image scanning, evidence reconciliation and maintainer-approved dependency dispositions. This is separate from Chapter 31's business-system fixture assurance.
 
 Both targets share one digest-pinned Trixie Slim Python base; development adds only Make, curl and the VS Code runtime library (and required transitive packages). Git runs on the host; no Git or libexpat1 Debian package is installed in the development target. See [container security policy](SECURITY.md). The compact verification context includes the actual three chapter files linked by active companion guides, the architecture catalog and the linked publication README records. It excludes generated outputs, artwork, authoring archives, Git history and local state. No empty placeholder files are used to satisfy link validation.
 

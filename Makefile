@@ -134,6 +134,7 @@ check-publication-pass05-glossary: book-docx
 .PHONY: check-companion
 check-companion:
 	python3 containers/test_container_tools.py
+	python3 -B containers/assurance/test_security_gate.py
 	python3 publishing/scripts/test_companion_release.py -v
 	python3 publishing/scripts/check_companion_release.py
 	python3 publishing/scripts/check_active_reader_links.py

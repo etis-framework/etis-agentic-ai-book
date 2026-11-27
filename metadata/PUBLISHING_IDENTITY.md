@@ -1,4 +1,4 @@
-> **Historical editorial decision record (retained unchanged below this notice).** The working-state statements in this file reflect the stage when it was written, and are **not** the current KDP, cover, manuscript, or release status. See the [root README](../README.md), [publishing overview](../publishing/README.md), and [first-edition release policy](../RELEASE.md) for current navigation. The repository release/tag remains intentionally pending.
+> **Historical editorial decision record (retained unchanged below this notice).** The working-state statements in this file reflect the stage when it was written, and are **not** the current KDP, cover, manuscript, or release status. See the [root README](../README.md), [publishing overview](../publishing/README.md), and [first-edition release policy](../RELEASE.md) for current navigation. The original `v1.0.0` and maintenance `v1.0.1` releases have been published; see the release policy for subsequent companion maintenance.
 
 # Publishing identity and scope — editorial decision
 

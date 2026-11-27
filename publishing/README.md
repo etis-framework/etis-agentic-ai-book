@@ -23,4 +23,4 @@ The final 7 × 10-inch, 503-page interior was prepared and checked as an author-
 
 See [Mac build instructions](BUILD_ON_MAC.md), [figure generation and source exceptions](FIGURES.md), and [pagination conventions](PAGINATION.md). Dated `BOOK_PRODUCTION_QA_V4.md`, `PRODUCTION_QA_V6.md`, certification passes, and files in [reviews](reviews/README.md) preserve **historical checkpoints**, not current unresolved release blockers by default. Validate any claim against the actual release candidate and its acceptance evidence.
 
-Companion publication and GitHub `v1.0.0` tagging remain separately governed by [RELEASE.md](../RELEASE.md). No tag or release is created by these instructions.
+The original GitHub `v1.0.0` launch and `v1.0.1` maintenance release are complete; subsequent companion publication and tagging remain separately governed by [RELEASE.md](../RELEASE.md). No tag or release is created by these instructions.

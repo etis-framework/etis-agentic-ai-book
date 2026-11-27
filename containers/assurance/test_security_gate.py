@@ -1,4 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
+from datetime import datetime, timezone
 import json
 from pathlib import Path
 import tempfile
@@ -22,6 +23,7 @@ class GateTests(unittest.TestCase):
         self.sbom = {'bomFormat':'CycloneDX','metadata':{'component':{'name':self.id,'properties':[{'name':'aquasecurity:trivy:ImageID','value':self.id}]}},'components':[{'name':'sqlite','version':'1:2-3','purl':'pkg:deb/debian/sqlite@2-3?epoch=1'}]}
         self.reg = {'schema_version':1,'assessments':[dict(self.key,status='under_investigation',rationale='review required')]}
         self.risk = {'schema_version':1,'acceptances':[]}
+        self.now = datetime(2026,11,28,tzinfo=timezone.utc)
         (self.p/'companion-image.txt').write_text(f'{self.id} linux/amd64 10\n')
         (self.p/'companion-packages.tsv').write_text('sqlite\t1:2-3\n')
         (self.p/'companion-hardening.txt').write_text('PASS: companion image privilege-bit and target-specific CLI checks\n')
@@ -37,7 +39,7 @@ class GateTests(unittest.TestCase):
         (self.p/'companion-applicability.json').write_text(json.dumps(self.probe))
         for name, data in [('companion-vulnerabilities.json',self.report),('companion-sbom.json',self.sbom),('register.json',self.reg),('risks.json',self.risk)]:
             (self.p/name).write_text(json.dumps(data))
-        return evaluate(self.p,'companion','amd64',self.id,self.p/'register.json',self.p/'risks.json')
+        return evaluate(self.p,'companion','amd64',self.id,self.p/'register.json',self.p/'risks.json',now=self.now)
 
     def finding(self, severity='HIGH', cve='CVE-2026-12345'):
         self.report['Results'][0]['Vulnerabilities'].append(dict(Severity=severity,VulnerabilityID=cve,PkgName='sqlite',InstalledVersion='1:2-3'))
@@ -54,6 +56,91 @@ class GateTests(unittest.TestCase):
         with patch.object(Path, 'read_bytes', read_once):
             self.assertEqual(self.run_gate()['status'], 'PASS')
         self.assertEqual(len(reads), 6)
+
+    def approve(self):
+        self.finding()
+        self.report['Results'][0]['Vulnerabilities'][0]['Status']='affected'
+        self.risk = {'schema_version':1, 'approval':{'authority':'ETIS repository maintainer',
+                     'issued_at':'2026-11-27T00:00:00Z','reviewed_at':'2026-11-27T00:00:00Z',
+                     'expires_at':'2026-12-27T00:00:00Z','basis_commit':'a'*40,'basis_run':23,
+                     'advisory_scope':'Debian Trixie stable and security'},
+                     'acceptances':[dict(self.key, severity='HIGH', scanner_status='affected',fixed_version='',
+                      disposition='risk_accepted',applicability_hint='review_required',
+                      advisory='https://security-tracker.debian.org/tracker/'+self.key['cve'],
+                      rationale='Bounded risk for documented educational runtime only.')]}
+
+    def test_approved_exact_finding_passes(self):
+        self.approve(); result=self.run_gate()
+        self.assertEqual(result['status'],'PASS')
+        self.assertEqual(result['severity_counts'],{'HIGH':1})
+        self.assertEqual(result['findings'][0]['assessment'],'risk_accepted')
+
+    def test_approved_critical_blocks(self):
+        self.approve(); self.report['Results'][0]['Vulnerabilities'][0]['Severity']='CRITICAL'
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approved_new_fix_blocks(self):
+        self.approve(); self.report['Results'][0]['Vulnerabilities'][0]['FixedVersion']='1:2-4'
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approved_new_finding_blocks(self):
+        self.approve(); self.finding(cve='CVE-2026-99999')
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approved_changed_scanner_status_blocks(self):
+        self.approve(); self.report['Results'][0]['Vulnerabilities'][0]['Status']='fix_deferred'
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approval_expires_at_boundary(self):
+        self.approve(); self.now=datetime(2026,12,27,tzinfo=timezone.utc)
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approval_over_30_days_rejected(self):
+        self.approve(); self.risk['approval']['expires_at']='2026-12-28T00:00:00Z'
+        with self.assertRaises(ValueError): self.run_gate()
+
+    def test_future_approval_rejected(self):
+        self.approve(); self.now=datetime(2026,11,26,tzinfo=timezone.utc)
+        with self.assertRaises(ValueError): self.run_gate()
+
+    def test_revocation_blocks(self):
+        self.approve(); self.risk={'schema_version':1,'acceptances':[]}
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_wrong_authority_rejected(self):
+        self.approve(); self.risk['approval']['authority']='candidate'
+        with self.assertRaises(ValueError): self.run_gate()
+
+    def test_approved_duplicate_rejected(self):
+        self.approve(); self.risk['acceptances']*=2
+        with self.assertRaises(ValueError): self.run_gate()
+
+    def test_approved_wrong_version_blocks(self):
+        self.approve(); self.report['Results'][0]['Vulnerabilities'][0]['InstalledVersion']='1:2-4'
+        self.report['Results'][0]['Packages'][0]['ID']='sqlite@1:2-4'
+        self.sbom['components'][0]['version']='1:2-4'
+        (self.p/'companion-packages.tsv').write_text('sqlite\t1:2-4\n')
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approved_hardening_failure_blocks(self):
+        self.approve(); (self.p/'companion-hardening.txt').write_text('FAIL\n')
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
+
+    def test_approved_fstab_change_blocks(self):
+        self.approve(); self.probe['fstab_entries']=['unexpected']
+        with self.assertRaises(ValueError): self.run_gate()
+
+    def test_limited_absence_must_be_observed(self):
+        self.approve(); self.key.update(cve='CVE-2026-9538',package='perl-base')
+        self.reg['assessments']=[dict(self.key,status='under_investigation',rationale='review required')]
+        self.risk['acceptances'][0].update(self.key,disposition='limited_absence',applicability_hint='candidate_module_absent_from_default_inc',advisory='https://security-tracker.debian.org/tracker/CVE-2026-9538')
+        self.report['Results'][0]['Packages']=[{'Name':'perl-base','ID':'perl-base@1:2-3'}]
+        self.report['Results'][0]['Vulnerabilities'][0].update(VulnerabilityID='CVE-2026-9538',PkgName='perl-base')
+        self.sbom['components'][0].update(name='perl-base')
+        (self.p/'companion-packages.tsv').write_text('perl-base\t1:2-3\n')
+        self.assertEqual(self.run_gate()['status'],'PASS')
+        self.probe['perl_archive_paths']=['/usr/share/perl5/Archive/Tar.pm']
+        self.assertEqual(self.run_gate()['status'],'BLOCKED')
 
     def test_clean(self):
         self.assertEqual(self.run_gate()['status'],'PASS')

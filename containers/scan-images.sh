@@ -52,10 +52,28 @@ for target in companion dev; do
     fi
     "$scanner" image --image-src docker --format cyclonedx --output "$out/$target-sbom.json" "$id"
     "$scanner" image --image-src docker --scanners vuln --format json --output "$out/$target-vulnerabilities.json" "$id"
-    "$scanner" image --image-src docker --scanners vuln --severity HIGH,CRITICAL --exit-code 1 "$id" > "$out/$target-gate.txt" 2>&1 || failed=1
+    raw_status=0
+    "$scanner" image --image-src docker --scanners vuln --severity HIGH,CRITICAL --exit-code 42 "$id" > "$out/$target-gate.txt" 2>&1 || raw_status=$?
+    case "$raw_status" in 0|42) ;; *) failed=1 ;; esac
+    printf '%s\n' "$raw_status" > "$out/$target-raw-gate-exit.txt"
     cat "$out/$target-gate.txt"
     platform=$(docker image inspect --format '{{.Architecture}}' "$id")
     python3 -B "$here/assurance/evaluate_security_gate.py" "$out" "$target" "$platform" "$id" || failed=1
+    # The independent raw HIGH/CRITICAL view and full JSON must agree about presence.
+    if ! python3 -B - "$out/$target-disposition.json" "$raw_status" <<'PYCODE'
+import json, sys
+with open(sys.argv[1]) as handle:
+    result = json.load(handle)
+counts = result.get("severity_counts")
+if not isinstance(counts, dict):
+    sys.exit(1)
+expected = 42 if counts.get("HIGH", 0) + counts.get("CRITICAL", 0) else 0
+sys.exit(0 if int(sys.argv[2]) == expected else 1)
+PYCODE
+    then
+        echo "$target: raw gate and full report disagree or scan failed" >&2
+        failed=1
+    fi
 done
 "$scanner" --version >> "$out/scanner.txt"
 exit "$failed"

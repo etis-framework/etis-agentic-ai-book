@@ -4,6 +4,8 @@ on:
     branches: [main]
   pull_request:
   workflow_dispatch:
+  schedule:
+    - cron: "17 9 * * 1"
 permissions:
   contents: read
 jobs:
@@ -23,9 +25,122 @@ jobs:
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
+      - name: Verify container tooling regressions (no Docker required)
+        run: python containers/test_container_tools.py
       - name: Verify release runner fails closed
         run: python publishing/scripts/test_companion_release.py -v
       - name: Run standard-library companion tests and architecture check
         run: python publishing/scripts/check_companion_release.py
       - name: Verify active reader navigation
         run: python publishing/scripts/check_active_reader_links.py
+  docker-companion:
+    name: Docker Linux ${{ matrix.arch }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: amd64
+            runner: ubuntu-latest
+            machine: x86_64
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+            machine: aarch64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 45
+    env:
+      COMPOSE_PROJECT_NAME: etis-ci-${{ matrix.arch }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Verify native architecture and Compose configuration
+        run: |
+          set -eu
+          test "$(uname -m)" = '${{ matrix.machine }}'
+          docker info --format 'Architecture: {{.Architecture}} | OS: {{.OSType}}'
+          test "$(docker info --format '{{.OSType}}')" = linux
+          docker compose version
+          docker buildx version
+          docker compose config --quiet
+          docker compose -f compose.yaml -f .devcontainer/compose.ide.yaml config --quiet
+          echo "ETIS_DEV_UID=$(id -u)" >> "$GITHUB_ENV"
+          echo "ETIS_DEV_GID=$(id -g)" >> "$GITHUB_ENV"
+      - name: Confirm pinned base indexes cover both Linux architectures
+        run: |
+          set -eu
+          for ref in $(awk '/^FROM python:/{print $2}' Dockerfile); do
+            echo "Checking $ref"
+            docker buildx imagetools inspect --raw "$ref" | python3 -c 'import json,sys; p=json.load(sys.stdin)["manifests"]; a={x.get("platform",{}).get("architecture") for x in p if x.get("platform",{}).get("os")=="linux"}; assert {"amd64","arm64"} <= a, a'
+          done
+      - name: Build and verify disposable offline image
+        run: |
+          docker compose build companion
+          docker compose run --rm --no-deps -T companion
+          docker image inspect "${COMPOSE_PROJECT_NAME}-companion" --format 'Image: {{.Id}} | {{.Os}}/{{.Architecture}}'
+      - name: Run all six existing demonstrations
+        run: |
+          for build in 0 1 2 3 4 5; do
+            docker compose run --rm --no-deps -T companion python3 containers/demo.py --build "$build" || exit 1
+          done
+      - name: Verify fail-closed runtime and authorization controls
+        run: |
+          set -eu
+          if docker run --rm --network bridge --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp:rw,nosuid,nodev,mode=1777 "${COMPOSE_PROJECT_NAME}-companion" > /tmp/etis-network-negative.log 2>&1; then
+            echo 'Network-enabled verification unexpectedly passed'; exit 1
+          else test "$?" -eq 1; fi
+          cat /tmp/etis-network-negative.log
+          grep -F 'enabled non-loopback interfaces' /tmp/etis-network-negative.log
+          if docker compose run --rm --no-deps -T --user 0:0 companion > /tmp/etis-root-negative.log 2>&1; then
+            echo 'Root verification unexpectedly passed'; exit 1
+          else test "$?" -eq 1; fi
+          cat /tmp/etis-root-negative.log
+          grep -F 'verification requires non-root Linux' /tmp/etis-root-negative.log
+          if docker compose run --rm --no-deps -T -v "$PWD:/opt/etis:ro" companion > /tmp/etis-mount-negative.log 2>&1; then
+            echo 'Mounted-source verification unexpectedly passed'; exit 1
+          else test "$?" -eq 1; fi
+          cat /tmp/etis-mount-negative.log
+          grep -F 'verification must use image-contained source, not mounted source' /tmp/etis-mount-negative.log
+          if docker compose run --rm --no-deps -T companion python3 examples/refund-reference-system/build3/demo.py --scenario compromised > /tmp/etis-denial.json; then
+            echo 'Compromised fixture unexpectedly succeeded'; exit 1
+          else test "$?" -eq 2; fi
+          python3 -c 'import json; d=json.load(open("/tmp/etis-denial.json")); assert d["status"]=="DENIED" and d["e7_created"] is False and d["mock_e8_created"] is False, d'
+      - name: Verify Chapter 31 evidence export
+        run: |
+          mkdir -p .etis-local/evidence
+          docker compose run --rm --no-deps -T companion python3 containers/export_evidence.py > .etis-local/evidence/report.json
+          python3 -c 'import json; d=json.load(open(".etis-local/evidence/report.json")); assert d["overall_fixture_status"]=="EXECUTED_PASS" and d["production_certified"] is False and len(d["evidence"])==7 and all(x["status"]=="EXECUTED_PASS" and x["tests_run"]==1 for x in d["evidence"])'
+          sha256sum .etis-local/evidence/report.json
+      - name: Verify editable development and persistent state
+        run: |
+          set -eu
+          docker compose up -d --build --no-deps dev
+          docker image inspect "${COMPOSE_PROJECT_NAME}-dev" --format 'Image: {{.Id}} | {{.Os}}/{{.Architecture}}'
+          docker compose exec -T dev python3 containers/dev_probe.py
+          docker compose exec -T dev python3 publishing/scripts/check_companion_release.py
+          docker compose exec -T dev python3 -c 'import shutil,subprocess; assert shutil.which("git") is None; packages=subprocess.check_output(["dpkg-query","-W","-f=${Package} ${db:Status-Status}\n"],text=True).splitlines(); assert "libexpat1 installed" not in packages'
+          docker compose exec -T dev python3 examples/refund-reference-system/build0/refund.py prepare --directory /state/ci-run
+          docker compose stop dev
+          docker compose rm -f dev
+          docker compose up -d --no-deps dev
+          docker compose exec -T dev python3 containers/dev_probe.py
+          docker compose exec -T dev python3 examples/refund-reference-system/build0/refund.py status --directory /state/ci-run > /tmp/etis-status.json
+          python3 -c 'import json; assert json.load(open("/tmp/etis-status.json"))["local"][0]=="AUTHORIZED"'
+          docker compose exec -T dev python3 examples/refund-reference-system/build0/refund.py dispatch-lost-ack --directory /state/ci-run
+          docker compose exec -T dev python3 examples/refund-reference-system/build0/refund.py reconcile --directory /state/ci-run > /tmp/etis-reconciled.json
+          python3 -c 'import json; assert json.load(open("/tmp/etis-reconciled.json"))["local"][0]=="CONFIRMED"'
+          docker compose exec -T dev python3 -c 'import sqlite3; c=sqlite3.connect("file:/state/ci-run/provider.sqlite3?mode=ro",uri=True); assert c.execute("SELECT COUNT(*) FROM refunds").fetchone()[0]==1; c.close()'
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+      - name: Scan both exact local images and generate SBOMs
+        run: sh containers/scan-images.sh "$RUNNER_TEMP/etis-security"
+      - name: Retain supply-chain evidence, including failed scans
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: container-security-${{ matrix.arch }}
+          path: ${{ runner.temp }}/etis-security/
+          if-no-files-found: error
+          retention-days: 30
+      - name: Remove only this disposable CI project's resources
+        if: always()
+        run: docker compose down --volumes --remove-orphans

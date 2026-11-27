@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Apache-2.0
+# Verification and editable development deliberately have different trust scopes.
+x-runtime: &runtime
+  init: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  network_mode: none
+  pids_limit: 256
+  tmpfs:
+    - /tmp:rw,nosuid,nodev,mode=1777
+services:
+  companion:
+    <<: *runtime
+    build:
+      context: .
+      target: verification
+    read_only: true
+    # No source mounts, persistent state, exposed ports or Docker socket.
+  dev:
+    <<: *runtime
+    build:
+      context: .
+      target: development
+      args:
+        ETIS_DEV_UID: ${ETIS_DEV_UID:-1000}
+        ETIS_DEV_GID: ${ETIS_DEV_GID:-1000}
+    volumes:
+      - type: bind
+        source: .
+        target: /workspace
+      - type: volume
+        source: exercise-state
+        target: /state
+    working_dir: /workspace
+    command: [sleep, infinity]
+volumes:
+  exercise-state:

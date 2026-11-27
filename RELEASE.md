@@ -1,6 +1,6 @@
 # First-edition companion — version and release policy
 
-[Home](README.md) · [GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Original release notes](RELEASE_NOTES_v1.0.0.md) · [Maintenance release notes](RELEASE_NOTES_v1.0.1.md) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
+[Home](README.md) · [GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) · [Original release notes](RELEASE_NOTES_v1.0.0.md) · [Maintenance release notes](RELEASE_NOTES_v1.0.1.md) · [Container release notes](RELEASE_NOTES_v1.1.0.md) · [Changelog](CHANGELOG.md) · [Errata](ERRATA.md)
 
 **Edition:** `v1.0.0` is the immutable source version accompanying the first printed edition of *Engineering Agentic AI Systems* (2026). Both `v1.0.0` and `v1.0.1` are published and immutable. The first-edition code is a credential-free, standard-library-only teaching fixture; it is not a real payment system, a provider certification, or a production deployment.
 
@@ -26,7 +26,7 @@ The companion runs six progressive Python builds (Chapters 22–27) plus Chapter
 ## Maintenance release procedure (v1.0.1 and later)
 
 1. Review the correction diff, errata, regression evidence and release notes; verify that frozen manuscript and figure assets are unchanged from the edition tag.
-2. Run `make check-companion` and the applicable publication QA gates. Confirm all required CI jobs on the exact release commit before tagging; new execution environments require their own verification gates.
+2. Run `make check-companion` and the applicable publication QA gates. Confirm all required CI jobs on the exact release commit before tagging; new execution environments require their own verification gates. For v1.1.0 and later container changes, verify both native CI and the Linux AMD64/ARM64 container CI jobs, plus the Docker Desktop and IDE acceptance recorded in [container acceptance](containers/ACCEPTANCE.md). Keep actual platform evidence and limitations separate from intended compatibility.
 3. Create a new annotated patch or minor-version tag as appropriate on the verified clean `main` commit. Publish its GitHub Release using the matching release notes; do not move any published tag.
 4. Verify anonymous access to the original and new release versions and source ZIPs. Recommend the corrected companion for exercises; retain the original for exact reproduction.
 

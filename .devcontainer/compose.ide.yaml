@@ -1,0 +1,5 @@
+# IDE bootstrap may need a network for VS Code Server and extension downloads.
+# Never use this overlay to certify the offline verification image.
+services:
+  dev:
+    network_mode: bridge

@@ -1,8 +1,13 @@
 # Getting started — first-edition companion
 
-[Home](../README.md) · [Companion](../examples/refund-reference-system/README.md) · [Chapter map](CHAPTER_MAP.md)
+[Home](../README.md) · [Companion](../examples/refund-reference-system/README.md) · [Chapter map](CHAPTER_MAP.md) · [Docker execution](CONTAINER_EXECUTION.md)
 
-## Prerequisites
+## Choose your execution environment
+
+- **Docker (v1.1.0):** Docker Desktop on macOS/Windows or Docker Engine with Compose V2 on Linux. No host Python, Make, Git, model account or payment service is required if you use the source ZIP and direct Compose commands. Start Docker and follow [container execution](CONTAINER_EXECUTION.md).
+- **Native:** continue with the Python prerequisites below. The book's original commands still work. Do not install Docker if you prefer native Python.
+
+## Native prerequisites
 
 - Python 3.10+; v1.0.1 passed CI on macOS and Ubuntu with Python 3.10 and 3.13, and local macOS tests with Python 3.14.7.
 - A terminal (Terminal on macOS/Linux; PowerShell or Command Prompt on Windows). **Git is optional** if you use the downloadable ZIP. Python commands use `python3` on macOS/Linux and `py -3` on Windows.
@@ -12,20 +17,21 @@
 
 | Environment | Supported verification | Command |
 |---|---|---|
+| Docker with Linux containers (AMD64/ARM64 target) | Full companion plus infrastructure and reader-link checks | `docker compose run --build --rm --no-deps -T companion` |
 | macOS or Linux, Python 3.10+ | Full Builds 0–5, Chapters 28–31 and architecture checks | `python3 publishing/scripts/check_companion_release.py` |
 | Windows, Python 3.10+ | Portable Builds 0–2 and architecture checks **only** | `py -3 publishing/scripts/check_companion_release.py --portable` |
 
-Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permissions**, and later exercises depend on this path. The full companion is **not verified or supported on native Windows**. Windows users wanting all ten suites should use an appropriate Linux environment (for example WSL2); that environment must be verified independently. Do not interpret a portable-subset pass as a full companion pass. No paid services or dependencies are required for either command.
+Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permissions**, and later exercises depend on this path. The full companion is **not verified or supported on native Windows**. Windows users wanting all ten suites should use the Docker Linux-container path or an independently verified Linux environment (for example WSL2). Platform acceptance is recorded in the release evidence; see [container limitations](CONTAINER_EXECUTION.md). Do not interpret a portable-subset pass as a full companion pass. No paid services or dependencies are required for either command.
 
 ## Download the first-edition code
 
-For corrected exercises select the published `v1.0.1` release as shown below. Use `v1.0.0` for exact original-edition reproduction. See [maintenance notes](../RELEASE_NOTES_v1.0.1.md).
+For corrected exercises select the latest stable release. Docker requires v1.1.0 or a containerization development checkout. Use `v1.0.1` for the corrected native-only baseline and `v1.0.0` for exact original-edition reproduction. See [v1.1.0 notes](../RELEASE_NOTES_v1.1.0.md) and [maintenance notes](../RELEASE_NOTES_v1.0.1.md). The examples below use the v1.1.0 release tag after it is published; candidate testers use their existing checkout.
 
 **Option A — easiest: ZIP download (no Git installation).**
 
-1. Open [First-edition GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) and select **`v1.0.1`**.
+1. Open [First-edition GitHub Releases](https://github.com/etis-framework/etis-agentic-ai-book/releases) and select **`v1.1.0`** for the Docker-capable release.
 2. Under **Assets**, select **Source code (zip)**. Do not use a ZIP of the moving `main` branch when following the printed edition.
-3. Extract the ZIP to a folder you can find, such as Downloads. Open the extracted `etis-agentic-ai-book-1.0.1` folder (folder naming may vary slightly).
+3. Extract the ZIP to a folder you can find, such as Downloads. Open the extracted `etis-agentic-ai-book-1.1.0` folder (folder naming may vary slightly).
 4. Open a terminal **in that folder**. On macOS, open Terminal, type `cd ` (with a trailing space), drag the extracted folder into the Terminal window, and press Enter. On Windows, open the extracted folder in File Explorer, click the address bar, type `powershell`, and press Enter. On Linux, use the file manager's *Open in Terminal* option or `cd` to that folder.
 5. Confirm you are in the right place: the folder should contain `README.md`, `publishing/`, and `examples/`. The commands below are written for this **repository root**, not the `build0/` subfolder.
 
@@ -35,12 +41,23 @@ For corrected exercises select the published `v1.0.1` release as shown below. Us
 git clone https://github.com/etis-framework/etis-agentic-ai-book.git
 cd etis-agentic-ai-book
 git fetch --tags
-git checkout v1.0.1
+git checkout v1.1.0
 ```
 
-Both release tags are published and immutable. Use the selected tag for reproducible exercises; `main` is development, not a pinned release.
+All published release tags are immutable. Use the selected tag for reproducible exercises; `main` is development, not a pinned release.
 
-## Verify Python and run the companion tests
+## Verify Docker and run the full container check
+
+If you chose Docker, confirm `docker info` and `docker compose version` succeed. From the root of the selected source checkout:
+
+```bash
+docker compose build companion
+docker compose run --rm --no-deps -T companion
+```
+
+Expect the final container verification PASS only after all ten suites, infrastructure regressions and reader-link checks complete. A Docker build, a running shell or the `hello-world` image alone is not companion verification. See the [container guide](CONTAINER_EXECUTION.md) for the demonstrations and exporting evidence. You can skip the native Python setup below.
+
+## Verify native Python and run the companion tests
 
 From the repository root, first check your installed Python version:
 
@@ -101,7 +118,7 @@ Use a **new output path every run**; the collector intentionally refuses to over
 |---|---|
 | `python3: command not found` | Use `py -3` on Windows for the portable subset or install Python 3.10+; check `python3 --version`. |
 | Full tests unsupported on native Windows | Run `py -3 publishing/scripts/check_companion_release.py --portable` for Builds 0–2; use macOS/Linux for all ten suites. |
-| Cannot check out `v1.0.1` | Use the [first-edition Release](https://github.com/etis-framework/etis-agentic-ai-book/releases); Git users can run `git fetch --tags` before checkout. |
+| Cannot check out `v1.1.0` | Use the [first-edition Release](https://github.com/etis-framework/etis-agentic-ai-book/releases); Git users can run `git fetch --tags` before checkout. |
 | SQLite file already contains a demonstration | Use a fresh, disposable directory; exercises retain state intentionally. |
 | Evidence path exists | Choose a different unique filename; collector will not overwrite. |
 | Tests fail after edits | Return to the clean selected release tag, then rerun. Report reproducible failures using [contribution guidance](../CONTRIBUTING.md). |

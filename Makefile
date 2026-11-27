@@ -133,6 +133,35 @@ check-publication-pass05-glossary: book-docx
 # Independently reproducible companion tests: no DOCX, Graphviz, or paid services.
 .PHONY: check-companion
 check-companion:
+	python3 containers/test_container_tools.py
 	python3 publishing/scripts/test_companion_release.py -v
 	python3 publishing/scripts/check_companion_release.py
 	python3 publishing/scripts/check_active_reader_links.py
+
+# Container execution (Docker and Compose only; host Python is not needed).
+# SPDX-License-Identifier: Apache-2.0 applies to this container target block.
+.PHONY: docker-build docker-build-dev docker-check docker-up docker-shell docker-down docker-clean docker-assurance docker-build0 docker-build1 docker-build2 docker-build3 docker-build4 docker-build5
+DOCKER_COMPOSE ?= docker compose
+docker-build:
+	$(DOCKER_COMPOSE) build companion
+docker-build-dev:
+	ETIS_DEV_UID="$${ETIS_DEV_UID:-$$(id -u)}" ETIS_DEV_GID="$${ETIS_DEV_GID:-$$(id -g)}" $(DOCKER_COMPOSE) build dev
+docker-check:
+	$(DOCKER_COMPOSE) run --build --rm --no-deps -T companion
+docker-up:
+	ETIS_DEV_UID="$${ETIS_DEV_UID:-$$(id -u)}" ETIS_DEV_GID="$${ETIS_DEV_GID:-$$(id -g)}" $(DOCKER_COMPOSE) up -d --build --no-deps dev
+docker-shell:
+	$(DOCKER_COMPOSE) exec dev bash
+docker-build0 docker-build1 docker-build2 docker-build3 docker-build4 docker-build5:
+	$(DOCKER_COMPOSE) run --build --rm --no-deps -T companion python3 containers/demo.py --build $(subst docker-build,,$@)
+docker-assurance: docker-build
+	@mkdir -p .etis-local/evidence; \
+	dir=$$(mktemp -d .etis-local/evidence/run-XXXXXX) || exit 1; \
+	if $(DOCKER_COMPOSE) run --rm --no-deps -T companion python3 containers/export_evidence.py > "$$dir/evidence.json" && test -s "$$dir/evidence.json"; then \
+	  echo "Exported bounded fixture evidence: $$dir/evidence.json"; \
+	else rm -f "$$dir/evidence.json"; rmdir "$$dir"; exit 1; fi
+docker-down:
+	$(DOCKER_COMPOSE) down
+docker-clean:
+	$(DOCKER_COMPOSE) down --remove-orphans
+	@echo "Project containers removed. Exercise volumes and exported evidence retained."

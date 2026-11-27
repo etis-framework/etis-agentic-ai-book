@@ -18,6 +18,8 @@
 !manuscript/part-04-implementation/ch27-build-5-optional-coordination-and-production-hardening/index.md
 !containers/*.py
 !containers/*.md
+# Reader-link QA needs this document; governance code and registers remain host-side.
+!containers/assurance/README.md
 # Deny local hidden paths, generated files and credentials even within included trees.
 **/.*
 **/__pycache__/**

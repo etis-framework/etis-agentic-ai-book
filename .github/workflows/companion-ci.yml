@@ -142,9 +142,10 @@ jobs:
           python3 -B containers/assurance/test_authorize_release.py
           python3 -B containers/assurance/test_aggregate_release.py
       - name: Scan both exact local images and generate SBOMs
+        id: security_scan
         run: sh containers/scan-images.sh "$RUNNER_TEMP/etis-security"
       - name: Retain supply-chain evidence, including failed scans
-        if: always()
+        if: ${{ always() && (steps.security_scan.outcome == 'success' || steps.security_scan.outcome == 'failure') }}
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: container-security-${{ matrix.arch }}

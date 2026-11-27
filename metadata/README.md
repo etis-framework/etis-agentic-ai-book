@@ -15,4 +15,4 @@ This directory combines **authoritative architecture/source contracts** with **d
 
 Documents with dates, chapter cutoffs, versions, and proposed/pending language (including [`PUBLISHING_IDENTITY.md`](PUBLISHING_IDENTITY.md), [`COVER_RETAIL_COPY_PROPOSED.md`](COVER_RETAIL_COPY_PROPOSED.md), and the `*_WARGAME*` records) are preserved for provenance. Their original statements must be read **as of the time of that review**. Earlier references to Chapters 32–36 as unfinished or the cover as pending do not override the 36-chapter current repository or the separately approved print artifacts.
 
-For supported Python code and tests, begin at the [companion README](../examples/refund-reference-system/README.md). For GitHub versioning and the future `v1.0.0` tag, consult [RELEASE.md](../RELEASE.md).
+For supported Python code and tests, begin at the [companion README](../examples/refund-reference-system/README.md). For GitHub versioning, the published immutable `v1.0.0` and `v1.0.1` tags, and subsequent companion releases, consult [RELEASE.md](../RELEASE.md).

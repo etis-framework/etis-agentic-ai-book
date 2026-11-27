@@ -17,11 +17,11 @@
 
 | Environment | Supported verification | Command |
 |---|---|---|
-| Docker with Linux containers (AMD64/ARM64 target) | Full companion plus infrastructure and reader-link checks | `docker compose run --build --rm --no-deps -T companion` |
+| Docker with Linux containers (AMD64/ARM64 target) | Full companion plus infrastructure and reader-link checks; Linux CI verified | `docker compose run --build --rm --no-deps -T companion` |
 | macOS or Linux, Python 3.10+ | Full Builds 0–5, Chapters 28–31 and architecture checks | `python3 publishing/scripts/check_companion_release.py` |
 | Windows, Python 3.10+ | Portable Builds 0–2 and architecture checks **only** | `py -3 publishing/scripts/check_companion_release.py --portable` |
 
-Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permissions**, and later exercises depend on this path. The full companion is **not verified or supported on native Windows**. Windows users wanting all ten suites should use the Docker Linux-container path or an independently verified Linux environment (for example WSL2). Platform acceptance is recorded in the release evidence; see [container limitations](CONTAINER_EXECUTION.md). Do not interpret a portable-subset pass as a full companion pass. No paid services or dependencies are required for either command.
+Build 3's E5 reference service uses **Unix-domain sockets and POSIX socket permissions**, and later exercises depend on this path. The full companion is **not verified or supported on native Windows**. Windows users wanting all ten suites should use the Docker Linux-container path or an independently verified Linux environment (for example WSL2). Windows Docker Desktop is an intended Linux-container workflow, but manual Windows host and PowerShell acceptance remain unconfirmed for v1.1.0; do not interpret Linux CI as a Windows host test. Platform acceptance is recorded in the release evidence; see [container limitations](CONTAINER_EXECUTION.md). Do not interpret a portable-subset pass as a full companion pass. No paid services or dependencies are required for either command.
 
 ## Download the first-edition code
 

@@ -20,8 +20,7 @@ The following register distinguishes published companion corrections from verifi
 | ETIS-E004 | Builds 1 and 5 | Valid long correlation identifiers and extreme lease timestamps could violate contracts | Bounded identifiers and timestamp validation | Released | v1.0.1 |
 | ETIS-E005 | Chapter 28 reliability; Chapter 30 operations | Invalid states, confirmation before dispatch, empty telemetry | Typed rejection, escalation and explicit missing-evidence handling | Released | v1.0.1 |
 | ETIS-E006 | Chapter 31 assurance | Skipped or incomplete test results, missing dependency hashes and source drift could undermine evidence | Require actual passing execution and stable source hashes | Released | v1.0.1 |
-
-| ETIS-E007 | Companion release verification runner | Empty or skipped test suites could return success without complete execution | Require actual ordinary unittest results, minimum suite inventory and fresh completion records | Unreleased | Pending |
+| ETIS-E007 | Companion release verification runner | Empty or skipped test suites could return success without complete execution | Require actual ordinary unittest results, minimum suite inventory and fresh completion records | Included in v1.1.0 | v1.1.0 |
 
 ## Change control
 

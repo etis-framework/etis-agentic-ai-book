@@ -12,7 +12,10 @@ From the clean candidate checkout:
 git status --short
 git rev-parse HEAD
 git diff --check v1.0.1 HEAD
-git diff --exit-code v1.0.1 HEAD -- manuscript/ assets/ metadata/ book.yaml
+git diff --exit-code v1.0.1 HEAD -- manuscript/ assets/ references/ book.yaml metadata/ \
+  ':(exclude)metadata/README.md' ':(exclude)metadata/PUBLISHING_IDENTITY.md'
+# Review the two excluded metadata files separately; status/navigation only.
+git diff v1.0.1 HEAD -- metadata/README.md metadata/PUBLISHING_IDENTITY.md
 make check-companion
 make check-publication-pass04-protocols
 ```
@@ -116,3 +119,10 @@ Additional exact-image acceptance: inspect both `*-hardening.txt` artifacts from
 Release gates: review the exact PR diff and all native/container CI results; run required manual host/IDE acceptance; update release notes with observed results and residual limitations; merge and repeat verification on the actual main SHA; create an annotated v1.1.0 tag and publish the matching GitHub release. Never move older tags. No registry publication is part of this release.
 
 Apply the [maintainer-controlled security policy](assurance/README.md). Both roles on both architectures must pass the current evaluator with complete raw reports, inventory, SBOM, hardening and applicability evidence. Preserve the raw high/critical exit status and full reports, even when the governed result passes. Review current Debian/upstream fixes, expiry, scope, and lower-severity risks before release. No OpenVEX publication or independent security attestation is claimed. Manual IDE and Windows results must be reported accurately; do not claim untested platform support.
+
+## 8. Recorded engineering baseline and platform limitations
+
+- [PR CI run 24](https://github.com/etis-framework/etis-agentic-ai-book/actions/runs/46041306393) passed all six jobs on `41a31cc323d34403c0ea460c27f239bb0e0d254a`.
+- [Merged main CI](https://github.com/etis-framework/etis-agentic-ai-book/actions/runs/46041640893) passed all six jobs on `3ca93b5d2ca9ae3ed5bc4094521a8edb0a6b771c`, including governed supply-chain checks. Preserve raw findings and expiration; this is not vulnerability-free or production-certified execution.
+- Apple Silicon Docker Desktop functional, persistence, clean-ZIP and IDE debugging observations were collected during development; post-hardening IDE and manual Windows Docker Desktop/PowerShell acceptance remain unconfirmed. Intel Mac Docker Desktop has no separate host-specific verification recorded. Independent scanner publisher checksum verification is also unconfirmed.
+- These records establish the observed engineering baseline only. Verify final release-commit CI before tagging. Do not mark outstanding manual gates passed; any release with those gates incomplete requires explicit maintainer acceptance of the documented limited support scope.

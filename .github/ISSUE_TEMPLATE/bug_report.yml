@@ -8,14 +8,14 @@ body:
     id: version
     attributes:
       label: Release/tag or commit
-      placeholder: v1.0.0
+      placeholder: v1.1.0
     validations:
       required: true
   - type: textarea
     id: reproduction
     attributes:
       label: Reproduction steps and expected vs observed behavior
-      description: Include OS, Python version, exact command, and sanitized output.
+      description: Include host OS, Python version, exact command, sanitized output, and Docker/Compose versions and image architecture if applicable.
     validations:
       required: true
   - type: textarea

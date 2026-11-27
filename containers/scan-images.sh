@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Host-side tool; never install the scanner in the runtime images.
 set -eu
+here=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 out=${1:?usage: scan-images.sh NEW_EVIDENCE_DIRECTORY}
 project=${COMPOSE_PROJECT_NAME:?set COMPOSE_PROJECT_NAME to the built Compose project}
 [ "$(uname -s)" = Linux ]
@@ -25,10 +26,36 @@ for target in companion dev; do
     id=$(docker image inspect --format '{{.Id}}' "$project-$target")
     docker image inspect --format '{{.Id}} {{.Os}}/{{.Architecture}} {{.Size}}' "$id" > "$out/$target-image.txt"
     docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges:true "$id" dpkg-query -W > "$out/$target-packages.tsv"
+    # Inspect the exact scanned image, not the editable source workspace.
+    # Preserve the full scans even when this additional acceptance check fails.
+    if docker run --rm --network none --read-only --cap-drop ALL --security-opt no-new-privileges:true "$id" sh -ec '
+        remaining=$(find /usr -xdev -type f -perm /6000 -print)
+        if [ -n "$remaining" ]; then printf "%s\n" "$remaining"; exit 1; fi
+        if [ "$1" = companion ]; then
+            test ! -e /usr/bin/infocmp
+            test ! -L /usr/bin/infocmp
+            if command -v infocmp; then exit 1; fi
+        fi
+        printf "PASS: %s image privilege-bit and target-specific CLI checks\n" "$1"
+    ' sh "$target" > "$out/$target-hardening.txt" 2>&1; then
+        :
+    else
+        failed=1
+    fi
+    cat "$out/$target-hardening.txt"
+    # Probe the exact image without mounting candidate code or reader state.
+    if docker run --rm -i --network none --read-only --cap-drop ALL --security-opt no-new-privileges:true "$id" \
+        python3 -B - "$target" "$id" < "$here/assurance/probe_applicability.py" > "$out/$target-applicability.json"; then
+        :
+    else
+        failed=1
+    fi
     "$scanner" image --image-src docker --format cyclonedx --output "$out/$target-sbom.json" "$id"
     "$scanner" image --image-src docker --scanners vuln --format json --output "$out/$target-vulnerabilities.json" "$id"
     "$scanner" image --image-src docker --scanners vuln --severity HIGH,CRITICAL --exit-code 1 "$id" > "$out/$target-gate.txt" 2>&1 || failed=1
     cat "$out/$target-gate.txt"
+    platform=$(docker image inspect --format '{{.Architecture}}' "$id")
+    python3 -B "$here/assurance/evaluate_security_gate.py" "$out" "$target" "$platform" "$id" || failed=1
 done
 "$scanner" --version >> "$out/scanner.txt"
 exit "$failed"

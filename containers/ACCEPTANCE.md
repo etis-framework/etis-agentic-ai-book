@@ -100,6 +100,8 @@ Use a clean extracted source ZIP (not a preconfigured Python environment) and ve
 
 Follow the [container security policy](SECURITY.md). Both architecture jobs must produce inventories, SBOMs and vulnerability reports for both final images. Scanner errors and high/critical findings block the candidate; no exceptions are pre-approved. Record local Scout results and resolve scanner disagreements before tagging. Confirm the clean-built development image has no Git executable or installed libexpat1 Debian package; the earlier purge experiment is not final image evidence. Review GNU tar CVE-2025-45582 and other remaining findings, including known exploited advisories, before release.
 
+Additional exact-image acceptance: inspect both `*-hardening.txt` artifacts from each architecture. Both targets must have no regular setuid/setgid files under `/usr`; verification must have no `/usr/bin/infocmp` or `infocmp` on PATH. Development retains the terminfo CLI pending IDE compatibility assessment. Repeat native and container regressions, persistence and VS Code debugging after these image changes. This gate does not establish the absence of file capabilities, host vulnerabilities or all vulnerable code; it does not change the HIGH/CRITICAL scanner gate.
+
 ## 7. Six-lens release review
 
 | Lens | Required challenge |
@@ -112,3 +114,11 @@ Follow the [container security policy](SECURITY.md). Both architecture jobs must
 | Business owner | No paid provider, no unnecessary tooling, no KDP revision, clear limitations and support boundaries |
 
 Release gates: review the exact PR diff and all native/container CI results; run required manual host/IDE acceptance; update release notes with observed results and residual limitations; merge and repeat verification on the actual main SHA; create an annotated v1.1.0 tag and publish the matching GitHub release. Never move older tags. No registry publication is part of this release.
+
+Patch B evidence reconciliation: run `python3 -B containers/assurance/test_security_gate.py`. Inspect each `*-disposition.json` alongside the exact image, SBOM, package inventory, raw scanner output and hardening result. Both the raw scanner gate and the governance evaluator must pass. The draft assessment register and empty risk register grant no authority; any future exception policy requires separate maintainer approval and recertification. No VEX claim is authorized by this stage.
+
+Patch C: require each `*-applicability.json` and associated evaluator hash on both architectures. Review role, image identity, actual privilege controls, compile options, observed component paths and protocol capabilities. Absence hints are limited to the observed standard paths/default Perl resolution and cannot waive the strict gate. Review the IDE overlay separately. Run the governance regressions and verify missing/mismatched applicability evidence blocks acceptance. Preserve all findings and raw reports.
+
+Patch D: run both assurance regression suites. Validate the external trust boundary and verify independent evidence custody, distinct reviewer/maintainer identities, signed scope, revocation freshness and all four image decisions before any governed release. Critical and high findings with supported fixes cannot be waived. Fresh scan and upstream review are mandatory; test expired, revoked, mismatched and tampered authorizations. Do not replace the strict required CI check until a protected alternative is independently deployed and proven. No individual authorization is included. Validate any generated OpenVEX before publication. See [protected operator procedure](assurance/README.md#patch-d--approved-policy-protected-decision-implementation).
+
+Before any governed release, execute the protected aggregate evaluator against all four exact image scopes, with independently controlled inputs, current signatures and revocation records. A security-only PASS does not waive functional, host or publication acceptance. Unvalidated VEX must not be published. The strict candidate CI gate remains mandatory until a protected replacement is independently deployed and tested.

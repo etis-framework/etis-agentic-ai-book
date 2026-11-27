@@ -19,6 +19,13 @@ RUN set -eu; \
 FROM common AS verification
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HOME=/tmp TMPDIR=/tmp
 RUN groupadd --gid 10001 etis && useradd --uid 10001 --gid 10001 --no-create-home --home-dir /tmp etis
+# Verification does not need the vulnerable terminfo inspection CLI. Keep its
+# package metadata and libraries intact; scanners must still report advisories.
+RUN set -eu; \
+    rm -f /usr/bin/infocmp; \
+    find /usr -xdev -type f -perm /6000 -exec chmod a-s {} +; \
+    remaining="$(find /usr -xdev -type f -perm /6000 -print)"; \
+    test -z "$remaining"; test ! -e /usr/bin/infocmp
 WORKDIR /opt/etis
 # Context is deliberately allowlisted by .dockerignore. Source stays root-owned.
 COPY . .
@@ -38,7 +45,10 @@ RUN set -eu; \
     if ! getent group "$ETIS_DEV_GID" >/dev/null; then groupadd --gid "$ETIS_DEV_GID" etis; fi; \
     useradd --uid "$ETIS_DEV_UID" --gid "$ETIS_DEV_GID" --create-home --shell /bin/bash etis; \
     install -d -o "$ETIS_DEV_UID" -g "$ETIS_DEV_GID" -m 0750 /state; \
-    touch /state/.etis-state; chown "$ETIS_DEV_UID:$ETIS_DEV_GID" /state/.etis-state
+    touch /state/.etis-state; chown "$ETIS_DEV_UID:$ETIS_DEV_GID" /state/.etis-state; \
+    find /usr -xdev -type f -perm /6000 -exec chmod a-s {} +; \
+    remaining="$(find /usr -xdev -type f -perm /6000 -print)"; \
+    test -z "$remaining"
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 HOME=/home/etis TMPDIR=/tmp
 WORKDIR /workspace
 USER etis

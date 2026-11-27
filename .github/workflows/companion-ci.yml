@@ -27,6 +27,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Verify container tooling regressions (no Docker required)
         run: python containers/test_container_tools.py
+      - name: Verify supply-chain governance fails closed
+        run: |
+          python -B containers/assurance/test_security_gate.py
+          python -B containers/assurance/test_authorize_release.py
+          python -B containers/assurance/test_aggregate_release.py
       - name: Verify release runner fails closed
         run: python publishing/scripts/test_companion_release.py -v
       - name: Run standard-library companion tests and architecture check
@@ -131,6 +136,11 @@ jobs:
           docker compose exec -T dev python3 -c 'import sqlite3; c=sqlite3.connect("file:/state/ci-run/provider.sqlite3?mode=ro",uri=True); assert c.execute("SELECT COUNT(*) FROM refunds").fetchone()[0]==1; c.close()'
           git diff --exit-code
           test -z "$(git status --porcelain)"
+      - name: Verify supply-chain governance fails closed
+        run: |
+          python3 -B containers/assurance/test_security_gate.py
+          python3 -B containers/assurance/test_authorize_release.py
+          python3 -B containers/assurance/test_aggregate_release.py
       - name: Scan both exact local images and generate SBOMs
         run: sh containers/scan-images.sh "$RUNNER_TEMP/etis-security"
       - name: Retain supply-chain evidence, including failed scans

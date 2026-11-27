@@ -10,8 +10,10 @@ If you discover a vulnerability, **do not publish exploits, credentials, or sens
 
 | Version | Status |
 |---|---|
-| First-edition `v1.0.x` | Published; use the most recent corrected release |
+| First-edition `v1.x` | Published; use the most recent corrected release |
 | Unreleased `main` | Development; no stability promise |
 | Earlier drafts | Not supported |
 
 We assess reports according to their actual impact and teaching boundaries. No claim of response SLA, protected keys, provider access, or production-grade isolation is made. Never put secrets into a sample issue or test fixture.
+
+Container supply-chain controls: see [container security policy](containers/SECURITY.md) for pinned inputs, minimal dependencies, SBOMs, scanning and release gates. Final hardened-image scan and platform results are pending candidate acceptance.

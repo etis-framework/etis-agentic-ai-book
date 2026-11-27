@@ -2,7 +2,15 @@
 
 [Home](README.md) · [First-edition release notes](RELEASE_NOTES_v1.0.0.md) · [Release policy](RELEASE.md) · [Errata](ERRATA.md)
 
-## Unreleased — repository maintenance
+## v1.1.0 — Containerized development and reproducible execution
+
+- Add digest-pinned, non-root Linux verification and development image targets; preserve all native execution paths.
+- Add Docker Compose, Make convenience targets, and an optional VS Code Dev Container configuration.
+- Separate read-only, offline, image-contained verification from editable development, persistent exercise state and evidence export.
+- Preserve all ten fixture suites (171 baseline tests), seven existing runner regressions and the active reader-link gate; add container tooling regressions and multi-architecture CI acceptance.
+- Document container trust limitations, platform acceptance, state lifecycle and image maintenance. Thank Sean for proposing container-based execution.
+
+### Repository maintenance included in v1.1.0
 
 - Align reader navigation with the published corrected release and distinguish historical release records from active instructions.
 - Fail closed when companion verification discovers or executes too few tests, skips tests, or fails to complete; report actual suite totals.

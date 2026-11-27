@@ -1,0 +1,34 @@
+# Deny by default; include only the companion and its actual QA dependencies.
+**
+!*.md
+!LICENSE
+!docs/*.md
+!examples/refund-reference-system/**/*.py
+!examples/refund-reference-system/**/*.md
+!examples/refund-reference-system/**/*.svg
+!publishing/scripts/check_companion_release.py
+!publishing/scripts/test_companion_release.py
+!publishing/scripts/check_companion_architecture_docs.py
+!publishing/scripts/check_active_reader_links.py
+!publishing/README.md
+!publishing/reviews/legacy-qa/README.md
+!metadata/architecture-catalog.md
+!manuscript/part-04-implementation/ch25-build-3-trusted-consequential-execution/index.md
+!manuscript/part-04-implementation/ch26-build-4-provider-integration-and-reconciliation/index.md
+!manuscript/part-04-implementation/ch27-build-5-optional-coordination-and-production-hardening/index.md
+!containers/*.py
+!containers/*.md
+# Reader-link QA needs this document; governance code and registers remain host-side.
+!containers/assurance/README.md
+# Deny local hidden paths, generated files and credentials even within included trees.
+**/.*
+**/__pycache__/**
+**/.pytest_cache/**
+**/.venv/**
+**/venv/**
+**/*.key
+**/*.pem
+**/*.sqlite*
+**/*.db
+**/*.pdf
+**/*.PDF

@@ -8,7 +8,7 @@
 **Companion directory:** https://github.com/etis-framework/etis-agentic-ai-book/tree/main/examples/refund-reference-system
 **Reader entry point:** `examples/refund-reference-system/README.md`
 
-For corrected exercises, use the published `v1.0.1` release ([maintenance notes](../../RELEASE_NOTES_v1.0.1.md)). For exact original first-edition reproduction, use the immutable **`v1.0.0`** Git tag (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md).
+For corrected exercises, select the latest stable companion release; v1.0.1 is the corrected native baseline ([maintenance notes](../../RELEASE_NOTES_v1.0.1.md)) and v1.1.0 adds [container execution](../../docs/CONTAINER_EXECUTION.md). For exact original first-edition reproduction, use the immutable **`v1.0.0`** Git tag (see the [release procedure](../../RELEASE.md)); `main` may advance. To run every companion suite without a manuscript build, use `python3 publishing/scripts/check_companion_release.py` from the repository root. See the [five-minute setup](../../docs/GETTING_STARTED.md). In the Docker development shell (`docker compose exec dev bash`), the same `python3` commands below run inside Linux; no host Python is needed. The disposable verification image is intentionally different from the editable development workspace.
 
 | Build | Book chapter | Engineering lesson |
 |---|---|---|
@@ -135,7 +135,7 @@ Consult `TESTING.md` for the verification matrix and `ENGINEERING_STANDARD.md` f
 
 ## Version and publication policy
 
-This Git repository is the single code authority. The original first-edition companion release is **`v1.0.0`**; the recommended corrected release is **`v1.0.1`**, with a [release procedure](../../RELEASE.md), [changelog](../../CHANGELOG.md) and [errata process](../../ERRATA.md). Use the tagged source for printed-edition reproduction; `main` may evolve. No separate, independently maintained examples archive is authoritative.
+This Git repository is the single code authority. The original first-edition companion release is **`v1.0.0`**; the corrected native baseline is **`v1.0.1`** and the container-capable release is **`v1.1.0`**, with a [release procedure](../../RELEASE.md), [changelog](../../CHANGELOG.md) and [errata process](../../ERRATA.md). Use the tagged source for printed-edition reproduction; `main` may evolve. No separate, independently maintained examples archive is authoritative.
 
 ## Run Build 1 (Chapter 23)
 

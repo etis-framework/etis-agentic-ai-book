@@ -15,7 +15,8 @@ LINK = re.compile(r'\[[^]\n]+\]\(([^)\n]+)\)')
 
 def main() -> int:
     paths = sorted(set(ROOT.glob('*.md')) | set((ROOT / 'docs').rglob('*.md'))
-                   | set(COMPANION.rglob('*.md')))
+                   | set(COMPANION.rglob('*.md'))
+                   | set((ROOT / 'containers').rglob('*.md')))
     checked = 0
     errors = []
     for path in paths:
